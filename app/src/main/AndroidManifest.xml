@@ -57,8 +57,10 @@
             android:name="edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity android:name="edu.aku.hassannaqvi.uen_tmk.FormsList" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionEActivity" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionIActivity" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionKActivity"></activity>
     </application>
 
 </manifest>
