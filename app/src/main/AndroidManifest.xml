@@ -66,7 +66,8 @@
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.ChildMortalityActivity" />
-        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionHActivity"></activity>
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionHActivity" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionJActivity"></activity>
     </application>
 
 </manifest>

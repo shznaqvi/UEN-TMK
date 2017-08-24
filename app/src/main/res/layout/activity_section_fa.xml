@@ -77,9 +77,9 @@
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:hint="@string/tf07"
             android:inputType="number"
             android:maxLength="2"
-            android:hint="@string/tf07"
             />
 
         <TextView
@@ -129,9 +129,9 @@
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:hint="@string/tf09"
             android:inputType="number"
             android:maxLength="2"
-            android:hint="@string/tf09"
             />
 
         <TextView
@@ -165,7 +165,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/tf1099"
+                android:id="@+id/tf10888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -220,7 +220,7 @@
                 android:text="@string/tf11d" />
 
             <RadioButton
-                android:id="@+id/tf1199"
+                android:id="@+id/tf11888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
