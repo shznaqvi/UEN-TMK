@@ -21,14 +21,14 @@
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
     <!-- String related to section headings -->
-    <string name="secALabel">HH Identification and Visit Status</string>
+    <string name="secALabel">B - IDENTIFICATION</string>
     <string name="sec2A"> سیکشن 2A: بنیادی معلومات </string>
     <string name="secBLabel">  سیکشن بی: خاندان کے تمام افراد کی فہرست </string>
     <string name="secCLabel"> سیکشن سی:گزشتہ ایک سال کے دوران انتقال ہونے والے  افراد</string>
     <string name="secDLabel">سیکشن ڈی: گھریلوں تعمیر</string>
     <string name="secELabel">سیکشن ای : ہاتھ دھونا</string>
     <string name="secFLabel">سیکشن ایف :منتخب شدہ ماؤں کی گزشتہ پیداواری معلومات</string>
-    <string name="secGLabel">سیکشن جی :خاندانی منصوبہ بندی(حمل کی تفصیلات کی طرف جائیں ) </string>
+    <string name="secGLabel"></string>
     <string name="secHLabel">سیکشن ایچ :ضرورت جو پوری نہ ہوسکی</string>
     <string name="secILabel">سیکشن آئی :شیر خوار اور بڑے بچوں کی غذا</string>
     <string name="secJLabel">سیکشن  جے: بچے کی صحت کی معلومات</string>
@@ -39,7 +39,7 @@
     <string name="secMLabel">سیکشن ایم: گھر کا ماحول</string>
 
 
-    <string name="days">دنوں کی تعداد</string>
+  <string name="days">دنوں کی تعداد</string>
 
 
     <!-- Strings that are fixed for all apps -->
