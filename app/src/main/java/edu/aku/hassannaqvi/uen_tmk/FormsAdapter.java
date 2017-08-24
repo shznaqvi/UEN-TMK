@@ -91,10 +91,10 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         public ViewHolder(View v) {
             super(v);
-            rv = v.findViewById(R.id.FormsList);
-            date = v.findViewById(R.id.date);
-            cluster = v.findViewById(R.id.cluster);
-            household = v.findViewById(R.id.household);
+            rv = (RecyclerView) v.findViewById(R.id.FormsList);
+            date = (TextView) v.findViewById(R.id.date);
+            cluster = (TextView) v.findViewById(R.id.cluster);
+            household = (TextView) v.findViewById(R.id.household);
 
         }
 

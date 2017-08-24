@@ -49,7 +49,7 @@ public class FormsList extends Activity {
         totalForms.setText("Total Forms: " + fTotal);
         completeForms.setText("Complete Forms: " + fComplete);
 
-        mRecyclerView = findViewById(R.id.FormsList);
+        mRecyclerView = (RecyclerView) findViewById(R.id.FormsList);
 
         mRecyclerView.setHasFixedSize(true);
 
