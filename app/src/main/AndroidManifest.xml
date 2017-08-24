@@ -46,7 +46,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionBActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionDActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
@@ -57,8 +57,16 @@
             android:name="edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity android:name="edu.aku.hassannaqvi.uen_tmk.FormsList" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionFActivity" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionFAActivity" />
+        <activity
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.MotherMortalityActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.ChildMortalityActivity" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionHActivity"></activity>
     </application>
 
 </manifest>
