@@ -37,9 +37,9 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
-public class SectionBActivity extends Activity implements View.OnKeyListener, TextWatcher {
+public class SectionDActivity extends Activity implements View.OnKeyListener, TextWatcher {
 
-    private static final String TAG = SectionBActivity.class.getSimpleName();
+    private static final String TAG = SectionDActivity.class.getSimpleName();
 
     @BindView(R.id.scrollView01)
     ScrollView scroll;
@@ -243,7 +243,7 @@ public class SectionBActivity extends Activity implements View.OnKeyListener, Te
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_b);
+        setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
 
         Calendar cal = Calendar.getInstance();
@@ -456,12 +456,12 @@ public class SectionBActivity extends Activity implements View.OnKeyListener, Te
 
             dcbid.setText(MainApp.fc.getDSSID());
 
-            dcbid.setOnKeyListener(SectionBActivity.this);
-            dcbid.addTextChangedListener(SectionBActivity.this);
-            dcbbfid.setOnKeyListener(SectionBActivity.this);
-            dcbbfid.addTextChangedListener(SectionBActivity.this);
-            dcbbmid.setOnKeyListener(SectionBActivity.this);
-            dcbbmid.addTextChangedListener(SectionBActivity.this);
+            dcbid.setOnKeyListener(SectionDActivity.this);
+            dcbid.addTextChangedListener(SectionDActivity.this);
+            dcbbfid.setOnKeyListener(SectionDActivity.this);
+            dcbbfid.addTextChangedListener(SectionDActivity.this);
+            dcbbmid.setOnKeyListener(SectionDActivity.this);
+            dcbbmid.addTextChangedListener(SectionDActivity.this);
 
             dcbid.setInputType(InputType.TYPE_CLASS_NUMBER);
             dcbbfid.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -668,8 +668,8 @@ public class SectionBActivity extends Activity implements View.OnKeyListener, Te
         dcbm.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                dcbid.setOnKeyListener(SectionBActivity.this);
-                dcbid.addTextChangedListener(SectionBActivity.this);
+                dcbid.setOnKeyListener(SectionDActivity.this);
+                dcbid.addTextChangedListener(SectionDActivity.this);
 
                 memberTypeOtherFun();
 
@@ -768,10 +768,10 @@ public class SectionBActivity extends Activity implements View.OnKeyListener, Te
                     dcbf15.setEnabled(false);
                     dcbf15.setChecked(false);
 
-                    dcbbfid.setOnKeyListener(SectionBActivity.this);
-                    dcbbfid.addTextChangedListener(SectionBActivity.this);
-                    dcbbmid.setOnKeyListener(SectionBActivity.this);
-                    dcbbmid.addTextChangedListener(SectionBActivity.this);
+                    dcbbfid.setOnKeyListener(SectionDActivity.this);
+                    dcbbfid.addTextChangedListener(SectionDActivity.this);
+                    dcbbmid.setOnKeyListener(SectionDActivity.this);
+                    dcbbmid.addTextChangedListener(SectionDActivity.this);
 
                     dcbid.setInputType(InputType.TYPE_CLASS_NUMBER);
                     dcbbfid.setInputType(InputType.TYPE_CLASS_NUMBER);

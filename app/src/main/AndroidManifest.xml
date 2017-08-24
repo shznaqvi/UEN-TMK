@@ -17,14 +17,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".core.MainApp"
+        android:name="edu.aku.hassannaqvi.uen_tmk.core.MainApp"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashscreenActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,33 +33,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionAActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionAActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionBActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.SectionBActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".core.AndroidDatabaseManager"
+            android:name="edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.EndingActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".FormsList" />
-        <activity android:name=".activities.SectionGAActivity" />
-        <activity android:name=".activities.SectionGBActivity" />
+
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk.FormsList" />
     </application>
 
 </manifest>
