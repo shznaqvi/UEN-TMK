@@ -20,7 +20,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract.singleMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract.singleMember;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 

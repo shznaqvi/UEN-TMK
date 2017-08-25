@@ -61,7 +61,6 @@
         <activity android:name=".activities.SectionCActivity" />
         <activity android:name=".activities.SectionJActivity" />
         <activity android:name=".activities.SectionLActivity" />
-        <activity android:name=".activities.SectionBActivity"></activity>
     </application>
 
 </manifest>

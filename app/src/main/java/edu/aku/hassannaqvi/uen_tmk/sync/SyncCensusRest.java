@@ -21,8 +21,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract.censusMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract.censusMember;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -86,7 +86,7 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<CensusContract> Census = db.getUnsyncedCensus();
+        Collection<FamilyMembersContract> Census = db.getUnsyncedCensus();
         Log.d(TAG, String.valueOf(Census.size()));
         if (Census.size() > 0) {
             try {
@@ -113,7 +113,7 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (CensusContract fc : Census) {
+                        for (FamilyMembersContract fc : Census) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());

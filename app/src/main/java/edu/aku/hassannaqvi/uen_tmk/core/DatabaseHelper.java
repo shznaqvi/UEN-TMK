@@ -18,16 +18,16 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract.censusMember;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract.DeceasedMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract.censusMember;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.HouseholdContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.HouseholdContract.householdForm;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract.singleMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract.singleMember;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract.MotherTB;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
@@ -344,14 +344,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncMembers(JSONArray memberlist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(MembersContract.singleMember.TABLE_NAME, null, null);
+        db.delete(MemberContract.singleMember.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = memberlist;
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObjectMember = jsonArray.getJSONObject(i);
 
-                MembersContract member = new MembersContract();
+                MemberContract member = new MemberContract();
                 member.Sync(jsonObjectMember);
                 ContentValues values = new ContentValues();
 
@@ -430,7 +430,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public Collection<MembersContract> getMembersByDSS(String dssID) {
+    public Collection<MemberContract> getMembersByDSS(String dssID) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -467,7 +467,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 singleMember.COLUMN_DSS_ID_MEMBER + " ASC";
 
-        Collection<MembersContract> memList = new ArrayList<MembersContract>();
+        Collection<MemberContract> memList = new ArrayList<MemberContract>();
         try {
             c = db.query(
                     singleMember.TABLE_NAME,  // The table to query
@@ -479,7 +479,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                MembersContract mc = new MembersContract();
+                MemberContract mc = new MemberContract();
                 memList.add(mc.Hydrate(c));
             }
         } finally {
@@ -540,19 +540,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return memList;
     }
 
-    public Collection<CensusContract> getChildFromMember(String dssID, String uuid) {
+    public Collection<FamilyMembersContract> getChildFromMember(String dssID, String uuid) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
-        Collection<CensusContract> memList = new ArrayList<>();
+        Collection<FamilyMembersContract> memList = new ArrayList<>();
         try {
 
 //            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid, "('1', '2')"});
             c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid});
 
             while (c.moveToNext()) {
-                CensusContract mc = new CensusContract();
+                FamilyMembersContract mc = new FamilyMembersContract();
                 memList.add(mc.Hydrate(c));
             }
         } finally {
@@ -702,7 +702,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addCensusMembers(CensusContract mc) {
+    public Long addCensusMembers(FamilyMembersContract mc) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -1215,7 +1215,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allIM;
     }
 
-    public Collection<CensusContract> getUnsyncedCensus() {
+    public Collection<FamilyMembersContract> getUnsyncedCensus() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1268,7 +1268,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 censusMember.COLUMN_ID + " ASC";
 
-        Collection<CensusContract> allCC = new ArrayList<CensusContract>();
+        Collection<FamilyMembersContract> allCC = new ArrayList<FamilyMembersContract>();
         try {
             c = db.query(
                     censusMember.TABLE_NAME,  // The table to query
@@ -1280,7 +1280,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                CensusContract cc = new CensusContract();
+                FamilyMembersContract cc = new FamilyMembersContract();
                 allCC.add(cc.Hydrate(c));
             }
         } finally {

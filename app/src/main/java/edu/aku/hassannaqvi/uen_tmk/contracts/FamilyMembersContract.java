@@ -10,7 +10,7 @@ import org.json.JSONObject;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class CensusContract {
+public class FamilyMembersContract {
 
     private final String projectName = "DSS Census";
     private String _ID = "";
@@ -58,10 +58,10 @@ public class CensusContract {
     private String devicetagID = "";
 
 
-    public CensusContract() {
+    public FamilyMembersContract() {
     }
 
-    public CensusContract(CensusContract cc) {
+    public FamilyMembersContract(FamilyMembersContract cc) {
         this.dss_id_hh = cc.dss_id_hh;
         this.dss_id_m = cc.dss_id_m;
         this.dss_id_member = cc.dss_id_member;
@@ -415,7 +415,7 @@ public class CensusContract {
         this.devicetagID = devicetagID;
     }
 
-    public CensusContract Sync(JSONObject jsonObject) throws JSONException {
+    public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {
 
         this._ID = jsonObject.getString(censusMember.COLUMN_ID);
         this.REF_ID = jsonObject.getString(censusMember.COLUMN_REF_ID);
@@ -464,7 +464,7 @@ public class CensusContract {
 
     }
 
-    public CensusContract Hydrate(Cursor cursor) {
+    public FamilyMembersContract Hydrate(Cursor cursor) {
 
         this._ID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_ID));
         this.REF_ID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_REF_ID));

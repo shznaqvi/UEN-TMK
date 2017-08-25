@@ -32,8 +32,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.dss_census.R;
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -1210,9 +1210,9 @@ public class SectionMembersActivity extends Activity implements View.OnKeyListen
             db.updateCensusID();
 
             if (dataFlag) {
-                MainApp.familyMembersList.set(position, new MembersContract(setDataForList(MainApp.cc)));
+                MainApp.familyMembersList.set(position, new MemberContract(setDataForList(MainApp.cc)));
             } else {
-                MainApp.familyMembersList.add(new MembersContract(setDataForList(MainApp.cc)));
+                MainApp.familyMembersList.add(new MemberContract(setDataForList(MainApp.cc)));
             }
             return true;
         } else {
@@ -1226,7 +1226,7 @@ public class SectionMembersActivity extends Activity implements View.OnKeyListen
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
-        MainApp.cc = new CensusContract();
+        MainApp.cc = new FamilyMembersContract();
 
         MainApp.cc.set_UUID(MainApp.fc.getUID());
         MainApp.cc.setFormDate(MainApp.fc.getFormDate());
@@ -1324,9 +1324,9 @@ public class SectionMembersActivity extends Activity implements View.OnKeyListen
 
     }
 
-    public MembersContract setDataForList(CensusContract c) {
+    public MemberContract setDataForList(FamilyMembersContract c) {
 
-        MembersContract m = new MembersContract();
+        MemberContract m = new MemberContract();
 
         m.set_ID(c.get_ID());
         m.set_DATE(c.get_DATE());

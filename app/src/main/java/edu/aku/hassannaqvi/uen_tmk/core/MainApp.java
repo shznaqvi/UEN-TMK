@@ -20,10 +20,10 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity;
-import edu.aku.hassannaqvi.uen_tmk.contracts.CensusContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MothersLst;
@@ -88,8 +88,8 @@ public class MainApp extends Application {
     public static List<deadMemberClass> deadMembers = new ArrayList<deadMemberClass>();
     //    Ali
     public static String regionDss = "";
-    public static List<MembersContract> familyMembersList;
-    public static CensusContract cc;
+    public static List<MemberContract> familyMembersList;
+    public static FamilyMembersContract cc;
     public static DeceasedContract dc;
     public static MotherContract mc;
     public static SectionKIMContract ims;
