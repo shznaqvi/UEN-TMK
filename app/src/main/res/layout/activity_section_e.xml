@@ -121,50 +121,9 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/te03e" />
 
-            <RadioButton
-                android:id="@+id/te03f"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/te03f" />
-
-            <RadioButton
-                android:id="@+id/te03g"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/te03g" />
-
-            <RadioButton
-                android:id="@+id/te03h"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/te03h" />
-
-            <RadioButton
-                android:id="@+id/te03i"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/te03i" />
-
-            <RadioButton
-                android:id="@+id/te0388"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/others" />
 
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/te0388x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-            android:hint="@string/others"
-            android:inputType="textCapWords" />
 
 
 

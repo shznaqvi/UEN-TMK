@@ -1,19 +1,29 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionDActivity extends Activity {
+
+    private static final String TAG = SectionDActivity.class.getSimpleName();
 
     @BindView(R.id.td01)
     RadioGroup td01;
@@ -86,13 +96,165 @@ public class SectionDActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
+        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+
+        MainApp.endActivity(this, this);
     }
 
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, SectionEActivity.class);
+                startActivity(secNext);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
+
+    private boolean UpdateDB() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSG();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+    }
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sD = new JSONObject();
+
+        sD.put("td01", td01a.isChecked() ? "1" : td01b.isChecked() ? "2" : "0");
+        sD.put("td02", td02.getText().toString());
+        sD.put("td03lb", td03lb.getText().toString());
+        sD.put("td03sb", td03sb.getText().toString());
+        sD.put("td03mc", td03mc.getText().toString());
+        sD.put("td04", td04a.isChecked() ? "1" : td04b.isChecked() ? "2" : "0");
+        sD.put("td05", td05.getText().toString());
+
+        MainApp.fc.setsD(String.valueOf(sD));
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public boolean ValidateForm() {
+
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        if (td01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td01), Toast.LENGTH_SHORT).show();
+            td01b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tg01: This data is Required!");
+            return false;
+        } else {
+            td01b.setError(null);
+        }
+
+        if (td01a.isChecked()) {
+            if (td02.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td02), Toast.LENGTH_SHORT).show();
+                td02.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "td02: This data is Required!");
+                return false;
+            } else {
+                td02.setError(null);
+            }
+
+            if (Integer.valueOf(td02.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td02), Toast.LENGTH_SHORT).show();
+                td02.setError("Zero not allowed");    // Set Error on last radio button
+
+                Log.i(TAG, "td02: Zero not allowed");
+                return false;
+            } else {
+                td02.setError(null);
+            }
+
+
+            if (td03lb.getText().toString().isEmpty() && td03sb.getText().toString().isEmpty() && td03mc.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td03), Toast.LENGTH_SHORT).show();
+                td03lb.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "td03: This data is Required!");
+                return false;
+            } else {
+                td03lb.setError(null);
+            }
+
+            if (td04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td04), Toast.LENGTH_SHORT).show();
+                td04b.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "td04: This data is Required!");
+                return false;
+            } else {
+                td04b.setError(null);
+            }
+
+            if (td04a.isChecked()) {
+                if (td05.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
+                    td05.setError("This data is Required!");    // Set Error on last radio button
+
+                    Log.i(TAG, "td05: This data is Required!");
+                    return false;
+                } else {
+                    td05.setError(null);
+                }
+
+                if (Integer.valueOf(td05.getText().toString()) < 4 || Integer.valueOf(td05.getText().toString()) > 42) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
+                    td05.setError("Range is 4 to 42 weeks");    // Set Error on last radio button
+
+                    Log.i(TAG, "td05: Range is 4 to 42 weeks");
+                    return false;
+                } else {
+                    td05.setError(null);
+                }
+
+            }
+
+
+        }
+
+
+        return true;
+    }
+
+
+
+    /*@Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }*/
+
+
 
 
 }

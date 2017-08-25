@@ -183,10 +183,42 @@ public class SectionGActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg01), Toast.LENGTH_SHORT).show();
             tg01888.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "dcd01: This data is Required!");
+            Log.i(TAG, "tg01: This data is Required!");
             return false;
         } else {
-            dcd0104.setError(null);
+            tg01888.setError(null);
+        }
+
+        if (tg01a.isChecked()) {
+            if (tg02.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg02), Toast.LENGTH_SHORT).show();
+                tg0288.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "tg02: This data is Required!");
+                return false;
+            } else {
+                tg0288.setError(null);
+            }
+
+            if (tg0288.isChecked() && tg0288x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg02) + " - " + getString(R.string.others), Toast.LENGTH_LONG).show();
+                tg0288x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tg0288x: This data is Required!");
+                return false;
+            } else {
+                tg0288x.setError(null);
+            }
+
+            if (!(tg03a.isChecked() || tg03b.isChecked() || tg03c.isChecked() || tg03d.isChecked()
+                    || tg03e.isChecked() || tg03f.isChecked())) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg03), Toast.LENGTH_LONG).show();
+                tg03f.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tg03: This data is Required!");
+
+                return false;
+            } else {
+                tg03f.setError(null);
+            }
         }
 
 
