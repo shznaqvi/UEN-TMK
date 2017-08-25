@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -347,10 +352,8 @@ public class SectionCActivity extends Activity {
     RadioButton tc12a;
     @BindView(R.id.tc12b)
     RadioButton tc12b;
-    @BindView(R.id.tc1288)
-    RadioButton tc1288;
-    @BindView(R.id.tc1288x)
-    EditText tc1288x;
+    @BindView(R.id.tc12888)
+    RadioButton tc12888;
     @BindView(R.id.tc13)
     RadioGroup tc13;
     @BindView(R.id.tc13a)
@@ -377,6 +380,8 @@ public class SectionCActivity extends Activity {
     RadioButton tc15a;
     @BindView(R.id.tc15b)
     RadioButton tc15b;
+    @BindView(R.id.tc15888)
+    RadioButton tc15888;
     @BindView(R.id.tc16)
     RadioGroup tc16;
     @BindView(R.id.tc16a)
@@ -401,6 +406,8 @@ public class SectionCActivity extends Activity {
     EditText tc1688x;
     @BindView(R.id.tc17)
     EditText tc17;
+    @BindView(R.id.tc17888)
+    CheckBox tc17888;
     @BindView(R.id.tc18)
     RadioGroup tc18;
     @BindView(R.id.tc18a)
@@ -468,5 +475,104 @@ public class SectionCActivity extends Activity {
         //TODO implement
     }
 
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sC = new JSONObject();
+
+        sC.put("tc01", tc01a.isChecked() ? "1" : tc01b.isChecked() ? "2" : tc01c.isChecked() ? "3"
+                : tc01d.isChecked() ? "4" : tc01e.isChecked() ? "5" : tc01f.isChecked() ? "6"
+                : tc01g.isChecked() ? "7" : tc01h.isChecked() ? "8" : tc01i.isChecked() ? "9" : tc01j.isChecked() ? "10"
+                : tc01k.isChecked() ? "11" : tc01l.isChecked() ? "12" : "0");
+
+        sC.put("tc02", tc02a.isChecked() ? "1" : tc02b.isChecked() ? "2" : tc02c.isChecked() ? "3"
+                : tc02d.isChecked() ? "4" : tc02e.isChecked() ? "5" : tc02f.isChecked() ? "6"
+                : tc02g.isChecked() ? "7" : tc02h.isChecked() ? "8" : tc02i.isChecked() ? "9" : tc02j.isChecked() ? "10"
+                : tc02k.isChecked() ? "11" : tc02l.isChecked() ? "12" : tc02m.isChecked() ? "13"
+                : tc02n.isChecked() ? "14" : tc02o.isChecked() ? "15" : "0");
+
+        sC.put("tc03", tc03a.isChecked() ? "1" : tc03b.isChecked() ? "2" : tc03c.isChecked() ? "3"
+                : tc03d.isChecked() ? "4" : tc03e.isChecked() ? "5" : tc03f.isChecked() ? "6"
+                : tc03g.isChecked() ? "7" : tc03h.isChecked() ? "8" : tc03i.isChecked() ? "9" : tc03j.isChecked() ? "10"
+                : tc03k.isChecked() ? "11" : tc03l.isChecked() ? "12" : tc03m.isChecked() ? "13"
+                : tc03n.isChecked() ? "14" : tc03o.isChecked() ? "15" : tc03p.isChecked() ? "16"
+                : tc03q.isChecked() ? "17" : "0");
+
+        sC.put("tc04", tc04.getText().toString());
+        sC.put("tc05", tc05a.isChecked() ? "1" : tc05b.isChecked() ? "2"
+                : tc0588.isChecked() ? "88" : "0");
+        sC.put("tc0588x", tc0588x.getText().toString());
+        sC.put("tc06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
+                : tc06b.isChecked() ? "3" : tc06c.isChecked() ? "4"
+                : tc0688.isChecked() ? "88" : "0");
+        sC.put("tc0688x", tc0688x.getText().toString());
+        sC.put("tc07", tc07a.isChecked() ? "1" : tc07b.isChecked() ? "2" : tc07c.isChecked() ? "3"
+                : tc07d.isChecked() ? "4" : tc07e.isChecked() ? "5" : tc07f.isChecked() ? "6"
+                : tc07g.isChecked() ? "7" : tc07h.isChecked() ? "8" : tc07i.isChecked() ? "9"
+                : tc07j.isChecked() ? "10" : tc07k.isChecked() ? "11" : tc07l.isChecked() ? "12"
+                : tc0788.isChecked() ? "88" : "0");
+        sC.put("tc0788x", tc0788x.getText().toString());
+
+        sC.put("tc08a", tc08aa.isChecked() ? "1" : tc08ab.isChecked() ? "2" : "0");
+        sC.put("tc08b", tc08ba.isChecked() ? "1" : tc08bb.isChecked() ? "2" : "0");
+        sC.put("tc08c", tc08ca.isChecked() ? "1" : tc08cb.isChecked() ? "2" : "0");
+        sC.put("tc08d", tc08da.isChecked() ? "1" : tc08db.isChecked() ? "2" : "0");
+        sC.put("tc08e", tc08ea.isChecked() ? "1" : tc08eb.isChecked() ? "2" : "0");
+        sC.put("tc08f", tc08fa.isChecked() ? "1" : tc08fb.isChecked() ? "2" : "0");
+        sC.put("tc08g", tc08ga.isChecked() ? "1" : tc08gb.isChecked() ? "2" : "0");
+        sC.put("tc08h", tc08ha.isChecked() ? "1" : tc08hb.isChecked() ? "2" : "0");
+        sC.put("tc08i", tc08ia.isChecked() ? "1" : tc08ib.isChecked() ? "2" : "0");
+        sC.put("tc08j", tc08ja.isChecked() ? "1" : tc08jb.isChecked() ? "2" : "0");
+        sC.put("tc08k", tc08ka.isChecked() ? "1" : tc08kb.isChecked() ? "2" : "0");
+        sC.put("tc08l", tc08la.isChecked() ? "1" : tc08lb.isChecked() ? "2" : "0");
+        sC.put("tc08m", tc08ma.isChecked() ? "1" : tc08mb.isChecked() ? "2" : "0");
+        sC.put("tc08n", tc08na.isChecked() ? "1" : tc08nb.isChecked() ? "2" : "0");
+        sC.put("tc08o", tc08oa.isChecked() ? "1" : tc08ob.isChecked() ? "2" : "0");
+        sC.put("tc08p", tc08pa.isChecked() ? "1" : tc08pb.isChecked() ? "2" : "0");
+        sC.put("tc08q", tc08qa.isChecked() ? "1" : tc08qb.isChecked() ? "2" : "0");
+        sC.put("tc08r", tc08ra.isChecked() ? "1" : tc08rb.isChecked() ? "2" : "0");
+
+        sC.put("tc09a", tc09aa.isChecked() ? "1" : tc09ab.isChecked() ? "2" : "0");
+        sC.put("tc09b", tc09ba.isChecked() ? "1" : tc09bb.isChecked() ? "2" : "0");
+        sC.put("tc09c", tc09ca.isChecked() ? "1" : tc09cb.isChecked() ? "2" : "0");
+        sC.put("tc09d", tc09da.isChecked() ? "1" : tc09db.isChecked() ? "2" : "0");
+        sC.put("tc09e", tc09ea.isChecked() ? "1" : tc09eb.isChecked() ? "2" : "0");
+        sC.put("tc09f", tc09fa.isChecked() ? "1" : tc09fb.isChecked() ? "2" : "0");
+        sC.put("tc09g", tc09ga.isChecked() ? "1" : tc09gb.isChecked() ? "2" : "0");
+        sC.put("tc09h", tc09ha.isChecked() ? "1" : tc09hb.isChecked() ? "2" : "0");
+        sC.put("tc09i", tc09ia.isChecked() ? "1" : tc09ib.isChecked() ? "2" : "0");
+
+        sC.put("tc10", tc10a.isChecked() ? "1" : tc10b.isChecked() ? "2" : "0");
+        sC.put("tc11", tc11a.isChecked() ? "1" : tc11b.isChecked() ? "2" : "0");
+        sC.put("tc12", tc12a.isChecked() ? "1" : tc12b.isChecked() ? "2"
+                : tc12888.isChecked() ? "888" : "0");
+        sC.put("tc13", tc13a.isChecked() ? "1" : tc13b.isChecked() ? "2" : "0");
+
+        sC.put("tc14a", tc14a.getText().toString());
+        sC.put("tc14b", tc14b.getText().toString());
+        sC.put("tc14c", tc14c.getText().toString());
+        sC.put("tc14d", tc14d.getText().toString());
+        sC.put("tc14e", tc14e.getText().toString());
+        sC.put("tc14f", tc14f.getText().toString());
+
+        sC.put("tc15", tc15a.isChecked() ? "1" : tc15b.isChecked() ? "2"
+                : tc15888.isChecked() ? "888" : "0");
+
+        sC.put("tc16", tc16a.isChecked() ? "1" : tc16b.isChecked() ? "2" : tc16c.isChecked() ? "3"
+                : tc16d.isChecked() ? "4" : tc16e.isChecked() ? "5" : tc16f.isChecked() ? "6"
+                : tc16g.isChecked() ? "7" : tc16h.isChecked() ? "8" : tc1688.isChecked() ? "88"
+                : "0");
+        sC.put("tc1688x", tc1688x.getText().toString());
+
+        sC.put("tc17", tc17888.isChecked() ? "888" : tc17.getText().toString());
+        sC.put("tc18", tc18a.isChecked() ? "1" : tc18b.isChecked() ? "2"
+                : "0");
+        sC.put("tc19", tc19.getText().toString());
+        sC.put("tc20", tc20a.isChecked() ? "1" : tc20b.isChecked() ? "2"
+                : "0");
+        sC.put("tc21", tc21.getText().toString());
+
+        //        MainApp.fc.setROW_sb(String.valueOf(sc));
+    }
 
 }

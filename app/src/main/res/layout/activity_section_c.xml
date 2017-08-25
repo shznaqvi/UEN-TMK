@@ -1565,21 +1565,13 @@
                     android:text="@string/no" />
 
                 <RadioButton
-                    android:id="@+id/tc1288"
+                    android:id="@+id/tc12888"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/other" />
+                    android:text="@string/dontkn" />
 
             </RadioGroup>
-
-            <EditText
-                android:id="@+id/tc1288x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:inputType="textCapWords"
-                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -1734,6 +1726,13 @@
                 android:layout_weight="1"
                 android:text="@string/no" />
 
+            <RadioButton
+                android:id="@+id/tc15888"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/dontkn" />
+
         </RadioGroup>
 
         <TextView
@@ -1829,6 +1828,13 @@
             android:digits="0123456789"
             android:inputType="number"
             android:maxLength="6" />
+
+        <CheckBox
+            android:id="@+id/tc17888"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/dontkn" />
 
         <TextView
             android:layout_width="match_parent"

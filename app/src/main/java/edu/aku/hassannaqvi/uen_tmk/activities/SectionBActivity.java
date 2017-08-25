@@ -220,6 +220,9 @@ public class SectionBActivity extends Activity {
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
                 : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : "0");
+
+        //        MainApp.fc.setROW_sb(String.valueOf(sB));
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
 }
