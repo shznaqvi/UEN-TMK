@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -281,7 +281,7 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.checkDSSID)
     Button checkDSSID;
 
-    Collection<MembersContract> members;
+    Collection<MemberContract> members;
     DatabaseHelper db;
 
     Boolean isNew = false;
@@ -499,7 +499,7 @@ public class SectionAActivity extends Activity {
             members = db.getMembersByDSS(dca03.getText().toString().toUpperCase());
             if (members.size() > 0) {
                 int count = 0;
-                for (MembersContract m : members) {
+                for (MemberContract m : members) {
                     member += (++count) + ")\t " + m.getName() + " \t- \t" +
                             (m.getMember_type().equals("mw") ? "(Married Women)" :
                                     m.getMember_type().equals("h") ? "(Husband)" : "(Child)") + "\n";
@@ -542,9 +542,9 @@ public class SectionAActivity extends Activity {
             if (members.size() != 0) {
 
 
-                for (MembersContract ec : members) {
+                for (MemberContract ec : members) {
 
-                    MainApp.familyMembersList.add(new MembersContract(ec));
+                    MainApp.familyMembersList.add(new MemberContract(ec));
                 }
 
                 Toast.makeText(this, "Members Found", Toast.LENGTH_LONG).show();
@@ -589,8 +589,8 @@ public class SectionAActivity extends Activity {
 
                 members = db.getMembersByDSS(dca03.getText().toString().toUpperCase());
                 if (members.size() != 0) {
-                    for (MembersContract ec : members) {
-                        MainApp.familyMembersList.add(new MembersContract(ec));
+                    for (MemberContract ec : members) {
+                        MainApp.familyMembersList.add(new MemberContract(ec));
                     }
                 }
 
