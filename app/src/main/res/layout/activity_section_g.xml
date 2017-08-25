@@ -69,6 +69,12 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrptg02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -115,13 +121,21 @@
                 android:text="@string/tg02d" />
 
             <RadioButton
-                android:id="@+id/tg02888"
+                android:id="@+id/tg0288"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                android:text="@string/others" />
 
         </RadioGroup>
+
+            <EditText
+                android:id="@+id/tg0288x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:inputType="textCapWords"
+                android:text="@string/others" />
 
 
         <TextView
@@ -134,48 +148,42 @@
             android:textColor="@android:color/white" />
 
 
-        <RadioGroup
-            android:id="@+id/tg03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tg03a" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tg03b" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tg03c" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tg03d" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tg03e" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/tg03f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -183,7 +191,7 @@
                 android:text="@string/tg03f" />
 
 
-        </RadioGroup>
+        </LinearLayout>
 
 
 

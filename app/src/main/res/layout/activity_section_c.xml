@@ -1860,7 +1860,13 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrptc19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -1879,6 +1885,8 @@
             android:hint="@string/tc19"
             android:inputType="number"
             android:maxLength="2" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1910,7 +1918,13 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrptc21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -1928,6 +1942,8 @@
             android:hint="@string/tc21"
             android:inputType="number"
             android:maxLength="2" />
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

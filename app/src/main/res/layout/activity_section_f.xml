@@ -245,7 +245,7 @@
             android:textColor="@android:color/white" />
 
         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-            android:id="@+id/tf07d"
+            android:id="@+id/tf06"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
