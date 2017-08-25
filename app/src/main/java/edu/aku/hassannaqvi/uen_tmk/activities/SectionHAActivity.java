@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import edu.aku.hassannaqvi.uen_tmk.R;
 
-public class SectionGBActivity extends Activity {
+public class SectionHAActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_gb);
+        setContentView(R.layout.activity_section_ga);
     }
 }

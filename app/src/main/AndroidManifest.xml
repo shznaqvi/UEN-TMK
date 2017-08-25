@@ -58,9 +58,9 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".FormsList" />
-        <activity android:name=".activities.SectionEActivity" />
-        <activity android:name=".activities.SectionIActivity" />
-        <activity android:name=".activities.SectionKActivity" />
+        <activity android:name=".activities.SectionCActivity" />
+        <activity android:name=".activities.SectionJActivity" />
+        <activity android:name=".activities.SectionLActivity" />
         <activity android:name=".activities.SectionBActivity"></activity>
     </application>
 
