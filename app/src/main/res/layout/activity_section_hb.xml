@@ -1502,6 +1502,11 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
+
+
+
+
+
         <EditText
             android:id="@+id/th23688x"
             android:layout_width="match_parent"
