@@ -8,6 +8,6 @@ public class SectionLActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_k);
+        setContentView(R.layout.activity_section_l);
     }
 }

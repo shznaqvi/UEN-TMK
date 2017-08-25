@@ -10,6 +10,6 @@ public class SectionEActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mother_mortality);
+        setContentView(R.layout.activity_section_e);
     }
 }
