@@ -55,6 +55,9 @@
 
     <!-- Strings related to Sections Below -->
 
+  <string name="tbAge"> تاريخ پيدائش / عمر </string>
+  <string name="tbAge02"> تاريخ پيدائش / عمر </string>
+  <string name="tbdob01"> تاريخ پيدائش </string>
   <string name="tb01"> گھر ڀاتيءَ جو سريل نمبر </string>
   <string name="tb02"> نالو </string>
   <string name="tb03"> گھر جي سربراھ سان رشتو </string>

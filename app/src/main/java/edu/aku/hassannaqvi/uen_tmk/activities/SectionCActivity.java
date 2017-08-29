@@ -475,6 +475,49 @@ public class SectionCActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
+
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                MainApp.currentDeceasedCheck = 1;
+
+//                    MainApp.currentStatusCount -= 1;
+
+
+//                Intent secNext = new Intent(this, FamilyMembersActivity.class);
+//                startActivity(secNext);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
+
+    private boolean UpdateDB() {
+
+        /*DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateC();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+
+        return true;
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -577,4 +620,12 @@ public class SectionCActivity extends Activity {
         //        MainApp.fc.setROW_sb(String.valueOf(sc));
     }
 
+    public boolean formValidation() {
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+//        01
+
+
+        return true;
+    }
 }
