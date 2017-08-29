@@ -136,13 +136,65 @@
             android:layout_height="match_parent"
             android:text="@string/tj03" />
 
+        <RadioGroup
+            android:id="@+id/tj03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/tj03a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/min" />
+
+            <RadioButton
+                android:id="@+id/tj03b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/hour" />
+
+            <RadioButton
+                android:id="@+id/tj03c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/day" />
+
+            <RadioButton
+                android:id="@+id/tj03666"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tj03d" />
+
+            <RadioButton
+                android:id="@+id/tj03888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dkn" />
+
+
+        </RadioGroup>
+
 
         <EditText
             android:id="@+id/tj03m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/tj03m"
+            android:hint="@string/min"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <EditText
+            android:id="@+id/tj03h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:hint="@string/hour"
             android:inputType="number"
             android:maxLength="2"/>
 
@@ -151,25 +203,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/tj03d"
+            android:hint="@string/day"
             android:inputType="number"
             android:maxLength="2"/>
 
-        <EditText
-            android:id="@+id/tj03h"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:hint="@string/tj03h"
-            android:inputType="number"
-            android:maxLength="2"/>
-
-        <CheckBox
-            android:id="@+id/tj03888"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/tj03888" />
 
         <TextView
             android:layout_width="match_parent"
@@ -366,7 +403,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/tj0788" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/tj0788x"
@@ -452,7 +489,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/tj0888" />
+                android:text="@string/other" />
 
             <EditText
                 android:id="@+id/tj0888x"
@@ -529,39 +566,55 @@
                 android:layout_height="match_parent"
                 android:text="@string/tj11" />
 
-            <EditText
-                android:id="@+id/tj11m"
+            <RadioGroup
+                android:id="@+id/tj11"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/tj11m"
-                android:inputType="number"
-                android:maxLength="2"/>
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/tj11a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/day" />
+
+                <RadioButton
+                    android:id="@+id/tj11b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/month" />
+
+
+                <RadioButton
+                    android:id="@+id/tj11888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/dkn" />
+
+
+            </RadioGroup>
+
 
             <EditText
                 android:id="@+id/tj11d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:hint="@string/tj11d"
+                android:hint="@string/day"
                 android:inputType="number"
                 android:maxLength="2"/>
 
             <EditText
-                android:id="@+id/tj11h"
+                android:id="@+id/tj11m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:hint="@string/tj11h"
+                android:hint="@string/month"
                 android:inputType="number"
                 android:maxLength="2"/>
 
-            <CheckBox
-                android:id="@+id/tj11888"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tj11888" />
 
         </LinearLayout>
 
@@ -572,21 +625,52 @@
             android:layout_height="match_parent"
             android:text="@string/tj12" />
 
-        <EditText
-            android:id="@+id/tj12m"
+        <RadioGroup
+            android:id="@+id/tj12"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:hint="@string/tj12m"
-            android:inputType="number"
-            android:maxLength="2"/>
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/tj12a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/day" />
+
+            <RadioButton
+                android:id="@+id/tj12b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/month" />
+
+
+            <RadioButton
+                android:id="@+id/tj12888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dkn" />
+
+
+        </RadioGroup>
+
 
         <EditText
             android:id="@+id/tj12d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/tj12d"
+            android:hint="@string/day"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <EditText
+            android:id="@+id/tj12m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:hint="@string/month"
             android:inputType="number"
             android:maxLength="2"/>
 
@@ -597,21 +681,52 @@
             android:layout_height="match_parent"
             android:text="@string/tj13" />
 
-        <EditText
-            android:id="@+id/tj13m"
+        <RadioGroup
+            android:id="@+id/tj13"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:hint="@string/tj13m"
-            android:inputType="number"
-            android:maxLength="2"/>
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/tj13a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/day" />
+
+            <RadioButton
+                android:id="@+id/tj13b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/month" />
+
+
+            <RadioButton
+                android:id="@+id/tj13c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tj13c" />
+
+
+        </RadioGroup>
+
 
         <EditText
             android:id="@+id/tj13d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/tj13d"
+            android:hint="@string/day"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <EditText
+            android:id="@+id/tj13m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:hint="@string/month"
             android:inputType="number"
             android:maxLength="2"/>
 
@@ -716,7 +831,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/tj1488" />
+                android:text="@string/other" />
 
         </RadioGroup>
         <EditText
