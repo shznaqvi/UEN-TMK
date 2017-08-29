@@ -51,6 +51,8 @@
   <string name="day"> ڏينهن </string>
   <string name="month"> مهينو </string>
   <string name="year"> سال </string>
+  <string name="hour"> ڪلاڪ </string>
+  <string name="min"> منٽ</string>
   <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
 
     <!-- Strings related to Sections Below -->
@@ -575,13 +577,17 @@
   <string name="ti03a"> ھا، ڪارڊ ڏٺو </string>
   <string name="ti03b"> ھا، ڪارڊ نه ڏٺو </string>
   <string name="ti03c"> ڪارڊ موجود نه آھي </string>
-  <string name="cardrecall"> Vaccine Card Reported by care taker</string>
+  <string name="card"> Vaccine Card </string>
+  <string name="recall">Reported by care taker</string>
   <string name="place"> Place of Vaccine </string>
-  <string name="place1"> Dispensary </string>
-  <string name="place2"> BHU 3 RHC </string>
-  <string name="place3"> THQ 5 DHQ </string>
-  <string name="place4"> Private Clinic </string>
-  <string name="place5"> Private hospital </string>
+  <string name="place01"> Dispensary </string>
+  <string name="place02"> BHU </string>
+  <string name="place03">  RHC </string>
+  <string name="place04"> THQ </string>
+  <string name="place05"> DHQ </string>
+  <string name="place06"> Private Clinic </string>
+  <string name="place07"> Private hospital </string>
+  <string name="place08"> Home </string>
   <string name="date"> Date of Immunization </string>
   <string name="atbirth"> At Birth </string>
   <string name="bcg"> BCG </string>
@@ -599,9 +605,9 @@
   <string name="penta3"> Penta-3 (Pentavalent 3 (DPTHepBHib) </string>
   <string name="pcv3"> PCV 3 (Pneumococcal Conjugate Vaccine 3rd dose) </string>
   <string name="ipv"> IPV (Injectable Polio Vaccine) </string>
-  <string name="at9months"> At age of 9 months </string>
+  <string name="at9month"> At age of 9 months </string>
   <string name="measles1"> Measles-1 (Measles vaccine first dose) </string>
-  <string name="at15months"> At age 15 months </string>
+  <string name="at15month"> At age 15 months </string>
   <string name="measles2"> Measels-2 (Measles vaccine second dose) </string>
   <string name="ti04"> ڇا (نالو) ڪڏھن به دستن جي بيماري کان بچاءُ لاءِ ٽڪا (Rotavirus) لڳرايا آھن؟ </string>
   <string name="ti05"> ڪيترا دفعه (نالو) کي دستن جي بيماري کان بچاءُ لاءِ ٽڪا (Rotavirus) لڳا آھن؟ </string>
@@ -618,7 +624,7 @@
   <string name="tj02h"> گھُٽي </string>
   <string name="tj02i"> سائي چانھ / ڪاڙھو </string>
   <string name="tj03"> (نالو) پيدائش کان پوءِ ڪيتري دير بعد ماءُ جي ٿڃ پيتي؟ </string>
-  <string name="tj03a"> ڪڏهن به ماءُ جي ٿڃ نه پياري آھي </string>
+  <string name="tj03d"> ڪڏهن به ماءُ جي ٿڃ نه پياري آھي </string>
   <string name="tj04"> ڇا توھان گھاٽو کير (ڪولسٽرم) خارج ڪيو جيڪو ڊليوري کان پوءِ جلدي ماءُ جي ڇاتي مان ايندو آھي؟ </string>
   <string name="tj05"> ٻار جي پيدائش کان پوءِ توھان اھو گھاٽو کير (ڪولسٽرم) ڇو ضايع ڪيو؟ </string>
   <string name="tj05a"> ماءُ بيمار ھئي </string>
@@ -654,7 +660,7 @@
   <string name="tj11"> (نالو) ڪيترو وقت صرف ماءُ جي ٿڃ (Exclusive Beastfeeding) پيتي؟ </string>
   <string name="tj12"> توھان (نالو) کي ڪيترن مھينن يا ڏينھن تائين ماءُ جو کير پياريوآھي؟ </string>
   <string name="tj13"> ڪهڙي عمر ۾ (نالو) کي توهان ٺوس/ نيم ٺوس غذائون ڏنيون؟ </string>
-  <string name="tj13a"> اڃا ڪونه ڏنيآھي </string>
+  <string name="tj13c"> اڃا ڪونه ڏني آھي </string>
   <string name="tj14"> (نالو) کي توهان ڪهڙيون ٺوس/ نيم ٺوس غذائون ڏنيون؟ </string>
   <string name="tj14a"> ميوا </string>
   <string name="tj14b"> سبزيون </string>
