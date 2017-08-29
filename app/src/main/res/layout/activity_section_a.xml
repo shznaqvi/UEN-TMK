@@ -111,14 +111,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/dcyes" />
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/dca0402"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/dcno" />
+                android:text="@string/no" />
 
             <RadioButton
                 android:id="@+id/dca0403"
