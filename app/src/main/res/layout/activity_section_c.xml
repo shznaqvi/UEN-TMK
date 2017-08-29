@@ -577,17 +577,6 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/tc06c" />
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/pink_100"
-                android:gravity="center"
-                android:text="@string/tc0602"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
-
             <RadioButton
                 android:id="@+id/tc06d"
                 android:layout_width="match_parent"
@@ -1569,7 +1558,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/dontkn" />
+                    android:text="@string/dkn" />
 
             </RadioGroup>
 
@@ -1731,7 +1720,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/dontkn" />
+                android:text="@string/dkn" />
 
         </RadioGroup>
 
@@ -1834,7 +1823,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/dontkn" />
+            android:text="@string/dkn" />
 
         <TextView
             android:layout_width="match_parent"

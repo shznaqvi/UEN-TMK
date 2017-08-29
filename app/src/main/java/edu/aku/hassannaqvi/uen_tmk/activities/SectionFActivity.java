@@ -264,7 +264,7 @@ public class SectionFActivity extends Activity {
         }
 
         if (tf0788.isChecked() && tf0788x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf07) + " - " + getString(R.string.others), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf07) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             tf0788x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "tf0788x: This data is Required!");
             return false;

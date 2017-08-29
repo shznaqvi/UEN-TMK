@@ -203,7 +203,7 @@ public class SectionEActivity extends Activity {
         }
 
         if (te0588.isChecked() && te0588x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.te05) + " - " + getString(R.string.others), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.te05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             te0588x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "te0588x: This data is Required!");
             return false;

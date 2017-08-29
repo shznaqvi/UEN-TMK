@@ -6,10 +6,10 @@ import android.database.Cursor;
  * Created by ali.azaz on 5/8/2017.
  */
 
-public class MothersLst {
+public class MotherLst {
     String child_name, child_id, mother_name, mother_id, date_of_birth, serial, serialm, agey, agem, aged, gender;
 
-    public MothersLst(MothersLst m) {
+    public MotherLst(MotherLst m) {
         this.child_name = m.child_name;
         this.child_id = m.child_id;
         this.mother_name = m.mother_name;
@@ -23,7 +23,7 @@ public class MothersLst {
         this.gender = m.gender;
     }
 
-    public MothersLst() {
+    public MotherLst() {
     }
 
     public String getChild_name() {
@@ -70,7 +70,7 @@ public class MothersLst {
         return gender;
     }
 
-    public MothersLst Hydrate(Cursor cursor) {
+    public MotherLst Hydrate(Cursor cursor) {
         this.child_name = cursor.getString(cursor.getColumnIndex("child_name"));
         this.child_id = cursor.getString(cursor.getColumnIndex("child_id"));
         this.mother_name = cursor.getString(cursor.getColumnIndex("mother_name"));

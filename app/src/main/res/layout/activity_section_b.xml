@@ -293,7 +293,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/dcAge"
+            android:text="@string/tbAge"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -372,7 +372,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="12dp"
                 android:background="@color/pink_100"
-                android:text="@string/tb08y"
+                android:text="@string/year"
                 android:textColor="@color/colorPrimaryDark" />
 
             <EditText
@@ -389,7 +389,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="12dp"
                 android:background="@color/pink_100"
-                android:text="@string/tb08m"
+                android:text="@string/month"
                 android:textColor="@color/colorPrimaryDark" />
 
             <EditText

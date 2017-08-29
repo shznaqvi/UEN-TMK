@@ -28,7 +28,6 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.dss_census.R;
 import edu.aku.hassannaqvi.uen_tmk.FormsList;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;

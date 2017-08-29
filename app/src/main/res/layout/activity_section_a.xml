@@ -8,7 +8,7 @@
     android:scrollbars="horizontal"
     tools:context="edu.aku.hassannaqvi.uen_tmk.activities.SectionAActivity">
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
@@ -216,7 +216,7 @@
 
                 </RadioGroup>
 
-                <!--<TextView
+                &lt;!&ndash;<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -248,7 +248,7 @@
                         android:text="@string/dca050202" />
 
                 </RadioGroup>
--->
+&ndash;&gt;
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1218,7 +1218,7 @@
 
         </LinearLayout>
 
-        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+        &lt;!&ndash;  = = = = =  END OF FORM FIELDS  = = = = = &ndash;&gt;
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1237,7 +1237,7 @@
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e" />
 
-            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+            &lt;!&ndash;'onClick' for btn_End will NOT change and always call 'endInterview'&ndash;&gt;
 
             <Button
                 android:id="@+id/btn_Continue"
@@ -1248,7 +1248,7 @@
                 android:onClick="startInterview"
                 android:text="@string/start_interview"
                 android:textColor="#1ed61e" />
-            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+            &lt;!&ndash;'onClick' for btn_Continue will call next section form e.g.: openSection2&ndash;&gt;
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
 </ScrollView>

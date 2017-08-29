@@ -486,7 +486,7 @@ public class SectionMembersActivity extends Activity implements View.OnKeyListen
             }
         }*/
 
-        // ====================== Education Level Others ================
+        // ====================== Education Level other ================
         dcbe.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -499,7 +499,7 @@ public class SectionMembersActivity extends Activity implements View.OnKeyListen
             }
         });
 
-        //===================== Occupation Others =================
+        //===================== Occupation other =================
         dcbf.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

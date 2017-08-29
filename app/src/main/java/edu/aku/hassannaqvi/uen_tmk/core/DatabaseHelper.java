@@ -33,7 +33,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract.MotherTB;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract.singleUser;
-import edu.aku.hassannaqvi.uen_tmk.otherClasses.MothersLst;
+import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
 import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract.singleIm;
 
@@ -513,12 +513,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return formList;
     }
 
-    public Collection<MothersLst> getMotherByUUID(String uuid) {
+    public Collection<MotherLst> getMotherByUUID(String uuid) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
-        Collection<MothersLst> memList = new ArrayList<>();
+        Collection<MotherLst> memList = new ArrayList<>();
         try {
 
 //            c = db.rawQuery(SQL_SELECT_MOTHER_BY_CHILD, new String[]{"c", "('1', '2')", uuid});
@@ -526,7 +526,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             while (c.moveToNext()) {
 
-                MothersLst mc = new MothersLst();
+                MotherLst mc = new MotherLst();
                 memList.add(mc.Hydrate(c));
             }
         } finally {
@@ -836,7 +836,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateMothers(String id) {
+    public void updateMother(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
