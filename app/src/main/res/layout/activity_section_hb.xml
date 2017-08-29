@@ -264,14 +264,14 @@
             android:id="@+id/thb2088"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/others" />
+            android:text="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -281,7 +281,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
         <TextView
@@ -677,7 +677,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/others" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -686,7 +686,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -696,7 +696,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
         <TextView
@@ -1207,7 +1207,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/others" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -1216,7 +1216,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -1226,7 +1226,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
         <TextView
@@ -1491,14 +1491,14 @@
             android:id="@+id/thb23688"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/others" />
+            android:text="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -1509,7 +1509,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
 

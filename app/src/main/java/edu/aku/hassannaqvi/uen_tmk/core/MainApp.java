@@ -26,7 +26,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
-import edu.aku.hassannaqvi.uen_tmk.otherClasses.MothersLst;
+import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -97,7 +97,7 @@ public class MainApp extends Application {
     public static int totalChild = 0;
     public static int memFlag = 0;
     public static List<Integer> memClicked;
-    public static ArrayList<MothersLst> lstMothers;
+    public static ArrayList<MotherLst> lstMother;
     public static int position = 0;
     public static double selectedCHILD = 24;
     public static int selectedPos = -1;

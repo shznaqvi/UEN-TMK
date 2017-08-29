@@ -393,7 +393,7 @@ public class SectionAActivity extends Activity {
             }
         });
 */
-        //=============== Others Occupation ==============
+        //=============== other Occupation ==============
 
 /*        dca0505.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -407,7 +407,7 @@ public class SectionAActivity extends Activity {
             }
         });*/
 
-        //=============== Others Occupation ==============
+        //=============== other Occupation ==============
 
 /*        dca0604.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

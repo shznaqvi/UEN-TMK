@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/others" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/others" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -177,7 +177,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/others" />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -261,7 +261,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -681,7 +681,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -690,7 +690,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
 
@@ -1214,7 +1214,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/others"
+            android:text="@string/other"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -1224,7 +1224,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789 "
-            android:hint="@string/others"
+            android:hint="@string/other"
             android:inputType="textCapWords" />
 
 

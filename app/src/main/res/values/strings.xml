@@ -57,6 +57,46 @@
 
     <!-- Strings related to Sections Below -->
 
+  <string name="ta01"> Cluster Number </string>
+  <string name="ta02"> Cluster type </string>
+  <string name="ta03"> Name of Province </string>
+  <string name="ta03a"> Sindh </string>
+  <string name="ta04"> Name of District </string>
+  <string name="ta04a"> Tando Mohammad Khan </string>
+  <string name="ta05"> Name of Tehsil/Taluka </string>
+  <string name="ta05a"> Tando Mohammad Khan </string>
+  <string name="ta05b"> Tando Ghulam Hyder </string>
+  <string name="ta05c"> Bulri Shah Karim </string>
+  <string name="ta06"> Name of Union Council </string>
+  <string name="ta06a"> Lakhat </string>
+  <string name="ta06b"> Shaikh Bhirkio </string>
+  <string name="ta06c"> Tando Saeendad </string>
+  <string name="ta06d"> TMK 01 </string>
+  <string name="ta06e"> . TMK 02 </string>
+  <string name="ta06f"> TMK 03 </string>
+  <string name="ta06g"> Dando </string>
+  <string name="ta06h"> Ghulam Shah Bagrani </string>
+  <string name="ta06i"> Nazarpur </string>
+  <string name="ta06j"> Tando Ghulam Hyder </string>
+  <string name="ta06k"> Allah Yar Turk </string>
+  <string name="ta06l"> Jinhan Soomro </string>
+  <string name="ta06m"> Bulri Shah Karim </string>
+  <string name="ta06n"> Saeed Khan Lund </string>
+  <string name="ta06o"> Mullakatiar </string>
+  <string name="ta06p"> Saeed Matto </string>
+  <string name="ta06q"> Saeedpur </string>
+  <string name="ta07"> Location </string>
+  <string name="ta07a"> Urban </string>
+  <string name="ta07b"> Rural </string>
+  <string name="ta07c"> Mixed </string>
+  <string name="ta08"> House/ khandan number </string>
+  <string name="ta08a"> House No </string>
+  <string name="ta08b"> Khandan number </string>
+  <string name="ta08c"> If neither of above then Gas or electricity bill No </string>
+  <string name="ta09"> Village </string>
+  <string name="ta10"> Block/mohalla </string>
+  <string name="ta11"> Street </string>
+
   <string name="tbAge"> تاريخ پيدائش / عمر </string>
   <string name="tbAge02"> تاريخ پيدائش / عمر </string>
   <string name="tbdob01"> تاريخ پيدائش </string>
@@ -109,6 +149,9 @@
   <string name="tb13"> گھر ۾ مڪمل شادي شده عورتن جو تعداد </string>
   <string name="tb14"> گھر ۾ پنجن سالن کان گھٽ عمر وارن ٻارن جو تعداد </string>
   <string name="tcheading"> گھر جي سماجي ۽ اقتصادي معلومات </string>
+  <string name="tc0101"> Natural floor </string>
+  <string name="tc0102"> Natural floor </string>
+  <string name="tc0103"> Finished floor </string>
   <string name="tc01"> فرش ڪهڙي قسم جو آهي </string>
   <string name="tc01a"> زمين / واري / مٽي </string>
   <string name="tc01b"> ڇيڻو </string>
@@ -122,6 +165,9 @@
   <string name="tc01j"> سرن جو </string>
   <string name="tc01k"> چتائي </string>
   <string name="tc01l"> ماربل </string>
+  <string name="tc0201"> Natural roof </string>
+  <string name="tc0202"> Rudimentary roofing </string>
+  <string name="tc0203"> Finished roofing </string>
   <string name="tc02"> ڇت ڪهڙي قسم جي آهي
     </string>
   <string name="tc02a"> ڇت ڪونهي </string>
@@ -139,6 +185,9 @@
   <string name="tc02m"> ٽائلس جي </string>
   <string name="tc02n"> ڇت سازي </string>
   <string name="tc02o"> سرن جي </string>
+  <string name="tc0301"> Natural Walls </string>
+  <string name="tc0302"> Rudimentary Walls </string>
+  <string name="tc0303"> Finished Walls </string>
   <string name="tc03"> ڀتيون ڪهڙي قسم جون آهن؟ </string>
   <string name="tc03a"> ڀتيون نه آھن </string>
   <string name="tc03b"> ڪکا / گاه. </string>
@@ -162,6 +211,7 @@
   <string name="tc05"> اوهان جنهن گهر ۾ رهو ٿا اها ڪنهن جي ملڪيت آهي؟ </string>
   <string name="tc05a"> ذاتي </string>
   <string name="tc05b"> ڪرائي وارو </string>
+  <string name="tc0601"> In the House </string>
   <string name="tc06"> ڇا کاڌو اڪثر ڪري گھر جي اندر، الڳ جاءِ تي يا گھر کان ٻاھر پچايو ويندو آھي؟ </string>
   <string name="tc06a"> گھر جي اندر الڳ ڪمرو آھي </string>
   <string name="tc06b"> گھر جي اندر ڪنهن ٻي جاءِ تي </string>
