@@ -95,6 +95,8 @@
   <string name="tb10h"> Business </string>
   <string name="tb10i"> Student </string>
   <string name="tb10j"> Unemployed </string>
+  <string name="tb10k"> Retired </string>
+  <string name="tb10l"> Teacher </string>
   <string name="tb10999"> Not Applicable </string>
   <string name="tb11"> ازدواجي حيثيت </string>
   <string name="tb11a"> Married </string>
