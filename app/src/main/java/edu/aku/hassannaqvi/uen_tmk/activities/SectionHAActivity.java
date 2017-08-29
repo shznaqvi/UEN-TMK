@@ -15,6 +15,8 @@ import butterknife.BindViews;
 
 public class SectionHAActivity extends Activity {
 
+
+
     @BindViews(R.id.tha01)
     RadioGroup tha01;
     @BindViews(R.id.tha01a)
