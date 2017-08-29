@@ -340,6 +340,20 @@
             android:layout_marginBottom="1dp"
             android:text="@string/tl08g" />
 
+        <CheckBox
+            android:id="@+id/tl08h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/tl08h" />
+
+        <CheckBox
+            android:id="@+id/tl08i"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/tl08i" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

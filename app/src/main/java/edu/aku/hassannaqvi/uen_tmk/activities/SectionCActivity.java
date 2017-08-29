@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionCActivity extends Activity {
 
@@ -467,6 +468,7 @@ public class SectionCActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
+        MainApp.endActivity(this, this);
     }
 
 

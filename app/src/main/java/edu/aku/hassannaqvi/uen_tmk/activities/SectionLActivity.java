@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionLActivity extends Activity {
 
@@ -86,6 +87,10 @@ public class SectionLActivity extends Activity {
     CheckBox tl08f;
     @BindView(R.id.tl08g)
     CheckBox tl08g;
+    @BindView(R.id.tl08h)
+    CheckBox tl08h;
+    @BindView(R.id.tl08i)
+    CheckBox tl08i;
     @BindView(R.id.tl09)
     RadioGroup tl09;
     @BindView(R.id.tl09a)
@@ -112,6 +117,7 @@ public class SectionLActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
+        MainApp.endActivity(this, this);
     }
 
     @OnClick(R.id.btn_Continue)
@@ -131,12 +137,34 @@ public class SectionLActivity extends Activity {
         sL.put("tl02", tl02a.isChecked() ? "1" : tl02b.isChecked() ? "2" : "0");
         sL.put("tl03", tl03a.isChecked() ? "1" : tl03b.isChecked() ? "2" : "0");
 
-        sL.put("t104a", tl04a.isChecked() ? "1" : "0");
-        sL.put("t104b", tl04b.isChecked() ? "2" : "0");
-        sL.put("t104c", tl04c.isChecked() ? "3" : "0");
-        sL.put("t104d", tl04d.isChecked() ? "4" : "0");
+        sL.put("tl04a", tl04a.isChecked() ? "1" : "0");
+        sL.put("tl04b", tl04b.isChecked() ? "2" : "0");
+        sL.put("tl04c", tl04c.isChecked() ? "3" : "0");
+        sL.put("tl04d", tl04d.isChecked() ? "4" : "0");
 
-//        MainApp.fc.setROW_sb(String.valueOf(sL));
+        sL.put("tl05", tl05a.isChecked() ? "1" : tl05b.isChecked() ? "2" : "0");
+        sL.put("tl06", tl06a.isChecked() ? "1" : tl06b.isChecked() ? "2" : "0");
+
+        sL.put("tl07a", tl07a.isChecked() ? "1" : "0");
+        sL.put("tl07b", tl07b.isChecked() ? "2" : "0");
+        sL.put("tl07c", tl07c.isChecked() ? "3" : "0");
+        sL.put("tl07d", tl07d.isChecked() ? "4" : "0");
+
+        sL.put("tl08a", tl08a.isChecked() ? "1" : "0");
+        sL.put("tl08b", tl08b.isChecked() ? "2" : "0");
+        sL.put("tl08c", tl08c.isChecked() ? "3" : "0");
+        sL.put("tl08d", tl08d.isChecked() ? "4" : "0");
+        sL.put("tl08e", tl08e.isChecked() ? "5" : "0");
+        sL.put("tl08f", tl08f.isChecked() ? "6" : "0");
+        sL.put("tl08g", tl08g.isChecked() ? "7" : "0");
+        sL.put("tl08h", tl08h.isChecked() ? "8" : "0");
+        sL.put("tl08i", tl08i.isChecked() ? "9" : "0");
+
+        sL.put("tl09", tl09a.isChecked() ? "1" : tl09b.isChecked() ? "2" : tl09c.isChecked() ? "3"
+                : tl09d.isChecked() ? "4" : tl0988.isChecked() ? "88" : "0");
+        sL.put("tl0988x", tl0988x.getText().toString());
+
+//        MainApp.fc.setROW_sl(String.valueOf(sL));
     }
 }
 
