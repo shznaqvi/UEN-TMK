@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionBActivity extends Activity {
+public class SectionBActivity extends AppCompatActivity {
 
     @BindView(R.id.app_header)
     TextView appHeader;
@@ -164,6 +164,8 @@ public class SectionBActivity extends Activity {
                 }
             }
         });
+
+        tb07.setManager(getSupportFragmentManager());
 
     }
 

@@ -63,7 +63,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/ti01c"
+                android:id="@+id/ti01888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -71,7 +71,13 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpti02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -81,40 +87,35 @@
             android:textColor="@android:color/white" />
 
 
-        <RadioGroup
-            android:id="@+id/ti02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ti02a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ti02a" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ti02b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ti02b" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ti02c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ti02c" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ti02d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ti02d" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ti0288"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,7 +123,7 @@
                 android:text="@string/other" />
 
 
-        </RadioGroup>
+
 
         <EditText
             android:id="@+id/ti0288x"
@@ -132,8 +133,16 @@
             android:hint="@string/other"
             android:inputType="textCapWords" />
 
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpti03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -169,6 +178,17 @@
         </RadioGroup>
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/atbirth"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -176,10 +196,11 @@
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
+
 
             <LinearLayout
                 android:id="@+id/fldGrpBcgM"
@@ -267,18 +288,22 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/bcgDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
 
             </LinearLayout>
+
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/bcgDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -343,17 +368,16 @@
 
                 <RadioButton
                     android:id="@+id/bcgPovh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/place08" />
 
 
             </RadioGroup>
 
-        </LinearLayout>
 
-        <TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -361,8 +385,8 @@
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -451,17 +475,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/opv0Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/opv0Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -535,11 +561,9 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
@@ -549,15 +573,15 @@
             tools:typeface="serif" />
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/opv1"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -646,17 +670,20 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/opv1Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/opv1Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -730,19 +757,16 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/penta1"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -831,17 +855,21 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/penta1Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
+
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/penta1Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
 
             <TextView
@@ -915,10 +943,7 @@
 
             </RadioGroup>
 
-
-        </LinearLayout>
-
-        <TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -926,8 +951,8 @@
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1016,17 +1041,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/pcv1Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/pcv1Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1100,11 +1127,9 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
@@ -1115,15 +1140,15 @@
 
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/opv2"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1212,17 +1237,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/opv2Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/opv2Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1295,20 +1322,16 @@
 
             </RadioGroup>
 
-
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/penta2"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1397,17 +1420,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/penta2Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/penta2Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1481,18 +1506,16 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
         <TextView
-                android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/pcv2"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1581,17 +1604,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/pcv2Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/pcv2Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1664,13 +1689,9 @@
 
             </RadioGroup>
 
-
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
@@ -1680,15 +1701,15 @@
             tools:typeface="serif" />
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/opv3"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1778,17 +1799,21 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/opv3Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/opv3Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -1861,20 +1886,16 @@
 
             </RadioGroup>
 
-
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/penta3"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -1963,17 +1984,21 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/penta3Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/penta3Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -2047,9 +2072,7 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
-        <TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -2057,8 +2080,8 @@
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -2147,17 +2170,21 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/pcv3Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
+
 
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/pcv3Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2231,19 +2258,16 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/ipv"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -2332,17 +2356,19 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/ipvDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/ipvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2415,12 +2441,8 @@
 
             </RadioGroup>
 
-
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
@@ -2431,15 +2453,15 @@
             tools:typeface="serif" />
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/measles1"
             android:textAlignment="center" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100">
 
@@ -2528,18 +2550,20 @@
 
                 </RadioGroup>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/measles1Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
 
             </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/measles1Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2613,12 +2637,9 @@
             </RadioGroup>
 
 
-        </LinearLayout>
-
-
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
@@ -2628,8 +2649,8 @@
             tools:typeface="serif" />
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/measles2"
             android:textAlignment="center" />
@@ -2684,6 +2705,60 @@
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"></View>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrpmeasles2C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:text="@string/card"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/measles2C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/measles2C01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/measles2C02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/measles2Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2756,63 +2831,7 @@
 
             </RadioGroup>
 
-
-            <LinearLayout
-                android:id="@+id/fldGrpmeasles2C"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/measles2C"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/measles2C01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/measles2C02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/measles2Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/date"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <TextView
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -2850,8 +2869,14 @@
 
         </RadioGroup>
 
+            <LinearLayout
+                android:id="@+id/fldGrpti05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -2874,6 +2899,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:text="@string/dkn" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

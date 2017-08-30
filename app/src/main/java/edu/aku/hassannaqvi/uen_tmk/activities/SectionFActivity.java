@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -20,7 +20,7 @@ import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionFActivity extends Activity {
+public class SectionFActivity extends AppCompatActivity {
 
     private static final String TAG = SectionFActivity.class.getSimpleName();
 
@@ -83,6 +83,8 @@ public class SectionFActivity extends Activity {
         setContentView(R.layout.activity_section_f);
         ButterKnife.bind(this);
 
+        tf06.setManager(getSupportFragmentManager());
+
     }
 
     @OnClick(R.id.btn_End)
@@ -110,7 +112,7 @@ public class SectionFActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
+                Intent secNext = new Intent(this, SectionGActivity.class);
                 startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

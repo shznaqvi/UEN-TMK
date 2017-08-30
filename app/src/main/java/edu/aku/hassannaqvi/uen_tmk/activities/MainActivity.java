@@ -233,7 +233,7 @@ public class MainActivity extends Activity {
     }
 
     public void openB(View v) {
-        /*Intent iB = new Intent(this, SectionMembersActivity.class);
+        /*Intent iB = new Intent(this, SectionIActivity.class);
         startActivity(iB);*/
     }
 

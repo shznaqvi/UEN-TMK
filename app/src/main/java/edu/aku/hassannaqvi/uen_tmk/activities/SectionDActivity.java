@@ -170,7 +170,7 @@ public class SectionDActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.td01), Toast.LENGTH_SHORT).show();
             td01b.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tg01: This data is Required!");
+            Log.i(TAG, "td01: This data is Required!");
             return false;
         } else {
             td01b.setError(null);
