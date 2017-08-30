@@ -27,8 +27,8 @@ public class SectionHAActivity extends Activity {
     RadioButton tha01a;
     @BindView(R.id.tha01b)
     RadioButton tha01b;
-    @BindView(R.id.tha0188)
-    RadioButton tha0188;
+    @BindView(R.id.tha01888)
+    RadioButton tha01888;
     @BindView(R.id.tha02)
     EditText tha02;
     @BindView(R.id.tha03)
@@ -41,16 +41,16 @@ public class SectionHAActivity extends Activity {
     RadioButton tha05a;
     @BindView(R.id.tha05b)
     RadioButton tha05b;
-    @BindView(R.id.tha0588)
-    RadioButton tha0588;
+    @BindView(R.id.tha05888)
+    RadioButton tha05888;
     @BindView(R.id.tha06)
     RadioGroup tha06;
     @BindView(R.id.tha06a)
     RadioButton tha06a;
     @BindView(R.id.tha06b)
     RadioButton tha06b;
-    @BindView(R.id.tha0688)
-    RadioButton tha0688;
+    @BindView(R.id.tha06888)
+    RadioButton tha06888;
     @BindView(R.id.tha07a)
     CheckBox tha07a;
     @BindView(R.id.tha07b)
@@ -819,13 +819,13 @@ public class SectionHAActivity extends Activity {
 
         JSONObject sHA = new JSONObject();
 
-        sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha0188.isChecked() ? "888" : "0");
+        sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
         sHA.put("tha02", tha02.getText().toString());
         sHA.put("tha03", tha03.getText().toString());
         sHA.put("tha04", tha04.getText().toString());
 
-        sHA.put("tha05", tha05a.isChecked() ? "1" : tha05b.isChecked() ? "2" : tha0588.isChecked() ? "888" : "0");
-        sHA.put("tha06", tha06a.isChecked() ? "1" : tha06b.isChecked() ? "2" : tha0688.isChecked() ? "888" : "0");
+        sHA.put("tha05", tha05a.isChecked() ? "1" : tha05b.isChecked() ? "2" : tha05888.isChecked() ? "888" : "0");
+        sHA.put("tha06", tha06a.isChecked() ? "1" : tha06b.isChecked() ? "2" : tha06888.isChecked() ? "888" : "0");
         sHA.put("tha07a", tha07a.isChecked() ? "1" : "0");
         sHA.put("tha07b", tha07b.isChecked() ? "1" : "0");
         sHA.put("tha07c", tha07c.isChecked() ? "1" : "0");
