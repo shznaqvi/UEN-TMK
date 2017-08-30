@@ -272,7 +272,7 @@
             android:textColor="@android:color/white" />
 
         <EditText
-            android:id="@+id/tha018"
+            android:id="@+id/tha08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
@@ -787,6 +787,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tha19b" />
+
+        <CheckBox
+            android:id="@+id/tha19c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tha19c" />
 
         <CheckBox
             android:id="@+id/tha19d"

@@ -7,12 +7,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionHAActivity extends Activity {
-
 
     @BindView(R.id.tha01)
     RadioGroup tha01;
@@ -64,8 +67,8 @@ public class SectionHAActivity extends Activity {
     CheckBox tha0788;
     @BindView(R.id.tha0788x)
     EditText tha0788x;
-    @BindView(R.id.tha018)
-    EditText tha018;
+    @BindView(R.id.tha08)
+    EditText tha08;
     @BindView(R.id.tha09a)
     CheckBox tha09a;
     @BindView(R.id.tha09b)
@@ -182,6 +185,8 @@ public class SectionHAActivity extends Activity {
     CheckBox tha19a;
     @BindView(R.id.tha19b)
     CheckBox tha19b;
+    @BindView(R.id.tha19c)
+    CheckBox tha19c;
     @BindView(R.id.tha19d)
     CheckBox tha19d;
     @BindView(R.id.tha19e)
@@ -322,6 +327,148 @@ public class SectionHAActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_ha);
         ButterKnife.bind(this);
+    }
+
+    private void SaveDraft() throws JSONException {
+
+        JSONObject sHA = new JSONObject();
+
+        sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha0188.isChecked() ? "888" : "0");
+        sHA.put("tha02", tha02.getText().toString());
+        sHA.put("tha03", tha03.getText().toString());
+        sHA.put("tha04", tha04.getText().toString());
+
+        sHA.put("tha05", tha05a.isChecked() ? "1" : tha05b.isChecked() ? "2" : tha0588.isChecked() ? "888" : "0");
+        sHA.put("tha06", tha06a.isChecked() ? "1" : tha06b.isChecked() ? "2" : tha0688.isChecked() ? "888" : "0");
+        sHA.put("tha07a", tha07a.isChecked() ? "1" : "0");
+        sHA.put("tha07b", tha07b.isChecked() ? "1" : "0");
+        sHA.put("tha07c", tha07c.isChecked() ? "1" : "0");
+        sHA.put("tha07d", tha07d.isChecked() ? "1" : "0");
+        sHA.put("tha07e", tha07e.isChecked() ? "1" : "0");
+        sHA.put("tha07f", tha07f.isChecked() ? "1" : "0");
+        sHA.put("tha07g", tha07g.isChecked() ? "1" : "0");
+        sHA.put("tha07h", tha07h.isChecked() ? "1" : "0");
+        sHA.put("tha0788", tha0788.isChecked() ? "1" : "0");
+        sHA.put("tha0788x", tha0788x.getText().toString());
+
+        sHA.put("tha08", tha08.getText().toString());
+
+        sHA.put("tha09a", tha09a.isChecked() ? "1" : "0");
+        sHA.put("tha09b", tha09b.isChecked() ? "1" : "0");
+        sHA.put("tha09c", tha09c.isChecked() ? "1" : "0");
+        sHA.put("tha09d", tha09d.isChecked() ? "1" : "0");
+
+
+        sHA.put("tha10", tha10a.isChecked() ? "1" : tha10b.isChecked() ? "2"
+                : tha10c.isChecked() ? "3"
+                : tha10d.isChecked() ? "4"
+                : tha10e.isChecked() ? "5"
+                : tha10f.isChecked() ? "6"
+                : tha10g.isChecked() ? "7"
+                : tha10h.isChecked() ? "8"
+                : tha10i.isChecked() ? "9"
+                : tha10j.isChecked() ? "10"
+                : tha10k.isChecked() ? "11"
+                : "0");
+
+
+        sHA.put("tha11a", tha11a.isChecked() ? "1" : "0");
+        sHA.put("tha11b", tha11b.isChecked() ? "1" : "0");
+        sHA.put("tha11c", tha11c.isChecked() ? "1" : "0");
+        sHA.put("tha11d", tha11d.isChecked() ? "1" : "0");
+        sHA.put("tha11e", tha11e.isChecked() ? "1" : "0");
+        sHA.put("tha11f", tha11f.isChecked() ? "1" : "0");
+        sHA.put("tha11g", tha11g.isChecked() ? "1" : "0");
+        sHA.put("tha11h", tha11h.isChecked() ? "1" : "0");
+        sHA.put("tha11i", tha11i.isChecked() ? "1" : "0");
+        sHA.put("tha11j", tha11j.isChecked() ? "1" : "0");
+
+        sHA.put("tha12", tha12a.isChecked() ? "1" : tha12b.isChecked() ? "2" : "0");
+        sHA.put("tha13", tha13a.isChecked() ? "1" : tha13b.isChecked() ? "2" : "0");
+
+        sHA.put("tha14", tha14a.isChecked() ? "1" : tha14b.isChecked() ? "2" : tha14c.isChecked() ? "3" : "0");
+        sHA.put("tha15", tha15a.isChecked() ? "1" : tha15b.isChecked() ? "2" : "0");
+        sHA.put("tha16", tha16a.isChecked() ? "1" : tha16b.isChecked() ? "2" : tha16c.isChecked() ? "3" : tha1688.isChecked() ? "888" : "0");
+
+        sHA.put("tha1688x", tha1688x.getText().toString());
+
+
+        sHA.put("tha17", tha17a.isChecked() ? "1" : tha17b.isChecked() ? "2" : tha17c.isChecked() ? "3" : "0");
+
+        sHA.put("tha18", tha18a.isChecked() ? "1" : tha18b.isChecked() ? "2"
+                : tha18c.isChecked() ? "3"
+                : tha18d.isChecked() ? "4"
+                : tha18e.isChecked() ? "5"
+                : "0");
+
+
+        sHA.put("tha19a", tha19a.isChecked() ? "1" : "0");
+        sHA.put("tha19b", tha19b.isChecked() ? "1" : "0");
+        sHA.put("tha19c", tha19c.isChecked() ? "1" : "0");
+        sHA.put("tha19d", tha19d.isChecked() ? "1" : "0");
+        sHA.put("tha19e", tha19e.isChecked() ? "1" : "0");
+        sHA.put("tha19f", tha19f.isChecked() ? "1" : "0");
+        sHA.put("tha19g", tha19g.isChecked() ? "1" : "0");
+        sHA.put("tha19h", tha19h.isChecked() ? "1" : "0");
+        sHA.put("tha19i", tha19i.isChecked() ? "1" : "0");
+
+
+        sHA.put("tha20", tha20a.isChecked() ? "1" : tha20b.isChecked() ? "2" : tha20c.isChecked() ? "3" : "0");
+
+        sHA.put("tha20hr", tha20hr.getText().toString());
+        sHA.put("tha20d", tha20d.getText().toString());
+
+        sHA.put("tha21", tha21a.isChecked() ? "1" : tha21b.isChecked() ? "2" : "0");
+        sHA.put("tha22", tha22.getText().toString());
+        sHA.put("tha23", tha23a.isChecked() ? "1" : tha23b.isChecked() ? "2" : "0");
+
+        sHA.put("tha24a", tha24a.isChecked() ? "1" : "0");
+        sHA.put("tha24b", tha24b.isChecked() ? "1" : "0");
+        sHA.put("tha24c", tha24c.isChecked() ? "1" : "0");
+        sHA.put("tha24d", tha24d.isChecked() ? "1" : "0");
+        sHA.put("tha24e", tha24e.isChecked() ? "1" : "0");
+        sHA.put("tha24f", tha24f.isChecked() ? "1" : "0");
+        sHA.put("tha24g", tha24g.isChecked() ? "1" : "0");
+
+
+        sHA.put("tha25", tha25a.isChecked() ? "1" : tha25b.isChecked() ? "2" : tha25c.isChecked() ? "3" : "0");
+        sHA.put("tha26", tha26.getText().toString());
+
+        sHA.put("tha27", tha27a.isChecked() ? "1" : tha27b.isChecked() ? "2"
+                : tha27c.isChecked() ? "3"
+                : tha27d.isChecked() ? "4"
+                : tha27e.isChecked() ? "5"
+                : tha27f.isChecked() ? "6"
+                : tha27g.isChecked() ? "7"
+                : tha27h.isChecked() ? "8"
+                : tha2788.isChecked() ? "88"
+                : "0");
+
+
+        sHA.put("tha2788x", tha2788x.getText().toString());
+        sHA.put("tha28", tha28.getText().toString());
+        sHA.put("tha29", tha29.getText().toString());
+        sHA.put("tha30", tha30.getText().toString());
+
+        sHA.put("tha31", tha31a.isChecked() ? "1" : tha31b.isChecked() ? "2" : tha31c.isChecked() ? "3" : "0");
+        sHA.put("tha32", tha32a.isChecked() ? "1" : tha32b.isChecked() ? "2" : "0");
+        sHA.put("tha33", tha33a.isChecked() ? "1" : tha33a.isChecked() ? "2" : "0");
+
+
+        sHA.put("tha34", tha34a.isChecked() ? "1" : tha34b.isChecked() ? "2"
+                : tha34c.isChecked() ? "3"
+                : tha34d.isChecked() ? "4"
+                : tha34e.isChecked() ? "5"
+                : tha34f.isChecked() ? "6"
+                : tha34g.isChecked() ? "7"
+                : tha34h.isChecked() ? "8"
+                : tha34i.isChecked() ? "9"
+                : tha34j.isChecked() ? "10"
+                : tha34k.isChecked() ? "11"
+                : "0");
+
+        MainApp.fc.sHA(String.valueOf(sHA));
+
     }
 
 }
