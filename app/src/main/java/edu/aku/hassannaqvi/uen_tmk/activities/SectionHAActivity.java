@@ -6,6 +6,7 @@ import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -329,8 +330,11 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.tha34k)
     RadioButton tha34k;
 
-    @BindView(R.id.fldGrptb02)
-    LinearLayout fldGrptb02;
+    @BindView(R.id.fldGrpth02)
+    LinearLayout fldGrpth02;
+
+    @BindView(R.id.fldGrpth07)
+    LinearLayout fldGrpth07;
 
 
     @Override
@@ -344,13 +348,66 @@ public class SectionHAActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tha01a.isChecked()) {
-                    fldGrptb02.setVisibility(View.VISIBLE);
+                    fldGrpth02.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrptb02.setVisibility(View.GONE);
+                    fldGrpth02.setVisibility(View.GONE);
                 }
             }
         });
 
+
+        tha06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tha06a.isChecked()) {
+
+                    tha07a.setChecked(false);
+                    tha07b.setChecked(false);
+                    tha07c.setChecked(false);
+                    tha07d.setChecked(false);
+                    tha07e.setChecked(false);
+                    tha07f.setChecked(false);
+                    tha07g.setChecked(false);
+                    tha07h.setChecked(false);
+                    tha0788.setChecked(false);
+
+                    fldGrpth07.setVisibility(View.GONE);
+
+                } else {
+
+                    fldGrpth07.setVisibility(View.VISIBLE);
+                    tha07a.requestFocus();
+                }
+            }
+        });
+
+
+        tha0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tha0788.isChecked()) {
+                    tha0788x.setVisibility(View.VISIBLE);
+                    tha0788x.requestFocus();
+                } else {
+                    tha0788x.setText(null);
+                    tha0788x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        tha20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tha20a.isChecked()) {
+                    tha20hr.setVisibility(View.VISIBLE);
+                    tha20hr.requestFocus();
+                } else {
+                    tha20hr.setText(null);
+                    tha20hr.setVisibility(View.GONE);
+                }
+            }
+        });
 
 
     }
