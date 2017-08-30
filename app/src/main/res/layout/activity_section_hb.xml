@@ -44,7 +44,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/thb0188"
+                android:id="@+id/thb01888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -100,7 +100,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/thb0388"
+                android:id="@+id/thb03888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -194,7 +194,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/thb0799"
+                android:id="@+id/thb07888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -1183,7 +1183,7 @@
                 android:text="@string/thb28i" />
 
             <RadioButton
-                android:id="@+id/thb2988"
+                android:id="@+id/thb2888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -1201,12 +1201,30 @@
             android:textColor="@android:color/white" />
 
         <EditText
-            android:id="@+id/thb2988x"
+            android:id="@+id/thb2888x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
             android:hint="@string/other"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/thb29"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/thb29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+            android:hint="@string/thb29"
             android:inputType="textCapWords" />
 
         <TextView

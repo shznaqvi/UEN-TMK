@@ -44,7 +44,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/tha0188"
+                android:id="@+id/tha01888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -135,7 +135,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/tha0588"
+                android:id="@+id/tha05888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -173,7 +173,7 @@
                 android:text="@string/no" />
 
             <RadioButton
-                android:id="@+id/tha0688"
+                android:id="@+id/tha06888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
