@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openG"
+                android:onClick="openHA"
                 android:text="Section G" />
 
             <Button
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openH"
+                android:onClick="openHB"
                 android:text="Section H" />
 
             <Button

@@ -358,11 +358,11 @@ public class SectionHBActivity extends Activity {
         //        01
         if (thb01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb01), Toast.LENGTH_SHORT).show();
-            thb01.setError("This data is Required!");    // Set Error on last radio button
+            thb01a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb01: This data is Required!");
             return false;
         } else {
-            thb01.setError(null);
+            thb01a.setError(null);
         }
 
 
@@ -380,11 +380,11 @@ public class SectionHBActivity extends Activity {
         //        03
         if (thb03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb03), Toast.LENGTH_SHORT).show();
-            thb03.setError("This data is Required!");    // Set Error on last radio button
+            thb03a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb03: This data is Required!");
             return false;
         } else {
-            thb03.setError(null);
+            thb03a.setError(null);
         }
 
 
@@ -424,11 +424,11 @@ public class SectionHBActivity extends Activity {
         //        07
         if (thb07.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb07), Toast.LENGTH_SHORT).show();
-            thb07.setError("This data is Required!");    // Set Error on last radio button
+            thb07a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb07: This data is Required!");
             return false;
         } else {
-            thb07.setError(null);
+            thb07a.setError(null);
         }
 
 
@@ -454,7 +454,7 @@ public class SectionHBActivity extends Activity {
         if (thb0888.isChecked()) {
             //        0888
             if (thb0888x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb0888x), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 thb0888x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb0888x: This data is Required!");
                 return false;
@@ -478,22 +478,22 @@ public class SectionHBActivity extends Activity {
         //        10
         if (thb10.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb10), Toast.LENGTH_SHORT).show();
-            thb10.setError("This data is Required!");    // Set Error on last radio button
+            thb10a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb10: This data is Required!");
             return false;
         } else {
-            thb10.setError(null);
+            thb10a.setError(null);
         }
 
 
         //        11
         if (thb11.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb11), Toast.LENGTH_SHORT).show();
-            thb11.setError("This data is Required!");    // Set Error on last radio button
+            thb11a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb11: This data is Required!");
             return false;
         } else {
-            thb11.setError(null);
+            thb11a.setError(null);
         }
 
 
@@ -518,62 +518,62 @@ public class SectionHBActivity extends Activity {
         //        13
         if (thb13.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb13), Toast.LENGTH_SHORT).show();
-            thb13.setError("This data is Required!");    // Set Error on last radio button
+            thb13a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb13: This data is Required!");
             return false;
         } else {
-            thb13.setError(null);
+            thb13a.setError(null);
         }
 
 
         //        14
         if (thb14.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb14), Toast.LENGTH_SHORT).show();
-            thb14.setError("This data is Required!");    // Set Error on last radio button
+            thb14a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb14: This data is Required!");
             return false;
         } else {
-            thb14.setError(null);
+            thb14a.setError(null);
         }
 
 
         //        15
         if (thb15.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb15), Toast.LENGTH_SHORT).show();
-            thb15.setError("This data is Required!");    // Set Error on last radio button
+            thb15a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb15: This data is Required!");
             return false;
         } else {
-            thb15.setError(null);
+            thb15a.setError(null);
         }
 
 
         //        16
         if (thb16.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb16), Toast.LENGTH_SHORT).show();
-            thb16.setError("This data is Required!");    // Set Error on last radio button
+            thb16a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb16: This data is Required!");
             return false;
         } else {
-            thb16.setError(null);
+            thb16a.setError(null);
         }
 
 
         //        17
         if (thb17.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb17), Toast.LENGTH_SHORT).show();
-            thb17.setError("This data is Required!");    // Set Error on last radio button
+            thb17a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb17: This data is Required!");
             return false;
         } else {
-            thb17.setError(null);
+            thb17a.setError(null);
         }
 
 
         if (thb1788.isChecked()) {
             //        1788x
             if (thb1788x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb1788x), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 thb1788x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb1788x: This data is Required!");
                 return false;
@@ -586,22 +586,22 @@ public class SectionHBActivity extends Activity {
         //        18
         if (thb18.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb18), Toast.LENGTH_SHORT).show();
-            thb18.setError("This data is Required!");    // Set Error on last radio button
+            thb18a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb18: This data is Required!");
             return false;
         } else {
-            thb18.setError(null);
+            thb18a.setError(null);
         }
 
 
         //        19
         if (thb19.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb19), Toast.LENGTH_SHORT).show();
-            thb19.setError("This data is Required!");    // Set Error on last radio button
+            thb19a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb19: This data is Required!");
             return false;
         } else {
-            thb19.setError(null);
+            thb19a.setError(null);
         }
 
 
@@ -625,18 +625,18 @@ public class SectionHBActivity extends Activity {
         //        21
         if (thb21.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb21), Toast.LENGTH_SHORT).show();
-            thb21.setError("This data is Required!");    // Set Error on last radio button
+            thb21a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb21: This data is Required!");
             return false;
         } else {
-            thb21.setError(null);
+            thb21a.setError(null);
         }
 
 
         if (thb21a.isChecked()) {
             //        21hr
             if (thb21hr.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb21hr), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb21), Toast.LENGTH_SHORT).show();
                 thb21hr.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb21hr: This data is Required!");
                 return false;
@@ -649,7 +649,7 @@ public class SectionHBActivity extends Activity {
         if (thb21b.isChecked()) {
             //        21d
             if (thb21d.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb21d), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb21), Toast.LENGTH_SHORT).show();
                 thb21d.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb21d: This data is Required!");
                 return false;
@@ -662,11 +662,11 @@ public class SectionHBActivity extends Activity {
         //        22
         if (thb22.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb22), Toast.LENGTH_SHORT).show();
-            thb22.setError("This data is Required!");    // Set Error on last radio button
+            thb22a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb22: This data is Required!");
             return false;
         } else {
-            thb22.setError(null);
+            thb22a.setError(null);
         }
 
 
@@ -684,11 +684,11 @@ public class SectionHBActivity extends Activity {
         //        24
         if (thb24.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb24), Toast.LENGTH_SHORT).show();
-            thb24.setError("This data is Required!");    // Set Error on last radio button
+            thb24a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb24: This data is Required!");
             return false;
         } else {
-            thb24.setError(null);
+            thb24a.setError(null);
         }
 
 
@@ -712,11 +712,11 @@ public class SectionHBActivity extends Activity {
         //        26
         if (thb26.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
-            thb26.setError("This data is Required!");    // Set Error on last radio button
+            thb26a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb26: This data is Required!");
             return false;
         } else {
-            thb26.setError(null);
+            thb26a.setError(null);
         }
 
 
@@ -733,18 +733,18 @@ public class SectionHBActivity extends Activity {
         //        28
         if (thb28.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb28), Toast.LENGTH_SHORT).show();
-            thb28.setError("This data is Required!");    // Set Error on last radio button
+            thb28a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb28: This data is Required!");
             return false;
         } else {
-            thb28.setError(null);
+            thb28a.setError(null);
         }
 
 
         if (thb2888.isChecked()) {
             //        2888x
             if (thb2888x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb2888x), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 thb2888x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb2888x: This data is Required!");
                 return false;
@@ -779,33 +779,33 @@ public class SectionHBActivity extends Activity {
         //        31
         if (thb31.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb31), Toast.LENGTH_SHORT).show();
-            thb31.setError("This data is Required!");    // Set Error on last radio button
+            thb31a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb31: This data is Required!");
             return false;
         } else {
-            thb31.setError(null);
+            thb31a.setError(null);
         }
 
 
         //        32
         if (thb32.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb32), Toast.LENGTH_SHORT).show();
-            thb32.setError("This data is Required!");    // Set Error on last radio button
+            thb32a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb32: This data is Required!");
             return false;
         } else {
-            thb32.setError(null);
+            thb32a.setError(null);
         }
 
 
         //        33
         if (thb33.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb33), Toast.LENGTH_SHORT).show();
-            thb33.setError("This data is Required!");    // Set Error on last radio button
+            thb33a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb33: This data is Required!");
             return false;
         } else {
-            thb33.setError(null);
+            thb33a.setError(null);
         }
 
 
@@ -823,11 +823,11 @@ public class SectionHBActivity extends Activity {
         //        35
         if (thb35.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb35), Toast.LENGTH_SHORT).show();
-            thb35.setError("This data is Required!");    // Set Error on last radio button
+            thb35a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "thb35: This data is Required!");
             return false;
         } else {
-            thb35.setError(null);
+            thb35a.setError(null);
         }
 
 
@@ -856,7 +856,7 @@ public class SectionHBActivity extends Activity {
         if (!thb3688.isChecked()) {
             //        3688x
             if (thb3688x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb3688x), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 thb3688x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb3688x: This data is Required!");
                 return false;
@@ -1026,7 +1026,7 @@ public class SectionHBActivity extends Activity {
 
         sHB.put("thb3688x", thb3688x.getText().toString());
 
-        MainApp.fc.sHB(sHB);
+        //MainApp.fc.sHB(sHB);
     }
 
 }

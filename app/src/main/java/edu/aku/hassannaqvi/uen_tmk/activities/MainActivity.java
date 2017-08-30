@@ -237,6 +237,16 @@ public class MainActivity extends Activity {
         startActivity(iB);*/
     }
 
+    public void openHA(View v) {
+        Intent iB = new Intent(this, SectionHAActivity.class);
+        startActivity(iB);
+    }
+
+    public void openHB(View v) {
+        Intent iB = new Intent(this, SectionHBActivity.class);
+        startActivity(iB);
+    }
+
 
     public void testGPS(View v) {
 
