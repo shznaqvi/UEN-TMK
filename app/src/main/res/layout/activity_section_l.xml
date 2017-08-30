@@ -146,6 +146,12 @@
 
             </RadioGroup>
 
+            <LinearLayout
+                android:id="@+id/fldGrptl04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -180,9 +186,18 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/tl04d" />
 
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrptl05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/tl05" />
@@ -209,7 +224,13 @@
 
         </RadioGroup>
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrptl06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/tl06" />
@@ -236,39 +257,50 @@
 
         </RadioGroup>
 
+                <LinearLayout
+                    android:id="@+id/fldGrptl07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/tl07" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/tl07" />
 
-        <CheckBox
-            android:id="@+id/tl07a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/tl07a" />
+                    <CheckBox
+                        android:id="@+id/tl07a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tl07a" />
 
-        <CheckBox
-            android:id="@+id/tl07b"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/tl07b" />
+                    <CheckBox
+                        android:id="@+id/tl07b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tl07b" />
 
-        <CheckBox
-            android:id="@+id/tl07c"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/tl07c" />
+                    <CheckBox
+                        android:id="@+id/tl07c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tl07c" />
 
-        <CheckBox
-            android:id="@+id/tl07d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/tl07d" />
+                    <CheckBox
+                        android:id="@+id/tl07d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tl07d" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
 
 
         <TextView

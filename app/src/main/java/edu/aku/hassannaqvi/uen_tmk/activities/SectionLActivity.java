@@ -3,8 +3,11 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -50,6 +53,8 @@ public class SectionLActivity extends Activity {
     RadioButton tl03a;
     @BindView(R.id.tl03b)
     RadioButton tl03b;
+    @BindView(R.id.fldGrptl04)
+    LinearLayout fldGrptl04;
     @BindView(R.id.tl04a)
     CheckBox tl04a;
     @BindView(R.id.tl04b)
@@ -58,18 +63,24 @@ public class SectionLActivity extends Activity {
     CheckBox tl04c;
     @BindView(R.id.tl04d)
     CheckBox tl04d;
+    @BindView(R.id.fldGrptl05)
+    LinearLayout fldGrptl05;
     @BindView(R.id.tl05)
     RadioGroup tl05;
     @BindView(R.id.tl05a)
     RadioButton tl05a;
     @BindView(R.id.tl05b)
     RadioButton tl05b;
+    @BindView(R.id.fldGrptl06)
+    LinearLayout fldGrptl06;
     @BindView(R.id.tl06)
     RadioGroup tl06;
     @BindView(R.id.tl06a)
     RadioButton tl06a;
     @BindView(R.id.tl06b)
     RadioButton tl06b;
+    @BindView(R.id.fldGrptl07)
+    LinearLayout fldGrptl07;
     @BindView(R.id.tl07a)
     CheckBox tl07a;
     @BindView(R.id.tl07b)
@@ -111,11 +122,109 @@ public class SectionLActivity extends Activity {
     @BindView(R.id.tl0988x)
     EditText tl0988x;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_l);
         ButterKnife.bind(this);
+
+        tl01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (tl01a.isChecked()) {
+                    fldGrptl02.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrptl02.setVisibility(View.GONE);
+                    tl02.clearCheck();
+                    tl03.clearCheck();
+                    tl04a.setChecked(false);
+                    tl04b.setChecked(false);
+                    tl04c.setChecked(false);
+                    tl04d.setChecked(false);
+
+                }
+            }
+        });
+
+        tl0188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tl0188x.setVisibility(View.VISIBLE);
+                } else {
+                    tl0188x.setVisibility(View.GONE);
+                    tl0188x.setText(null);
+                }
+            }
+        });
+
+        tl03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (tl03a.isChecked()) {
+                    fldGrptl04.setVisibility(View.VISIBLE);
+                    fldGrptl05.setVisibility(View.GONE);
+                    tl05.clearCheck();
+                    tl06.clearCheck();
+                    tl07a.setChecked(false);
+                    tl07b.setChecked(false);
+                    tl07c.setChecked(false);
+                    tl07d.setChecked(false);
+                } else {
+                    fldGrptl04.setVisibility(View.GONE);
+                    tl04a.setChecked(false);
+                    tl04b.setChecked(false);
+                    tl04c.setChecked(false);
+                    tl04d.setChecked(false);
+                    fldGrptl05.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        tl05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (tl05a.isChecked()) {
+                    fldGrptl06.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrptl06.setVisibility(View.GONE);
+                    tl06.clearCheck();
+                    tl07a.setChecked(false);
+                    tl07b.setChecked(false);
+                    tl07c.setChecked(false);
+                    tl07d.setChecked(false);
+                }
+            }
+        });
+
+        tl06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (tl06a.isChecked()) {
+                    fldGrptl07.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrptl07.setVisibility(View.GONE);
+                    tl07a.setChecked(false);
+                    tl07b.setChecked(false);
+                    tl07c.setChecked(false);
+                    tl07d.setChecked(false);
+                }
+            }
+        });
+
+        tl0988.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tl0988x.setVisibility(View.VISIBLE);
+                } else {
+                    tl0988x.setVisibility(View.GONE);
+                    tl0988x.setText(null);
+                }
+            }
+        });
 
     }
 
@@ -256,8 +365,8 @@ public class SectionLActivity extends Activity {
             if (tl03a.isChecked()) {
 
 //        04
-                if (!(tl04a.isChecked() && tl04b.isChecked() && tl04c.isChecked()
-                        && tl04d.isChecked())) {
+                if (!(tl04a.isChecked() || tl04b.isChecked() || tl04c.isChecked()
+                        || tl04d.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl04), Toast.LENGTH_SHORT).show();
                     tl04d.setError("This data is Required!");    // Set Error on last check box
 
@@ -267,9 +376,9 @@ public class SectionLActivity extends Activity {
                     tl04d.setError(null);
                 }
             }
-        }
+        } else {
 
-        if (!(tl04a.isChecked() && tl04b.isChecked() && tl04c.isChecked() && tl04d.isChecked())) {
+            //if (!(tl04a.isChecked() || tl04b.isChecked() || tl04c.isChecked() || tl04d.isChecked())) {
 //        05
             if (tl05.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl05), Toast.LENGTH_SHORT).show();
@@ -295,8 +404,8 @@ public class SectionLActivity extends Activity {
 
                 if (tl06a.isChecked()) {
 //        07
-                    if (!(tl07a.isChecked() && tl07b.isChecked() && tl07c.isChecked()
-                            && tl07d.isChecked())) {
+                    if (!(tl07a.isChecked() || tl07b.isChecked() || tl07c.isChecked()
+                            || tl07d.isChecked())) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl07), Toast.LENGTH_SHORT).show();
                         tl07d.setError("This data is Required!");    // Set Error on last check box
 
@@ -309,10 +418,11 @@ public class SectionLActivity extends Activity {
             }
         }
 
+
 //        08
-        if (!(tl08a.isChecked() && tl08b.isChecked() && tl08c.isChecked() && tl08d.isChecked() &&
-                tl08e.isChecked() && tl08f.isChecked() && tl08g.isChecked() &&
-                tl08h.isChecked() && tl08i.isChecked())) {
+        if (!(tl08a.isChecked() || tl08b.isChecked() || tl08c.isChecked() || tl08d.isChecked() ||
+                tl08e.isChecked() || tl08f.isChecked() || tl08g.isChecked() ||
+                tl08h.isChecked() || tl08i.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl08), Toast.LENGTH_SHORT).show();
             tl08i.setError("This data is Required!");    // Set Error on last check box
 
