@@ -483,9 +483,9 @@ public class SectionJActivity extends Activity {
 
         if (tj06a.isChecked()) {
 //        07
-            if (!(tj07a.isChecked() && tj07b.isChecked() && tj07c.isChecked() && tj07d.isChecked() &&
-                    tj07e.isChecked() && tj07f.isChecked() && tj07g.isChecked() &&
-                    tj07h.isChecked() && tj0788.isChecked())) {
+            if (!(tj07a.isChecked() || tj07b.isChecked() || tj07c.isChecked() || tj07d.isChecked() ||
+                    tj07e.isChecked() || tj07f.isChecked() || tj07g.isChecked() ||
+                    tj07h.isChecked() || tj0788.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj07), Toast.LENGTH_SHORT).show();
                 tj07h.setError("This data is Required!");    // Set Error on last check box
 
@@ -508,9 +508,9 @@ public class SectionJActivity extends Activity {
 
 
 //        08
-        if (!(tj08a.isChecked() && tj08b.isChecked() && tj08c.isChecked() && tj08d.isChecked() &&
-                tj08e.isChecked() && tj08f.isChecked() && tj08g.isChecked() &&
-                tj08h.isChecked() && tj08i.isChecked() && tj0888.isChecked())) {
+        if (!(tj08a.isChecked() || tj08b.isChecked() || tj08c.isChecked() || tj08d.isChecked() ||
+                tj08e.isChecked() || tj08f.isChecked() || tj08g.isChecked() ||
+                tj08h.isChecked() || tj08i.isChecked() || tj0888.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj08), Toast.LENGTH_SHORT).show();
             tj08i.setError("This data is Required!");    // Set Error on last check box
 
