@@ -29,6 +29,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.uen_tmk.FormsList;
+import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
@@ -232,8 +233,8 @@ public class MainActivity extends Activity {
     }
 
     public void openB(View v) {
-        Intent iB = new Intent(this, SectionMembersActivity.class);
-        startActivity(iB);
+        /*Intent iB = new Intent(this, SectionMembersActivity.class);
+        startActivity(iB);*/
     }
 
 

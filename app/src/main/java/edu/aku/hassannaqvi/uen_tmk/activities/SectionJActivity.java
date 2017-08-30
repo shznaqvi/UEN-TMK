@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.uen_tmk.R;
 
 public class SectionJActivity extends Activity {
 

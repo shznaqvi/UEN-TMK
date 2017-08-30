@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionCActivity extends Activity {
@@ -681,7 +682,7 @@ public class SectionCActivity extends Activity {
         }
         if (tc0588.isChecked()) {
             if (tc0588.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc0588), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tc0588x.setError("This data is Required! ");    // Set Error on last radio button
 
                 Log.i(TAG, "tc05: This data is Required!");
@@ -703,7 +704,7 @@ public class SectionCActivity extends Activity {
         }
         if (tc0688.isChecked()) {
             if (tc0688.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc0688), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tc0688x.setError("This data is Required! ");    // Set Error on last radio button
 
                 Log.i(TAG, "tc06: This data is Required!");
@@ -725,7 +726,7 @@ public class SectionCActivity extends Activity {
         }
         if (tc0788.isChecked()) {
             if (tc0788.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc0788), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tc0788x.setError("This data is Required! ");    // Set Error on last radio button
 
                 Log.i(TAG, "tc07: This data is Required!");
@@ -1121,7 +1122,7 @@ public class SectionCActivity extends Activity {
             tc1688.setError(null);
         }
         if (tc1688.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc1688), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tc1688x.setError("This data is Required! ");    // Set Error on last radio button
 
             Log.i(TAG, "tc1688: This data is Required!");

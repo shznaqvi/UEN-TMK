@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -142,7 +143,8 @@ public class SectionFActivity extends Activity {
         sF.put("tf01", tf01.getText().toString());
         sF.put("tf02", tf02.getText().toString());
         sF.put("tf03", tf03a.isChecked() ? "1" : tf03b.isChecked() ? "2" : "0");
-        sF.put("tf04", tf04.getText().toString());
+        sF.put("tf04d", tf04d.getText().toString());
+        sF.put("tf04m", tf04m.getText().toString());
         sF.put("tf05", tf05a.isChecked() ? "1" : tf05b.isChecked() ? "2" : tf05c.isChecked() ? "3"
                 : tf05d.isChecked() ? "4" : tf05e.isChecked() ? "5" : "0");
         sF.put("tf06", tf06.getText().toString());
@@ -204,7 +206,7 @@ public class SectionFActivity extends Activity {
 
 
         if (Integer.valueOf(tf04d.getText().toString()) < 0 || Integer.valueOf(tf04d.getText().toString()) > 29) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.te04d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             tf04d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
 
             Log.i(TAG, "tf04d: Range is 0 to 29 Days");
@@ -214,7 +216,7 @@ public class SectionFActivity extends Activity {
         }
 
         if (Integer.valueOf(tf04m.getText().toString()) < 0 || Integer.valueOf(tf04m.getText().toString()) > 11) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.te04m), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             tf04m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
 
             Log.i(TAG, "tf04d: Range is 0 to 11 Months");
@@ -224,7 +226,7 @@ public class SectionFActivity extends Activity {
         }
 
         if (Integer.valueOf(tf04y.getText().toString()) < 0 || Integer.valueOf(tf04y.getText().toString()) > 5) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.te04y), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             tf04y.setError("Range is 0 to 5 Years");    // Set Error on last radio button
 
             Log.i(TAG, "tf04d: Range is 0 to 5 Years");

@@ -56,7 +56,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.aku.hassannaqvi.dss_census.R;
+import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk.get.GetUsers;
@@ -113,15 +113,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         try {
             long installedOn = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.hassannaqvi.dss_census", 0)
+                    .getPackageInfo("edu.aku.hassannaqvi.uen_tmk", 0)
                     .lastUpdateTime;
             Integer versionCode = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.hassannaqvi.dss_census", 0)
+                    .getPackageInfo("edu.aku.hassannaqvi.uen_tmk", 0)
                     .versionCode;
             String versionName = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.hassannaqvi.dss_census", 0)
+                    .getPackageInfo("edu.aku.hassannaqvi.uen_tmk", 0)
                     .versionName;
             txtinstalldate.setText("Ver. " + versionName + "." + String.valueOf(versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {

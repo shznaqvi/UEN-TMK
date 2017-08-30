@@ -1,40 +1,14 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.format.DateFormat;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
-import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
-import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 
 public class SectionAActivity extends Activity {
@@ -43,7 +17,7 @@ public class SectionAActivity extends Activity {
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
 
-    @BindView(R.id.dca03)
+/*    @BindView(R.id.dca03)
     EditText dca03;
     @BindView(R.id.membersExists)
     LinearLayout membersExists;
@@ -71,12 +45,12 @@ public class SectionAActivity extends Activity {
     RadioButton dca050101;
     @BindView(R.id.dca050102)
     RadioButton dca050102;
-    /*@BindView(R.id.dca0502)
+    *//*@BindView(R.id.dca0502)
     RadioGroup dca0502;
     @BindView(R.id.dca050201)
     RadioButton dca050201;
     @BindView(R.id.dca050202)
-    RadioButton dca050202;*/
+    RadioButton dca050202;*//*
     @BindView(R.id.dca0503)
     EditText dca0503;
     @BindView(R.id.dca0504)
@@ -286,7 +260,7 @@ public class SectionAActivity extends Activity {
 
     Boolean isNew = false;
 
-    boolean checked = false;
+    boolean checked = false;*/
 
 
     @Override
@@ -294,17 +268,17 @@ public class SectionAActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
-        dca03.setText(MainApp.regionDss);
+/*        dca03.setText(MainApp.regionDss);
         dca03.setSelection(dca03.getText().length());
         MainApp.memFlag = 0;
 
         MainApp.familyMembersList = new ArrayList<>();
         Log.d(TAG, "onCreate: " + MainApp.familyMembersList.size());
-        db = new DatabaseHelper(this);
+        db = new DatabaseHelper(this);*/
 
         //==================== Permission Skip Check =================
 
-        dca04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+/*        dca04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (dca0401.isChecked()) {
@@ -370,7 +344,7 @@ public class SectionAActivity extends Activity {
                     dca10b.setText(null);
                 }
             }
-        });
+        });*/
 
         /*// =================== If Respondent is male ===============
 
@@ -461,7 +435,7 @@ public class SectionAActivity extends Activity {
         });*/
     }
 
-    @OnClick(R.id.btn_End)
+/*    @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
@@ -486,10 +460,10 @@ public class SectionAActivity extends Activity {
             }
         }
 
-    }
+    }*/
 
 
-    @OnClick(R.id.checkMembers)
+/*    @OnClick(R.id.checkMembers)
     void onBtnCheckMemberClick() {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -561,13 +535,13 @@ public class SectionAActivity extends Activity {
             dca03.setError("This data is Required!");
         }
         checked = true;
-    }
+    }*/
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
 
-        if (formValidation()) {
+        /*if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -609,10 +583,10 @@ public class SectionAActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
     }
 
-    public boolean formValidation() {
+/*    public boolean formValidation() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
@@ -655,7 +629,7 @@ public class SectionAActivity extends Activity {
 
 //        03
         if (dca0401.isChecked()) {
- /*           if (dca05.getText().toString().isEmpty()) {
+ *//*           if (dca05.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.dca05), Toast.LENGTH_SHORT).show();
                 dca05.setError("This data is Required!");    // Set Error on last radio button
                 return false;
@@ -675,7 +649,7 @@ public class SectionAActivity extends Activity {
             }
 
 //        05
-            *//*if (dca0502.getCheckedRadioButtonId() == -1) {
+            *//**//*if (dca0502.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.dca0502), Toast.LENGTH_SHORT).show();
                 dca050202.setError("This data is Required!");    // Set Error on last radio button
 
@@ -683,7 +657,7 @@ public class SectionAActivity extends Activity {
                 return false;
             } else {
                 dca050202.setError(null);
-            }*//*
+            }*//**//*
 
 //        06
             if (dca0503.getText().toString().isEmpty()) {
@@ -827,7 +801,7 @@ public class SectionAActivity extends Activity {
                 return false;
             } else {
                 dca060496x.setError(null);
-            }*/
+            }*//*
 
 //        13
             if (dca0701.getText().toString().isEmpty()) {
@@ -1042,9 +1016,9 @@ public class SectionAActivity extends Activity {
         }
 
         return true;
-    }
+    }*/
 
-    private void SaveDraft() throws JSONException {
+/*    private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
@@ -1064,7 +1038,7 @@ public class SectionAActivity extends Activity {
 
         sa.put("dca03", dca03.getText().toString());
         sa.put("dca04", dca0401.isChecked() ? "1" : dca0402.isChecked() ? "2" : dca0403.isChecked() ? "3" : dca0404.isChecked() ? "4" : dca0405.isChecked() ? "5" : "0");
-        /*sa.put("dca05", dca05.getText().toString());
+        *//*sa.put("dca05", dca05.getText().toString());
         sa.put("dca0501", dca050101.isChecked() ? "1" : dca050102.isChecked() ? "2" : "0");
         //sa.put("dca0502", dca050201.isChecked() ? "1" : dca050202.isChecked() ? "2" : "0");
         sa.put("dca0503", dca0503.getText().toString());
@@ -1096,7 +1070,7 @@ public class SectionAActivity extends Activity {
                 : dca060413.isChecked() ? "13" : dca060414.isChecked() ? "14" : dca060415.isChecked() ? "15"
                 : dca060416.isChecked() ? "16" : dca060417.isChecked() ? "17" : dca060488.isChecked() ? "88"
                 : dca060496.isChecked() ? "96" : "0");
-        sa.put("dca060496x", dca060496x.getText().toString());*/
+        sa.put("dca060496x", dca060496x.getText().toString());*//*
         sa.put("dca0701", dca0701.getText().toString());
         sa.put("dca0702", dca0702.getText().toString());
         sa.put("dca0703", dca0703.getText().toString());
@@ -1110,9 +1084,9 @@ public class SectionAActivity extends Activity {
         sa.put("dca10b", dca10b.getText().toString());
         sa.put("dca11", dca1101.isChecked() ? "1" : dca1102.isChecked() ? "2" : "0");
 
-        /*if (!dca0801.getText().toString().isEmpty()) {
+        *//*if (!dca0801.getText().toString().isEmpty()) {
             MainApp.totalChild = Integer.parseInt(dca0801.getText().toString());
-        }*/
+        }*//*
 
         MainApp.fc.setsA(String.valueOf(sa));
 
@@ -1171,7 +1145,7 @@ public class SectionAActivity extends Activity {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
 
-    }
+    }*/
 
 
 }

@@ -912,24 +912,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateMother(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(MotherTB.COLUMN_SYNCED, true);
-        values.put(MotherTB.COLUMN_SYNCED_DATE, new Date().toString());
-
-// Which row to update, based on the title
-        String where = MotherTB.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                MotherTB.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
 
     public void updateIM(String id) {
         SQLiteDatabase db = this.getReadableDatabase();

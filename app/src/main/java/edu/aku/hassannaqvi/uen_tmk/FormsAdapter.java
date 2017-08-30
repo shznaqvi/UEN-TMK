@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
 
-import edu.aku.hassannaqvi.dss_census.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 
 /**

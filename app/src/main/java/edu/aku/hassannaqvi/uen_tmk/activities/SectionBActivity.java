@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -65,8 +66,10 @@ public class SectionBActivity extends Activity {
     RadioButton tb03m;
     @BindView(R.id.tb03n)
     RadioButton tb03n;
-    @BindView(R.id.tb03o)
-    RadioButton tb03o;
+    @BindView(R.id.tb0388)
+    RadioButton tb0388;
+    @BindView(R.id.tb0388x)
+    EditText tb0388x;
     @BindView(R.id.tb04)
     RadioGroup tb04;
     @BindView(R.id.tb04a)
@@ -200,7 +203,8 @@ public class SectionBActivity extends Activity {
                 : tb03d.isChecked() ? "4" : tb03e.isChecked() ? "5" : tb03f.isChecked() ? "6"
                 : tb03g.isChecked() ? "7" : tb03h.isChecked() ? "8" : tb03i.isChecked() ? "9" : tb03j.isChecked() ? "10"
                 : tb03k.isChecked() ? "11" : tb03l.isChecked() ? "12" : tb03m.isChecked() ? "13"
-                : tb03n.isChecked() ? "14" : tb03o.isChecked() ? "15" : "0");
+                : tb03n.isChecked() ? "14" : tb0388.isChecked() ? "15" : "0");
+        sB.put("tb0388x", tb0388x.getText().toString());
         sB.put("tb04", tb04a.isChecked() ? "1" : tb04b.isChecked() ? "2" : "0");
         sB.put("tb05", tb05.getText().toString());
         sB.put("tb06", tb06.getText().toString());

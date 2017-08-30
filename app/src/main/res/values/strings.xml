@@ -503,7 +503,7 @@
   <string name="thb08d"> مرد جي غيرموجودگي جي ڪري </string>
   <string name="thb08e"> گھر جي سربراھ/مڙس/سس جي اجازت نه ھئي </string>
   <string name="thb08f"> صحت مرڪز پري آھي </string>
-  <string name="thb08j"> صحت مرڪز کليل نه ھو </string>
+    <string name="thb08g"> صحت مرڪز کليل نه ھو </string>
   <string name="thb08h"> غير معياري سھولتون </string>
   <string name="thb09"> (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري ٿيئڻ جي ڪيترن ڏينھن کان پوءِ علاج ڏنو ويو؟ </string>
   <string name="thb10"> (نالو) جو توھان کنگھ ۽ تڪڙا ساھ کڻڻ جو شروعاتي علاج ڪٿان ڪرايو؟ </string>
@@ -767,6 +767,7 @@
   <string name="tk05b"> مرد (عمر 15 سالن کان وڌيڪ) </string>
   <string name="tk05c"> عورت (عمر 15 سالن کان گھٽ) </string>
   <string name="tk05d"> مرد (عمر 15 سالن کان گھٽ) </string>
+    <string name="tk05e"> جيڪو موجود ھوندو آھي </string>
   <string name="tk06"> جيڪو پاڻي توھان گھر ۾ استعمال ڪندا آھيو ڇا ان جو ذائقو مٺو يا کارو آھي؟ </string>
   <string name="tk06a"> مٺو پاڻي </string>
   <string name="tk06b"> کارو پاڻي </string>
@@ -807,6 +808,8 @@
   <string name="tk14"> توھان جي گھر کان علاوه گھر جا ٽوٽل ڪيترا ڀاتي ھي ٽوائلٽ / ڪاڪوس استعمال ڪندا آھن؟ </string>
   <string name="tk14a"> گھر جي ڀاتين جو تعداد (10 کان گھٽ) </string>
   <string name="tk14b"> ڏھ يا ڏھن کان وڌيڪ </string>
+    <string name="tl0101"> Not Observed </string>
+    <string name="tl0801"> Daily </string>
   <string name="tl01"> مهرباني ڪري اسان کي هٿ ڌوئڻ جي جڳهه ڏيکاريو جتي توهان اڪثر هٿ ڌوئيندا آهيو </string>
   <string name="tl01a"> مشاهدو ڪيو ويو </string>
   <string name="tl01b"> رهائش واري جڳهه تي نه هو </string>
