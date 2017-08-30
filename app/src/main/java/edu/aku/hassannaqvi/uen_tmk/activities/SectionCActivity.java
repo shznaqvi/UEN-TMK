@@ -1,11 +1,13 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -358,6 +360,10 @@ public class SectionCActivity extends Activity {
     RadioButton tc12b;
     @BindView(R.id.tc12888)
     RadioButton tc12888;
+    @BindView(R.id.tc12ac)
+    EditText tc12ac;
+    @BindView(R.id.tc12kn)
+    EditText tc12kn;
     @BindView(R.id.tc13)
     RadioGroup tc13;
     @BindView(R.id.tc13a)
@@ -466,6 +472,112 @@ public class SectionCActivity extends Activity {
             }
         });
 
+//        05
+        tc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    tc0588x.setVisibility(View.VISIBLE);
+                } else {
+                    tc0588x.setVisibility(View.GONE);
+                    tc0588x.setText(null);
+                }
+            }
+        });
+
+//        06
+        tc0688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    tc0688x.setVisibility(View.VISIBLE);
+                } else {
+                    tc0688x.setVisibility(View.GONE);
+                    tc0688x.setText(null);
+                }
+            }
+        });
+
+//        07
+        tc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    tc0788x.setVisibility(View.VISIBLE);
+                } else {
+                    tc0788x.setVisibility(View.GONE);
+                    tc0788x.setText(null);
+                }
+            }
+        });
+
+//        11
+        tc11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tc11a) {
+                    fldGrpte12.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpte12.setVisibility(View.GONE);
+                    tc12.clearCheck();
+                    tc12ac.setText(null);
+                    tc12kn.setText(null);
+                }
+            }
+        });
+
+//        12
+        tc12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tc12a) {
+                    tc12ac.setVisibility(View.VISIBLE);
+                    tc12kn.setVisibility(View.GONE);
+                    tc12kn.setText(null);
+                } else if (i == R.id.tc12b) {
+                    tc12kn.setVisibility(View.VISIBLE);
+                    tc12ac.setVisibility(View.GONE);
+                    tc12ac.setText(null);
+                } else {
+                    tc12ac.setVisibility(View.GONE);
+                    tc12ac.setText(null);
+                    tc12kn.setVisibility(View.GONE);
+                    tc12kn.setText(null);
+                }
+            }
+        });
+
+//        13
+        tc13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tc13a) {
+                    fldGrpte14.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpte14.setVisibility(View.GONE);
+                    tc14a.setText(null);
+                    tc14b.setText(null);
+                    tc14c.setText(null);
+                    tc14d.setText(null);
+                    tc14e.setText(null);
+                    tc14f.setText(null);
+                }
+            }
+        });
+
+//        16
+        tc1688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    tc1688x.setVisibility(View.VISIBLE);
+                } else {
+                    tc1688x.setVisibility(View.GONE);
+                    tc1688x.setText(null);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
@@ -491,13 +603,7 @@ public class SectionCActivity extends Activity {
 
                 finish();
 
-                MainApp.currentDeceasedCheck = 1;
-
-//                    MainApp.currentStatusCount -= 1;
-
-
-//                Intent secNext = new Intent(this, FamilyMembersActivity.class);
-//                startActivity(secNext);
+                startActivity(new Intent(this, SectionDActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -592,8 +698,12 @@ public class SectionCActivity extends Activity {
 
         sC.put("tc10", tc10a.isChecked() ? "1" : tc10b.isChecked() ? "2" : "0");
         sC.put("tc11", tc11a.isChecked() ? "1" : tc11b.isChecked() ? "2" : "0");
+
         sC.put("tc12", tc12a.isChecked() ? "1" : tc12b.isChecked() ? "2"
                 : tc12888.isChecked() ? "888" : "0");
+        sC.put("tc12ac", tc12ac.getText().toString());
+        sC.put("tc12kn", tc12kn.getText().toString());
+
         sC.put("tc13", tc13a.isChecked() ? "1" : tc13b.isChecked() ? "2" : "0");
 
         sC.put("tc14a", tc14a.getText().toString());
@@ -620,7 +730,7 @@ public class SectionCActivity extends Activity {
                 : "0");
         sC.put("tc21", tc21.getText().toString());
 
-        //        MainApp.fc.setROW_sb(String.valueOf(sc));
+        //        MainApp.fc.setROW_sC(String.valueOf(sC));
     }
 
     public boolean formValidation() {
@@ -680,17 +790,16 @@ public class SectionCActivity extends Activity {
         } else {
             tc0588.setError(null);
         }
-        if (tc0588.isChecked()) {
-            if (tc0588.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                tc0588x.setError("This data is Required! ");    // Set Error on last radio button
+        if (tc0588.isChecked() && tc0588x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tc0588x.setError("This data is Required! ");    // Set Error on last radio button
 
-                Log.i(TAG, "tc05: This data is Required!");
-                return false;
-            } else {
-                tc0588x.setError(null);
-            }
+            Log.i(TAG, "tc05: This data is Required!");
+            return false;
+        } else {
+            tc0588x.setError(null);
         }
+
 
 //        06
         if (tc06.getCheckedRadioButtonId() == -1) {
@@ -702,17 +811,16 @@ public class SectionCActivity extends Activity {
         } else {
             tc0688.setError(null);
         }
-        if (tc0688.isChecked()) {
-            if (tc0688.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                tc0688x.setError("This data is Required! ");    // Set Error on last radio button
+        if (tc0688.isChecked() && tc0688x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tc0688x.setError("This data is Required! ");    // Set Error on last radio button
 
-                Log.i(TAG, "tc06: This data is Required!");
-                return false;
-            } else {
-                tc0688x.setError(null);
-            }
+            Log.i(TAG, "tc06: This data is Required!");
+            return false;
+        } else {
+            tc0688x.setError(null);
         }
+
 
 //        07
         if (tc07.getCheckedRadioButtonId() == -1) {
@@ -724,17 +832,16 @@ public class SectionCActivity extends Activity {
         } else {
             tc0788.setError(null);
         }
-        if (tc0788.isChecked()) {
-            if (tc0788.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                tc0788x.setError("This data is Required! ");    // Set Error on last radio button
+        if (tc0788.isChecked() && tc0788x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tc0788x.setError("This data is Required! ");    // Set Error on last radio button
 
-                Log.i(TAG, "tc07: This data is Required!");
-                return false;
-            } else {
-                tc0788x.setError(null);
-            }
+            Log.i(TAG, "tc07: This data is Required!");
+            return false;
+        } else {
+            tc0788x.setError(null);
         }
+
 
 //        08a
         if (tc08a.getCheckedRadioButtonId() == -1) {
@@ -1031,6 +1138,25 @@ public class SectionCActivity extends Activity {
         } else {
             tc12888.setError(null);
         }
+        if (tc12a.isChecked() && tc12ac.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
+            tc12ac.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tc12ac: This data is Required!");
+            return false;
+        } else {
+            tc12ac.setError(null);
+        }
+        if (tc12b.isChecked() && tc12kn.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
+            tc12kn.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tc12kn: This data is Required!");
+            return false;
+        } else {
+            tc12kn.setError(null);
+        }
+
 
 //        13
         if (tc13.getCheckedRadioButtonId() == -1) {
@@ -1121,7 +1247,7 @@ public class SectionCActivity extends Activity {
         } else {
             tc1688.setError(null);
         }
-        if (tc1688.getText().toString().isEmpty()) {
+        if (tc1688.isChecked() && tc1688x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tc1688x.setError("This data is Required! ");    // Set Error on last radio button
 

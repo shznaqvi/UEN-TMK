@@ -485,6 +485,13 @@
                 android:text="@string/tj08h" />
 
             <CheckBox
+                android:id="@+id/tj08i"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tj08i" />
+
+            <CheckBox
                 android:id="@+id/tj0888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

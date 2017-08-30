@@ -1562,6 +1562,22 @@
 
             </RadioGroup>
 
+            <EditText
+                android:id="@+id/tc12ac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/tc12kn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:inputType="number"
+                android:maxLength="2" />
+
         </LinearLayout>
 
         <TextView

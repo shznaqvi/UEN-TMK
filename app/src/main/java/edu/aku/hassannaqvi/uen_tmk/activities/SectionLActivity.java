@@ -1,7 +1,9 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -19,6 +21,8 @@ import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionLActivity extends Activity {
+
+    private static final String TAG = SectionJActivity.class.getName();
 
     @BindView(R.id.tl01)
     RadioGroup tl01;
@@ -124,6 +128,23 @@ public class SectionLActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                startActivity(new Intent(this, SectionDActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -167,5 +188,162 @@ public class SectionLActivity extends Activity {
 
 //        MainApp.fc.setROW_sl(String.valueOf(sL));
     }
+
+    private boolean UpdateDB() {
+
+        /*DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateL();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+
+        return true;
+
+    }
+
+    public boolean formValidation() {
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+//         01
+        if (tl01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl01), Toast.LENGTH_SHORT).show();
+            tl0188.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tl01: This data is Required!");
+            return false;
+        } else {
+            tl0188.setError(null);
+        }
+        if (tl0188.isChecked() && tl0188x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tl0188x.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tl0188x: This data is Required!");
+            return false;
+        } else {
+            tl0188x.setError(null);
+        }
+
+        if (tl01a.isChecked()) {
+//        02
+            if (tl02.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl02), Toast.LENGTH_SHORT).show();
+                tl02b.setError("This data is Required! ");    // Set Error on last radio button
+
+                Log.i(TAG, "tl02: This data is Required!");
+                return false;
+            } else {
+                tl02b.setError(null);
+            }
+
+//        03
+            if (tl03.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl03), Toast.LENGTH_SHORT).show();
+                tl03b.setError("This data is Required! ");    // Set Error on last radio button
+
+                Log.i(TAG, "tl03: This data is Required!");
+                return false;
+            } else {
+                tl03b.setError(null);
+            }
+
+            if (tl03a.isChecked()) {
+
+//        04
+                if (!(tl04a.isChecked() && tl04b.isChecked() && tl04c.isChecked()
+                        && tl04d.isChecked())) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl04), Toast.LENGTH_SHORT).show();
+                    tl04d.setError("This data is Required!");    // Set Error on last check box
+
+                    Log.i(TAG, "tl04: This data is Required!");
+                    return false;
+                } else {
+                    tl04d.setError(null);
+                }
+            }
+        }
+
+        if (!(tl04a.isChecked() && tl04b.isChecked() && tl04c.isChecked() && tl04d.isChecked())) {
+//        05
+            if (tl05.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl05), Toast.LENGTH_SHORT).show();
+                tl05b.setError("This data is Required! ");    // Set Error on last radio button
+
+                Log.i(TAG, "tl05: This data is Required!");
+                return false;
+            } else {
+                tl05b.setError(null);
+            }
+
+            if (tl05a.isChecked()) {
+//        06
+                if (tl06.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl06), Toast.LENGTH_SHORT).show();
+                    tl06b.setError("This data is Required! ");    // Set Error on last radio button
+
+                    Log.i(TAG, "tl06: This data is Required!");
+                    return false;
+                } else {
+                    tl06b.setError(null);
+                }
+
+                if (tl06a.isChecked()) {
+//        07
+                    if (!(tl07a.isChecked() && tl07b.isChecked() && tl07c.isChecked()
+                            && tl07d.isChecked())) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl07), Toast.LENGTH_SHORT).show();
+                        tl07d.setError("This data is Required!");    // Set Error on last check box
+
+                        Log.i(TAG, "tl07: This data is Required!");
+                        return false;
+                    } else {
+                        tl07d.setError(null);
+                    }
+                }
+            }
+        }
+
+//        08
+        if (!(tl08a.isChecked() && tl08b.isChecked() && tl08c.isChecked() && tl08d.isChecked() &&
+                tl08e.isChecked() && tl08f.isChecked() && tl08g.isChecked() &&
+                tl08h.isChecked() && tl08i.isChecked())) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl08), Toast.LENGTH_SHORT).show();
+            tl08i.setError("This data is Required!");    // Set Error on last check box
+
+            Log.i(TAG, "tl08: This data is Required!");
+            return false;
+        } else {
+            tl08i.setError(null);
+        }
+
+//        09
+        if (tl09.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl09), Toast.LENGTH_SHORT).show();
+            tl0988.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tl09: This data is Required!");
+            return false;
+        } else {
+            tl0988.setError(null);
+        }
+        if (tl0988.isChecked() && tl0988x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tl0988x.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tl0988x: This data is Required!");
+            return false;
+        } else {
+            tl0988x.setError(null);
+        }
+
+        return true;
+    }
+
 }
 
