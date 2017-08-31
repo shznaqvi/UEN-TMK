@@ -339,6 +339,9 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.fldGrptha14)
     LinearLayout fldGrptha14;
 
+    @BindView(R.id.fldGrptha21)
+    LinearLayout fldGrptha21;
+
     @BindView(R.id.fldGrptha32)
     LinearLayout fldGrptha32;
 
@@ -571,11 +574,65 @@ public class SectionHAActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tha20a.isChecked()) {
+
+                    tha20d.setText(null);
+                    tha20d.setVisibility(View.GONE);
+
+                    tha21.clearCheck();
+                    tha22.setText(null);
+
+                    tha23.clearCheck();
+
+                    tha24a.setChecked(false);
+                    tha24b.setChecked(false);
+                    tha24c.setChecked(false);
+                    tha24d.setChecked(false);
+                    tha24e.setChecked(false);
+                    tha24f.setChecked(false);
+                    tha24g.setChecked(false);
+
+                    tha25.clearCheck();
+
+                    fldGrptha21.setVisibility(View.GONE);
+
                     tha20hr.setVisibility(View.VISIBLE);
                     tha20hr.requestFocus();
-                } else {
+                } else if (tha20b.isChecked()) {
+
                     tha20hr.setText(null);
                     tha20hr.setVisibility(View.GONE);
+
+
+                    tha21.clearCheck();
+                    tha22.setText(null);
+
+                    tha23.clearCheck();
+
+                    tha24a.setChecked(false);
+                    tha24b.setChecked(false);
+                    tha24c.setChecked(false);
+                    tha24d.setChecked(false);
+                    tha24e.setChecked(false);
+                    tha24f.setChecked(false);
+                    tha24g.setChecked(false);
+
+                    tha25.clearCheck();
+
+
+                    fldGrptha21.setVisibility(View.GONE);
+
+                    tha20d.setVisibility(View.VISIBLE);
+                    tha20d.requestFocus();
+
+                } else if (tha20a.isChecked()) {
+
+                    tha20hr.setVisibility(View.GONE);
+                    tha20d.setVisibility(View.GONE);
+
+                    tha20hr.setText(null);
+                    tha20d.setText(null);
+
+                    fldGrptha21.setVisibility(View.VISIBLE);
                 }
             }
         });
