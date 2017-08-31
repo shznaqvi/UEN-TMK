@@ -3,7 +3,11 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.os.Bundle;
 
+import android.support.annotation.IdRes;
 import android.util.Log;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.EditText;
@@ -343,11 +347,401 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.thb3688x)
     EditText thb3688x;
 
+    @BindView(R.id.fldGrpthb02)
+    LinearLayout fldGrpthb02;
+
+    @BindView(R.id.fldGrpthb04)
+    LinearLayout fldGrpthb04;
+
+    @BindView(R.id.fldGrpth08)
+    LinearLayout fldGrpth08;
+
+    @BindView(R.id.fldGrpth15)
+    LinearLayout fldGrpth15;
+
+    @BindView(R.id.fldGrpth22)
+    LinearLayout fldGrpth22;
+
+    @BindView(R.id.fldGrpth23)
+    LinearLayout fldGrpth23;
+
+    @BindView(R.id.fldGrpth25)
+    LinearLayout fldGrpth25;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_hb);
         ButterKnife.bind(this);
+
+        thb01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb01a.isChecked()) {
+                    fldGrpthb02.setVisibility(View.VISIBLE);
+                    thb02.requestFocus();
+                } else {
+
+                    thb02.setText(null);
+                    fldGrpthb02.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb03a.isChecked()) {
+                    fldGrpthb04.setVisibility(View.VISIBLE);
+                } else {
+
+                    thb04.setText(null);
+                    thb05.setText(null);
+                    thb06.setText(null);
+
+                    thb07.clearCheck();
+
+                    thb08a.setChecked(false);
+                    thb08b.setChecked(false);
+                    thb08c.setChecked(false);
+                    thb08d.setChecked(false);
+                    thb08e.setChecked(false);
+                    thb08f.setChecked(false);
+                    thb08g.setChecked(false);
+                    thb08h.setChecked(false);
+                    thb0888.setChecked(false);
+
+                    thb0888x.setText(null);
+
+                    thb09.setText(null);
+                    thb10.clearCheck();
+                    thb11.clearCheck();
+
+                    thb12a.setChecked(false);
+                    thb12b.setChecked(false);
+                    thb12c.setChecked(false);
+                    thb12d.setChecked(false);
+                    thb12e.setChecked(false);
+                    thb12f.setChecked(false);
+                    thb12g.setChecked(false);
+                    thb12h.setChecked(false);
+
+                    thb13.clearCheck();
+                    thb14.clearCheck();
+                    thb15.clearCheck();
+                    thb16.clearCheck();
+                    thb17.clearCheck();
+                    thb18.clearCheck();
+                    thb19.clearCheck();
+
+                    thb20a.setChecked(false);
+                    thb20b.setChecked(false);
+                    thb20c.setChecked(false);
+                    thb20d.setChecked(false);
+                    thb20e.setChecked(false);
+                    thb20f.setChecked(false);
+                    thb20g.setChecked(false);
+
+                    thb21.clearCheck();
+
+                    thb21hr.setText(null);
+                    thb21d.setText(null);
+
+                    thb22.clearCheck();
+
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    thb26.clearCheck();
+
+                    thb27.setText(null);
+
+                    thb28.clearCheck();
+                    thb2888x.setText(null);
+
+                    thb29.setText(null);
+                    thb30.setText(null);
+
+                    thb31.clearCheck();
+                    thb32.clearCheck();
+                    thb33.clearCheck();
+
+                    thb34.setText(null);
+
+                    thb35.clearCheck();
+
+                    thb36a.setChecked(false);
+                    thb36b.setChecked(false);
+                    thb36c.setChecked(false);
+                    thb36d.setChecked(false);
+                    thb36e.setChecked(false);
+                    thb36f.setChecked(false);
+                    thb36g.setChecked(false);
+                    thb36h.setChecked(false);
+                    thb36i.setChecked(false);
+                    thb36j.setChecked(false);
+                    thb36k.setChecked(false);
+                    thb3688.setChecked(false);
+
+                    thb3688x.setText(null);
+
+
+                    fldGrpthb04.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb07a.isChecked()) {
+
+                    thb08a.setChecked(false);
+                    thb08b.setChecked(false);
+                    thb08c.setChecked(false);
+                    thb08d.setChecked(false);
+                    thb08e.setChecked(false);
+                    thb08f.setChecked(false);
+                    thb08g.setChecked(false);
+                    thb08h.setChecked(false);
+                    thb0888.setChecked(false);
+
+                    thb0888.setText(null);
+
+                    fldGrpth08.setVisibility(View.GONE);
+                } else {
+                    fldGrpth08.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        thb0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb0888.isChecked()) {
+                    thb0888x.setVisibility(View.VISIBLE);
+                    thb0888x.requestFocus();
+                } else {
+                    thb0888x.setText(null);
+                    thb0888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb14b.isChecked()) {
+
+                    thb15.clearCheck();
+                    thb16.clearCheck();
+                    thb17.clearCheck();
+                    thb18.clearCheck();
+                    thb19.clearCheck();
+
+                    thb20a.setChecked(false);
+                    thb20b.setChecked(false);
+                    thb20c.setChecked(false);
+                    thb20d.setChecked(false);
+                    thb20e.setChecked(false);
+                    thb20f.setChecked(false);
+                    thb20g.setChecked(false);
+
+                    thb21.clearCheck();
+
+                    thb21hr.setText(null);
+                    thb21d.setText(null);
+
+
+                    thb22.clearCheck();
+
+                    thb23.setText(null);
+
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    fldGrpth15.setVisibility(View.GONE);
+
+                } else {
+                    fldGrpth15.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        thb1788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb1788.isChecked()) {
+                    thb1788x.setVisibility(View.VISIBLE);
+                    thb1788x.requestFocus();
+                } else {
+                    thb1788x.setText(null);
+                    thb1788x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb21.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb21a.isChecked()) {
+
+                    thb21d.setText(null);
+                    thb21d.setVisibility(View.GONE);
+
+                    thb22.clearCheck();
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    thb26.clearCheck();
+
+
+                    fldGrpth22.setVisibility(View.GONE);
+
+                    thb21hr.setVisibility(View.VISIBLE);
+                    thb21hr.requestFocus();
+
+                } else if (thb21b.isChecked()) {
+                    thb21hr.setText(null);
+                    thb21hr.setVisibility(View.GONE);
+
+                    thb22.clearCheck();
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    thb26.clearCheck();
+
+                    fldGrpth22.setVisibility(View.GONE);
+
+                    thb21d.setVisibility(View.VISIBLE);
+                    thb21d.requestFocus();
+
+                } else if (thb21c.isChecked()) {
+                    thb21hr.setText(null);
+                    thb21hr.setVisibility(View.GONE);
+
+                    thb21d.setText(null);
+                    thb21d.setVisibility(View.GONE);
+
+                    fldGrpth22.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        thb28.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb2888.isChecked()) {
+                    thb2888x.setVisibility(View.VISIBLE);
+                    thb2888x.requestFocus();
+                } else {
+                    thb2888x.setText(null);
+                    thb2888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb3688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb3688.isChecked()) {
+                    thb3688x.setVisibility(View.VISIBLE);
+                    thb3688x.requestFocus();
+                } else {
+                    thb3688x.setText(null);
+                    thb3688x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb22b.isChecked()) {
+
+                    thb23.setText(null);
+
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+
+                    fldGrpth23.setVisibility(View.GONE);
+                } else {
+                    fldGrpth23.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        thb24.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb24a.isChecked()) {
+                    fldGrpth25.setVisibility(View.VISIBLE);
+                } else {
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    fldGrpth25.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
     }
 
 
