@@ -21,7 +21,8 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity;
-import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
@@ -91,7 +92,8 @@ public class MainApp extends Application {
     public static String regionDss = "";
     public static List<MemberContract> familyMembersList;
     public static FamilyMembersContract fmc;
-    public static DeceasedContract dc;
+    public static DeceasedMotherContract dcM;
+    public static DeceasedChildContract dcC;
     public static MotherContract mc;
     public static SectionKIMContract ims;
     public static int mm = 1;

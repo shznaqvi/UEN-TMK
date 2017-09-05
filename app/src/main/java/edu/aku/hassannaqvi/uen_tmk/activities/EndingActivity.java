@@ -115,7 +115,7 @@ public class EndingActivity extends Activity {
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateEnding();
-        if (MainApp.memFlag != 0) {
+        /*if (MainApp.memFlag != 0) {
             db.updateCensus();
         }
         if (MainApp.currentDeceasedCheck != 0) {
@@ -127,7 +127,7 @@ public class EndingActivity extends Activity {
         if (MainApp.totalChild != 0) {
             db.updateIM();
         }
-
+*/
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
