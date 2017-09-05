@@ -125,10 +125,15 @@ public class SectionFActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSG();
+        Long updcount = db.addDeceasedChild(MainApp.dcC);
+        MainApp.dcC.set_ID(String.valueOf(updcount));
 
-        if (updcount == 1) {
+        if (updcount != -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.dcC.set_UID(
+                    (MainApp.fc.getDeviceID() + MainApp.dcC.get_ID()));
+            db.updateDeceasedMotherID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -156,7 +161,7 @@ public class SectionFActivity extends AppCompatActivity {
         sF.put("tf0788x", tf0788x.getText().toString());
 
 
-        MainApp.fc.setsF(String.valueOf(sF));
+        MainApp.dcC.setsF(String.valueOf(sF));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

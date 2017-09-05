@@ -21,22 +21,19 @@
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
     <!-- String related to section headings -->
-    <string name="secALabel">HH Identification and Visit Status</string>
-    <string name="sec2A"> سیکشن 2A: بنیادی معلومات </string>
-    <string name="secBLabel">  سیکشن بی: خاندان کے تمام افراد کی فہرست </string>
-    <string name="secCLabel"> سیکشن سی:گزشتہ ایک سال کے دوران انتقال ہونے والے  افراد</string>
-    <string name="secDLabel">سیکشن ڈی: گھریلوں تعمیر</string>
-    <string name="secELabel">سیکشن ای : ہاتھ دھونا</string>
-    <string name="secFLabel">سیکشن ایف :منتخب شدہ ماؤں کی گزشتہ پیداواری معلومات</string>
-    <string name="secGLabel">سیکشن جی :خاندانی منصوبہ بندی(حمل کی تفصیلات کی طرف جائیں ) </string>
-    <string name="secHLabel">سیکشن ایچ :ضرورت جو پوری نہ ہوسکی</string>
-    <string name="secILabel">سیکشن آئی :شیر خوار اور بڑے بچوں کی غذا</string>
-    <string name="secJLabel">سیکشن  جے: بچے کی صحت کی معلومات</string>
-    <string name="secKLabel"> سیکشن کے:حفاظتی ٹیکے</string>
-    <string name="secLLabel">سیکشن ایل :گھریلو خوراک ی ناقص تحفظ، خوراک کا استعمال اور تبدیل</string>
-    <string name="dcl2heading"> خاندان کی غذا سے متعلق نمنٹے کی حکمت عملی </string>
-    <string name="dcl3heading"> بھوک کا پیمانہ ( گزشتہ ایک ماہ کے متعلق) </string>
-    <string name="secMLabel">سیکشن ایم: گھر کا ماحول</string>
+    <string name="secALabel">HH Identification, Introduction And Consent</string>
+    <string name="secBLabel">  HOUSEHOLD MEMBERS’ INFORMATION </string>
+    <string name="secCLabel"> گھر جي سماجي ۽ اقتصادي معلومات</string>
+    <string name="secDLabel">REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
+    <string name="secELabel">Deceased Mother Information</string>
+    <string name="secFLabel">Deceased Child Information</string>
+    <string name="secGLabel">Access to LHWs </string>
+    <string name="secHALabel">ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
+    <string name="secHBLabel">ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
+    <string name="secILabel">حفاظتي ٽڪن جي معلومات</string>
+    <string name="secJLabel">BREAST FEEDING AND NUTRITION </string>
+    <string name="secKLabel">پاڻي ۽ صفائي</string>
+    <string name="secLLabel">ھٿ ڌوئڻ</string>
 
 
     <!-- Strings that are fixed for all apps -->
@@ -154,7 +151,7 @@
     <string name="tb14"> گھر ۾ پنجن سالن کان گھٽ عمر وارن ٻارن جو تعداد </string>
     <string name="tcheading"> گھر جي سماجي ۽ اقتصادي معلومات </string>
     <string name="tc0101"> Natural floor </string>
-    <string name="tc0102"> Natural floor </string>
+    <string name="tc0102"> Rudimentary floor </string>
     <string name="tc0103"> Finished floor </string>
     <string name="tc01"> فرش ڪهڙي قسم جو آهي </string>
     <string name="tc01a"> زمين / واري / مٽي </string>
@@ -307,8 +304,8 @@
     <string name="te01"> مري ويل ماءُ جو مڪمل نالو </string>
     <string name="te02"> مرڻ وقت عمر </string>
     <string name="te03"> موت جي جڳھه </string>
-    <string name="te03a"> سرڪاري صحت </string>
-    <string name="te03b"> مرڪ </string>
+    <string name="te03a"> گهر ۾ </string>
+    <string name="te03b"> سرڪاري صحت مرڪز </string>
     <string name="te03c"> پرائيويٽ صحت مرڪز </string>
     <string name="te03d"> اين جي اوصحت مرڪز </string>
     <string name="te03e"> صحت مرڪز ڏانھن ويندي رستي ۾.. </string>

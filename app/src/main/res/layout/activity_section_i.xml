@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="2dp"
             android:gravity="center"
-            android:text="@string/secALabel"
+            android:text="@string/secILabel"
             android:textSize="30sp" />
 
         <View
