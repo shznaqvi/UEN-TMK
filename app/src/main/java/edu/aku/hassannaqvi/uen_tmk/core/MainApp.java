@@ -70,17 +70,10 @@ public class MainApp extends Application {
     public static String userName = "0000";
     public static String areaCode;
     //    Total No of members got from Section A
-    public static int NoMembersCount = 0;
-    public static int NoMaleCount = 0;
-    public static int NoFemaleCount = 0;
-    public static int NoBoyCount = 0;
-    public static int NoGirlCount = 0;
 
     public static int TotalMembersCount = 0;
-    public static int TotalMaleCount = 0;
-    public static int TotalFemaleCount = 0;
-    public static int TotalBoyCount = 0;
-    public static int TotalGirlCount = 0;
+    public static int TotalMWRACount = 0;
+    public static int TotalChildCount = 0;
 
     //    Total No of Alive members got from Section B
     public static int currentStatusCount = 0;

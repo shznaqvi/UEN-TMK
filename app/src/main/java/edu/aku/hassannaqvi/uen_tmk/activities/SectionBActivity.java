@@ -1,10 +1,15 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -15,11 +20,16 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
@@ -139,7 +149,11 @@ public class SectionBActivity extends AppCompatActivity {
     @BindView(R.id.tb11d)
     RadioButton tb11d;
 
+    @BindView(R.id.btn_ContNextSec)
+    Button btn_ContNextSec;
+
     int counter = 0;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,6 +163,42 @@ public class SectionBActivity extends AppCompatActivity {
 
 //        Counter for serial no
         counter++;
+
+        tb07.setManager(getSupportFragmentManager());
+
+        db = new DatabaseHelper(this);
+
+//        Check for next sec button
+
+        if (MainApp.TotalMembersCount == 0) {
+            btn_ContNextSec.setVisibility(View.GONE);
+        } else {
+            btn_ContNextSec.setVisibility(View.VISIBLE);
+        }
+
+//        set head values
+        totalMem.setText(MainApp.TotalMembersCount);
+        totalmwra.setText(MainApp.TotalMWRACount);
+        totalChild.setText(MainApp.TotalChildCount);
+
+//        Check HH
+
+        if (MainApp.isHead) {
+            tb03a.setEnabled(false);
+        }
+
+//        Skip Patterns
+
+        tb04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tb04a) {
+                    tb10a.setEnabled(false);
+                } else {
+                    tb10a.setEnabled(true);
+                }
+            }
+        });
 
 //        DOB skip checker
         tbdob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -167,23 +217,183 @@ public class SectionBActivity extends AppCompatActivity {
             }
         });
 
-        tb07.setManager(getSupportFragmentManager());
+//        Textwatcher
+        tb07.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (checkChildLessThenFive(1)) {
+                    tb09.setText("NA");
+
+                    tb10.clearCheck();
+                    tb10a.setEnabled(false);
+                    tb10b.setEnabled(false);
+                    tb10c.setEnabled(false);
+                    tb10d.setEnabled(false);
+                    tb10e.setEnabled(false);
+                    tb10f.setEnabled(false);
+                    tb10g.setEnabled(false);
+                    tb10h.setEnabled(false);
+                    tb10i.setEnabled(false);
+                    tb10j.setEnabled(false);
+                    tb10k.setEnabled(false);
+                    tb10l.setEnabled(false);
+
+                    tb11a.setEnabled(false);
+                    tb11a.setChecked(false);
+                } else {
+                    tb09.setText(null);
+
+                    tb10a.setEnabled(true);
+                    tb10b.setEnabled(true);
+                    tb10c.setEnabled(true);
+                    tb10d.setEnabled(true);
+                    tb10e.setEnabled(true);
+                    tb10f.setEnabled(true);
+                    tb10g.setEnabled(true);
+                    tb10h.setEnabled(true);
+                    tb10i.setEnabled(true);
+                    tb10j.setEnabled(true);
+                    tb10k.setEnabled(true);
+                    tb10l.setEnabled(true);
+
+                    tb11a.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        tb08y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!tb08y.getText().toString().isEmpty() && !tb08m.getText().toString().isEmpty()) {
+                    if (checkChildLessThenFive(2)) {
+                        tb09.setText("NA");
+
+                        tb10a.setEnabled(false);
+                        tb10b.setEnabled(false);
+                        tb10c.setEnabled(false);
+                        tb10d.setEnabled(false);
+                        tb10e.setEnabled(false);
+                        tb10f.setEnabled(false);
+                        tb10g.setEnabled(false);
+                        tb10h.setEnabled(false);
+                        tb10i.setEnabled(false);
+                        tb10j.setEnabled(false);
+                        tb10k.setEnabled(false);
+                        tb10l.setEnabled(false);
+
+                        tb11a.setEnabled(false);
+                        tb11a.setChecked(false);
+                    } else {
+                        tb09.setText(null);
+
+                        tb10a.setEnabled(true);
+                        tb10b.setEnabled(true);
+                        tb10c.setEnabled(true);
+                        tb10d.setEnabled(true);
+                        tb10e.setEnabled(true);
+                        tb10f.setEnabled(true);
+                        tb10g.setEnabled(true);
+                        tb10h.setEnabled(true);
+                        tb10i.setEnabled(true);
+                        tb10j.setEnabled(true);
+                        tb10k.setEnabled(true);
+                        tb10l.setEnabled(true);
+
+                        tb11a.setEnabled(true);
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
     }
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
+        MainApp.endActivity(this, this);
     }
 
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
+    @OnClick(R.id.btn_ContNextSec)
+    void onBtnContNextSecClick() {
         //TODO implement
+
+        startActivity(new Intent(this, SectionCActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
     void onBtnAddMoreClick() {
         //TODO implement
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                if (checkChildLessThenFive(tbdob01.isChecked() ? 1 : 2)) {
+
+                    MainApp.TotalChildCount++;
+                    MainApp.TotalMembersCount++;
+
+                } else {
+                    if (tb11a.isChecked()) {
+                        MainApp.TotalMWRACount++;
+                        MainApp.TotalMembersCount++;
+                    } else {
+                        MainApp.TotalMembersCount++;
+                    }
+                }
+
+                startActivity(new Intent(this, SectionBActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public boolean checkChildLessThenFive(int i) {
+
+        if (i == 1) {
+
+            DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+            int d1 = Integer.parseInt(formatter.format(tb07.getText().toString()));
+            int d2 = Integer.parseInt(formatter.format(new Date()));
+            int ageInYears = (d2 - d1) / 10000;
+            return ageInYears < 5;
+
+        } else {
+            return (Integer.parseInt(tb08y.getText().toString()) == 5 && Integer.parseInt(tb08m.getText().toString()) == 0)
+                    || Integer.parseInt(tb08y.getText().toString()) < 5;
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -209,6 +419,11 @@ public class SectionBActivity extends AppCompatActivity {
                 : tb03k.isChecked() ? "11" : tb03l.isChecked() ? "12" : tb03m.isChecked() ? "13"
                 : tb03n.isChecked() ? "14" : tb0388.isChecked() ? "15" : "0");
         sB.put("tb0388x", tb0388x.getText().toString());
+
+        if (!MainApp.isHead) {
+            MainApp.isHead = tb03a.isChecked();
+        }
+
         sB.put("tb04", tb04a.isChecked() ? "1" : tb04b.isChecked() ? "2" : "0");
         sB.put("tb05", tb05.getText().toString());
         sB.put("tb06", tb06.getText().toString());
@@ -220,7 +435,7 @@ public class SectionBActivity extends AppCompatActivity {
             sB.put("tb08m", tb08m.getText().toString());
         }
 
-        sB.put("tb09", tb09.getText().toString());
+        sB.put("tb09", tb09.getText().toString().equals("NA") ? "999" : tb09.getText().toString());
         sB.put("tb10", tb10a.isChecked() ? "1" : tb10b.isChecked() ? "2" : tb10c.isChecked() ? "3"
                 : tb10d.isChecked() ? "4" : tb10e.isChecked() ? "5" : tb10f.isChecked() ? "6"
                 : tb10g.isChecked() ? "7" : tb10h.isChecked() ? "8" : tb10i.isChecked() ? "9" : tb10j.isChecked() ? "10"
@@ -231,6 +446,25 @@ public class SectionBActivity extends AppCompatActivity {
 
         //        MainApp.fc.setROW_sb(String.valueOf(sB));
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean UpdateDB() {
+
+        Long updcount = db.addForm(MainApp.fc);
+        MainApp.fc.set_ID(String.valueOf(updcount));
+
+        if (updcount != 0) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.fc.setUID(
+                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+            db.updateFormID();
+
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     public boolean formValidation() {

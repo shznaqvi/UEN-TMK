@@ -67,7 +67,7 @@ public class EndingActivity extends Activity {
                 MainApp.familyMembersList.clear();
                 MainApp.memFlag = 0;
 
-                MainApp.NoMembersCount = 0;
+                /*MainApp.NoMembersCount = 0;
                 MainApp.NoMaleCount = 0;
                 MainApp.NoFemaleCount = 0;
                 MainApp.NoBoyCount = 0;
@@ -75,9 +75,9 @@ public class EndingActivity extends Activity {
 
                 MainApp.TotalMembersCount = 0;
                 MainApp.TotalMaleCount = 0;
-                MainApp.TotalFemaleCount = 0;
-                MainApp.TotalBoyCount = 0;
-                MainApp.TotalGirlCount = 0;
+                MainApp.TotalMWRACount = 0;
+                MainApp.TotalChildCount = 0;
+                MainApp.TotalGirlCount = 0;*/
 
 //    Total No of Alive members got from Section B
                 MainApp.currentStatusCount = 0;
