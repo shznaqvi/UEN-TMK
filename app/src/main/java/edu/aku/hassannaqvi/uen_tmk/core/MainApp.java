@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -89,7 +90,7 @@ public class MainApp extends Application {
     //    Ali
     public static String regionDss = "";
     public static List<MemberContract> familyMembersList;
-    public static FamilyMembersContract cc;
+    public static FamilyMembersContract fmc;
     public static DeceasedContract dc;
     public static MotherContract mc;
     public static SectionKIMContract ims;
@@ -106,6 +107,7 @@ public class MainApp extends Application {
     public static int randID = 1;
     public static Boolean isRsvp = false;
     public static Boolean isHead = false;
+    public static String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     protected static LocationManager locationManager;
     Location location;
 

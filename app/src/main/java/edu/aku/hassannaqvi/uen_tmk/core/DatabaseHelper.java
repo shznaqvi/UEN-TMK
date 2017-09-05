@@ -975,11 +975,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(censusMember.COLUMN_UID, MainApp.cc.get_UID());
+        values.put(censusMember.COLUMN_UID, MainApp.fmc.get_UID());
 
 // Which row to update, based on the ID
         String selection = censusMember.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(MainApp.cc.get_ID())};
+        String[] selectionArgs = {String.valueOf(MainApp.fmc.get_ID())};
 
         int count = db.update(censusMember.TABLE_NAME,
                 values,
