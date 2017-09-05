@@ -109,6 +109,7 @@ public class MainApp extends Application {
     protected static LocationManager locationManager;
     Location location;
 
+
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 
         Calendar start = Calendar.getInstance();

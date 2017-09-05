@@ -1588,5 +1588,21 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_Continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/nextSection" />
+
+        <Button
+            android:id="@+id/btn_End"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/end_interview" />
+
     </LinearLayout>
 </ScrollView>

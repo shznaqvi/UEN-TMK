@@ -30,7 +30,8 @@ public class FormsContract {
     private String sE = "";
     private String sF = "";
     private String sG = "";
-    private String sH = "";
+    private String sHA = "";
+    private String sHB = "";
     private String sI = "";
     private String sJ = "";
     private String sK = "";
@@ -64,7 +65,8 @@ public class FormsContract {
         this.sE = jsonObject.getString(FormsTable.COLUMN_SE);
         this.sF = jsonObject.getString(FormsTable.COLUMN_SF);
         this.sG = jsonObject.getString(FormsTable.COLUMN_SG);
-        this.sH = jsonObject.getString(FormsTable.COLUMN_SH);
+        this.sHA = jsonObject.getString(FormsTable.COLUMN_SHA);
+        this.sHB = jsonObject.getString(FormsTable.COLUMN_SHB);
         this.sI = jsonObject.getString(FormsTable.COLUMN_SI);
         this.sJ = jsonObject.getString(FormsTable.COLUMN_SJ);
         this.sK = jsonObject.getString(FormsTable.COLUMN_SK);
@@ -96,7 +98,8 @@ public class FormsContract {
         this.sE = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
         this.sF = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
         this.sG = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SG));
-        this.sH = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH));
+        this.sHA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SHA));
+        this.sHB = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SHB));
         this.sI = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SI));
         this.sJ = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SJ));
         this.sK = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SK));
@@ -271,13 +274,23 @@ public class FormsContract {
         this.sG = sG;
     }
 
-    public String getsH() {
-        return sH;
+    public String getsHA() {
+        return sHA;
     }
 
-    public void setsH(String sH) {
-        this.sH = sH;
+    public void setsHA(String sHA) {
+        this.sHA = sHA;
     }
+
+
+    public String getsHB() {
+        return sHB;
+    }
+
+    public void setsHB(String sHB) {
+        this.sHB = sHB;
+    }
+
 
     public String getsI() {
         return sI;
@@ -400,7 +413,8 @@ public class FormsContract {
         public static final String COLUMN_SE = "se";
         public static final String COLUMN_SF = "sf";
         public static final String COLUMN_SG = "sg";
-        public static final String COLUMN_SH = "sh";
+        public static final String COLUMN_SHA = "sha";
+        public static final String COLUMN_SHB = "shb";
         public static final String COLUMN_SI = "si";
         public static final String COLUMN_SJ = "sj";
         public static final String COLUMN_SK = "sk";
