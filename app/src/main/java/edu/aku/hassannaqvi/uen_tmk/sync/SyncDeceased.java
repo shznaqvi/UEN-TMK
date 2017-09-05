@@ -23,8 +23,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedContract.DeceasedMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract.DeceasedMother;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -64,7 +64,7 @@ public class SyncDeceased extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + DeceasedMember._URL;
+            String url = MainApp._HOST_URL + DeceasedMother._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -111,7 +111,7 @@ public class SyncDeceased extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<DeceasedContract> Deceased = db.getUnsyncedDeceased();
+        Collection<DeceasedMotherContract> Deceased = db.getUnsyncedDeceasedMother();
         Log.d(TAG, String.valueOf(Deceased.size()));
         if (Deceased.size() > 0) {
             try {
@@ -138,7 +138,7 @@ public class SyncDeceased extends AsyncTask<Void, Void, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (DeceasedContract fc : Deceased) {
+                        for (DeceasedMotherContract fc : Deceased) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -110,10 +112,15 @@ public class SectionEActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSG();
+        Long updcount = db.addDeceasedMother(MainApp.dcM);
+        MainApp.dcM.set_ID(String.valueOf(updcount));
 
-        if (updcount == 1) {
+        if (updcount != -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.dcM.set_UID(
+                    (MainApp.fc.getDeviceID() + MainApp.dcM.get_ID()));
+            db.updateDeceasedMotherID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -124,6 +131,16 @@ public class SectionEActivity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.dcM = new DeceasedMotherContract();
+
+        MainApp.dcM.set_UUID(MainApp.fc.getUID());
+        MainApp.dcM.setFormDate(MainApp.fc.getFormDate());
+        MainApp.dcM.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.dcM.setUser(MainApp.fc.getUser());
+        MainApp.dcM.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sE = new JSONObject();
 
@@ -137,7 +154,7 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("te0588x", te0588x.getText().toString());
 
 
-        MainApp.fc.setsE(String.valueOf(sE));
+        MainApp.dcM.setsE(String.valueOf(sE));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 

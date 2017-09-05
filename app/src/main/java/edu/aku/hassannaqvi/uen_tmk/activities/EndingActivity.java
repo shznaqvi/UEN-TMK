@@ -36,7 +36,7 @@ public class EndingActivity extends Activity {
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        Boolean check = getIntent().getExtras().getBoolean("check");
+        Boolean check = getIntent().getExtras().getBoolean("complete");
 
         if (check) {
             dcstatus01.setEnabled(true);
@@ -67,7 +67,7 @@ public class EndingActivity extends Activity {
                 MainApp.familyMembersList.clear();
                 MainApp.memFlag = 0;
 
-                MainApp.NoMembersCount = 0;
+                /*MainApp.NoMembersCount = 0;
                 MainApp.NoMaleCount = 0;
                 MainApp.NoFemaleCount = 0;
                 MainApp.NoBoyCount = 0;
@@ -75,9 +75,9 @@ public class EndingActivity extends Activity {
 
                 MainApp.TotalMembersCount = 0;
                 MainApp.TotalMaleCount = 0;
-                MainApp.TotalFemaleCount = 0;
-                MainApp.TotalBoyCount = 0;
-                MainApp.TotalGirlCount = 0;
+                MainApp.TotalMWRACount = 0;
+                MainApp.TotalChildCount = 0;
+                MainApp.TotalGirlCount = 0;*/
 
 //    Total No of Alive members got from Section B
                 MainApp.currentStatusCount = 0;
@@ -115,7 +115,7 @@ public class EndingActivity extends Activity {
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateEnding();
-        if (MainApp.memFlag != 0) {
+        /*if (MainApp.memFlag != 0) {
             db.updateCensus();
         }
         if (MainApp.currentDeceasedCheck != 0) {
@@ -127,7 +127,7 @@ public class EndingActivity extends Activity {
         if (MainApp.totalChild != 0) {
             db.updateIM();
         }
-
+*/
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;

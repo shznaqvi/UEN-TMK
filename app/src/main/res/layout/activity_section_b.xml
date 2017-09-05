@@ -46,10 +46,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="20"
-                android:background="@color/colorPrimary"
+                android:layout_weight="15"
+                android:background="@color/pink_100"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:layout_width="0dp"
@@ -66,16 +66,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="20"
-                android:background="@color/colorPrimary"
+                android:layout_weight="15"
+                android:background="@color/pink_100"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="15"
+                android:layout_weight="20"
                 android:background="@color/colorPrimary"
                 android:text="Child less 5:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -86,10 +87,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="20"
-                android:background="@color/colorPrimary"
+                android:layout_weight="15"
+                android:background="@color/pink_100"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
 
@@ -348,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:focusable="true"
-                android:hint="@string/tf06"
+                android:hint="@string/tbdob01"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
@@ -588,18 +589,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="endInterview"
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e" />
 
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
 
             <Button
-                android:id="@+id/btn_Continue"
+                android:id="@+id/btn_ContNextSec"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="startInterview"
                 android:text="@string/nextSection"
                 android:textColor="#1ed61e" />
             <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
@@ -609,7 +608,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="startInterview"
                 android:text="@string/addMember"
                 android:textColor="#1ed61e" />
             <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
