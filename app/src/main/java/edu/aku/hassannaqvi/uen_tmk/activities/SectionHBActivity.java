@@ -416,6 +416,9 @@ public class SectionHBActivity extends Activity {
                     thb08h.setChecked(false);
                     thb0888.setChecked(false);
 
+
+
+
                     thb0888x.setText(null);
 
                     thb09.setText(null);
