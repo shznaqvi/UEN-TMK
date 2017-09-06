@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -233,6 +235,59 @@ public class SectionJActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
+
+        tj0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tj0288.isChecked()) {
+                    tj0288x.setVisibility(View.VISIBLE);
+                    tj0288x.requestFocus();
+                } else {
+                    tj0288x.setText(null);
+                    tj0288x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        tj0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tj0788.isChecked()) {
+                    tj0788x.setVisibility(View.VISIBLE);
+                    tj0788x.requestFocus();
+                } else {
+                    tj0788x.setText(null);
+                    tj0788x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        tj0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tj0888.isChecked()) {
+                    tj0888x.setVisibility(View.VISIBLE);
+                    tj0888x.requestFocus();
+                } else {
+                    tj0888x.setText(null);
+                    tj0888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        tj1488.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tj1488.isChecked()) {
+                    tj1488x.setVisibility(View.VISIBLE);
+                    tj1488x.requestFocus();
+                } else {
+                    tj1488x.setText(null);
+                    tj1488x.setVisibility(View.GONE);
+                }
+            }
+        });
 
     }
 

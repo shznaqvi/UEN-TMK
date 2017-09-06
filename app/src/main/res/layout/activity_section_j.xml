@@ -196,7 +196,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/hour"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/tj03d"
@@ -205,7 +205,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/day"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
 
         <TextView
@@ -611,7 +611,7 @@
                 android:layout_marginBottom="1dp"
                 android:hint="@string/day"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
 
             <EditText
                 android:id="@+id/tj11m"
@@ -620,7 +620,7 @@
                 android:layout_marginBottom="1dp"
                 android:hint="@string/month"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
 
 
         </LinearLayout>
@@ -670,7 +670,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/day"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/tj12m"
@@ -679,7 +679,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/month"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
         <!--13-->
 
@@ -726,7 +726,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/day"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/tj13m"
@@ -735,7 +735,7 @@
             android:layout_marginBottom="1dp"
             android:hint="@string/month"
             android:inputType="number"
-            android:maxLength="2"/>
+            android:maxLength="2" />
 
 
         <TextView
@@ -841,6 +841,7 @@
                 android:text="@string/other" />
 
         </RadioGroup>
+
         <EditText
             android:id="@+id/tj1488x"
             android:layout_width="match_parent"
