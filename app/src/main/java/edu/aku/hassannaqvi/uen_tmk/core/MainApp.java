@@ -73,8 +73,14 @@ public class MainApp extends Application {
     //    Total No of members got from Section A
 
     public static int TotalMembersCount = 0;
+    public static int mwraCount = 1;
     public static int TotalMWRACount = 0;
     public static int TotalChildCount = 0;
+
+    public static int dcChildCount = 1;
+    public static int dcMotherCount = 1;
+    public static int dcMotherTotal = 0;
+    public static int dcChildTotal = 0;
 
     //    Total No of Alive members got from Section B
     public static int currentStatusCount = 0;

@@ -3,23 +3,22 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
-import android.widget.EditText;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
@@ -765,8 +764,8 @@ public class SectionHBActivity extends Activity {
 
                 finish();
 
-                //Intent secNext = new Intent(this, SectionIActivity.class);
-                //startActivity(secNext);
+                Intent secNext = new Intent(this, SectionIActivity.class);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

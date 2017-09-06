@@ -258,7 +258,7 @@ public class SectionJActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionJActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

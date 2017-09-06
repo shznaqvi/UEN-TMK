@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -54,6 +55,8 @@ public class SectionDActivity extends Activity {
     LinearLayout fldGrptd05;
     @BindView(R.id.td05)
     EditText td05;
+    @BindView(R.id.count)
+    TextView count;
 
 
 
@@ -62,6 +65,8 @@ public class SectionDActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
+
+        count.setText("Woman: " + MainApp.mwraCount + " out of " + MainApp.TotalMWRACount);
 
         td01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

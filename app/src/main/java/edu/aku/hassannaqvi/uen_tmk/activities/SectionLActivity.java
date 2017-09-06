@@ -249,7 +249,7 @@ public class SectionLActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, EndingActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

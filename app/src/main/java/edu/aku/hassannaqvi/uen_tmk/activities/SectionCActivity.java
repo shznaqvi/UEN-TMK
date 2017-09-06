@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionCActivity extends Activity {
@@ -613,9 +614,9 @@ public class SectionCActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateC();
+        int updcount = db.updateSC();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -623,9 +624,9 @@ public class SectionCActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
 
     }
 
@@ -1273,6 +1274,16 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             tc17888.setError(null);
+        }
+
+        if (tc18.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc18), Toast.LENGTH_SHORT).show();
+            tc18b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tc18: This data is Required!");
+            return false;
+        } else {
+            tc18b.setError(null);
         }
 
 
