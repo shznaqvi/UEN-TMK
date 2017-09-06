@@ -418,8 +418,6 @@ public class SectionHBActivity extends Activity {
 
 
 
-
-
                     thb0888x.setText(null);
 
                     thb09.setText(null);
