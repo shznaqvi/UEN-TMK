@@ -25,8 +25,8 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
@@ -87,7 +87,7 @@ public class MainApp extends Application {
     public static FamilyMembersContract fmc;
     public static DeceasedMotherContract dcM;
     public static DeceasedChildContract dcC;
-    public static MotherContract mc;
+    public static MWRAContract mw;
     public static SectionKIMContract ims;
     public static int mm = 1;
     public static int totalChild = 0;

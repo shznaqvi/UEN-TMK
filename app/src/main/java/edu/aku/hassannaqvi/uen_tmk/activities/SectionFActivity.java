@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -144,6 +146,16 @@ public class SectionFActivity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.dcC = new DeceasedChildContract();
+
+        MainApp.dcC.set_UUID(MainApp.fc.getUID());
+        MainApp.dcC.setFormDate(MainApp.fc.getFormDate());
+        MainApp.dcC.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.dcC.setUser(MainApp.fc.getUser());
+        MainApp.dcC.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sF = new JSONObject();
 

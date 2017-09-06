@@ -155,6 +155,7 @@ public class SectionBActivity extends AppCompatActivity {
 
     int counter = 0;
     DatabaseHelper db;
+    long ageInyears = 0;
 
     public static long ageInYears(String dateStr) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -241,10 +242,12 @@ public class SectionBActivity extends AppCompatActivity {
                     fldGrptb08.setVisibility(View.GONE);
                     tb08y.setText(null);
                     tb08m.setText(null);
+                    //ageInyears = (ageInYears(tb07.getText().toString()));
                 } else {
                     tb07.setText(null);
                     fldGrptb08.setVisibility(View.VISIBLE);
                     fldGrptb07.setVisibility(View.GONE);
+                    //ageInyears = Long.valueOf(tb08y.getText().toString());
                 }
             }
         });
@@ -261,9 +264,9 @@ public class SectionBActivity extends AppCompatActivity {
 
                 //if (checkChildLessThenFive(1)) {
 
-                if (ageInYears(tb07.getText().toString()) < 5) {
+                ageInyears = ageInYears(tb07.getText().toString());
+                if (ageInyears < 5) {
                     tb09.setText("NA");
-
                     tb10.clearCheck();
                     tb10a.setEnabled(false);
                     tb10b.setEnabled(false);
@@ -316,10 +319,13 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if (!tb08y.getText().toString().isEmpty() && !tb08m.getText().toString().isEmpty()) {
 
+                if (!tb08y.getText().toString().isEmpty()) {
 
+                    ageInyears = Long.valueOf(tb08y.getText().toString());
                     //if (checkChildLessThenFive(2)) {
+
+                    if (ageInyears < 5) {
                         tb09.setText("NA");
 
                         tb10a.setEnabled(false);
@@ -355,8 +361,9 @@ public class SectionBActivity extends AppCompatActivity {
 
                         tb11a.setEnabled(true);
                     }
-                //}
+                    //}
 
+                }
             }
 
             @Override
@@ -396,27 +403,24 @@ public class SectionBActivity extends AppCompatActivity {
 
                 finish();
 
-                if (tbdob01.isChecked()) {
-                    if (ageInYears(tb07.getText().toString()) < 5) {
+                if (ageInyears < 5) {
 
                         MainApp.TotalChildCount++;
                         MainApp.TotalMembersCount++;
-                    }
-
-                } else {
-                    if (tb11a.isChecked() && tb04b.isChecked()) {
+                } else if (tb11a.isChecked() && tb04b.isChecked()
+                        && (ageInyears > 15 || ageInyears < 49)) {
                         MainApp.TotalMWRACount++;
                         MainApp.TotalMembersCount++;
-                    } else {
+                } else {
                         MainApp.TotalMembersCount++;
                     }
+
                 }
 
                 startActivity(new Intent(this, SectionBActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
     }
 
     //public boolean checkChildLessThenFive(int i) {
@@ -634,7 +638,7 @@ public class SectionBActivity extends AppCompatActivity {
                 tb08m.setError(null);
             }
 
-            if (Integer.parseInt(tb08y.getText().toString()) > 0) {
+            if (Integer.parseInt(tb08y.getText().toString()) < 0) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
                 tb08y.setError("Greater then 0! ");    // Set Error on last radio button
 
@@ -644,7 +648,7 @@ public class SectionBActivity extends AppCompatActivity {
                 tb08y.setError(null);
             }
 
-            if (Integer.parseInt(tb08m.getText().toString()) > 0 || Integer.parseInt(tb08m.getText().toString()) <= 11) {
+            if (Integer.parseInt(tb08m.getText().toString()) < 0 || Integer.parseInt(tb08m.getText().toString()) >= 11) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                 tb08m.setError("Range from 1 - 11! ");    // Set Error on last radio button
 

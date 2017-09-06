@@ -1128,33 +1128,37 @@ public class SectionCActivity extends Activity {
             tc11b.setError(null);
         }
 
+        if (tc11a.isChecked()) {
+
 //        12
-        if (tc12.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12), Toast.LENGTH_SHORT).show();
-            tc12888.setError("This data is Required!");    // Set Error on last radio button
+            if (tc12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12), Toast.LENGTH_SHORT).show();
+                tc12888.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tc12: This data is Required!");
-            return false;
-        } else {
-            tc12888.setError(null);
-        }
-        if (tc12a.isChecked() && tc12ac.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
-            tc12ac.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc12: This data is Required!");
+                return false;
+            } else {
+                tc12888.setError(null);
+            }
+            if (tc12a.isChecked() && tc12ac.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
+                tc12ac.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc12ac: This data is Required!");
-            return false;
-        } else {
-            tc12ac.setError(null);
-        }
-        if (tc12b.isChecked() && tc12kn.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
-            tc12kn.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc12ac: This data is Required!");
+                return false;
+            } else {
+                tc12ac.setError(null);
+            }
+            if (tc12b.isChecked() && tc12kn.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
+                tc12kn.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc12kn: This data is Required!");
-            return false;
-        } else {
-            tc12kn.setError(null);
+                Log.i(TAG, "tc12kn: This data is Required!");
+                return false;
+            } else {
+                tc12kn.setError(null);
+            }
+
         }
 
 
@@ -1171,59 +1175,62 @@ public class SectionCActivity extends Activity {
 
 //        14
 
-        if (tc14a.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14a), Toast.LENGTH_SHORT).show();
-            tc14a.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14a: This data is Required!");
-            return false;
-        } else {
-            tc14a.setError(null);
-        }
-        if (tc14b.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14b), Toast.LENGTH_SHORT).show();
-            tc14b.setError("This data is Required! ");    // Set Error on last radio button
+        if (tc13a.isChecked()) {
+            if (tc14a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14a), Toast.LENGTH_SHORT).show();
+                tc14a.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14b: This data is Required!");
-            return false;
-        } else {
-            tc14b.setError(null);
-        }
-        if (tc14c.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14c), Toast.LENGTH_SHORT).show();
-            tc14c.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc14a: This data is Required!");
+                return false;
+            } else {
+                tc14a.setError(null);
+            }
+            if (tc14b.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14b), Toast.LENGTH_SHORT).show();
+                tc14b.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14c: This data is Required!");
-            return false;
-        } else {
-            tc14c.setError(null);
-        }
-        if (tc14d.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14d), Toast.LENGTH_SHORT).show();
-            tc14d.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc14b: This data is Required!");
+                return false;
+            } else {
+                tc14b.setError(null);
+            }
+            if (tc14c.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14c), Toast.LENGTH_SHORT).show();
+                tc14c.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14d: This data is Required!");
-            return false;
-        } else {
-            tc14d.setError(null);
-        }
-        if (tc14e.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14e), Toast.LENGTH_SHORT).show();
-            tc14e.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc14c: This data is Required!");
+                return false;
+            } else {
+                tc14c.setError(null);
+            }
+            if (tc14d.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14d), Toast.LENGTH_SHORT).show();
+                tc14d.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14e: This data is Required!");
-            return false;
-        } else {
-            tc14e.setError(null);
-        }
-        if (tc14f.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14f), Toast.LENGTH_SHORT).show();
-            tc14f.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tc14d: This data is Required!");
+                return false;
+            } else {
+                tc14d.setError(null);
+            }
+            if (tc14e.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14e), Toast.LENGTH_SHORT).show();
+                tc14e.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc14f: This data is Required!");
-            return false;
-        } else {
-            tc14f.setError(null);
+                Log.i(TAG, "tc14e: This data is Required!");
+                return false;
+            } else {
+                tc14e.setError(null);
+            }
+            if (tc14f.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc14f), Toast.LENGTH_SHORT).show();
+                tc14f.setError("This data is Required! ");    // Set Error on last radio button
+
+                Log.i(TAG, "tc14f: This data is Required!");
+                return false;
+            } else {
+                tc14f.setError(null);
+            }
         }
 
 //        15

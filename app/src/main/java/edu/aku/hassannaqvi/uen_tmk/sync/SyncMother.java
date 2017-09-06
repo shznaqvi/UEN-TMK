@@ -23,8 +23,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MotherContract.MotherTB;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract.MWRATable;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -64,7 +64,7 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + MotherTB._URL;
+            String url = MainApp._HOST_URL + MWRATable._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -111,7 +111,7 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<MotherContract> Mother = db.getUnsyncedMother();
+        Collection<MWRAContract> Mother = db.getUnsyncedMother();
         Log.d(TAG, String.valueOf(Mother.size()));
         if (Mother.size() > 0) {
             try {
@@ -138,7 +138,7 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (MotherContract fc : Mother) {
+                        for (MWRAContract fc : Mother) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());

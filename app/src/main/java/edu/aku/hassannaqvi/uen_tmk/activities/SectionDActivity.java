@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
@@ -19,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -131,20 +133,34 @@ public class SectionDActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSG();
+        Long updcount = db.addMWRA(MainApp.mw);
+        MainApp.mw.set_ID(String.valueOf(updcount));
 
-        if (updcount == 1) {
+        if (updcount != -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.mw.setUID(
+                    (MainApp.fc.getDeviceID() + MainApp.mw.get_ID()));
+            db.updateDeceasedMotherID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.mw = new MWRAContract();
+
+        MainApp.mw.set_UUID(MainApp.fc.getUID());
+        MainApp.mw.setFormDate(MainApp.fc.getFormDate());
+        MainApp.mw.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.mw.setUser(MainApp.fc.getUser());
+        MainApp.mw.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sD = new JSONObject();
 
@@ -156,7 +172,7 @@ public class SectionDActivity extends Activity {
         sD.put("td04", td04a.isChecked() ? "1" : td04b.isChecked() ? "2" : "0");
         sD.put("td05", td05.getText().toString());
 
-        MainApp.fc.setsD(String.valueOf(sD));
+        MainApp.mw.setsD(String.valueOf(sD));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
