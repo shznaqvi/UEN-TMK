@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -20,10 +21,13 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionJActivity extends Activity {
@@ -230,11 +234,22 @@ public class SectionJActivity extends Activity {
     @BindView(R.id.tj1488x)
     EditText tj1488x;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
+
+
+        ArrayList<String> lstChild = new ArrayList<>();
+
+        lstChild.add(0, "Child 1");
+        lstChild.add(1, "Child 2");
+
+        ArrayAdapter<String> test = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, lstChild);
+        tj01.setAdapter(test);
+
 
         tj0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -313,7 +328,7 @@ public class SectionJActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionJActivity.class));
+                startActivity(new Intent(this, SectionKActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
