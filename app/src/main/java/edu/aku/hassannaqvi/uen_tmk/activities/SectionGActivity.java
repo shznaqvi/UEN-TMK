@@ -96,6 +96,7 @@ public class SectionGActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     tg0288x.setVisibility(View.VISIBLE);
+                    tg0288x.requestFocus();
                 } else {
                     tg0288x.setVisibility(View.GONE);
                     tg0288x.setText(null);
