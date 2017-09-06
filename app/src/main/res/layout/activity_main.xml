@@ -176,17 +176,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openHA"
+                android:onClick="openG"
                 android:text="Section G" />
 
             <Button
-                android:id="@+id/openH"
+                android:id="@+id/openHA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openHA"
+                android:text="Section HA" />
+
+            <Button
+                android:id="@+id/openHB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="openHB"
-                android:text="Section H" />
+                android:text="Section HB" />
 
             <Button
                 android:id="@+id/openI"

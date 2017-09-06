@@ -233,9 +233,55 @@ public class MainActivity extends Activity {
     }
 
     public void openB(View v) {
-        /*Intent iB = new Intent(this, SectionIActivity.class);
-        startActivity(iB);*/
+        Intent iB = new Intent(this, SectionBActivity.class);
+        startActivity(iB);
     }
+
+    public void openC(View v) {
+        Intent iC = new Intent(this, SectionCActivity.class);
+        startActivity(iC);
+    }
+
+    public void openD(View v) {
+        Intent iD = new Intent(this, SectionDActivity.class);
+        startActivity(iD);
+    }
+
+    public void openE(View v) {
+        Intent iE = new Intent(this, SectionEActivity.class);
+        startActivity(iE);
+    }
+
+    public void openF(View v) {
+        Intent iF = new Intent(this, SectionFActivity.class);
+        startActivity(iF);
+    }
+
+    public void openG(View v) {
+        Intent iG = new Intent(this, SectionGActivity.class);
+        startActivity(iG);
+    }
+
+    public void openI(View v) {
+        Intent iI = new Intent(this, SectionIActivity.class);
+        startActivity(iI);
+    }
+
+    public void openJ(View v) {
+        Intent iJ = new Intent(this, SectionJActivity.class);
+        startActivity(iJ);
+    }
+
+    public void openK(View v) {
+        Intent iK = new Intent(this, SectionKActivity.class);
+        startActivity(iK);
+    }
+
+    public void openL(View v) {
+        Intent iL = new Intent(this, SectionLActivity.class);
+        startActivity(iL);
+    }
+
 
     public void openHA(View v) {
         Intent iB = new Intent(this, SectionHAActivity.class);
