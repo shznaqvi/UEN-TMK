@@ -125,8 +125,6 @@
         </RadioGroup>
 
 
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -201,16 +199,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/te05f"
-                />
+                android:text="@string/te05f" />
 
             <RadioButton
                 android:id="@+id/te0588"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/other"
-                />
+                android:text="@string/other" />
 
         </RadioGroup>
 
@@ -220,9 +216,8 @@
             android:layout_height="wrap_content"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
-            android:inputType="textCapWords" />
-
-
+            android:inputType="textCapWords"
+            android:visibility="gone" />
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -71,6 +73,18 @@ public class SectionEActivity extends AppCompatActivity {
 
         te04.setManager(getSupportFragmentManager());
 
+        te0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (te0588.isChecked()) {
+                    te0588x.setVisibility(View.VISIBLE);
+                    te0588x.requestFocus();
+                } else {
+                    te0588x.setText(null);
+                    te0588x.setVisibility(View.GONE);
+                }
+            }
+        });
 
 
     }
@@ -243,10 +257,6 @@ public class SectionEActivity extends AppCompatActivity {
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }*/
-
-
-
-
 
 
 }

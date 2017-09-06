@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -320,41 +321,41 @@ public class SectionBActivity extends AppCompatActivity {
 
 
                     //if (checkChildLessThenFive(2)) {
-                        tb09.setText("NA");
+                    tb09.setText("NA");
 
-                        tb10a.setEnabled(false);
-                        tb10b.setEnabled(false);
-                        tb10c.setEnabled(false);
-                        tb10d.setEnabled(false);
-                        tb10e.setEnabled(false);
-                        tb10f.setEnabled(false);
-                        tb10g.setEnabled(false);
-                        tb10h.setEnabled(false);
-                        tb10i.setEnabled(false);
-                        tb10j.setEnabled(false);
-                        tb10k.setEnabled(false);
-                        tb10l.setEnabled(false);
+                    tb10a.setEnabled(false);
+                    tb10b.setEnabled(false);
+                    tb10c.setEnabled(false);
+                    tb10d.setEnabled(false);
+                    tb10e.setEnabled(false);
+                    tb10f.setEnabled(false);
+                    tb10g.setEnabled(false);
+                    tb10h.setEnabled(false);
+                    tb10i.setEnabled(false);
+                    tb10j.setEnabled(false);
+                    tb10k.setEnabled(false);
+                    tb10l.setEnabled(false);
 
-                        tb11a.setEnabled(false);
-                        tb11a.setChecked(false);
-                    } else {
-                        tb09.setText(null);
+                    tb11a.setEnabled(false);
+                    tb11a.setChecked(false);
+                } else {
+                    tb09.setText(null);
 
-                        tb10a.setEnabled(true);
-                        tb10b.setEnabled(true);
-                        tb10c.setEnabled(true);
-                        tb10d.setEnabled(true);
-                        tb10e.setEnabled(true);
-                        tb10f.setEnabled(true);
-                        tb10g.setEnabled(true);
-                        tb10h.setEnabled(true);
-                        tb10i.setEnabled(true);
-                        tb10j.setEnabled(true);
-                        tb10k.setEnabled(true);
-                        tb10l.setEnabled(true);
+                    tb10a.setEnabled(true);
+                    tb10b.setEnabled(true);
+                    tb10c.setEnabled(true);
+                    tb10d.setEnabled(true);
+                    tb10e.setEnabled(true);
+                    tb10f.setEnabled(true);
+                    tb10g.setEnabled(true);
+                    tb10h.setEnabled(true);
+                    tb10i.setEnabled(true);
+                    tb10j.setEnabled(true);
+                    tb10k.setEnabled(true);
+                    tb10l.setEnabled(true);
 
-                        tb11a.setEnabled(true);
-                    }
+                    tb11a.setEnabled(true);
+                }
                 //}
 
             }
@@ -362,6 +363,20 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+
+
+        tb0388.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tb0388.isChecked()) {
+                    tb0388x.setVisibility(View.VISIBLE);
+                    tb0388x.requestFocus();
+                } else {
+                    tb0388x.setText(null);
+                    tb0388x.setVisibility(View.GONE);
+                }
             }
         });
 

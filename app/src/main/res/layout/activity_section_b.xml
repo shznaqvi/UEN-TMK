@@ -223,9 +223,9 @@
 
             <RadioButton
                 android:id="@+id/tb0388"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_marginBottom="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:text="@string/other" />
 
         </RadioGroup>
@@ -234,7 +234,8 @@
             android:id="@+id/tb0388x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp" />
+            android:layout_marginBottom="1dp"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
