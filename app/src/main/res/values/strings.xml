@@ -40,8 +40,8 @@
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="male">  </string>
-    <string name="female">  </string>
+  <string name="male"> مرد</string>
+  <string name="female"> عورت </string>
     <string name="yes"> ھا </string>
     <string name="no"> نه </string>
     <string name="dkn"> خبر نه آھي </string>

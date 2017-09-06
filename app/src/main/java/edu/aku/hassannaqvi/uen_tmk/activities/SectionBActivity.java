@@ -20,8 +20,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -155,6 +156,37 @@ public class SectionBActivity extends AppCompatActivity {
     int counter = 0;
     DatabaseHelper db;
 
+    public static long ageInYears(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = getCalendarDate(dateStr);
+        Date dob = cal.getTime();
+        Date today = new Date();
+
+        Long diff = today.getTime() - dob.getTime();
+
+        //double ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+        long ageInYears = (diff / (24 * 60 * 60 * 1000)) / 365;
+
+
+        return ageInYears;
+
+    }
+
+    public static Calendar getCalendarDate(String value) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(value);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,9 +209,9 @@ public class SectionBActivity extends AppCompatActivity {
         }
 
 //        set head values
-        totalMem.setText(MainApp.TotalMembersCount);
-        totalmwra.setText(MainApp.TotalMWRACount);
-        totalChild.setText(MainApp.TotalChildCount);
+        totalMem.setText(String.valueOf(MainApp.TotalMembersCount));
+        totalmwra.setText(String.valueOf(MainApp.TotalMWRACount));
+        totalChild.setText(String.valueOf(MainApp.TotalChildCount));
 
 //        Check HH
 
@@ -227,7 +259,9 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if (checkChildLessThenFive(1)) {
+                //if (checkChildLessThenFive(1)) {
+
+                if (ageInYears(tb07.getText().toString()) < 5) {
                     tb09.setText("NA");
 
                     tb10.clearCheck();
@@ -264,6 +298,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                     tb11a.setEnabled(true);
                 }
+                //}
             }
 
             @Override
@@ -282,7 +317,9 @@ public class SectionBActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 if (!tb08y.getText().toString().isEmpty() && !tb08m.getText().toString().isEmpty()) {
-                    if (checkChildLessThenFive(2)) {
+
+
+                    //if (checkChildLessThenFive(2)) {
                         tb09.setText("NA");
 
                         tb10a.setEnabled(false);
@@ -318,7 +355,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         tb11a.setEnabled(true);
                     }
-                }
+                //}
 
             }
 
@@ -359,13 +396,15 @@ public class SectionBActivity extends AppCompatActivity {
 
                 finish();
 
-                if (checkChildLessThenFive(tbdob01.isChecked() ? 1 : 2)) {
+                if (tbdob01.isChecked()) {
+                    if (ageInYears(tb07.getText().toString()) < 5) {
 
-                    MainApp.TotalChildCount++;
-                    MainApp.TotalMembersCount++;
+                        MainApp.TotalChildCount++;
+                        MainApp.TotalMembersCount++;
+                    }
 
                 } else {
-                    if (tb11a.isChecked()) {
+                    if (tb11a.isChecked() && tb04b.isChecked()) {
                         MainApp.TotalMWRACount++;
                         MainApp.TotalMembersCount++;
                     } else {
@@ -380,21 +419,39 @@ public class SectionBActivity extends AppCompatActivity {
         }
     }
 
-    public boolean checkChildLessThenFive(int i) {
+    //public boolean checkChildLessThenFive(int i) {
 
-        if (i == 1) {
+        /*if (i == 1) {
 
-            DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+            DateFormat formatter = new SimpleDateFormat("yyyyMMdd").format(tb07);
             int d1 = Integer.parseInt(formatter.format(tb07.getText().toString()));
             int d2 = Integer.parseInt(formatter.format(new Date()));
             int ageInYears = (d2 - d1) / 10000;
             return ageInYears < 5;
 
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = getCalendarDate(dateStr);
+        Date dob = cal.getTime();
+        Date today = new Date();
+
+        Long diff = today.getTime() - dob.getTime();
+
+        //double ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+        long ageInYears = (diff / (24*60*60*1000)) / 365;
+
+
+        return ageInYears;
+
+
         } else {
             return (Integer.parseInt(tb08y.getText().toString()) == 5 && Integer.parseInt(tb08m.getText().toString()) == 0)
                     || Integer.parseInt(tb08y.getText().toString()) < 5;
-        }
-    }
+        }*/
+
+
+    //}
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
