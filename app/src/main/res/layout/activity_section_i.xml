@@ -32,7 +32,6 @@
             android:background="@color/colorPrimary" />
 
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,13 +77,13 @@
             android:orientation="vertical">
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/ti02"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/ti02"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
 
             <CheckBox
@@ -123,15 +122,14 @@
                 android:text="@string/other" />
 
 
-
-
-        <EditText
-            android:id="@+id/ti0288x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-            android:hint="@string/other"
-            android:inputType="textCapWords" />
+            <EditText
+                android:id="@+id/ti0288x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -143,156 +141,156 @@
 
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/ti03"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
-
-
-        <RadioGroup
-            android:id="@+id/ti03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/ti03a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ti03a" />
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/ti03"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
-            <RadioButton
-                android:id="@+id/ti03b"
+
+            <RadioGroup
+                android:id="@+id/ti03"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ti03b" />
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/tic03c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ti03c" />
+                <RadioButton
+                    android:id="@+id/ti03a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ti03a" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/ti03b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ti03b" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/atbirth"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
+                <RadioButton
+                    android:id="@+id/tic03c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ti03c" />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/bcg"
-            android:textAlignment="center" />
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/atbirth"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpBcgM"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:layout_marginTop="5dp"
+                android:text="@string/bcg"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpBcgM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/bcgM"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/bcgM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/bcgM01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/bcgM02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpBcgC"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/bcgM01"
+                    <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/bcgM02"
+                    <RadioGroup
+                        android:id="@+id/bcgC"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/bcgC01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/bcgC02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpBcgC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/bcgC"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/bcgC01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/bcgC02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/bcgDate"
@@ -368,8 +366,8 @@
 
                 <RadioButton
                     android:id="@+id/bcgPovh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/place08" />
 
@@ -380,104 +378,104 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/opv0"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+                android:layout_marginTop="5dp"
+                android:text="@string/opv0"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrpOpv0M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpOpv0M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/opv0M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/opv0M01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/opv0M02"
+                    <RadioGroup
+                        android:id="@+id/opv0M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/opv0M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
 
-            </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/opv0M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
 
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
 
 
-            <LinearLayout
-                android:id="@+id/fldGrpopv0C"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpopv0C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <RadioGroup
-                    android:id="@+id/opv0C"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/opv0C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/opv0C02"
+                    <RadioGroup
+                        android:id="@+id/opv0C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/opv0C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv0C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv0Date"
@@ -561,119 +559,119 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/at6weeks"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/opv1"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpopv1M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/at6weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/opv1M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/opv1M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/opv1M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpopv1C"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_marginTop="5dp"
+                android:text="@string/opv1"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/opv1C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/opv1M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/opv1M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv1M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv1C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/opv1C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/opv1C02"
+                    <RadioGroup
+                        android:id="@+id/opv1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/opv1C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv1C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv1Date"
@@ -757,109 +755,109 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/penta1"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpPenta1M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/penta1M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/penta1M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/Penta1M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
+                android:layout_marginTop="5dp"
+                android:text="@string/penta1"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrpPenta1C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpPenta1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/penta1C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/penta1M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/penta1M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/Penta1M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpPenta1C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/penta1C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/penta1C02"
+                    <RadioGroup
+                        android:id="@+id/penta1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/penta1C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/penta1C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
-
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta1Date"
@@ -946,104 +944,104 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/pcv1"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+                android:layout_marginTop="5dp"
+                android:text="@string/pcv1"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrppcv1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppcv1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/pcv1M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/pcv1M01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/pcv1M02"
+                    <RadioGroup
+                        android:id="@+id/pcv1M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/pcv1M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
 
-            </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/pcv1M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
 
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
 
 
-            <LinearLayout
-                android:id="@+id/fldGrppcv1C"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppcv1C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <RadioGroup
-                    android:id="@+id/pcv1C"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/pcv1C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/pcv1C02"
+                    <RadioGroup
+                        android:id="@+id/pcv1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/pcv1C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/pcv1C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv1Date"
@@ -1127,119 +1125,119 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/at10weeks"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/opv2"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpopv2M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/opv2M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/opv2M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/opv2M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/at10weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
 
-            <LinearLayout
-                android:id="@+id/fldGrpopv2C"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_marginTop="5dp"
+                android:text="@string/opv2"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/opv2C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/opv2M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/opv2M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv2M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv2C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/opv2C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/opv2C02"
+                    <RadioGroup
+                        android:id="@+id/opv2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/opv2C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv2C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv2Date"
@@ -1322,107 +1320,107 @@
 
             </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/penta2"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrppenta2M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/penta2M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/penta2M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/penta2M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
+                android:layout_marginTop="5dp"
+                android:text="@string/penta2"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrppenta2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppenta2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/penta2C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/penta2M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/penta2M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/penta2M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrppenta2C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/penta2C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/penta2C02"
+                    <RadioGroup
+                        android:id="@+id/penta2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/penta2C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/penta2C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta2Date"
@@ -1506,107 +1504,107 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/pcv2"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrppcv2M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/pcv2M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/pcv2M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/pcv2M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
+                android:layout_marginTop="5dp"
+                android:text="@string/pcv2"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrppcv2C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppcv2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/pcv2C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/pcv2M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/pcv2M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/pcv2M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrppcv2C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/pcv2C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/pcv2C02"
+                    <RadioGroup
+                        android:id="@+id/pcv2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/pcv2C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/pcv2C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv2Date"
@@ -1689,120 +1687,120 @@
 
             </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/at14weeks"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/opv3"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpopv3M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/at14weeks"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/opv3M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/opv3M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/opv3M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpopv3C"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_marginTop="5dp"
+                android:text="@string/opv3"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv3M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/opv3C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/opv3M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/opv3M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/opv3M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpopv3C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/opv3C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/opv3C02"
+                    <RadioGroup
+                        android:id="@+id/opv3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/opv3C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
 
+                        <RadioButton
+                            android:id="@+id/opv3C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv3Date"
@@ -1886,108 +1884,108 @@
 
             </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/penta3"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpPenta3M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/penta3M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/penta3M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/penta3M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
+                android:layout_marginTop="5dp"
+                android:text="@string/penta3"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrpenta3C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpPenta3M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/penta3C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/penta3M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/penta3M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/penta3M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpenta3C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/penta3C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/penta3C02"
+                    <RadioGroup
+                        android:id="@+id/penta3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/penta3C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
 
+                        <RadioButton
+                            android:id="@+id/penta3C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta3Date"
@@ -2075,106 +2073,105 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/pcv3"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+                android:layout_marginTop="5dp"
+                android:text="@string/pcv3"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrppcv3M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppcv3M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/pcv3M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/pcv3M01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/pcv3M02"
+                    <RadioGroup
+                        android:id="@+id/pcv3M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/pcv3M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
 
-            </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/pcv3M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
 
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
 
 
-            <LinearLayout
-                android:id="@+id/fldGrppcv3C"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrppcv3C"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <RadioGroup
-                    android:id="@+id/pcv3C"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/pcv3C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/pcv3C02"
+                    <RadioGroup
+                        android:id="@+id/pcv3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/pcv3C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/pcv3C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
 
 
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv3Date"
@@ -2258,107 +2255,107 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/ipv"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpipvM"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/ipvM"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/ipvM01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/ipvM02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
+                android:layout_marginTop="5dp"
+                android:text="@string/ipv"
+                android:textAlignment="center" />
 
             <LinearLayout
-                android:id="@+id/fldGrpipvC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/fldGrpipvM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/ipvC"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/ipvM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/ipvM01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/ipvM02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpipvC"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/ipvC01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/ipvC02"
+                    <RadioGroup
+                        android:id="@+id/ipvC"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/ipvC01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/ipvC02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/ipvDate"
@@ -2441,119 +2438,119 @@
 
             </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/at9month"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/measles1"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpMeasles1M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/at9month"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/measles1M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/measles1M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/measles1M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpmeasles1C"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_marginTop="5dp"
+                android:text="@string/measles1"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/fldGrpMeasles1M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/measles1C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/measles1M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/measles1M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/measles1M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpmeasles1C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/measles1C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/measles1C02"
+                    <RadioGroup
+                        android:id="@+id/measles1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/measles1C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
 
+                        <RadioButton
+                            android:id="@+id/measles1C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/measles1Date"
@@ -2637,118 +2634,118 @@
             </RadioGroup>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
-            android:text="@string/at15month"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            tools:typeface="serif" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/measles2"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <LinearLayout
-                android:id="@+id/fldGrpMeasles2M"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical">
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorHeading"
+                android:text="@string/at15month"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                tools:typeface="serif" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:gravity="center"
-                    android:text="@string/recall"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/measles2M"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/measles2M01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/measles2M02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark"></View>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpmeasles2C"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:layout_marginTop="5dp"
+                android:text="@string/measles2"
+                android:textAlignment="center" />
 
-                <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/fldGrpMeasles2M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#efefef"
-                    android:text="@string/card"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold" />
+                    android:layout_weight="50"
+                    android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/measles2C"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:gravity="center"
+                        android:text="@string/recall"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/measles2M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/measles2M01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/measles2M02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"></View>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpmeasles2C"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RadioButton
-                        android:id="@+id/measles2C01"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/yes" />
+                        android:layout_marginTop="5dp"
+                        android:background="#efefef"
+                        android:text="@string/card"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/measles2C02"
+                    <RadioGroup
+                        android:id="@+id/measles2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/no" />
+                        android:layout_height="wrap_content">
 
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/measles2C01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/measles2C02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/measles2Date"
@@ -2832,42 +2829,42 @@
             </RadioGroup>
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/ti04"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
-
-
-        <RadioGroup
-            android:id="@+id/ti04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/ti04a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/ti04"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
-            <RadioButton
-                android:id="@+id/ti04b"
+
+            <RadioGroup
+                android:id="@+id/ti04"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/ti04888"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                <RadioButton
+                    android:id="@+id/ti04a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/yes" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/ti04b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/no" />
+
+                <RadioButton
+                    android:id="@+id/ti04888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/dkn" />
+
+            </RadioGroup>
 
             <LinearLayout
                 android:id="@+id/fldGrpti05"
@@ -2877,28 +2874,28 @@
 
 
                 <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/ti05"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ti05"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-        <EditText
-            android:id="@+id/ti05"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/ti05a"
-            android:inputType="number"
-            android:maxLength="2" />
+                <EditText
+                    android:id="@+id/ti05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ti05a"
+                    android:inputType="number"
+                    android:maxLength="2" />
 
-        <CheckBox
-            android:id="@+id/ti05888"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="@string/dkn" />
+                <CheckBox
+                    android:id="@+id/ti05888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/dkn" />
 
             </LinearLayout>
 

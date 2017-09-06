@@ -694,6 +694,7 @@ public class SectionIActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     ti0288x.setVisibility(View.VISIBLE);
+                    ti0288x.requestFocus();
                 } else {
                     ti0288x.setVisibility(View.GONE);
                     ti0288x.setText(null);
@@ -709,6 +710,7 @@ public class SectionIActivity extends AppCompatActivity {
                     ti05.setText(null);
                 } else {
                     ti05.setVisibility(View.VISIBLE);
+                    ti05.requestFocus();
                 }
             }
         });
@@ -1528,7 +1530,6 @@ public class SectionIActivity extends AppCompatActivity {
 
         return true;
     }
-
 
 
 }
