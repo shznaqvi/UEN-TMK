@@ -153,38 +153,38 @@
                 android:orientation="vertical">
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/tl04" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/tl04" />
 
-            <CheckBox
-                android:id="@+id/tl04a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl04a" />
+                <CheckBox
+                    android:id="@+id/tl04a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl04a" />
 
-            <CheckBox
-                android:id="@+id/tl04b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl04b" />
+                <CheckBox
+                    android:id="@+id/tl04b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl04b" />
 
-            <CheckBox
-                android:id="@+id/tl04c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl04c" />
+                <CheckBox
+                    android:id="@+id/tl04c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl04c" />
 
-            <CheckBox
-                android:id="@+id/tl04d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl04d" />
+                <CheckBox
+                    android:id="@+id/tl04d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl04d" />
 
 
             </LinearLayout>
@@ -198,64 +198,65 @@
             android:orientation="vertical">
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/tl05" />
-
-        <RadioGroup
-            android:id="@+id/tl05"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/tl05a"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/yes" />
+                android:text="@string/tl05" />
 
-            <RadioButton
-                android:id="@+id/tl05b"
+            <RadioGroup
+                android:id="@+id/tl05"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/no" />
+                android:orientation="horizontal">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/tl05a"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/tl05b"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+
+            </RadioGroup>
 
             <LinearLayout
                 android:id="@+id/fldGrptl06"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/tl06" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/tl06" />
 
-        <RadioGroup
-            android:id="@+id/tl06"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <RadioGroup
+                    android:id="@+id/tl06"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/tl06a"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/tl06a" />
+                    <RadioButton
+                        android:id="@+id/tl06a"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl06a" />
 
-            <RadioButton
-                android:id="@+id/tl06b"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/tl06b" />
+                    <RadioButton
+                        android:id="@+id/tl06b"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl06b" />
 
-        </RadioGroup>
+                </RadioGroup>
 
                 <LinearLayout
                     android:id="@+id/fldGrptl07"

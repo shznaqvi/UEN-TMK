@@ -341,9 +341,6 @@ public class SectionKActivity extends Activity {
         });
 
 
-
-
-
     }
 
     @OnClick(R.id.btn_End)
@@ -640,8 +637,6 @@ public class SectionKActivity extends Activity {
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }*/
-
-
 
 
 }
