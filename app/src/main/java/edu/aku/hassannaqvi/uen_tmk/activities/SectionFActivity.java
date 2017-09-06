@@ -135,7 +135,7 @@ public class SectionFActivity extends AppCompatActivity {
 
             MainApp.dcC.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.dcC.get_ID()));
-            db.updateDeceasedMotherID();
+            db.updateDeceasedChildID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

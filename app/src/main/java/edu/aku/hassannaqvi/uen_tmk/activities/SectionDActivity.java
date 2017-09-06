@@ -141,7 +141,7 @@ public class SectionDActivity extends Activity {
 
             MainApp.mw.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.mw.get_ID()));
-            db.updateDeceasedMotherID();
+            db.updateMWRAID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
