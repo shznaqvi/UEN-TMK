@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -369,6 +370,20 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+
+
+        tb0388.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tb0388.isChecked()) {
+                    tb0388x.setVisibility(View.VISIBLE);
+                    tb0388x.requestFocus();
+                } else {
+                    tb0388x.setText(null);
+                    tb0388x.setVisibility(View.GONE);
+                }
             }
         });
 
