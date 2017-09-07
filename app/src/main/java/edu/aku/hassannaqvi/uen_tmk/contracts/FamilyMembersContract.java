@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class FamilyMembersContract {
 
-    private final String projectName = "DSS Census";
+    private final String projectName = "UEN TMK";
     private String _ID = "";
     private String REF_ID = "";
     private String _UID = "";
@@ -557,7 +557,7 @@ public class FamilyMembersContract {
 
     public static abstract class familyMembers implements BaseColumns {
 
-        public static final String TABLE_NAME = "census";
+        public static final String TABLE_NAME = "familymembers";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
 
         public static final String COLUMN_PROJECT_NAME = "project_name";
