@@ -411,8 +411,8 @@ public class SectionKActivity extends Activity {
         sK.put("tk03", tk03a.isChecked() ? "1" : tk03b.isChecked() ? "2" : tk03c.isChecked() ? "3" : "0");
         sK.put("tk04", tk04.getText().toString());
         sK.put("tk04888", tk04888.isChecked() ? "888" : "0");
-        sK.put("tk05", tk05a.isChecked() ? "1" : tk05b.isChecked() ? "2" : tk05c.isChecked() ? "3" : tk05d.isChecked() ? "4"
-                : tk05d.isChecked() ? "4" : tk05e.isChecked() ? "5" : "0");
+        sK.put("tk05", tk05a.isChecked() ? "1" : tk05b.isChecked() ? "2" : tk05c.isChecked() ? "3" :
+                tk05d.isChecked() ? "4" : tk05e.isChecked() ? "5" : "0");
         sK.put("tk06", tk06a.isChecked() ? "1" : tk06b.isChecked() ? "2" : "0");
         sK.put("tk07", tk07a.isChecked() ? "1" : tk07b.isChecked() ? "2" : tk07888.isChecked() ? "888" : "0");
         sK.put("tk08", tk08a.isChecked() ? "1" : tk08b.isChecked() ? "2" : tk08888.isChecked() ? "888" : "0");
