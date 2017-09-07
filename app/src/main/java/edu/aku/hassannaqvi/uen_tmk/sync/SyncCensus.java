@@ -110,7 +110,7 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FamilyMembersContract> Census = db.getUnsyncedCensus();
+        Collection<FamilyMembersContract> Census = db.getUnsyncedFamilyMembers();
         Log.d(TAG, String.valueOf(Census.size()));
         if (Census.size() > 0) {
             try {

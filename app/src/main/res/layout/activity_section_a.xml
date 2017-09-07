@@ -42,8 +42,8 @@
             android:id="@+id/ta01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:inputType="text"
+            android:digits="0123456789"
+            android:inputType="number"
             android:maxLength="6" />
 
         <TextView
@@ -161,7 +161,7 @@
             android:id="@+id/ta05h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:inputType="text" />
 
         <TextView
@@ -195,7 +195,7 @@
             android:id="@+id/ta06"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:inputType="text" />
 
         <!--07-->
@@ -213,7 +213,7 @@
             android:id="@+id/ta07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:inputType="text" />
 
         <!--08-->
@@ -231,7 +231,7 @@
             android:id="@+id/ta08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:inputType="text" />
 
         <!--9-->
@@ -278,8 +278,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/red"
-                android:enabled="false"
-                android:onClick="endInterview"
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e"
                 android:visibility="gone" />
@@ -290,7 +288,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/green"
-                android:onClick="startInterview"
                 android:text="@string/start_interview"
                 android:textColor="#1ed61e" />
 

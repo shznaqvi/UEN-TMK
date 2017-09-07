@@ -545,24 +545,26 @@ public class SectionKActivity extends Activity {
             tk08a.setError(null);
         }
 
-        if (tk09.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tk09), Toast.LENGTH_SHORT).show();
-            tk09a.setError("This data is Required!");    // Set Error on last radio button
+        if (tk08a.isChecked()) {
+            if (tk09.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tk09), Toast.LENGTH_SHORT).show();
+                tk09a.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tk09: This data is Required!");
-            return false;
-        } else {
-            tk09a.setError(null);
-        }
+                Log.i(TAG, "tk09: This data is Required!");
+                return false;
+            } else {
+                tk09a.setError(null);
+            }
 
-        if (tk0988.isChecked() && tk0988x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty)" + getString(R.string.tk09) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            tk0988x.setError("This data is Required!");
+            if (tk0988.isChecked() && tk0988x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty)" + getString(R.string.tk09) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                tk0988x.setError("This data is Required!");
 
-            Log.i(TAG, "tk0988x: This data is Required!");
-            return false;
-        } else {
-            tk0988x.setError(null);
+                Log.i(TAG, "tk0988x: This data is Required!");
+                return false;
+            } else {
+                tk0988x.setError(null);
+            }
         }
 
         if (tk10.getCheckedRadioButtonId() == -1) {
@@ -632,11 +634,10 @@ public class SectionKActivity extends Activity {
     }
 
 
-
-    /*@Override
+    @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }*/
+    }
 
 
 }

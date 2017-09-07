@@ -580,15 +580,15 @@ public class SectionCActivity extends Activity {
         });
 
 
-//
+//      17
         tc17888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     tc17.setText(null);
-                    tc17.setEnabled(false);
+                    tc17.setVisibility(View.GONE);
                 } else {
-                    tc17.setEnabled(true);
+                    tc17.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -618,7 +618,11 @@ public class SectionCActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionDActivity.class));
+                if (MainApp.TotalMWRACount > 0) {
+                    startActivity(new Intent(this, SectionDActivity.class));
+                } else {
+                    startActivity(new Intent(this, SectionEActivity.class));
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
