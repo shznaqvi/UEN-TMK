@@ -282,6 +282,29 @@ public class SectionJActivity extends Activity {
             }
         });
 
+
+        tj04a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tj04b.isChecked()) {
+
+                    tj05a.setChecked(false);
+                    tj05b.setChecked(false);
+                    tj05c.setChecked(false);
+                    tj05d.setChecked(false);
+                    tj05e.setChecked(false);
+                    tj05f.setChecked(false);
+                    tj05g.setChecked(false);
+                    tj05h.setChecked(false);
+
+                    fldGrpti05.setVisibility(View.GONE);
+                } else {
+                    fldGrpti05.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
         tj0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -677,7 +700,7 @@ public class SectionJActivity extends Activity {
         sJ.put("tj08f", tj08f.isChecked() ? "6" : "0");
         sJ.put("tj08g", tj08g.isChecked() ? "7" : "0");
         sJ.put("tj08h", tj08h.isChecked() ? "8" : "0");
-        sJ.put("tj08i", tj08i.isChecked() ? "8" : "0");
+        sJ.put("tj08i", tj08i.isChecked() ? "9" : "0");
         sJ.put("tj0888", tj0888.isChecked() ? "88" : "0");
         sJ.put("tj0888x", tj0888x.getText().toString());
 
@@ -799,9 +822,14 @@ public class SectionJActivity extends Activity {
 
         if (tj04a.isChecked()) {
 //        05
-            if (!(tj05a.isChecked() && tj05b.isChecked() && tj05c.isChecked() && tj05d.isChecked() &&
-                    tj05e.isChecked() && tj05f.isChecked() && tj05g.isChecked() &&
-                    tj05h.isChecked())) {
+            if (!tj05a.isChecked() &&
+                    !tj05b.isChecked() &&
+                    !tj05c.isChecked() &&
+                    !tj05d.isChecked() &&
+                    !tj05e.isChecked() &&
+                    !tj05f.isChecked() &&
+                    !tj05g.isChecked() &&
+                    !tj05h.isChecked()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj05), Toast.LENGTH_SHORT).show();
                 tj05h.setError("This data is Required!");    // Set Error on last check box
 

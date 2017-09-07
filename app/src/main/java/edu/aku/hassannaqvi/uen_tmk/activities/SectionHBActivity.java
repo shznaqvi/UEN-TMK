@@ -416,7 +416,6 @@ public class SectionHBActivity extends Activity {
                     thb0888.setChecked(false);
 
 
-
                     thb0888x.setText(null);
 
                     thb09.setText(null);
@@ -1385,14 +1384,14 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb08a", thb08a.isChecked() ? "1" : "0");
-        sHB.put("thb08b", thb08b.isChecked() ? "1" : "0");
-        sHB.put("thb08c", thb08c.isChecked() ? "1" : "0");
-        sHB.put("thb08d", thb08d.isChecked() ? "1" : "0");
-        sHB.put("thb08e", thb08e.isChecked() ? "1" : "0");
-        sHB.put("thb08f", thb08f.isChecked() ? "1" : "0");
-        sHB.put("thb08g", thb08g.isChecked() ? "1" : "0");
-        sHB.put("thb08h", thb08h.isChecked() ? "1" : "0");
-        sHB.put("thb088", thb0888.isChecked() ? "1" : "0");
+        sHB.put("thb08b", thb08b.isChecked() ? "2" : "0");
+        sHB.put("thb08c", thb08c.isChecked() ? "3" : "0");
+        sHB.put("thb08d", thb08d.isChecked() ? "4" : "0");
+        sHB.put("thb08e", thb08e.isChecked() ? "5" : "0");
+        sHB.put("thb08f", thb08f.isChecked() ? "6" : "0");
+        sHB.put("thb08g", thb08g.isChecked() ? "7" : "0");
+        sHB.put("thb08h", thb08h.isChecked() ? "8" : "0");
+        sHB.put("thb088", thb0888.isChecked() ? "9" : "0");
 
         sHB.put("thb0888x", thb0888x.getText().toString());
 
@@ -1418,13 +1417,13 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb12a", thb12a.isChecked() ? "1" : "0");
-        sHB.put("thb12b", thb12b.isChecked() ? "1" : "0");
-        sHB.put("thb12c", thb12c.isChecked() ? "1" : "0");
-        sHB.put("thb12d", thb12d.isChecked() ? "1" : "0");
-        sHB.put("thb12e", thb12e.isChecked() ? "1" : "0");
-        sHB.put("thb12f", thb12f.isChecked() ? "1" : "0");
-        sHB.put("thb12g", thb12g.isChecked() ? "1" : "0");
-        sHB.put("thb12h", thb12h.isChecked() ? "1" : "0");
+        sHB.put("thb12b", thb12b.isChecked() ? "2" : "0");
+        sHB.put("thb12c", thb12c.isChecked() ? "3" : "0");
+        sHB.put("thb12d", thb12d.isChecked() ? "4" : "0");
+        sHB.put("thb12e", thb12e.isChecked() ? "5" : "0");
+        sHB.put("thb12f", thb12f.isChecked() ? "6" : "0");
+        sHB.put("thb12g", thb12g.isChecked() ? "7" : "0");
+        sHB.put("thb12h", thb12h.isChecked() ? "8" : "0");
 
         sHB.put("thb13", thb13a.isChecked() ? "1" : thb13b.isChecked() ? "2" : "0");
         sHB.put("thb14", thb14a.isChecked() ? "1" : thb14b.isChecked() ? "2" : "0");
@@ -1450,12 +1449,12 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb20a", thb20a.isChecked() ? "1" : "0");
-        sHB.put("thb20b", thb20b.isChecked() ? "1" : "0");
-        sHB.put("thb20c", thb20c.isChecked() ? "1" : "0");
-        sHB.put("thb20d", thb20d.isChecked() ? "1" : "0");
-        sHB.put("thb20e", thb20e.isChecked() ? "1" : "0");
-        sHB.put("thb20f", thb20f.isChecked() ? "1" : "0");
-        sHB.put("thb20g", thb20g.isChecked() ? "1" : "0");
+        sHB.put("thb20b", thb20b.isChecked() ? "2" : "0");
+        sHB.put("thb20c", thb20c.isChecked() ? "3" : "0");
+        sHB.put("thb20d", thb20d.isChecked() ? "4" : "0");
+        sHB.put("thb20e", thb20e.isChecked() ? "5" : "0");
+        sHB.put("thb20f", thb20f.isChecked() ? "6" : "0");
+        sHB.put("thb20g", thb20g.isChecked() ? "7" : "0");
 
         sHB.put("thb21", thb21a.isChecked() ? "1" : thb21b.isChecked() ? "2" : thb21c.isChecked() ? "3" : "0");
 
@@ -1468,12 +1467,12 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb25a", thb25a.isChecked() ? "1" : "0");
-        sHB.put("thb25b", thb25b.isChecked() ? "1" : "0");
-        sHB.put("thb25c", thb25c.isChecked() ? "1" : "0");
-        sHB.put("thb25d", thb25d.isChecked() ? "1" : "0");
-        sHB.put("thb25e", thb25e.isChecked() ? "1" : "0");
-        sHB.put("thb25f", thb25f.isChecked() ? "1" : "0");
-        sHB.put("thb25g", thb25g.isChecked() ? "1" : "0");
+        sHB.put("thb25b", thb25b.isChecked() ? "2" : "0");
+        sHB.put("thb25c", thb25c.isChecked() ? "3" : "0");
+        sHB.put("thb25d", thb25d.isChecked() ? "4" : "0");
+        sHB.put("thb25e", thb25e.isChecked() ? "5" : "0");
+        sHB.put("thb25f", thb25f.isChecked() ? "6" : "0");
+        sHB.put("thb25g", thb25g.isChecked() ? "7" : "0");
 
 
         sHB.put("thb26", thb26a.isChecked() ? "1" : thb26b.isChecked() ? "2" : thb26c.isChecked() ? "3" : "0");
@@ -1482,12 +1481,13 @@ public class SectionHBActivity extends Activity {
 
         sHB.put("thb28", thb28a.isChecked() ? "1"
                 : thb28b.isChecked() ? "2"
-                : thb28d.isChecked() ? "3"
-                : thb28e.isChecked() ? "4"
-                : thb28f.isChecked() ? "4"
-                : thb28g.isChecked() ? "5"
-                : thb28h.isChecked() ? "6"
-                : thb28i.isChecked() ? "7"
+                : thb28c.isChecked() ? "3"
+                : thb28d.isChecked() ? "4"
+                : thb28e.isChecked() ? "5"
+                : thb28f.isChecked() ? "6"
+                : thb28g.isChecked() ? "7"
+                : thb28h.isChecked() ? "8"
+                : thb28i.isChecked() ? "9"
                 : thb2888.isChecked() ? "88"
                 : "0");
 
@@ -1509,17 +1509,17 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb36a", thb36a.isChecked() ? "1" : "0");
-        sHB.put("thb36b", thb36b.isChecked() ? "1" : "0");
-        sHB.put("thb36c", thb36c.isChecked() ? "1" : "0");
-        sHB.put("thb36d", thb36d.isChecked() ? "1" : "0");
-        sHB.put("thb36e", thb36e.isChecked() ? "1" : "0");
-        sHB.put("thb36f", thb36f.isChecked() ? "1" : "0");
-        sHB.put("thb36g", thb36g.isChecked() ? "1" : "0");
-        sHB.put("thb36h", thb36h.isChecked() ? "1" : "0");
-        sHB.put("thb36i", thb36i.isChecked() ? "1" : "0");
-        sHB.put("thb36j", thb36j.isChecked() ? "1" : "0");
-        sHB.put("thb36k", thb36k.isChecked() ? "1" : "0");
-        sHB.put("thb3688", thb3688.isChecked() ? "1" : "0");
+        sHB.put("thb36b", thb36b.isChecked() ? "2" : "0");
+        sHB.put("thb36c", thb36c.isChecked() ? "3" : "0");
+        sHB.put("thb36d", thb36d.isChecked() ? "4" : "0");
+        sHB.put("thb36e", thb36e.isChecked() ? "5" : "0");
+        sHB.put("thb36f", thb36f.isChecked() ? "6" : "0");
+        sHB.put("thb36g", thb36g.isChecked() ? "7" : "0");
+        sHB.put("thb36h", thb36h.isChecked() ? "8" : "0");
+        sHB.put("thb36i", thb36i.isChecked() ? "9" : "0");
+        sHB.put("thb36j", thb36j.isChecked() ? "10" : "0");
+        sHB.put("thb36k", thb36k.isChecked() ? "11" : "0");
+        sHB.put("thb3688", thb3688.isChecked() ? "88" : "0");
 
         sHB.put("thb3688x", thb3688x.getText().toString());
 

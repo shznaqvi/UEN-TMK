@@ -641,7 +641,6 @@ public class SectionCActivity extends Activity {
         }
 
 
-
     }
 
     private void SaveDraft() throws JSONException {
@@ -672,7 +671,7 @@ public class SectionCActivity extends Activity {
                 : tc0588.isChecked() ? "88" : "0");
         sC.put("tc0588x", tc0588x.getText().toString());
         sC.put("tc06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
-                : tc06b.isChecked() ? "3" : tc06c.isChecked() ? "4"
+                : tc06c.isChecked() ? "3" : tc06d.isChecked() ? "4"
                 : tc0688.isChecked() ? "88" : "0");
         sC.put("tc0688x", tc0688x.getText().toString());
         sC.put("tc07", tc07a.isChecked() ? "1" : tc07b.isChecked() ? "2" : tc07c.isChecked() ? "3"

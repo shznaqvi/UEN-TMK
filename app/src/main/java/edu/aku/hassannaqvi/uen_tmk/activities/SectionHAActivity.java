@@ -80,14 +80,16 @@ public class SectionHAActivity extends Activity {
     EditText tha0788x;
     @BindView(R.id.tha08)
     EditText tha08;
+    @BindView(R.id.tha09)
+    RadioGroup tha09;
     @BindView(R.id.tha09a)
-    CheckBox tha09a;
+    RadioButton tha09a;
     @BindView(R.id.tha09b)
-    CheckBox tha09b;
+    RadioButton tha09b;
     @BindView(R.id.tha09c)
-    CheckBox tha09c;
+    RadioButton tha09c;
     @BindView(R.id.tha09d)
-    CheckBox tha09d;
+    RadioButton tha09d;
     @BindView(R.id.tha10)
     RadioGroup tha10;
     @BindView(R.id.tha10a)
@@ -863,13 +865,10 @@ public class SectionHAActivity extends Activity {
 
 
             //        09
-            if (!tha09a.isChecked()
-                    && !tha09b.isChecked()
-                    && !tha09c.isChecked()
-                    && !tha09d.isChecked()) {
+            if (tha09.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha09), Toast.LENGTH_LONG).show();
                 tha09a.setError("This data is Required!");
-                Log.i(TAG, "tha09a: This data is Required!");
+                Log.i(TAG, "tha09: This data is Required!");
                 return false;
             } else {
                 tha09a.setError(null);
@@ -1267,26 +1266,29 @@ public class SectionHAActivity extends Activity {
 
         sHA.put("tha05", tha05a.isChecked() ? "1" : tha05b.isChecked() ? "2" : tha05888.isChecked() ? "888" : "0");
         sHA.put("tha06", tha06a.isChecked() ? "1" : tha06b.isChecked() ? "2" : tha06888.isChecked() ? "888" : "0");
+
         sHA.put("tha07a", tha07a.isChecked() ? "1" : "0");
-        sHA.put("tha07b", tha07b.isChecked() ? "1" : "0");
-        sHA.put("tha07c", tha07c.isChecked() ? "1" : "0");
-        sHA.put("tha07d", tha07d.isChecked() ? "1" : "0");
-        sHA.put("tha07e", tha07e.isChecked() ? "1" : "0");
-        sHA.put("tha07f", tha07f.isChecked() ? "1" : "0");
-        sHA.put("tha07g", tha07g.isChecked() ? "1" : "0");
-        sHA.put("tha07h", tha07h.isChecked() ? "1" : "0");
-        sHA.put("tha0788", tha0788.isChecked() ? "1" : "0");
+        sHA.put("tha07b", tha07b.isChecked() ? "2" : "0");
+        sHA.put("tha07c", tha07c.isChecked() ? "3" : "0");
+        sHA.put("tha07d", tha07d.isChecked() ? "4" : "0");
+        sHA.put("tha07e", tha07e.isChecked() ? "5" : "0");
+        sHA.put("tha07f", tha07f.isChecked() ? "6" : "0");
+        sHA.put("tha07g", tha07g.isChecked() ? "7" : "0");
+        sHA.put("tha07h", tha07h.isChecked() ? "8" : "0");
+        sHA.put("tha0788", tha0788.isChecked() ? "88" : "0");
         sHA.put("tha0788x", tha0788x.getText().toString());
 
         sHA.put("tha08", tha08.getText().toString());
 
-        sHA.put("tha09a", tha09a.isChecked() ? "1" : "0");
-        sHA.put("tha09b", tha09b.isChecked() ? "1" : "0");
-        sHA.put("tha09c", tha09c.isChecked() ? "1" : "0");
-        sHA.put("tha09d", tha09d.isChecked() ? "1" : "0");
+        sHA.put("tha09", tha09a.isChecked() ? "1"
+                : tha09b.isChecked() ? "2"
+                : tha09c.isChecked() ? "3"
+                : tha09d.isChecked() ? "4"
+                : "0");
 
 
-        sHA.put("tha10", tha10a.isChecked() ? "1" : tha10b.isChecked() ? "2"
+        sHA.put("tha10", tha10a.isChecked() ? "1"
+                : tha10b.isChecked() ? "2"
                 : tha10c.isChecked() ? "3"
                 : tha10d.isChecked() ? "4"
                 : tha10e.isChecked() ? "5"
@@ -1300,29 +1302,30 @@ public class SectionHAActivity extends Activity {
 
 
         sHA.put("tha11a", tha11a.isChecked() ? "1" : "0");
-        sHA.put("tha11b", tha11b.isChecked() ? "1" : "0");
-        sHA.put("tha11c", tha11c.isChecked() ? "1" : "0");
-        sHA.put("tha11d", tha11d.isChecked() ? "1" : "0");
-        sHA.put("tha11e", tha11e.isChecked() ? "1" : "0");
-        sHA.put("tha11f", tha11f.isChecked() ? "1" : "0");
-        sHA.put("tha11g", tha11g.isChecked() ? "1" : "0");
-        sHA.put("tha11h", tha11h.isChecked() ? "1" : "0");
-        sHA.put("tha11i", tha11i.isChecked() ? "1" : "0");
-        sHA.put("tha11j", tha11j.isChecked() ? "1" : "0");
+        sHA.put("tha11b", tha11b.isChecked() ? "2" : "0");
+        sHA.put("tha11c", tha11c.isChecked() ? "3" : "0");
+        sHA.put("tha11d", tha11d.isChecked() ? "4" : "0");
+        sHA.put("tha11e", tha11e.isChecked() ? "5" : "0");
+        sHA.put("tha11f", tha11f.isChecked() ? "6" : "0");
+        sHA.put("tha11g", tha11g.isChecked() ? "7" : "0");
+        sHA.put("tha11h", tha11h.isChecked() ? "8" : "0");
+        sHA.put("tha11i", tha11i.isChecked() ? "9" : "0");
+        sHA.put("tha11j", tha11j.isChecked() ? "10" : "0");
 
         sHA.put("tha12", tha12a.isChecked() ? "1" : tha12b.isChecked() ? "2" : "0");
         sHA.put("tha13", tha13a.isChecked() ? "1" : tha13b.isChecked() ? "2" : "0");
 
         sHA.put("tha14", tha14a.isChecked() ? "1" : tha14b.isChecked() ? "2" : tha14c.isChecked() ? "3" : "0");
         sHA.put("tha15", tha15a.isChecked() ? "1" : tha15b.isChecked() ? "2" : "0");
-        sHA.put("tha16", tha16a.isChecked() ? "1" : tha16b.isChecked() ? "2" : tha16c.isChecked() ? "3" : tha1688.isChecked() ? "888" : "0");
+        sHA.put("tha16", tha16a.isChecked() ? "1" : tha16b.isChecked() ? "2" : tha16c.isChecked() ? "3" : tha1688.isChecked() ? "88" : "0");
 
         sHA.put("tha1688x", tha1688x.getText().toString());
 
 
         sHA.put("tha17", tha17a.isChecked() ? "1" : tha17b.isChecked() ? "2" : tha17c.isChecked() ? "3" : "0");
 
-        sHA.put("tha18", tha18a.isChecked() ? "1" : tha18b.isChecked() ? "2"
+        sHA.put("tha18", tha18a.isChecked() ? "1"
+                : tha18b.isChecked() ? "2"
                 : tha18c.isChecked() ? "3"
                 : tha18d.isChecked() ? "4"
                 : tha18e.isChecked() ? "5"
@@ -1330,14 +1333,14 @@ public class SectionHAActivity extends Activity {
 
 
         sHA.put("tha19a", tha19a.isChecked() ? "1" : "0");
-        sHA.put("tha19b", tha19b.isChecked() ? "1" : "0");
-        sHA.put("tha19c", tha19c.isChecked() ? "1" : "0");
-        sHA.put("tha19d", tha19d.isChecked() ? "1" : "0");
-        sHA.put("tha19e", tha19e.isChecked() ? "1" : "0");
-        sHA.put("tha19f", tha19f.isChecked() ? "1" : "0");
-        sHA.put("tha19g", tha19g.isChecked() ? "1" : "0");
-        sHA.put("tha19h", tha19h.isChecked() ? "1" : "0");
-        sHA.put("tha19i", tha19i.isChecked() ? "1" : "0");
+        sHA.put("tha19b", tha19b.isChecked() ? "2" : "0");
+        sHA.put("tha19c", tha19c.isChecked() ? "3" : "0");
+        sHA.put("tha19d", tha19d.isChecked() ? "4" : "0");
+        sHA.put("tha19e", tha19e.isChecked() ? "5" : "0");
+        sHA.put("tha19f", tha19f.isChecked() ? "6" : "0");
+        sHA.put("tha19g", tha19g.isChecked() ? "7" : "0");
+        sHA.put("tha19h", tha19h.isChecked() ? "8" : "0");
+        sHA.put("tha19i", tha19i.isChecked() ? "9" : "0");
 
 
         sHA.put("tha20", tha20a.isChecked() ? "1" : tha20b.isChecked() ? "2" : tha20c.isChecked() ? "3" : "0");
@@ -1350,12 +1353,12 @@ public class SectionHAActivity extends Activity {
         sHA.put("tha23", tha23a.isChecked() ? "1" : tha23b.isChecked() ? "2" : "0");
 
         sHA.put("tha24a", tha24a.isChecked() ? "1" : "0");
-        sHA.put("tha24b", tha24b.isChecked() ? "1" : "0");
-        sHA.put("tha24c", tha24c.isChecked() ? "1" : "0");
-        sHA.put("tha24d", tha24d.isChecked() ? "1" : "0");
-        sHA.put("tha24e", tha24e.isChecked() ? "1" : "0");
-        sHA.put("tha24f", tha24f.isChecked() ? "1" : "0");
-        sHA.put("tha24g", tha24g.isChecked() ? "1" : "0");
+        sHA.put("tha24b", tha24b.isChecked() ? "2" : "0");
+        sHA.put("tha24c", tha24c.isChecked() ? "3" : "0");
+        sHA.put("tha24d", tha24d.isChecked() ? "4" : "0");
+        sHA.put("tha24e", tha24e.isChecked() ? "5" : "0");
+        sHA.put("tha24f", tha24f.isChecked() ? "6" : "0");
+        sHA.put("tha24g", tha24g.isChecked() ? "7" : "0");
 
 
         sHA.put("tha25", tha25a.isChecked() ? "1" : tha25b.isChecked() ? "2" : tha25c.isChecked() ? "3" : "0");
@@ -1379,7 +1382,7 @@ public class SectionHAActivity extends Activity {
 
         sHA.put("tha31", tha31a.isChecked() ? "1" : tha31b.isChecked() ? "2" : tha31c.isChecked() ? "3" : "0");
         sHA.put("tha32", tha32a.isChecked() ? "1" : tha32b.isChecked() ? "2" : "0");
-        sHA.put("tha33", tha33a.isChecked() ? "1" : tha33a.isChecked() ? "2" : "0");
+        sHA.put("tha33", tha33a.isChecked() ? "1" : tha33b.isChecked() ? "2" : "0");
 
 
         sHA.put("tha34", tha34a.isChecked() ? "1" : tha34b.isChecked() ? "2"

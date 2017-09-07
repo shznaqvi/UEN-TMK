@@ -323,29 +323,41 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <CheckBox
-                android:id="@+id/tha09a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tha09a" />
 
-            <CheckBox
-                android:id="@+id/tha09b"
+            <RadioGroup
+                android:id="@+id/tha09"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tha09b" />
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/tha09c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tha09c" />
+                <RadioButton
+                    android:id="@+id/tha09a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha09a" />
 
-            <CheckBox
-                android:id="@+id/tha09d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tha09d" />
+                <RadioButton
+                    android:id="@+id/tha09b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha09b" />
+
+                <RadioButton
+                    android:id="@+id/tha09c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha09c" />
+
+                <RadioButton
+                    android:id="@+id/tha09d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha09d" />
+
+            </RadioGroup>
 
 
             <TextView

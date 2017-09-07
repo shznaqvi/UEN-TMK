@@ -419,22 +419,22 @@ public class SectionBActivity extends AppCompatActivity {
 
                 if (ageInyears < 5) {
 
-                        MainApp.TotalChildCount++;
-                        MainApp.TotalMembersCount++;
+                    MainApp.TotalChildCount++;
+                    MainApp.TotalMembersCount++;
                 } else if (tb11a.isChecked() && tb04b.isChecked()
                         && (ageInyears > 15 || ageInyears < 49)) {
-                        MainApp.TotalMWRACount++;
-                        MainApp.TotalMembersCount++;
+                    MainApp.TotalMWRACount++;
+                    MainApp.TotalMembersCount++;
                 } else {
-                        MainApp.TotalMembersCount++;
-                    }
-
+                    MainApp.TotalMembersCount++;
                 }
 
-                startActivity(new Intent(this, SectionBActivity.class));
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
+
+            startActivity(new Intent(this, SectionBActivity.class));
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //public boolean checkChildLessThenFive(int i) {
@@ -486,13 +486,14 @@ public class SectionBActivity extends AppCompatActivity {
 
         JSONObject sB = new JSONObject();
 
-        sB.put("tb0", MainApp.counter);
+        sB.put("tb01", MainApp.counter);
         sB.put("tb02", tb02.getText().toString());
         sB.put("tb03", tb03a.isChecked() ? "1" : tb03b.isChecked() ? "2" : tb03c.isChecked() ? "3"
                 : tb03d.isChecked() ? "4" : tb03e.isChecked() ? "5" : tb03f.isChecked() ? "6"
                 : tb03g.isChecked() ? "7" : tb03h.isChecked() ? "8" : tb03i.isChecked() ? "9" : tb03j.isChecked() ? "10"
                 : tb03k.isChecked() ? "11" : tb03l.isChecked() ? "12" : tb03m.isChecked() ? "13"
-                : tb03n.isChecked() ? "14" : tb0388.isChecked() ? "15" : "0");
+                : tb03n.isChecked() ? "14" : tb0388.isChecked() ? "88" : "0");
+
         sB.put("tb0388x", tb0388x.getText().toString());
 
         if (!MainApp.isHead) {
