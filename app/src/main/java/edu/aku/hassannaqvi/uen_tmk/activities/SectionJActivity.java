@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +38,8 @@ import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 public class SectionJActivity extends Activity {
 
     private static final String TAG = SectionJActivity.class.getName();
+    @BindView(R.id.scroll)
+    ScrollView scroll;
     @BindView(R.id.tj01)
     Spinner tj01;
     @BindView(R.id.tj02)
@@ -235,6 +241,10 @@ public class SectionJActivity extends Activity {
     @BindView(R.id.tj1488x)
     EditText tj1488x;
 
+    Map<String, String> childsMap;
+    ArrayList<String> lstChild;
+
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -244,14 +254,20 @@ public class SectionJActivity extends Activity {
 
 //        get data from sec B
 
-        ArrayList<String> lstChild = new ArrayList<>();
+        childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
 
-        lstChild.add(0, "Child 1");
-        lstChild.add(1, "Child 2");
+        childsMap.put("....", "");
+        lstChild.add("....");
 
-        ArrayAdapter<String> test = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, lstChild);
-        tj01.setAdapter(test);
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1")) {
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
+                lstChild.add(MainApp.familyMembersList.get(i).getName());
+            }
+        }
 
+        tj01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
 
         tj0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -343,6 +359,144 @@ public class SectionJActivity extends Activity {
             }
         });
 
+//        04
+        tj04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj04a) {
+                    fldGrpti05.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpti05.setVisibility(View.GONE);
+                    tj05a.setChecked(false);
+                    tj05b.setChecked(false);
+                    tj05c.setChecked(false);
+                    tj05d.setChecked(false);
+                    tj05e.setChecked(false);
+                    tj05f.setChecked(false);
+                    tj05g.setChecked(false);
+                    tj05h.setChecked(false);
+                }
+            }
+        });
+
+//        06
+        tj06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj06a) {
+                    fldGrpti07.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpti07.setVisibility(View.GONE);
+                    tj07a.setChecked(false);
+                    tj07b.setChecked(false);
+                    tj07c.setChecked(false);
+                    tj07d.setChecked(false);
+                    tj07e.setChecked(false);
+                    tj07f.setChecked(false);
+                    tj07g.setChecked(false);
+                    tj07h.setChecked(false);
+                    tj0788.setChecked(false);
+                    tj0788.setText(null);
+                }
+            }
+        });
+
+//        10
+        tj10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj10a) {
+                    fldGrpti11.setVisibility(View.VISIBLE);
+                } else {
+                    tj11.clearCheck();
+                    fldGrpti11.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        11
+        tj11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj11a) {
+                    tj11d.setVisibility(View.VISIBLE);
+
+                    tj11m.setText(null);
+                    tj11m.setVisibility(View.GONE);
+                } else if (i == R.id.tj11b) {
+                    tj11d.setText(null);
+                    tj11d.setVisibility(View.GONE);
+
+                    tj11m.setVisibility(View.VISIBLE);
+                } else {
+                    tj11d.setText(null);
+                    tj11d.setVisibility(View.GONE);
+
+                    tj11m.setText(null);
+                    tj11m.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        12
+        tj12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj12a) {
+                    tj12d.setVisibility(View.VISIBLE);
+
+                    tj12m.setText(null);
+                    tj12m.setVisibility(View.GONE);
+                } else if (i == R.id.tj12b) {
+                    tj12d.setText(null);
+                    tj12d.setVisibility(View.GONE);
+
+                    tj12m.setVisibility(View.VISIBLE);
+                } else {
+                    tj12d.setText(null);
+                    tj12d.setVisibility(View.GONE);
+
+                    tj12m.setText(null);
+                    tj12m.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        13
+        tj13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj13a) {
+                    tj13d.setVisibility(View.VISIBLE);
+
+                    tj13m.setText(null);
+                    tj13m.setVisibility(View.GONE);
+                } else if (i == R.id.tj13b) {
+                    tj13d.setText(null);
+                    tj13d.setVisibility(View.GONE);
+
+                    tj13m.setVisibility(View.VISIBLE);
+                } else {
+                    tj13d.setText(null);
+                    tj13d.setVisibility(View.GONE);
+
+                    tj13m.setText(null);
+                    tj13m.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        tj01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
     }
 
@@ -366,14 +520,92 @@ public class SectionJActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
+                if (MainApp.mm < MainApp.TotalChildCount) {
 
-                startActivity(new Intent(this, SectionKActivity.class));
+                    clearFields();
+
+                    MainApp.mm++;
+
+                    lstChild.remove(position);
+                    childsMap.remove(position);
+
+                    tj01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+
+                    scroll.setScrollY(0);
+
+                } else {
+                    finish();
+
+                    MainApp.mm = 1;
+
+                    startActivity(new Intent(this, SectionKActivity.class));
+                }
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
 
+    }
+
+    public void clearFields() {
+        tj02.clearCheck();
+        tj03.clearCheck();
+        tj03m.setText(null);
+        tj03h.setText(null);
+        tj03d.setText(null);
+        tj04.clearCheck();
+
+        tj05a.setChecked(false);
+        tj05b.setChecked(false);
+        tj05c.setChecked(false);
+        tj05d.setChecked(false);
+        tj05e.setChecked(false);
+        tj05f.setChecked(false);
+        tj05g.setChecked(false);
+        tj05h.setChecked(false);
+
+        tj06.clearCheck();
+
+        tj07a.setChecked(false);
+        tj07b.setChecked(false);
+        tj07c.setChecked(false);
+        tj07d.setChecked(false);
+        tj07e.setChecked(false);
+        tj07f.setChecked(false);
+        tj07g.setChecked(false);
+        tj07h.setChecked(false);
+        tj0788.setChecked(false);
+        tj0788x.setText(null);
+
+        tj08a.setChecked(false);
+        tj08b.setChecked(false);
+        tj08c.setChecked(false);
+        tj08d.setChecked(false);
+        tj08e.setChecked(false);
+        tj08f.setChecked(false);
+        tj08g.setChecked(false);
+        tj08h.setChecked(false);
+        tj08i.setChecked(false);
+        tj0888.setChecked(false);
+        tj0888x.setText(null);
+
+        tj09.clearCheck();
+        tj10.clearCheck();
+
+        tj11.clearCheck();
+        tj11m.setText(null);
+        tj11d.setText(null);
+
+        tj12.clearCheck();
+        tj12m.setText(null);
+        tj12d.setText(null);
+
+        tj13.clearCheck();
+        tj13m.setText(null);
+        tj13d.setText(null);
+
+        tj14.clearCheck();
     }
 
     private boolean UpdateDB() {
@@ -396,6 +628,8 @@ public class SectionJActivity extends Activity {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sJ = new JSONObject();
+
+        sJ.put("tjchildSerial", childsMap.get(tj01.getSelectedItem().toString()));
 
         sJ.put("tj01", tj01.getSelectedItem().toString());
 

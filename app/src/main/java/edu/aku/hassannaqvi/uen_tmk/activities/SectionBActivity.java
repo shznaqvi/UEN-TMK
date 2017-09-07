@@ -154,7 +154,6 @@ public class SectionBActivity extends AppCompatActivity {
     @BindView(R.id.btn_ContNextSec)
     Button btn_ContNextSec;
 
-    int counter = 0;
     DatabaseHelper db;
     long ageInyears = 0;
 
@@ -196,7 +195,7 @@ public class SectionBActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 //        Counter for serial no
-        counter++;
+        MainApp.counter++;
 
         tb07.setManager(getSupportFragmentManager());
 
@@ -487,7 +486,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         JSONObject sB = new JSONObject();
 
-        sB.put("tb0", counter);
+        sB.put("tb0", MainApp.counter);
         sB.put("tb02", tb02.getText().toString());
         sB.put("tb03", tb03a.isChecked() ? "1" : tb03b.isChecked() ? "2" : tb03c.isChecked() ? "3"
                 : tb03d.isChecked() ? "4" : tb03e.isChecked() ? "5" : tb03f.isChecked() ? "6"
@@ -537,10 +536,8 @@ public class SectionBActivity extends AppCompatActivity {
                     (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 
-            ageInyears = ageInYears(tb07.getText().toString());
-
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
-                    ageInyears < 5 ? "1" : "2", String.valueOf(counter)));
+                    ageInyears < 5 ? "1" : "2", String.valueOf(MainApp.counter)));
 
             return true;
         } else {

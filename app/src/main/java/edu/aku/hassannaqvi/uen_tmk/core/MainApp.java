@@ -75,6 +75,8 @@ public class MainApp extends Application {
     public static int mwraCount = 1;
     public static int TotalMWRACount = 0;
     public static int TotalChildCount = 0;
+    public static int counter = 0;
+    public static int mm = 1;
 
     public static int dcChildCount = 1;
     public static int dcMotherCount = 1;
@@ -82,9 +84,10 @@ public class MainApp extends Application {
     public static int dcChildTotal = 0;
 
     //    Total No of Alive members got from Section B
-    public static int currentStatusCount = 0;
+/*    public static int currentStatusCount = 0;
     public static int currentDeceasedCheck = 0;
-    public static int currentMotherCheck = 0;
+    public static int currentMotherCheck = 0;*/
+
     public static List<deadMemberClass> deadMembers = new ArrayList<deadMemberClass>();
     //    Ali
     public static String regionDss = "";
@@ -94,7 +97,7 @@ public class MainApp extends Application {
     public static DeceasedChildContract dcC;
     public static MWRAContract mw;
     public static SectionKIMContract ims;
-    public static int mm = 1;
+
     public static int totalChild = 0;
     public static int memFlag = 0;
     public static List<Integer> memClicked;

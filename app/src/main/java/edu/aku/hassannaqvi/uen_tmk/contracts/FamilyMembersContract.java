@@ -135,6 +135,22 @@ public class FamilyMembersContract {
         this.user = user;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAgeLess5() {
+        return ageLess5;
+    }
+
+    public void setAgeLess5(String ageLess5) {
+        this.ageLess5 = ageLess5;
+    }
+
 /*
     public String getDss_id_hh() {
         return dss_id_hh;
@@ -190,22 +206,6 @@ public class FamilyMembersContract {
 
     public void setSite_code(String site_code) {
         this.site_code = site_code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDob() {
-        return ageLess5;
-    }
-
-    public void setDob(String ageLess5) {
-        this.ageLess5 = ageLess5;
     }
 
     public String getAgeY() {

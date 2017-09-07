@@ -24,6 +24,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -158,6 +160,9 @@ public class SectionAActivity extends Activity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+
+
+                MainApp.familyMembersList = new ArrayList<>();
 
                 startActivity(new Intent(this, SectionBActivity.class));
             } else {

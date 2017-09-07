@@ -105,7 +105,7 @@ public class SectionKActivity extends Activity {
     RadioButton tk03a;
     @BindView(R.id.tk03b)
     RadioButton tk03b;
-    @BindView(R.id.tkc03c)
+    @BindView(R.id.tk03c)
     RadioButton tk03c;
     @BindView(R.id.tk04)
     EditText tk04;
@@ -264,10 +264,10 @@ public class SectionKActivity extends Activity {
             }
         });
 
-        tk03c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        tk03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tk03c) {
                     fldGrptk04.setVisibility(View.VISIBLE);
                 } else {
                     fldGrptk04.setVisibility(View.GONE);
@@ -293,7 +293,7 @@ public class SectionKActivity extends Activity {
         tk08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (tk01a.isChecked()) {
+                if (tk08a.isChecked()) {
                     fldGrptk09.setVisibility(View.VISIBLE);
                 } else {
                     fldGrptk09.setVisibility(View.GONE);

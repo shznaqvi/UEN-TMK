@@ -741,8 +741,14 @@ public class SectionIActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionJActivity.class);
-                startActivity(secNext);
+                if (MainApp.TotalChildCount > 0) {
+                    Intent secNext = new Intent(this, SectionJActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionKActivity.class);
+                    startActivity(secNext);
+                }
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

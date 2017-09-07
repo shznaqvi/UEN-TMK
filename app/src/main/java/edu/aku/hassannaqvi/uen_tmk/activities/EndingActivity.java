@@ -72,10 +72,13 @@ public class EndingActivity extends Activity {
                 MainApp.mwraCount = 1;
                 MainApp.TotalChildCount = 0;
 
+                MainApp.counter = 0;
+
 //    Total No of Alive members got from Section B
-                MainApp.currentStatusCount = 0;
+
+/*                MainApp.currentStatusCount = 0;
                 MainApp.currentDeceasedCheck = 0;
-                MainApp.currentMotherCheck = 0;
+                MainApp.currentMotherCheck = 0;*/
 
                 MainApp.selectedPos = -1;
 
