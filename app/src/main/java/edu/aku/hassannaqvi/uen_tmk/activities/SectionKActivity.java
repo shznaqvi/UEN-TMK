@@ -380,7 +380,7 @@ public class SectionKActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSG();
+        int updcount = db.updateSK();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

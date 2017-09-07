@@ -520,21 +520,27 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
                 : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : "0");
 
-        //        MainApp.fc.setROW_sb(String.valueOf(sB));
+        MainApp.fmc.setsB(String.valueOf(sB));
+
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
 
-        Long updcount = db.addForm(MainApp.fc);
-        MainApp.fc.set_ID(String.valueOf(updcount));
+        Long updcount = db.addFamilyMembers(MainApp.fmc);
+        MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
-            MainApp.fc.setUID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
-            db.updateFormID();
+            MainApp.fmc.set_UID(
+                    (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
+            db.updateFamilyMemberID();
+
+            ageInyears = ageInYears(tb07.getText().toString());
+
+            MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
+                    ageInyears < 5 ? "1" : "2", String.valueOf(counter)));
 
             return true;
         } else {

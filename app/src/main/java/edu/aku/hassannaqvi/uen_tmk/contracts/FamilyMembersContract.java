@@ -21,34 +21,34 @@ public class FamilyMembersContract {
     private String formDate = "";
     private String deviceId = "";
     private String user = "";
-    private String dss_id_hh = "";
-    private String dss_id_f = "";
-    private String dss_id_m = "";
-    private String dss_id_h = "";
-    private String dss_id_member = "";
-    private String prevs_dss_id_member = "";
-    private String site_code = "";
     private String name = "";
-    private String dob = "";
-    private String ageY = "";
-    private String ageM = "";
-    private String ageD = "";
-    private String gender = "";
-    private String is_head = "";
-    private String relation_hh = "";
-    private String current_status = "";
-    private String current_statusX = "";
-    private String current_date = "";
-    private String dod = "";
-    private String m_status = "";
-    private String education = "";
-    private String educationX = "";
-    private String occupation = "";
-    private String occupationX = "";
-    private String member_type = "";
-    private String rsvp = "";
-    private String update_flag = "";
-    private String update_dt = "";
+    private String ageLess5 = "";
+    /*    private String dss_id_hh = "";
+        private String dss_id_f = "";
+        private String dss_id_m = "";
+        private String dss_id_h = "";
+        private String dss_id_member = "";
+        private String prevs_dss_id_member = "";
+        private String site_code = "";
+        private String ageY = "";
+        private String ageM = "";
+        private String ageD = "";
+        private String gender = "";
+        private String is_head = "";
+        private String relation_hh = "";
+        private String current_status = "";
+        private String current_statusX = "";
+        private String current_date = "";
+        private String dod = "";
+        private String m_status = "";
+        private String education = "";
+        private String educationX = "";
+        private String occupation = "";
+        private String occupationX = "";
+        private String member_type = "";
+        private String rsvp = "";
+        private String update_flag = "";*/
+    private String sB = "";
     private String synced = "";
     private String syncedDate = "";
     private String remarks = "";
@@ -61,18 +61,10 @@ public class FamilyMembersContract {
     public FamilyMembersContract() {
     }
 
-    public FamilyMembersContract(FamilyMembersContract cc) {
-        this.dss_id_hh = cc.dss_id_hh;
-        this.dss_id_m = cc.dss_id_m;
-        this.dss_id_member = cc.dss_id_member;
-        this.name = cc.name;
-        this.dob = cc.dob;
-        this.ageY = cc.ageY;
-        this.ageM = cc.ageM;
-        this.ageD = cc.ageD;
-        this.gender = cc.gender;
-        this.member_type = cc.member_type;
-        this.serialNo = cc.serialNo;
+    public FamilyMembersContract(String name, String ageLess5, String serialNo) {
+        this.name = name;
+        this.ageLess5 = ageLess5;
+        this.serialNo = serialNo;
     }
 
     public String getProjectName() {
@@ -143,6 +135,7 @@ public class FamilyMembersContract {
         this.user = user;
     }
 
+/*
     public String getDss_id_hh() {
         return dss_id_hh;
     }
@@ -208,11 +201,11 @@ public class FamilyMembersContract {
     }
 
     public String getDob() {
-        return dob;
+        return ageLess5;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDob(String ageLess5) {
+        this.ageLess5 = ageLess5;
     }
 
     public String getAgeY() {
@@ -327,30 +320,6 @@ public class FamilyMembersContract {
         this.update_flag = update_flag;
     }
 
-    public String getUpdate_dt() {
-        return update_dt;
-    }
-
-    public void setUpdate_dt(String update_dt) {
-        this.update_dt = update_dt;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncedDate() {
-        return syncedDate;
-    }
-
-    public void setSyncedDate(String syncedDate) {
-        this.syncedDate = syncedDate;
-    }
-
     public String getCurrent_statusX() {
         return current_statusX;
     }
@@ -373,6 +342,38 @@ public class FamilyMembersContract {
 
     public void setOccupationX(String occupationX) {
         this.occupationX = occupationX;
+    }
+
+    public String getRsvp() {
+        return rsvp;
+    }
+
+    public void setRsvp(String rsvp) {
+        this.rsvp = rsvp;
+    }*/
+
+    public String getsB() {
+        return sB;
+    }
+
+    public void setsB(String sB) {
+        this.sB = sB;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncedDate() {
+        return syncedDate;
+    }
+
+    public void setSyncedDate(String syncedDate) {
+        this.syncedDate = syncedDate;
     }
 
     public String getRemarks() {
@@ -399,14 +400,6 @@ public class FamilyMembersContract {
         this.istatus = istatus;
     }
 
-    public String getRsvp() {
-        return rsvp;
-    }
-
-    public void setRsvp(String rsvp) {
-        this.rsvp = rsvp;
-    }
-
     public String getDevicetagID() {
         return devicetagID;
     }
@@ -417,48 +410,48 @@ public class FamilyMembersContract {
 
     public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {
 
-        this._ID = jsonObject.getString(censusMember.COLUMN_ID);
-        this.REF_ID = jsonObject.getString(censusMember.COLUMN_REF_ID);
-        this._UID = jsonObject.getString(censusMember.COLUMN_UID);
-        this._UUID = jsonObject.getString(censusMember.COLUMN_UUID);
-        this._DATE = jsonObject.getString(censusMember.COLUMN_DATE);
-        this.formDate = jsonObject.getString(censusMember.COLUMN_FORMDATE);
-        this.deviceId = jsonObject.getString(censusMember.COLUMN_DEVICEID);
-        this.user = jsonObject.getString(censusMember.COLUMN_USER);
-        this.dss_id_hh = jsonObject.getString(censusMember.COLUMN_DSS_ID_HH);
-        this.dss_id_f = jsonObject.getString(censusMember.COLUMN_DSS_ID_F);
-        this.dss_id_m = jsonObject.getString(censusMember.COLUMN_DSS_ID_M);
-        this.dss_id_h = jsonObject.getString(censusMember.COLUMN_DSS_ID_H);
-        this.dss_id_member = jsonObject.getString(censusMember.COLUMN_DSS_ID_MEMBER);
-        this.prevs_dss_id_member = jsonObject.getString(censusMember.COLUMN_PREVS_DSS_ID_MEMBER);
-        this.site_code = jsonObject.getString(censusMember.COLUMN_SITE_CODE);
-        this.name = jsonObject.getString(censusMember.COLUMN_NAME);
-        this.dob = jsonObject.getString(censusMember.COLUMN_DOB);
-        this.ageY = jsonObject.getString(censusMember.COLUMN_AGEY);
-        this.ageM = jsonObject.getString(censusMember.COLUMN_AGEM);
-        this.ageD = jsonObject.getString(censusMember.COLUMN_AGED);
-        this.gender = jsonObject.getString(censusMember.COLUMN_GENDER);
-        this.is_head = jsonObject.getString(censusMember.COLUMN_IS_HEAD);
-        this.relation_hh = jsonObject.getString(censusMember.COLUMN_RELATION_HH);
-        this.current_status = jsonObject.getString(censusMember.COLUMN_CURRENT_STATUS);
-        this.current_statusX = jsonObject.getString(censusMember.COLUMN_CURRENT_STATUSX);
-        this.current_date = jsonObject.getString(censusMember.COLUMN_CURRENT_DATE);
-        this.dod = jsonObject.getString(censusMember.COLUMN_DOD);
-        this.m_status = jsonObject.getString(censusMember.COLUMN_M_STATUS);
-        this.education = jsonObject.getString(censusMember.COLUMN_EDUCATION);
-        this.educationX = jsonObject.getString(censusMember.COLUMN_EDUCATIONX);
-        this.occupation = jsonObject.getString(censusMember.COLUMN_OCCUPATION);
-        this.occupationX = jsonObject.getString(censusMember.COLUMN_OCCUPATIONX);
-        this.member_type = jsonObject.getString(censusMember.COLUMN_MEMBER_TYPE);
-        this.rsvp = jsonObject.getString(censusMember.COLUMN_RSVP);
-        this.update_flag = jsonObject.getString(censusMember.COLUMN_UPDATE_FLAG);
-        this.update_dt = jsonObject.getString(censusMember.COLUMN_UPDATE_DT);
-        this.serialNo = jsonObject.getString(censusMember.COLUMN_SERIAL_NO);
-        this.synced = jsonObject.getString(censusMember.COLUMN_SYNCED);
-        this.syncedDate = jsonObject.getString(censusMember.COLUMN_SYNCED_DATE);
-        this.remarks = jsonObject.getString(censusMember.COLUMN_REMARKS);
-        this.istatus = jsonObject.getString(censusMember.COLUMN_ISTATUS);
-        this.devicetagID = jsonObject.getString(censusMember.COLUMN_DEVICETAGID);
+        this._ID = jsonObject.getString(familyMembers.COLUMN_ID);
+        this.REF_ID = jsonObject.getString(familyMembers.COLUMN_REF_ID);
+        this._UID = jsonObject.getString(familyMembers.COLUMN_UID);
+        this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
+        this._DATE = jsonObject.getString(familyMembers.COLUMN_DATE);
+        this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
+        this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
+        this.user = jsonObject.getString(familyMembers.COLUMN_USER);
+/*        this.dss_id_hh = jsonObject.getString(familyMembers.COLUMN_DSS_ID_HH);
+        this.dss_id_f = jsonObject.getString(familyMembers.COLUMN_DSS_ID_F);
+        this.dss_id_m = jsonObject.getString(familyMembers.COLUMN_DSS_ID_M);
+        this.dss_id_h = jsonObject.getString(familyMembers.COLUMN_DSS_ID_H);
+        this.dss_id_member = jsonObject.getString(familyMembers.COLUMN_DSS_ID_MEMBER);
+        this.prevs_dss_id_member = jsonObject.getString(familyMembers.COLUMN_PREVS_DSS_ID_MEMBER);
+        this.site_code = jsonObject.getString(familyMembers.COLUMN_SITE_CODE);
+        this.name = jsonObject.getString(familyMembers.COLUMN_NAME);
+        this.ageLess5 = jsonObject.getString(familyMembers.COLUMN_DOB);
+        this.ageY = jsonObject.getString(familyMembers.COLUMN_AGEY);
+        this.ageM = jsonObject.getString(familyMembers.COLUMN_AGEM);
+        this.ageD = jsonObject.getString(familyMembers.COLUMN_AGED);
+        this.gender = jsonObject.getString(familyMembers.COLUMN_GENDER);
+        this.is_head = jsonObject.getString(familyMembers.COLUMN_IS_HEAD);
+        this.relation_hh = jsonObject.getString(familyMembers.COLUMN_RELATION_HH);
+        this.current_status = jsonObject.getString(familyMembers.COLUMN_CURRENT_STATUS);
+        this.current_statusX = jsonObject.getString(familyMembers.COLUMN_CURRENT_STATUSX);
+        this.current_date = jsonObject.getString(familyMembers.COLUMN_CURRENT_DATE);
+        this.dod = jsonObject.getString(familyMembers.COLUMN_DOD);
+        this.m_status = jsonObject.getString(familyMembers.COLUMN_M_STATUS);
+        this.education = jsonObject.getString(familyMembers.COLUMN_EDUCATION);
+        this.educationX = jsonObject.getString(familyMembers.COLUMN_EDUCATIONX);
+        this.occupation = jsonObject.getString(familyMembers.COLUMN_OCCUPATION);
+        this.occupationX = jsonObject.getString(familyMembers.COLUMN_OCCUPATIONX);
+        this.member_type = jsonObject.getString(familyMembers.COLUMN_MEMBER_TYPE);
+        this.rsvp = jsonObject.getString(familyMembers.COLUMN_RSVP);
+        this.update_flag = jsonObject.getString(familyMembers.COLUMN_UPDATE_FLAG);*/
+        this.sB = jsonObject.getString(familyMembers.COLUMN_SB);
+        this.serialNo = jsonObject.getString(familyMembers.COLUMN_SERIAL_NO);
+        this.synced = jsonObject.getString(familyMembers.COLUMN_SYNCED);
+        this.syncedDate = jsonObject.getString(familyMembers.COLUMN_SYNCED_DATE);
+        this.remarks = jsonObject.getString(familyMembers.COLUMN_REMARKS);
+        this.istatus = jsonObject.getString(familyMembers.COLUMN_ISTATUS);
+        this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
 
         return this;
 
@@ -466,46 +459,46 @@ public class FamilyMembersContract {
 
     public FamilyMembersContract Hydrate(Cursor cursor) {
 
-        this._ID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_ID));
-        this.REF_ID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_REF_ID));
-        this._UID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_UID));
-        this._UUID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_UUID));
-        this._DATE = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DATE));
-        this.formDate = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_FORMDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DEVICEID));
-        this.user = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_USER));
-        this.dss_id_hh = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DSS_ID_HH));
-        this.dss_id_f = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DSS_ID_F));
-        this.dss_id_m = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DSS_ID_M));
-        this.dss_id_h = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DSS_ID_H));
-        this.dss_id_member = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DSS_ID_MEMBER));
-        this.prevs_dss_id_member = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_PREVS_DSS_ID_MEMBER));
-        this.site_code = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_SITE_CODE));
-        this.name = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_NAME));
-        this.dob = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DOB));
-        this.ageY = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_AGEY));
-        this.ageM = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_AGEM));
-        this.ageD = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_AGED));
-        this.gender = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_GENDER));
-        this.is_head = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_IS_HEAD));
-        this.relation_hh = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_RELATION_HH));
-        this.current_status = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_CURRENT_STATUS));
-        this.current_statusX = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_CURRENT_STATUSX));
-        this.current_date = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_CURRENT_DATE));
-        this.dod = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DOD));
-        this.m_status = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_M_STATUS));
-        this.education = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_EDUCATION));
-        this.educationX = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_EDUCATIONX));
-        this.occupation = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_OCCUPATION));
-        this.occupationX = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_OCCUPATIONX));
-        this.member_type = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_MEMBER_TYPE));
-        this.rsvp = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_RSVP));
-        this.update_flag = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_UPDATE_FLAG));
-        this.update_dt = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_UPDATE_DT));
-        this.serialNo = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_SERIAL_NO));
-        this.remarks = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_REMARKS));
-        this.istatus = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_ISTATUS));
-        this.devicetagID = cursor.getString(cursor.getColumnIndex(censusMember.COLUMN_DEVICETAGID));
+        this._ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ID));
+        this.REF_ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REF_ID));
+        this._UID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UID));
+        this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
+        this._DATE = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DATE));
+        this.formDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_FORMDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
+        this.user = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_USER));
+/*        this.dss_id_hh = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DSS_ID_HH));
+        this.dss_id_f = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DSS_ID_F));
+        this.dss_id_m = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DSS_ID_M));
+        this.dss_id_h = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DSS_ID_H));
+        this.dss_id_member = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DSS_ID_MEMBER));
+        this.prevs_dss_id_member = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_PREVS_DSS_ID_MEMBER));
+        this.site_code = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SITE_CODE));
+        this.name = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_NAME));
+        this.ageLess5 = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DOB));
+        this.ageY = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_AGEY));
+        this.ageM = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_AGEM));
+        this.ageD = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_AGED));
+        this.gender = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_GENDER));
+        this.is_head = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_IS_HEAD));
+        this.relation_hh = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_RELATION_HH));
+        this.current_status = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_CURRENT_STATUS));
+        this.current_statusX = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_CURRENT_STATUSX));
+        this.current_date = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_CURRENT_DATE));
+        this.dod = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DOD));
+        this.m_status = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_M_STATUS));
+        this.education = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_EDUCATION));
+        this.educationX = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_EDUCATIONX));
+        this.occupation = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_OCCUPATION));
+        this.occupationX = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_OCCUPATIONX));
+        this.member_type = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_MEMBER_TYPE));
+        this.rsvp = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_RSVP));
+        this.update_flag = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UPDATE_FLAG));*/
+        this.sB = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SB));
+        this.serialNo = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SERIAL_NO));
+        this.remarks = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REMARKS));
+        this.istatus = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ISTATUS));
+        this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
 
         return this;
 
@@ -516,53 +509,53 @@ public class FamilyMembersContract {
 
         JSONObject json = new JSONObject();
 
-        json.put(censusMember.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(censusMember.COLUMN_REF_ID, this.REF_ID == null ? JSONObject.NULL : this.REF_ID);
-        json.put(censusMember.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        json.put(censusMember.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
-        json.put(censusMember.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);
-        json.put(censusMember.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
-        json.put(censusMember.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-        json.put(censusMember.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
-        json.put(censusMember.COLUMN_DSS_ID_HH, this.dss_id_hh == null ? JSONObject.NULL : this.dss_id_hh);
-        json.put(censusMember.COLUMN_DSS_ID_F, this.dss_id_f == null ? JSONObject.NULL : this.dss_id_f);
-        json.put(censusMember.COLUMN_DSS_ID_M, this.dss_id_m == null ? JSONObject.NULL : this.dss_id_m);
-        json.put(censusMember.COLUMN_DSS_ID_H, this.dss_id_h == null ? JSONObject.NULL : this.dss_id_h);
-        json.put(censusMember.COLUMN_DSS_ID_MEMBER, this.dss_id_member == null ? JSONObject.NULL : this.dss_id_member);
-        json.put(censusMember.COLUMN_PREVS_DSS_ID_MEMBER, this.prevs_dss_id_member == null ? JSONObject.NULL : this.prevs_dss_id_member);
-        json.put(censusMember.COLUMN_SITE_CODE, this.site_code == null ? JSONObject.NULL : this.site_code);
-        json.put(censusMember.COLUMN_NAME, this.name == null ? JSONObject.NULL : this.name);
-        json.put(censusMember.COLUMN_DOB, this.dob == null ? JSONObject.NULL : this.dob);
-        json.put(censusMember.COLUMN_AGEY, this.ageY == null ? JSONObject.NULL : this.ageY);
-        json.put(censusMember.COLUMN_AGEM, this.ageM == null ? JSONObject.NULL : this.ageM);
-        json.put(censusMember.COLUMN_AGED, this.ageD == null ? JSONObject.NULL : this.ageD);
-        json.put(censusMember.COLUMN_GENDER, this.gender == null ? JSONObject.NULL : this.gender);
-        json.put(censusMember.COLUMN_IS_HEAD, this.is_head == null ? JSONObject.NULL : this.is_head);
-        json.put(censusMember.COLUMN_RELATION_HH, this.relation_hh == null ? JSONObject.NULL : this.relation_hh);
-        json.put(censusMember.COLUMN_CURRENT_STATUS, this.current_status == null ? JSONObject.NULL : this.current_status);
-        json.put(censusMember.COLUMN_CURRENT_STATUSX, this.current_statusX == null ? JSONObject.NULL : this.current_statusX);
-        json.put(censusMember.COLUMN_CURRENT_DATE, this.current_date == null ? JSONObject.NULL : this.current_date);
-        json.put(censusMember.COLUMN_DOD, this.dod == null ? JSONObject.NULL : this.dod);
-        json.put(censusMember.COLUMN_M_STATUS, this.m_status == null ? JSONObject.NULL : this.m_status);
-        json.put(censusMember.COLUMN_EDUCATION, this.education == null ? JSONObject.NULL : this.education);
-        json.put(censusMember.COLUMN_EDUCATIONX, this.educationX == null ? JSONObject.NULL : this.educationX);
-        json.put(censusMember.COLUMN_OCCUPATION, this.occupation == null ? JSONObject.NULL : this.occupation);
-        json.put(censusMember.COLUMN_OCCUPATIONX, this.occupationX == null ? JSONObject.NULL : this.occupationX);
-        json.put(censusMember.COLUMN_MEMBER_TYPE, this.member_type == null ? JSONObject.NULL : this.member_type);
-        json.put(censusMember.COLUMN_RSVP, this.rsvp == null ? JSONObject.NULL : this.rsvp);
-        json.put(censusMember.COLUMN_UPDATE_FLAG, this.update_flag == null ? JSONObject.NULL : this.update_flag);
-        json.put(censusMember.COLUMN_UPDATE_DT, this.update_dt == null ? JSONObject.NULL : this.update_dt);
-        json.put(censusMember.COLUMN_SERIAL_NO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
-        json.put(censusMember.COLUMN_REMARKS, this.remarks == null ? JSONObject.NULL : this.remarks);
-        json.put(censusMember.COLUMN_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
-        json.put(censusMember.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
-        json.put(censusMember.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
+        json.put(familyMembers.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(familyMembers.COLUMN_REF_ID, this.REF_ID == null ? JSONObject.NULL : this.REF_ID);
+        json.put(familyMembers.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
+        json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        json.put(familyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);
+        json.put(familyMembers.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
+        json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+        json.put(familyMembers.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+/*        json.put(familyMembers.COLUMN_DSS_ID_HH, this.dss_id_hh == null ? JSONObject.NULL : this.dss_id_hh);
+        json.put(familyMembers.COLUMN_DSS_ID_F, this.dss_id_f == null ? JSONObject.NULL : this.dss_id_f);
+        json.put(familyMembers.COLUMN_DSS_ID_M, this.dss_id_m == null ? JSONObject.NULL : this.dss_id_m);
+        json.put(familyMembers.COLUMN_DSS_ID_H, this.dss_id_h == null ? JSONObject.NULL : this.dss_id_h);
+        json.put(familyMembers.COLUMN_DSS_ID_MEMBER, this.dss_id_member == null ? JSONObject.NULL : this.dss_id_member);
+        json.put(familyMembers.COLUMN_PREVS_DSS_ID_MEMBER, this.prevs_dss_id_member == null ? JSONObject.NULL : this.prevs_dss_id_member);
+        json.put(familyMembers.COLUMN_SITE_CODE, this.site_code == null ? JSONObject.NULL : this.site_code);
+        json.put(familyMembers.COLUMN_NAME, this.name == null ? JSONObject.NULL : this.name);
+        json.put(familyMembers.COLUMN_DOB, this.ageLess5 == null ? JSONObject.NULL : this.ageLess5);
+        json.put(familyMembers.COLUMN_AGEY, this.ageY == null ? JSONObject.NULL : this.ageY);
+        json.put(familyMembers.COLUMN_AGEM, this.ageM == null ? JSONObject.NULL : this.ageM);
+        json.put(familyMembers.COLUMN_AGED, this.ageD == null ? JSONObject.NULL : this.ageD);
+        json.put(familyMembers.COLUMN_GENDER, this.gender == null ? JSONObject.NULL : this.gender);
+        json.put(familyMembers.COLUMN_IS_HEAD, this.is_head == null ? JSONObject.NULL : this.is_head);
+        json.put(familyMembers.COLUMN_RELATION_HH, this.relation_hh == null ? JSONObject.NULL : this.relation_hh);
+        json.put(familyMembers.COLUMN_CURRENT_STATUS, this.current_status == null ? JSONObject.NULL : this.current_status);
+        json.put(familyMembers.COLUMN_CURRENT_STATUSX, this.current_statusX == null ? JSONObject.NULL : this.current_statusX);
+        json.put(familyMembers.COLUMN_CURRENT_DATE, this.current_date == null ? JSONObject.NULL : this.current_date);
+        json.put(familyMembers.COLUMN_DOD, this.dod == null ? JSONObject.NULL : this.dod);
+        json.put(familyMembers.COLUMN_M_STATUS, this.m_status == null ? JSONObject.NULL : this.m_status);
+        json.put(familyMembers.COLUMN_EDUCATION, this.education == null ? JSONObject.NULL : this.education);
+        json.put(familyMembers.COLUMN_EDUCATIONX, this.educationX == null ? JSONObject.NULL : this.educationX);
+        json.put(familyMembers.COLUMN_OCCUPATION, this.occupation == null ? JSONObject.NULL : this.occupation);
+        json.put(familyMembers.COLUMN_OCCUPATIONX, this.occupationX == null ? JSONObject.NULL : this.occupationX);
+        json.put(familyMembers.COLUMN_MEMBER_TYPE, this.member_type == null ? JSONObject.NULL : this.member_type);
+        json.put(familyMembers.COLUMN_RSVP, this.rsvp == null ? JSONObject.NULL : this.rsvp);
+        json.put(familyMembers.COLUMN_UPDATE_FLAG, this.update_flag == null ? JSONObject.NULL : this.update_flag);*/
+        json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
+        json.put(familyMembers.COLUMN_SERIAL_NO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
+        json.put(familyMembers.COLUMN_REMARKS, this.remarks == null ? JSONObject.NULL : this.remarks);
+        json.put(familyMembers.COLUMN_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
+        json.put(familyMembers.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
+        json.put(familyMembers.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
 
 
         return json;
     }
 
-    public static abstract class censusMember implements BaseColumns {
+    public static abstract class familyMembers implements BaseColumns {
 
         public static final String TABLE_NAME = "census";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -583,7 +576,7 @@ public class FamilyMembersContract {
         public static final String COLUMN_PREVS_DSS_ID_MEMBER = "prevs_dss_id_member";
         public static final String COLUMN_SITE_CODE = "site_code";
         public static final String COLUMN_NAME = "name";
-        public static final String COLUMN_DOB = "dob";
+        public static final String COLUMN_DOB = "ageLess5";
         public static final String COLUMN_AGEY = "agey";
         public static final String COLUMN_AGEM = "agem";
         public static final String COLUMN_AGED = "aged";
@@ -602,16 +595,17 @@ public class FamilyMembersContract {
         public static final String COLUMN_REMARKS = "remarks";
         public static final String COLUMN_MEMBER_TYPE = "member_type";
         public static final String COLUMN_UPDATE_FLAG = "updated_flag";
-        public static final String COLUMN_UPDATE_DT = "update_date";
         public static final String COLUMN_RSVP = "isresp";
+        public static final String COLUMN_REF_ID = "refid";
+
+        public static final String COLUMN_SB = "sB";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "sync_date";
-        public static final String COLUMN_REF_ID = "refid";
         public static final String COLUMN_ISTATUS = "istatus";
 
         public static final String COLUMN_DEVICETAGID = "tagid";
         public static final String COLUMN_SERIAL_NO = "serial";
 
-        public static String _URL = "census.php";
+        public static String _URL = "familymembers.php";
     }
 }

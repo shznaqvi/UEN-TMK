@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 public class SectionLActivity extends Activity {
@@ -295,14 +296,14 @@ public class SectionLActivity extends Activity {
                 : tl09d.isChecked() ? "4" : tl0988.isChecked() ? "88" : "0");
         sL.put("tl0988x", tl0988x.getText().toString());
 
-//        MainApp.fc.setROW_sl(String.valueOf(sL));
+        MainApp.fc.setsL(String.valueOf(sL));
     }
 
     private boolean UpdateDB() {
 
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateL();
+        int updcount = db.updateSL();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -310,10 +311,7 @@ public class SectionLActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
-
+        }
     }
 
     public boolean formValidation() {

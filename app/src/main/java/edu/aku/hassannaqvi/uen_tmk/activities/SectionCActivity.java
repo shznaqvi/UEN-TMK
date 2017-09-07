@@ -579,6 +579,20 @@ public class SectionCActivity extends Activity {
             }
         });
 
+
+//
+        tc17888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    tc17.setText(null);
+                    tc17.setEnabled(false);
+                } else {
+                    tc17.setEnabled(true);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
@@ -731,7 +745,7 @@ public class SectionCActivity extends Activity {
                 : "0");
         sC.put("tc21", tc21.getText().toString());
 
-        //        MainApp.fc.setROW_sC(String.valueOf(sC));
+        MainApp.fc.setsC(String.valueOf(sC));
     }
 
     public boolean formValidation() {
@@ -1266,7 +1280,7 @@ public class SectionCActivity extends Activity {
         }
 
 //        17
-        if (!tc17888.isChecked() && tc17.getText().toString().trim().equals("")) {
+        if (!tc17888.isChecked() && tc17.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc17), Toast.LENGTH_SHORT).show();
             tc17888.setError("This data is Required!");    // Set Error on last radio button
 

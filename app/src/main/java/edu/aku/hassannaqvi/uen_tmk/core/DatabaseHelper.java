@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract.DeceasedMother;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract.censusMember;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract.familyMembers;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.HouseholdContract;
@@ -105,50 +105,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             householdForm.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_CREATE_CENSUS = "CREATE TABLE "
-            + censusMember.TABLE_NAME + "("
-            + censusMember.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + censusMember.COLUMN_PROJECT_NAME + " TEXT," +
-            censusMember.COLUMN_DEVICETAGID + " TEXT," +
-            censusMember.COLUMN_REF_ID + " TEXT," +
-            censusMember.COLUMN_UID + " TEXT," +
-            censusMember.COLUMN_UUID + " TEXT," +
-            censusMember.COLUMN_DATE + " TEXT," +
-            censusMember.COLUMN_FORMDATE + " TEXT," +
-            censusMember.COLUMN_DEVICEID + " TEXT," +
-            censusMember.COLUMN_USER + " TEXT," +
-            censusMember.COLUMN_DSS_ID_HH + " TEXT," +
-            censusMember.COLUMN_DSS_ID_F + " TEXT," +
-            censusMember.COLUMN_DSS_ID_M + " TEXT," +
-            censusMember.COLUMN_DSS_ID_H + " TEXT," +
-            censusMember.COLUMN_DSS_ID_MEMBER + " TEXT," +
-            censusMember.COLUMN_PREVS_DSS_ID_MEMBER + " TEXT," +
-            censusMember.COLUMN_SITE_CODE + " TEXT," +
-            censusMember.COLUMN_NAME + " TEXT," +
-            censusMember.COLUMN_DOB + " TEXT," +
-            censusMember.COLUMN_AGEY + " TEXT," +
-            censusMember.COLUMN_AGEM + " TEXT," +
-            censusMember.COLUMN_AGED + " TEXT," +
-            censusMember.COLUMN_GENDER + " TEXT," +
-            censusMember.COLUMN_IS_HEAD + " TEXT," +
-            censusMember.COLUMN_RELATION_HH + " TEXT," +
-            censusMember.COLUMN_CURRENT_STATUS + " TEXT," +
-            censusMember.COLUMN_CURRENT_STATUSX + " TEXT," +
-            censusMember.COLUMN_CURRENT_DATE + " TEXT," +
-            censusMember.COLUMN_DOD + " TEXT," +
-            censusMember.COLUMN_M_STATUS + " TEXT," +
-            censusMember.COLUMN_EDUCATION + " TEXT," +
-            censusMember.COLUMN_EDUCATIONX + " TEXT," +
-            censusMember.COLUMN_OCCUPATION + " TEXT," +
-            censusMember.COLUMN_OCCUPATIONX + " TEXT," +
-            censusMember.COLUMN_MEMBER_TYPE + " TEXT," +
-            censusMember.COLUMN_RSVP + " TEXT," +
-            censusMember.COLUMN_ISTATUS + " TEXT," +
-            censusMember.COLUMN_REMARKS + " TEXT," +
-            censusMember.COLUMN_UPDATE_FLAG + " TEXT," +
-            censusMember.COLUMN_UPDATE_DT + " TEXT," +
-            censusMember.COLUMN_SERIAL_NO + " TEXT," +
-            censusMember.COLUMN_SYNCED + " TEXT," +
-            censusMember.COLUMN_SYNCED_DATE + " TEXT"
+            + FamilyMembersContract.familyMembers.TABLE_NAME + "("
+            + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FamilyMembersContract.familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DEVICETAGID + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_REF_ID + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_UID + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_UUID + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DATE + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_FORMDATE + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DEVICEID + " TEXT," +
+            familyMembers.COLUMN_USER + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DSS_ID_HH + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DSS_ID_F + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DSS_ID_M + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DSS_ID_H + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DSS_ID_MEMBER + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_PREVS_DSS_ID_MEMBER + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_SITE_CODE + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_NAME + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DOB + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_AGEY + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_AGEM + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_AGED + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_GENDER + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_IS_HEAD + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_RELATION_HH + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_CURRENT_STATUS + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_CURRENT_STATUSX + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_CURRENT_DATE + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_DOD + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_M_STATUS + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_EDUCATION + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_EDUCATIONX + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_OCCUPATION + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_OCCUPATIONX + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_MEMBER_TYPE + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_RSVP + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_ISTATUS + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_REMARKS + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_UPDATE_FLAG + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_SB + " TEXT," +
+            familyMembers.COLUMN_SERIAL_NO + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_SYNCED + " TEXT," +
+            FamilyMembersContract.familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_CREATE_MEMBERS = "CREATE TABLE "
             + singleMember.TABLE_NAME + "("
@@ -253,7 +253,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_MEMBERS =
             "DROP TABLE IF EXISTS " + singleMember.TABLE_NAME;
     private static final String SQL_DELETE_CENSUS =
-            "DROP TABLE IF EXISTS " + censusMember.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + FamilyMembersContract.familyMembers.TABLE_NAME;
     private static final String SQL_DELETE_DECEASED_MOTHER =
             "DROP TABLE IF EXISTS " + DeceasedMotherContract.DeceasedMother.TABLE_NAME;
     private static final String SQL_DELETE_DECEASED_CHILD =
@@ -601,6 +601,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addFamilyMembers(FamilyMembersContract fmc) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getProjectName());
+        values.put(familyMembers.COLUMN_UID, fmc.get_UID());
+        values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
+        values.put(familyMembers.COLUMN_USER, fmc.getUser());
+        values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
+        values.put(familyMembers.COLUMN_SB, fmc.getsB());
+        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
+        values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                familyMembers.TABLE_NAME,
+                familyMembers.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     public Long addMWRA(MWRAContract mc) {
 
         // Gets the data repository in write mode
@@ -683,62 +708,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 householdForm.TABLE_NAME,
                 householdForm.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public Long addCensusMembers(FamilyMembersContract mc) {
-
-        // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase();
-
-// Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(censusMember.COLUMN_PROJECT_NAME, mc.getProjectName());
-        values.put(censusMember.COLUMN_REF_ID, mc.getREF_ID());
-        values.put(censusMember.COLUMN_UID, mc.get_UID());
-        values.put(censusMember.COLUMN_UUID, mc.get_UUID());
-        values.put(censusMember.COLUMN_DATE, mc.get_DATE());
-        values.put(censusMember.COLUMN_FORMDATE, mc.getFormDate());
-        values.put(censusMember.COLUMN_DEVICEID, mc.getDeviceId());
-        values.put(censusMember.COLUMN_USER, mc.getUser());
-        values.put(censusMember.COLUMN_DSS_ID_HH, mc.getDss_id_hh());
-        values.put(censusMember.COLUMN_DSS_ID_F, mc.getDss_id_f());
-        values.put(censusMember.COLUMN_DSS_ID_M, mc.getDss_id_m());
-        values.put(censusMember.COLUMN_DSS_ID_H, mc.getDss_id_h());
-        values.put(censusMember.COLUMN_DSS_ID_MEMBER, mc.getDss_id_member());
-        values.put(censusMember.COLUMN_PREVS_DSS_ID_MEMBER, mc.getPrevs_dss_id_member());
-        values.put(censusMember.COLUMN_SITE_CODE, mc.getSite_code());
-        values.put(censusMember.COLUMN_NAME, mc.getName());
-        values.put(censusMember.COLUMN_DOB, mc.getDob());
-        values.put(censusMember.COLUMN_AGEY, mc.getAgeY());
-        values.put(censusMember.COLUMN_AGEM, mc.getAgeM());
-        values.put(censusMember.COLUMN_AGED, mc.getAgeD());
-        values.put(censusMember.COLUMN_GENDER, mc.getGender());
-        values.put(censusMember.COLUMN_IS_HEAD, mc.getIs_head());
-        values.put(censusMember.COLUMN_RELATION_HH, mc.getRelation_hh());
-        values.put(censusMember.COLUMN_CURRENT_STATUS, mc.getCurrent_status());
-        values.put(censusMember.COLUMN_CURRENT_STATUSX, mc.getCurrent_statusX());
-        values.put(censusMember.COLUMN_CURRENT_DATE, mc.getCurrent_date());
-        values.put(censusMember.COLUMN_DOD, mc.getDod());
-        values.put(censusMember.COLUMN_M_STATUS, mc.getM_status());
-        values.put(censusMember.COLUMN_EDUCATION, mc.getEducation());
-        values.put(censusMember.COLUMN_EDUCATIONX, mc.getEducationX());
-        values.put(censusMember.COLUMN_OCCUPATION, mc.getOccupation());
-        values.put(censusMember.COLUMN_OCCUPATIONX, mc.getOccupationX());
-        values.put(censusMember.COLUMN_MEMBER_TYPE, mc.getMember_type());
-        values.put(censusMember.COLUMN_REMARKS, mc.getRemarks());
-        values.put(censusMember.COLUMN_UPDATE_FLAG, mc.getUpdate_flag());
-        values.put(censusMember.COLUMN_UPDATE_DT, mc.getUpdate_dt());
-        values.put(censusMember.COLUMN_RSVP, mc.getRsvp());
-        values.put(censusMember.COLUMN_SERIAL_NO, mc.getSerialNo());
-        values.put(censusMember.COLUMN_DEVICETAGID, mc.getDevicetagID());
-
-
-        long newRowId;
-        newRowId = db.insert(
-                censusMember.TABLE_NAME,
-                censusMember.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -853,15 +822,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(censusMember.COLUMN_SYNCED, true);
-        values.put(censusMember.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(FamilyMembersContract.familyMembers.COLUMN_SYNCED, true);
+        values.put(FamilyMembersContract.familyMembers.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = censusMember.COLUMN_ID + " = ?";
+        String where = FamilyMembersContract.familyMembers.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                censusMember.TABLE_NAME,
+                FamilyMembersContract.familyMembers.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -963,18 +932,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int updateCensusID() {
+    public int updateFamilyMemberID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(censusMember.COLUMN_UID, MainApp.fmc.get_UID());
+        values.put(familyMembers.COLUMN_UID, MainApp.fmc.get_UID());
 
 // Which row to update, based on the ID
-        String selection = censusMember.COLUMN_ID + " = ?";
+        String selection = familyMembers.COLUMN_ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.fmc.get_ID())};
 
-        int count = db.update(censusMember.TABLE_NAME,
+        int count = db.update(familyMembers.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1187,59 +1156,59 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                censusMember.COLUMN_ID,
-                censusMember.COLUMN_REF_ID,
-                censusMember.COLUMN_ISTATUS,
-                censusMember.COLUMN_UID,
-                censusMember.COLUMN_UUID,
-                censusMember.COLUMN_DATE,
-                censusMember.COLUMN_FORMDATE,
-                censusMember.COLUMN_DEVICEID,
-                censusMember.COLUMN_USER,
-                censusMember.COLUMN_DSS_ID_HH,
-                censusMember.COLUMN_DSS_ID_F,
-                censusMember.COLUMN_DSS_ID_M,
-                censusMember.COLUMN_DSS_ID_H,
-                censusMember.COLUMN_DSS_ID_MEMBER,
-                censusMember.COLUMN_PREVS_DSS_ID_MEMBER,
-                censusMember.COLUMN_SITE_CODE,
-                censusMember.COLUMN_NAME,
-                censusMember.COLUMN_DOB,
-                censusMember.COLUMN_AGEY,
-                censusMember.COLUMN_AGEM,
-                censusMember.COLUMN_AGED,
-                censusMember.COLUMN_GENDER,
-                censusMember.COLUMN_IS_HEAD,
-                censusMember.COLUMN_RELATION_HH,
-                censusMember.COLUMN_CURRENT_STATUS,
-                censusMember.COLUMN_CURRENT_STATUSX,
-                censusMember.COLUMN_CURRENT_DATE,
-                censusMember.COLUMN_DOD,
-                censusMember.COLUMN_M_STATUS,
-                censusMember.COLUMN_EDUCATION,
-                censusMember.COLUMN_EDUCATIONX,
-                censusMember.COLUMN_OCCUPATION,
-                censusMember.COLUMN_OCCUPATIONX,
-                censusMember.COLUMN_MEMBER_TYPE,
-                censusMember.COLUMN_UPDATE_FLAG,
-                censusMember.COLUMN_UPDATE_DT,
-                censusMember.COLUMN_RSVP,
-                censusMember.COLUMN_SERIAL_NO,
-                censusMember.COLUMN_DEVICETAGID,
-                censusMember.COLUMN_REMARKS
+                FamilyMembersContract.familyMembers.COLUMN_ID,
+                FamilyMembersContract.familyMembers.COLUMN_REF_ID,
+                FamilyMembersContract.familyMembers.COLUMN_ISTATUS,
+                FamilyMembersContract.familyMembers.COLUMN_UID,
+                FamilyMembersContract.familyMembers.COLUMN_UUID,
+                FamilyMembersContract.familyMembers.COLUMN_DATE,
+                FamilyMembersContract.familyMembers.COLUMN_FORMDATE,
+                FamilyMembersContract.familyMembers.COLUMN_DEVICEID,
+                FamilyMembersContract.familyMembers.COLUMN_USER,
+                FamilyMembersContract.familyMembers.COLUMN_DSS_ID_HH,
+                FamilyMembersContract.familyMembers.COLUMN_DSS_ID_F,
+                FamilyMembersContract.familyMembers.COLUMN_DSS_ID_M,
+                FamilyMembersContract.familyMembers.COLUMN_DSS_ID_H,
+                FamilyMembersContract.familyMembers.COLUMN_DSS_ID_MEMBER,
+                FamilyMembersContract.familyMembers.COLUMN_PREVS_DSS_ID_MEMBER,
+                FamilyMembersContract.familyMembers.COLUMN_SITE_CODE,
+                FamilyMembersContract.familyMembers.COLUMN_NAME,
+                FamilyMembersContract.familyMembers.COLUMN_DOB,
+                FamilyMembersContract.familyMembers.COLUMN_AGEY,
+                FamilyMembersContract.familyMembers.COLUMN_AGEM,
+                FamilyMembersContract.familyMembers.COLUMN_AGED,
+                FamilyMembersContract.familyMembers.COLUMN_GENDER,
+                FamilyMembersContract.familyMembers.COLUMN_IS_HEAD,
+                FamilyMembersContract.familyMembers.COLUMN_RELATION_HH,
+                FamilyMembersContract.familyMembers.COLUMN_CURRENT_STATUS,
+                FamilyMembersContract.familyMembers.COLUMN_CURRENT_STATUSX,
+                FamilyMembersContract.familyMembers.COLUMN_CURRENT_DATE,
+                FamilyMembersContract.familyMembers.COLUMN_DOD,
+                FamilyMembersContract.familyMembers.COLUMN_M_STATUS,
+                FamilyMembersContract.familyMembers.COLUMN_EDUCATION,
+                FamilyMembersContract.familyMembers.COLUMN_EDUCATIONX,
+                FamilyMembersContract.familyMembers.COLUMN_OCCUPATION,
+                FamilyMembersContract.familyMembers.COLUMN_OCCUPATIONX,
+                FamilyMembersContract.familyMembers.COLUMN_MEMBER_TYPE,
+                FamilyMembersContract.familyMembers.COLUMN_UPDATE_FLAG,
+                FamilyMembersContract.familyMembers.COLUMN_SB,
+                FamilyMembersContract.familyMembers.COLUMN_RSVP,
+                FamilyMembersContract.familyMembers.COLUMN_SERIAL_NO,
+                FamilyMembersContract.familyMembers.COLUMN_DEVICETAGID,
+                FamilyMembersContract.familyMembers.COLUMN_REMARKS
         };
-        String whereClause = censusMember.COLUMN_SYNCED + " is null";
+        String whereClause = FamilyMembersContract.familyMembers.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                censusMember.COLUMN_ID + " ASC";
+                FamilyMembersContract.familyMembers.COLUMN_ID + " ASC";
 
         Collection<FamilyMembersContract> allCC = new ArrayList<FamilyMembersContract>();
         try {
             c = db.query(
-                    censusMember.TABLE_NAME,  // The table to query
+                    FamilyMembersContract.familyMembers.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1847,14 +1816,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(censusMember.COLUMN_ISTATUS, MainApp.fc.getIstatus());
+        values.put(FamilyMembersContract.familyMembers.COLUMN_ISTATUS, MainApp.fc.getIstatus());
 
 
 // Which row to update, based on the ID
         String selection = " uuid=?";
         String[] selectionArgs = {String.valueOf(MainApp.fc.getUID())};
 
-        int count = db.update(censusMember.TABLE_NAME,
+        int count = db.update(FamilyMembersContract.familyMembers.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

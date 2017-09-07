@@ -26,7 +26,6 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
@@ -89,7 +88,7 @@ public class MainApp extends Application {
     public static List<deadMemberClass> deadMembers = new ArrayList<deadMemberClass>();
     //    Ali
     public static String regionDss = "";
-    public static List<MemberContract> familyMembersList;
+    public static List<FamilyMembersContract> familyMembersList;
     public static FamilyMembersContract fmc;
     public static DeceasedMotherContract dcM;
     public static DeceasedChildContract dcC;

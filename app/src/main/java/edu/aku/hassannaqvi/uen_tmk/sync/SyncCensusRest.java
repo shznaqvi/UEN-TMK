@@ -22,7 +22,6 @@ import java.net.URL;
 import java.util.Collection;
 
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract.censusMember;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -65,7 +64,7 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + censusMember._URL;
+            String url = MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {

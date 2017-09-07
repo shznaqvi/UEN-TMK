@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -241,6 +242,7 @@ public class SectionJActivity extends Activity {
         setContentView(R.layout.activity_section_j);
         ButterKnife.bind(this);
 
+//        get data from sec B
 
         ArrayList<String> lstChild = new ArrayList<>();
 
@@ -304,6 +306,44 @@ public class SectionJActivity extends Activity {
             }
         });
 
+//        03
+
+        tj03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.tj03a) {
+                    tj03m.setVisibility(View.VISIBLE);
+
+                    tj03h.setText(null);
+                    tj03h.setVisibility(View.GONE);
+                    tj03d.setText(null);
+                    tj03d.setVisibility(View.GONE);
+                } else if (i == R.id.tj03b) {
+                    tj03m.setText(null);
+                    tj03m.setVisibility(View.GONE);
+
+                    tj03h.setVisibility(View.VISIBLE);
+                    tj03d.setText(null);
+                    tj03d.setVisibility(View.GONE);
+                } else if (i == R.id.tj03c) {
+                    tj03m.setText(null);
+                    tj03m.setVisibility(View.GONE);
+                    tj03h.setText(null);
+                    tj03h.setVisibility(View.GONE);
+
+                    tj03d.setVisibility(View.VISIBLE);
+                } else {
+                    tj03m.setText(null);
+                    tj03m.setVisibility(View.GONE);
+                    tj03h.setText(null);
+                    tj03h.setVisibility(View.GONE);
+                    tj03d.setText(null);
+                    tj03d.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
     }
 
     @OnClick(R.id.btn_End)
@@ -338,9 +378,9 @@ public class SectionJActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateJ();
+        int updcount = db.updateSJ();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -348,9 +388,7 @@ public class SectionJActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
 
     }
 
@@ -433,7 +471,7 @@ public class SectionJActivity extends Activity {
                 : tj14k.isChecked() ? "11" : tj14l.isChecked() ? "12" : tj1488.isChecked() ? "88" : "0");
         sJ.put("tj1488x", tj1488x.getText().toString());
 
-        //        MainApp.fc.setROW_sJ(String.valueOf(sJ));
+        MainApp.fc.setsJ(String.valueOf(sJ));
     }
 
     public boolean formValidation() {

@@ -157,7 +157,7 @@ public class DeceasedMotherContract {
         json.put(DeceasedMotherContract.DeceasedMother.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(DeceasedMotherContract.DeceasedMother.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
         json.put(DeceasedMotherContract.DeceasedMother.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
-        json.put(DeceasedMother.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
+        json.put(DeceasedMother.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
         json.put(DeceasedMotherContract.DeceasedMother.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
 
         return json;
