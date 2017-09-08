@@ -411,10 +411,10 @@ public class FamilyMembersContract {
     public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {
 
         this._ID = jsonObject.getString(familyMembers.COLUMN_ID);
-        this.REF_ID = jsonObject.getString(familyMembers.COLUMN_REF_ID);
+//        this.REF_ID = jsonObject.getString(familyMembers.COLUMN_REF_ID);
         this._UID = jsonObject.getString(familyMembers.COLUMN_UID);
-        this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
-        this._DATE = jsonObject.getString(familyMembers.COLUMN_DATE);
+        /*this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
+        this._DATE = jsonObject.getString(familyMembers.COLUMN_DATE);*/
         this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
         this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
         this.user = jsonObject.getString(familyMembers.COLUMN_USER);
@@ -446,10 +446,10 @@ public class FamilyMembersContract {
         this.rsvp = jsonObject.getString(familyMembers.COLUMN_RSVP);
         this.update_flag = jsonObject.getString(familyMembers.COLUMN_UPDATE_FLAG);*/
         this.sB = jsonObject.getString(familyMembers.COLUMN_SB);
-        this.serialNo = jsonObject.getString(familyMembers.COLUMN_SERIAL_NO);
+//        this.serialNo = jsonObject.getString(familyMembers.COLUMN_SERIAL_NO);
         this.synced = jsonObject.getString(familyMembers.COLUMN_SYNCED);
         this.syncedDate = jsonObject.getString(familyMembers.COLUMN_SYNCED_DATE);
-        this.remarks = jsonObject.getString(familyMembers.COLUMN_REMARKS);
+//        this.remarks = jsonObject.getString(familyMembers.COLUMN_REMARKS);
         this.istatus = jsonObject.getString(familyMembers.COLUMN_ISTATUS);
         this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
 
@@ -460,10 +460,10 @@ public class FamilyMembersContract {
     public FamilyMembersContract Hydrate(Cursor cursor) {
 
         this._ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ID));
-        this.REF_ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REF_ID));
+//        this.REF_ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REF_ID));
         this._UID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UID));
-        this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
-        this._DATE = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DATE));
+/*        this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
+        this._DATE = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DATE));*/
         this.formDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_FORMDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
         this.user = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_USER));
@@ -495,8 +495,8 @@ public class FamilyMembersContract {
         this.rsvp = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_RSVP));
         this.update_flag = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UPDATE_FLAG));*/
         this.sB = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SB));
-        this.serialNo = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SERIAL_NO));
-        this.remarks = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REMARKS));
+//        this.serialNo = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SERIAL_NO));
+//        this.remarks = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REMARKS));
         this.istatus = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ISTATUS));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
 
@@ -510,10 +510,10 @@ public class FamilyMembersContract {
         JSONObject json = new JSONObject();
 
         json.put(familyMembers.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(familyMembers.COLUMN_REF_ID, this.REF_ID == null ? JSONObject.NULL : this.REF_ID);
+//        json.put(familyMembers.COLUMN_REF_ID, this.REF_ID == null ? JSONObject.NULL : this.REF_ID);
         json.put(familyMembers.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
-        json.put(familyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);
+/*        json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        json.put(familyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);*/
         json.put(familyMembers.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
         json.put(familyMembers.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
@@ -545,8 +545,8 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_RSVP, this.rsvp == null ? JSONObject.NULL : this.rsvp);
         json.put(familyMembers.COLUMN_UPDATE_FLAG, this.update_flag == null ? JSONObject.NULL : this.update_flag);*/
         json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
-        json.put(familyMembers.COLUMN_SERIAL_NO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
-        json.put(familyMembers.COLUMN_REMARKS, this.remarks == null ? JSONObject.NULL : this.remarks);
+//        json.put(familyMembers.COLUMN_SERIAL_NO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
+//        json.put(familyMembers.COLUMN_REMARKS, this.remarks == null ? JSONObject.NULL : this.remarks);
         json.put(familyMembers.COLUMN_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
         json.put(familyMembers.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(familyMembers.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
@@ -563,12 +563,12 @@ public class FamilyMembersContract {
         public static final String COLUMN_PROJECT_NAME = "project_name";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "uid";
-        public static final String COLUMN_UUID = "uuid";
-        public static final String COLUMN_DATE = "_date";
+        /*public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_DATE = "_date";*/
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_USER = "user";
-        public static final String COLUMN_DSS_ID_HH = "dss_id_hh";
+/*        public static final String COLUMN_DSS_ID_HH = "dss_id_hh";
         public static final String COLUMN_DSS_ID_F = "dss_id_f";
         public static final String COLUMN_DSS_ID_M = "dss_id_m";
         public static final String COLUMN_DSS_ID_H = "dss_id_h";
@@ -596,7 +596,7 @@ public class FamilyMembersContract {
         public static final String COLUMN_MEMBER_TYPE = "member_type";
         public static final String COLUMN_UPDATE_FLAG = "updated_flag";
         public static final String COLUMN_RSVP = "isresp";
-        public static final String COLUMN_REF_ID = "refid";
+        public static final String COLUMN_REF_ID = "refid";*/
 
         public static final String COLUMN_SB = "sB";
         public static final String COLUMN_SYNCED = "synced";
@@ -604,7 +604,7 @@ public class FamilyMembersContract {
         public static final String COLUMN_ISTATUS = "istatus";
 
         public static final String COLUMN_DEVICETAGID = "tagid";
-        public static final String COLUMN_SERIAL_NO = "serial";
+//        public static final String COLUMN_SERIAL_NO = "serial";
 
         public static String _URL = "familymembers.php";
     }

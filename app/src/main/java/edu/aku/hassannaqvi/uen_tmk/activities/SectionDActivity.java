@@ -126,8 +126,17 @@ public class SectionDActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionEActivity.class);
-                startActivity(secNext);
+                MainApp.mwraCount++;
+
+                if (MainApp.mwraCount > MainApp.TotalMWRACount) {
+                    Intent secNext = new Intent(this, SectionEActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionDActivity.class);
+                    startActivity(secNext);
+                }
+
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

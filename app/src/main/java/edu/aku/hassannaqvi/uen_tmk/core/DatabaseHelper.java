@@ -88,6 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsContract.FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
     /*    private static final String SQL_CREATE_HOUSEHOLD = "CREATE TABLE "
                 + householdForm.TABLE_NAME + "("
                 + householdForm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -105,15 +106,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 householdForm.COLUMN_SYNCED + " TEXT," +
                 householdForm.COLUMN_SYNCED_DATE + " TEXT"
                 + " );";*/
-    private static final String SQL_CREATE_CENSUS = "CREATE TABLE "
+
+    private static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE "
             + familyMembers.TABLE_NAME + "("
             + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
             familyMembers.COLUMN_DEVICETAGID + " TEXT," +
-            familyMembers.COLUMN_REF_ID + " TEXT," +
+//            familyMembers.COLUMN_REF_ID + " TEXT," +
             familyMembers.COLUMN_UID + " TEXT," +
-            familyMembers.COLUMN_UUID + " TEXT," +
-            familyMembers.COLUMN_DATE + " TEXT," +
+            /*familyMembers.COLUMN_UUID + " TEXT," +
+            familyMembers.COLUMN_DATE + " TEXT," +*/
             familyMembers.COLUMN_FORMDATE + " TEXT," +
             familyMembers.COLUMN_DEVICEID + " TEXT," +
             familyMembers.COLUMN_USER + " TEXT," +
@@ -145,12 +147,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_RSVP + " TEXT," +
             familyMembers.COLUMN_REMARKS + " TEXT," +
             familyMembers.COLUMN_UPDATE_FLAG + " TEXT," +*/
-            familyMembers.COLUMN_ISTATUS + " TEXT," +
             familyMembers.COLUMN_SB + " TEXT," +
-            familyMembers.COLUMN_SERIAL_NO + " TEXT," +
+//            familyMembers.COLUMN_SERIAL_NO + " TEXT," +
+            familyMembers.COLUMN_ISTATUS + " TEXT," +
             familyMembers.COLUMN_SYNCED + " TEXT," +
             familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
     /*    private static final String SQL_CREATE_MEMBERS = "CREATE TABLE "
                 + singleMember.TABLE_NAME + "("
                 + singleMember.COLUMN_ID + " TEXT," +
@@ -289,7 +292,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_FORMS);
 /*        db.execSQL(SQL_CREATE_HOUSEHOLD);
         db.execSQL(SQL_CREATE_MEMBERS);*/
-        db.execSQL(SQL_CREATE_CENSUS);
+        db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(SQL_CREATE_DECEASED_MOTHER);
         db.execSQL(SQL_CREATE_DECEASED_CHILD);
         db.execSQL(SQL_CREATE_MWRA);
@@ -1153,50 +1156,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allIM;
     }
 
-    public Collection<FamilyMembersContract> getUnsyncedCensus() {
+    public Collection<FamilyMembersContract> getUnsyncedFamilyMembers() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 familyMembers.COLUMN_ID,
-                familyMembers.COLUMN_REF_ID,
                 familyMembers.COLUMN_ISTATUS,
                 familyMembers.COLUMN_UID,
-                familyMembers.COLUMN_UUID,
-                familyMembers.COLUMN_DATE,
                 familyMembers.COLUMN_FORMDATE,
                 familyMembers.COLUMN_DEVICEID,
                 familyMembers.COLUMN_USER,
-                familyMembers.COLUMN_DSS_ID_HH,
-                familyMembers.COLUMN_DSS_ID_F,
-                familyMembers.COLUMN_DSS_ID_M,
-                familyMembers.COLUMN_DSS_ID_H,
-                familyMembers.COLUMN_DSS_ID_MEMBER,
-                familyMembers.COLUMN_PREVS_DSS_ID_MEMBER,
-                familyMembers.COLUMN_SITE_CODE,
-                familyMembers.COLUMN_NAME,
-                familyMembers.COLUMN_DOB,
-                familyMembers.COLUMN_AGEY,
-                familyMembers.COLUMN_AGEM,
-                familyMembers.COLUMN_AGED,
-                familyMembers.COLUMN_GENDER,
-                familyMembers.COLUMN_IS_HEAD,
-                familyMembers.COLUMN_RELATION_HH,
-                familyMembers.COLUMN_CURRENT_STATUS,
-                familyMembers.COLUMN_CURRENT_STATUSX,
-                familyMembers.COLUMN_CURRENT_DATE,
-                familyMembers.COLUMN_DOD,
-                familyMembers.COLUMN_M_STATUS,
-                familyMembers.COLUMN_EDUCATION,
-                familyMembers.COLUMN_EDUCATIONX,
-                familyMembers.COLUMN_OCCUPATION,
-                familyMembers.COLUMN_OCCUPATIONX,
-                familyMembers.COLUMN_MEMBER_TYPE,
-                familyMembers.COLUMN_UPDATE_FLAG,
                 familyMembers.COLUMN_SB,
-                familyMembers.COLUMN_RSVP,
-                familyMembers.COLUMN_SERIAL_NO,
-                familyMembers.COLUMN_DEVICETAGID,
-                familyMembers.COLUMN_REMARKS
+                familyMembers.COLUMN_DEVICETAGID
         };
         String whereClause = familyMembers.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;
