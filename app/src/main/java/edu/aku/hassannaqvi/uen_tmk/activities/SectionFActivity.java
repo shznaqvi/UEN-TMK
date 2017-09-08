@@ -179,6 +179,7 @@ public class SectionFActivity extends AppCompatActivity {
         sF.put("tf03", tf03a.isChecked() ? "1" : tf03b.isChecked() ? "2" : "0");
         sF.put("tf04d", tf04d.getText().toString());
         sF.put("tf04m", tf04m.getText().toString());
+        sF.put("tf04y", tf04y.getText().toString());
         sF.put("tf05", tf05a.isChecked() ? "1" : tf05b.isChecked() ? "2" : tf05c.isChecked() ? "3"
                 : tf05d.isChecked() ? "4" : tf05e.isChecked() ? "5" : "0");
         sF.put("tf06", tf06.getText().toString());

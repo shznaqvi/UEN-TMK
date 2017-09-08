@@ -267,6 +267,7 @@ public class SectionBActivity extends AppCompatActivity {
                 ageInyears = ageInYears(tb07.getText().toString());
                 if (ageInyears < 5) {
                     tb09.setText("NA");
+                    tb09.setEnabled(false);
                     tb10.clearCheck();
                     tb10a.setEnabled(false);
                     tb10b.setEnabled(false);
@@ -285,6 +286,7 @@ public class SectionBActivity extends AppCompatActivity {
                     tb11a.setChecked(false);
                 } else {
                     tb09.setText(null);
+                    tb09.setEnabled(true);
 
                     tb10a.setEnabled(true);
                     tb10b.setEnabled(true);
@@ -327,7 +329,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                     if (ageInyears < 5) {
                         tb09.setText("NA");
-
+                        tb09.setEnabled(false);
                         tb10a.setEnabled(false);
                         tb10b.setEnabled(false);
                         tb10c.setEnabled(false);
@@ -345,6 +347,7 @@ public class SectionBActivity extends AppCompatActivity {
                         tb11a.setChecked(false);
                     } else {
                         tb09.setText(null);
+                        tb09.setEnabled(true);
 
                         tb10a.setEnabled(true);
                         tb10b.setEnabled(true);
