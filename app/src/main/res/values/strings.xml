@@ -299,8 +299,7 @@
     <string name="td03b"> مئل ڄائو (مئل ٻار) </string>
     <string name="td03c"> حمل ضايع ٿيو </string>
     <string name="td04"> ڇا (عورت جو نالو) هن مهل به حمل سان آھي؟ </string>
-    <string name="td05"> حمل جو دورانيو ڇا آھي؟ </string>
-    <string name="td05a"> ھفتن ۾ </string>
+  <string name="td05"> حمل جو دورانيو ڇا آھي؟ (ھفتن ۾) </string>
     <string name="te01"> مري ويل ماءُ جو مڪمل نالو </string>
     <string name="te02"> مرڻ وقت عمر </string>
     <string name="te03"> موت جي جڳھه </string>
