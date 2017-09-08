@@ -3,7 +3,10 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -23,12 +26,26 @@ public class EndingActivity extends Activity {
     private static final String TAG = EndingActivity.class.getSimpleName();
     @BindView(R.id.scrollView01)
     ScrollView scrollView01;
-    @BindView(R.id.dcstatus)
-    RadioGroup dcstatus;
-    @BindView(R.id.dcstatus01)
-    RadioButton dcstatus01;
-    @BindView(R.id.dcstatus02)
-    RadioButton dcstatus02;
+    @BindView(R.id.istatus)
+    RadioGroup istatus;
+    @BindView(R.id.istatus1)
+    RadioButton istatus1;
+    @BindView(R.id.istatus2)
+    RadioButton istatus2;
+    @BindView(R.id.istatus3)
+    RadioButton istatus3;
+    @BindView(R.id.istatus4)
+    RadioButton istatus4;
+    @BindView(R.id.istatus5)
+    RadioButton istatus5;
+    @BindView(R.id.istatus6)
+    RadioButton istatus6;
+    @BindView(R.id.istatus7)
+    RadioButton istatus7;
+    @BindView(R.id.istatus8)
+    RadioButton istatus8;
+    @BindView(R.id.istatus888x)
+    EditText istatus888x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +56,27 @@ public class EndingActivity extends Activity {
         Boolean check = getIntent().getExtras().getBoolean("complete");
 
         if (check) {
-            dcstatus01.setEnabled(true);
-            dcstatus02.setEnabled(false);
+            istatus1.setEnabled(true);
+            istatus2.setEnabled(false);
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
-            dcstatus01.setEnabled(false);
-            dcstatus02.setEnabled(true);
-
-
+            istatus1.setEnabled(false);
+            istatus2.setEnabled(true);
         }
+
+        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (istatus8.isChecked()) {
+                    istatus888x.setVisibility(View.VISIBLE);
+                    istatus888x.requestFocus();
+                } else {
+                    istatus888x.setText(null);
+                    istatus888x.setVisibility(View.GONE);
+                }
+            }
+        });
 
     }
 
@@ -102,7 +130,18 @@ public class EndingActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        MainApp.fc.setIstatus(dcstatus01.isChecked() ? "1" : dcstatus02.isChecked() ? "2" : "0");
+        MainApp.fc.setIstatus(istatus1.isChecked() ? "1"
+                : istatus2.isChecked() ? "2"
+                : istatus3.isChecked() ? "3"
+                : istatus4.isChecked() ? "4"
+                : istatus5.isChecked() ? "4"
+                : istatus6.isChecked() ? "6"
+                : istatus7.isChecked() ? "7"
+                : istatus8.isChecked() ? "8"
+                : "0");
+
+        MainApp.fc.setIstatus88x(istatus888x.getText().toString());
+
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -137,13 +176,26 @@ public class EndingActivity extends Activity {
     private boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (dcstatus.getCheckedRadioButtonId() == -1) {
+        if (istatus.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Not Selected): " + getString(R.string.dcstatus), Toast.LENGTH_LONG).show();
-            dcstatus02.setError("Please Select One");    // Set Error on last radio button
-            Log.i(TAG, "dcstatus: This data is Required!");
+            istatus1.setError("Please Select One");    // Set Error on last radio button
+            Log.i(TAG, "istatus: This data is Required!");
             return false;
         } else {
-            dcstatus02.setError(null);
+            istatus1.setError(null);
+        }
+
+        if (istatus8.isChecked()) {
+
+            if (istatus888x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                istatus888x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "istatus888x: This data is Required!");
+                return false;
+            } else {
+                istatus888x.setError(null);
+            }
+
         }
 
 

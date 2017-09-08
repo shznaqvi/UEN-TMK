@@ -777,6 +777,13 @@
 
         </RadioGroup>
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tc08c" />
+
         <RadioGroup
             android:id="@+id/tc08c"
             android:layout_width="match_parent"
@@ -796,13 +803,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/no" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/tc08c" />
 
         </RadioGroup>
 
@@ -1617,8 +1617,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14a"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14a"
@@ -1626,14 +1625,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14b"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14b"
@@ -1641,14 +1640,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14c"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14c"
@@ -1656,14 +1655,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14d"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14d"
@@ -1671,14 +1670,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14e"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14e"
@@ -1686,14 +1685,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/tc14f"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/tc14f"
@@ -1701,7 +1700,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -1756,48 +1755,56 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16a" />
+
             <RadioButton
                 android:id="@+id/tc16b"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16b" />
+
             <RadioButton
                 android:id="@+id/tc16c"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16c" />
+
             <RadioButton
                 android:id="@+id/tc16d"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16d" />
+
             <RadioButton
                 android:id="@+id/tc16e"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16e" />
+
             <RadioButton
                 android:id="@+id/tc16f"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16f" />
+
             <RadioButton
                 android:id="@+id/tc16g"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16g" />
+
             <RadioButton
                 android:id="@+id/tc16h"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/tc16h" />
+
             <RadioButton
                 android:id="@+id/tc1688"
                 android:layout_width="match_parent"
@@ -1877,24 +1884,24 @@
             android:orientation="vertical">
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tc19"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/tc19"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
-        <EditText
-            android:id="@+id/tc19"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:hint="@string/tc19"
-            android:inputType="number"
-            android:maxLength="2" />
+            <EditText
+                android:id="@+id/tc19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:hint="@string/tc19"
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -1935,23 +1942,23 @@
             android:orientation="vertical">
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tc21"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/tc21"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
-        <EditText
-            android:id="@+id/tc21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="16dp"
-            android:hint="@string/tc21"
-            android:inputType="number"
-            android:maxLength="2" />
+            <EditText
+                android:id="@+id/tc21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/tc21"
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 

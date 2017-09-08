@@ -29,23 +29,68 @@
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/dcstatus"
+                android:id="@+id/istatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/dcstatus01"
+                    android:id="@+id/istatus1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/complete" />
+                    android:text="@string/istatus1" />
 
                 <RadioButton
-                    android:id="@+id/dcstatus02"
+                    android:id="@+id/istatus2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/incomplete" />
+                    android:text="@string/istatus2" />
+
+                <RadioButton
+                    android:id="@+id/istatus3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus3" />
+
+                <RadioButton
+                    android:id="@+id/istatus4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus4" />
+
+                <RadioButton
+                    android:id="@+id/istatus5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus5" />
+
+                <RadioButton
+                    android:id="@+id/istatus6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus6" />
+
+                <RadioButton
+                    android:id="@+id/istatus7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus7" />
+
+                <RadioButton
+                    android:id="@+id/istatus8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other" />
 
             </RadioGroup>
+
+            <EditText
+                android:id="@+id/istatus888x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_End"

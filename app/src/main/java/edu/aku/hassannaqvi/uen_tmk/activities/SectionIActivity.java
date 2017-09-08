@@ -596,7 +596,6 @@ public class SectionIActivity extends AppCompatActivity {
     List<LinearLayout> fldGrpCard;
 
 
-
     @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M,
             R.id.fldGrppcv2M, R.id.fldGrpopv2M, R.id.fldGrpPenta3M, R.id.fldGrppcv3M, R.id.fldGrpopv3M, R.id.fldGrpipvM,
             R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})

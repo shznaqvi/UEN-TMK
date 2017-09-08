@@ -79,6 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsContract.FormsTable.COLUMN_SL + " TEXT," +
             FormsContract.FormsTable.COLUMN_SM + " TEXT," +
             FormsContract.FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FormsContract.FormsTable.COLUMN_ISTATUS88x + " TEXT," +
             FormsContract.FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsContract.FormsTable.COLUMN_GPSLNG + " TEXT," +
             FormsContract.FormsTable.COLUMN_GPSDATE + " TEXT," +
@@ -579,6 +580,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
         values.put(FormsContract.FormsTable.COLUMN_USER, fc.getUser());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS88x, fc.getIstatus88x());
         values.put(FormsContract.FormsTable.COLUMN_SA, fc.getsA());
         values.put(FormsContract.FormsTable.COLUMN_SC, fc.getsC());
         values.put(FormsContract.FormsTable.COLUMN_SG, fc.getsG());
