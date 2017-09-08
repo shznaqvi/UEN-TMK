@@ -1772,6 +1772,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, MainApp.fc.getIstatus());
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS88x, MainApp.fc.getIstatus88x());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + MainApp.fc.get_ID();

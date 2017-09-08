@@ -353,6 +353,9 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.fldGrptha34)
     LinearLayout fldGrptha34;
 
+    @BindView((R.id.fldGrptha15))
+    LinearLayout fldGrptha15;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -491,8 +494,10 @@ public class SectionHAActivity extends Activity {
                     tha07g.setChecked(false);
                     tha07h.setChecked(false);
                     tha0788.setChecked(false);
+                    tha0788x.setText(null);
 
                     fldGrptha07.setVisibility(View.GONE);
+                    tha0788x.setVisibility(View.GONE);
 
                 } else {
 
@@ -558,6 +563,21 @@ public class SectionHAActivity extends Activity {
                 } else {
 
                     fldGrptha14.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        tha15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tha15a.isChecked()) {
+                    tha16.clearCheck();
+                    tha1688x.setText(null);
+                    tha17.clearCheck();
+                    fldGrptha15.setVisibility(View.GONE);
+                } else {
+                    fldGrptha15.setVisibility(View.VISIBLE);
                 }
             }
         });
