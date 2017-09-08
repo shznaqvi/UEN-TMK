@@ -577,7 +577,7 @@ public class SectionHAActivity extends Activity {
         tha15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (tha15a.isChecked()) {
+                if (tha15b.isChecked()) {
                     tha16.clearCheck();
                     tha1688x.setText(null);
                     tha17.clearCheck();
