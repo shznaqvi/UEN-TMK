@@ -356,6 +356,12 @@ public class SectionHAActivity extends Activity {
     @BindView((R.id.fldGrptha15))
     LinearLayout fldGrptha15;
 
+    @BindView(R.id.fldGrptha22)
+    LinearLayout fldGrptha22;
+
+    @BindView(R.id.fldGrptha23)
+    LinearLayout fldGrptha23;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -605,13 +611,13 @@ public class SectionHAActivity extends Activity {
                     tha20d.setText(null);
                     tha20d.setVisibility(View.GONE);
 
-                    tha21.clearCheck();
+                    /*tha21.clearCheck();
                     tha22.setText(null);
 
-                    tha23.clearCheck();
+                    tha23.clearCheck();*/
 
 
-                    tha24a.setChecked(false);
+                    /*tha24a.setChecked(false);
                     tha24b.setChecked(false);
                     tha24c.setChecked(false);
                     tha24d.setChecked(false);
@@ -619,9 +625,9 @@ public class SectionHAActivity extends Activity {
                     tha24f.setChecked(false);
                     tha24g.setChecked(false);
 
-                    tha25.clearCheck();
+                    tha25.clearCheck();*/
 
-                    fldGrptha21.setVisibility(View.GONE);
+                    fldGrptha21.setVisibility(View.VISIBLE);
 
                     tha20hr.setVisibility(View.VISIBLE);
                     tha20hr.requestFocus();
@@ -632,10 +638,34 @@ public class SectionHAActivity extends Activity {
                     tha20hr.setVisibility(View.GONE);
 
 
+                    //tha21.clearCheck();
+                    //tha22.setText(null);
+
+                    //tha23.clearCheck();
+
+                    /*tha24a.setChecked(false);
+                    tha24b.setChecked(false);
+                    tha24c.setChecked(false);
+                    tha24d.setChecked(false);
+                    tha24e.setChecked(false);
+                    tha24f.setChecked(false);
+                    tha24g.setChecked(false);*/
+
+                    //tha25.clearCheck();
+
+
+                    fldGrptha21.setVisibility(View.VISIBLE);
+
+                    tha20d.setVisibility(View.VISIBLE);
+                    tha20d.requestFocus();
+
+                } else if (tha20c.isChecked()) {
+
                     tha21.clearCheck();
                     tha22.setText(null);
 
                     tha23.clearCheck();
+
 
                     tha24a.setChecked(false);
                     tha24b.setChecked(false);
@@ -648,26 +678,69 @@ public class SectionHAActivity extends Activity {
                     tha25.clearCheck();
 
 
-                    fldGrptha21.setVisibility(View.GONE);
-
-                    tha20d.setVisibility(View.VISIBLE);
-                    tha20d.requestFocus();
-
-                } else if (tha20c.isChecked()) {
-
                     tha20hr.setVisibility(View.GONE);
                     tha20d.setVisibility(View.GONE);
 
                     tha20hr.setText(null);
                     tha20d.setText(null);
 
-                    fldGrptha21.setVisibility(View.VISIBLE);
+                    fldGrptha21.setVisibility(View.GONE);
                 }
             }
         });
 
 
-        tha2788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        tha21.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tha21b.isChecked()) {
+
+                    tha22.setText(null);
+                    tha23.clearCheck();
+
+                    tha24a.setChecked(false);
+                    tha24b.setChecked(false);
+                    tha24c.setChecked(false);
+                    tha24d.setChecked(false);
+                    tha24e.setChecked(false);
+                    tha24f.setChecked(false);
+                    tha24g.setChecked(false);
+
+                    fldGrptha22.setVisibility(View.GONE);
+
+                } else {
+                    fldGrptha22.setVisibility(View.VISIBLE);
+                    tha22.requestFocus();
+                }
+            }
+        });
+
+
+        tha23.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tha23a.isChecked()) {
+
+                    tha24a.setChecked(false);
+                    tha24b.setChecked(false);
+                    tha24c.setChecked(false);
+                    tha24d.setChecked(false);
+                    tha24e.setChecked(false);
+                    tha24f.setChecked(false);
+                    tha24g.setChecked(false);
+
+                    fldGrptha23.setVisibility(View.GONE);
+
+                } else {
+                    fldGrptha23.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        tha2788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+
+        {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (tha2788.isChecked()) {
@@ -681,7 +754,9 @@ public class SectionHAActivity extends Activity {
         });
 
 
-        tha32.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        tha32.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+        {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tha32b.isChecked()) {
@@ -698,7 +773,9 @@ public class SectionHAActivity extends Activity {
             }
         });
 
-        tha33.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        tha33.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+        {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tha33b.isChecked()) {
@@ -1078,7 +1155,7 @@ public class SectionHAActivity extends Activity {
 
 
                 //        20c
-                if (tha20c.isChecked()) {
+                if (!tha20c.isChecked()) {
 
                     //        21
                     if (tha21.getCheckedRadioButtonId() == -1) {
@@ -1114,33 +1191,39 @@ public class SectionHAActivity extends Activity {
                         }
 
 
-                        //        24
-                        if (!tha24a.isChecked()
-                                && !tha24b.isChecked()
-                                && !tha24c.isChecked()
-                                && !tha24d.isChecked()
-                                && !tha24e.isChecked()
-                                && !tha24f.isChecked()
-                                && !tha24g.isChecked()) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha24), Toast.LENGTH_LONG).show();
-                            tha24a.setError("This data is Required!");
-                            Log.i(TAG, "tha24a: This data is Required!");
-                            return false;
-                        } else {
-                            tha24a.setError(null);
+                        if (tha23b.isChecked()) {
+
+
+
+                            //        24
+                            if (!tha24a.isChecked()
+                                    && !tha24b.isChecked()
+                                    && !tha24c.isChecked()
+                                    && !tha24d.isChecked()
+                                    && !tha24e.isChecked()
+                                    && !tha24f.isChecked()
+                                    && !tha24g.isChecked()) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha24), Toast.LENGTH_LONG).show();
+                                tha24a.setError("This data is Required!");
+                                Log.i(TAG, "tha24a: This data is Required!");
+                                return false;
+                            } else {
+                                tha24a.setError(null);
+                            }
+
                         }
 
+                    }
 
-                        //        25
-                        if (tha25.getCheckedRadioButtonId() == -1) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
-                            tha25a.setError("This data is Required!");    // Set Error on last radio button
-                            Log.i(TAG, "tha25: This data is Required!");
-                            return false;
-                        } else {
-                            tha25a.setError(null);
-                        }
 
+                    //        25
+                    if (tha25.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
+                        tha25a.setError("This data is Required!");    // Set Error on last radio button
+                        Log.i(TAG, "tha25: This data is Required!");
+                        return false;
+                    } else {
+                        tha25a.setError(null);
                     }
 
 
