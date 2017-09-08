@@ -418,7 +418,6 @@ public class SectionBActivity extends AppCompatActivity {
                 finish();
 
                 if (ageInyears < 5) {
-
                     MainApp.TotalChildCount++;
                     MainApp.TotalMembersCount++;
                 } else if (tb11a.isChecked() && tb04b.isChecked()

@@ -2,7 +2,7 @@
     <string name="app_name">Umeed-e-Nau: Community Mobilization, Tando Muhammad Khan</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
+  <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
@@ -21,19 +21,19 @@
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
     <!-- String related to section headings -->
-    <string name="secALabel">HH Identification, Introduction And Consent</string>
-    <string name="secBLabel">  HOUSEHOLD MEMBERS’ INFORMATION </string>
-    <string name="secCLabel"> گھر جي سماجي ۽ اقتصادي معلومات</string>
-    <string name="secDLabel">REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
-    <string name="secELabel">Deceased Mother Information</string>
-    <string name="secFLabel">Deceased Child Information</string>
-    <string name="secGLabel">Access to LHWs </string>
-    <string name="secHALabel">ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
-    <string name="secHBLabel">ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
-    <string name="secILabel">حفاظتي ٽڪن جي معلومات</string>
-    <string name="secJLabel">BREAST FEEDING AND NUTRITION </string>
-    <string name="secKLabel">پاڻي ۽ صفائي</string>
-    <string name="secLLabel">ھٿ ڌوئڻ</string>
+  <string name="secALabel">A: HH Identification, Introduction And Consent</string>
+  <string name="secBLabel">B: HOUSEHOLD MEMBERS’ INFORMATION </string>
+  <string name="secCLabel">C: گھر جي سماجي ۽ اقتصادي معلومات </string>
+  <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
+  <string name="secELabel">E: Deceased Mother Information</string>
+  <string name="secFLabel">F: Deceased Child Information</string>
+  <string name="secGLabel">G: Access to LHWs </string>
+  <string name="secHALabel">HA: ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
+  <string name="secHBLabel">HB: ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
+  <string name="secILabel">I: حفاظتي ٽڪن جي معلومات</string>
+  <string name="secJLabel">J: BREAST FEEDING AND NUTRITION </string>
+  <string name="secKLabel">K: پاڻي ۽ صفائي</string>
+  <string name="secLLabel">L: ھٿ ڌوئڻ</string>
 
 
     <!-- Strings that are fixed for all apps -->
