@@ -1193,8 +1193,6 @@ public class SectionHAActivity extends Activity {
 
                         if (tha23b.isChecked()) {
 
-
-
                             //        24
                             if (!tha24a.isChecked()
                                     && !tha24b.isChecked()

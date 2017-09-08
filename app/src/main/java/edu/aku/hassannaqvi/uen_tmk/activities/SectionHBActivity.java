@@ -370,6 +370,9 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.fldGrpth25)
     LinearLayout fldGrpth25;
 
+    @BindView(R.id.fldGrpth17)
+    LinearLayout fldGrpth17;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -591,6 +594,23 @@ public class SectionHBActivity extends Activity {
             }
         });
 
+        thb16.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb16b.isChecked()) {
+
+                    thb17.clearCheck();
+                    thb1788x.setText(null);
+
+                    thb18.clearCheck();
+
+                    fldGrpth17.setVisibility(View.GONE);
+                } else {
+                    fldGrpth17.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
         thb1788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -614,7 +634,7 @@ public class SectionHBActivity extends Activity {
                     thb21d.setText(null);
                     thb21d.setVisibility(View.GONE);
 
-                    thb22.clearCheck();
+                    /*thb22.clearCheck();
                     thb23.setText(null);
                     thb24.clearCheck();
 
@@ -626,10 +646,10 @@ public class SectionHBActivity extends Activity {
                     thb25f.setChecked(false);
                     thb25g.setChecked(false);
 
-                    thb26.clearCheck();
+                    thb26.clearCheck();*/
 
 
-                    fldGrpth22.setVisibility(View.GONE);
+                    fldGrpth22.setVisibility(View.VISIBLE);
 
                     thb21hr.setVisibility(View.VISIBLE);
                     thb21hr.requestFocus();
@@ -638,6 +658,28 @@ public class SectionHBActivity extends Activity {
                     thb21hr.setText(null);
                     thb21hr.setVisibility(View.GONE);
 
+                    /*thb22.clearCheck();
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    thb26.clearCheck();*/
+
+                    fldGrpth22.setVisibility(View.VISIBLE);
+
+                    thb21d.setVisibility(View.VISIBLE);
+                    thb21d.requestFocus();
+
+                } else if (thb21c.isChecked()) {
+
+
                     thb22.clearCheck();
                     thb23.setText(null);
                     thb24.clearCheck();
@@ -652,19 +694,14 @@ public class SectionHBActivity extends Activity {
 
                     thb26.clearCheck();
 
-                    fldGrpth22.setVisibility(View.GONE);
 
-                    thb21d.setVisibility(View.VISIBLE);
-                    thb21d.requestFocus();
-
-                } else if (thb21c.isChecked()) {
                     thb21hr.setText(null);
                     thb21hr.setVisibility(View.GONE);
 
                     thb21d.setText(null);
                     thb21d.setVisibility(View.GONE);
 
-                    fldGrpth22.setVisibility(View.VISIBLE);
+                    fldGrpth22.setVisibility(View.GONE);
                 }
             }
         });

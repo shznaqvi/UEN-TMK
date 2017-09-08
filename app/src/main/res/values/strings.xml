@@ -2,7 +2,7 @@
     <string name="app_name">Umeed-e-Nau: Community Mobilization, Tando Muhammad Khan</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-  <string name="prompt_password">Password</string>
+    <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
@@ -21,27 +21,27 @@
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
     <!-- String related to section headings -->
-  <string name="secALabel">A: HH Identification, Introduction And Consent</string>
-  <string name="secBLabel">B: HOUSEHOLD MEMBERS’ INFORMATION </string>
-  <string name="secCLabel">C: گھر جي سماجي ۽ اقتصادي معلومات </string>
-  <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
-  <string name="secELabel">E: Deceased Mother Information</string>
-  <string name="secFLabel">F: Deceased Child Information</string>
-  <string name="secGLabel">G: Access to LHWs </string>
-  <string name="secHALabel">HA: ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
-  <string name="secHBLabel">HB: ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
-  <string name="secILabel">I: حفاظتي ٽڪن جي معلومات</string>
-  <string name="secJLabel">J: BREAST FEEDING AND NUTRITION </string>
-  <string name="secKLabel">K: پاڻي ۽ صفائي</string>
-  <string name="secLLabel">L: ھٿ ڌوئڻ</string>
+    <string name="secALabel">A: HH Identification, Introduction And Consent</string>
+    <string name="secBLabel">B: HOUSEHOLD MEMBERS’ INFORMATION </string>
+    <string name="secCLabel">C: گھر جي سماجي ۽ اقتصادي معلومات </string>
+    <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
+    <string name="secELabel">E: Deceased Mother Information</string>
+    <string name="secFLabel">F: Deceased Child Information</string>
+    <string name="secGLabel">G: Access to LHWs </string>
+    <string name="secHALabel">HA: ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
+    <string name="secHBLabel">HB: ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
+    <string name="secILabel">I: حفاظتي ٽڪن جي معلومات</string>
+    <string name="secJLabel">J: BREAST FEEDING AND NUTRITION </string>
+    <string name="secKLabel">K: پاڻي ۽ صفائي</string>
+    <string name="secLLabel">L: ھٿ ڌوئڻ</string>
 
 
     <!-- Strings that are fixed for all apps -->
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-  <string name="male"> مرد</string>
-  <string name="female"> عورت </string>
+    <string name="male"> مرد</string>
+    <string name="female"> عورت </string>
     <string name="yes"> ھا </string>
     <string name="no"> نه </string>
     <string name="dkn"> خبر نه آھي </string>
@@ -565,7 +565,8 @@
     <string name="thb20g"> ڻڄاتل سوئيون (انجيڪشن) </string>
     <string name="thb21"> (نالو) کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جي علاج لاءِ ڪيترا ڏينھن اسپتال ۾ داخل ھيو؟ </string>
     <string name="thb21a"> ڪلاڪ </string>
-    <string name="thb21b"> اڃا داخل آھي </string>
+    <string name="thb21b"> ڏينھن </string>
+    <string name="thb21c"> اڃا داخل آھي </string>
     <string name="thb22"> موڪل ملڻ کان پوءِ ڇا توھان (نالو) کي وڌيڪ فالواپ لا۽ ٻيهراچڻ جي صلاح ڏني وئي هئي؟ </string>
     <string name="thb23"> اسپتال مان موڪل ملڻ کان پوءِ ڇا توھان (نالو) کي ڪيترن ڏينهن بعد فالواپ لا۽ ٻيهراچڻ جي صلاح ڏني وئي هئ؟ </string>
     <string name="thb24"> ڇا توھان (نالو) کي وڌيڪ فالواپ لا۽ ٻيهر اسپتال وٺي ويا هئيو؟ </string>
