@@ -350,7 +350,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="2dp"
                     android:layout_weight="68"
-                    android:background="@color/colorAccent"
+                    android:background="#56ae51"
                     android:padding="16dp"
                     android:text="@string/action_sign_in"
                     android:textStyle="bold" />
