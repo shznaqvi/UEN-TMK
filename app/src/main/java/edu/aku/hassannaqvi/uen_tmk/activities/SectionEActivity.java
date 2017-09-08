@@ -22,7 +22,6 @@ import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
-import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -30,8 +29,12 @@ public class SectionEActivity extends AppCompatActivity {
 
     @BindView(R.id.te01)
     EditText te01;
-    @BindView(R.id.te02)
-    EditText te02;
+    @BindView(R.id.te02d)
+    EditText te02d;
+    @BindView(R.id.te02m)
+    EditText te02m;
+    @BindView(R.id.te02y)
+    EditText te02y;
     @BindView(R.id.te03)
     RadioGroup te03;
     @BindView(R.id.te03a)
@@ -44,8 +47,15 @@ public class SectionEActivity extends AppCompatActivity {
     RadioButton te03d;
     @BindView(R.id.te03e)
     RadioButton te03e;
-    @BindView(R.id.te04)
-    DatePickerInputEditText te04;
+    /*    @BindView(R.id.te04)
+        DatePickerInputEditText te04;*/
+    @BindView(R.id.te04d)
+    EditText te04d;
+    @BindView(R.id.te04m)
+    EditText te04m;
+    @BindView(R.id.te04y)
+    EditText te04y;
+
     @BindView(R.id.te05)
     RadioGroup te05;
     @BindView(R.id.te05a)
@@ -71,7 +81,7 @@ public class SectionEActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_e);
         ButterKnife.bind(this);
 
-        te04.setManager(getSupportFragmentManager());
+//        te04.setManager(getSupportFragmentManager());
 
         te0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -159,10 +169,19 @@ public class SectionEActivity extends AppCompatActivity {
         JSONObject sE = new JSONObject();
 
         sE.put("te01", te01.getText().toString());
-        sE.put("te02", te02.getText().toString());
+
+        sE.put("te02d", te02d.getText().toString());
+        sE.put("te02m", te02m.getText().toString());
+        sE.put("te02y", te02y.getText().toString());
+
         sE.put("te03", te03a.isChecked() ? "1" : te03b.isChecked() ? "2" : te03c.isChecked() ? "3"
                 : te03d.isChecked() ? "4" : te03e.isChecked() ? "5" : "0");
-        sE.put("te04", te04.getText().toString());
+
+//        sE.put("te04", te04.getText().toString());
+        sE.put("te04d", te04d.getText().toString());
+        sE.put("te04m", te04m.getText().toString());
+        sE.put("te04y", te04y.getText().toString());
+
         sE.put("te05", te05a.isChecked() ? "1" : te05b.isChecked() ? "2" : te05c.isChecked() ? "3"
                 : te05d.isChecked() ? "4" : te05e.isChecked() ? "5" : te05f.isChecked() ? "6" : te0588.isChecked() ? "88" : "0");
         sE.put("te0588x", te0588x.getText().toString());
@@ -187,7 +206,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             te01.setError(null);
         }
-
+/*
         if (te02.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te02), Toast.LENGTH_SHORT).show();
             te02.setError("This data is Required!");    // Set Error on last radio button
@@ -206,6 +225,47 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         } else {
             te02.setError(null);
+        }*/
+
+        if (te02d.getText().toString().isEmpty() && te02m.getText().toString().isEmpty() && te02y.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.te02), Toast.LENGTH_SHORT).show();
+            te02d.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "te02: This data is Required!");
+            return false;
+        } else {
+            te02d.setError(null);
+        }
+
+
+        if (Integer.valueOf(te02d.getText().toString()) < 0 || Integer.valueOf(te02d.getText().toString()) > 29) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+            te02d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
+
+            Log.i(TAG, "te02d: Range is 0 to 29 Days");
+            return false;
+        } else {
+            te02d.setError(null);
+        }
+
+        if (Integer.valueOf(te02m.getText().toString()) < 0 || Integer.valueOf(te02m.getText().toString()) > 11) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+            te02m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
+
+            Log.i(TAG, "te02d: Range is 0 to 11 Months");
+            return false;
+        } else {
+            te02m.setError(null);
+        }
+
+        if (Integer.valueOf(te02y.getText().toString()) < 15 || Integer.valueOf(te02y.getText().toString()) > 49) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
+            te02y.setError("Range is 15 to 49  Years");    // Set Error on last radio button
+
+            Log.i(TAG, "te02d: Range is 15 to 49 Years");
+            return false;
+        } else {
+            te02y.setError(null);
         }
 
         if (te03.getCheckedRadioButtonId() == -1) {
@@ -218,7 +278,7 @@ public class SectionEActivity extends AppCompatActivity {
             te03a.setError(null);
         }
 
-        if (te04.getText().toString().isEmpty()) {
+        /*if (te04.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
             te04.setError("This data is Required!");    // Set Error on last radio button
 
@@ -226,6 +286,46 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         } else {
             te04.setError(null);
+        }*/
+        if (te04d.getText().toString().isEmpty() && te04m.getText().toString().isEmpty() && te04y.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
+            te04d.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "te04: This data is Required!");
+            return false;
+        } else {
+            te04d.setError(null);
+        }
+
+
+        if (Integer.valueOf(te04d.getText().toString()) < 0 || Integer.valueOf(te04d.getText().toString()) > 29) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+            te04d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
+
+            Log.i(TAG, "te04d: Range is 0 to 29 Days");
+            return false;
+        } else {
+            te04d.setError(null);
+        }
+
+        if (Integer.valueOf(te04m.getText().toString()) < 0 || Integer.valueOf(te04m.getText().toString()) > 11) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+            te04m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
+
+            Log.i(TAG, "te04d: Range is 0 to 11 Months");
+            return false;
+        } else {
+            te04m.setError(null);
+        }
+
+        if (Integer.valueOf(te04y.getText().toString()) < 0) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
+            te04y.setError("Years not be 0");    // Set Error on last radio button
+
+            Log.i(TAG, "te04d: Years not be 0");
+            return false;
+        } else {
+            te04y.setError(null);
         }
 
         if (te05.getCheckedRadioButtonId() == -1) {
