@@ -23,8 +23,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract.singleIm;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract.singleIm;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -111,7 +111,7 @@ public class SyncIM extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<SectionKIMContract> IM = db.getUnsyncedIM();
+        Collection<SectionJIMContract> IM = db.getUnsyncedIM();
         Log.d(TAG, String.valueOf(IM.size()));
         if (IM.size() > 0) {
             try {
@@ -139,7 +139,7 @@ public class SyncIM extends AsyncTask<Void, Void, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (SectionKIMContract fc : IM) {
+                        for (SectionJIMContract fc : IM) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());

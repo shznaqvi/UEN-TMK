@@ -31,12 +31,12 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract.MWRATable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract.singleMember;
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract.singleUser;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
-import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionKIMContract.singleIm;
+import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract.singleIm;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -221,7 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             MWRATable.COLUMN_FORMDATE + " TEXT," +
             MWRATable.COLUMN_USER + " TEXT," +
             MWRATable.COLUMN_SD + " TEXT," +
-//            MWRATable.COLUMN_SK + " TEXT," +
+//            MWRATable.COLUMN_SJ + " TEXT," +
             MWRATable.COLUMN_DEVICEID + " TEXT," +
             MWRATable.COLUMN_SYNCED + " TEXT," +
             MWRATable.COLUMN_SYNCED_DATE + " TEXT" +
@@ -233,14 +233,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleIm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             singleIm.COLUMN_PROJECT_NAME + " TEXT," +
             singleIm.COLUMN_DEVICETAGID + " TEXT," +
-            singleIm.COLUMN_UUID + " TEXT," +
+//            singleIm.COLUMN_UUID + " TEXT," +
             singleIm.COLUMN_UID + " TEXT," +
-            singleIm.COLUMN_SK + " TEXT," +
+            singleIm.COLUMN_SJ + " TEXT," +
             singleIm.COLUMN_FORMDATE + " TEXT," +
             singleIm.COLUMN_USER + " TEXT," +
-            singleIm.COLUMN_CHILDID + " TEXT," +
+/*            singleIm.COLUMN_CHILDID + " TEXT," +
             singleIm.COLUMN_MM + " TEXT," +
-            singleIm.COLUMN_DSSID + " TEXT," +
+            singleIm.COLUMN_DSSID + " TEXT," +*/
             singleIm.COLUMN_DEVICEID + " TEXT," +
             singleIm.COLUMN_ISTATUS + " TEXT," +
             singleIm.COLUMN_SYNCED + " TEXT," +
@@ -661,7 +661,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addChild(SectionKIMContract ims) {
+    public Long addChild(SectionJIMContract ims) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -670,14 +670,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(singleIm.COLUMN_PROJECT_NAME, ims.getProjectName());
-        values.put(singleIm.COLUMN_UUID, ims.get_UUID());
+//        values.put(singleIm.COLUMN_UUID, ims.get_UUID());
         values.put(singleIm.COLUMN_UID, ims.getUID());
-        values.put(singleIm.COLUMN_SK, ims.getsK());
+        values.put(singleIm.COLUMN_SJ, ims.getsJ());
         values.put(singleIm.COLUMN_FORMDATE, ims.getFormDate());
         values.put(singleIm.COLUMN_USER, ims.getUser());
-        values.put(singleIm.COLUMN_MM, ims.getMm());
+//        values.put(singleIm.COLUMN_MM, ims.getMm());
         //values.put(singleIm.COLUMN_CHILDID, ims.getChildID());
-        values.put(singleIm.COLUMN_DSSID, ims.getDssID());
+//        values.put(singleIm.COLUMN_DSSID, ims.getDssID());
         values.put(singleIm.COLUMN_DEVICEID, ims.getDeviceId());
         values.put(singleIm.COLUMN_DEVICETAGID, ims.getDevicetagID());
 
@@ -1106,19 +1106,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<SectionKIMContract> getUnsyncedIM() {
+    public Collection<SectionJIMContract> getUnsyncedIM() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 singleIm.COLUMN_ID,
-                singleIm.COLUMN_UUID,
+//                singleIm.COLUMN_UUID,
                 singleIm.COLUMN_UID,
-                singleIm.COLUMN_SK,
+                singleIm.COLUMN_SJ,
                 singleIm.COLUMN_FORMDATE,
                 singleIm.COLUMN_USER,
 //                singleIm.COLUMN_CHILDID,
-                singleIm.COLUMN_MM,
-                singleIm.COLUMN_DSSID,
+                /*singleIm.COLUMN_MM,
+                singleIm.COLUMN_DSSID,*/
                 singleIm.COLUMN_DEVICETAGID,
                 singleIm.COLUMN_DEVICEID,
                 singleIm.COLUMN_ISTATUS
@@ -1132,7 +1132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 singleIm.COLUMN_ID + " ASC";
 
-        Collection<SectionKIMContract> allIM = new ArrayList<SectionKIMContract>();
+        Collection<SectionJIMContract> allIM = new ArrayList<SectionJIMContract>();
         try {
             c = db.query(
                     singleIm.TABLE_NAME,  // The table to query
@@ -1144,7 +1144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                SectionKIMContract kIm = new SectionKIMContract();
+                SectionJIMContract kIm = new SectionJIMContract();
                 allIM.add(kIm.Hydrate(c));
             }
         } finally {

@@ -263,11 +263,11 @@ public class FormsContract {
         this.sA = sA;
     }
 
-    /*public String getsD() {
+    /*public String getsJ() {
         return sD;
     }
 
-    public void setsD(String sD) {
+    public void setsJ(String sD) {
         this.sD = sD;
     }
 

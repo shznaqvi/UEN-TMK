@@ -3,8 +3,10 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -635,10 +638,16 @@ public class SectionJActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSJ();
+        Long updcount = db.addChild(MainApp.ims);
+        MainApp.ims.set_ID(String.valueOf(updcount));
 
-        if (updcount == 1) {
+        if (updcount != 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.ims.setUID(
+                    (MainApp.fc.getDeviceID() + MainApp.ims.get_ID()));
+            db.updateChildID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -649,6 +658,16 @@ public class SectionJActivity extends Activity {
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.ims = new SectionJIMContract();
+
+        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.ims.setFormDate(MainApp.dtToday);
+        MainApp.ims.setUser(MainApp.userName);
+        MainApp.ims.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID));
 
         JSONObject sJ = new JSONObject();
 
@@ -728,7 +747,7 @@ public class SectionJActivity extends Activity {
                 : tj14k.isChecked() ? "11" : tj14l.isChecked() ? "12" : tj1488.isChecked() ? "88" : "0");
         sJ.put("tj1488x", tj1488x.getText().toString());
 
-        MainApp.fc.setsJ(String.valueOf(sJ));
+        MainApp.ims.setsJ(String.valueOf(sJ));
     }
 
     public boolean formValidation() {
