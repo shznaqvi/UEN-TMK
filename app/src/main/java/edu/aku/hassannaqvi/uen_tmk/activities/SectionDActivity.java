@@ -217,7 +217,7 @@ public class SectionDActivity extends Activity {
                 td02.setError(null);
             }
 
-            if (Integer.valueOf(td02.getText().toString()) < 1) {
+            if (Integer.parseInt(td02.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td02), Toast.LENGTH_SHORT).show();
                 td02.setError("Zero not allowed");    // Set Error on last radio button
 
@@ -259,7 +259,7 @@ public class SectionDActivity extends Activity {
                     td05.setError(null);
                 }
 
-                if (Integer.valueOf(td05.getText().toString()) < 4 || Integer.valueOf(td05.getText().toString()) > 42) {
+                if (Integer.parseInt(td05.getText().toString()) < 4 || Integer.parseInt(td05.getText().toString()) > 42) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
                     td05.setError("Range is 4 to 42 weeks");    // Set Error on last radio button
 
