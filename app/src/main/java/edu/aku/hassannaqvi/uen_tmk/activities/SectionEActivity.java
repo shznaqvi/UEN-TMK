@@ -226,7 +226,7 @@ public class SectionEActivity extends AppCompatActivity {
             te02.setError(null);
         }*/
 
-        if (te02d.getText().toString().isEmpty() && te02m.getText().toString().isEmpty() && te02y.getText().toString().isEmpty()) {
+        if (te02d.getText().toString().isEmpty() || te02m.getText().toString().isEmpty() || te02y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te02), Toast.LENGTH_SHORT).show();
             te02d.setError("This data is Required!");    // Set Error on last radio button
 
@@ -286,7 +286,7 @@ public class SectionEActivity extends AppCompatActivity {
         } else {
             te04.setError(null);
         }*/
-        if (te04d.getText().toString().isEmpty() && te04m.getText().toString().isEmpty() && te04y.getText().toString().isEmpty()) {
+        if (te04d.getText().toString().isEmpty() || te04m.getText().toString().isEmpty() || te04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
             te04d.setError("This data is Required!");    // Set Error on last radio button
 

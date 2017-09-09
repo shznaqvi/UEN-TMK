@@ -228,7 +228,7 @@ public class SectionDActivity extends Activity {
             }
 
 
-            if (td03lb.getText().toString().isEmpty() && td03sb.getText().toString().isEmpty() && td03mc.getText().toString().isEmpty()) {
+            if (td03lb.getText().toString().isEmpty() || td03sb.getText().toString().isEmpty() || td03mc.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.td03), Toast.LENGTH_SHORT).show();
                 td03lb.setError("This data is Required!");    // Set Error on last radio button
 
