@@ -566,8 +566,6 @@ public class SectionHAActivity extends Activity {
                     tha24g.setChecked(false);
 
 
-
-
                     fldGrptha14.setVisibility(View.GONE);
                 } else {
 

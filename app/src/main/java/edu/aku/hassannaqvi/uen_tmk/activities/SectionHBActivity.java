@@ -707,6 +707,52 @@ public class SectionHBActivity extends Activity {
         });
 
 
+        thb22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb22b.isChecked()) {
+
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    fldGrpth23.setVisibility(View.GONE);
+
+                } else {
+                    fldGrpth23.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        thb24.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (thb24a.isChecked()) {
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    fldGrpth25.setVisibility(View.GONE);
+
+                } else {
+                    fldGrpth25.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
         thb28.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -733,54 +779,6 @@ public class SectionHBActivity extends Activity {
                 }
             }
         });
-
-
-        thb22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (thb22b.isChecked()) {
-
-                    thb23.setText(null);
-
-                    thb24.clearCheck();
-
-                    thb25a.setChecked(false);
-                    thb25b.setChecked(false);
-                    thb25c.setChecked(false);
-                    thb25d.setChecked(false);
-                    thb25e.setChecked(false);
-                    thb25f.setChecked(false);
-                    thb25g.setChecked(false);
-
-
-                    fldGrpth23.setVisibility(View.GONE);
-                } else {
-                    fldGrpth23.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-
-        thb24.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (thb24a.isChecked()) {
-                    fldGrpth25.setVisibility(View.VISIBLE);
-                } else {
-
-                    thb25a.setChecked(false);
-                    thb25b.setChecked(false);
-                    thb25c.setChecked(false);
-                    thb25d.setChecked(false);
-                    thb25e.setChecked(false);
-                    thb25f.setChecked(false);
-                    thb25g.setChecked(false);
-
-                    fldGrpth25.setVisibility(View.GONE);
-                }
-            }
-        });
-
 
     }
 
@@ -1161,7 +1159,7 @@ public class SectionHBActivity extends Activity {
                 }
 
 
-                if (thb21c.isChecked()) {
+                if (!thb21c.isChecked()) {
 
                     //        22
                     if (thb22.getCheckedRadioButtonId() == -1) {
@@ -1216,6 +1214,18 @@ public class SectionHBActivity extends Activity {
                                 thb25a.setError(null);
                             }
 
+
+                            //        26
+                            if (thb26.getCheckedRadioButtonId() == -1) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
+                                thb26a.setError("This data is Required!");    // Set Error on last radio button
+                                Log.i(TAG, "thb26: This data is Required!");
+                                return false;
+                            } else {
+                                thb26a.setError(null);
+                            }
+
+
                         }
 
                     }
@@ -1223,29 +1233,6 @@ public class SectionHBActivity extends Activity {
 
                 }
 
-
-            }
-
-
-            if (thb21c.isChecked()) {
-
-                if (thb22a.isChecked()) {
-
-                    if (thb24b.isChecked()) {
-
-                        //        26
-                        if (thb26.getCheckedRadioButtonId() == -1) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
-                            thb26a.setError("This data is Required!");    // Set Error on last radio button
-                            Log.i(TAG, "thb26: This data is Required!");
-                            return false;
-                        } else {
-                            thb26a.setError(null);
-                        }
-
-                    }
-
-                }
 
             }
 
