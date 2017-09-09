@@ -96,7 +96,7 @@
     <string name="ta06"> Village </string>
     <string name="ta07"> Block/mohalla </string>
     <string name="ta08"> Street </string>
-    <string name="ta09"> May I begin the interview now? </string>
+  <string name="ta09"> Have you got the permission? </string>
 
     <string name="tbAge"> تاريخ پيدائش / عمر </string>
     <string name="tbAge02"> تاريخ پيدائش / عمر </string>
