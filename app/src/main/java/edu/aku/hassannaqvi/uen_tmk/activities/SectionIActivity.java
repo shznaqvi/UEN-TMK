@@ -1498,7 +1498,7 @@ public class SectionIActivity extends AppCompatActivity {
                         ti05.setError(null);
                     }
 
-                    if (Integer.valueOf(ti05.getText().toString()) < 1) {
+                    if (Integer.parseInt(ti05.getText().toString()) < 1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.ti05), Toast.LENGTH_SHORT).show();
                         ti05.setError("Zero not allowed");
                         Log.i(TAG, "ti05: Zero not allowed");

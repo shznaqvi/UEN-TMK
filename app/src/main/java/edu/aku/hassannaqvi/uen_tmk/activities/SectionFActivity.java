@@ -240,7 +240,7 @@ public class SectionFActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.valueOf(tf04d.getText().toString()) < 0 || Integer.valueOf(tf04d.getText().toString()) > 29) {
+        if (Integer.parseInt(tf04d.getText().toString()) < 0 || Integer.parseInt(tf04d.getText().toString()) > 29) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             tf04d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
 
@@ -250,7 +250,7 @@ public class SectionFActivity extends AppCompatActivity {
             tf04d.setError(null);
         }
 
-        if (Integer.valueOf(tf04m.getText().toString()) < 0 || Integer.valueOf(tf04m.getText().toString()) > 11) {
+        if (Integer.parseInt(tf04m.getText().toString()) < 0 || Integer.parseInt(tf04m.getText().toString()) > 11) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             tf04m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
 
@@ -260,7 +260,7 @@ public class SectionFActivity extends AppCompatActivity {
             tf04m.setError(null);
         }
 
-        if (Integer.valueOf(tf04y.getText().toString()) < 0 || Integer.valueOf(tf04y.getText().toString()) > 5) {
+        if (Integer.parseInt(tf04y.getText().toString()) < 0 || Integer.parseInt(tf04y.getText().toString()) > 5) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             tf04y.setError("Range is 0 to 5 Years");    // Set Error on last radio button
 

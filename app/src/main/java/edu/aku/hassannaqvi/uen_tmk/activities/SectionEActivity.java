@@ -86,9 +86,8 @@ public class SectionEActivity extends AppCompatActivity {
         te0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (te0588.isChecked()) {
+                if (b) {
                     te0588x.setVisibility(View.VISIBLE);
-                    te0588x.requestFocus();
                 } else {
                     te0588x.setText(null);
                     te0588x.setVisibility(View.GONE);
@@ -217,7 +216,7 @@ public class SectionEActivity extends AppCompatActivity {
             te02.setError(null);
         }
 
-        if (Integer.valueOf(te02.getText().toString()) < 15 || Integer.valueOf(te02.getText().toString()) > 49) {
+        if (Integer.parseInt(te02.getText().toString()) < 15 || Integer.parseInt(te02.getText().toString()) > 49) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.te02), Toast.LENGTH_SHORT).show();
             te02.setError("Range is 15 to 49 Years");    // Set Error on last radio button
 
@@ -238,7 +237,7 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.valueOf(te02d.getText().toString()) < 0 || Integer.valueOf(te02d.getText().toString()) > 29) {
+        if (Integer.parseInt(te02d.getText().toString()) < 0 || Integer.parseInt(te02d.getText().toString()) > 29) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             te02d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
 
@@ -248,7 +247,7 @@ public class SectionEActivity extends AppCompatActivity {
             te02d.setError(null);
         }
 
-        if (Integer.valueOf(te02m.getText().toString()) < 0 || Integer.valueOf(te02m.getText().toString()) > 11) {
+        if (Integer.parseInt(te02m.getText().toString()) < 0 || Integer.parseInt(te02m.getText().toString()) > 11) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             te02m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
 
@@ -258,7 +257,7 @@ public class SectionEActivity extends AppCompatActivity {
             te02m.setError(null);
         }
 
-        if (Integer.valueOf(te02y.getText().toString()) < 15 || Integer.valueOf(te02y.getText().toString()) > 49) {
+        if (Integer.parseInt(te02y.getText().toString()) < 15 || Integer.parseInt(te02y.getText().toString()) > 49) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             te02y.setError("Range is 15 to 49  Years");    // Set Error on last radio button
 
@@ -298,7 +297,7 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.valueOf(te04d.getText().toString()) < 0 || Integer.valueOf(te04d.getText().toString()) > 29) {
+        if (Integer.parseInt(te04d.getText().toString()) < 0 || Integer.parseInt(te04d.getText().toString()) > 29) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             te04d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
 
@@ -308,7 +307,7 @@ public class SectionEActivity extends AppCompatActivity {
             te04d.setError(null);
         }
 
-        if (Integer.valueOf(te04m.getText().toString()) < 0 || Integer.valueOf(te04m.getText().toString()) > 11) {
+        if (Integer.parseInt(te04m.getText().toString()) < 0 || Integer.parseInt(te04m.getText().toString()) > 11) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             te04m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
 
@@ -318,7 +317,7 @@ public class SectionEActivity extends AppCompatActivity {
             te04m.setError(null);
         }
 
-        if (Integer.valueOf(te04y.getText().toString()) < 0) {
+        if (Integer.parseInt(te04y.getText().toString()) < 0) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             te04y.setError("Years not be 0");    // Set Error on last radio button
 

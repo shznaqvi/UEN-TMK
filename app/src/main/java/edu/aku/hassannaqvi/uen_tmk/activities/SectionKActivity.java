@@ -504,7 +504,7 @@ public class SectionKActivity extends Activity {
                     tk04.setError(null);
                 }
 
-                if (Integer.valueOf(tk04.getText().toString()) < 1) {
+                if (Integer.parseInt(tk04.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.tk04), Toast.LENGTH_SHORT).show();
                     tk04.setError("Zero not allowed");
                     Log.i(TAG, "tk04: Zero not allowed");
