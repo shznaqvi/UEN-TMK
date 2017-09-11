@@ -229,7 +229,7 @@ public class SectionFActivity extends AppCompatActivity {
             tf03a.setError(null);
         }
 
-        if (tf04d.getText().toString().isEmpty() && tf04m.getText().toString().isEmpty() && tf04y.getText().toString().isEmpty()) {
+        if (tf04d.getText().toString().isEmpty() || tf04m.getText().toString().isEmpty() || tf04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf04), Toast.LENGTH_SHORT).show();
             tf04d.setError("This data is Required!");    // Set Error on last radio button
 
