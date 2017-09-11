@@ -564,6 +564,8 @@ public class SectionHAActivity extends Activity {
                     tha19h.setChecked(false);
                     tha19i.setChecked(false);
 
+
+
                     tha20.clearCheck();
                     tha20hr.setText(null);
                     tha20d.setText(null);
