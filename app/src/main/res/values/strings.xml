@@ -299,7 +299,7 @@
     <string name="td03b"> مئل ڄائو (مئل ٻار) </string>
     <string name="td03c"> حمل ضايع ٿيو </string>
     <string name="td04"> ڇا (عورت جو نالو) هن مهل به حمل سان آھي؟ </string>
-  <string name="td05"> حمل جو دورانيو ڇا آھي؟ (ھفتن ۾) </string>
+    <string name="td05"> حمل جو دورانيو ڇا آھي؟ (ھفتن ۾) </string>
     <string name="te01"> مري ويل ماءُ جو مڪمل نالو </string>
     <string name="te02"> مرڻ وقت عمر </string>
     <string name="te03"> موت جي جڳھه </string>
@@ -440,7 +440,7 @@
     <string name="tha22"> اسپتال مان موڪل ملڻ کان پوءِ ڇا توھان (نالو) کي ڪيترن ڏينهن بعد وڌيڪ فالواپ لا۽ ٻيهراچڻ جي صلاح ڏني وئي هئي؟ </string>
     <string name="tha23"> ڇا توھان (نالو) کي وڌيڪ فالواپ لا۽ ٻيهر اسپتال وٺي ويا هئيو </string>
     <string name="tha24"> ٻيهر اسپتال وڌيڪ فالواپ لا۽ وٺي نه وڃڻ جا سبب ڪهڙا هئا؟ </string>
-    <string name="tha24a"> الواپ جو ڏينهن نهآيوآهي </string>
+    <string name="tha24a"> فالواپ جو ڏينهن نهآيوآهي </string>
     <string name="tha24b"> يڏو وڏو مسئلو نه ھو جو وڌيڪ فالواپ لا۽ ٻيهراچجي </string>
     <string name="tha24c"> پئسا نه ھئا </string>
     <string name="tha24d"> سواري نه ھئي </string>
@@ -451,7 +451,7 @@
     <string name="tha25a"> تندرست ٿي ويوهو </string>
     <string name="tha25b"> اڃا بيمار آھي </string>
     <string name="tha25c"> مري ويو </string>
-    <string name="tha26"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) دستن جي بيماري جو علاج ڪرايو؟ </string>
+    <string name="tha26"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) دستن جي بيماري جو علاج ڪرايو؟ (ڪلوميٽر) </string>
     <string name="tha26a"> ڪلوميٽر </string>
     <string name="tha27"> اسپتال وڃڻ لا۽ ڪهڙي سواري جو استعمال ڪيو ويو </string>
     <string name="tha27a"> لوڪل سواري بس </string>
@@ -462,7 +462,7 @@
     <string name="tha27f"> ايمبولنس </string>
     <string name="tha27g"> پنڌ </string>
     <string name="tha27h"> ڪجھ به نه (گھر۾علاج ڪيو) </string>
-    <string name="tha28"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) دستن جي بيماري دوران علاج ڪرايو؟ </string>
+    <string name="tha28"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) دستن جي بيماري دوران علاج ڪرايو؟ (منٽ)</string>
     <string name="tha28a"> منٽ </string>
     <string name="tha29"> (نالو) دستن جي بيماريءَ جي علاج لاءِ سواري تي توھانجا ڪيترا پئسا خرچ ٿيا؟ </string>
     <string name="tha29a"> روپيا </string>

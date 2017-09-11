@@ -1115,47 +1115,58 @@
 
                     </LinearLayout>
 
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/tha25"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <RadioGroup
-                        android:id="@+id/tha25"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/tha25a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tha25a" />
-
-                        <RadioButton
-                            android:id="@+id/tha25b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tha25b" />
-
-                        <RadioButton
-                            android:id="@+id/tha25c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tha25c" />
-
-                    </RadioGroup>
-
                 </LinearLayout>
 
             </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrptha25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/tha25"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <RadioGroup
+                    android:id="@+id/tha25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/tha25a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tha25a" />
+
+                    <RadioButton
+                        android:id="@+id/tha25b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tha25b" />
+
+                    <RadioButton
+                        android:id="@+id/tha25c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tha25c" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -1175,6 +1186,11 @@
                 android:hint="@string/tha26"
                 android:inputType="numberDecimal" />
 
+            <CheckBox
+                android:id="@+id/tha26888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1293,6 +1309,14 @@
                 android:hint="@string/tha28"
                 android:inputType="number" />
 
+
+            <CheckBox
+                android:id="@+id/tha28888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1311,6 +1335,11 @@
                 android:hint="@string/tha29"
                 android:inputType="number" />
 
+            <CheckBox
+                android:id="@+id/tha29888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"

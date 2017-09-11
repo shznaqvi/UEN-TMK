@@ -262,6 +262,10 @@ public class SectionHAActivity extends Activity {
     RadioButton tha25c;
     @BindView(R.id.tha26)
     EditText tha26;
+
+    @BindView(R.id.tha26888)
+    CheckBox tha26888;
+
     @BindView(R.id.tha27)
     RadioGroup tha27;
     @BindView(R.id.tha27a)
@@ -286,8 +290,16 @@ public class SectionHAActivity extends Activity {
     EditText tha2788x;
     @BindView(R.id.tha28)
     EditText tha28;
+
+    @BindView(R.id.tha28888)
+    CheckBox tha28888;
+
     @BindView(R.id.tha29)
     EditText tha29;
+
+    @BindView(R.id.tha29888)
+    CheckBox tha29888;
+
     @BindView(R.id.tha30)
     EditText tha30;
     @BindView(R.id.tha31)
@@ -361,6 +373,9 @@ public class SectionHAActivity extends Activity {
 
     @BindView(R.id.fldGrptha23)
     LinearLayout fldGrptha23;
+
+    @BindView(R.id.fldGrptha25)
+    LinearLayout fldGrptha25;
 
 
     @Override
@@ -565,10 +580,9 @@ public class SectionHAActivity extends Activity {
                     tha24f.setChecked(false);
                     tha24g.setChecked(false);
 
-
                     fldGrptha14.setVisibility(View.GONE);
-                } else {
 
+                } else {
                     fldGrptha14.setVisibility(View.VISIBLE);
                 }
             }
@@ -739,6 +753,20 @@ public class SectionHAActivity extends Activity {
         });
 
 
+        tha26888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tha26888.isChecked()) {
+                    tha26.setText(null);
+                    tha26.setVisibility(View.GONE);
+                } else {
+                    tha26.setVisibility(View.VISIBLE);
+                    tha26.requestFocus();
+                }
+            }
+        });
+
+
         tha2788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
 
         {
@@ -750,6 +778,33 @@ public class SectionHAActivity extends Activity {
                 } else {
                     tha2788x.setText(null);
                     tha2788x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        tha28888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tha28888.isChecked()) {
+                    tha28.setText(null);
+                    tha28.setVisibility(View.GONE);
+                } else {
+                    tha28.setVisibility(View.VISIBLE);
+                    tha28.requestFocus();
+                }
+            }
+        });
+
+        tha29888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (tha29888.isChecked()) {
+                    tha29.setText(null);
+                    tha29.setVisibility(View.GONE);
+                } else {
+                    tha29.setVisibility(View.VISIBLE);
+                    tha29.requestFocus();
                 }
             }
         });
@@ -1231,14 +1286,18 @@ public class SectionHAActivity extends Activity {
             }
 
 
-            //        26
-            if (tha26.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha26), Toast.LENGTH_SHORT).show();
-                tha26.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "tha26: This data is Required!");
-                return false;
-            } else {
-                tha26.setError(null);
+            if (!tha26888.isChecked()) {
+
+                //        26
+                if (tha26.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha26), Toast.LENGTH_SHORT).show();
+                    tha26.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "tha26: This data is Required!");
+                    return false;
+                } else {
+                    tha26.setError(null);
+                }
+
             }
 
 
@@ -1266,25 +1325,32 @@ public class SectionHAActivity extends Activity {
             }
 
 
-            //        28
-            if (tha28.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha28), Toast.LENGTH_SHORT).show();
-                tha28.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "tha28: This data is Required!");
-                return false;
-            } else {
-                tha28.setError(null);
+            if (!tha28888.isChecked()) {
+
+                //        28
+                if (tha28.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha28), Toast.LENGTH_SHORT).show();
+                    tha28.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "tha28: This data is Required!");
+                    return false;
+                } else {
+                    tha28.setError(null);
+                }
+
             }
 
+            if (!tha29888.isChecked()) {
 
-            //        29
-            if (tha29.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha29), Toast.LENGTH_SHORT).show();
-                tha29.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "tha29: This data is Required!");
-                return false;
-            } else {
-                tha29.setError(null);
+                //        29
+                if (tha29.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha29), Toast.LENGTH_SHORT).show();
+                    tha29.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "tha29: This data is Required!");
+                    return false;
+                } else {
+                    tha29.setError(null);
+                }
+
             }
 
 
@@ -1464,7 +1530,13 @@ public class SectionHAActivity extends Activity {
 
 
         sHA.put("tha25", tha25a.isChecked() ? "1" : tha25b.isChecked() ? "2" : tha25c.isChecked() ? "3" : "0");
-        sHA.put("tha26", tha26.getText().toString());
+
+        if (tha26888.isChecked()) {
+            sHA.put("tha26", "888");
+        } else {
+            sHA.put("tha26", tha26.getText().toString());
+        }
+
 
         sHA.put("tha27", tha27a.isChecked() ? "1" : tha27b.isChecked() ? "2"
                 : tha27c.isChecked() ? "3"
@@ -1478,8 +1550,22 @@ public class SectionHAActivity extends Activity {
 
 
         sHA.put("tha2788x", tha2788x.getText().toString());
-        sHA.put("tha28", tha28.getText().toString());
-        sHA.put("tha29", tha29.getText().toString());
+
+
+        if (tha28888.isChecked()) {
+            sHA.put("tha28", "888");
+        } else {
+            sHA.put("tha28", tha28.getText().toString());
+        }
+
+
+        if (tha29888.isChecked()) {
+            sHA.put("tha29", "888");
+        } else {
+            sHA.put("tha29", tha29.getText().toString());
+        }
+
+
         sHA.put("tha30", tha30.getText().toString());
 
         sHA.put("tha31", tha31a.isChecked() ? "1" : tha31b.isChecked() ? "2" : tha31c.isChecked() ? "3" : "0");
