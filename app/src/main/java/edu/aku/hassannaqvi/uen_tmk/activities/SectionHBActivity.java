@@ -1389,6 +1389,8 @@ public class SectionHBActivity extends Activity {
             }
 
 
+
+
             if (!thb34888.isChecked()) {
 
                 //        34
