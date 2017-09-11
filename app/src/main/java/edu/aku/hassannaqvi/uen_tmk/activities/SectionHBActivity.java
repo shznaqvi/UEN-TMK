@@ -260,6 +260,10 @@ public class SectionHBActivity extends Activity {
     RadioButton thb26c;
     @BindView(R.id.thb27)
     EditText thb27;
+
+    @BindView(R.id.thb27888)
+    CheckBox thb27888;
+
     @BindView(R.id.thb28)
     RadioGroup thb28;
     @BindView(R.id.thb28a)
@@ -286,6 +290,10 @@ public class SectionHBActivity extends Activity {
     EditText thb2888x;
     @BindView(R.id.thb29)
     EditText thb29;
+
+    @BindView(R.id.thb29888)
+    CheckBox thb29888;
+
     @BindView(R.id.thb30)
     EditText thb30;
     @BindView(R.id.thb31)
@@ -314,6 +322,10 @@ public class SectionHBActivity extends Activity {
     RadioButton thb3388;
     @BindView(R.id.thb34)
     EditText thb34;
+
+    @BindView(R.id.thb34888)
+    CheckBox thb34888;
+
     @BindView(R.id.thb35)
     RadioGroup thb35;
     @BindView(R.id.thb35a)
@@ -753,6 +765,20 @@ public class SectionHBActivity extends Activity {
         });
 
 
+        thb27888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb27888.isChecked()) {
+                    thb27.setText(null);
+                    thb27.setVisibility(View.GONE);
+                } else {
+                    thb27.setVisibility(View.VISIBLE);
+                    thb27.requestFocus();
+                }
+            }
+        });
+
+
         thb28.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -762,6 +788,34 @@ public class SectionHBActivity extends Activity {
                 } else {
                     thb2888x.setText(null);
                     thb2888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        thb29888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb29888.isChecked()) {
+                    thb29.setText(null);
+                    thb29.setVisibility(View.GONE);
+                } else {
+                    thb29.setVisibility(View.VISIBLE);
+                    thb29.requestFocus();
+                }
+            }
+        });
+
+
+        thb34888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb34888.isChecked()) {
+                    thb34.setText(null);
+                    thb34.setVisibility(View.GONE);
+                } else {
+                    thb34.setVisibility(View.VISIBLE);
+                    thb34.requestFocus();
                 }
             }
         });
@@ -1237,15 +1291,20 @@ public class SectionHBActivity extends Activity {
             }
 
 
-            //        27
-            if (thb27.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
-                thb27.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "thb27: This data is Required!");
-                return false;
-            } else {
-                thb27.setError(null);
+            if (!thb27888.isChecked()) {
+
+                //        27
+                if (thb27.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
+                    thb27.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "thb27: This data is Required!");
+                    return false;
+                } else {
+                    thb27.setError(null);
+                }
+
             }
+
 
             //        28
             if (thb28.getCheckedRadioButtonId() == -1) {
@@ -1271,14 +1330,18 @@ public class SectionHBActivity extends Activity {
             }
 
 
-            //        29
-            if (thb29.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
-                thb29.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "thb29: This data is Required!");
-                return false;
-            } else {
-                thb29.setError(null);
+            if (!thb29888.isChecked()) {
+
+                //        29
+                if (thb29.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
+                    thb29.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "thb29: This data is Required!");
+                    return false;
+                } else {
+                    thb29.setError(null);
+                }
+
             }
 
 
@@ -1326,14 +1389,18 @@ public class SectionHBActivity extends Activity {
             }
 
 
-            //        34
-            if (thb34.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb34), Toast.LENGTH_SHORT).show();
-                thb34.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "thb34: This data is Required!");
-                return false;
-            } else {
-                thb34.setError(null);
+            if (!thb34888.isChecked()) {
+
+                //        34
+                if (thb34.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb34), Toast.LENGTH_SHORT).show();
+                    thb34.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "thb34: This data is Required!");
+                    return false;
+                } else {
+                    thb34.setError(null);
+                }
+
             }
 
 

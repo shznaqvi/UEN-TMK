@@ -1178,13 +1178,19 @@
                 android:hint="@string/thb27"
                 android:inputType="number" />
 
+            <CheckBox
+                android:id="@+id/thb27888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/thb29"
+                android:text="@string/thb28"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
@@ -1301,6 +1307,12 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                 android:hint="@string/thb29"
                 android:inputType="textCapWords" />
+
+            <CheckBox
+                android:id="@+id/thb29888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -1452,6 +1464,13 @@
                 android:digits="0123456789 "
                 android:hint="@string/thb34"
                 android:inputType="number" />
+
+
+            <CheckBox
+                android:id="@+id/thb34888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
 
             <TextView
