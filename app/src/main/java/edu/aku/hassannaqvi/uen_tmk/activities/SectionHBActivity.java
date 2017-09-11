@@ -1389,8 +1389,6 @@ public class SectionHBActivity extends Activity {
             }
 
 
-
-
             if (!thb34888.isChecked()) {
 
                 //        34
@@ -1569,7 +1567,12 @@ public class SectionHBActivity extends Activity {
 
 
         sHB.put("thb26", thb26a.isChecked() ? "1" : thb26b.isChecked() ? "2" : thb26c.isChecked() ? "3" : "0");
-        sHB.put("thb27", thb27.getText().toString());
+
+        if (thb27888.isChecked()) {
+            sHB.put("thb27", "888");
+        } else {
+            sHB.put("thb27", thb27.getText().toString());
+        }
 
 
         sHB.put("thb28", thb28a.isChecked() ? "1"
@@ -1587,7 +1590,14 @@ public class SectionHBActivity extends Activity {
 
         sHB.put("thb2888x", thb2888x.getText().toString());
 
-        sHB.put("thb29", thb29.getText().toString());
+
+        if (thb29888.isChecked()) {
+            sHB.put("thb29", "888");
+        } else {
+            sHB.put("thb29", thb29.getText().toString());
+        }
+
+
         sHB.put("thb30", thb30.getText().toString());
 
         sHB.put("thb31", thb31a.isChecked() ? "1" : thb31b.isChecked() ? "2" : "0");
@@ -1597,7 +1607,14 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb33", thb33a.isChecked() ? "1" : thb33b.isChecked() ? "2" : thb3388.isChecked() ? "888"
                 : "0");
 
-        sHB.put("thb34", thb34.getText().toString());
+
+        if (thb34888.isChecked()) {
+            sHB.put("thb34", "888");
+        } else {
+            sHB.put("thb34", thb34.getText().toString());
+        }
+
+
         sHB.put("thb35", thb35a.isChecked() ? "1" : thb35b.isChecked() ? "2" : thb35c.isChecked() ? "3" : "0");
 
 
