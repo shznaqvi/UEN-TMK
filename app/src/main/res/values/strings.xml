@@ -97,6 +97,7 @@
     <string name="ta07"> Block/mohalla </string>
     <string name="ta08"> Street </string>
     <string name="ta09"> Have you got the permission? </string>
+    <string name="ta09c"> گھرو آف / اجازت دستياب ناهي. </string>
 
     <string name="tbAge"> تاريخ پيدائش / عمر </string>
     <string name="tbAge02"> عمر </string>
@@ -440,7 +441,7 @@
     <string name="tha22"> اسپتال مان موڪل ملڻ کان پوءِ ڇا توھان (نالو) کي ڪيترن ڏينهن بعد وڌيڪ فالواپ لا۽ ٻيهراچڻ جي صلاح ڏني وئي هئي؟ </string>
     <string name="tha23"> ڇا توھان (نالو) کي وڌيڪ فالواپ لا۽ ٻيهر اسپتال وٺي ويا هئيو </string>
     <string name="tha24"> ٻيهر اسپتال وڌيڪ فالواپ لا۽ وٺي نه وڃڻ جا سبب ڪهڙا هئا؟ </string>
-    <string name="tha24a"> فالواپ جو ڏينهن نهآيوآهي </string>
+    <string name="tha24a"> الواپ جو ڏينهن نهآيوآهي </string>
     <string name="tha24b"> يڏو وڏو مسئلو نه ھو جو وڌيڪ فالواپ لا۽ ٻيهراچجي </string>
     <string name="tha24c"> پئسا نه ھئا </string>
     <string name="tha24d"> سواري نه ھئي </string>
@@ -451,7 +452,7 @@
     <string name="tha25a"> تندرست ٿي ويوهو </string>
     <string name="tha25b"> اڃا بيمار آھي </string>
     <string name="tha25c"> مري ويو </string>
-    <string name="tha26"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) دستن جي بيماري جو علاج ڪرايو؟ (ڪلوميٽر) </string>
+    <string name="tha26"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) دستن جي بيماري جو علاج ڪرايو؟ </string>
     <string name="tha26a"> ڪلوميٽر </string>
     <string name="tha27"> اسپتال وڃڻ لا۽ ڪهڙي سواري جو استعمال ڪيو ويو </string>
     <string name="tha27a"> لوڪل سواري بس </string>
@@ -462,7 +463,7 @@
     <string name="tha27f"> ايمبولنس </string>
     <string name="tha27g"> پنڌ </string>
     <string name="tha27h"> ڪجھ به نه (گھر۾علاج ڪيو) </string>
-    <string name="tha28"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) دستن جي بيماري دوران علاج ڪرايو؟ (منٽ)</string>
+    <string name="tha28"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) دستن جي بيماري دوران علاج ڪرايو؟ </string>
     <string name="tha28a"> منٽ </string>
     <string name="tha29"> (نالو) دستن جي بيماريءَ جي علاج لاءِ سواري تي توھانجا ڪيترا پئسا خرچ ٿيا؟ </string>
     <string name="tha29a"> روپيا </string>
@@ -581,7 +582,7 @@
     <string name="thb26a"> تندرست ٿي ويوهو </string>
     <string name="thb26b"> اڃا بيمار آھي </string>
     <string name="thb26c"> مري ويو </string>
-    <string name="thb27"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) بخار، کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري دوران علاج ڪرايو؟ (ڪلوميٽر) </string>
+    <string name="thb27"> صحت مرڪز ڪيترو پري آھي، جتان توھان (نالو) بخار، کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري دوران علاج ڪرايو؟ </string>
     <string name="thb27a"> ڪلوميٽر </string>
     <string name="thb28"> اسپتال وڃڻ لا۽ ڪهڙي سواري جو استعمال ڪيو ويو؟ </string>
     <string name="thb28a"> لوڪل سواري بس </string>
@@ -593,7 +594,7 @@
     <string name="thb28g"> باءِ سائيڪل </string>
     <string name="thb28h"> پنڌ </string>
     <string name="thb28i"> ڪجھ به نه (گھر۾ علاج ڪيو) </string>
-    <string name="thb29"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) بخار، کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري دوران علاج ڪرايو؟ (منٽ) </string>
+    <string name="thb29"> صحت مرڪز تي پھچڻ ۾ ڪيترو وقت لڳو، جتان توھان (نالو) بخار، کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري دوران علاج ڪرايو؟ </string>
     <string name="thb29a"> منٽ </string>
     <string name="thb30"> (نالو) دستن جي بيماريءَ جي علاج لاءِ سواري تي توھان جا ڪيترا پئسا خرچ ٿيا؟ </string>
     <string name="thb30a"> روپيا </string>

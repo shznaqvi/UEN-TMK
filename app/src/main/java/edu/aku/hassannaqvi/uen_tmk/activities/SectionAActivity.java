@@ -73,6 +73,8 @@ public class SectionAActivity extends Activity {
     RadioButton ta09a;
     @BindView(R.id.ta09b)
     RadioButton ta09b;
+    @BindView(R.id.ta09c)
+    RadioButton ta09c;
     @BindView(R.id.btn_Continue)
     Button btn_Continue;
     @BindView(R.id.btn_End)
@@ -91,6 +93,8 @@ public class SectionAActivity extends Activity {
         ButterKnife.bind(this);
 
         db = new DatabaseHelper(this);
+
+        MainApp.familyMembersList = new ArrayList<>();
 
 //            Set adapter to ucs spinner
         ta04.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ucs));
@@ -111,12 +115,12 @@ public class SectionAActivity extends Activity {
         ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.ta09b) {
-                    btn_Continue.setVisibility(View.GONE);
-                    btn_End.setVisibility(View.VISIBLE);
-                } else {
+                if (i == R.id.ta09a) {
                     btn_Continue.setVisibility(View.VISIBLE);
                     btn_End.setVisibility(View.GONE);
+                } else {
+                    btn_Continue.setVisibility(View.GONE);
+                    btn_End.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -161,9 +165,6 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-
-                MainApp.familyMembersList = new ArrayList<>();
-
                 startActivity(new Intent(this, SectionBActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -196,7 +197,7 @@ public class SectionAActivity extends Activity {
         sa.put("ta06", ta06.getText().toString());
         sa.put("ta07", ta07.getText().toString());
         sa.put("ta08", ta08.getText().toString());
-        sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : "0");
+        sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
 
         MainApp.fc.setsA(String.valueOf(sa));
 
@@ -351,12 +352,12 @@ public class SectionAActivity extends Activity {
 //        09
         if (ta09.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta09), Toast.LENGTH_SHORT).show();
-            ta09b.setError("This data is Required!");    // Set Error on last radio button
+            ta09c.setError("This data is Required!");    // Set Error on last radio button
 
             Log.i(TAG, "ta09: This data is Required!");
             return false;
         } else {
-            ta09b.setError(null);
+            ta09c.setError(null);
         }
 
         return true;
