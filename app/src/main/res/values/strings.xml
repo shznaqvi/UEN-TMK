@@ -258,7 +258,7 @@
     <string name="tc09d"> موٽرسائيڪل/اسڪوٽر </string>
     <string name="tc09e"> جانورن واري گاڏو </string>
     <string name="tc09f"> ڪار/ٽرڪ/بس </string>
-    <string name="tc09g"> ٽريڪٽ </string>
+    <string name="tc09g"> ٽريڪٽر </string>
     <string name="tc09h"> موٽر واري ٻيڙي </string>
     <string name="tc09i"> بنا موٽر واري ٻيڙي </string>
     <string name="tc10"> ڇا جواب ڏيندڙعورت وٽ پنھنجي موبائل آھي؟ </string>
@@ -286,7 +286,7 @@
     <string name="tc16h"> پشتو </string>
     <string name="tc17"> گهر جي تقريبن مهيني جي آمدني ڪيتري آهي؟ </string>
     <string name="tc17a"> آمدني روپين۾ </string>
-    <string name="tc18"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران(ڪائي عورت جو نالو) حمل, ويم يا ويم کان پوءِ 42 ڏينهن تائين مري وئي آھي؟ </string>
+    <string name="tc18"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران(ڪائي عورت جو نالو) حمل, ويم يا ويم کان پوءِ 40 ڏينهن تائين مري وئي آھي؟ </string>
     <string name="tc19"> جيڪڏهن ها ته ڪيتريون عورتون مري ويون آھن؟ </string>
     <string name="tc19a"> مري ويل مائرن جو تعداد </string>
     <string name="tc20"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران (ڪوئي 5 سالن کان گھٽ عمرجوٻارنالو) ٻار مري ويو آھي؟ </string>
@@ -587,7 +587,7 @@
     <string name="thb28"> اسپتال وڃڻ لا۽ ڪهڙي سواري جو استعمال ڪيو ويو؟ </string>
     <string name="thb28a"> لوڪل سواري بس </string>
     <string name="thb28b"> رڪشا/چنگچي </string>
-    <string name="thb28c"> رڪشا/چنگچي </string>
+    <string name="thb28c"> موٽر سائيڪل </string>
     <string name="thb28d"> پرائيويٽ ڪار </string>
     <string name="thb28e"> ٽيڪسي </string>
     <string name="thb28f"> ايمبولنس </string>

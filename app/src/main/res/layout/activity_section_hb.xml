@@ -1123,42 +1123,52 @@
             </LinearLayout>
 
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpth26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/thb26"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-            <RadioGroup
-                android:id="@+id/thb26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/thb26a"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/thb26a" />
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/thb26"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-                <RadioButton
-                    android:id="@+id/thb26b"
+                <RadioGroup
+                    android:id="@+id/thb26"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/thb26b" />
+                    android:layout_height="wrap_content">
 
-                <RadioButton
-                    android:id="@+id/thb26c"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/thb26c" />
+                    <RadioButton
+                        android:id="@+id/thb26a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26a" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/thb26b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26b" />
+
+                    <RadioButton
+                        android:id="@+id/thb26c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26c" />
+
+                </RadioGroup>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -1175,7 +1185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789 "
-                android:hint="@string/thb27"
+                android:hint="@string/thb27a"
                 android:inputType="number" />
 
             <CheckBox
@@ -1305,7 +1315,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/thb29"
+                android:hint="@string/thb29a"
                 android:inputType="textCapWords" />
 
             <CheckBox
@@ -1332,6 +1342,11 @@
                 android:hint="@string/thb30"
                 android:inputType="number" />
 
+            <CheckBox
+                android:id="@+id/thb30888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"

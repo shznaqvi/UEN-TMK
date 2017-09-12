@@ -1062,5 +1062,3 @@ public class SectionJActivity extends Activity {
         return true;
     }
 }
-
-

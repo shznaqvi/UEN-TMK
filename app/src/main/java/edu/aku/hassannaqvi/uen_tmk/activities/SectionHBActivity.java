@@ -296,6 +296,10 @@ public class SectionHBActivity extends Activity {
 
     @BindView(R.id.thb30)
     EditText thb30;
+
+    @BindView(R.id.thb30888)
+    CheckBox thb30888;
+
     @BindView(R.id.thb31)
     RadioGroup thb31;
     @BindView(R.id.thb31a)
@@ -381,6 +385,9 @@ public class SectionHBActivity extends Activity {
 
     @BindView(R.id.fldGrpth25)
     LinearLayout fldGrpth25;
+
+    @BindView(R.id.fldGrpth26)
+    LinearLayout fldGrpth26;
 
     @BindView(R.id.fldGrpth17)
     LinearLayout fldGrpth17;
@@ -662,6 +669,7 @@ public class SectionHBActivity extends Activity {
 
 
                     fldGrpth22.setVisibility(View.VISIBLE);
+                    fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21hr.setVisibility(View.VISIBLE);
                     thb21hr.requestFocus();
@@ -685,6 +693,7 @@ public class SectionHBActivity extends Activity {
                     thb26.clearCheck();*/
 
                     fldGrpth22.setVisibility(View.VISIBLE);
+                    fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21d.setVisibility(View.VISIBLE);
                     thb21d.requestFocus();
@@ -714,6 +723,7 @@ public class SectionHBActivity extends Activity {
                     thb21d.setVisibility(View.GONE);
 
                     fldGrpth22.setVisibility(View.GONE);
+                    fldGrpth26.setVisibility(View.GONE);
                 }
             }
         });
@@ -802,6 +812,20 @@ public class SectionHBActivity extends Activity {
                 } else {
                     thb29.setVisibility(View.VISIBLE);
                     thb29.requestFocus();
+                }
+            }
+        });
+
+
+        thb30888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (thb30888.isChecked()) {
+                    thb30.setText(null);
+                    thb30.setVisibility(View.GONE);
+                } else {
+                    thb30.setVisibility(View.VISIBLE);
+                    thb30.requestFocus();
                 }
             }
         });
@@ -1345,14 +1369,18 @@ public class SectionHBActivity extends Activity {
             }
 
 
-            //        30
-            if (thb30.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
-                thb30.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "thb30: This data is Required!");
-                return false;
-            } else {
-                thb30.setError(null);
+            if (!thb30888.isChecked()) {
+
+                //        30
+                if (thb30.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
+                    thb30.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "thb30: This data is Required!");
+                    return false;
+                } else {
+                    thb30.setError(null);
+                }
+
             }
 
 
@@ -1598,7 +1626,12 @@ public class SectionHBActivity extends Activity {
         }
 
 
-        sHB.put("thb30", thb30.getText().toString());
+        if (thb30888.isChecked()) {
+            sHB.put("thb30", "888");
+        } else {
+            sHB.put("thb30", thb30.getText().toString());
+        }
+
 
         sHB.put("thb31", thb31a.isChecked() ? "1" : thb31b.isChecked() ? "2" : "0");
         sHB.put("thb32", thb32a.isChecked() ? "1" : thb32b.isChecked() ? "2" : thb3288.isChecked() ? "888"
