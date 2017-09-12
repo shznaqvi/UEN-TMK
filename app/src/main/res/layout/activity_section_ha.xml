@@ -1183,7 +1183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789. "
-                android:hint="@string/tha26"
+                android:hint="@string/tha26a"
                 android:inputType="numberDecimal" />
 
             <CheckBox
@@ -1306,16 +1306,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789 "
-                android:hint="@string/tha28"
+                android:hint="@string/tha28a"
                 android:inputType="number" />
-
 
             <CheckBox
                 android:id="@+id/tha28888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dkn" />
-
 
             <TextView
                 android:layout_width="match_parent"
@@ -1332,7 +1330,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789 "
-                android:hint="@string/tha29"
+                android:hint="@string/tha29a"
                 android:inputType="number" />
 
             <CheckBox
@@ -1359,6 +1357,11 @@
                 android:hint="@string/tha30"
                 android:inputType="number" />
 
+            <CheckBox
+                android:id="@+id/tha30888"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dkn" />
 
             <TextView
                 android:layout_width="match_parent"
