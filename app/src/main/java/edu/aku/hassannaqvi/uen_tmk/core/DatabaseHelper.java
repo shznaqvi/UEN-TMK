@@ -273,6 +273,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_SELECT_CHILD =
             "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
 
+    private static final String SQL_SELECT_MWRA =
+            "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
+
 
     private final String TAG = "DatabaseHelper";
 
@@ -565,6 +568,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return memList;
     }
+
+
+    public Collection<FamilyMembersContract> getMWRA(String dssID, String uuid) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
+        Collection<FamilyMembersContract> memList = new ArrayList<>();
+        try {
+
+//            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid, "('1', '2')"});
+            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid});
+
+            while (c.moveToNext()) {
+                FamilyMembersContract mc = new FamilyMembersContract();
+                memList.add(mc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return memList;
+    }
+
 
     public Long addForm(FormsContract fc) {
 

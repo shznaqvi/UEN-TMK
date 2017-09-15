@@ -7,15 +7,21 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,6 +64,11 @@ public class SectionDActivity extends Activity {
     @BindView(R.id.count)
     TextView count;
 
+    @BindView(R.id.td00)
+    Spinner td00;
+
+    Map<String, String> childsMap;
+    ArrayList<String> lstChild;
 
 
     @Override
@@ -99,6 +110,21 @@ public class SectionDActivity extends Activity {
             }
         });
 
+
+        /*childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
+
+        childsMap.put("....", "");
+        lstChild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1")) {
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
+                lstChild.add(MainApp.familyMembersList.get(i).getName());
+            }
+        }
+
+        td00.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));*/
     }
 
     @OnClick(R.id.btn_End)
@@ -156,6 +182,7 @@ public class SectionDActivity extends Activity {
             MainApp.mw.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.mw.get_ID()));
             db.updateMWRAID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -284,8 +311,6 @@ public class SectionDActivity extends Activity {
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }*/
-
-
 
 
 }

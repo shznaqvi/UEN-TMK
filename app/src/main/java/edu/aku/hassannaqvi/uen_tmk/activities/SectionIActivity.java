@@ -18,6 +18,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import butterknife.BindView;
@@ -621,8 +622,11 @@ public class SectionIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
 
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
+
         for (DatePickerInputEditText de : dates) {
             de.setManager(getSupportFragmentManager());
+            de.setMaxDate(dateToday);
         }
 
         ti03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -702,6 +706,22 @@ public class SectionIActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        ti04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (ti04a.isChecked()) {
+                    fldGrpti05.setVisibility(View.VISIBLE);
+                    ti05.requestFocus();
+                } else {
+                    ti05.setText(null);
+                    ti05888.setChecked(false);
+                    fldGrpti05.setVisibility(View.GONE);
+                }
+            }
+        });
+
 
         ti05888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -198,6 +199,10 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.counter++;
 
         tb07.setManager(getSupportFragmentManager());
+
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
+
+        tb07.setMaxDate(dateToday);
 
         db = new DatabaseHelper(this);
 
@@ -539,6 +544,7 @@ public class SectionBActivity extends AppCompatActivity {
                     (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 
+
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
                     ageInyears < 5 ? "1" : "2", String.valueOf(MainApp.counter)));
 
@@ -712,6 +718,38 @@ public class SectionBActivity extends AppCompatActivity {
         } else {
             tb11d.setError(null);
         }
+
+
+        if (!tb09.getText().toString().equals("NA")) {
+
+            if (Integer.parseInt(tb08y.getText().toString())
+                    <= Integer.parseInt(tb09.getText().toString()) &&
+                    !tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777")) {
+                Toast.makeText(this, "Age and years of education cannot be same or Years of education cannot be greater than age ", Toast.LENGTH_SHORT).show();
+                tb09.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tb09: This data is Required!");
+                return false;
+            } else {
+                tb09.setError(null);
+            }
+
+        }
+
+
+        if (!tb09.getText().toString().equals("NA")) {
+
+            if (Integer.parseInt(tb09.getText().toString()) < 0 && (!tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777"))
+                    || Integer.parseInt(tb09.getText().toString()) > 20 && (!tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777"))) {
+                Toast.makeText(this, "Years of education cannot be less than 0 and cannot be greater than 20 ", Toast.LENGTH_SHORT).show();
+                tb09.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tb09: This data is Required!");
+                return false;
+            } else {
+                tb09.setError(null);
+            }
+
+        }
+
 
         return true;
     }
