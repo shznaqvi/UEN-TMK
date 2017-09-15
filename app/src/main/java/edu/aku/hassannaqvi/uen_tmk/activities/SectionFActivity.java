@@ -189,7 +189,6 @@ public class SectionFActivity extends AppCompatActivity {
                 : tf07h.isChecked() ? "8" : tf0788.isChecked() ? "88" : "0");
         sF.put("tf0788x", tf0788x.getText().toString());
 
-
         MainApp.dcC.setsF(String.valueOf(sF));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
