@@ -672,6 +672,7 @@ public class SectionJActivity extends Activity {
         JSONObject sJ = new JSONObject();
 
         sJ.put("tjchildSerial", childsMap.get(tj01.getSelectedItem().toString()));
+        sJ.put("tjchildName", tj01.getSelectedItem().toString());
 
         sJ.put("tj01", tj01.getSelectedItem().toString());
 

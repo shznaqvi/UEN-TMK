@@ -540,7 +540,10 @@ public class SectionBActivity extends AppCompatActivity {
             db.updateFamilyMemberID();
 
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
-                    ageInyears < 5 ? "1" : "2", String.valueOf(MainApp.counter)));
+                    ageInyears < 5 ? "1" :
+                            (tb11a.isChecked() && tb04b.isChecked()
+                                    && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
+                    , String.valueOf(MainApp.counter)));
 
             return true;
         } else {

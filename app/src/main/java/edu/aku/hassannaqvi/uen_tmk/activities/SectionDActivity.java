@@ -3,19 +3,27 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +37,8 @@ public class SectionDActivity extends Activity {
 
     private static final String TAG = SectionDActivity.class.getSimpleName();
 
+    @BindView(R.id.scroll)
+    ScrollView scroll;
     @BindView(R.id.td01)
     RadioGroup td01;
     @BindView(R.id.td01a)
@@ -55,10 +65,13 @@ public class SectionDActivity extends Activity {
     LinearLayout fldGrptd05;
     @BindView(R.id.td05)
     EditText td05;
-    @BindView(R.id.count)
-    TextView count;
+    @BindView(R.id.mwraNames)
+    Spinner mwraNames;
 
+    Map<String, String> mwraMap;
+    ArrayList<String> lstMwra;
 
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +79,24 @@ public class SectionDActivity extends Activity {
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
 
-        count.setText("Woman: " + MainApp.mwraCount + " out of " + MainApp.TotalMWRACount);
+//        mwraNames.setText("Woman: " + MainApp.mwraCount + " out of " + MainApp.TotalMWRACount);
+
+        //        get data from sec B
+
+        mwraMap = new HashMap<>();
+        lstMwra = new ArrayList<>();
+
+        mwraMap.put("....", "");
+        lstMwra.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("2")) {
+                mwraMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
+                lstMwra.add(MainApp.familyMembersList.get(i).getName());
+            }
+        }
+
+        mwraNames.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstMwra));
 
         td01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -124,16 +154,27 @@ public class SectionDActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
-
                 MainApp.mwraCount++;
 
                 if (MainApp.mwraCount > MainApp.TotalMWRACount) {
+                    finish();
+
                     Intent secNext = new Intent(this, SectionEActivity.class);
                     startActivity(secNext);
                 } else {
-                    Intent secNext = new Intent(this, SectionDActivity.class);
-                    startActivity(secNext);
+                    /*Intent secNext = new Intent(this, SectionDActivity.class);
+                    startActivity(secNext);*/
+
+                    clearFields();
+
+                    lstMwra.remove(position);
+                    mwraMap.remove(position);
+
+                    mwraNames.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstMwra));
+
+                    scroll.setScrollY(0);
+
+
                 }
 
 
@@ -141,6 +182,17 @@ public class SectionDActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void clearFields() {
+        td01.clearCheck();
+        td02.setText(null);
+        td03lb.setText(null);
+        td03sb.setText(null);
+        td03mc.setText(null);
+        td04.clearCheck();
+        td05.setText(null);
+
     }
 
     private boolean UpdateDB() {
@@ -178,6 +230,8 @@ public class SectionDActivity extends Activity {
 
         JSONObject sD = new JSONObject();
 
+        sD.put("tdmwraSerial", mwraMap.get(mwraNames.getSelectedItem().toString()));
+        sD.put("tdmwraName", mwraNames.getSelectedItem().toString());
         sD.put("td01", td01a.isChecked() ? "1" : td01b.isChecked() ? "2" : "0");
         sD.put("td02", td02.getText().toString());
         sD.put("td03lb", td03lb.getText().toString());
@@ -195,6 +249,19 @@ public class SectionDActivity extends Activity {
     public boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        //        01
+        if (mwraNames.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty) MWRA name", Toast.LENGTH_SHORT).show();
+            ((TextView) mwraNames.getSelectedView()).setText("This Data is Required");
+            ((TextView) mwraNames.getSelectedView()).setTextColor(Color.RED);
+
+            Log.i(TAG, "mwraNames: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) mwraNames.getSelectedView()).setError(null);
+        }
+
 
         if (td01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.td01), Toast.LENGTH_SHORT).show();

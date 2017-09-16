@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
@@ -29,17 +30,23 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
 
-        <TextView
-            android:id="@+id/count"
+        <Spinner
+            android:id="@+id/mwraNames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:background="@color/pink_100"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp" />
+            android:layout_marginTop="16dp"></Spinner>
+
+        <!--        <TextView
+                    android:id="@+id/mwraNames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/pink_100"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="30sp" />-->
 
         <TextView
             android:layout_width="match_parent"
