@@ -144,6 +144,7 @@ public class SectionEActivity extends AppCompatActivity {
             MainApp.dcM.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.dcM.get_ID()));
             db.updateDeceasedMotherID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

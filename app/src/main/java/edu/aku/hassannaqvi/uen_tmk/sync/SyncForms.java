@@ -58,7 +58,6 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         pd = new ProgressDialog(mContext);
         pd.setTitle("Please wait... Processing Forms");
         pd.show();
-
     }
 
 

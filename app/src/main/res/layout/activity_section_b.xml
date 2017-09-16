@@ -352,7 +352,8 @@
                 android:focusable="true"
                 android:hint="@string/tbdob01"
                 android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
+                app:dateFormat="dd-MM-yyyy"
+                app:minDate="01/01/1917" />
 
         </LinearLayout>
 

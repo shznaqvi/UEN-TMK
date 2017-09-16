@@ -15,6 +15,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -89,6 +92,12 @@ public class SectionFActivity extends AppCompatActivity {
 
         tf06.setManager(getSupportFragmentManager());
 
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        String maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_5Years) + MainApp.MILLISECONDS_IN_DAY));
+
+        tf06.setMinDate(maxDate5Years);
+        tf06.setMaxDate(dateToday);
+
         tf0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -151,6 +160,7 @@ public class SectionFActivity extends AppCompatActivity {
             MainApp.dcC.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.dcC.get_ID()));
             db.updateDeceasedChildID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -187,7 +197,6 @@ public class SectionFActivity extends AppCompatActivity {
                 : tf07d.isChecked() ? "4" : tf07e.isChecked() ? "5" : tf07f.isChecked() ? "6" : tf07g.isChecked() ? "7"
                 : tf07h.isChecked() ? "8" : tf0788.isChecked() ? "88" : "0");
         sF.put("tf0788x", tf0788x.getText().toString());
-
 
         MainApp.dcC.setsF(String.valueOf(sF));
 

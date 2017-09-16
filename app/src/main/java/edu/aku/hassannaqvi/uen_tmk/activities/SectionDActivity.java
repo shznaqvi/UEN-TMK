@@ -129,6 +129,21 @@ public class SectionDActivity extends Activity {
             }
         });
 
+
+        /*childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
+
+        childsMap.put("....", "");
+        lstChild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1")) {
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
+                lstChild.add(MainApp.familyMembersList.get(i).getName());
+            }
+        }
+
+        td00.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));*/
     }
 
     @OnClick(R.id.btn_End)
@@ -208,6 +223,7 @@ public class SectionDActivity extends Activity {
             MainApp.mw.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.mw.get_ID()));
             db.updateMWRAID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

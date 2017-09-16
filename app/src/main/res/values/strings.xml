@@ -221,9 +221,9 @@
     <string name="tc06d"> گھر کان ٻاھر پچايو ويندو آھي </string>
     <string name="tc07"> گھر ۾ رڌ پچاءُ لاءِ ڪهڙي قسم جو ٻارڻ خاص طور تي استعمال ڪندا آهيو؟ </string>
     <string name="tc07a"> بجلي </string>
-    <string name="tc07b"> LPG سئلنڊر واري گئس </string>
+    <string name="tc07b"> ايل پي جي سئلنڊر واري گئس </string>
     <string name="tc07c"> قدرتي گئس </string>
-    <string name="tc07d"> Bio ھٿرادو گئس </string>
+    <string name="tc07d"> بايو ھٿرادو گئس </string>
     <string name="tc07e"> گاسليٽ </string>
     <string name="tc07f"> ڪوئلو/ چمني </string>
     <string name="tc07g"> اڱار </string>
@@ -238,6 +238,8 @@
     <string name="tc08c"> ٽيليويزن </string>
     <string name="tc08d"> تار واري فون </string>
     <string name="tc08e"> ريفريجريٽر </string>
+
+
     <string name="tc08f"> ائير ڪنڊيشنر </string>
     <string name="tc08g"> ايئر ڪولر </string>
     <string name="tc08h"> ڪرسي </string>
@@ -292,6 +294,7 @@
     <string name="tc20"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران (ڪوئي 5 سالن کان گھٽ عمرجوٻارنالو) ٻار مري ويو آھي؟ </string>
     <string name="tc21"> جيڪڏهن ها ته ڪيتراٻار مري ويا آھن؟ </string>
     <string name="tc21a"> مري ويل ٻارن جو تعداد </string>
+    <string name="td00"> عورت جو نالو </string>
     <string name="td01"> ڇا (عورت جو نالو) شادي کان پوءِ ڪڏھن به حمل سان ٿي؟ </string>
     <string name="td02"> (عورت جو نالو) شادي کان پوءِ ڪيترا دفعه حمل سان ٿي آھي؟ </string>
     <string name="td02a"> حملن جو تعداد </string>
