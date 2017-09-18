@@ -400,6 +400,9 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.fldGrpth17)
     LinearLayout fldGrpth17;
 
+    @BindView(R.id.fldGrpth08a)
+    LinearLayout fldGrpth08a;
+
 
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
@@ -572,8 +575,99 @@ public class SectionHBActivity extends Activity {
                     thb0888x.setText(null);
 
                     fldGrpth08.setVisibility(View.GONE);
+                    fldGrpth08a.setVisibility(View.VISIBLE);
+
                 } else {
+
+                    thb09.setText(null);
+                    thb10.clearCheck();
+                    thb11.clearCheck();
+
+                    thb12a.setChecked(false);
+                    thb12b.setChecked(false);
+                    thb12c.setChecked(false);
+                    thb12d.setChecked(false);
+                    thb12e.setChecked(false);
+                    thb12f.setChecked(false);
+                    thb12g.setChecked(false);
+                    thb12h.setChecked(false);
+
+                    thb13.clearCheck();
+                    thb14.clearCheck();
+                    thb15.clearCheck();
+
+                    thb16.clearCheck();
+
+                    thb17.clearCheck();
+                    thb1788x.setText(null);
+
+                    thb18.clearCheck();
+                    thb19.clearCheck();
+
+                    thb20a.setChecked(false);
+                    thb20b.setChecked(false);
+                    thb20c.setChecked(false);
+                    thb20d.setChecked(false);
+                    thb20e.setChecked(false);
+                    thb20f.setChecked(false);
+                    thb20g.setChecked(false);
+
+                    thb21.clearCheck();
+                    thb21hr.setText(null);
+                    thb21d.setText(null);
+
+                    thb22.clearCheck();
+                    thb23.setText(null);
+                    thb24.clearCheck();
+
+                    thb25a.setChecked(false);
+                    thb25b.setChecked(false);
+                    thb25c.setChecked(false);
+                    thb25d.setChecked(false);
+                    thb25e.setChecked(false);
+                    thb25f.setChecked(false);
+                    thb25g.setChecked(false);
+
+                    thb26.clearCheck();
+
+                    thb27.setText(null);
+                    thb27888.setChecked(false);
+
+                    thb28.clearCheck();
+                    thb2888x.setText(null);
+
+                    thb29.setText(null);
+                    thb29888.setChecked(false);
+
+                    thb30.setText(null);
+                    thb30888.setChecked(false);
+
+                    thb31.clearCheck();
+                    thb32.clearCheck();
+                    thb33.clearCheck();
+
+                    thb34.setText(null);
+                    thb34888.setChecked(false);
+
+                    thb35.clearCheck();
+
+                    thb36a.setChecked(false);
+                    thb36b.setChecked(false);
+                    thb36c.setChecked(false);
+                    thb36d.setChecked(false);
+                    thb36e.setChecked(false);
+                    thb36f.setChecked(false);
+                    thb36g.setChecked(false);
+                    thb36h.setChecked(false);
+                    thb36i.setChecked(false);
+                    thb36j.setChecked(false);
+                    thb36k.setChecked(false);
+                    thb3688.setChecked(false);
+
+                    thb3688x.setText(null);
+
                     fldGrpth08.setVisibility(View.VISIBLE);
+                    fldGrpth08a.setVisibility(View.GONE);
                 }
             }
         });
