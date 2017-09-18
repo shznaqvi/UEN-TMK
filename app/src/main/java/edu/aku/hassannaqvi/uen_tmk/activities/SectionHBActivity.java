@@ -1709,4 +1709,9 @@ public class SectionHBActivity extends Activity {
         MainApp.fc.setsHB(String.valueOf(sHB));
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
 }

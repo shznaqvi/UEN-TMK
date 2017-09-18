@@ -487,6 +487,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789"
+            android:hint="@string/tc04"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -1627,6 +1628,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14a"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1642,6 +1644,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14b"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1657,6 +1660,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14c"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1672,6 +1676,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14d"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1687,6 +1692,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14e"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1702,6 +1708,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14f"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1841,6 +1848,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789"
+            android:hint="@string/tc17"
             android:inputType="number"
             android:maxLength="6" />
 

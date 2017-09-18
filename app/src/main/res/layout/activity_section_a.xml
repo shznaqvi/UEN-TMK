@@ -153,6 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+            android:hint="@string/tha05"
             android:inputType="text" />
 
         <TextView
@@ -169,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:hint="@string/ta05u"
             android:inputType="text" />
 
         <!--06-->
@@ -187,6 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+            android:hint="@string/ta06"
             android:inputType="text" />
 
         <!--07-->
@@ -205,6 +208,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+            android:hint="@string/ta07"
             android:inputType="text" />
 
         <!--08-->
@@ -223,6 +227,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+            android:hint="@string/ta08"
             android:inputType="text" />
 
         <!--9-->

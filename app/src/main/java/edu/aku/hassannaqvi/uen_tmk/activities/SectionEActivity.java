@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -48,14 +49,14 @@ public class SectionEActivity extends AppCompatActivity {
     RadioButton te03d;
     @BindView(R.id.te03e)
     RadioButton te03e;
-    /*    @BindView(R.id.te04)
-        DatePickerInputEditText te04;*/
-    @BindView(R.id.te04d)
+    @BindView(R.id.te04)
+    DatePickerInputEditText te04;
+/*    @BindView(R.id.te04d)
     EditText te04d;
     @BindView(R.id.te04m)
     EditText te04m;
     @BindView(R.id.te04y)
-    EditText te04y;
+    EditText te04y;*/
 
     @BindView(R.id.te05)
     RadioGroup te05;
@@ -85,7 +86,7 @@ public class SectionEActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_e);
         ButterKnife.bind(this);
 
-//        te04.setManager(getSupportFragmentManager());
+        te04.setManager(getSupportFragmentManager());
 
         MainApp.CounterDeceasedMother++;
 
@@ -197,10 +198,10 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("te03", te03a.isChecked() ? "1" : te03b.isChecked() ? "2" : te03c.isChecked() ? "3"
                 : te03d.isChecked() ? "4" : te03e.isChecked() ? "5" : "0");
 
-//        sE.put("te04", te04.getText().toString());
-        sE.put("te04d", te04d.getText().toString());
+        sE.put("te04", te04.getText().toString());
+/*        sE.put("te04d", te04d.getText().toString());
         sE.put("te04m", te04m.getText().toString());
-        sE.put("te04y", te04y.getText().toString());
+        sE.put("te04y", te04y.getText().toString());*/
 
         sE.put("te05", te05a.isChecked() ? "1" : te05b.isChecked() ? "2" : te05c.isChecked() ? "3"
                 : te05d.isChecked() ? "4" : te05e.isChecked() ? "5" : te05f.isChecked() ? "6" : te0588.isChecked() ? "88" : "0");
@@ -298,7 +299,7 @@ public class SectionEActivity extends AppCompatActivity {
             te03a.setError(null);
         }
 
-        /*if (te04.getText().toString().isEmpty()) {
+        if (te04.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
             te04.setError("This data is Required!");    // Set Error on last radio button
 
@@ -306,8 +307,8 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         } else {
             te04.setError(null);
-        }*/
-        if (te04d.getText().toString().isEmpty() || te04m.getText().toString().isEmpty() || te04y.getText().toString().isEmpty()) {
+        }
+        /*if (te04d.getText().toString().isEmpty() || te04m.getText().toString().isEmpty() || te04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
             te04d.setError("This data is Required!");    // Set Error on last radio button
 
@@ -346,7 +347,7 @@ public class SectionEActivity extends AppCompatActivity {
             return false;
         } else {
             te04y.setError(null);
-        }
+        }*/
 
         if (te05.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te05), Toast.LENGTH_SHORT).show();
@@ -372,11 +373,10 @@ public class SectionEActivity extends AppCompatActivity {
     }
 
 
-
-    /*@Override
+    @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }*/
+    }
 
 
 }
