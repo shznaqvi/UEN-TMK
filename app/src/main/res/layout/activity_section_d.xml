@@ -30,12 +30,6 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
 
-        <Spinner
-            android:id="@+id/mwraNames"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"></Spinner>
-
         <!--        <TextView
                     android:id="@+id/mwraNames"
                     android:layout_width="match_parent"
@@ -48,7 +42,6 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="30sp" />-->
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,9 +52,15 @@
             android:textColor="@android:color/white" />
 
         <Spinner
-            android:id="@+id/td00"
+            android:id="@+id/mwraNames"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></Spinner>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"></Spinner>
+
+        <!--        <Spinner
+                    android:id="@+id/td00"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>-->
 
         <TextView
             android:layout_width="match_parent"

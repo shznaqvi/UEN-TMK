@@ -426,7 +426,7 @@ public class SectionHAActivity extends Activity {
                 } else {
 
                     tha02.setText(null);
-                    tha03.getChildAt(0).toString();
+//                    tha03.getChildAt(0).toString();
                     tha04.setText(null);
 
                     tha05.clearCheck();
@@ -1509,8 +1509,10 @@ public class SectionHAActivity extends Activity {
 
         sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
         sHA.put("tha02", tha02.getText().toString());
-        sHA.put("tha03", tha03.getSelectedItem().toString());
-        sHA.put("tha03Serial", childsMap.get(tha03.getSelectedItem().toString()));
+        if (!tha01a.isChecked()) {
+            sHA.put("tha03", tha03.getSelectedItem().toString());
+            sHA.put("tha03Serial", childsMap.get(tha03.getSelectedItem().toString()));
+        }
         sHA.put("tha04", tha04.getText().toString());
 
         sHA.put("tha05", tha05a.isChecked() ? "1" : tha05b.isChecked() ? "2" : tha05888.isChecked() ? "888" : "0");
