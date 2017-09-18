@@ -58,11 +58,18 @@ public class EndingActivity extends Activity {
         if (check) {
             istatus1.setEnabled(true);
             istatus2.setEnabled(false);
+            istatus3.setEnabled(false);
+            istatus4.setEnabled(false);
+            istatus5.setEnabled(false);
+            istatus6.setEnabled(false);
+            istatus7.setEnabled(false);
+            istatus8.setEnabled(false);
+            istatus888x.setEnabled(false);
+            istatus888x.setText(null);
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
             istatus1.setEnabled(false);
-            istatus2.setEnabled(true);
         }
 
         istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
