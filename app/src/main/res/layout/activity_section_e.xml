@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -35,8 +36,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -163,7 +166,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <!--       <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                    android:id="@+id/te04"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
@@ -171,9 +174,9 @@
                    android:focusable="true"
                    android:hint="@string/te04"
                    android:textColor="@android:color/black"
-                   app:dateFormat="dd-MM-yyyy" />-->
+            app:dateFormat="dd-MM-yyyy" />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/te04d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,7 +207,7 @@
             android:layout_weight="1"
             android:hint="@string/year"
             android:inputType="number"
-            android:maxLength="4" />
+            android:maxLength="4" />-->
 
         <TextView
             android:layout_width="match_parent"

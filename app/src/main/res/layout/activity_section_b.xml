@@ -108,6 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/tb02"
             android:inputType="textCapWords" />
 
         <TextView
@@ -280,7 +281,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:hint="@string/tb05" />
 
         <TextView
             android:layout_width="match_parent"
@@ -362,6 +364,7 @@
             android:id="@+id/fldGrptb08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:orientation="vertical"
             android:visibility="gone"
             tools:visibility="visible">
@@ -390,6 +393,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/year"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -407,6 +411,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/month"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -426,6 +431,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:hint="@string/tb09"
             android:inputType="number"
             android:maxLength="3" />
 
