@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -44,6 +45,8 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ti01b;
     @BindView(R.id.ti01888)
     RadioButton ti01888;
+    @BindView(R.id.fldGrpti02)
+    LinearLayout fldGrpti02;
     @BindView(R.id.ti02a)
     CheckBox ti02a;
     @BindView(R.id.ti02b)
@@ -56,6 +59,8 @@ public class SectionIActivity extends AppCompatActivity {
     CheckBox ti0288;
     @BindView(R.id.ti0288x)
     EditText ti0288x;
+    @BindView(R.id.fldGrpti03)
+    LinearLayout fldGrpti03;
     @BindView(R.id.ti03)
     RadioGroup ti03;
     @BindView(R.id.ti03a)
@@ -80,8 +85,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton bcgC01;
     @BindView(R.id.bcgC02)
     RadioButton bcgC02;
+    @BindView(R.id.text1)
+    TextView text1;
     @BindView(R.id.bcgDate)
     DatePickerInputEditText bcgDate;
+    @BindView(R.id.fldGrpov1)
+    LinearLayout fldGrpov1;
     @BindView(R.id.bcgPov)
     RadioGroup bcgPov;
     @BindView(R.id.bcgPova)
@@ -116,8 +125,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv0C01;
     @BindView(R.id.opv0C02)
     RadioButton opv0C02;
+    @BindView(R.id.text2)
+    TextView text2;
     @BindView(R.id.opv0Date)
     DatePickerInputEditText opv0Date;
+    @BindView(R.id.fldGrpov2)
+    LinearLayout fldGrpov2;
     @BindView(R.id.opv0Pov)
     RadioGroup opv0Pov;
     @BindView(R.id.opv0Pova)
@@ -152,8 +165,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv1C01;
     @BindView(R.id.opv1C02)
     RadioButton opv1C02;
+    @BindView(R.id.text3)
+    TextView text3;
     @BindView(R.id.opv1Date)
     DatePickerInputEditText opv1Date;
+    @BindView(R.id.fldGrpov3)
+    LinearLayout fldGrpov3;
     @BindView(R.id.opv1Pov)
     RadioGroup opv1Pov;
     @BindView(R.id.opv1Pova)
@@ -188,8 +205,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta1C01;
     @BindView(R.id.penta1C02)
     RadioButton penta1C02;
+    @BindView(R.id.text4)
+    TextView text4;
     @BindView(R.id.penta1Date)
     DatePickerInputEditText penta1Date;
+    @BindView(R.id.fldGrpov4)
+    LinearLayout fldGrpov4;
     @BindView(R.id.penta1Pov)
     RadioGroup penta1Pov;
     @BindView(R.id.penta1Pova)
@@ -224,8 +245,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv1C01;
     @BindView(R.id.pcv1C02)
     RadioButton pcv1C02;
+    @BindView(R.id.text5)
+    TextView text5;
     @BindView(R.id.pcv1Date)
     DatePickerInputEditText pcv1Date;
+    @BindView(R.id.fldGrpov5)
+    LinearLayout fldGrpov5;
     @BindView(R.id.pcv1Pov)
     RadioGroup pcv1Pov;
     @BindView(R.id.pcv1Pova)
@@ -260,8 +285,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv2C01;
     @BindView(R.id.opv2C02)
     RadioButton opv2C02;
+    @BindView(R.id.text6)
+    TextView text6;
     @BindView(R.id.opv2Date)
     DatePickerInputEditText opv2Date;
+    @BindView(R.id.fldGrpov6)
+    LinearLayout fldGrpov6;
     @BindView(R.id.opv2Pov)
     RadioGroup opv2Pov;
     @BindView(R.id.opv2Pova)
@@ -296,8 +325,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta2C01;
     @BindView(R.id.penta2C02)
     RadioButton penta2C02;
+    @BindView(R.id.text7)
+    TextView text7;
     @BindView(R.id.penta2Date)
     DatePickerInputEditText penta2Date;
+    @BindView(R.id.fldGrpov7)
+    LinearLayout fldGrpov7;
     @BindView(R.id.penta2Pov)
     RadioGroup penta2Pov;
     @BindView(R.id.penta2Pova)
@@ -332,8 +365,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv2C01;
     @BindView(R.id.pcv2C02)
     RadioButton pcv2C02;
+    @BindView(R.id.text8)
+    TextView text8;
     @BindView(R.id.pcv2Date)
     DatePickerInputEditText pcv2Date;
+    @BindView(R.id.fldGrpov8)
+    LinearLayout fldGrpov8;
     @BindView(R.id.pcv2Pov)
     RadioGroup pcv2Pov;
     @BindView(R.id.pcv2Pova)
@@ -368,8 +405,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv3C01;
     @BindView(R.id.opv3C02)
     RadioButton opv3C02;
+    @BindView(R.id.text9)
+    TextView text9;
     @BindView(R.id.opv3Date)
     DatePickerInputEditText opv3Date;
+    @BindView(R.id.fldGrpov9)
+    LinearLayout fldGrpov9;
     @BindView(R.id.opv3Pov)
     RadioGroup opv3Pov;
     @BindView(R.id.opv3Pova)
@@ -404,8 +445,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta3C01;
     @BindView(R.id.penta3C02)
     RadioButton penta3C02;
+    @BindView(R.id.text10)
+    TextView text10;
     @BindView(R.id.penta3Date)
     DatePickerInputEditText penta3Date;
+    @BindView(R.id.fldGrpov10)
+    LinearLayout fldGrpov10;
     @BindView(R.id.penta3Pov)
     RadioGroup penta3Pov;
     @BindView(R.id.penta3Pova)
@@ -440,8 +485,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv3C01;
     @BindView(R.id.pcv3C02)
     RadioButton pcv3C02;
+    @BindView(R.id.text11)
+    TextView text11;
     @BindView(R.id.pcv3Date)
     DatePickerInputEditText pcv3Date;
+    @BindView(R.id.fldGrpov11)
+    LinearLayout fldGrpov11;
     @BindView(R.id.pcv3Pov)
     RadioGroup pcv3Pov;
     @BindView(R.id.pcv3Pova)
@@ -476,8 +525,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ipvC01;
     @BindView(R.id.ipvC02)
     RadioButton ipvC02;
+    @BindView(R.id.text12)
+    TextView text12;
     @BindView(R.id.ipvDate)
     DatePickerInputEditText ipvDate;
+    @BindView(R.id.fldGrpov12)
+    LinearLayout fldGrpov12;
     @BindView(R.id.ipvPov)
     RadioGroup ipvPov;
     @BindView(R.id.ipvPova)
@@ -512,8 +565,12 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles1C01;
     @BindView(R.id.measles1C02)
     RadioButton measles1C02;
+    @BindView(R.id.text13)
+    TextView text13;
     @BindView(R.id.measles1Date)
     DatePickerInputEditText measles1Date;
+    @BindView(R.id.fldGrpov13)
+    LinearLayout fldGrpov13;
     @BindView(R.id.measles1Pov)
     RadioGroup measles1Pov;
     @BindView(R.id.measles1Pova)
@@ -540,6 +597,20 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles2M01;
     @BindView(R.id.measles2M02)
     RadioButton measles2M02;
+    @BindView(R.id.fldGrpmeasles2C)
+    LinearLayout fldGrpmeasles2C;
+    @BindView(R.id.measles2C)
+    RadioGroup measles2C;
+    @BindView(R.id.measles2C01)
+    RadioButton measles2C01;
+    @BindView(R.id.measles2C02)
+    RadioButton measles2C02;
+    @BindView(R.id.text14)
+    TextView text14;
+    @BindView(R.id.measles2Date)
+    DatePickerInputEditText measles2Date;
+    @BindView(R.id.fldGrpov14)
+    LinearLayout fldGrpov14;
     @BindView(R.id.measles2Pov)
     RadioGroup measles2Pov;
     @BindView(R.id.measles2Pova)
@@ -558,16 +629,6 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles2Povg;
     @BindView(R.id.measles2Povh)
     RadioButton measles2Povh;
-    @BindView(R.id.fldGrpmeasles2C)
-    LinearLayout fldGrpmeasles2C;
-    @BindView(R.id.measles2C)
-    RadioGroup measles2C;
-    @BindView(R.id.measles2C01)
-    RadioButton measles2C01;
-    @BindView(R.id.measles2C02)
-    RadioButton measles2C02;
-    @BindView(R.id.measles2Date)
-    DatePickerInputEditText measles2Date;
     @BindView(R.id.ti04)
     RadioGroup ti04;
     @BindView(R.id.ti04a)
@@ -576,20 +637,22 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ti04b;
     @BindView(R.id.ti04888)
     RadioButton ti04888;
+    @BindView(R.id.fldGrpti05)
+    LinearLayout fldGrpti05;
     @BindView(R.id.ti05)
     EditText ti05;
     @BindView(R.id.ti05888)
     CheckBox ti05888;
-    @BindView(R.id.fldGrpti02)
-    LinearLayout fldGrpti02;
-    @BindView(R.id.fldGrpti05)
-    LinearLayout fldGrpti05;
-    @BindView(R.id.fldGrpti03)
-    LinearLayout fldGrpti03;
+
 
     @BindViews({R.id.bcgDate, R.id.opv0Date, R.id.opv1Date, R.id.penta1Date, R.id.pcv1Date, R.id.opv2Date, R.id.penta2Date
             , R.id.pcv2Date, R.id.opv3Date, R.id.penta3Date, R.id.pcv3Date, R.id.ipvDate, R.id.measles1Date, R.id.measles2Date})
     List<DatePickerInputEditText> dates;
+
+
+    @BindViews({R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7
+            , R.id.text8, R.id.text9, R.id.text10, R.id.text11, R.id.text12, R.id.text13, R.id.text14})
+    List<TextView> datesText;
 
     @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrppenta2C,
             R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
@@ -639,6 +702,9 @@ public class SectionIActivity extends AppCompatActivity {
                     for (LinearLayout le : fldGrpCard) {
                         le.setVisibility(View.VISIBLE);
                     }
+                    for (TextView te : datesText) {
+                        te.setVisibility(View.VISIBLE);
+                    }
                     for (LinearLayout le : fldGrpMother) {
                         le.setVisibility(View.VISIBLE);
                     }
@@ -653,6 +719,9 @@ public class SectionIActivity extends AppCompatActivity {
                         for (DatePickerInputEditText de : dates) {
                             de.setVisibility(View.GONE);
                             de.setText(null);
+                        }
+                        for (TextView te : datesText) {
+                            te.setVisibility(View.GONE);
                         }
                     }
                     for (LinearLayout le : fldGrpMother) {
