@@ -807,6 +807,15 @@ public class SectionJActivity extends Activity {
             } else {
                 tj03m.setError(null);
             }
+            if (Integer.parseInt(tj03m.getText().toString()) < 0 || Integer.parseInt(tj03m.getText().toString()) >= 11) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                tj03m.setError("Range from 1 - 11!");    // Set Error on last radio button
+
+                Log.i(TAG, "tj03m: Range from 1 - 11!");
+                return false;
+            } else {
+                tj03m.setError(null);
+            }
         } else if (tj03b.isChecked()) {
             if (tj03h.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
@@ -817,12 +826,31 @@ public class SectionJActivity extends Activity {
             } else {
                 tj03h.setError(null);
             }
+
+            if (Integer.valueOf(tj03h.getText().toString()) < 1 || Integer.valueOf(tj03h.getText().toString()) >= 23) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
+                tj03h.setError("Range from 1 - 23!");    // Set Error on last radio button
+
+                Log.i(TAG, "tj03h: Range from 1 - 23!");
+                return false;
+            } else {
+                tj03h.setError(null);
+            }
         } else if (tj03c.isChecked()) {
             if (tj03d.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
                 tj03d.setError("This data is Required! ");    // Set Error on last radio button
 
                 Log.i(TAG, "tj03d: This data is Required!");
+                return false;
+            } else {
+                tj03d.setError(null);
+            }
+            if (Integer.valueOf(tj03d.getText().toString()) < 1 || Integer.valueOf(tj03d.getText().toString()) >= 29) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                tj03d.setError("Range from 1 - 29!");    // Set Error on last radio button
+
+                Log.i(TAG, "tj03d: Range from 1 - 29");
                 return false;
             } else {
                 tj03d.setError(null);
@@ -1059,9 +1087,6 @@ public class SectionJActivity extends Activity {
         } else {
             tj1488x.setError(null);
         }
-
-
-
 
 
         return true;
