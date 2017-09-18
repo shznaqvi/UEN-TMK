@@ -419,26 +419,6 @@ public class SectionCActivity extends Activity {
     EditText tc17;
     @BindView(R.id.tc17888)
     CheckBox tc17888;
-    @BindView(R.id.tc18)
-    RadioGroup tc18;
-    @BindView(R.id.tc18a)
-    RadioButton tc18a;
-    @BindView(R.id.tc18b)
-    RadioButton tc18b;
-    @BindView(R.id.fldGrptc19)
-    LinearLayout fldGrptc19;
-    @BindView(R.id.tc19)
-    EditText tc19;
-    @BindView(R.id.tc20)
-    RadioGroup tc20;
-    @BindView(R.id.tc20a)
-    RadioButton tc20a;
-    @BindView(R.id.tc20b)
-    RadioButton tc20b;
-    @BindView(R.id.fldGrptc21)
-    LinearLayout fldGrptc21;
-    @BindView(R.id.tc21)
-    EditText tc21;
 
 
     @Override
@@ -446,32 +426,6 @@ public class SectionCActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_c);
         ButterKnife.bind(this);
-
-        tc18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (tc18a.isChecked()) {
-                    fldGrptc19.setVisibility(View.VISIBLE);
-
-                } else {
-                    fldGrptc19.setVisibility(View.GONE);
-                    tc19.setText(null);
-                }
-            }
-        });
-
-        tc20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (tc20a.isChecked()) {
-                    fldGrptc21.setVisibility(View.VISIBLE);
-
-                } else {
-                    fldGrptc21.setVisibility(View.GONE);
-                    tc21.setText(null);
-                }
-            }
-        });
 
 //        05
         tc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -674,7 +628,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc05", tc05a.isChecked() ? "1" : tc05b.isChecked() ? "2"
                 : tc0588.isChecked() ? "88" : "0");
         sC.put("tc0588x", tc0588x.getText().toString());
-        sC.put("tc06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
+        sC.put("td06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
                 : tc06c.isChecked() ? "3" : tc06d.isChecked() ? "4"
                 : tc0688.isChecked() ? "88" : "0");
         sC.put("tc0688x", tc0688x.getText().toString());
@@ -741,12 +695,6 @@ public class SectionCActivity extends Activity {
         sC.put("tc1688x", tc1688x.getText().toString());
 
         sC.put("tc17", tc17888.isChecked() ? "888" : tc17.getText().toString());
-        sC.put("tc18", tc18a.isChecked() ? "1" : tc18b.isChecked() ? "2"
-                : "0");
-        sC.put("tc19", tc19.getText().toString());
-        sC.put("tc20", tc20a.isChecked() ? "1" : tc20b.isChecked() ? "2"
-                : "0");
-        sC.put("tc21", tc21.getText().toString());
 
         MainApp.fc.setsC(String.valueOf(sC));
     }
@@ -821,10 +769,10 @@ public class SectionCActivity extends Activity {
 
 //        06
         if (tc06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc06), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td06), Toast.LENGTH_SHORT).show();
             tc0688.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tc06: This data is Required!");
+            Log.i(TAG, "td06: This data is Required!");
             return false;
         } else {
             tc0688.setError(null);
@@ -833,7 +781,7 @@ public class SectionCActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tc0688x.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tc06: This data is Required!");
+            Log.i(TAG, "td06: This data is Required!");
             return false;
         } else {
             tc0688x.setError(null);
@@ -1293,17 +1241,13 @@ public class SectionCActivity extends Activity {
             tc17888.setError(null);
         }
 
-        if (tc18.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc18), Toast.LENGTH_SHORT).show();
-            tc18b.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "tc18: This data is Required!");
-            return false;
-        } else {
-            tc18b.setError(null);
-        }
 
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }

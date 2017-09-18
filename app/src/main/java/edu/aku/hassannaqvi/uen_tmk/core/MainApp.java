@@ -55,14 +55,13 @@ public class MainApp extends Application {
     private static final long HOURS_IN_DAY = 24;
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
     private static final long DAYS_IN_YEAR = 365;
-    private static final long DAYS_IN_5_YEAR = 365 * 5;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
+    private static final long DAYS_IN_5_YEAR = 365 * 5;
+    public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5_YEAR;
     private static final long DAYS_IN_MONTH = 30;
     public static final long MILLISECONDS_IN_MONTH = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_MONTH;
-    public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5_YEAR;
 
     //public static final long MILLISECONDS_IN_100_YEAR = MILLISECONDS_IN_YEAR * 100;
-
     public static String deviceId;
 
     public static Boolean admin = false;
@@ -78,6 +77,10 @@ public class MainApp extends Application {
     public static int mwraCount = 1;
     public static int TotalMWRACount = 0;
     public static int TotalChildCount = 0;
+    public static int TotalDeceasedMotherCount = 0;
+    public static int CounterDeceasedMother = 0;
+    public static int TotalDeceasedChildCount = 0;
+    public static int CounterDeceasedChild = 0;
     public static int counter = 0;
     public static int mm = 1;
 
@@ -101,7 +104,6 @@ public class MainApp extends Application {
     public static MWRAContract mw;
     public static SectionJIMContract ims;
 
-    public static int totalChild = 0;
     public static int memFlag = 0;
     public static List<Integer> memClicked;
     public static ArrayList<MotherLst> lstMother;

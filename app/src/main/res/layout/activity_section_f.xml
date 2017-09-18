@@ -26,6 +26,17 @@
             android:text="@string/secFLabel"
             android:textSize="30sp" />
 
+        <TextView
+            android:id="@+id/counterDecChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"

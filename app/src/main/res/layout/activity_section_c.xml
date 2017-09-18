@@ -487,6 +487,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789"
+            android:hint="@string/tc04"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -529,6 +530,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
 
@@ -537,7 +539,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/tc06"
+            android:text="@string/td06"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -598,6 +600,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
 
@@ -713,6 +716,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
 
@@ -1624,6 +1628,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14a"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1639,6 +1644,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14b"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1654,6 +1660,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14c"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1669,6 +1676,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14d"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1684,6 +1692,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14e"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1699,6 +1708,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
+                android:hint="@string/tc14f"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1819,6 +1829,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
 
@@ -1837,6 +1848,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="0123456789"
+            android:hint="@string/tc17"
             android:inputType="number"
             android:maxLength="6" />
 
@@ -1846,121 +1858,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/dkn" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tc18"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
-
-        <RadioGroup
-            android:id="@+id/tc18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/tc18a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
-
-            <RadioButton
-                android:id="@+id/tc18b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/no" />
-
-        </RadioGroup>
-
-        <LinearLayout
-            android:id="@+id/fldGrptc19"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/tc19"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/tc19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:hint="@string/tc19"
-                android:inputType="number"
-                android:maxLength="2" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tc20"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
-
-        <RadioGroup
-            android:id="@+id/tc20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/tc20a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
-
-            <RadioButton
-                android:id="@+id/tc20b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/no" />
-
-        </RadioGroup>
-
-        <LinearLayout
-            android:id="@+id/fldGrptc21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/tc21"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/tc21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginTop="16dp"
-                android:hint="@string/tc21"
-                android:inputType="number"
-                android:maxLength="2" />
-
-        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

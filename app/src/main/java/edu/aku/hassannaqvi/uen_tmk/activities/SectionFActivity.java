@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -84,11 +85,17 @@ public class SectionFActivity extends AppCompatActivity {
     @BindView(R.id.tf0788x)
     EditText tf0788x;
 
+    @BindView(R.id.counterDecChild)
+    TextView counterDecChild;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_f);
         ButterKnife.bind(this);
+
+        MainApp.CounterDeceasedChild++;
+        counterDecChild.setText("Deceased Child " + MainApp.CounterDeceasedChild + " out of " + MainApp.TotalDeceasedChildCount);
 
         tf06.setManager(getSupportFragmentManager());
 
@@ -138,8 +145,14 @@ public class SectionFActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionGActivity.class);
-                startActivity(secNext);
+                if (MainApp.CounterDeceasedChild >= MainApp.TotalDeceasedChildCount) {
+                    Intent secNext = new Intent(this, SectionGActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionFActivity.class);
+                    startActivity(secNext);
+                }
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -323,11 +336,10 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
 
-
-    /*@Override
+    @Override
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }*/
+    }
 
 
 }
