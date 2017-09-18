@@ -123,6 +123,7 @@ public class SectionLActivity extends Activity {
     @BindView(R.id.tl0988x)
     EditText tl0988x;
 
+    @BindView(R.id.tl10)
     RadioGroup tl10;
     @BindView(R.id.tl10a)
     RadioButton tl10a;
