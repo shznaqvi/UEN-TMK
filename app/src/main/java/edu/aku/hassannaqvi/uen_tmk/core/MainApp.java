@@ -77,6 +77,10 @@ public class MainApp extends Application {
     public static int mwraCount = 1;
     public static int TotalMWRACount = 0;
     public static int TotalChildCount = 0;
+    public static int TotalDeceasedMotherCount = 0;
+    public static int CounterDeceasedMother = 0;
+    public static int TotalDeceasedChildCount = 0;
+    public static int CounterDeceasedChild = 0;
     public static int counter = 0;
     public static int mm = 1;
 

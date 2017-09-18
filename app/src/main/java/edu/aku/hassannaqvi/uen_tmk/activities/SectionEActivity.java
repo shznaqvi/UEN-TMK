@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -75,6 +76,9 @@ public class SectionEActivity extends AppCompatActivity {
     @BindView(R.id.te0588x)
     EditText te0588x;
 
+    @BindView(R.id.counterDec)
+    TextView counterDec;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +86,11 @@ public class SectionEActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 //        te04.setManager(getSupportFragmentManager());
+
+        MainApp.CounterDeceasedMother++;
+
+        counterDec.setText("Deceased Women " + MainApp.CounterDeceasedMother + " out of " + MainApp.TotalDeceasedMotherCount);
+
 
         te0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -123,8 +132,19 @@ public class SectionEActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionFActivity.class);
-                startActivity(secNext);
+                if (MainApp.CounterDeceasedMother >= MainApp.TotalDeceasedMotherCount) {
+
+                    if (MainApp.TotalDeceasedChildCount > 0) {
+                        Intent secNext = new Intent(this, SectionFActivity.class);
+                        startActivity(secNext);
+                    } else {
+                        Intent secNext = new Intent(this, SectionGActivity.class);
+                        startActivity(secNext);
+                    }
+                } else {
+                    Intent secNext = new Intent(this, SectionEActivity.class);
+                    startActivity(secNext);
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

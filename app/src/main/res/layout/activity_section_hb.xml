@@ -169,14 +169,20 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <EditText
+            <!--            <EditText
+                            android:id="@+id/thb05"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                            android:hint="@string/thb05"
+                            android:inputType="textCapWords" />-->
+
+            <Spinner
                 android:id="@+id/thb05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
-                android:hint="@string/thb05"
-                android:inputType="textCapWords" />
+                android:layout_marginTop="10dp"></Spinner>
 
 
             <TextView

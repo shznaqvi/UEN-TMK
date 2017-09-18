@@ -143,10 +143,11 @@
     <string name="tb10l"> Teacher </string>
     <string name="tb10999"> Not Applicable </string>
     <string name="tb11"> ازدواجي حيثيت </string>
-    <string name="tb11a"> Married </string>
-    <string name="tb11b"> Unmarried </string>
-    <string name="tb11c"> Widowed </string>
-    <string name="tb11d"> Divorced/Separate </string>
+  <string name="tb11a"> Single </string>
+  <string name="tb11b"> Married </string>
+  <string name="tb11c"> Unmarried </string>
+  <string name="tb11d"> Widowed </string>
+  <string name="tb11e"> Divorced/Separate </string>
     <string name="tb12"> مڪمل گھر ڀاتين جو تعداد </string>
     <string name="tb13"> گھر ۾ مڪمل شادي شده عورتن جو تعداد </string>
     <string name="tb14"> گھر ۾ پنجن سالن کان گھٽ عمر وارن ٻارن جو تعداد </string>
@@ -288,11 +289,11 @@
     <string name="tc16h"> پشتو </string>
     <string name="tc17"> گهر جي تقريبن مهيني جي آمدني ڪيتري آهي؟ </string>
     <string name="tc17a"> آمدني روپين۾ </string>
-    <string name="tc18"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران(ڪائي عورت جو نالو) حمل, ويم يا ويم کان پوءِ 40 ڏينهن تائين مري وئي آھي؟ </string>
-    <string name="tc19"> جيڪڏهن ها ته ڪيتريون عورتون مري ويون آھن؟ </string>
+  <string name="td06"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران(ڪائي عورت جو نالو) حمل, ويم يا ويم کان پوءِ 40 ڏينهن تائين مري وئي آھي؟ </string>
+  <string name="td07"> جيڪڏهن ها ته ڪيتريون عورتون مري ويون آھن؟ </string>
     <string name="tc19a"> مري ويل مائرن جو تعداد </string>
-    <string name="tc20"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران (ڪوئي 5 سالن کان گھٽ عمرجوٻارنالو) ٻار مري ويو آھي؟ </string>
-    <string name="tc21"> جيڪڏهن ها ته ڪيتراٻار مري ويا آھن؟ </string>
+  <string name="td08"> ڇا اوهان جي گهر ۾ پوئين 5 سالن جي دوران (ڪوئي 5 سالن کان گھٽ عمرجوٻارنالو) ٻار مري ويو آھي؟ </string>
+  <string name="td09"> جيڪڏهن ها ته ڪيتراٻار مري ويا آھن؟ </string>
     <string name="tc21a"> مري ويل ٻارن جو تعداد </string>
     <string name="td00"> عورت جو نالو </string>
     <string name="td01"> ڇا (عورت جو نالو) شادي کان پوءِ ڪڏھن به حمل سان ٿي؟ </string>
@@ -855,7 +856,19 @@
     <string name="tl09b"> هفتي ۾ هڪ ڀيرو </string>
     <string name="tl09c"> هفتي ۾ ٻه ڀيرا </string>
     <string name="tl09d"> هفتي ۾ ٽي ڀيرا </string>
-    <string name="istatus"> انٽرويو جو نتيجو </string>
+
+  <string name="tl10"> Do  you Brush your teeth? </string>
+  <string name="tl11"> How often you brush your teeth? </string>
+  <string name="tl11a"> روزانو </string>
+  <string name="tl11b"> هفتي ۾ هڪ ڀيرو </string>
+  <string name="tl11c"> هفتي ۾ ٻه ڀيرا </string>
+  <string name="tl11d"> هفتي ۾ ٽي ڀيرا </string>
+  <string name="tl12"> What type of brush do you usually use? </string>
+  <string name="tl12a"> Tooth Paste </string>
+  <string name="tl12b"> Miswak </string>
+  <string name="tl12c"> Tooth Powder </string>
+
+  <string name="istatus"> انٽرويو جو نتيجو </string>
     <string name="istatus1"> مڪمل ٿيو </string>
     <string name="istatus2"> انڪار ڪيو </string>
     <string name="istatus3"> گھر مستقل طور بند آھي </string>

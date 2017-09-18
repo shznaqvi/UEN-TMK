@@ -123,6 +123,37 @@ public class SectionLActivity extends Activity {
     @BindView(R.id.tl0988x)
     EditText tl0988x;
 
+    RadioGroup tl10;
+    @BindView(R.id.tl10a)
+    RadioButton tl10a;
+    @BindView(R.id.tl10b)
+    RadioButton tl10b;
+    @BindView(R.id.tl11)
+    RadioGroup tl11;
+    @BindView(R.id.tl11a)
+    RadioButton tl11a;
+    @BindView(R.id.tl11b)
+    RadioButton tl11b;
+    @BindView(R.id.tl11c)
+    RadioButton tl11c;
+    @BindView(R.id.tl11d)
+    RadioButton tl11d;
+    @BindView(R.id.tl1188)
+    RadioButton tl1188;
+    @BindView(R.id.tl1188x)
+    EditText tl1188x;
+    @BindView(R.id.tl12)
+    RadioGroup tl12;
+    @BindView(R.id.tl12a)
+    RadioButton tl12a;
+    @BindView(R.id.tl12b)
+    RadioButton tl12b;
+    @BindView(R.id.tl12c)
+    RadioButton tl12c;
+    @BindView(R.id.tl1288)
+    RadioButton tl1288;
+    @BindView(R.id.tl1288x)
+    EditText tl1288x;
 
 
     @Override
@@ -227,6 +258,30 @@ public class SectionLActivity extends Activity {
             }
         });
 
+        tl1188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tl1188x.setVisibility(View.VISIBLE);
+                } else {
+                    tl1188x.setVisibility(View.GONE);
+                    tl1188x.setText(null);
+                }
+            }
+        });
+
+        tl1288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tl1288x.setVisibility(View.VISIBLE);
+                } else {
+                    tl1288x.setVisibility(View.GONE);
+                    tl1288x.setText(null);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
@@ -295,6 +350,14 @@ public class SectionLActivity extends Activity {
         sL.put("tl09", tl09a.isChecked() ? "1" : tl09b.isChecked() ? "2" : tl09c.isChecked() ? "3"
                 : tl09d.isChecked() ? "4" : tl0988.isChecked() ? "88" : "0");
         sL.put("tl0988x", tl0988x.getText().toString());
+
+        sL.put("tl10", tl10a.isChecked() ? "1" : tl10b.isChecked() ? "2" : "0");
+        sL.put("tl11", tl11a.isChecked() ? "1" : tl11b.isChecked() ? "2" : tl11c.isChecked() ? "3"
+                : tl11d.isChecked() ? "4" : tl1188.isChecked() ? "88" : "0");
+        sL.put("tl1188x", tl1188x.getText().toString());
+        sL.put("tl12", tl12a.isChecked() ? "1" : tl12b.isChecked() ? "2" : tl12c.isChecked() ? "3"
+                : tl1288.isChecked() ? "88" : "0");
+        sL.put("tl1288x", tl1288x.getText().toString());
 
         MainApp.fc.setsL(String.valueOf(sL));
     }
@@ -448,6 +511,57 @@ public class SectionLActivity extends Activity {
             return false;
         } else {
             tl0988x.setError(null);
+        }
+
+//        10
+        if (tl10.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl10), Toast.LENGTH_SHORT).show();
+            tl10b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tl10: This data is Required!");
+            return false;
+        } else {
+            tl10b.setError(null);
+        }
+
+//        11
+        if (tl11.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl11), Toast.LENGTH_SHORT).show();
+            tl1188.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tl11: This data is Required!");
+            return false;
+        } else {
+            tl1188.setError(null);
+        }
+        if (tl1188.isChecked() && tl1188x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tl1188x.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tl1188x: This data is Required!");
+            return false;
+        } else {
+            tl1188x.setError(null);
+        }
+
+//        12
+        if (tl12.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl12), Toast.LENGTH_SHORT).show();
+            tl1288.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tl12: This data is Required!");
+            return false;
+        } else {
+            tl1288.setError(null);
+        }
+        if (tl1288.isChecked() && tl1288x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            tl1288x.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "tl1288x: This data is Required!");
+            return false;
+        } else {
+            tl1288x.setError(null);
         }
 
         return true;

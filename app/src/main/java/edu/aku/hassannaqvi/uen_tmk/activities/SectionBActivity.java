@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -151,6 +150,8 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb11c;
     @BindView(R.id.tb11d)
     RadioButton tb11d;
+    @BindView(R.id.tb11e)
+    RadioButton tb11e;
 
     @BindView(R.id.btn_ContNextSec)
     Button btn_ContNextSec;
@@ -287,8 +288,8 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10k.setEnabled(false);
                     tb10l.setEnabled(false);
 
-                    tb11a.setEnabled(false);
-                    tb11a.setChecked(false);
+                    tb11b.setEnabled(false);
+                    tb11b.setChecked(false);
                 } else {
                     tb09.setText(null);
                     tb09.setEnabled(true);
@@ -306,7 +307,7 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10k.setEnabled(true);
                     tb10l.setEnabled(true);
 
-                    tb11a.setEnabled(true);
+                    tb11b.setEnabled(true);
                 }
                 //}
             }
@@ -348,8 +349,8 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10k.setEnabled(false);
                         tb10l.setEnabled(false);
 
-                        tb11a.setEnabled(false);
-                        tb11a.setChecked(false);
+                        tb11b.setEnabled(false);
+                        tb11b.setChecked(false);
                     } else {
                         tb09.setText(null);
                         tb09.setEnabled(true);
@@ -367,7 +368,7 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10k.setEnabled(true);
                         tb10l.setEnabled(true);
 
-                        tb11a.setEnabled(true);
+                        tb11b.setEnabled(true);
                     }
                     //}
 
@@ -428,7 +429,7 @@ public class SectionBActivity extends AppCompatActivity {
                 if (ageInyears < 5) {
                     MainApp.TotalChildCount++;
                     MainApp.TotalMembersCount++;
-                } else if (tb11a.isChecked() && tb04b.isChecked()
+                } else if (tb11b.isChecked() && tb04b.isChecked()
                         && (ageInyears > 15 || ageInyears < 49)) {
                     MainApp.TotalMWRACount++;
                     MainApp.TotalMembersCount++;
@@ -525,7 +526,7 @@ public class SectionBActivity extends AppCompatActivity {
                 : tb10k.isChecked() ? "11" : tb10l.isChecked() ? "12" : tb10999.isChecked() ? "999"
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
-                : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : "0");
+                : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : tb11e.isChecked() ? "5" : "0");
 
         MainApp.fmc.setsB(String.valueOf(sB));
 
@@ -547,7 +548,7 @@ public class SectionBActivity extends AppCompatActivity {
 
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
                     ageInyears < 5 ? "1" :
-                            (tb11a.isChecked() && tb04b.isChecked()
+                            (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
                     , String.valueOf(MainApp.counter)));
 
@@ -714,16 +715,16 @@ public class SectionBActivity extends AppCompatActivity {
 //        11
         if (tb11.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb11), Toast.LENGTH_SHORT).show();
-            tb11d.setError("This data is Required!");    // Set Error on last radio button
+            tb11e.setError("This data is Required!");    // Set Error on last radio button
 
             Log.i(TAG, "tb11: This data is Required!");
             return false;
         } else {
-            tb11d.setError(null);
+            tb11e.setError(null);
         }
 
 
-        if (!tb09.getText().toString().equals("NA")) {
+        if (!tb09.getText().toString().equals("NA") && !tb08y.getText().toString().isEmpty()) {
 
             if (Integer.parseInt(tb08y.getText().toString())
                     <= Integer.parseInt(tb09.getText().toString()) &&
