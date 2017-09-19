@@ -131,8 +131,13 @@ public class SectionGActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionHAActivity.class);
-                startActivity(secNext);
+                if (MainApp.TotalChildCount > 0) {
+                    Intent secNext = new Intent(this, SectionHAActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionIActivity.class);
+                    startActivity(secNext);
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
