@@ -3,10 +3,8 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +32,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -546,7 +543,7 @@ public class SectionJActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                if (MainApp.mm < MainApp.TotalChildCount) {
+                /*if (MainApp.mm < MainApp.TotalChildCount) {
 
                     clearFields();
 
@@ -565,7 +562,10 @@ public class SectionJActivity extends Activity {
                     MainApp.mm = 1;
 
                     startActivity(new Intent(this, SectionKActivity.class));
-                }
+                }*/
+
+                finish();
+                startActivity(new Intent(this, SectionKActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -636,7 +636,7 @@ public class SectionJActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        DatabaseHelper db = new DatabaseHelper(this);
+        /*DatabaseHelper db = new DatabaseHelper(this);
 
         Long updcount = db.addChild(MainApp.ims);
         MainApp.ims.set_ID(String.valueOf(updcount));
@@ -652,6 +652,18 @@ public class SectionJActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
+        }*/
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSJ();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
     }
@@ -659,7 +671,7 @@ public class SectionJActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+/*        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         MainApp.ims = new SectionJIMContract();
 
@@ -667,7 +679,7 @@ public class SectionJActivity extends Activity {
         MainApp.ims.setFormDate(MainApp.dtToday);
         MainApp.ims.setUser(MainApp.userName);
         MainApp.ims.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID));
+                Settings.Secure.ANDROID_ID));*/
 
         JSONObject sJ = new JSONObject();
 
@@ -748,7 +760,7 @@ public class SectionJActivity extends Activity {
                 : tj14k.isChecked() ? "11" : tj14l.isChecked() ? "12" : tj1488.isChecked() ? "88" : "0");
         sJ.put("tj1488x", tj1488x.getText().toString());
 
-        MainApp.ims.setsJ(String.valueOf(sJ));
+        MainApp.fc.setsJ(String.valueOf(sJ));
     }
 
     public boolean formValidation() {
