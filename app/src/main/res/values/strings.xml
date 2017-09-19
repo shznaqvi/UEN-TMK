@@ -34,6 +34,7 @@
     <string name="secJLabel">J: BREAST FEEDING AND NUTRITION </string>
     <string name="secKLabel">K: پاڻي ۽ صفائي</string>
     <string name="secLLabel">L: ھٿ ڌوئڻ</string>
+    <string name="secMLabel">M: WASH (Spot Check) </string>
 
 
     <!-- Strings that are fixed for all apps -->
@@ -867,6 +868,24 @@
   <string name="tl12a"> Tooth Paste </string>
   <string name="tl12b"> Miswak </string>
   <string name="tl12c"> Tooth Powder </string>
+
+
+    <string name="tma"> Drinking Water </string>
+    <string name="tmb"> Food </string>
+    <string name="tmc"> Domestic Hygiene </string>
+    <string name="tm01"> Interior water storage container is covered </string>
+    <string name="tm02"> Exterior water storage container is cleaned </string>
+    <string name="tm03"> Water present in water storage container </string>
+    <string name="tm04"> Clean dishes are covered </string>
+    <string name="tm05"> Clean dishes are covered </string>
+    <string name="tm06"> Clean dishes are kept high </string>
+    <string name="tm07"> All food is covered </string>
+    <string name="tm08"> No trash outside house </string>
+    <string name="tm09"> No trash inside house </string>
+    <string name="tm10"> Is there unrestrained animal in patio or house </string>
+    <string name="tm11"> Is there accumulation of dirty clothes </string>
+    <string name="tm12"> Are there significant number of flies in house </string>
+    <string name="tm13"> Is there standing water in patio or around house </string>
 
   <string name="istatus"> انٽرويو جو نتيجو </string>
     <string name="istatus1"> مڪمل ٿيو </string>

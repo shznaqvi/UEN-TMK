@@ -546,7 +546,7 @@ public class SectionJActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                if (MainApp.mm < MainApp.TotalChildCount) {
+                /*if (MainApp.mm < MainApp.TotalChildCount) {
 
                     clearFields();
 
@@ -565,7 +565,10 @@ public class SectionJActivity extends Activity {
                     MainApp.mm = 1;
 
                     startActivity(new Intent(this, SectionKActivity.class));
-                }
+                }*/
+
+                finish();
+                startActivity(new Intent(this, SectionKActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
