@@ -81,9 +81,26 @@ public class SectionAActivity extends Activity {
     Button btn_End;
 
     DatabaseHelper db;
-    String[] ucs = new String[]{"....", "Lakhat", "Shaikh Bhirkio", "Tando Saeendad", "TMK 01", "TMK 02", "TMK 03", "Dando",
-            "Ghulam Shah Bagrani", "Nazarpur", "Tando Ghulam Hyder", "Allah Yar Turk", "Jinhan Soomro",
-            "Bulri Shah Karim", "Saeed Khan Lund", "Mullakatiar", "Saeed Matto", "Saeedpur"};
+    String[] ucs = new String[]{"....",
+            "Allah Yar Turk",
+            "Bulri Shah Karim",
+            "Dando",
+            "Ghulam Shah Bagrani",
+            "Jinhan Soomro",
+            "Lakhat",
+            "Mullakatiar",
+            "Nazarpur",
+            "Shaikh Bhirkio",
+            "Saeed Khan Lund",
+            "Saeed Matto",
+            "Saeedpur",
+            "Tando Saeendad",
+            "Tando Ghulam Hyder",
+            "TMK 01",
+            "TMK 02",
+            "TMK 03"};
+
+
     int ucsPos = 0;
 
     @Override
