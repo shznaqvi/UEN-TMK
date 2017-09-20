@@ -10,20 +10,20 @@ import org.json.JSONObject;
  * Created by gul.sanober on 5/10/2017.
  */
 
-public class SectionJIMContract {
+public class SectionIIMContract
+{
 
     private final String projectName = "UEN TMK";
     private String _ID = "";
     private String UID = "";
-    //    private String _UUID = "";
-    private String deviceId = "";
+    private String _UUID = "";
+    private String deviceID = "";
     private String formDate = ""; // Date
     private String user = ""; // Interviewer
     //private String childID = "";
 //    private String dssID = "";
 //    private String mm = "";
-    private String sJ = "";
-    private String deviceID = "";
+    private String sI = "";
     private String synced = "";
     private String synced_date = "";
     private String istatus = "";
@@ -31,17 +31,10 @@ public class SectionJIMContract {
     private String devicetagID = "";
 
 
-    public SectionJIMContract() {
+    public SectionIIMContract() {
 
     }
 
-/*    public String getMm() {
-        return mm;
-    }
-
-    public void setMm(String mm) {
-        this.mm = mm;
-    }*/
 
     public String getProjectName() {
 
@@ -63,21 +56,21 @@ public class SectionJIMContract {
     public void setUID(String UID) {
         this.UID = UID;
     }
-/*
+
     public String get_UUID() {
         return _UUID;
     }
 
     public void set_UUID(String _UUID) {
         this._UUID = _UUID;
-    }*/
+    }
 
     public String getDeviceId() {
-        return deviceId;
+        return deviceID;
     }
 
     public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+        this.deviceID = deviceId;
     }
 
     public String getFormDate() {
@@ -112,12 +105,12 @@ public class SectionJIMContract {
         this.dssID = dssID;
     }*/
 
-    public String getsJ() {
-        return sJ;
+    public String getsI() {
+        return sI;
     }
 
-    public void setsJ(String sJ) {
-        this.sJ = sJ;
+    public void setsI(String sI) {
+        this.sI = sI;
     }
 
     public String getSynced() {
@@ -152,12 +145,12 @@ public class SectionJIMContract {
         this.devicetagID = devicetagID;
     }
 
-    public SectionJIMContract Sync(JSONObject jsonObject) throws Exception {
+    public SectionIIMContract Sync(JSONObject jsonObject) throws Exception {
 
         this._ID = jsonObject.getString(singleIm.COLUMN_ID);
-//        this._UUID = jsonObject.getString(singleIm.COLUMN_UUID);
+        this._UUID = jsonObject.getString(singleIm.COLUMN_UUID);
         this.UID = jsonObject.getString(singleIm.COLUMN_UID);
-        this.sJ = jsonObject.getString(singleIm.COLUMN_SJ);
+        this.sI = jsonObject.getString(singleIm.COLUMN_SI);
         this.formDate = jsonObject.getString(singleIm.COLUMN_FORMDATE);
         this.user = jsonObject.getString(singleIm.COLUMN_USER);
         //this.childID = jsonObject.getString(singleIm.COLUMN_CHILDID);
@@ -173,11 +166,11 @@ public class SectionJIMContract {
 
     }
 
-    public SectionJIMContract Hydrate(Cursor cursor) {
+    public SectionIIMContract Hydrate(Cursor cursor) {
         this._ID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_ID));
-//        this._UUID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_UUID));
+        this._UUID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_UUID));
         this.UID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_UID));
-        this.sJ = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_SJ));
+        this.sI = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_SI));
         this.formDate = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_FORMDATE));
         this.user = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_USER));
         //this.childID = cursor.getString(cursor.getColumnIndex(singleIm.COLUMN_CHILDID));
@@ -196,9 +189,9 @@ public class SectionJIMContract {
         JSONObject json = new JSONObject();
 
         json.put(singleIm.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
-//        json.put(singleIm.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        json.put(singleIm.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
         json.put(singleIm.COLUMN_UID, this.UID == null ? JSONObject.NULL : this.UID);
-        json.put(singleIm.COLUMN_SJ, this.sJ == null ? JSONObject.NULL : new JSONObject(this.sJ));
+        json.put(singleIm.COLUMN_SI, this.sI == null ? JSONObject.NULL : new JSONObject(this.sI));
         json.put(singleIm.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(singleIm.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         //json.put(singleIm.COLUMN_CHILDID, this.childID == null ? JSONObject.NULL : this.childID);
@@ -218,9 +211,9 @@ public class SectionJIMContract {
 
         public static final String COLUMN_PROJECT_NAME = "project_name";
         public static final String COLUMN_ID = "id";
-        //        public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_UID = "uid";
-        public static final String COLUMN_SJ = "sJ";
+        public static final String COLUMN_SI = "sI";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_USER = "user";
         //        public static final String COLUMN_CHILDID = "childid";

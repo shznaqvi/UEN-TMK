@@ -31,12 +31,12 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract.MWRATable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MemberContract.singleMember;
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract.singleUser;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
-import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract.singleIm;
+import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract.singleIm;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -73,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SG + " TEXT," +
             FormsContract.FormsTable.COLUMN_SHA + " TEXT," +
             FormsContract.FormsTable.COLUMN_SHB + " TEXT," +
-            FormsContract.FormsTable.COLUMN_SI + " TEXT," +
+            //FormsContract.FormsTable.COLUMN_SI + " TEXT," +
             FormsContract.FormsTable.COLUMN_SJ + " TEXT," +
             FormsTable.COLUMN_SK + " TEXT," +
             FormsContract.FormsTable.COLUMN_SL + " TEXT," +
@@ -228,14 +228,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             " );";
 
-    private static final String SQL_CREATE_SEC_K_IM = "CREATE TABLE "
+    private static final String SQL_CREATE_SEC_I_IM = "CREATE TABLE "
             + singleIm.TABLE_NAME + "("
             + singleIm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             singleIm.COLUMN_PROJECT_NAME + " TEXT," +
             singleIm.COLUMN_DEVICETAGID + " TEXT," +
-//            singleIm.COLUMN_UUID + " TEXT," +
+            singleIm.COLUMN_UUID + " TEXT," +
             singleIm.COLUMN_UID + " TEXT," +
-            singleIm.COLUMN_SJ + " TEXT," +
+            singleIm.COLUMN_SI + " TEXT," +
             singleIm.COLUMN_FORMDATE + " TEXT," +
             singleIm.COLUMN_USER + " TEXT," +
 /*            singleIm.COLUMN_CHILDID + " TEXT," +
@@ -265,7 +265,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + DeceasedChildContract.DeceasedChild.TABLE_NAME;
     private static final String SQL_DELETE_MWRA =
             "DROP TABLE IF EXISTS " + MWRATable.TABLE_NAME;
-    private static final String SQL_DELETE_SEC_K_IM =
+    private static final String SQL_DELETE_SEC_I_IM =
             "DROP TABLE IF EXISTS " + singleIm.TABLE_NAME;
 
     private static final String SQL_SELECT_MOTHER_BY_CHILD =
@@ -300,7 +300,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_DECEASED_MOTHER);
         db.execSQL(SQL_CREATE_DECEASED_CHILD);
         db.execSQL(SQL_CREATE_MWRA);
-        db.execSQL(SQL_CREATE_SEC_K_IM);
+        db.execSQL(SQL_CREATE_SEC_I_IM);
 
     }
 
@@ -314,7 +314,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_DECEASED_MOTHER);
         db.execSQL(SQL_DELETE_DECEASED_CHILD);
         db.execSQL(SQL_DELETE_MWRA);
-        db.execSQL(SQL_DELETE_SEC_K_IM);
+        db.execSQL(SQL_DELETE_SEC_I_IM);
     }
 
     public void syncUser(JSONArray userlist) {
@@ -617,7 +617,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_SG, fc.getsG());
         values.put(FormsContract.FormsTable.COLUMN_SHA, fc.getsHA());
         values.put(FormsContract.FormsTable.COLUMN_SHB, fc.getsHB());
-        values.put(FormsContract.FormsTable.COLUMN_SI, fc.getsI());
+        //values.put(FormsContract.FormsTable.COLUMN_SI, fc.getsI());
         values.put(FormsTable.COLUMN_SJ, fc.getsJ());
         values.put(FormsContract.FormsTable.COLUMN_SK, fc.getsK());
         values.put(FormsContract.FormsTable.COLUMN_SL, fc.getsL());
@@ -692,7 +692,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addChild(SectionJIMContract ims) {
+    public Long addChild(SectionIIMContract ims) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -703,7 +703,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleIm.COLUMN_PROJECT_NAME, ims.getProjectName());
 //        values.put(singleIm.COLUMN_UUID, ims.get_UUID());
         values.put(singleIm.COLUMN_UID, ims.getUID());
-        values.put(singleIm.COLUMN_SJ, ims.getsJ());
+        values.put(singleIm.COLUMN_SI, ims.getsI());
         values.put(singleIm.COLUMN_FORMDATE, ims.getFormDate());
         values.put(singleIm.COLUMN_USER, ims.getUser());
 //        values.put(singleIm.COLUMN_MM, ims.getMm());
@@ -1039,7 +1039,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsContract.FormsTable.COLUMN_SG,
                 FormsContract.FormsTable.COLUMN_SHA,
                 FormsContract.FormsTable.COLUMN_SHB,
-                FormsContract.FormsTable.COLUMN_SI,
                 FormsContract.FormsTable.COLUMN_SJ,
                 FormsContract.FormsTable.COLUMN_SK,
                 FormsContract.FormsTable.COLUMN_SL,
@@ -1137,14 +1136,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<SectionJIMContract> getUnsyncedIM() {
+    public Collection<SectionIIMContract> getUnsyncedIM() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 singleIm.COLUMN_ID,
-//                singleIm.COLUMN_UUID,
+                singleIm.COLUMN_UUID,
                 singleIm.COLUMN_UID,
-                singleIm.COLUMN_SJ,
+                singleIm.COLUMN_SI,
                 singleIm.COLUMN_FORMDATE,
                 singleIm.COLUMN_USER,
 //                singleIm.COLUMN_CHILDID,
@@ -1163,7 +1162,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 singleIm.COLUMN_ID + " ASC";
 
-        Collection<SectionJIMContract> allIM = new ArrayList<SectionJIMContract>();
+        Collection<SectionIIMContract> allIM = new ArrayList<SectionIIMContract>();
         try {
             c = db.query(
                     singleIm.TABLE_NAME,  // The table to query
@@ -1175,7 +1174,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                SectionJIMContract kIm = new SectionJIMContract();
+                SectionIIMContract kIm = new SectionIIMContract();
                 allIM.add(kIm.Hydrate(c));
             }
         } finally {
@@ -1350,7 +1349,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsContract.FormsTable.COLUMN_SG,
                 FormsContract.FormsTable.COLUMN_SHA,
                 FormsContract.FormsTable.COLUMN_SHB,
-                FormsContract.FormsTable.COLUMN_SI,
+                //FormsContract.FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
                 FormsContract.FormsTable.COLUMN_SL,
@@ -1412,7 +1411,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsContract.FormsTable.COLUMN_SG,
                 FormsContract.FormsTable.COLUMN_SHA,
                 FormsContract.FormsTable.COLUMN_SHB,
-                FormsContract.FormsTable.COLUMN_SI,
+                //FormsContract.FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
                 FormsContract.FormsTable.COLUMN_SL,
@@ -1712,13 +1711,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_SI, MainApp.fc.getsI());
+        values.put(singleIm.COLUMN_SI, MainApp.ims.getsI());
 
 // Which row to update, based on the ID
-        String selection = FormsTable.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
+        String selection = singleIm.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.ims.get_ID())};
 
-        int count = db.update(FormsTable.TABLE_NAME,
+        int count = db.update(singleIm.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

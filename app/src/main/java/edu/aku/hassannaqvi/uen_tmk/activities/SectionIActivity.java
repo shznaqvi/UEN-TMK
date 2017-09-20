@@ -1,11 +1,16 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -14,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,24 +27,31 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionIActivity extends AppCompatActivity
+public class SectionIActivity extends AppCompatActivity implements TextWatcher
 {
 
     private static final String TAG = SectionIActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
+    @BindView(R.id.tiName)
+    Spinner tiName;
     @BindView(R.id.ti01)
     RadioGroup ti01;
     @BindView(R.id.ti01a)
@@ -1021,18 +1034,70 @@ public class SectionIActivity extends AppCompatActivity
     @BindViews({R.id.measles2C, R.id.measles2M})
     List<RadioGroup> grpMeasles2;
 
+    Map<String, FamilyMembersContract> childsMap;
+    ArrayList<String> lstChild;
+
+    int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
 
+        //        get data from sec B
+
+        childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
+
+        childsMap.put("....", null);
+        lstChild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess2().equals("1")) {
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
+                lstChild.add(MainApp.familyMembersList.get(i).getName());
+                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
+
+                //childsMap.get(tiName.getSelectedItem()).getDob();
+
+            }
+        }
+
+        tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+        //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(position).getDob());
+
+        tiName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(0).getDob());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
         String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
 
         for (DatePickerInputEditText de : dates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+
         }
+
+        for (DatePickerInputEditText de : dates) {
+            de.addTextChangedListener(this);
+        }
+
+
+
 
         ti03.setOnCheckedChangeListener(new OnCheckedChangeListener()
         {
@@ -1041,6 +1106,9 @@ public class SectionIActivity extends AppCompatActivity
                 if (ti03a.isChecked()) {
                     for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
+                        if (!tiName.getSelectedItem().equals("....")) {
+                            de.setMinDate(MainApp.convertDateFormat(childsMap.get(tiName.getSelectedItem()).getDob()));
+                        }
                     }
                     for (LinearLayout le : fldGrpCard) {
                         le.setVisibility(View.VISIBLE);
@@ -1288,6 +1356,16 @@ public class SectionIActivity extends AppCompatActivity
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.ims = new SectionIIMContract();
+
+        MainApp.ims.set_UUID(MainApp.fc.getUID());
+        MainApp.ims.setFormDate(MainApp.fc.getFormDate());
+        MainApp.ims.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.ims.setUser(MainApp.fc.getUser());
+        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sI = new JSONObject();
 
@@ -2144,6 +2222,27 @@ public class SectionIActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
+
+    public void setMinDate() {
+        for (DatePickerInputEditText de : dates) {
+
+        }
+    }
 }
 
 

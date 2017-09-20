@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,7 +27,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.SectionJIMContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
 /**
@@ -88,6 +89,7 @@ public class MainApp extends Application {
     public static int dcMotherCount = 1;
     public static int dcMotherTotal = 0;
     public static int dcChildTotal = 0;
+    public static String dob = "";
 
     //    Total No of Alive members got from Section B
 /*    public static int currentStatusCount = 0;
@@ -102,7 +104,7 @@ public class MainApp extends Application {
     public static DeceasedMotherContract dcM;
     public static DeceasedChildContract dcC;
     public static MWRAContract mw;
-    public static SectionJIMContract ims;
+    public static SectionIIMContract ims;
 
     public static int memFlag = 0;
     public static List<Integer> memClicked;
@@ -236,6 +238,18 @@ public class MainApp extends Application {
         alert.show();
     }
 
+    public static String convertDateFormat(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date d = sdf.parse(dateStr);
+            return new SimpleDateFormat("dd/MM/yyyy").format(d);
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        return "";
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -329,7 +343,6 @@ public class MainApp extends Application {
         }
         return provider1.equals(provider2);
     }
-
 
     public static class deadMemberClass {
 

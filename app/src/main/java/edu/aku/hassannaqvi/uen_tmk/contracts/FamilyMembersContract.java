@@ -23,6 +23,9 @@ public class FamilyMembersContract {
     private String user = "";
     private String name = "";
     private String ageLess5 = "";
+    private String ageLess2 = "";
+    private String dob = "";
+
     /*    private String dss_id_hh = "";
         private String dss_id_f = "";
         private String dss_id_m = "";
@@ -61,10 +64,20 @@ public class FamilyMembersContract {
     public FamilyMembersContract() {
     }
 
-    public FamilyMembersContract(String name, String ageLess5, String serialNo) {
+    public FamilyMembersContract(String name, String ageLess5, String ageLess2, String serialNo, String dob) {
         this.name = name;
         this.ageLess5 = ageLess5;
+        this.ageLess2 = ageLess2;
         this.serialNo = serialNo;
+        this.dob = dob;
+    }
+
+    public FamilyMembersContract(FamilyMembersContract fm) {
+        this.name = fm.name;
+        this.ageLess5 = fm.ageLess5;
+        this.ageLess2 = fm.ageLess2;
+        this.serialNo = fm.serialNo;
+        this.dob = fm.dob;
     }
 
     public String getProjectName() {
@@ -151,6 +164,21 @@ public class FamilyMembersContract {
         this.ageLess5 = ageLess5;
     }
 
+    public String getAgeLess2() {
+        return ageLess2;
+    }
+
+    public void setAgeLess2(String ageLess2) {
+        this.ageLess2 = ageLess2;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
 /*
     public String getDss_id_hh() {
         return dss_id_hh;

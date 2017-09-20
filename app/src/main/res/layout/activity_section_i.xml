@@ -32,6 +32,12 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
 
+        <Spinner
+            android:id="@+id/tiName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"></Spinner>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -183,12 +189,12 @@
         </LinearLayout>
 
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bacground_border1"
             android:orientation="vertical">
-
 
             <TextView
                 android:layout_width="match_parent"
@@ -203,75 +209,97 @@
                 android:textStyle="bold"
                 tools:typeface="serif"/>
 
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bacground_border"
-                android:orientation="vertical"
-                android:padding="8px">
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/bcg"
-                    android:textAlignment="center"/>
-
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="100">
+                    android:orientation="vertical">
 
 
                     <LinearLayout
-                    android:id="@+id/fldGrpBcgM"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="50"
-                    android:orientation="vertical">
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="#efefef"
-                        android:gravity="center"
-                        android:text="@string/recall"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textStyle="bold" />
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical">
 
-                    <RadioGroup
-                        android:id="@+id/bcgM"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/bcgM01"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/yes"/>
+                            android:layout_marginTop="5dp"
+                            android:text="@string/bcg"
+                            android:textAlignment="center"/>
 
-                        <RadioButton
-                            android:id="@+id/bcgM02"
+                        <android.support.v4.widget.NestedScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/no"/>
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:padding="10dp"
+                            android:scrollbars="vertical">
 
-                    </RadioGroup>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
 
-                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
 
-                <View
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpBcgM"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/bcgM"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorPrimaryDark"></View>
@@ -325,8 +353,7 @@
 
             </LinearLayout>
 
-
-                <TextView
+                                <TextView
                     android:id="@+id/text1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -334,17 +361,17 @@
                     android:text="@string/date"
                     android:textAlignment="center"/>
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                android:id="@+id/bcgDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:focusable="true"
-                android:hint="@string/date"
-                android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
+                                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                    android:id="@+id/bcgDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="1dp"
+                                    android:focusable="false"
+                                    android:hint="@string/date"
+                                    android:textColor="@android:color/black"
+                                    app:dateFormat="dd-MM-yyyy" />
 
-                <LinearLayout
+                                <LinearLayout
                 android:id="@+id/fldGrpov1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -423,7 +450,16 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+
+                        </android.support.v4.widget.NestedScrollView>
+
+
+                        <!--- Closing tag of internal Linear Layout-->
+                        <!-- Closing tag of Scroll view-->
+
+
+                    </LinearLayout>
 
 
             <LinearLayout
@@ -435,13 +471,27 @@
                 android:padding="8px">
 
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/opv0"
-                android:textAlignment="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/opv0"
+                    android:textAlignment="center"/>
 
-            <LinearLayout
+                <!-- Scrollview-->
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:padding="10dp"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -557,7 +607,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -641,16 +691,26 @@
 
             </LinearLayout>
 
+                        <!--End of OPV0-->
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
 
         </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <!-- Second Group at 6 weeks-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bacground_border1"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -665,9 +725,21 @@
                 android:textStyle="bold"
                 tools:typeface="serif"/>
 
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                 android:background="@drawable/bacground_border"
                 android:orientation="vertical"
                 android:padding="8px">
@@ -679,7 +751,18 @@
                 android:text="@string/opv1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -796,7 +879,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -880,7 +963,11 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -898,7 +985,18 @@
                 android:text="@string/penta1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1016,7 +1114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -1102,7 +1200,11 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1119,7 +1221,18 @@
                 android:text="@string/pcv1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1235,7 +1348,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -1319,9 +1432,20 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
 
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+
         </LinearLayout>
+
+
+        <!-- 3rd Group at 10 weeks-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1343,9 +1467,21 @@
                 android:textStyle="bold"
                 tools:typeface="serif"/>
 
-            <LinearLayout
+
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                 android:background="@drawable/bacground_border"
                 android:orientation="vertical"
                 android:padding="8px">
@@ -1358,7 +1494,19 @@
                 android:text="@string/opv2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1474,7 +1622,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -1558,7 +1706,10 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1575,7 +1726,19 @@
                 android:text="@string/penta2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1691,7 +1854,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -1775,6 +1938,9 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -1792,7 +1958,19 @@
                 android:text="@string/pcv2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1818,21 +1996,25 @@
                     <RadioGroup
                         android:id="@+id/pcv2M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv2M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv2M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1904,7 +2086,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -1988,8 +2170,16 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
+
+        <!--4th group at 14 weeks-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -2010,9 +2200,21 @@
                 android:textStyle="bold"
                 tools:typeface="serif"/>
 
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                 android:background="@drawable/bacground_border"
                 android:orientation="vertical"
                 android:padding="8px">
@@ -2024,7 +2226,19 @@
                 android:text="@string/opv3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2142,7 +2356,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -2227,7 +2441,10 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -2244,7 +2461,19 @@
                 android:text="@string/penta3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2361,7 +2590,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -2446,6 +2675,9 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -2464,7 +2696,19 @@
                 android:text="@string/pcv3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2581,7 +2825,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -2665,6 +2909,9 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -2683,7 +2930,19 @@
                 android:text="@string/ipv"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2799,7 +3058,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -2883,8 +3142,16 @@
 
             </LinearLayout>
 
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
             </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
+
+        <!-- 5th Group at 9 months-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -2905,9 +3172,21 @@
                 android:textStyle="bold"
                 tools:typeface="serif"/>
 
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                 android:background="@drawable/bacground_border"
                 android:orientation="vertical"
                 android:padding="8px">
@@ -2919,7 +3198,18 @@
                 android:text="@string/measles1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -3036,7 +3326,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -3120,18 +3410,24 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/bacground_border"
-                android:orientation="vertical"
-                android:padding="8px">
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
 
 
-                <TextView
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -3144,6 +3440,23 @@
                     android:textStyle="bold"
                     tools:typeface="serif"/>
 
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -3151,7 +3464,18 @@
                 android:text="@string/measles2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -3267,7 +3591,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
@@ -3351,9 +3675,17 @@
 
             </LinearLayout>
 
-            </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
 
         </LinearLayout>
+
 
         <TextView
                 android:layout_width="match_parent"

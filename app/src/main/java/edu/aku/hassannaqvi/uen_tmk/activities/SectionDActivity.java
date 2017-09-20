@@ -111,7 +111,7 @@ public class SectionDActivity extends Activity {
         lstMwra.add("....");
 
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("2")) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("2") && MainApp.familyMembersList.get(i).getAgeLess2().equals("2")) {
                 mwraMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstMwra.add(MainApp.familyMembersList.get(i).getName());
             }
@@ -228,7 +228,7 @@ public class SectionDActivity extends Activity {
                         Intent secNext = new Intent(this, SectionFActivity.class);
                         startActivity(secNext);
                     } else {
-                        Intent secNext = new Intent(this, SectionGActivity.class);
+                        Intent secNext = new Intent(this, SectionIActivity.class);
                         startActivity(secNext);
                     }
                 } else {
