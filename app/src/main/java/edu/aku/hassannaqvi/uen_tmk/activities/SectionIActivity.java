@@ -1,41 +1,57 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionIActivity extends AppCompatActivity {
+public class SectionIActivity extends AppCompatActivity implements TextWatcher
+{
 
     private static final String TAG = SectionIActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
+    @BindView(R.id.tiName)
+    Spinner tiName;
     @BindView(R.id.ti01)
     RadioGroup ti01;
     @BindView(R.id.ti01a)
@@ -44,6 +60,8 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ti01b;
     @BindView(R.id.ti01888)
     RadioButton ti01888;
+    @BindView(R.id.fldGrpti02)
+    LinearLayout fldGrpti02;
     @BindView(R.id.ti02a)
     CheckBox ti02a;
     @BindView(R.id.ti02b)
@@ -56,6 +74,8 @@ public class SectionIActivity extends AppCompatActivity {
     CheckBox ti0288;
     @BindView(R.id.ti0288x)
     EditText ti0288x;
+    @BindView(R.id.fldGrpti03)
+    LinearLayout fldGrpti03;
     @BindView(R.id.ti03)
     RadioGroup ti03;
     @BindView(R.id.ti03a)
@@ -80,10 +100,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton bcgC01;
     @BindView(R.id.bcgC02)
     RadioButton bcgC02;
+    @BindView(R.id.text1)
+    TextView text1;
     @BindView(R.id.bcgDate)
     DatePickerInputEditText bcgDate;
+    @BindView(R.id.fldGrpov1)
+    LinearLayout fldGrpov1;
     @BindView(R.id.bcgPov)
     RadioGroup bcgPov;
+    public RadioGroup.OnCheckedChangeListener bcg = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (bcgC01.isChecked()) {
+                text1.setVisibility(View.VISIBLE);
+                bcgDate.setVisibility(View.VISIBLE);
+            } else {
+                text1.setVisibility(View.GONE);
+                bcgDate.setVisibility(View.GONE);
+                bcgDate.setText(null);
+            }
+
+            if (bcgM01.isChecked() || bcgC01.isChecked()) {
+                fldGrpov1.setVisibility(View.VISIBLE);
+            } else if (bcgC02.isChecked() && !bcgM01.isChecked()) {
+                fldGrpov1.setVisibility(View.GONE);
+                bcgPov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.bcgPova)
     RadioButton bcgPova;
     @BindView(R.id.bcgPovb)
@@ -116,10 +163,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv0C01;
     @BindView(R.id.opv0C02)
     RadioButton opv0C02;
+    @BindView(R.id.text2)
+    TextView text2;
     @BindView(R.id.opv0Date)
     DatePickerInputEditText opv0Date;
+    @BindView(R.id.fldGrpov2)
+    LinearLayout fldGrpov2;
     @BindView(R.id.opv0Pov)
     RadioGroup opv0Pov;
+    public RadioGroup.OnCheckedChangeListener opv0 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (opv0C01.isChecked()) {
+                text2.setVisibility(View.VISIBLE);
+                opv0Date.setVisibility(View.VISIBLE);
+            } else {
+                text2.setVisibility(View.GONE);
+                opv0Date.setVisibility(View.GONE);
+                opv0Date.setText(null);
+            }
+
+            if (opv0M01.isChecked() || opv0C01.isChecked()) {
+                fldGrpov2.setVisibility(View.VISIBLE);
+            } else if (opv0C02.isChecked() && !opv0M01.isChecked()) {
+                fldGrpov2.setVisibility(View.GONE);
+                opv0Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.opv0Pova)
     RadioButton opv0Pova;
     @BindView(R.id.opv0Povb)
@@ -152,10 +226,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv1C01;
     @BindView(R.id.opv1C02)
     RadioButton opv1C02;
+    @BindView(R.id.text3)
+    TextView text3;
     @BindView(R.id.opv1Date)
     DatePickerInputEditText opv1Date;
+    @BindView(R.id.fldGrpov3)
+    LinearLayout fldGrpov3;
     @BindView(R.id.opv1Pov)
     RadioGroup opv1Pov;
+    public RadioGroup.OnCheckedChangeListener opv1 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (opv1C01.isChecked()) {
+                text3.setVisibility(View.VISIBLE);
+                opv1Date.setVisibility(View.VISIBLE);
+            } else {
+                text1.setVisibility(View.GONE);
+                opv1Date.setVisibility(View.GONE);
+                opv1Date.setText(null);
+            }
+
+            if (opv1M01.isChecked() && opv1C01.isChecked()) {
+                fldGrpov2.setVisibility(View.VISIBLE);
+            } else if (opv1C02.isChecked() && !opv1M01.isChecked()) {
+                fldGrpov3.setVisibility(View.GONE);
+                opv1Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.opv1Pova)
     RadioButton opv1Pova;
     @BindView(R.id.opv1Povb)
@@ -188,10 +289,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta1C01;
     @BindView(R.id.penta1C02)
     RadioButton penta1C02;
+    @BindView(R.id.text4)
+    TextView text4;
     @BindView(R.id.penta1Date)
     DatePickerInputEditText penta1Date;
+    @BindView(R.id.fldGrpov4)
+    LinearLayout fldGrpov4;
     @BindView(R.id.penta1Pov)
     RadioGroup penta1Pov;
+    public RadioGroup.OnCheckedChangeListener penta1 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (penta1C01.isChecked()) {
+                text4.setVisibility(View.VISIBLE);
+                penta1Date.setVisibility(View.VISIBLE);
+            } else {
+                text4.setVisibility(View.GONE);
+                penta1Date.setVisibility(View.GONE);
+                penta1Date.setText(null);
+            }
+
+            if (penta1M01.isChecked() && penta1C01.isChecked()) {
+                fldGrpov4.setVisibility(View.VISIBLE);
+            } else if (penta1C02.isChecked() && !penta1M01.isChecked()) {
+                fldGrpov4.setVisibility(View.GONE);
+                penta1Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.penta1Pova)
     RadioButton penta1Pova;
     @BindView(R.id.penta1Povb)
@@ -224,10 +352,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv1C01;
     @BindView(R.id.pcv1C02)
     RadioButton pcv1C02;
+    @BindView(R.id.text5)
+    TextView text5;
     @BindView(R.id.pcv1Date)
     DatePickerInputEditText pcv1Date;
+    @BindView(R.id.fldGrpov5)
+    LinearLayout fldGrpov5;
     @BindView(R.id.pcv1Pov)
     RadioGroup pcv1Pov;
+    public RadioGroup.OnCheckedChangeListener pcv1 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (pcv1C01.isChecked()) {
+                text5.setVisibility(View.VISIBLE);
+                pcv1Date.setVisibility(View.VISIBLE);
+            } else {
+                text5.setVisibility(View.GONE);
+                pcv1Date.setVisibility(View.GONE);
+                pcv1Date.setText(null);
+            }
+
+            if (pcv1M01.isChecked() && pcv1C01.isChecked()) {
+                fldGrpov5.setVisibility(View.VISIBLE);
+            } else if (pcv1C02.isChecked() && !pcv1M01.isChecked()) {
+                fldGrpov5.setVisibility(View.GONE);
+                pcv1Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.pcv1Pova)
     RadioButton pcv1Pova;
     @BindView(R.id.pcv1Povb)
@@ -260,10 +415,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv2C01;
     @BindView(R.id.opv2C02)
     RadioButton opv2C02;
+    @BindView(R.id.text6)
+    TextView text6;
     @BindView(R.id.opv2Date)
     DatePickerInputEditText opv2Date;
+    @BindView(R.id.fldGrpov6)
+    LinearLayout fldGrpov6;
     @BindView(R.id.opv2Pov)
     RadioGroup opv2Pov;
+    public RadioGroup.OnCheckedChangeListener opv2 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (opv2C01.isChecked()) {
+                text6.setVisibility(View.VISIBLE);
+                opv2Date.setVisibility(View.VISIBLE);
+            } else {
+                text6.setVisibility(View.GONE);
+                opv2Date.setVisibility(View.GONE);
+                opv2Date.setText(null);
+            }
+
+            if (opv2M01.isChecked() && opv2C01.isChecked()) {
+                fldGrpov6.setVisibility(View.VISIBLE);
+            } else if (opv2C02.isChecked() && !opv2M01.isChecked()) {
+                fldGrpov6.setVisibility(View.GONE);
+                opv2Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.opv2Pova)
     RadioButton opv2Pova;
     @BindView(R.id.opv2Povb)
@@ -296,10 +478,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta2C01;
     @BindView(R.id.penta2C02)
     RadioButton penta2C02;
+    @BindView(R.id.text7)
+    TextView text7;
     @BindView(R.id.penta2Date)
     DatePickerInputEditText penta2Date;
+    @BindView(R.id.fldGrpov7)
+    LinearLayout fldGrpov7;
     @BindView(R.id.penta2Pov)
     RadioGroup penta2Pov;
+    public RadioGroup.OnCheckedChangeListener penta2 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (penta2C01.isChecked()) {
+                text7.setVisibility(View.VISIBLE);
+                penta2Date.setVisibility(View.VISIBLE);
+            } else {
+                text7.setVisibility(View.GONE);
+                penta2Date.setVisibility(View.GONE);
+                penta2Date.setText(null);
+            }
+
+            if (penta2M01.isChecked() && penta2C01.isChecked()) {
+                fldGrpov7.setVisibility(View.VISIBLE);
+            } else if (penta2C02.isChecked() && !penta2M01.isChecked()) {
+                fldGrpov7.setVisibility(View.GONE);
+                penta2Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.penta2Pova)
     RadioButton penta2Pova;
     @BindView(R.id.penta2Povb)
@@ -332,10 +541,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv2C01;
     @BindView(R.id.pcv2C02)
     RadioButton pcv2C02;
+    @BindView(R.id.text8)
+    TextView text8;
     @BindView(R.id.pcv2Date)
     DatePickerInputEditText pcv2Date;
+    @BindView(R.id.fldGrpov8)
+    LinearLayout fldGrpov8;
     @BindView(R.id.pcv2Pov)
     RadioGroup pcv2Pov;
+    public RadioGroup.OnCheckedChangeListener pcv2 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (pcv2C01.isChecked()) {
+                text8.setVisibility(View.VISIBLE);
+                pcv2Date.setVisibility(View.VISIBLE);
+            } else {
+                text8.setVisibility(View.GONE);
+                pcv2Date.setVisibility(View.GONE);
+                pcv2Date.setText(null);
+            }
+
+            if (pcv2M01.isChecked() && pcv2C01.isChecked()) {
+                fldGrpov8.setVisibility(View.VISIBLE);
+            } else if (pcv2C02.isChecked() && !pcv2M01.isChecked()) {
+                fldGrpov8.setVisibility(View.GONE);
+                pcv2Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.pcv2Pova)
     RadioButton pcv2Pova;
     @BindView(R.id.pcv2Povb)
@@ -368,10 +604,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton opv3C01;
     @BindView(R.id.opv3C02)
     RadioButton opv3C02;
+    @BindView(R.id.text9)
+    TextView text9;
     @BindView(R.id.opv3Date)
     DatePickerInputEditText opv3Date;
+    @BindView(R.id.fldGrpov9)
+    LinearLayout fldGrpov9;
     @BindView(R.id.opv3Pov)
     RadioGroup opv3Pov;
+    public RadioGroup.OnCheckedChangeListener opv3 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (opv3C01.isChecked()) {
+                text9.setVisibility(View.VISIBLE);
+                opv3Date.setVisibility(View.VISIBLE);
+            } else {
+                text9.setVisibility(View.GONE);
+                opv3Date.setVisibility(View.GONE);
+                opv3Date.setText(null);
+            }
+
+            if (opv3M01.isChecked() && opv3C01.isChecked()) {
+                fldGrpov9.setVisibility(View.VISIBLE);
+            } else if (opv3C02.isChecked() && !opv3M01.isChecked()) {
+                fldGrpov9.setVisibility(View.GONE);
+                opv3Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.opv3Pova)
     RadioButton opv3Pova;
     @BindView(R.id.opv3Povb)
@@ -404,10 +667,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton penta3C01;
     @BindView(R.id.penta3C02)
     RadioButton penta3C02;
+    @BindView(R.id.text10)
+    TextView text10;
     @BindView(R.id.penta3Date)
     DatePickerInputEditText penta3Date;
+    @BindView(R.id.fldGrpov10)
+    LinearLayout fldGrpov10;
     @BindView(R.id.penta3Pov)
     RadioGroup penta3Pov;
+    public RadioGroup.OnCheckedChangeListener penta3 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (penta3C01.isChecked()) {
+                text10.setVisibility(View.VISIBLE);
+                penta3Date.setVisibility(View.VISIBLE);
+            } else {
+                text10.setVisibility(View.GONE);
+                penta3Date.setVisibility(View.GONE);
+                penta3Date.setText(null);
+            }
+
+            if (penta3M01.isChecked() && penta3C01.isChecked()) {
+                fldGrpov10.setVisibility(View.VISIBLE);
+            } else if (penta3C02.isChecked() && !penta3M01.isChecked()) {
+                fldGrpov10.setVisibility(View.GONE);
+                penta3Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.penta3Pova)
     RadioButton penta3Pova;
     @BindView(R.id.penta3Povb)
@@ -440,10 +730,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton pcv3C01;
     @BindView(R.id.pcv3C02)
     RadioButton pcv3C02;
+    @BindView(R.id.text11)
+    TextView text11;
     @BindView(R.id.pcv3Date)
     DatePickerInputEditText pcv3Date;
+    @BindView(R.id.fldGrpov11)
+    LinearLayout fldGrpov11;
     @BindView(R.id.pcv3Pov)
     RadioGroup pcv3Pov;
+    public RadioGroup.OnCheckedChangeListener pcv3 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (pcv3C01.isChecked()) {
+                text11.setVisibility(View.VISIBLE);
+                pcv3Date.setVisibility(View.VISIBLE);
+            } else {
+                text11.setVisibility(View.GONE);
+                pcv3Date.setVisibility(View.GONE);
+                pcv3Date.setText(null);
+            }
+
+            if (pcv3M01.isChecked() && pcv3C01.isChecked()) {
+                fldGrpov11.setVisibility(View.VISIBLE);
+            } else if (pcv3C02.isChecked() && !pcv3M01.isChecked()) {
+                fldGrpov11.setVisibility(View.GONE);
+                pcv3Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.pcv3Pova)
     RadioButton pcv3Pova;
     @BindView(R.id.pcv3Povb)
@@ -476,10 +793,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ipvC01;
     @BindView(R.id.ipvC02)
     RadioButton ipvC02;
+    @BindView(R.id.text12)
+    TextView text12;
     @BindView(R.id.ipvDate)
     DatePickerInputEditText ipvDate;
+    @BindView(R.id.fldGrpov12)
+    LinearLayout fldGrpov12;
     @BindView(R.id.ipvPov)
     RadioGroup ipvPov;
+    public RadioGroup.OnCheckedChangeListener ipv = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (ipvC01.isChecked()) {
+                text12.setVisibility(View.VISIBLE);
+                ipvDate.setVisibility(View.VISIBLE);
+            } else {
+                text12.setVisibility(View.GONE);
+                ipvDate.setVisibility(View.GONE);
+                ipvDate.setText(null);
+            }
+
+            if (ipvM01.isChecked() && ipvC01.isChecked()) {
+                fldGrpov12.setVisibility(View.VISIBLE);
+            } else if (ipvC02.isChecked() && !ipvM01.isChecked()) {
+                fldGrpov12.setVisibility(View.GONE);
+                ipvPov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.ipvPova)
     RadioButton ipvPova;
     @BindView(R.id.ipvPovb)
@@ -512,10 +856,37 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles1C01;
     @BindView(R.id.measles1C02)
     RadioButton measles1C02;
+    @BindView(R.id.text13)
+    TextView text13;
     @BindView(R.id.measles1Date)
     DatePickerInputEditText measles1Date;
+    @BindView(R.id.fldGrpov13)
+    LinearLayout fldGrpov13;
     @BindView(R.id.measles1Pov)
     RadioGroup measles1Pov;
+    public RadioGroup.OnCheckedChangeListener measles1 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (measles1C01.isChecked()) {
+                text13.setVisibility(View.VISIBLE);
+                measles1Date.setVisibility(View.VISIBLE);
+            } else {
+                text13.setVisibility(View.GONE);
+                measles1Date.setVisibility(View.GONE);
+                measles1Date.setText(null);
+            }
+
+            if (measles1M01.isChecked() && measles1C01.isChecked()) {
+                fldGrpov13.setVisibility(View.VISIBLE);
+            } else if (measles1C02.isChecked() && !measles1M01.isChecked()) {
+                fldGrpov13.setVisibility(View.GONE);
+                measles1Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.measles1Pova)
     RadioButton measles1Pova;
     @BindView(R.id.measles1Povb)
@@ -540,8 +911,45 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles2M01;
     @BindView(R.id.measles2M02)
     RadioButton measles2M02;
+    @BindView(R.id.fldGrpmeasles2C)
+    LinearLayout fldGrpmeasles2C;
+    @BindView(R.id.measles2C)
+    RadioGroup measles2C;
+    @BindView(R.id.measles2C01)
+    RadioButton measles2C01;
+    @BindView(R.id.measles2C02)
+    RadioButton measles2C02;
+    @BindView(R.id.text14)
+    TextView text14;
+    @BindView(R.id.measles2Date)
+    DatePickerInputEditText measles2Date;
+    @BindView(R.id.fldGrpov14)
+    LinearLayout fldGrpov14;
     @BindView(R.id.measles2Pov)
     RadioGroup measles2Pov;
+    public RadioGroup.OnCheckedChangeListener measles2 = new OnCheckedChangeListener()
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+            if (measles2C01.isChecked()) {
+                text14.setVisibility(View.VISIBLE);
+                measles2Date.setVisibility(View.VISIBLE);
+            } else {
+                text14.setVisibility(View.GONE);
+                measles2Date.setVisibility(View.GONE);
+                measles2Date.setText(null);
+            }
+
+            if (measles2M01.isChecked() && measles2C01.isChecked()) {
+                fldGrpov14.setVisibility(View.VISIBLE);
+            } else if (measles2C02.isChecked() && !measles2M01.isChecked()) {
+                fldGrpov14.setVisibility(View.GONE);
+                measles2Pov.clearCheck();
+
+            }
+        }
+    };
     @BindView(R.id.measles2Pova)
     RadioButton measles2Pova;
     @BindView(R.id.measles2Povb)
@@ -558,16 +966,6 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton measles2Povg;
     @BindView(R.id.measles2Povh)
     RadioButton measles2Povh;
-    @BindView(R.id.fldGrpmeasles2C)
-    LinearLayout fldGrpmeasles2C;
-    @BindView(R.id.measles2C)
-    RadioGroup measles2C;
-    @BindView(R.id.measles2C01)
-    RadioButton measles2C01;
-    @BindView(R.id.measles2C02)
-    RadioButton measles2C02;
-    @BindView(R.id.measles2Date)
-    DatePickerInputEditText measles2Date;
     @BindView(R.id.ti04)
     RadioGroup ti04;
     @BindView(R.id.ti04a)
@@ -576,45 +974,70 @@ public class SectionIActivity extends AppCompatActivity {
     RadioButton ti04b;
     @BindView(R.id.ti04888)
     RadioButton ti04888;
+    @BindView(R.id.fldGrpti05)
+    LinearLayout fldGrpti05;
     @BindView(R.id.ti05)
     EditText ti05;
     @BindView(R.id.ti05888)
     CheckBox ti05888;
-    @BindView(R.id.fldGrpti02)
-    LinearLayout fldGrpti02;
-    @BindView(R.id.fldGrpti05)
-    LinearLayout fldGrpti05;
-    @BindView(R.id.fldGrpti03)
-    LinearLayout fldGrpti03;
-
     @BindViews({R.id.bcgDate, R.id.opv0Date, R.id.opv1Date, R.id.penta1Date, R.id.pcv1Date, R.id.opv2Date, R.id.penta2Date
             , R.id.pcv2Date, R.id.opv3Date, R.id.penta3Date, R.id.pcv3Date, R.id.ipvDate, R.id.measles1Date, R.id.measles2Date})
     List<DatePickerInputEditText> dates;
-
+    @BindViews({R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7
+            , R.id.text8, R.id.text9, R.id.text10, R.id.text11, R.id.text12, R.id.text13, R.id.text14})
+    List<TextView> datesText;
     @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrppenta2C,
             R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
             R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
     List<LinearLayout> fldGrpCard;
-
-
     @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M,
             R.id.fldGrppcv2M, R.id.fldGrpopv2M, R.id.fldGrpPenta3M, R.id.fldGrppcv3M, R.id.fldGrpopv3M, R.id.fldGrpipvM,
             R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})
     List<LinearLayout> fldGrpMother;
-
     @BindViews({R.id.bcgC, R.id.opv0C, R.id.penta1C, R.id.pcv1C, R.id.opv1C, R.id.penta2C, R.id.pcv2C, R.id.opv2C, R.id.penta3C,
             R.id.pcv3C, R.id.opv3C, R.id.ipvC, R.id.measles1C, R.id.measles2C})
     List<RadioGroup> rdoCard;
-
     @BindViews({R.id.bcgC, R.id.bcgM, R.id.opv0C, R.id.opv0M, R.id.penta1C, R.id.penta1M, R.id.pcv1C, R.id.pcv1M,
             R.id.opv1C, R.id.opv1M, R.id.penta2C, R.id.pcv2C, R.id.pcv2M, R.id.opv2C, R.id.opv2M, R.id.penta3C, R.id.penta3M,
             R.id.pcv3C, R.id.pcv3M, R.id.opv3C, R.id.opv3M, R.id.ipvC, R.id.ipvM, R.id.measles1C, R.id.measles1M,
             R.id.measles2C, R.id.measles2M})
     List<RadioGroup> rdoAll;
-
     @BindViews({R.id.bcgPov, R.id.opv0Pov, R.id.penta1Pov, R.id.pcv1Pov, R.id.opv1Pov, R.id.penta2Pov, R.id.pcv2Pov, R.id.opv2Pov,
             R.id.penta3Pov, R.id.pcv3Pov, R.id.opv3Pov, R.id.ipvPov, R.id.measles1Pov, R.id.measles2Pov})
     List<RadioGroup> placeofVacc;
+    @BindViews({R.id.bcgC, R.id.bcgM})
+    List<RadioGroup> grpBcg;
+    @BindViews({R.id.opv0C, R.id.opv0M})
+    List<RadioGroup> grpOpv0;
+    @BindViews({R.id.penta1C, R.id.penta1M})
+    List<RadioGroup> grpPenta1;
+    @BindViews({R.id.pcv1C, R.id.pcv1M})
+    List<RadioGroup> grpPcv1;
+    @BindViews({R.id.opv1C, R.id.opv1M})
+    List<RadioGroup> grpOpv1;
+    @BindViews({R.id.penta2C, R.id.penta2M})
+    List<RadioGroup> grpPenta2;
+    @BindViews({R.id.pcv2C, R.id.pcv2M})
+    List<RadioGroup> grpPcv2;
+    @BindViews({R.id.opv2C, R.id.opv2M})
+    List<RadioGroup> grpOpv2;
+    @BindViews({R.id.penta3C, R.id.penta3M})
+    List<RadioGroup> grpPenta3;
+    @BindViews({R.id.pcv3C, R.id.pcv3M})
+    List<RadioGroup> grpPcv3;
+    @BindViews({R.id.opv3C, R.id.opv3M})
+    List<RadioGroup> grpOpv3;
+    @BindViews({R.id.ipvC, R.id.ipvM})
+    List<RadioGroup> grpIpv;
+    @BindViews({R.id.measles1C, R.id.measles1M})
+    List<RadioGroup> grpMeasles1;
+    @BindViews({R.id.measles2C, R.id.measles2M})
+    List<RadioGroup> grpMeasles2;
+
+    Map<String, FamilyMembersContract> childsMap;
+    ArrayList<String> lstChild;
+
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -622,22 +1045,76 @@ public class SectionIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
 
+        //        get data from sec B
+
+        childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
+
+        childsMap.put("....", null);
+        lstChild.add("....");
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            if (MainApp.familyMembersList.get(i).getAgeLess2().equals("1")) {
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
+                lstChild.add(MainApp.familyMembersList.get(i).getName());
+                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
+
+                //childsMap.get(tiName.getSelectedItem()).getDob();
+
+            }
+        }
+
+        tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+        //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(position).getDob());
+
+        tiName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(0).getDob());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
         String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
 
         for (DatePickerInputEditText de : dates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+
         }
 
-        ti03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        for (DatePickerInputEditText de : dates) {
+            de.addTextChangedListener(this);
+        }
+
+
+
+
+        ti03.setOnCheckedChangeListener(new OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (ti03a.isChecked()) {
                     for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
+                        if (!tiName.getSelectedItem().equals("....")) {
+                            de.setMinDate(MainApp.convertDateFormat(childsMap.get(tiName.getSelectedItem()).getDob()));
+                        }
                     }
                     for (LinearLayout le : fldGrpCard) {
                         le.setVisibility(View.VISIBLE);
+                    }
+                    for (TextView te : datesText) {
+                        te.setVisibility(View.VISIBLE);
                     }
                     for (LinearLayout le : fldGrpMother) {
                         le.setVisibility(View.VISIBLE);
@@ -654,6 +1131,9 @@ public class SectionIActivity extends AppCompatActivity {
                             de.setVisibility(View.GONE);
                             de.setText(null);
                         }
+                        for (TextView te : datesText) {
+                            te.setVisibility(View.GONE);
+                        }
                     }
                     for (LinearLayout le : fldGrpMother) {
                         le.setVisibility(View.VISIBLE);
@@ -664,7 +1144,8 @@ public class SectionIActivity extends AppCompatActivity {
         });
 
 
-        ti01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ti01.setOnCheckedChangeListener(new OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (ti01a.isChecked()) {
@@ -694,7 +1175,8 @@ public class SectionIActivity extends AppCompatActivity {
             }
         });
 
-        ti0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ti0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -708,7 +1190,8 @@ public class SectionIActivity extends AppCompatActivity {
         });
 
 
-        ti04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ti04.setOnCheckedChangeListener(new OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (ti04a.isChecked()) {
@@ -723,7 +1206,8 @@ public class SectionIActivity extends AppCompatActivity {
         });
 
 
-        ti05888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ti05888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -736,6 +1220,84 @@ public class SectionIActivity extends AppCompatActivity {
             }
         });
 
+        //================= Individual Skip Patterns of Vaccines=============
+
+        // BCG
+        for (RadioGroup rd : grpBcg) {
+            rd.setOnCheckedChangeListener(bcg);
+        }
+
+        // Opv - 0
+
+        for (RadioGroup rd : grpOpv0) {
+            rd.setOnCheckedChangeListener(opv0);
+        }
+
+        // OPV1
+        for (RadioGroup rd : grpOpv1) {
+            rd.setOnCheckedChangeListener(opv1);
+        }
+
+        // Penta1
+        for (RadioGroup rd : grpPenta1) {
+            rd.setOnCheckedChangeListener(penta1);
+
+        }
+
+        // PCV1
+        for (RadioGroup rd : grpPcv1) {
+            rd.setOnCheckedChangeListener(pcv1);
+        }
+
+        // OPV2
+        for (RadioGroup rd : grpOpv2) {
+            rd.setOnCheckedChangeListener(opv2);
+        }
+
+        // Penta2
+        for (RadioGroup rd : grpPenta2) {
+            rd.setOnCheckedChangeListener(penta2);
+
+        }
+
+        // PCV2
+        for (RadioGroup rd : grpPcv2) {
+            rd.setOnCheckedChangeListener(pcv2);
+        }
+
+
+        // OPV3
+        for (RadioGroup rd : grpOpv3) {
+            rd.setOnCheckedChangeListener(opv3);
+        }
+
+        // Penta3
+        for (RadioGroup rd : grpPenta3) {
+            rd.setOnCheckedChangeListener(penta3);
+
+        }
+
+        // PCV3
+        for (RadioGroup rd : grpPcv3) {
+            rd.setOnCheckedChangeListener(pcv3);
+        }
+
+        // IPV
+        for (RadioGroup rd : grpIpv) {
+            rd.setOnCheckedChangeListener(ipv);
+        }
+
+
+        // Measles 1
+
+        for (RadioGroup rd : grpMeasles1) {
+            rd.setOnCheckedChangeListener(measles1);
+        }
+
+        // Measles 2
+        for (RadioGroup rd : grpMeasles2) {
+            rd.setOnCheckedChangeListener(measles2);
+        }
     }
 
     @OnClick(R.id.btn_End)
@@ -746,7 +1308,6 @@ public class SectionIActivity extends AppCompatActivity {
 
         MainApp.endActivity(this, this);
     }
-
 
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
@@ -795,6 +1356,16 @@ public class SectionIActivity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+
+        MainApp.ims = new SectionIIMContract();
+
+        MainApp.ims.set_UUID(MainApp.fc.getUID());
+        MainApp.ims.setFormDate(MainApp.fc.getFormDate());
+        MainApp.ims.setDeviceId(MainApp.fc.getDeviceID());
+        MainApp.ims.setUser(MainApp.fc.getUser());
+        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sI = new JSONObject();
 
@@ -965,265 +1536,16 @@ public class SectionIActivity extends AppCompatActivity {
                 }
 
 
-                if (bcgDate.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    bcgDate.setError("This data is Required!");
-                    Log.i(TAG, "bcgDate: This data is Required!");
-                    return false;
-                } else {
-                    bcgDate.setError(null);
+                if (bcgC01.isChecked()) {
+                    if (bcgDate.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        bcgDate.setError("This data is Required!");
+                        Log.i(TAG, "bcgDate: This data is Required!");
+                        return false;
+                    } else {
+                        bcgDate.setError(null);
+                    }
                 }
-
-                //============ Polio 0 / Card Present ==========
-                if (opv0C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
-                    opv0C02.setError("This data is Required!");
-                    Log.i(TAG, "opv0C: This data is Required!");
-                    return false;
-                } else {
-                    opv0C02.setError(null);
-                }
-
-                if (opv0Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv0Date.setError("This data is Required!");
-                    Log.i(TAG, "opv0Date: This data is Required!");
-                    return false;
-                } else {
-                    opv0Date.setError(null);
-                }
-
-                //============ OPV 1 / Card Present ==========
-                if (opv1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
-                    opv1C02.setError("This data is Required!");
-                    Log.i(TAG, "opv1C: This data is Required!");
-                    return false;
-                } else {
-                    opv1C02.setError(null);
-                }
-
-                if (opv1Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv1Date.setError("This data is Required!");
-                    Log.i(TAG, "opv1Date: This data is Required!");
-                    return false;
-                } else {
-                    opv1Date.setError(null);
-                }
-
-
-                //============ Penta 1 / Card Present ==========
-                if (penta1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
-                    penta1C02.setError("This data is Required!");
-                    Log.i(TAG, "penta1C: This data is Required!");
-                    return false;
-                } else {
-                    penta1C02.setError(null);
-                }
-
-                if (penta1Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    penta1Date.setError("This data is Required!");
-                    Log.i(TAG, "penta1Date: This data is Required!");
-                    return false;
-                } else {
-                    penta1Date.setError(null);
-                }
-
-
-                //============ PCV 1 / Card Present ==========
-                if (pcv1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
-                    pcv1C02.setError("This data is Required!");
-                    Log.i(TAG, "pcv1C: This data is Required!");
-                    return false;
-                } else {
-                    pcv1C02.setError(null);
-                }
-
-                if (pcv1Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    pcv1Date.setError("This data is Required!");
-                    Log.i(TAG, "pcv1Date: This data is Required!");
-                    return false;
-                } else {
-                    pcv1Date.setError(null);
-                }
-
-                //============ OPV 2 / Card Present ==========
-                if (opv2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
-                    opv2C02.setError("This data is Required!");
-                    Log.i(TAG, "opv2C: This data is Required!");
-                    return false;
-                } else {
-                    opv2C02.setError(null);
-                }
-
-                if (opv2Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv2Date.setError("This data is Required!");
-                    Log.i(TAG, "opv2Date: This data is Required!");
-                    return false;
-                } else {
-                    opv2Date.setError(null);
-                }
-
-
-                //============ Penta 2 / Card Present ==========
-                if (penta2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
-                    penta2C02.setError("This data is Required!");
-                    Log.i(TAG, "penta2C: This data is Required!");
-                    return false;
-                } else {
-                    penta2C02.setError(null);
-                }
-
-
-                if (penta2Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    penta2Date.setError("This data is Required!");
-                    Log.i(TAG, "penta2Date: This data is Required!");
-                    return false;
-                } else {
-                    penta2Date.setError(null);
-                }
-                //============ PCV 2 / Card Present ==========
-                if (pcv2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
-                    pcv2C02.setError("This data is Required!");
-                    Log.i(TAG, "pcv2C: This data is Required!");
-                    return false;
-                } else {
-                    pcv2C02.setError(null);
-                }
-
-                if (pcv2Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    pcv2Date.setError("This data is Required!");
-                    Log.i(TAG, "pcv2Date: This data is Required!");
-                    return false;
-                } else {
-                    pcv2Date.setError(null);
-                }
-
-                //============ OPV 3 / Card Present ==========
-                if (opv3C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
-                    opv3C02.setError("This data is Required!");
-                    Log.i(TAG, "opv3C: This data is Required!");
-                    return false;
-                } else {
-                    opv3C02.setError(null);
-                }
-
-                if (opv3Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv3Date.setError("This data is Required!");
-                    Log.i(TAG, "opv3Date: This data is Required!");
-                    return false;
-                } else {
-                    opv3Date.setError(null);
-                }
-                //============ Penta 3 / Card Present ==========
-                if (penta3C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
-                    penta3C02.setError("This data is Required!");
-                    Log.i(TAG, "penta3C: This data is Required!");
-                    return false;
-                } else {
-                    penta3C02.setError(null);
-                }
-
-                if (penta3Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    penta3Date.setError("This data is Required!");
-                    Log.i(TAG, "penta3Date: This data is Required!");
-                    return false;
-                } else {
-                    penta3Date.setError(null);
-                }
-
-                //============ PCV 3 / Card Present ==========
-                if (pcv3C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
-                    pcv3C02.setError("This data is Required!");
-                    Log.i(TAG, "pcv3C: This data is Required!");
-                    return false;
-                } else {
-                    pcv3C02.setError(null);
-                }
-
-                if (pcv3Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    pcv3Date.setError("This data is Required!");
-                    Log.i(TAG, "pcv3Date: This data is Required!");
-                    return false;
-                } else {
-                    pcv3Date.setError(null);
-                }
-
-
-                //============ IPV / Card Present ==========
-                if (ipvC.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
-                    ipvC02.setError("This data is Required!");
-                    Log.i(TAG, "ipvC: This data is Required!");
-                    return false;
-                } else {
-                    ipvC02.setError(null);
-                }
-
-
-                if (ipvDate.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    ipvDate.setError("This data is Required!");
-                    Log.i(TAG, "ipvDate: This data is Required!");
-                    return false;
-                } else {
-                    ipvDate.setError(null);
-                }
-                //============ measles1 / Card Present ==========
-                if (measles1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
-                    measles1C02.setError("This data is Required!");
-                    Log.i(TAG, "measles1C: This data is Required!");
-                    return false;
-                } else {
-                    measles1C02.setError(null);
-                }
-
-                if (measles1Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    measles1Date.setError("This data is Required!");
-                    Log.i(TAG, "measles1Date: This data is Required!");
-                    return false;
-                } else {
-                    measles1Date.setError(null);
-                }
-
-                //============ measles2 / Card Present ==========
-                if (measles2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
-                    measles2C02.setError("This data is Required!");
-                    Log.i(TAG, "measles2C: This data is Required!");
-                    return false;
-                } else {
-                    measles2C02.setError(null);
-                }
-
-                if (measles2Date.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    measles2Date.setError("This data is Required!");
-                    Log.i(TAG, "measles2Date: This data is Required!");
-                    return false;
-                } else {
-                    measles2Date.setError(null);
-                }
-
             }
 
             //============ BCG / Mother ==========
@@ -1236,15 +1558,41 @@ public class SectionIActivity extends AppCompatActivity {
                 bcgM02.setError(null);
             }
 
-            if (bcgPov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                bcgPova.setError("This data is Required!");
-                Log.i(TAG, "bcgPov: This data is Required!");
-                return false;
-            } else {
-                bcgPova.setError(null);
+            if (bcgC01.isChecked() || bcgM01.isChecked()) {
+
+                if (bcgPov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    bcgPova.setError("This data is Required!");
+                    Log.i(TAG, "bcgPov: This data is Required!");
+                    return false;
+                } else {
+                    bcgPova.setError(null);
+                }
             }
 
+
+            if (ti03a.isChecked()) {
+                //============ Polio 0 / Card Present ==========
+                if (opv0C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
+                    opv0C02.setError("This data is Required!");
+                    Log.i(TAG, "opv0C: This data is Required!");
+                    return false;
+                } else {
+                    opv0C02.setError(null);
+                }
+
+                if (opv0C01.isChecked()) {
+                    if (opv0Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        opv0Date.setError("This data is Required!");
+                        Log.i(TAG, "opv0Date: This data is Required!");
+                        return false;
+                    } else {
+                        opv0Date.setError(null);
+                    }
+                }
+            }
 
             //============ Polio 0 / Mother ==========
             if (opv0M.getCheckedRadioButtonId() == -1) {
@@ -1256,13 +1604,38 @@ public class SectionIActivity extends AppCompatActivity {
                 opv0M02.setError(null);
             }
 
-            if (opv0Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                opv0Pova.setError("This data is Required!");
-                Log.i(TAG, "opv0Pov: This data is Required!");
-                return false;
-            } else {
-                opv0Pova.setError(null);
+            if (opv0C01.isChecked() || opv0M01.isChecked()) {
+                if (opv0Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    opv0Pova.setError("This data is Required!");
+                    Log.i(TAG, "opv0Pov: This data is Required!");
+                    return false;
+                } else {
+                    opv0Pova.setError(null);
+                }
+            }
+
+            if (ti03a.isChecked()) {
+                //============ OPV 1 / Card Present ==========
+                if (opv1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
+                    opv1C02.setError("This data is Required!");
+                    Log.i(TAG, "opv1C: This data is Required!");
+                    return false;
+                } else {
+                    opv1C02.setError(null);
+                }
+
+                if (opv1C01.isChecked()) {
+                    if (opv1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        opv1Date.setError("This data is Required!");
+                        Log.i(TAG, "opv1Date: This data is Required!");
+                        return false;
+                    } else {
+                        opv1Date.setError(null);
+                    }
+                }
             }
 
             //============ OPV 1 / Mother ==========
@@ -1275,15 +1648,40 @@ public class SectionIActivity extends AppCompatActivity {
                 opv1M02.setError(null);
             }
 
-            if (opv1Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                opv1Pova.setError("This data is Required!");
-                Log.i(TAG, "opv1Pov: This data is Required!");
-                return false;
-            } else {
-                opv1Pova.setError(null);
+            if (opv1C01.isChecked() || opv1M01.isChecked()) {
+                if (opv1Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    opv1Pova.setError("This data is Required!");
+                    Log.i(TAG, "opv1Pov: This data is Required!");
+                    return false;
+                } else {
+                    opv1Pova.setError(null);
+                }
             }
 
+
+            if (ti03a.isChecked()) {
+                //============ Penta 1 / Card Present ==========
+                if (penta1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
+                    penta1C02.setError("This data is Required!");
+                    Log.i(TAG, "penta1C: This data is Required!");
+                    return false;
+                } else {
+                    penta1C02.setError(null);
+                }
+
+                if (penta1C01.isChecked()) {
+                    if (penta1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        penta1Date.setError("This data is Required!");
+                        Log.i(TAG, "penta1Date: This data is Required!");
+                        return false;
+                    } else {
+                        penta1Date.setError(null);
+                    }
+                }
+            }
 
             //============ Penta 1 / Mother ==========
             if (penta1M.getCheckedRadioButtonId() == -1) {
@@ -1295,13 +1693,40 @@ public class SectionIActivity extends AppCompatActivity {
                 penta1M02.setError(null);
             }
 
-            if (penta1Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                penta1Pova.setError("This data is Required!");
-                Log.i(TAG, "penta1Pov: This data is Required!");
-                return false;
-            } else {
-                penta1Pova.setError(null);
+            if (penta1C01.isChecked() || penta1M01.isChecked()) {
+                if (penta1Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    penta1Pova.setError("This data is Required!");
+                    Log.i(TAG, "penta1Pov: This data is Required!");
+                    return false;
+                } else {
+                    penta1Pova.setError(null);
+                }
+            }
+
+
+            if (ti03a.isChecked()) {
+
+                //============ PCV 1 / Card Present ==========
+                if (pcv1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
+                    pcv1C02.setError("This data is Required!");
+                    Log.i(TAG, "pcv1C: This data is Required!");
+                    return false;
+                } else {
+                    pcv1C02.setError(null);
+                }
+
+                if (pcv1C01.isChecked()) {
+                    if (pcv1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        pcv1Date.setError("This data is Required!");
+                        Log.i(TAG, "pcv1Date: This data is Required!");
+                        return false;
+                    } else {
+                        pcv1Date.setError(null);
+                    }
+                }
             }
 
             //============ PCV 1 / Mother ==========
@@ -1315,13 +1740,39 @@ public class SectionIActivity extends AppCompatActivity {
             }
 
 
-            if (pcv1Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                pcv1Pova.setError("This data is Required!");
-                Log.i(TAG, "pcv1Pov: This data is Required!");
-                return false;
-            } else {
-                pcv1Pova.setError(null);
+            if (pcv1C01.isChecked() || pcv1M01.isChecked()) {
+                if (pcv1Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    pcv1Pova.setError("This data is Required!");
+                    Log.i(TAG, "pcv1Pov: This data is Required!");
+                    return false;
+                } else {
+                    pcv1Pova.setError(null);
+                }
+            }
+
+
+            if (ti03a.isChecked()) {
+                //============ OPV 2 / Card Present ==========
+                if (opv2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
+                    opv2C02.setError("This data is Required!");
+                    Log.i(TAG, "opv2C: This data is Required!");
+                    return false;
+                } else {
+                    opv2C02.setError(null);
+                }
+
+                if (opv2C01.isChecked()) {
+                    if (opv2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        opv2Date.setError("This data is Required!");
+                        Log.i(TAG, "opv2Date: This data is Required!");
+                        return false;
+                    } else {
+                        opv2Date.setError(null);
+                    }
+                }
             }
 
             //============ OPV 2 / Mother ==========
@@ -1334,13 +1785,39 @@ public class SectionIActivity extends AppCompatActivity {
                 opv2M02.setError(null);
             }
 
-            if (opv2Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                opv2Pova.setError("This data is Required!");
-                Log.i(TAG, "opv2Pov: This data is Required!");
-                return false;
-            } else {
-                opv2Pova.setError(null);
+            if (opv2C01.isChecked() || opv2M01.isChecked()) {
+                if (opv2Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    opv2Pova.setError("This data is Required!");
+                    Log.i(TAG, "opv2Pov: This data is Required!");
+                    return false;
+                } else {
+                    opv2Pova.setError(null);
+                }
+            }
+
+            if (ti03a.isChecked()) {
+                //============ Penta 2 / Card Present ==========
+                if (penta2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
+                    penta2C02.setError("This data is Required!");
+                    Log.i(TAG, "penta2C: This data is Required!");
+                    return false;
+                } else {
+                    penta2C02.setError(null);
+                }
+
+
+                if (penta2C01.isChecked()) {
+                    if (penta2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        penta2Date.setError("This data is Required!");
+                        Log.i(TAG, "penta2Date: This data is Required!");
+                        return false;
+                    } else {
+                        penta2Date.setError(null);
+                    }
+                }
             }
 
             //============ Penta 2 / Mother ==========
@@ -1353,13 +1830,39 @@ public class SectionIActivity extends AppCompatActivity {
                 penta2M02.setError(null);
             }
 
-            if (penta2Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                penta2Pova.setError("This data is Required!");
-                Log.i(TAG, "penta2Pov: This data is Required!");
-                return false;
-            } else {
-                penta2Pova.setError(null);
+
+            if (penta2C01.isChecked() || penta2M01.isChecked()) {
+                if (penta2Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    penta2Pova.setError("This data is Required!");
+                    Log.i(TAG, "penta2Pov: This data is Required!");
+                    return false;
+                } else {
+                    penta2Pova.setError(null);
+                }
+            }
+
+            if (ti03a.isChecked()) {
+                //============ PCV 2 / Card Present ==========
+                if (pcv2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
+                    pcv2C02.setError("This data is Required!");
+                    Log.i(TAG, "pcv2C: This data is Required!");
+                    return false;
+                } else {
+                    pcv2C02.setError(null);
+                }
+
+                if (pcv2C01.isChecked()) {
+                    if (pcv2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        pcv2Date.setError("This data is Required!");
+                        Log.i(TAG, "pcv2Date: This data is Required!");
+                        return false;
+                    } else {
+                        pcv2Date.setError(null);
+                    }
+                }
             }
 
             //============ PCV 2 / Mother ==========
@@ -1372,15 +1875,39 @@ public class SectionIActivity extends AppCompatActivity {
                 pcv2M02.setError(null);
             }
 
-            if (pcv2Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                pcv2Pova.setError("This data is Required!");
-                Log.i(TAG, "pcv2Pov: This data is Required!");
-                return false;
-            } else {
-                pcv2Pova.setError(null);
+            if (pcv2C01.isChecked() || pcv2M01.isChecked()) {
+                if (pcv2Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    pcv2Pova.setError("This data is Required!");
+                    Log.i(TAG, "pcv2Pov: This data is Required!");
+                    return false;
+                } else {
+                    pcv2Pova.setError(null);
+                }
             }
 
+            if (ti03a.isChecked()) {
+                //============ OPV 3 / Card Present ==========
+                if (opv3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
+                    opv3C02.setError("This data is Required!");
+                    Log.i(TAG, "opv3C: This data is Required!");
+                    return false;
+                } else {
+                    opv3C02.setError(null);
+                }
+
+                if (opv3C01.isChecked()) {
+                    if (opv3Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        opv3Date.setError("This data is Required!");
+                        Log.i(TAG, "opv3Date: This data is Required!");
+                        return false;
+                    } else {
+                        opv3Date.setError(null);
+                    }
+                }
+            }
             //============ OPV 3 / Mother ==========
             if (opv3M.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
@@ -1391,15 +1918,39 @@ public class SectionIActivity extends AppCompatActivity {
                 opv3M02.setError(null);
             }
 
-            if (opv3Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                opv3Pova.setError("This data is Required!");
-                Log.i(TAG, "opv3Pov: This data is Required!");
-                return false;
-            } else {
-                opv3Pova.setError(null);
+            if (opv3C01.isChecked() || opv3M01.isChecked()) {
+                if (opv3Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    opv3Pova.setError("This data is Required!");
+                    Log.i(TAG, "opv3Pov: This data is Required!");
+                    return false;
+                } else {
+                    opv3Pova.setError(null);
+                }
             }
 
+            if (ti03a.isChecked()) {
+                //============ Penta 3 / Card Present ==========
+                if (penta3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
+                    penta3C02.setError("This data is Required!");
+                    Log.i(TAG, "penta3C: This data is Required!");
+                    return false;
+                } else {
+                    penta3C02.setError(null);
+                }
+
+                if (penta3C01.isChecked()) {
+                    if (penta3Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        penta3Date.setError("This data is Required!");
+                        Log.i(TAG, "penta3Date: This data is Required!");
+                        return false;
+                    } else {
+                        penta3Date.setError(null);
+                    }
+                }
+            }
 
             //============ Penta 3 / Mother ==========
             if (penta3M.getCheckedRadioButtonId() == -1) {
@@ -1411,14 +1962,40 @@ public class SectionIActivity extends AppCompatActivity {
                 penta3M02.setError(null);
             }
 
-            if (penta3Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                penta3Pova.setError("This data is Required!");
-                Log.i(TAG, "penta3Pov: This data is Required!");
-                return false;
-            } else {
-                penta3Pova.setError(null);
+            if (penta3C01.isChecked() || penta3M01.isChecked()) {
+                if (penta3Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    penta3Pova.setError("This data is Required!");
+                    Log.i(TAG, "penta3Pov: This data is Required!");
+                    return false;
+                } else {
+                    penta3Pova.setError(null);
+                }
             }
+
+            if (ti03a.isChecked()) {
+                //============ PCV 3 / Card Present ==========
+                if (pcv3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
+                    pcv3C02.setError("This data is Required!");
+                    Log.i(TAG, "pcv3C: This data is Required!");
+                    return false;
+                } else {
+                    pcv3C02.setError(null);
+                }
+
+                if (opv3C01.isChecked()) {
+                    if (pcv3Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        pcv3Date.setError("This data is Required!");
+                        Log.i(TAG, "pcv3Date: This data is Required!");
+                        return false;
+                    } else {
+                        pcv3Date.setError(null);
+                    }
+                }
+            }
+
 
             //============ PCV / Mother ==========
             if (pcv3M.getCheckedRadioButtonId() == -1) {
@@ -1430,15 +2007,41 @@ public class SectionIActivity extends AppCompatActivity {
                 pcv3M02.setError(null);
             }
 
-            if (pcv3Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                pcv3Pova.setError("This data is Required!");
-                Log.i(TAG, "pcv3Pov: This data is Required!");
-                return false;
-            } else {
-                pcv3Pova.setError(null);
+            if (pcv3C01.isChecked() || pcv3M01.isChecked()) {
+                if (pcv3Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    pcv3Pova.setError("This data is Required!");
+                    Log.i(TAG, "pcv3Pov: This data is Required!");
+                    return false;
+                } else {
+                    pcv3Pova.setError(null);
+                }
             }
 
+
+            if (ti03a.isChecked()) {
+                //============ IPV / Card Present ==========
+                if (ipvC.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
+                    ipvC02.setError("This data is Required!");
+                    Log.i(TAG, "ipvC: This data is Required!");
+                    return false;
+                } else {
+                    ipvC02.setError(null);
+                }
+
+
+                if (ipvC01.isChecked()) {
+                    if (ipvDate.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        ipvDate.setError("This data is Required!");
+                        Log.i(TAG, "ipvDate: This data is Required!");
+                        return false;
+                    } else {
+                        ipvDate.setError(null);
+                    }
+                }
+            }
 
             //============ IPV / Mother ==========
             if (ipvM.getCheckedRadioButtonId() == -1) {
@@ -1450,13 +2053,38 @@ public class SectionIActivity extends AppCompatActivity {
                 ipvM02.setError(null);
             }
 
-            if (ipvPov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                ipvPova.setError("This data is Required!");
-                Log.i(TAG, "ipvPov: This data is Required!");
-                return false;
-            } else {
-                ipvPova.setError(null);
+            if (ipvC01.isChecked() || ipvM01.isChecked()) {
+                if (ipvPov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    ipvPova.setError("This data is Required!");
+                    Log.i(TAG, "ipvPov: This data is Required!");
+                    return false;
+                } else {
+                    ipvPova.setError(null);
+                }
+            }
+
+            if (ti03a.isChecked()) {
+                //============ measles1 / Card Present ==========
+                if (measles1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
+                    measles1C02.setError("This data is Required!");
+                    Log.i(TAG, "measles1C: This data is Required!");
+                    return false;
+                } else {
+                    measles1C02.setError(null);
+                }
+
+                if (measles1C01.isChecked()) {
+                    if (measles1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        measles1Date.setError("This data is Required!");
+                        Log.i(TAG, "measles1Date: This data is Required!");
+                        return false;
+                    } else {
+                        measles1Date.setError(null);
+                    }
+                }
             }
 
             //============ measles1 / Mother ==========
@@ -1469,13 +2097,41 @@ public class SectionIActivity extends AppCompatActivity {
                 measles1M02.setError(null);
             }
 
-            if (measles1Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                measles1Pova.setError("This data is Required!");
-                Log.i(TAG, "measles1Pov: This data is Required!");
-                return false;
-            } else {
-                measles1Pova.setError(null);
+            if (measles1C01.isChecked() || measles1M01.isChecked()) {
+                if (measles1Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    measles1Pova.setError("This data is Required!");
+                    Log.i(TAG, "measles1Pov: This data is Required!");
+                    return false;
+                } else {
+                    measles1Pova.setError(null);
+                }
+            }
+
+
+            if (ti03a.isChecked()) {
+
+                //============ measles2 / Card Present ==========
+                if (measles2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
+                    measles2C02.setError("This data is Required!");
+                    Log.i(TAG, "measles2C: This data is Required!");
+                    return false;
+                } else {
+                    measles2C02.setError(null);
+                }
+
+                if (measles2C01.isChecked()) {
+
+                    if (measles2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        measles2Date.setError("This data is Required!");
+                        Log.i(TAG, "measles2Date: This data is Required!");
+                        return false;
+                    } else {
+                        measles2Date.setError(null);
+                    }
+                }
             }
 
             //============ measles2 / Mother ==========
@@ -1488,13 +2144,15 @@ public class SectionIActivity extends AppCompatActivity {
                 measles2M02.setError(null);
             }
 
-            if (measles2Pov.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
-                measles2Pova.setError("This data is Required!");
-                Log.i(TAG, "measles2Pov: This data is Required!");
-                return false;
-            } else {
-                measles2Pova.setError(null);
+            if (measles2C01.isChecked() || measles2M01.isChecked()) {
+                if (measles2Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    measles2Pova.setError("This data is Required!");
+                    Log.i(TAG, "measles2Pov: This data is Required!");
+                    return false;
+                } else {
+                    measles2Pova.setError(null);
+                }
             }
 
             if (ti04.getCheckedRadioButtonId() == -1) {
@@ -1564,4 +2222,27 @@ public class SectionIActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
+
+    public void setMinDate() {
+        for (DatePickerInputEditText de : dates) {
+
+        }
+    }
 }
+
+

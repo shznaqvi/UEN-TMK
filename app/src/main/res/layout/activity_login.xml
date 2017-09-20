@@ -266,6 +266,7 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
+                        android:text="dmu@aku"
                         android:textSize="18sp">
 
                         <requestFocus />
@@ -309,7 +310,8 @@
                         android:paddingEnd="4dp"
                         android:paddingStart="4dp"
                         android:singleLine="true"
-                        android:textSize="18sp" />
+                        android:text="aku?dmu"
+                        android:textSize="18sp"/>
 
                     <!--android:text="aku?dmu"-->
 

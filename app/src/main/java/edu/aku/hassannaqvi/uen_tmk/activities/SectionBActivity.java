@@ -408,7 +408,7 @@ public class SectionBActivity extends AppCompatActivity {
     void onBtnContNextSecClick() {
         //TODO implement
 
-        startActivity(new Intent(this, SectionCActivity.class));
+        startActivity(new Intent(this, SectionIActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
@@ -490,6 +490,7 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
         MainApp.fmc.setUser(MainApp.fc.getUser());
+
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
@@ -514,6 +515,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         if (tbdob01.isChecked()) {
             sB.put("tb07", tb07.getText().toString());
+
         } else {
             sB.put("tb08y", tb08y.getText().toString());
             sB.put("tb08m", tb08m.getText().toString());
@@ -547,10 +549,10 @@ public class SectionBActivity extends AppCompatActivity {
 
 
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
-                    ageInyears < 5 ? "1" :
+                    ageInyears < 5 ? "1" : tb02.getText().toString(), ageInyears < 2 ? "1" :
                             (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
-                    , String.valueOf(MainApp.counter)));
+                    , String.valueOf(MainApp.counter), tb07.getText().toString()));
 
             return true;
         } else {

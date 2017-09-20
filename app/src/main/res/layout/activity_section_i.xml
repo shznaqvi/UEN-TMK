@@ -22,14 +22,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secILabel"
-            android:textSize="30sp" />
+            android:textSize="40sp"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
+
+        <Spinner
+            android:id="@+id/tiName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"></Spinner>
 
 
         <TextView
@@ -45,28 +52,32 @@
         <RadioGroup
             android:id="@+id/ti01"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/ti01a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_weight="1"
+                android:text="@string/yes"/>
 
             <RadioButton
                 android:id="@+id/ti01b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_weight="1"
+                android:text="@string/no"/>
 
             <RadioButton
                 android:id="@+id/ti01888"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                android:layout_weight="1"
+                android:text="@string/dkn"/>
 
         </RadioGroup>
 
@@ -175,73 +186,120 @@
 
             </RadioGroup>
 
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/atbirth"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif" />
+                tools:typeface="serif"/>
 
-            <TextView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/bcg"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="100">
-
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
 
                 <LinearLayout
-                    android:id="@+id/fldGrpBcgM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="50"
                     android:orientation="vertical">
 
-                    <TextView
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="#efefef"
-                        android:gravity="center"
-                        android:text="@string/recall"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textStyle="bold" />
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical">
 
-                    <RadioGroup
-                        android:id="@+id/bcgM"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                        <RadioButton
-                            android:id="@+id/bcgM01"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginTop="5dp"
+                            android:text="@string/bcg"
+                            android:textAlignment="center"/>
 
-                        <RadioButton
-                            android:id="@+id/bcgM02"
+                        <android.support.v4.widget.NestedScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:padding="10dp"
+                            android:scrollbars="vertical">
 
-                    </RadioGroup>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
 
-                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="100">
 
-                <View
+                                    <LinearLayout
+                                        android:id="@+id/fldGrpBcgM"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#efefef"
+                                            android:gravity="center"
+                                            android:text="@string/recall"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textStyle="bold"/>
+
+                                        <RadioGroup
+                                            android:id="@+id/bcgM"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="1dp"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/yes"/>
+
+                                            <RadioButton
+                                                android:id="@+id/bcgM02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="1dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/no"/>
+
+                                        </RadioGroup>
+
+
+                                    </LinearLayout>
+
+                                    <View
                     android:layout_width="3dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorPrimaryDark"></View>
@@ -267,21 +325,25 @@
                     <RadioGroup
                         android:id="@+id/bcgC"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/bcgC01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/bcgC02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -291,23 +353,29 @@
 
             </LinearLayout>
 
-            <TextView
+                                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/date"
+                    android:textAlignment="center"/>
+
+                                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                    android:id="@+id/bcgDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="1dp"
+                                    android:focusable="false"
+                                    android:hint="@string/date"
+                                    android:textColor="@android:color/black"
+                                    app:dateFormat="dd-MM-yyyy" />
+
+                                <LinearLayout
+                android:id="@+id/fldGrpov1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/date"
-                android:textAlignment="center" />
-
-            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                android:id="@+id/bcgDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:focusable="true"
-                android:hint="@string/date"
-                android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
-
+                android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -380,15 +448,50 @@
 
             </RadioGroup>
 
+            </LinearLayout>
 
-            <TextView
+                            </LinearLayout>
+
+                        </android.support.v4.widget.NestedScrollView>
+
+
+                        <!--- Closing tag of internal Linear Layout-->
+                        <!-- Closing tag of Scroll view-->
+
+
+                    </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/opv0"
-                android:textAlignment="center" />
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
 
-            <LinearLayout
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/opv0"
+                    android:textAlignment="center"/>
+
+                <!-- Scrollview-->
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:padding="10dp"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -414,21 +517,25 @@
                     <RadioGroup
                         android:id="@+id/opv0M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv0M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv0M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -461,21 +568,25 @@
                     <RadioGroup
                         android:id="@+id/opv0C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv0C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv0C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -484,23 +595,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv0Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -571,6 +689,28 @@
 
             </RadioGroup>
 
+            </LinearLayout>
+
+                        <!--End of OPV0-->
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <!-- Second Group at 6 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -578,19 +718,51 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/at6weeks"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif" />
+                tools:typeface="serif"/>
 
-            <TextView
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/opv1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -616,21 +788,25 @@
                     <RadioGroup
                         android:id="@+id/opv1M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv1M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv1M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -663,21 +839,25 @@
                     <RadioGroup
                         android:id="@+id/opv1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv1C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv1C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -687,23 +867,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv1Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -774,15 +961,42 @@
 
             </RadioGroup>
 
+            </LinearLayout>
 
-            <TextView
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/penta1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -808,21 +1022,25 @@
                     <RadioGroup
                         android:id="@+id/penta1M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta1M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/Penta1M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -855,21 +1073,25 @@
                     <RadioGroup
                         android:id="@+id/penta1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta1C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/penta1C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -880,24 +1102,32 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta1Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -968,14 +1198,41 @@
 
             </RadioGroup>
 
-            <TextView
+            </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/pcv1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1001,21 +1258,25 @@
                     <RadioGroup
                         android:id="@+id/pcv1M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv1M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv1M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1048,21 +1309,25 @@
                     <RadioGroup
                         android:id="@+id/pcv1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv1C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv1C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1071,23 +1336,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv1Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -1158,6 +1430,29 @@
 
             </RadioGroup>
 
+            </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <!-- 3rd Group at 10 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -1165,10 +1460,31 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/at10weeks"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif" />
+                tools:typeface="serif"/>
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
 
 
             <TextView
@@ -1178,7 +1494,19 @@
                 android:text="@string/opv2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1204,21 +1532,25 @@
                     <RadioGroup
                         android:id="@+id/opv2M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv2M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv2M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1251,21 +1583,25 @@
                     <RadioGroup
                         android:id="@+id/opv2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv2C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv2C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1274,23 +1610,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv2Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -1361,14 +1704,41 @@
 
             </RadioGroup>
 
-            <TextView
+            </LinearLayout>
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/penta2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1394,21 +1764,25 @@
                     <RadioGroup
                         android:id="@+id/penta2M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta2M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/penta2M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1441,21 +1815,25 @@
                     <RadioGroup
                         android:id="@+id/penta2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta2C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/penta2C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1464,23 +1842,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta2Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -1551,15 +1936,41 @@
 
             </RadioGroup>
 
+            </LinearLayout>
 
-            <TextView
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/pcv2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1585,21 +1996,25 @@
                     <RadioGroup
                         android:id="@+id/pcv2M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv2M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv2M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1632,21 +2047,25 @@
                     <RadioGroup
                         android:id="@+id/pcv2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv2C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginTop="1dp"
-                            android:text="@string/yes" />
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv2C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1655,23 +2074,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv2Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -1742,25 +2168,77 @@
 
             </RadioGroup>
 
+            </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+        <!--4th group at 14 weeks-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical"
+            >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/at14weeks"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif" />
+                tools:typeface="serif"/>
 
-            <TextView
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/opv3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1786,21 +2264,25 @@
                     <RadioGroup
                         android:id="@+id/opv3M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv3M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv3M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1834,21 +2316,25 @@
                     <RadioGroup
                         android:id="@+id/opv3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/opv3C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/opv3C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -1858,21 +2344,28 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/opv3Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+
+            <LinearLayout
+                android:id="@+id/fldGrpov9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
             <TextView
@@ -1946,14 +2439,41 @@
 
             </RadioGroup>
 
-            <TextView
+            </LinearLayout>
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/penta3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -1979,21 +2499,25 @@
                     <RadioGroup
                         android:id="@+id/penta3M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta3M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/penta3M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2026,21 +2550,25 @@
                     <RadioGroup
                         android:id="@+id/penta3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/penta3C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/penta3C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2050,21 +2578,28 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/penta3Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+
+            <LinearLayout
+                android:id="@+id/fldGrpov10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
             <TextView
@@ -2138,15 +2673,42 @@
 
             </RadioGroup>
 
+            </LinearLayout>
 
-            <TextView
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/pcv3"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2172,21 +2734,25 @@
                     <RadioGroup
                         android:id="@+id/pcv3M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv3M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv3M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2219,21 +2785,25 @@
                     <RadioGroup
                         android:id="@+id/pcv3C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pcv3C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/pcv3C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2243,23 +2813,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/pcv3Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -2330,15 +2907,42 @@
 
             </RadioGroup>
 
+            </LinearLayout>
 
-            <TextView
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/ipv"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="900px"
+                    android:fillViewport="false"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2364,21 +2968,25 @@
                     <RadioGroup
                         android:id="@+id/ipvM"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/ipvM01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/ipvM02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2411,21 +3019,25 @@
                     <RadioGroup
                         android:id="@+id/ipvC"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/ipvC01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/ipvC02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2434,23 +3046,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/ipvDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -2521,25 +3140,76 @@
 
             </RadioGroup>
 
+            </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+        <!-- 5th Group at 9 months-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorHeading"
+                android:gravity="center"
                 android:text="@string/at9month"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                tools:typeface="serif" />
+                tools:typeface="serif"/>
 
-            <TextView
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                android:background="@drawable/bacground_border"
+                android:orientation="vertical"
+                android:padding="8px">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/measles1"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2565,21 +3235,25 @@
                     <RadioGroup
                         android:id="@+id/measles1M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/measles1M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/measles1M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2612,21 +3286,25 @@
                     <RadioGroup
                         android:id="@+id/measles1C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/measles1C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/measles1C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2636,23 +3314,30 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/measles1Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpov13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -2723,18 +3408,55 @@
 
             </RadioGroup>
 
+            </LinearLayout>
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorHeading"
-                android:text="@string/at15month"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorHeading"
+                    android:gravity="center"
+                    android:text="@string/at15month"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    tools:typeface="serif"/>
 
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="1000px"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bacground_border"
+                        android:orientation="vertical"
+                        android:padding="8px">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2742,7 +3464,18 @@
                 android:text="@string/measles2"
                 android:textAlignment="center" />
 
-            <LinearLayout
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="900px"
+                            android:fillViewport="false"
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -2768,21 +3501,25 @@
                     <RadioGroup
                         android:id="@+id/measles2M"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/measles2M01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/measles2M02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2815,21 +3552,25 @@
                     <RadioGroup
                         android:id="@+id/measles2C"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/measles2C01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes"/>
 
                         <RadioButton
                             android:id="@+id/measles2C02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
+                            android:layout_weight="1"
+                            android:text="@string/no"/>
 
                     </RadioGroup>
 
@@ -2838,21 +3579,28 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/date"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                 android:id="@+id/measles2Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/date"
                 android:textColor="@android:color/black"
                 app:dateFormat="dd-MM-yyyy" />
+
+            <LinearLayout
+                android:id="@+id/fldGrpov14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -2925,7 +3673,21 @@
 
             </RadioGroup>
 
-            <TextView
+            </LinearLayout>
+
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -2996,8 +3758,6 @@
                     android:text="@string/dkn" />
 
             </LinearLayout>
-
-        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
