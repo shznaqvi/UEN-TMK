@@ -68,26 +68,6 @@ public class SectionDActivity extends Activity {
     @BindView(R.id.mwraNames)
     Spinner mwraNames;
 
-    @BindView(R.id.td06)
-    RadioGroup td06;
-    @BindView(R.id.td06a)
-    RadioButton td06a;
-    @BindView(R.id.td06b)
-    RadioButton td06b;
-    @BindView(R.id.fldGrptd19)
-    LinearLayout fldGrptd19;
-    @BindView(R.id.td07)
-    EditText td07;
-    @BindView(R.id.td08)
-    RadioGroup td08;
-    @BindView(R.id.td08a)
-    RadioButton td08a;
-    @BindView(R.id.td08b)
-    RadioButton td08b;
-    @BindView(R.id.fldGrptd21)
-    LinearLayout fldGrptd21;
-    @BindView(R.id.td09)
-    EditText td09;
 
     Map<String, String> mwraMap;
     ArrayList<String> lstMwra;
@@ -146,32 +126,6 @@ public class SectionDActivity extends Activity {
                 } else {
                     fldGrptd05.setVisibility(View.GONE);
                     td05.setText(null);
-                }
-            }
-        });
-
-        td06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (td06a.isChecked()) {
-                    fldGrptd19.setVisibility(View.VISIBLE);
-
-                } else {
-                    fldGrptd19.setVisibility(View.GONE);
-                    td07.setText(null);
-                }
-            }
-        });
-
-        td08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (td08a.isChecked()) {
-                    fldGrptd21.setVisibility(View.VISIBLE);
-
-                } else {
-                    fldGrptd21.setVisibility(View.GONE);
-                    td09.setText(null);
                 }
             }
         });
@@ -262,10 +216,6 @@ public class SectionDActivity extends Activity {
         td03mc.setText(null);
         td04.clearCheck();
         td05.setText(null);
-        td06.clearCheck();
-        td07.setText(null);
-        td08.clearCheck();
-        td09.setText(null);
     }
 
     private boolean UpdateDB() {
@@ -313,22 +263,6 @@ public class SectionDActivity extends Activity {
         sD.put("td04mc", td03mc.getText().toString());
         sD.put("td05", td04a.isChecked() ? "1" : td04b.isChecked() ? "2" : "0");
         sD.put("td06", td05.getText().toString());
-
-        sD.put("tc07", td06a.isChecked() ? "1" : td06b.isChecked() ? "2"
-                : "0");
-        sD.put("td08", td07.getText().toString());
-
-        if (td06a.isChecked()) {
-            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString());
-        }
-
-        sD.put("td09", td08a.isChecked() ? "1" : td08b.isChecked() ? "2"
-                : "0");
-        sD.put("td010", td09.getText().toString());
-
-        if (td08a.isChecked()) {
-            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString());
-        }
 
         MainApp.mw.setsD(String.valueOf(sD));
 
@@ -425,68 +359,6 @@ public class SectionDActivity extends Activity {
                 } else {
                     td05.setError(null);
                 }
-            }
-        }
-
-        if (td06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td06), Toast.LENGTH_SHORT).show();
-            td06b.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "td06: This data is Required!");
-            return false;
-        } else {
-            td06b.setError(null);
-        }
-
-        if (td06a.isChecked()) {
-            if (td07.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td07), Toast.LENGTH_SHORT).show();
-                td07.setError("This data is Required!");    // Set Error on last radio button
-
-                Log.i(TAG, "td07: This data is Required!");
-                return false;
-            } else {
-                td07.setError(null);
-            }
-            if (Integer.valueOf(td07.getText().toString()) < 1) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.td07), Toast.LENGTH_SHORT).show();
-                td07.setError("Greater then 0!");    // Set Error on last radio button
-
-                Log.i(TAG, "td07: Greater then 0!");
-                return false;
-            } else {
-                td07.setError(null);
-            }
-        }
-
-        if (td08.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td08), Toast.LENGTH_SHORT).show();
-            td08b.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "td08: This data is Required!");
-            return false;
-        } else {
-            td08b.setError(null);
-        }
-
-        if (td08a.isChecked()) {
-            if (td09.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td09), Toast.LENGTH_SHORT).show();
-                td09.setError("This data is Required!");    // Set Error on last radio button
-
-                Log.i(TAG, "td09: This data is Required!");
-                return false;
-            } else {
-                td09.setError(null);
-            }
-            if (Integer.valueOf(td09.getText().toString()) < 1) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.td09), Toast.LENGTH_SHORT).show();
-                td09.setError("Greater then 0!");    // Set Error on last radio button
-
-                Log.i(TAG, "td09: Greater then 0!");
-                return false;
-            } else {
-                td09.setError(null);
             }
         }
 
