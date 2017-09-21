@@ -420,12 +420,36 @@ public class SectionCActivity extends Activity {
     @BindView(R.id.tc17888)
     CheckBox tc17888;
 
+    @BindView(R.id.td06)
+    RadioGroup td06;
+    @BindView(R.id.td06a)
+    RadioButton td06a;
+    @BindView(R.id.td06b)
+    RadioButton td06b;
+    @BindView(R.id.fldGrptd19)
+    LinearLayout fldGrptd19;
+    @BindView(R.id.td07)
+    EditText td07;
+    @BindView(R.id.td08)
+    RadioGroup td08;
+    @BindView(R.id.td08a)
+    RadioButton td08a;
+    @BindView(R.id.td08b)
+    RadioButton td08b;
+    @BindView(R.id.fldGrptd21)
+    LinearLayout fldGrptd21;
+    @BindView(R.id.td09)
+    EditText td09;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_c);
         ButterKnife.bind(this);
+
+
+        MainApp.TotalDeceasedChildCount = 0;
+        MainApp.TotalDeceasedMotherCount = 0;
 
 //        05
         tc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -546,6 +570,34 @@ public class SectionCActivity extends Activity {
                 }
             }
         });
+
+
+        td06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (td06a.isChecked()) {
+                    fldGrptd19.setVisibility(View.VISIBLE);
+
+                } else {
+                    fldGrptd19.setVisibility(View.GONE);
+                    td07.setText(null);
+                }
+            }
+        });
+
+        td08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (td08a.isChecked()) {
+                    fldGrptd21.setVisibility(View.VISIBLE);
+
+                } else {
+                    fldGrptd21.setVisibility(View.GONE);
+                    td09.setText(null);
+                }
+            }
+        });
+
 
     }
 
@@ -695,6 +747,22 @@ public class SectionCActivity extends Activity {
         sC.put("tc1688x", tc1688x.getText().toString());
 
         sC.put("tc17", tc17888.isChecked() ? "888" : tc17.getText().toString());
+
+        sC.put("tc18", td06a.isChecked() ? "1" : td06b.isChecked() ? "2"
+                : "0");
+        sC.put("tc19", td07.getText().toString());
+
+        if (td06a.isChecked()) {
+            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString());
+        }
+
+        sC.put("tc20", td08a.isChecked() ? "1" : td08b.isChecked() ? "2"
+                : "0");
+        sC.put("tc21", td09.getText().toString());
+
+        if (td08a.isChecked()) {
+            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString());
+        }
 
         MainApp.fc.setsC(String.valueOf(sC));
     }
@@ -1241,7 +1309,67 @@ public class SectionCActivity extends Activity {
             tc17888.setError(null);
         }
 
+        if (td06.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td06), Toast.LENGTH_SHORT).show();
+            td06b.setError("This data is Required!");    // Set Error on last radio button
 
+            Log.i(TAG, "td06: This data is Required!");
+            return false;
+        } else {
+            td06b.setError(null);
+        }
+
+        if (td06a.isChecked()) {
+            if (td07.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td07), Toast.LENGTH_SHORT).show();
+                td07.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "td07: This data is Required!");
+                return false;
+            } else {
+                td07.setError(null);
+            }
+            if (Integer.valueOf(td07.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.td07), Toast.LENGTH_SHORT).show();
+                td07.setError("Greater then 0!");    // Set Error on last radio button
+
+                Log.i(TAG, "td07: Greater then 0!");
+                return false;
+            } else {
+                td07.setError(null);
+            }
+        }
+
+        if (td08.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.td08), Toast.LENGTH_SHORT).show();
+            td08b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "td08: This data is Required!");
+            return false;
+        } else {
+            td08b.setError(null);
+        }
+
+        if (td08a.isChecked()) {
+            if (td09.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.td09), Toast.LENGTH_SHORT).show();
+                td09.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "td09: This data is Required!");
+                return false;
+            } else {
+                td09.setError(null);
+            }
+            if (Integer.valueOf(td09.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.td09), Toast.LENGTH_SHORT).show();
+                td09.setError("Greater then 0!");    // Set Error on last radio button
+
+                Log.i(TAG, "td09: Greater then 0!");
+                return false;
+            } else {
+                td09.setError(null);
+            }
+        }
 
         return true;
     }
