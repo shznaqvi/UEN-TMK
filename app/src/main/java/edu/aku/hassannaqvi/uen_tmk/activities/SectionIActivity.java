@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +26,9 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -43,13 +41,14 @@ import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionIActivity extends AppCompatActivity implements TextWatcher
+public class SectionIActivity extends AppCompatActivity
 {
 
     private static final String TAG = SectionIActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_a)
-    ScrollView activitySectionA;
+    NestedScrollView
+            scroll;
     @BindView(R.id.tiName)
     Spinner tiName;
     @BindView(R.id.ti01)
@@ -108,6 +107,8 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
     LinearLayout fldGrpov1;
     @BindView(R.id.bcgPov)
     RadioGroup bcgPov;
+    @BindView(R.id.sc1)
+    NestedScrollView sc1;
     public RadioGroup.OnCheckedChangeListener bcg = new OnCheckedChangeListener()
     {
         @Override
@@ -124,13 +125,43 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (bcgM01.isChecked() || bcgC01.isChecked()) {
                 fldGrpov1.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc1.setLayoutParams(params);
             } else if (bcgC02.isChecked() && !bcgM01.isChecked()) {
                 fldGrpov1.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc1.setLayoutParams(params);
                 bcgPov.clearCheck();
 
             }
         }
     };
+    @BindView(R.id.sc2)
+    NestedScrollView sc2;
+    @BindView(R.id.sc3)
+    NestedScrollView sc3;
+    @BindView(R.id.sc4)
+    NestedScrollView sc4;
+    @BindView(R.id.sc5)
+    NestedScrollView sc5;
+    @BindView(R.id.sc6)
+    NestedScrollView sc6;
+    @BindView(R.id.sc7)
+    NestedScrollView sc7;
+    @BindView(R.id.sc8)
+    NestedScrollView sc8;
+    @BindView(R.id.sc9)
+    NestedScrollView sc9;
+    @BindView(R.id.sc10)
+    NestedScrollView sc10;
+    @BindView(R.id.sc11)
+    NestedScrollView sc11;
+    @BindView(R.id.sc12)
+    NestedScrollView sc12;
+    @BindView(R.id.sc13)
+    NestedScrollView sc13;
+    @BindView(R.id.sc14)
+    NestedScrollView sc14;
     @BindView(R.id.bcgPova)
     RadioButton bcgPova;
     @BindView(R.id.bcgPovb)
@@ -187,8 +218,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (opv0M01.isChecked() || opv0C01.isChecked()) {
                 fldGrpov2.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc2.setLayoutParams(params);
             } else if (opv0C02.isChecked() && !opv0M01.isChecked()) {
                 fldGrpov2.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc2.setLayoutParams(params);
                 opv0Pov.clearCheck();
 
             }
@@ -243,15 +278,19 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
                 text3.setVisibility(View.VISIBLE);
                 opv1Date.setVisibility(View.VISIBLE);
             } else {
-                text1.setVisibility(View.GONE);
+                text3.setVisibility(View.GONE);
                 opv1Date.setVisibility(View.GONE);
                 opv1Date.setText(null);
             }
 
             if (opv1M01.isChecked() && opv1C01.isChecked()) {
                 fldGrpov2.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc3.setLayoutParams(params);
             } else if (opv1C02.isChecked() && !opv1M01.isChecked()) {
                 fldGrpov3.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc3.setLayoutParams(params);
                 opv1Pov.clearCheck();
 
             }
@@ -313,8 +352,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (penta1M01.isChecked() && penta1C01.isChecked()) {
                 fldGrpov4.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc4.setLayoutParams(params);
             } else if (penta1C02.isChecked() && !penta1M01.isChecked()) {
                 fldGrpov4.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc4.setLayoutParams(params);
                 penta1Pov.clearCheck();
 
             }
@@ -376,8 +419,13 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (pcv1M01.isChecked() && pcv1C01.isChecked()) {
                 fldGrpov5.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc5.setLayoutParams(params);
+
             } else if (pcv1C02.isChecked() && !pcv1M01.isChecked()) {
                 fldGrpov5.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc5.setLayoutParams(params);
                 pcv1Pov.clearCheck();
 
             }
@@ -439,8 +487,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (opv2M01.isChecked() && opv2C01.isChecked()) {
                 fldGrpov6.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc6.setLayoutParams(params);
             } else if (opv2C02.isChecked() && !opv2M01.isChecked()) {
                 fldGrpov6.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc6.setLayoutParams(params);
                 opv2Pov.clearCheck();
 
             }
@@ -502,8 +554,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (penta2M01.isChecked() && penta2C01.isChecked()) {
                 fldGrpov7.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc7.setLayoutParams(params);
             } else if (penta2C02.isChecked() && !penta2M01.isChecked()) {
                 fldGrpov7.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc7.setLayoutParams(params);
                 penta2Pov.clearCheck();
 
             }
@@ -565,8 +621,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (pcv2M01.isChecked() && pcv2C01.isChecked()) {
                 fldGrpov8.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc8.setLayoutParams(params);
             } else if (pcv2C02.isChecked() && !pcv2M01.isChecked()) {
                 fldGrpov8.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc8.setLayoutParams(params);
                 pcv2Pov.clearCheck();
 
             }
@@ -628,8 +688,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (opv3M01.isChecked() && opv3C01.isChecked()) {
                 fldGrpov9.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc9.setLayoutParams(params);
             } else if (opv3C02.isChecked() && !opv3M01.isChecked()) {
                 fldGrpov9.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc9.setLayoutParams(params);
                 opv3Pov.clearCheck();
 
             }
@@ -691,8 +755,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (penta3M01.isChecked() && penta3C01.isChecked()) {
                 fldGrpov10.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc10.setLayoutParams(params);
             } else if (penta3C02.isChecked() && !penta3M01.isChecked()) {
                 fldGrpov10.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc10.setLayoutParams(params);
                 penta3Pov.clearCheck();
 
             }
@@ -754,8 +822,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (pcv3M01.isChecked() && pcv3C01.isChecked()) {
                 fldGrpov11.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc11.setLayoutParams(params);
             } else if (pcv3C02.isChecked() && !pcv3M01.isChecked()) {
                 fldGrpov11.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc11.setLayoutParams(params);
                 pcv3Pov.clearCheck();
 
             }
@@ -817,8 +889,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (ipvM01.isChecked() && ipvC01.isChecked()) {
                 fldGrpov12.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc10.setLayoutParams(params);
             } else if (ipvC02.isChecked() && !ipvM01.isChecked()) {
                 fldGrpov12.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc12.setLayoutParams(params);
                 ipvPov.clearCheck();
 
             }
@@ -880,8 +956,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (measles1M01.isChecked() && measles1C01.isChecked()) {
                 fldGrpov13.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc13.setLayoutParams(params);
             } else if (measles1C02.isChecked() && !measles1M01.isChecked()) {
                 fldGrpov13.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc13.setLayoutParams(params);
                 measles1Pov.clearCheck();
 
             }
@@ -943,8 +1023,12 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
             if (measles2M01.isChecked() && measles2C01.isChecked()) {
                 fldGrpov14.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                sc14.setLayoutParams(params);
             } else if (measles2C02.isChecked() && !measles2M01.isChecked()) {
                 fldGrpov14.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                sc14.setLayoutParams(params);
                 measles2Pov.clearCheck();
 
             }
@@ -1034,44 +1118,45 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
     @BindViews({R.id.measles2C, R.id.measles2M})
     List<RadioGroup> grpMeasles2;
 
-    Map<String, FamilyMembersContract> childsMap;
-    ArrayList<String> lstChild;
-
-    int position;
+    String maxDate2Years;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
+        maxDate2Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_2Years) + MainApp.MILLISECONDS_IN_DAY));
+
 
         //        get data from sec B
 
-        childsMap = new HashMap<>();
-        lstChild = new ArrayList<>();
+        if (MainApp.flag) {
+            MainApp.childsMap = new HashMap<>();
+            MainApp.lstChild = new ArrayList<>();
 
-        childsMap.put("....", null);
-        lstChild.add("....");
+            MainApp.childsMap.put("....", null);
+            MainApp.lstChild.add("....");
 
-        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-            if (MainApp.familyMembersList.get(i).getAgeLess2().equals("1")) {
-                childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
-                lstChild.add(MainApp.familyMembersList.get(i).getName());
-                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
+            for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+                if (MainApp.familyMembersList.get(i).getAgeLess2().equals("1")) {
+                    MainApp.childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
+                    MainApp.lstChild.add(MainApp.familyMembersList.get(i).getName());
+                    //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
 
-                //childsMap.get(tiName.getSelectedItem()).getDob();
+                    //childsMap.get(tiName.getSelectedItem()).getDob();
 
+                }
             }
+
+
         }
-
-        tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
         //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(position).getDob());
-
+        tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
         tiName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                position = i;
+                MainApp.positionIm = i;
                 //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(0).getDob());
 
             }
@@ -1083,20 +1168,14 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
         });
 
 
-
         String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
 
         for (DatePickerInputEditText de : dates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
 
+
         }
-
-        for (DatePickerInputEditText de : dates) {
-            de.addTextChangedListener(this);
-        }
-
-
 
 
         ti03.setOnCheckedChangeListener(new OnCheckedChangeListener()
@@ -1106,8 +1185,10 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
                 if (ti03a.isChecked()) {
                     for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
-                        if (!tiName.getSelectedItem().equals("....")) {
-                            de.setMinDate(MainApp.convertDateFormat(childsMap.get(tiName.getSelectedItem()).getDob()));
+                        if (MainApp.ageRdo == 1 && (!tiName.getSelectedItem().equals("...."))) {
+                            de.setMinDate(MainApp.convertDateFormat(MainApp.childsMap.get(tiName.getSelectedItem()).getDob()));
+                        } else if (MainApp.ageRdo == 2 && (!tiName.getSelectedItem().equals("...."))) {
+                            de.setMinDate(maxDate2Years);
                         }
                     }
                     for (LinearLayout le : fldGrpCard) {
@@ -1323,11 +1404,24 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
                 finish();
 
-                if (MainApp.TotalChildCount > 0) {
-                    Intent secNext = new Intent(this, SectionJActivity.class);
+                if (MainApp.imsCount < MainApp.totalImsCount) {
+                    MainApp.imsCount++;
+
+
+                    MainApp.lstChild.remove(MainApp.positionIm);
+                    MainApp.childsMap.remove(MainApp.positionIm);
+
+
+                    MainApp.flag = false;
+                    Intent secNext = new Intent(this, SectionIActivity.class);
+                    //tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
                     startActivity(secNext);
+
+
+                    scroll.setScrollY(0);
+
                 } else {
-                    Intent secNext = new Intent(this, SectionKActivity.class);
+                    Intent secNext = new Intent(this, SectionJActivity.class);
                     startActivity(secNext);
                 }
 
@@ -1342,10 +1436,16 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSI();
+        Long updcount = db.addChild(MainApp.ims);
+        MainApp.ims.set_ID(String.valueOf(updcount));
 
-        if (updcount == 1) {
+        if (updcount != -1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.ims.setUID(
+                    (MainApp.fc.getDeviceID() + MainApp.ims.get_ID()));
+            db.updateChildID();
+
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -1493,7 +1593,7 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
         sI.put("ti05888", ti05888.isChecked() ? "888" : "0");
 
 
-        MainApp.fc.setsI(String.valueOf(sI));
+        MainApp.ims.setsI(String.valueOf(sI));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -2222,27 +2322,6 @@ public class SectionIActivity extends AppCompatActivity implements TextWatcher
     }
 
 
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-
-    }
-
-    public void setMinDate() {
-        for (DatePickerInputEditText de : dates) {
-
-        }
-    }
 }
 
 

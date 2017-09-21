@@ -701,7 +701,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(singleIm.COLUMN_PROJECT_NAME, ims.getProjectName());
-//        values.put(singleIm.COLUMN_UUID, ims.get_UUID());
+        values.put(singleIm.COLUMN_UUID, ims.get_UUID());
         values.put(singleIm.COLUMN_UID, ims.getUID());
         values.put(singleIm.COLUMN_SI, ims.getsI());
         values.put(singleIm.COLUMN_FORMDATE, ims.getFormDate());

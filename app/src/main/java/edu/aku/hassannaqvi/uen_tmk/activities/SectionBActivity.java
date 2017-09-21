@@ -408,7 +408,7 @@ public class SectionBActivity extends AppCompatActivity {
     void onBtnContNextSecClick() {
         //TODO implement
 
-        startActivity(new Intent(this, SectionIActivity.class));
+        startActivity(new Intent(this, SectionCActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
@@ -426,6 +426,10 @@ public class SectionBActivity extends AppCompatActivity {
 
                 finish();
 
+                if (ageInyears < 2 || Integer.valueOf(tb08y.getText().toString().isEmpty() ? "0" : tb08y.getText().toString()) < 2) {
+                    MainApp.totalImsCount++;
+
+                }
                 if (ageInyears < 5) {
                     MainApp.TotalChildCount++;
                     MainApp.TotalMembersCount++;
@@ -444,40 +448,6 @@ public class SectionBActivity extends AppCompatActivity {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
-
-    //public boolean checkChildLessThenFive(int i) {
-
-        /*if (i == 1) {
-
-            DateFormat formatter = new SimpleDateFormat("yyyyMMdd").format(tb07);
-            int d1 = Integer.parseInt(formatter.format(tb07.getText().toString()));
-            int d2 = Integer.parseInt(formatter.format(new Date()));
-            int ageInYears = (d2 - d1) / 10000;
-            return ageInYears < 5;
-
-
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = getCalendarDate(dateStr);
-        Date dob = cal.getTime();
-        Date today = new Date();
-
-        Long diff = today.getTime() - dob.getTime();
-
-        //double ageindays = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-
-        long ageInYears = (diff / (24*60*60*1000)) / 365;
-
-
-        return ageInYears;
-
-
-        } else {
-            return (Integer.parseInt(tb08y.getText().toString()) == 5 && Integer.parseInt(tb08m.getText().toString()) == 0)
-                    || Integer.parseInt(tb08y.getText().toString()) < 5;
-        }*/
-
-
-    //}
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
@@ -530,6 +500,8 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
                 : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : tb11e.isChecked() ? "5" : "0");
 
+
+        MainApp.ageRdo = tbdob.indexOfChild(findViewById(tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

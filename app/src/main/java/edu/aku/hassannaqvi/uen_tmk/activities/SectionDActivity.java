@@ -228,7 +228,7 @@ public class SectionDActivity extends Activity {
                         Intent secNext = new Intent(this, SectionFActivity.class);
                         startActivity(secNext);
                     } else {
-                        Intent secNext = new Intent(this, SectionIActivity.class);
+                        Intent secNext = new Intent(this, SectionGActivity.class);
                         startActivity(secNext);
                     }
                 } else {

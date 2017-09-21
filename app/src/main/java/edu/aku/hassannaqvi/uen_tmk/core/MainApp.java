@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
@@ -62,6 +63,8 @@ public class MainApp extends Application {
     private static final long DAYS_IN_MONTH = 30;
     public static final long MILLISECONDS_IN_MONTH = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_MONTH;
 
+    private static final long DAYS_IN_2_YEAR = 365 * 2;
+    public static final long MILLISECONDS_IN_2Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_2_YEAR;
     //public static final long MILLISECONDS_IN_100_YEAR = MILLISECONDS_IN_YEAR * 100;
     public static String deviceId;
 
@@ -84,12 +87,20 @@ public class MainApp extends Application {
     public static int CounterDeceasedChild = 0;
     public static int counter = 0;
     public static int mm = 1;
+    public static int imsCount = 1;
+    public static int totalImsCount = 0;
+    public static int positionIm = 0;
+    public static boolean flag = true;
+
+    public static Map<String, FamilyMembersContract> childsMap;
+    public static ArrayList<String> lstChild;
 
     public static int dcChildCount = 1;
     public static int dcMotherCount = 1;
     public static int dcMotherTotal = 0;
     public static int dcChildTotal = 0;
     public static String dob = "";
+    public static int ageRdo = 0;
 
     //    Total No of Alive members got from Section B
 /*    public static int currentStatusCount = 0;
