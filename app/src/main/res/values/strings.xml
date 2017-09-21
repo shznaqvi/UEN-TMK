@@ -52,6 +52,7 @@
     <string name="hour"> ڪلاڪ </string>
     <string name="min"> منٽ</string>
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
+  <string name="name">ٻار جو نالو</string>
 
     <!-- Strings related to Sections Below -->
 

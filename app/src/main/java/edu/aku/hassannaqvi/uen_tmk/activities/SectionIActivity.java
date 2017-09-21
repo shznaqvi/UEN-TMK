@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.widget.NestedScrollView;
@@ -1469,6 +1470,8 @@ public class SectionIActivity extends AppCompatActivity
 
         JSONObject sI = new JSONObject();
 
+        sI.put("tichildName", tiName.getSelectedItem().toString());
+
         sI.put("ti01", ti01a.isChecked() ? "1" : ti01b.isChecked() ? "2" : ti01888.isChecked() ? "888" : "0");
         sI.put("ti02a", ti02a.isChecked() ? "1" : "0");
         sI.put("ti02b", ti02b.isChecked() ? "2" : "0");
@@ -1602,6 +1605,18 @@ public class SectionIActivity extends AppCompatActivity
     public boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        if (tiName.getSelectedItem() == "....") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
+            ((TextView) tiName.getSelectedView()).setText("This Data is Required");
+            ((TextView) tiName.getSelectedView()).setTextColor(Color.RED);
+
+            Log.i(TAG, "tiName: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) tiName.getSelectedView()).setError(null);
+        }
+
 
         if (ti01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti01), Toast.LENGTH_SHORT).show();
