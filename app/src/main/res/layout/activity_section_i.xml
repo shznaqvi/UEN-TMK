@@ -33,6 +33,16 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimary"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+
         <Spinner
             android:id="@+id/tiName"
             android:layout_width="match_parent"
