@@ -158,6 +158,17 @@ public class SectionBActivity extends AppCompatActivity {
     @BindView(R.id.btn_ContNextSec)
     Button btn_ContNextSec;
 
+    @BindView(R.id.fldGrptb11)
+    LinearLayout fldGrptb11;
+
+    @BindView(R.id.tb12)
+    RadioGroup tb12;
+    @BindView(R.id.tb12a)
+    RadioButton tb12a;
+    @BindView(R.id.tb12b)
+    RadioButton tb12b;
+
+
     DatabaseHelper db;
     long ageInyears = 0;
 
@@ -233,10 +244,23 @@ public class SectionBActivity extends AppCompatActivity {
         tb04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.tb04a) {
-                    tb10a.setEnabled(false);
-                } else {
+                if (tb04b.isChecked()) {
+
                     tb10a.setEnabled(true);
+
+                    if (tb11b.isChecked()) {
+                        fldGrptb11.setVisibility(View.VISIBLE);
+                    } else {
+                        tb12.clearCheck();
+                        fldGrptb11.setVisibility(View.GONE);
+                    }
+
+                } else {
+
+                    tb12.clearCheck();
+                    fldGrptb11.setVisibility(View.GONE);
+
+                    tb10a.setEnabled(false);
                 }
             }
         });
@@ -356,6 +380,14 @@ public class SectionBActivity extends AppCompatActivity {
 
                         tb11b.setEnabled(false);
                         tb11b.setChecked(false);
+                    } else if (ageInyears < 12) {
+
+                        tb11a.setEnabled(false);
+                        tb11b.setEnabled(false);
+                        tb11c.setEnabled(false);
+                        tb11d.setEnabled(false);
+                        tb11e.setEnabled(false);
+
                     } else {
                         tb09.setText(null);
                         tb09.setEnabled(true);
@@ -397,6 +429,38 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     tb0388x.setText(null);
                     tb0388x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        tb10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tb10a.isChecked()) {
+                    tb11c.setEnabled(false);
+                } else {
+                    tb11c.setEnabled(true);
+                }
+            }
+        });
+
+
+        tb11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tb11b.isChecked()) {
+
+                    if (tb04b.isChecked()) {
+                        fldGrptb11.setVisibility(View.VISIBLE);
+                    } else {
+                        tb12.clearCheck();
+                        fldGrptb11.setVisibility(View.GONE);
+                    }
+
+                } else {
+                    tb12.clearCheck();
+                    fldGrptb11.setVisibility(View.GONE);
                 }
             }
         });
@@ -505,6 +569,8 @@ public class SectionBActivity extends AppCompatActivity {
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
                 : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : tb11e.isChecked() ? "5" : "0");
+
+        sB.put("tb12", tb12a.isChecked() ? "1" : tb12b.isChecked() ? "2" : "0");
 
 
         MainApp.ageRdo = tbdob.indexOfChild(findViewById(tbdob.getCheckedRadioButtonId())) + 1;
@@ -734,6 +800,18 @@ public class SectionBActivity extends AppCompatActivity {
                 tb09.setError(null);
             }
 
+        }
+
+        if (tb04b.isChecked() && tb11b.isChecked()) {
+            if (tb12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
+                tb12a.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "tb12a: This data is Required!");
+                return false;
+            } else {
+                tb12a.setError(null);
+            }
         }
 
 
