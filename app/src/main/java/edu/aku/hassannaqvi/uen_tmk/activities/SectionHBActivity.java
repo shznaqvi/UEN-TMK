@@ -403,6 +403,13 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.fldGrpth08a)
     LinearLayout fldGrpth08a;
 
+    @BindView(R.id.thb00)
+    RadioGroup thb00;
+    @BindView(R.id.thb00a)
+    RadioButton thb00a;
+    @BindView(R.id.thb00b)
+    RadioButton thb00b;
+
 
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
@@ -1042,6 +1049,17 @@ public class SectionHBActivity extends Activity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
+        //        00
+        if (thb00.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
+            thb00a.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "thb00: This data is Required!");
+            return false;
+        } else {
+            thb00a.setError(null);
+        }
+
+
         //        01
         if (thb01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb01), Toast.LENGTH_SHORT).show();
@@ -1657,8 +1675,6 @@ public class SectionHBActivity extends Activity {
         }
 
 
-
-
         return true;
 
     }
@@ -1670,6 +1686,7 @@ public class SectionHBActivity extends Activity {
 
         JSONObject sHB = new JSONObject();
 
+        sHB.put("tha00", thb00a.isChecked() ? "1" : thb00b.isChecked() ? "2" : "0");
         sHB.put("thb01", thb01a.isChecked() ? "1" : thb01b.isChecked() ? "2" : thb01888.isChecked() ? "888" : "0");
         sHB.put("thb02", thb02.getText().toString());
 

@@ -392,6 +392,13 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.fldGrptha08)
     LinearLayout fldGrptha08;
 
+    @BindView(R.id.tha00)
+    RadioGroup tha00;
+    @BindView(R.id.tha00a)
+    RadioButton tha00a;
+    @BindView(R.id.tha00b)
+    RadioButton tha00b;
+
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
 
@@ -1026,6 +1033,17 @@ public class SectionHAActivity extends Activity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
+        //        00
+        if (tha00.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
+            tha00a.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "tha00: This data is Required!");
+            return false;
+        } else {
+            tha00a.setError(null);
+        }
+
+
         //        01
         if (tha01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha01), Toast.LENGTH_SHORT).show();
@@ -1659,6 +1677,7 @@ public class SectionHAActivity extends Activity {
 
         JSONObject sHA = new JSONObject();
 
+        sHA.put("tha00", tha00a.isChecked() ? "1" : tha00b.isChecked() ? "2" : "0");
         sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
         sHA.put("tha02", tha02.getText().toString());
         if (!tha01a.isChecked()) {
