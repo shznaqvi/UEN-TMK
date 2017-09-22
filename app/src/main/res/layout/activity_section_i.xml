@@ -217,10 +217,12 @@
                     tools:typeface="serif"/>
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/scbirth"
                     android:layout_width="match_parent"
                     android:layout_height="1000px"
                     android:fillViewport="false"
-                    android:scrollbars="vertical">
+                    android:scrollbars="vertical"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -737,8 +739,9 @@
                     tools:typeface="serif"/>
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/sc6wks"
                     android:layout_width="match_parent"
-                    android:layout_height="100px"
+                    android:layout_height="1000px"
                     android:fillViewport="true"
                     android:scrollbars="vertical"
                     >
@@ -1485,6 +1488,7 @@
 
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/sc10wks"
                     android:layout_width="match_parent"
                     android:layout_height="1000px"
                     android:fillViewport="false"
@@ -2221,6 +2225,7 @@
                     tools:typeface="serif"/>
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/sc14wks"
                     android:layout_width="match_parent"
                     android:layout_height="1000px"
                     android:fillViewport="false"
@@ -3197,6 +3202,7 @@
                     tools:typeface="serif"/>
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/sc9M"
                     android:layout_width="match_parent"
                     android:layout_height="1000px"
                     android:fillViewport="false"
@@ -3466,6 +3472,7 @@
                     tools:typeface="serif"/>
 
                 <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/sc15M"
                     android:layout_width="match_parent"
                     android:layout_height="1000px"
                     android:fillViewport="false"
