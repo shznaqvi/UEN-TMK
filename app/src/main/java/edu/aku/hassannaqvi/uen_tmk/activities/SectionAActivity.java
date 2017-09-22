@@ -321,14 +321,23 @@ public class SectionAActivity extends Activity {
         }
 
 //        05
-        if (ta05h.getText().toString().isEmpty() && ta05u.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05), Toast.LENGTH_SHORT).show();
+        if (ta05h.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05h), Toast.LENGTH_SHORT).show();
             ta05h.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "ta05: This data is Required!");
+            Log.i(TAG, "ta05h: This data is Required!");
             return false;
         } else {
             ta05h.setError(null);
+        }
+        if (ta05u.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05u), Toast.LENGTH_SHORT).show();
+            ta05u.setError("This data is Required! ");    // Set Error on last radio button
+
+            Log.i(TAG, "ta05u: This data is Required!");
+            return false;
+        } else {
+            ta05u.setError(null);
         }
 
 //        06

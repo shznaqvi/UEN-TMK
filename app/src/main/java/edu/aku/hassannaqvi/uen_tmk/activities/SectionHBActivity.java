@@ -997,8 +997,12 @@ public class SectionHBActivity extends Activity {
 
                 finish();
 
-                Intent secNext = new Intent(this, SectionIActivity.class);
-                startActivity(secNext);
+                if (MainApp.totalImsCount > 0) {
+                    Intent secNext = new Intent(this, SectionIActivity.class);
+                    startActivity(secNext);
+                } else {
+                    startActivity(new Intent(this, SectionKActivity.class));
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

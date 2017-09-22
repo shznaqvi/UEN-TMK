@@ -408,7 +408,7 @@ public class SectionBActivity extends AppCompatActivity {
     void onBtnContNextSecClick() {
         //TODO implement
 
-        startActivity(new Intent(this, SectionIActivity.class));
+        startActivity(new Intent(this, SectionJActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
