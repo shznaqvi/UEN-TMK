@@ -242,8 +242,9 @@ public class SectionBActivity extends AppCompatActivity {
         tb04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.tb04a) {
-                    tb10a.setEnabled(false);
+                if (tb04b.isChecked()) {
+
+                    tb10a.setEnabled(true);
 
                     if (tb11b.isChecked()) {
                         fldGrptb11.setVisibility(View.VISIBLE);
@@ -257,7 +258,7 @@ public class SectionBActivity extends AppCompatActivity {
                     tb12.clearCheck();
                     fldGrptb11.setVisibility(View.GONE);
 
-                    tb10a.setEnabled(true);
+                    tb10a.setEnabled(false);
                 }
             }
         });
@@ -374,6 +375,14 @@ public class SectionBActivity extends AppCompatActivity {
 
                         tb11b.setEnabled(false);
                         tb11b.setChecked(false);
+                    } else if (ageInyears < 12) {
+
+                        tb11a.setEnabled(false);
+                        tb11b.setEnabled(false);
+                        tb11c.setEnabled(false);
+                        tb11d.setEnabled(false);
+                        tb11e.setEnabled(false);
+
                     } else {
                         tb09.setText(null);
                         tb09.setEnabled(true);
@@ -417,6 +426,19 @@ public class SectionBActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        tb10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tb10a.isChecked()) {
+                    tb11c.setEnabled(false);
+                } else {
+                    tb11c.setEnabled(true);
+                }
+            }
+        });
+
 
         tb11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -742,9 +764,6 @@ public class SectionBActivity extends AppCompatActivity {
         } else {
             tb11e.setError(null);
         }
-
-
-
 
 
         if (!tb09.getText().toString().equals("NA") && !tb08y.getText().toString().isEmpty()) {
