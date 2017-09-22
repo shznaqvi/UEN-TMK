@@ -19,7 +19,7 @@
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secBLabel"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"
@@ -558,7 +558,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <RadioButton
                 android:id="@+id/tb11a"
                 android:layout_width="match_parent"
@@ -595,6 +594,45 @@
                 android:text="@string/tb11e" />
 
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrptb11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tiRespondentMother"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioGroup
+                android:id="@+id/tb12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/tb12a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/tb12b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
