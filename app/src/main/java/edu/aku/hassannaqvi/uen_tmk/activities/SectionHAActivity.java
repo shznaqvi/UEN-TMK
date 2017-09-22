@@ -395,7 +395,7 @@ public class SectionHAActivity extends Activity {
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
 
-    int position;
+    int count_child_5y = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -411,10 +411,13 @@ public class SectionHAActivity extends Activity {
         childsMap.put("....", "");
         lstChild.add("....");
 
+
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
+
+                count_child_5y++;
             }
         }
 
@@ -1571,23 +1574,46 @@ public class SectionHAActivity extends Activity {
 
         }
 
-        if (Integer.parseInt(tha02.getText().toString().isEmpty() ? "0" : tha02.getText().toString()) <= 0) {
-            Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0", Toast.LENGTH_SHORT).show();
-            tha02.setError("Must be greater than 0");
-            Log.i(TAG, "tha02: This data is Required!");
-            return false;
-        } else {
-            tha02.setError(null);
+
+        if (!tha02.getText().toString().isEmpty()) {
+            if (Integer.parseInt(tha02.getText().toString()) <= 0 || Integer.parseInt(tha02.getText().toString()) > count_child_5y) {
+                Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0", Toast.LENGTH_SHORT).show();
+                tha02.setError("Must be greater than 0");
+                Log.i(TAG, "tha02: This data is Required!");
+                return false;
+            } else {
+                tha02.setError(null);
+            }
         }
 
 
-        if (Integer.parseInt(tha04.getText().toString().isEmpty() ? "0" : tha04.getText().toString()) <= 0) {
-            Toast.makeText(this, "How many days did the child have diarrhoea", Toast.LENGTH_SHORT).show();
-            tha04.setError("Must be greater than 0");
-            Log.i(TAG, "tha04: This data is Required!");
-            return false;
-        } else {
-            tha04.setError(null);
+        if (!tha04.getText().toString().isEmpty() && !tha08.getText().toString().isEmpty()) {
+            if (Integer.parseInt(tha04.getText().toString()) <= 0
+                    || Integer.parseInt(tha08.getText().toString()) > Integer.parseInt(tha04.getText().toString())) {
+                Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0 and it must be greater than " +
+                        " After how many days of illness did you seek care", Toast.LENGTH_SHORT).show();
+                tha04.setError("Must be greater than 0");
+                Log.i(TAG, "tha04: This data is Required!");
+                return false;
+            } else {
+                tha04.setError(null);
+            }
+        }
+
+
+        if (!tha20d.getText().toString().isEmpty() && !tha04.getText().toString().isEmpty() && !tha08.getText().toString().isEmpty()) {
+
+            int diff = Integer.parseInt(tha04.getText().toString()) - Integer.parseInt(tha08.getText().toString());
+
+            if (Integer.parseInt(tha20d.getText().toString()) <= 0 && Integer.parseInt(tha20d.getText().toString()) < diff) {
+                Toast.makeText(this, "After how many days of discharge were you recommended for a follow up visit and it should be " +
+                        " less than the difference of illness of did you seek care ", Toast.LENGTH_SHORT).show();
+                tha20d.setError("Must be greater than 0 and must be less than difference of illness of did you seek care");
+                Log.i(TAG, "tha20d: This data is Required!");
+                return false;
+            } else {
+                tha20d.setError(null);
+            }
         }
 
 
@@ -1608,6 +1634,19 @@ public class SectionHAActivity extends Activity {
             return false;
         } else {
             tha26.setError(null);
+        }
+
+
+        if (!tha26.getText().toString().isEmpty()) {
+
+            if (tha26.getText().toString().indexOf(".") > 1) {
+                Toast.makeText(this, "Use only 1 decimal point", Toast.LENGTH_SHORT).show();
+                tha26.setError("Must be greater than 0");
+                Log.i(TAG, "tha26: This data is Required!");
+                return false;
+            } else {
+                tha26.setError(null);
+            }
         }
 
 

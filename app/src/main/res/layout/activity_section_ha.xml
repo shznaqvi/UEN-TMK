@@ -29,7 +29,6 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1322,7 +1321,8 @@
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789"
                     android:hint="@string/tha28a"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="3" />
 
                 <CheckBox
                     android:id="@+id/tha28888"
