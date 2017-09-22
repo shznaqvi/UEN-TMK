@@ -50,8 +50,8 @@ public class SectionIActivity extends AppCompatActivity
     @BindView(R.id.activity_section_a)
     NestedScrollView
             scroll;
-    @BindView(R.id.tiName)
-    Spinner tiName;
+    @BindView(R.id.tiname)
+    Spinner tiname;
     @BindView(R.id.ti01)
     RadioGroup ti01;
     @BindView(R.id.ti01a)
@@ -369,6 +369,8 @@ public class SectionIActivity extends AppCompatActivity
             }
         }
     };
+    @BindView(R.id.tiresp)
+    CheckBox tiresp;
     @BindView(R.id.penta1Pova)
     RadioButton penta1Pova;
     @BindView(R.id.penta1Povb)
@@ -1154,12 +1156,12 @@ public class SectionIActivity extends AppCompatActivity
             MainApp.lstChild.add("....");
 
             for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-                if (MainApp.familyMembersList.get(i).getAgeLess2().equals("1")) {
+                if (MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                     MainApp.childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
                     MainApp.lstChild.add(MainApp.familyMembersList.get(i).getName());
                     //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
 
-                    //childsMap.get(tiName.getSelectedItem()).getDob();
+                    //childsMap.get(tiname.getSelectedItem()).getDob();
 
                 }
             }
@@ -1167,8 +1169,8 @@ public class SectionIActivity extends AppCompatActivity
 
         }
         //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(position).getDob());
-        tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
-        tiName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+        tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -1201,9 +1203,9 @@ public class SectionIActivity extends AppCompatActivity
                 if (ti03a.isChecked()) {
                     for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
-                        if (MainApp.ageRdo == 1 && (!tiName.getSelectedItem().equals("...."))) {
-                            de.setMinDate(MainApp.convertDateFormat(MainApp.childsMap.get(tiName.getSelectedItem()).getDob()));
-                        } else if (MainApp.ageRdo == 2 && (!tiName.getSelectedItem().equals("...."))) {
+                        if (MainApp.ageRdo == 1 && (!tiname.getSelectedItem().equals("...."))) {
+                            de.setMinDate(MainApp.convertDateFormat(MainApp.childsMap.get(tiname.getSelectedItem()).getDob()));
+                        } else if (MainApp.ageRdo == 2 && (!tiname.getSelectedItem().equals("...."))) {
                             de.setMinDate(maxDate2Years);
                         }
                     }
@@ -1430,7 +1432,7 @@ public class SectionIActivity extends AppCompatActivity
 
                     MainApp.flag = false;
                     Intent secNext = new Intent(this, SectionIActivity.class);
-                    //tiName.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+                    //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
                     startActivity(secNext);
 
 
@@ -1485,8 +1487,8 @@ public class SectionIActivity extends AppCompatActivity
 
         JSONObject sI = new JSONObject();
 
-        sI.put("tichildName", tiName.getSelectedItem().toString());
-
+        sI.put("tiname", tiname.getSelectedItem().toString());
+        sI.put("tiresp", tiresp.isChecked() ? "1" : "2");
         sI.put("ti01", ti01a.isChecked() ? "1" : ti01b.isChecked() ? "2" : ti01888.isChecked() ? "888" : "0");
         sI.put("ti02a", ti02a.isChecked() ? "1" : "0");
         sI.put("ti02b", ti02b.isChecked() ? "2" : "0");
@@ -1621,15 +1623,15 @@ public class SectionIActivity extends AppCompatActivity
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (tiName.getSelectedItem() == "....") {
+        if (tiname.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
-            ((TextView) tiName.getSelectedView()).setText("This Data is Required");
-            ((TextView) tiName.getSelectedView()).setTextColor(Color.RED);
+            ((TextView) tiname.getSelectedView()).setText("This Data is Required");
+            ((TextView) tiname.getSelectedView()).setTextColor(Color.RED);
 
-            Log.i(TAG, "tiName: This Data is Required!");
+            Log.i(TAG, "tiname: This Data is Required!");
             return false;
         } else {
-            ((TextView) tiName.getSelectedView()).setError(null);
+            ((TextView) tiname.getSelectedView()).setError(null);
         }
 
 

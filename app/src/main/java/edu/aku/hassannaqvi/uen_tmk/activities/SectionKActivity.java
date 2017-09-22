@@ -513,6 +513,16 @@ public class SectionKActivity extends Activity {
                     tk04.setError(null);
                 }
             }
+            if (tk05.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tk05), Toast.LENGTH_SHORT).show();
+                tk05a.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "tk05: This data is Required!");
+                return false;
+            } else {
+                tk05a.setError(null);
+            }
+
         }
 
         if (tk06.getCheckedRadioButtonId() == -1) {

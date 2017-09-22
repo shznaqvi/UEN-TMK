@@ -16,9 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secCLabel"
-            android:textSize="30sp" />
+            android:textSize="40sp"/>
 
         <View
             android:layout_width="match_parent"
@@ -48,7 +49,7 @@
                 android:gravity="center"
                 android:text="@string/tc0101"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc01a"
@@ -72,7 +73,7 @@
                 android:gravity="center"
                 android:text="@string/tc0102"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc01c"
@@ -96,7 +97,7 @@
                 android:gravity="center"
                 android:text="@string/tc0103"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc01e"
@@ -178,7 +179,7 @@
                 android:gravity="center"
                 android:text="@string/tc0201"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc02a"
@@ -209,7 +210,7 @@
                 android:gravity="center"
                 android:text="@string/tc0202"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc02d"
@@ -247,7 +248,7 @@
                 android:gravity="center"
                 android:text="@string/tc0203"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc02h"
@@ -329,7 +330,7 @@
                 android:gravity="center"
                 android:text="@string/tc0301"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc03a"
@@ -360,7 +361,7 @@
                 android:gravity="center"
                 android:text="@string/tc0302"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc03d"
@@ -426,7 +427,7 @@
                 android:gravity="center"
                 android:text="@string/tc0303"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc03l"
@@ -557,7 +558,7 @@
                 android:gravity="center"
                 android:text="@string/tc0601"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tc06a"
@@ -723,7 +724,13 @@
             android:inputType="textCapWords"
             android:visibility="gone" />
 
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -733,7 +740,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08a" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08a"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08a"
@@ -760,7 +770,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08b" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08b"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08b"
@@ -788,8 +801,11 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:text="@string/tc08c" />
+            android:background="@color/colorHeading"
+            android:text="@string/tc08c"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08c"
@@ -816,7 +832,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08d" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08d"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08d"
@@ -843,7 +862,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08e" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08e"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08e"
@@ -870,7 +892,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08f" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08f"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08f"
@@ -897,7 +922,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08g" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08g"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08g"
@@ -924,7 +952,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08h" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08h"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08h"
@@ -951,7 +982,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08i" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08i"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08i"
@@ -978,8 +1012,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:text="@string/tc08j" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08j"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08j"
@@ -1006,7 +1042,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08k" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08k"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08k"
@@ -1033,7 +1072,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08l" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08l"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08l"
@@ -1060,7 +1102,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08m" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08m"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08m"
@@ -1087,7 +1132,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08n" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08n"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08n"
@@ -1114,7 +1162,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08o" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08o"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08o"
@@ -1141,7 +1192,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08p" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08p"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08p"
@@ -1168,7 +1222,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08q" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08q"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08q"
@@ -1195,7 +1252,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc08r" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc08r"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc08r"
@@ -1219,7 +1279,16 @@
 
         </RadioGroup>
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bacground_border1"
+            android:orientation="vertical">
+
+            <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1230,7 +1299,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09a" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09a"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09a"
@@ -1257,7 +1329,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09b" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09b"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09b"
@@ -1284,7 +1359,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09c" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09c"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09c"
@@ -1311,7 +1389,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09d" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09d"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09d"
@@ -1338,7 +1419,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09e" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09e"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09e"
@@ -1365,7 +1449,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09f" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09f"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09f"
@@ -1392,7 +1479,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09g" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09g"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09g"
@@ -1419,7 +1509,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09h" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09h"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09h"
@@ -1446,7 +1539,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc09i" />
+            android:layout_marginTop="10dp"
+            android:background="@color/colorHeading"
+            android:text="@string/tc09i"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tc09i"
@@ -1470,10 +1566,14 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc10" />
+            android:layout_marginTop="16dp"
+            android:text="@string/tc10"
+            />
 
         <RadioGroup
             android:id="@+id/tc10"
@@ -1500,7 +1600,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc11" />
+            android:layout_marginTop="16dp"
+            android:text="@string/tc11"
+            />
 
         <RadioGroup
             android:id="@+id/tc11"
@@ -1533,7 +1635,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tc12" />
+                android:layout_marginTop="16dp"
+                android:text="@string/tc12"/>
 
             <RadioGroup
                 android:id="@+id/tc12"
@@ -1591,7 +1694,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tc13" />
+            android:layout_marginTop="16dp"
+            android:text="@string/tc13"/>
 
         <RadioGroup
             android:id="@+id/tc13"
@@ -1619,6 +1723,7 @@
             android:id="@+id/fldGrpte14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bacground_border1"
             android:orientation="vertical">
 
             <TextView
@@ -1884,21 +1989,25 @@
         <RadioGroup
             android:id="@+id/td06"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/td06a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
 
             <RadioButton
                 android:id="@+id/td06b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_weight="1"
+                android:text="@string/no"/>
 
         </RadioGroup>
 
@@ -1943,21 +2052,25 @@
         <RadioGroup
             android:id="@+id/td08"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/td08a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
 
             <RadioButton
                 android:id="@+id/td08b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_weight="1"
+                android:text="@string/no"/>
 
         </RadioGroup>
 

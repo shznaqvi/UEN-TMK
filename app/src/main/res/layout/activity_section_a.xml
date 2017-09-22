@@ -16,13 +16,14 @@
         android:orientation="vertical">
 
         <TextView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_horizontal"
-             android:layout_marginTop="2dp"
-             android:gravity="center"
-             android:text="@string/secALabel"
-             android:textSize="30sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/secALabel"
+            android:textSize="40sp"/>
 
          <View
              android:layout_width="match_parent"

@@ -626,8 +626,12 @@ public class SectionCActivity extends Activity {
 
                 if (MainApp.TotalMWRACount > 0) {
                     startActivity(new Intent(this, SectionDActivity.class));
-                } else {
+                } else if (MainApp.TotalDeceasedMotherCount > 0) {
                     startActivity(new Intent(this, SectionEActivity.class));
+                } else if (MainApp.TotalDeceasedChildCount > 0) {
+                    startActivity(new Intent(this, SectionFActivity.class));
+                } else {
+                    startActivity(new Intent(this, SectionGActivity.class));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -753,7 +757,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc19", td07.getText().toString());
 
         if (td06a.isChecked()) {
-            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString());
+            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString().isEmpty() ? "0" : td07.getText().toString());
         }
 
         sC.put("tc20", td08a.isChecked() ? "1" : td08b.isChecked() ? "2"
@@ -761,7 +765,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc21", td09.getText().toString());
 
         if (td08a.isChecked()) {
-            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString());
+            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString().isEmpty() ? "0" : td09.getText().toString());
         }
 
         MainApp.fc.setsC(String.valueOf(sC));
