@@ -50,7 +50,7 @@
     <string name="month"> مهينو </string>
     <string name="year"> سال </string>
     <string name="hour"> ڪلاڪ </string>
-    <string name="min"> منٽ</string>
+    <string name="min"> منٽ </string>
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
   <string name="name">ٻار جو نالو</string>
 
@@ -95,7 +95,7 @@
     <string name="ta05"> House/ khandan number </string>
     <string name="ta05h"> House No </string>
     <string name="ta05kh"> Khandan number </string>
-    <string name="ta05u"> If neither of above then Gas or electricity bill No </string>
+    <string name="ta05u"> Gas or electricity bill No </string>
     <string name="ta06"> Village </string>
     <string name="ta07"> Block/mohalla </string>
     <string name="ta08"> Street </string>

@@ -531,7 +531,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
@@ -541,7 +541,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
-            android:text="@string/td06"
+            android:text="@string/tc06"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
@@ -602,7 +602,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
@@ -719,7 +719,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
@@ -1945,7 +1945,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
             android:hint="@string/other"
             android:inputType="textCapWords"
             android:visibility="gone" />
