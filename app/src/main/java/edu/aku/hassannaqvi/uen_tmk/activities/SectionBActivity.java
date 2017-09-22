@@ -148,8 +148,8 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb11a;
     @BindView(R.id.tb11b)
     RadioButton tb11b;
-    @BindView(R.id.tb11c)
-    RadioButton tb11c;
+    /*    @BindView(R.id.tb11c)
+        RadioButton tb11c;*/
     @BindView(R.id.tb11d)
     RadioButton tb11d;
     @BindView(R.id.tb11e)
@@ -384,7 +384,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                         tb11a.setEnabled(false);
                         tb11b.setEnabled(false);
-                        tb11c.setEnabled(false);
+//                        tb11c.setEnabled(false);
                         tb11d.setEnabled(false);
                         tb11e.setEnabled(false);
 
@@ -438,9 +438,9 @@ public class SectionBActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tb10a.isChecked()) {
-                    tb11c.setEnabled(false);
+                    tb11a.setEnabled(false);
                 } else {
-                    tb11c.setEnabled(true);
+                    tb11a.setEnabled(true);
                 }
             }
         });
@@ -568,7 +568,7 @@ public class SectionBActivity extends AppCompatActivity {
                 : tb10k.isChecked() ? "11" : tb10l.isChecked() ? "12" : tb10999.isChecked() ? "999"
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
-                : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : tb11e.isChecked() ? "5" : "0");
+                : tb11d.isChecked() ? "3" : tb11e.isChecked() ? "4" : "0");
 
         sB.put("tb12", tb12a.isChecked() ? "1" : tb12b.isChecked() ? "2" : "0");
 

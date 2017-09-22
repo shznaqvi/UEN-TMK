@@ -578,12 +578,12 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/tb11b" />
 
-            <RadioButton
-                android:id="@+id/tb11c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tb11c" />
+            <!--            <RadioButton
+                            android:id="@+id/tb11c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/tb11c" />-->
 
             <RadioButton
                 android:id="@+id/tb11d"
