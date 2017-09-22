@@ -524,8 +524,10 @@ public class SectionBActivity extends AppCompatActivity {
                     ageInyears < 5 ? "1" : ageInyears < 2 ? "3" :
                             (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
-                    , String.valueOf(MainApp.counter), tb07.getText().toString()));
-
+                    , String.valueOf(MainApp.counter),
+                    tb07.getText().toString().isEmpty() ?
+                            tb08m.getText().toString() + "-" + tb08y.getText().toString() :
+                            tb07.getText().toString()));
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
