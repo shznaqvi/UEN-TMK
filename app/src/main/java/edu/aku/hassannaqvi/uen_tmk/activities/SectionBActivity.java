@@ -746,6 +746,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
 
+
         if (!tb09.getText().toString().equals("NA") && !tb08y.getText().toString().isEmpty()) {
 
             if (Integer.parseInt(tb08y.getText().toString())
