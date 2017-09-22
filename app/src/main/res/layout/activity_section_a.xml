@@ -172,7 +172,7 @@
             android:layout_height="wrap_content"
             android:digits="1234567890"
             android:hint="@string/ta05u"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <!--06-->
 

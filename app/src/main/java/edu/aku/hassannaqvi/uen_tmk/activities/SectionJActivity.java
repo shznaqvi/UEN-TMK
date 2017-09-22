@@ -263,7 +263,7 @@ public class SectionJActivity extends Activity {
 
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
-                childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
+                childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
             }
         }
