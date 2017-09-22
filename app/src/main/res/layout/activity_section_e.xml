@@ -77,6 +77,7 @@
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:digits="0123456789"
             android:hint="@string/day"
             android:inputType="number"
             android:maxLength="2" />
@@ -88,6 +89,7 @@
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:digits="0123456789"
             android:hint="@string/month"
             android:inputType="number"
             android:maxLength="2" />
@@ -99,6 +101,7 @@
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
+            android:digits="0123456789"
             android:hint="@string/year"
             android:inputType="number"
             android:maxLength="2" />
@@ -167,13 +170,13 @@
             android:textColor="@android:color/white" />
 
         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                   android:id="@+id/te04"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="1dp"
-                   android:focusable="true"
-                   android:hint="@string/te04"
-                   android:textColor="@android:color/black"
+            android:id="@+id/te04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:focusable="true"
+            android:hint="@string/te04"
+            android:textColor="@android:color/black"
             app:dateFormat="dd-MM-yyyy" />
 
         <!--<EditText

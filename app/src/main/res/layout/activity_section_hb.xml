@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:digits="0123456789 "
+                android:digits="0123456789"
                 android:hint="@string/thb02"
                 android:inputType="number" />
 

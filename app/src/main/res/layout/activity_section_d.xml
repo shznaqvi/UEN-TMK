@@ -118,6 +118,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:digits="0123456789"
                 android:hint="@string/td02"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -139,6 +140,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:digits="0123456789"
                 android:hint="@string/td03a"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -150,6 +152,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:digits="0123456789"
                 android:hint="@string/td03b"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -161,6 +164,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:digits="0123456789"
                 android:hint="@string/td03c"
                 android:inputType="number"
                 android:maxLength="2" />
@@ -217,6 +221,7 @@
                     android:layout_marginBottom="1dp"
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
+                    android:digits="0123456789"
                     android:hint="@string/td05"
                     android:inputType="number"
                     android:maxLength="2" />

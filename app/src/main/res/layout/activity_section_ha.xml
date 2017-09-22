@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:digits="0123456789 "
+                android:digits="0123456789"
                 android:hint="@string/tha02"
                 android:inputType="number" />
 
@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:digits="0123456789 "
+                android:digits="0123456789"
                 android:hint="@string/tha04"
                 android:inputType="number" />
 
@@ -324,7 +324,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
+                    android:digits="0123456789"
                     android:hint="@string/tha08"
                     android:inputType="number" />
 
@@ -953,7 +953,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:digits="0123456789 "
+                        android:digits="0123456789"
                         android:hint="@string/tha20a"
                         android:inputType="number"
                         android:visibility="gone" />
@@ -964,7 +964,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:digits="0123456789 "
+                        android:digits="0123456789"
                         android:hint="@string/tha20b"
                         android:inputType="number"
                         android:visibility="gone" />
@@ -1030,7 +1030,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="1dp"
-                                android:digits="0123456789 "
+                                android:digits="0123456789"
                                 android:hint="@string/tha22"
                                 android:inputType="number" />
 
@@ -1197,7 +1197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789. "
+                    android:digits="0123456789."
                     android:hint="@string/tha26a"
                     android:inputType="numberDecimal" />
 
@@ -1320,7 +1320,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
+                    android:digits="0123456789"
                     android:hint="@string/tha28a"
                     android:inputType="number" />
 
@@ -1344,7 +1344,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
+                    android:digits="0123456789"
                     android:hint="@string/tha29a"
                     android:inputType="number" />
 
@@ -1368,7 +1368,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
+                    android:digits="0123456789"
                     android:hint="@string/tha30"
                     android:inputType="number" />
 
