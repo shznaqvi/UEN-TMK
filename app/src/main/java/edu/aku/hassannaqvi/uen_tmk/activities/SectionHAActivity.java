@@ -1571,7 +1571,7 @@ public class SectionHAActivity extends Activity {
 
         }
 
-        if (Integer.parseInt(tha02.getText().toString()) <= 0) {
+        if (Integer.parseInt(tha02.getText().toString().isEmpty() ? "0" : tha02.getText().toString()) <= 0) {
             Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0", Toast.LENGTH_SHORT).show();
             tha02.setError("Must be greater than 0");
             Log.i(TAG, "tha02: This data is Required!");
@@ -1581,7 +1581,7 @@ public class SectionHAActivity extends Activity {
         }
 
 
-        if (Integer.parseInt(tha04.getText().toString()) <= 0) {
+        if (Integer.parseInt(tha04.getText().toString().isEmpty() ? "0" : tha04.getText().toString()) <= 0) {
             Toast.makeText(this, "How many days did the child have diarrhoea", Toast.LENGTH_SHORT).show();
             tha04.setError("Must be greater than 0");
             Log.i(TAG, "tha04: This data is Required!");
@@ -1591,7 +1591,7 @@ public class SectionHAActivity extends Activity {
         }
 
 
-        if (Integer.parseInt(tha22.getText().toString()) <= 0) {
+        if (Integer.parseInt(tha22.getText().toString().isEmpty() ? "0" : tha22.getText().toString()) <= 0) {
             Toast.makeText(this, "After how many days of discharge were you recommended for a follow up visit", Toast.LENGTH_SHORT).show();
             tha22.setError("Must be greater than 0");
             Log.i(TAG, "tha22: This data is Required!");
@@ -1601,7 +1601,7 @@ public class SectionHAActivity extends Activity {
         }
 
 
-        if (Integer.parseInt(tha26.getText().toString()) <= 0) {
+        if (Integer.parseInt(tha26.getText().toString().isEmpty() ? "0" : tha26.getText().toString()) <= 0) {
             Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
             tha26.setError("Must be greater than 0");
             Log.i(TAG, "tha26: This data is Required!");

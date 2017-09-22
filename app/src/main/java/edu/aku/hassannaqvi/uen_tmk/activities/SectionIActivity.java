@@ -110,6 +110,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioGroup bcgPov;
     @BindView(R.id.sc1)
     NestedScrollView sc1;
+    @BindView(R.id.scbirth)
+    NestedScrollView scBirth;
     public RadioGroup.OnCheckedChangeListener bcg = new OnCheckedChangeListener()
     {
         @Override
@@ -128,10 +130,13 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov1.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc1.setLayoutParams(params);
+                LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
+                scBirth.setLayoutParams(param2);
             } else if (bcgC02.isChecked() && !bcgM01.isChecked()) {
                 fldGrpov1.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc1.setLayoutParams(params);
+                scBirth.setLayoutParams(params);
                 bcgPov.clearCheck();
 
             }
@@ -941,6 +946,8 @@ public class SectionIActivity extends AppCompatActivity
     LinearLayout fldGrpov13;
     @BindView(R.id.measles1Pov)
     RadioGroup measles1Pov;
+    @BindView(R.id.sc9M)
+    NestedScrollView sc9M;
     public RadioGroup.OnCheckedChangeListener measles1 = new OnCheckedChangeListener()
     {
         @Override
@@ -959,10 +966,13 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov13.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc13.setLayoutParams(params);
+                LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
+                sc9M.setLayoutParams(params2);
             } else if (measles1C02.isChecked() && !measles1M01.isChecked()) {
                 fldGrpov13.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc13.setLayoutParams(params);
+                sc9M.setLayoutParams(params);
                 measles1Pov.clearCheck();
 
             }
@@ -1008,6 +1018,8 @@ public class SectionIActivity extends AppCompatActivity
     LinearLayout fldGrpov14;
     @BindView(R.id.measles2Pov)
     RadioGroup measles2Pov;
+    @BindView(R.id.sc15M)
+    NestedScrollView sc15M;
     public RadioGroup.OnCheckedChangeListener measles2 = new OnCheckedChangeListener()
     {
         @Override
@@ -1026,10 +1038,13 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov14.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc14.setLayoutParams(params);
+                LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
+                sc15M.setLayoutParams(params2);
             } else if (measles2C02.isChecked() && !measles2M01.isChecked()) {
                 fldGrpov14.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc14.setLayoutParams(params);
+                sc15M.setLayoutParams(params);
                 measles2Pov.clearCheck();
 
             }
