@@ -639,6 +639,8 @@
     <string name="ti03a"> ھا، ڪارڊ ڏٺو </string>
     <string name="ti03b"> ھا، ڪارڊ نه ڏٺو </string>
     <string name="ti03c"> ڪارڊ موجود نه آھي </string>
+  <string name="datenr"> Mother dont remember date </string>
+  <string name="datenp"> Date is not present on Card </string>
     <string name="card"> Vaccine Card </string>
     <string name="recall">Reported by care taker</string>
     <string name="place"> Place of Vaccine </string>

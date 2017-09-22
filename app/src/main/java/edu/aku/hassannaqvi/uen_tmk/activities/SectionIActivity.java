@@ -48,10 +48,11 @@ public class SectionIActivity extends AppCompatActivity
     private static final String TAG = SectionIActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_a)
-    NestedScrollView
-            scroll;
+    NestedScrollView scroll;
     @BindView(R.id.tiname)
     Spinner tiname;
+    @BindView(R.id.tiresp)
+    CheckBox tiresp;
     @BindView(R.id.ti01)
     RadioGroup ti01;
     @BindView(R.id.ti01a)
@@ -82,8 +83,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton ti03a;
     @BindView(R.id.ti03b)
     RadioButton ti03b;
-    @BindView(R.id.tic03c)
+    @BindView(R.id.ti03c)
     RadioButton ti03c;
+    @BindView(R.id.scbirth)
+    NestedScrollView scbirth;
+    @BindView(R.id.sc1)
+    NestedScrollView sc1;
     @BindView(R.id.fldGrpBcgM)
     LinearLayout fldGrpBcgM;
     @BindView(R.id.bcgM)
@@ -92,6 +97,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton bcgM01;
     @BindView(R.id.bcgM02)
     RadioButton bcgM02;
+    @BindView(R.id.fldGrpBcgMCheck)
+    LinearLayout fldGrpBcgMCheck;
+    @BindView(R.id.bcgdatenr)
+    CheckBox bcgdatenr;
+    @BindView(R.id.fldGrpbcgMDate)
+    LinearLayout fldGrpbcgMDate;
+    @BindView(R.id.bcgDateM_year)
+    EditText bcgDateMYear;
+    @BindView(R.id.bcgDateM_mon)
+    EditText bcgDateMMon;
     @BindView(R.id.fldGrpBcgC)
     LinearLayout fldGrpBcgC;
     @BindView(R.id.bcgC)
@@ -100,6 +115,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton bcgC01;
     @BindView(R.id.bcgC02)
     RadioButton bcgC02;
+    @BindView(R.id.fldGrpBcgCCheck)
+    LinearLayout fldGrpBcgCCheck;
+    @BindView(R.id.bcgdatenp)
+    CheckBox bcgdatenp;
+    @BindView(R.id.fldGrpBcgCDate)
+    LinearLayout fldGrpBcgCDate;
     @BindView(R.id.text1)
     TextView text1;
     @BindView(R.id.bcgDate)
@@ -108,22 +129,32 @@ public class SectionIActivity extends AppCompatActivity
     LinearLayout fldGrpov1;
     @BindView(R.id.bcgPov)
     RadioGroup bcgPov;
-    @BindView(R.id.sc1)
-    NestedScrollView sc1;
-    @BindView(R.id.scbirth)
-    NestedScrollView scBirth;
     public RadioGroup.OnCheckedChangeListener bcg = new OnCheckedChangeListener()
     {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (bcgC01.isChecked()) {
-                text1.setVisibility(View.VISIBLE);
-                bcgDate.setVisibility(View.VISIBLE);
-            } else {
-                text1.setVisibility(View.GONE);
-                bcgDate.setVisibility(View.GONE);
-                bcgDate.setText(null);
+
+            if (radioGroup == bcgC) {
+                if (bcgC01.isChecked()) {
+                    fldGrpBcgCCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpBcgCCheck.setVisibility(View.GONE);
+                    bcgDate.setText(null);
+                    bcgdatenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == bcgM) {
+
+                if (bcgM01.isChecked()) {
+                    fldGrpBcgMCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpBcgMCheck.setVisibility(View.GONE);
+                    bcgDateMYear.setText(null);
+                    bcgDateMMon.setText(null);
+                    bcgdatenr.setChecked(false);
+                }
             }
 
             if (bcgM01.isChecked() || bcgC01.isChecked()) {
@@ -131,43 +162,17 @@ public class SectionIActivity extends AppCompatActivity
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc1.setLayoutParams(params);
                 LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
-                scBirth.setLayoutParams(param2);
+                scbirth.setLayoutParams(param2);
             } else if (bcgC02.isChecked() && !bcgM01.isChecked()) {
                 fldGrpov1.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc1.setLayoutParams(params);
-                scBirth.setLayoutParams(params);
+                scbirth.setLayoutParams(params);
                 bcgPov.clearCheck();
 
             }
         }
     };
-    @BindView(R.id.sc2)
-    NestedScrollView sc2;
-    @BindView(R.id.sc3)
-    NestedScrollView sc3;
-    @BindView(R.id.sc4)
-    NestedScrollView sc4;
-    @BindView(R.id.sc5)
-    NestedScrollView sc5;
-    @BindView(R.id.sc6)
-    NestedScrollView sc6;
-    @BindView(R.id.sc7)
-    NestedScrollView sc7;
-    @BindView(R.id.sc8)
-    NestedScrollView sc8;
-    @BindView(R.id.sc9)
-    NestedScrollView sc9;
-    @BindView(R.id.sc10)
-    NestedScrollView sc10;
-    @BindView(R.id.sc11)
-    NestedScrollView sc11;
-    @BindView(R.id.sc12)
-    NestedScrollView sc12;
-    @BindView(R.id.sc13)
-    NestedScrollView sc13;
-    @BindView(R.id.sc14)
-    NestedScrollView sc14;
     @BindView(R.id.bcgPova)
     RadioButton bcgPova;
     @BindView(R.id.bcgPovb)
@@ -184,6 +189,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton bcgPovg;
     @BindView(R.id.bcgPovh)
     RadioButton bcgPovh;
+    @BindView(R.id.sc2)
+    NestedScrollView sc2;
     @BindView(R.id.fldGrpOpv0M)
     LinearLayout fldGrpOpv0M;
     @BindView(R.id.opv0M)
@@ -192,6 +199,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv0M01;
     @BindView(R.id.opv0M02)
     RadioButton opv0M02;
+    @BindView(R.id.fldGrpOpv0MCheck)
+    LinearLayout fldGrpOpv0MCheck;
+    @BindView(R.id.opv0datenr)
+    CheckBox opv0datenr;
+    @BindView(R.id.fldGrpopv0MDate)
+    LinearLayout fldGrpopv0MDate;
+    @BindView(R.id.opv0DateM_year)
+    EditText opv0DateMYear;
+    @BindView(R.id.opv0DateM_mon)
+    EditText opv0DateMMon;
     @BindView(R.id.fldGrpopv0C)
     LinearLayout fldGrpopv0C;
     @BindView(R.id.opv0C)
@@ -200,6 +217,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv0C01;
     @BindView(R.id.opv0C02)
     RadioButton opv0C02;
+    @BindView(R.id.fldGrpOpv0CCheck)
+    LinearLayout fldGrpOpv0CCheck;
+    @BindView(R.id.opv0datenp)
+    CheckBox opv0datenp;
+    @BindView(R.id.fldGrpOpv0CDate)
+    LinearLayout fldGrpOpv0CDate;
     @BindView(R.id.text2)
     TextView text2;
     @BindView(R.id.opv0Date)
@@ -213,15 +236,27 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (opv0C01.isChecked()) {
-                text2.setVisibility(View.VISIBLE);
-                opv0Date.setVisibility(View.VISIBLE);
-            } else {
-                text2.setVisibility(View.GONE);
-                opv0Date.setVisibility(View.GONE);
-                opv0Date.setText(null);
+
+            if (radioGroup == opv0C) {
+                if (opv0C01.isChecked()) {
+                    fldGrpOpv0CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv0CCheck.setVisibility(View.GONE);
+                    opv0Date.setText(null);
+                    opv0datenp.setChecked(false);
+                }
             }
 
+            if (radioGroup == opv0M) {
+                if (opv0M01.isChecked()) {
+                    fldGrpOpv0MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv0MCheck.setVisibility(View.GONE);
+                    opv0DateMYear.setText(null);
+                    opv0DateMMon.setText(null);
+                    opv0datenr.setChecked(false);
+                }
+            }
             if (opv0M01.isChecked() || opv0C01.isChecked()) {
                 fldGrpov2.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -251,6 +286,10 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv0Povg;
     @BindView(R.id.opv0Povh)
     RadioButton opv0Povh;
+    @BindView(R.id.sc6wks)
+    NestedScrollView sc6wks;
+    @BindView(R.id.sc3)
+    NestedScrollView sc3;
     @BindView(R.id.fldGrpopv1M)
     LinearLayout fldGrpopv1M;
     @BindView(R.id.opv1M)
@@ -259,6 +298,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv1M01;
     @BindView(R.id.opv1M02)
     RadioButton opv1M02;
+    @BindView(R.id.fldGrpOpv1MCheck)
+    LinearLayout fldGrpOpv1MCheck;
+    @BindView(R.id.opv1datenr)
+    CheckBox opv1datenr;
+    @BindView(R.id.fldGrpopv1MDate)
+    LinearLayout fldGrpopv1MDate;
+    @BindView(R.id.opv1DateM_year)
+    EditText opv1DateMYear;
+    @BindView(R.id.opv1DateM_mon)
+    EditText opv1DateMMon;
     @BindView(R.id.fldGrpopv1C)
     LinearLayout fldGrpopv1C;
     @BindView(R.id.opv1C)
@@ -267,6 +316,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv1C01;
     @BindView(R.id.opv1C02)
     RadioButton opv1C02;
+    @BindView(R.id.fldGrpOpv1CCheck)
+    LinearLayout fldGrpOpv1CCheck;
+    @BindView(R.id.opv1datenp)
+    CheckBox opv1datenp;
+    @BindView(R.id.fldGrpOpv1CDate)
+    LinearLayout fldGrpOpv1CDate;
     @BindView(R.id.text3)
     TextView text3;
     @BindView(R.id.opv1Date)
@@ -280,13 +335,27 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (opv1C01.isChecked()) {
-                text3.setVisibility(View.VISIBLE);
-                opv1Date.setVisibility(View.VISIBLE);
-            } else {
-                text3.setVisibility(View.GONE);
-                opv1Date.setVisibility(View.GONE);
-                opv1Date.setText(null);
+
+            if (radioGroup == opv1C) {
+                if (opv1C01.isChecked()) {
+                    fldGrpOpv1CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv1CCheck.setVisibility(View.GONE);
+                    opv1Date.setText(null);
+                    opv1datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == opv1M) {
+
+                if (opv1M01.isChecked()) {
+                    fldGrpOpv1MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv1MCheck.setVisibility(View.GONE);
+                    opv1DateMYear.setText(null);
+                    opv1DateMMon.setText(null);
+                    opv1datenr.setChecked(false);
+                }
             }
 
             if (opv1M01.isChecked() && opv1C01.isChecked()) {
@@ -318,6 +387,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv1Povg;
     @BindView(R.id.opv1Povh)
     RadioButton opv1Povh;
+    @BindView(R.id.sc4)
+    NestedScrollView sc4;
     @BindView(R.id.fldGrpPenta1M)
     LinearLayout fldGrpPenta1M;
     @BindView(R.id.penta1M)
@@ -326,6 +397,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta1M01;
     @BindView(R.id.Penta1M02)
     RadioButton penta1M02;
+    @BindView(R.id.fldGrpPenta1MCheck)
+    LinearLayout fldGrpPenta1MCheck;
+    @BindView(R.id.penta1datenr)
+    CheckBox penta1datenr;
+    @BindView(R.id.fldGrppenta1MDate)
+    LinearLayout fldGrppenta1MDate;
+    @BindView(R.id.penta1DateM_year)
+    EditText penta1DateMYear;
+    @BindView(R.id.penta1DateM_mon)
+    EditText penta1DateMMon;
     @BindView(R.id.fldGrpPenta1C)
     LinearLayout fldGrpPenta1C;
     @BindView(R.id.penta1C)
@@ -334,6 +415,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta1C01;
     @BindView(R.id.penta1C02)
     RadioButton penta1C02;
+    @BindView(R.id.fldGrppenta1CCheck)
+    LinearLayout fldGrppenta1CCheck;
+    @BindView(R.id.penta1datenp)
+    CheckBox penta1datenp;
+    @BindView(R.id.fldGrpPenta1CDate)
+    LinearLayout fldGrpPenta1CDate;
     @BindView(R.id.text4)
     TextView text4;
     @BindView(R.id.penta1Date)
@@ -347,13 +434,26 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (penta1C01.isChecked()) {
-                text4.setVisibility(View.VISIBLE);
-                penta1Date.setVisibility(View.VISIBLE);
-            } else {
-                text4.setVisibility(View.GONE);
-                penta1Date.setVisibility(View.GONE);
-                penta1Date.setText(null);
+            if (radioGroup == penta1C) {
+                if (penta1C01.isChecked()) {
+                    fldGrppenta1CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrppenta1CCheck.setVisibility(View.GONE);
+                    penta1Date.setText(null);
+                    penta1datenp.setChecked(false);
+                }
+            }
+
+
+            if (radioGroup == penta1M) {
+                if (penta1M01.isChecked()) {
+                    fldGrpPenta1MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPenta1MCheck.setVisibility(View.GONE);
+                    penta1DateMYear.setText(null);
+                    penta1DateMMon.setText(null);
+                    penta1datenr.setChecked(false);
+                }
             }
 
             if (penta1M01.isChecked() && penta1C01.isChecked()) {
@@ -369,8 +469,6 @@ public class SectionIActivity extends AppCompatActivity
             }
         }
     };
-    @BindView(R.id.tiresp)
-    CheckBox tiresp;
     @BindView(R.id.penta1Pova)
     RadioButton penta1Pova;
     @BindView(R.id.penta1Povb)
@@ -387,6 +485,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta1Povg;
     @BindView(R.id.penta1Povh)
     RadioButton penta1Povh;
+    @BindView(R.id.sc5)
+    NestedScrollView sc5;
     @BindView(R.id.fldGrppcv1M)
     LinearLayout fldGrppcv1M;
     @BindView(R.id.pcv1M)
@@ -395,6 +495,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv1M01;
     @BindView(R.id.pcv1M02)
     RadioButton pcv1M02;
+    @BindView(R.id.fldGrpPcv1MCheck)
+    LinearLayout fldGrpPcv1MCheck;
+    @BindView(R.id.pcv1datenr)
+    CheckBox pcv1datenr;
+    @BindView(R.id.fldGrppcv1MDate)
+    LinearLayout fldGrppcv1MDate;
+    @BindView(R.id.pcv1DateM_year)
+    EditText pcv1DateMYear;
+    @BindView(R.id.pcv1DateM_mon)
+    EditText pcv1DateMMon;
     @BindView(R.id.fldGrppcv1C)
     LinearLayout fldGrppcv1C;
     @BindView(R.id.pcv1C)
@@ -403,6 +513,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv1C01;
     @BindView(R.id.pcv1C02)
     RadioButton pcv1C02;
+    @BindView(R.id.fldGrpPcv1CCheck)
+    LinearLayout fldGrpPcv1CCheck;
+    @BindView(R.id.pcv1datenp)
+    CheckBox pcv1datenp;
+    @BindView(R.id.fldGrpPcv1CDate)
+    LinearLayout fldGrpPcv1CDate;
     @BindView(R.id.text5)
     TextView text5;
     @BindView(R.id.pcv1Date)
@@ -416,14 +532,29 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (pcv1C01.isChecked()) {
-                text5.setVisibility(View.VISIBLE);
-                pcv1Date.setVisibility(View.VISIBLE);
-            } else {
-                text5.setVisibility(View.GONE);
-                pcv1Date.setVisibility(View.GONE);
-                pcv1Date.setText(null);
+
+            if (radioGroup == pcv1C) {
+                if (pcv1C01.isChecked()) {
+                    fldGrpPcv1CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv1CCheck.setVisibility(View.GONE);
+                    pcv1Date.setText(null);
+                    pcv1datenp.setChecked(false);
+                }
             }
+
+            if (radioGroup == pcv1M) {
+                if (pcv1M01.isChecked()) {
+                    fldGrpPcv1MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv1MCheck.setVisibility(View.GONE);
+                    pcv1DateMYear.setText(null);
+                    pcv1DateMMon.setText(null);
+                    pcv1datenr.setChecked(false);
+                }
+            }
+
+
 
             if (pcv1M01.isChecked() && pcv1C01.isChecked()) {
                 fldGrpov5.setVisibility(View.VISIBLE);
@@ -455,6 +586,10 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv1Povg;
     @BindView(R.id.pcv1Povh)
     RadioButton pcv1Povh;
+    @BindView(R.id.sc10wks)
+    NestedScrollView sc10wks;
+    @BindView(R.id.sc6)
+    NestedScrollView sc6;
     @BindView(R.id.fldGrpopv2M)
     LinearLayout fldGrpopv2M;
     @BindView(R.id.opv2M)
@@ -463,6 +598,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv2M01;
     @BindView(R.id.opv2M02)
     RadioButton opv2M02;
+    @BindView(R.id.fldGrpOpv2MCheck)
+    LinearLayout fldGrpOpv2MCheck;
+    @BindView(R.id.opv2datenr)
+    CheckBox opv2datenr;
+    @BindView(R.id.fldGrpopv2MDate)
+    LinearLayout fldGrpopv2MDate;
+    @BindView(R.id.opv2DateM_year)
+    EditText opv2DateMYear;
+    @BindView(R.id.opv2DateM_mon)
+    EditText opv2DateMMon;
     @BindView(R.id.fldGrpopv2C)
     LinearLayout fldGrpopv2C;
     @BindView(R.id.opv2C)
@@ -471,6 +616,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv2C01;
     @BindView(R.id.opv2C02)
     RadioButton opv2C02;
+    @BindView(R.id.fldGrpOpv2CCheck)
+    LinearLayout fldGrpOpv2CCheck;
+    @BindView(R.id.opv2datenp)
+    CheckBox opv2datenp;
+    @BindView(R.id.fldGrpOpv2CDate)
+    LinearLayout fldGrpOpv2CDate;
     @BindView(R.id.text6)
     TextView text6;
     @BindView(R.id.opv2Date)
@@ -484,13 +635,25 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (opv2C01.isChecked()) {
-                text6.setVisibility(View.VISIBLE);
-                opv2Date.setVisibility(View.VISIBLE);
-            } else {
-                text6.setVisibility(View.GONE);
-                opv2Date.setVisibility(View.GONE);
-                opv2Date.setText(null);
+            if (radioGroup == opv2C) {
+                if (opv2C01.isChecked()) {
+                    fldGrpOpv2CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv2CCheck.setVisibility(View.GONE);
+                    opv2Date.setText(null);
+                    opv2datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == opv2M) {
+                if (opv2M01.isChecked()) {
+                    fldGrpOpv2MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv2MCheck.setVisibility(View.GONE);
+                    opv2DateMYear.setText(null);
+                    opv2DateMMon.setText(null);
+                    opv2datenr.setChecked(false);
+                }
             }
 
             if (opv2M01.isChecked() && opv2C01.isChecked()) {
@@ -522,6 +685,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv2Povg;
     @BindView(R.id.opv2Povh)
     RadioButton opv2Povh;
+    @BindView(R.id.sc7)
+    NestedScrollView sc7;
     @BindView(R.id.fldGrppenta2M)
     LinearLayout fldGrppenta2M;
     @BindView(R.id.penta2M)
@@ -530,6 +695,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta2M01;
     @BindView(R.id.penta2M02)
     RadioButton penta2M02;
+    @BindView(R.id.fldGrppenta2MCheck)
+    LinearLayout fldGrppenta2MCheck;
+    @BindView(R.id.penta2datenr)
+    CheckBox penta2datenr;
+    @BindView(R.id.fldGrppenta2MDate)
+    LinearLayout fldGrppenta2MDate;
+    @BindView(R.id.penta2DateM_year)
+    EditText penta2DateMYear;
+    @BindView(R.id.penta2DateM_mon)
+    EditText penta2DateMMon;
     @BindView(R.id.fldGrppenta2C)
     LinearLayout fldGrppenta2C;
     @BindView(R.id.penta2C)
@@ -538,6 +713,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta2C01;
     @BindView(R.id.penta2C02)
     RadioButton penta2C02;
+    @BindView(R.id.fldGrpPenta2CCheck)
+    LinearLayout fldGrpPenta2CCheck;
+    @BindView(R.id.penta2datenp)
+    CheckBox penta2datenp;
+    @BindView(R.id.fldGrpPenta2CDate)
+    LinearLayout fldGrpPenta2CDate;
     @BindView(R.id.text7)
     TextView text7;
     @BindView(R.id.penta2Date)
@@ -551,15 +732,28 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (penta2C01.isChecked()) {
-                text7.setVisibility(View.VISIBLE);
-                penta2Date.setVisibility(View.VISIBLE);
-            } else {
-                text7.setVisibility(View.GONE);
-                penta2Date.setVisibility(View.GONE);
-                penta2Date.setText(null);
+
+            if (radioGroup == penta2C) {
+                if (penta2C01.isChecked()) {
+                    fldGrpPenta2CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPenta2CCheck.setVisibility(View.GONE);
+                    penta2Date.setText(null);
+                    penta2datenp.setChecked(false);
+                }
             }
 
+
+            if (radioGroup == penta2M) {
+                if (penta2M01.isChecked()) {
+                    fldGrppenta2MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrppenta2MCheck.setVisibility(View.GONE);
+                    penta2DateMYear.setText(null);
+                    penta2DateMMon.setText(null);
+                    penta2datenr.setChecked(false);
+                }
+            }
             if (penta2M01.isChecked() && penta2C01.isChecked()) {
                 fldGrpov7.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -589,6 +783,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta2Povg;
     @BindView(R.id.penta2Povh)
     RadioButton penta2Povh;
+    @BindView(R.id.sc8)
+    NestedScrollView sc8;
     @BindView(R.id.fldGrppcv2M)
     LinearLayout fldGrppcv2M;
     @BindView(R.id.pcv2M)
@@ -597,6 +793,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv2M01;
     @BindView(R.id.pcv2M02)
     RadioButton pcv2M02;
+    @BindView(R.id.fldGrpPcv2MCheck)
+    LinearLayout fldGrpPcv2MCheck;
+    @BindView(R.id.pcv2datenr)
+    CheckBox pcv2datenr;
+    @BindView(R.id.fldGrppcv2MDate)
+    LinearLayout fldGrppcv2MDate;
+    @BindView(R.id.pcv2DateM_year)
+    EditText pcv2DateMYear;
+    @BindView(R.id.pcv2DateM_mon)
+    EditText pcv2DateMMon;
     @BindView(R.id.fldGrppcv2C)
     LinearLayout fldGrppcv2C;
     @BindView(R.id.pcv2C)
@@ -605,6 +811,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv2C01;
     @BindView(R.id.pcv2C02)
     RadioButton pcv2C02;
+    @BindView(R.id.fldGrpPcv2CCheck)
+    LinearLayout fldGrpPcv2CCheck;
+    @BindView(R.id.pcv2datenp)
+    CheckBox pcv2datenp;
+    @BindView(R.id.fldGrpPcv2CDate)
+    LinearLayout fldGrpPcv2CDate;
     @BindView(R.id.text8)
     TextView text8;
     @BindView(R.id.pcv2Date)
@@ -618,13 +830,27 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (pcv2C01.isChecked()) {
-                text8.setVisibility(View.VISIBLE);
-                pcv2Date.setVisibility(View.VISIBLE);
-            } else {
-                text8.setVisibility(View.GONE);
-                pcv2Date.setVisibility(View.GONE);
-                pcv2Date.setText(null);
+
+            if (radioGroup == pcv2C) {
+                if (pcv2C01.isChecked()) {
+                    fldGrpPcv2CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv2CCheck.setVisibility(View.GONE);
+                    pcv2Date.setText(null);
+                    pcv2datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == pcv2M) {
+
+                if (pcv2M01.isChecked()) {
+                    fldGrpPcv2MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv2MCheck.setVisibility(View.GONE);
+                    pcv2DateMYear.setText(null);
+                    pcv2DateMMon.setText(null);
+                    pcv2datenr.setChecked(false);
+                }
             }
 
             if (pcv2M01.isChecked() && pcv2C01.isChecked()) {
@@ -656,6 +882,10 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv2Povg;
     @BindView(R.id.pcv2Povh)
     RadioButton pcv2Povh;
+    @BindView(R.id.sc14wks)
+    NestedScrollView sc14wks;
+    @BindView(R.id.sc9)
+    NestedScrollView sc9;
     @BindView(R.id.fldGrpopv3M)
     LinearLayout fldGrpopv3M;
     @BindView(R.id.opv3M)
@@ -664,6 +894,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv3M01;
     @BindView(R.id.opv3M02)
     RadioButton opv3M02;
+    @BindView(R.id.fldGrpOpv3MCheck)
+    LinearLayout fldGrpOpv3MCheck;
+    @BindView(R.id.opv3datenr)
+    CheckBox opv3datenr;
+    @BindView(R.id.fldGrpopv3MDate)
+    LinearLayout fldGrpopv3MDate;
+    @BindView(R.id.opv3DateM_year)
+    EditText opv3DateMYear;
+    @BindView(R.id.opv3DateM_mon)
+    EditText opv3DateMMon;
     @BindView(R.id.fldGrpopv3C)
     LinearLayout fldGrpopv3C;
     @BindView(R.id.opv3C)
@@ -672,6 +912,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv3C01;
     @BindView(R.id.opv3C02)
     RadioButton opv3C02;
+    @BindView(R.id.fldGrpOpv3CCheck)
+    LinearLayout fldGrpOpv3CCheck;
+    @BindView(R.id.opv3datenp)
+    CheckBox opv3datenp;
+    @BindView(R.id.fldGrpOpv3CDate)
+    LinearLayout fldGrpOpv3CDate;
     @BindView(R.id.text9)
     TextView text9;
     @BindView(R.id.opv3Date)
@@ -685,15 +931,27 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (opv3C01.isChecked()) {
-                text9.setVisibility(View.VISIBLE);
-                opv3Date.setVisibility(View.VISIBLE);
-            } else {
-                text9.setVisibility(View.GONE);
-                opv3Date.setVisibility(View.GONE);
-                opv3Date.setText(null);
+            if (radioGroup == opv3C) {
+                if (opv3C01.isChecked()) {
+                    fldGrpOpv3CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv3CCheck.setVisibility(View.GONE);
+                    opv3Date.setText(null);
+                    opv3datenp.setChecked(false);
+                }
             }
 
+            if (radioGroup == opv3M) {
+
+                if (opv3M01.isChecked()) {
+                    fldGrpOpv3MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpOpv3MCheck.setVisibility(View.GONE);
+                    opv3DateMYear.setText(null);
+                    opv3DateMMon.setText(null);
+                    opv3datenr.setChecked(false);
+                }
+            }
             if (opv3M01.isChecked() && opv3C01.isChecked()) {
                 fldGrpov9.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -723,6 +981,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton opv3Povg;
     @BindView(R.id.opv3Povh)
     RadioButton opv3Povh;
+    @BindView(R.id.sc10)
+    NestedScrollView sc10;
     @BindView(R.id.fldGrpPenta3M)
     LinearLayout fldGrpPenta3M;
     @BindView(R.id.penta3M)
@@ -731,6 +991,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta3M01;
     @BindView(R.id.penta3M02)
     RadioButton penta3M02;
+    @BindView(R.id.fldGrpPenta3MCheck)
+    LinearLayout fldGrpPenta3MCheck;
+    @BindView(R.id.penta3datenr)
+    CheckBox penta3datenr;
+    @BindView(R.id.fldGrppenta3MDate)
+    LinearLayout fldGrppenta3MDate;
+    @BindView(R.id.penta3DateM_year)
+    EditText penta3DateMYear;
+    @BindView(R.id.penta3DateM_mon)
+    EditText penta3DateMMon;
     @BindView(R.id.fldGrpenta3C)
     LinearLayout fldGrpenta3C;
     @BindView(R.id.penta3C)
@@ -739,6 +1009,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta3C01;
     @BindView(R.id.penta3C02)
     RadioButton penta3C02;
+    @BindView(R.id.fldGrppenta3CCheck)
+    LinearLayout fldGrppenta3CCheck;
+    @BindView(R.id.penta3datenp)
+    CheckBox penta3datenp;
+    @BindView(R.id.fldGrpPenta3CDate)
+    LinearLayout fldGrpPenta3CDate;
     @BindView(R.id.text10)
     TextView text10;
     @BindView(R.id.penta3Date)
@@ -752,13 +1028,27 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (penta3C01.isChecked()) {
-                text10.setVisibility(View.VISIBLE);
-                penta3Date.setVisibility(View.VISIBLE);
-            } else {
-                text10.setVisibility(View.GONE);
-                penta3Date.setVisibility(View.GONE);
-                penta3Date.setText(null);
+
+            if (radioGroup == penta3C) {
+                if (penta3C01.isChecked()) {
+                    fldGrppenta3CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrppenta3CCheck.setVisibility(View.GONE);
+                    penta3Date.setText(null);
+                    penta3datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == penta3M) {
+
+                if (penta3M01.isChecked()) {
+                    fldGrpPenta3MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPenta3MCheck.setVisibility(View.GONE);
+                    penta3DateMYear.setText(null);
+                    penta3DateMMon.setText(null);
+                    penta3datenr.setChecked(false);
+                }
             }
 
             if (penta3M01.isChecked() && penta3C01.isChecked()) {
@@ -790,6 +1080,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton penta3Povg;
     @BindView(R.id.penta3Povh)
     RadioButton penta3Povh;
+    @BindView(R.id.sc11)
+    NestedScrollView sc11;
     @BindView(R.id.fldGrppcv3M)
     LinearLayout fldGrppcv3M;
     @BindView(R.id.pcv3M)
@@ -798,6 +1090,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv3M01;
     @BindView(R.id.pcv3M02)
     RadioButton pcv3M02;
+    @BindView(R.id.fldGrpPcv3MCheck)
+    LinearLayout fldGrpPcv3MCheck;
+    @BindView(R.id.pcv3datenr)
+    CheckBox pcv3datenr;
+    @BindView(R.id.fldGrppcv3MDate)
+    LinearLayout fldGrppcv3MDate;
+    @BindView(R.id.pcv3DateM_year)
+    EditText pcv3DateMYear;
+    @BindView(R.id.pcv3DateM_mon)
+    EditText pcv3DateMMon;
     @BindView(R.id.fldGrppcv3C)
     LinearLayout fldGrppcv3C;
     @BindView(R.id.pcv3C)
@@ -806,6 +1108,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv3C01;
     @BindView(R.id.pcv3C02)
     RadioButton pcv3C02;
+    @BindView(R.id.fldGrpPcv3CCheck)
+    LinearLayout fldGrpPcv3CCheck;
+    @BindView(R.id.pcv3datenp)
+    CheckBox pcv3datenp;
+    @BindView(R.id.fldGrpPcv3CDate)
+    LinearLayout fldGrpPcv3CDate;
     @BindView(R.id.text11)
     TextView text11;
     @BindView(R.id.pcv3Date)
@@ -819,14 +1127,29 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (pcv3C01.isChecked()) {
-                text11.setVisibility(View.VISIBLE);
-                pcv3Date.setVisibility(View.VISIBLE);
-            } else {
-                text11.setVisibility(View.GONE);
-                pcv3Date.setVisibility(View.GONE);
-                pcv3Date.setText(null);
+
+            if (radioGroup == pcv3C) {
+                if (pcv3C01.isChecked()) {
+                    fldGrpPcv3CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv3CCheck.setVisibility(View.GONE);
+                    pcv3Date.setText(null);
+                    pcv3datenp.setChecked(false);
+                }
             }
+
+            if (radioGroup == pcv3M) {
+
+                if (pcv3M01.isChecked()) {
+                    fldGrpPcv3MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpPcv3MCheck.setVisibility(View.GONE);
+                    pcv3DateMYear.setText(null);
+                    pcv3DateMMon.setText(null);
+                    pcv3datenr.setChecked(false);
+                }
+            }
+
 
             if (pcv3M01.isChecked() && pcv3C01.isChecked()) {
                 fldGrpov11.setVisibility(View.VISIBLE);
@@ -857,6 +1180,8 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton pcv3Povg;
     @BindView(R.id.pcv3Povh)
     RadioButton pcv3Povh;
+    @BindView(R.id.sc12)
+    NestedScrollView sc12;
     @BindView(R.id.fldGrpipvM)
     LinearLayout fldGrpipvM;
     @BindView(R.id.ipvM)
@@ -865,6 +1190,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton ipvM01;
     @BindView(R.id.ipvM02)
     RadioButton ipvM02;
+    @BindView(R.id.fldGrpIpvMCheck)
+    LinearLayout fldGrpIpvMCheck;
+    @BindView(R.id.ipvdatenr)
+    CheckBox ipvdatenr;
+    @BindView(R.id.fldGrpipvMDate)
+    LinearLayout fldGrpipvMDate;
+    @BindView(R.id.ipvDateM_year)
+    EditText ipvDateMYear;
+    @BindView(R.id.ipvDateM_mon)
+    EditText ipvDateMMon;
     @BindView(R.id.fldGrpipvC)
     LinearLayout fldGrpipvC;
     @BindView(R.id.ipvC)
@@ -873,6 +1208,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton ipvC01;
     @BindView(R.id.ipvC02)
     RadioButton ipvC02;
+    @BindView(R.id.fldGrpIpvCCheck)
+    LinearLayout fldGrpIpvCCheck;
+    @BindView(R.id.ipvdatenp)
+    CheckBox ipvdatenp;
+    @BindView(R.id.fldGrpIpvCDate)
+    LinearLayout fldGrpIpvCDate;
     @BindView(R.id.text12)
     TextView text12;
     @BindView(R.id.ipvDate)
@@ -886,14 +1227,29 @@ public class SectionIActivity extends AppCompatActivity
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (ipvC01.isChecked()) {
-                text12.setVisibility(View.VISIBLE);
-                ipvDate.setVisibility(View.VISIBLE);
-            } else {
-                text12.setVisibility(View.GONE);
-                ipvDate.setVisibility(View.GONE);
-                ipvDate.setText(null);
+
+            if (radioGroup == ipvC) {
+                if (ipvC01.isChecked()) {
+                    fldGrpIpvCCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpIpvCCheck.setVisibility(View.GONE);
+                    ipvDate.setText(null);
+                    ipvdatenp.setChecked(false);
+                }
             }
+
+            if (radioGroup == ipvM) {
+
+                if (ipvM01.isChecked()) {
+                    fldGrpIpvMCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpIpvMCheck.setVisibility(View.GONE);
+                    ipvDateMYear.setText(null);
+                    ipvDateMMon.setText(null);
+                    ipvdatenr.setChecked(false);
+                }
+            }
+
 
             if (ipvM01.isChecked() && ipvC01.isChecked()) {
                 fldGrpov12.setVisibility(View.VISIBLE);
@@ -924,6 +1280,10 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton ipvPovg;
     @BindView(R.id.ipvPovh)
     RadioButton ipvPovh;
+    @BindView(R.id.sc9M)
+    NestedScrollView sc9M;
+    @BindView(R.id.sc13)
+    NestedScrollView sc13;
     @BindView(R.id.fldGrpMeasles1M)
     LinearLayout fldGrpMeasles1M;
     @BindView(R.id.measles1M)
@@ -932,6 +1292,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton measles1M01;
     @BindView(R.id.measles1M02)
     RadioButton measles1M02;
+    @BindView(R.id.fldGrpmeasles1MCheck)
+    LinearLayout fldGrpmeasles1MCheck;
+    @BindView(R.id.measles1datenr)
+    CheckBox measles1datenr;
+    @BindView(R.id.fldGrpmeasles1MDate)
+    LinearLayout fldGrpmeasles1MDate;
+    @BindView(R.id.measles1DateM_year)
+    EditText measles1DateMYear;
+    @BindView(R.id.measles1DateM_mon)
+    EditText measles1DateMMon;
     @BindView(R.id.fldGrpmeasles1C)
     LinearLayout fldGrpmeasles1C;
     @BindView(R.id.measles1C)
@@ -940,6 +1310,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton measles1C01;
     @BindView(R.id.measles1C02)
     RadioButton measles1C02;
+    @BindView(R.id.fldGrpMeasles1CCheck)
+    LinearLayout fldGrpMeasles1CCheck;
+    @BindView(R.id.measles1datenp)
+    CheckBox measles1datenp;
+    @BindView(R.id.fldGrpMeasles1CDate)
+    LinearLayout fldGrpMeasles1CDate;
     @BindView(R.id.text13)
     TextView text13;
     @BindView(R.id.measles1Date)
@@ -948,20 +1324,32 @@ public class SectionIActivity extends AppCompatActivity
     LinearLayout fldGrpov13;
     @BindView(R.id.measles1Pov)
     RadioGroup measles1Pov;
-    @BindView(R.id.sc9M)
-    NestedScrollView sc9M;
     public RadioGroup.OnCheckedChangeListener measles1 = new OnCheckedChangeListener()
     {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (measles1C01.isChecked()) {
-                text13.setVisibility(View.VISIBLE);
-                measles1Date.setVisibility(View.VISIBLE);
-            } else {
-                text13.setVisibility(View.GONE);
-                measles1Date.setVisibility(View.GONE);
-                measles1Date.setText(null);
+
+            if (radioGroup == measles1C) {
+                if (measles1C01.isChecked()) {
+                    fldGrpMeasles1CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpMeasles1CCheck.setVisibility(View.GONE);
+                    measles1Date.setText(null);
+                    measles1datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == measles1M) {
+
+                if (measles1M01.isChecked()) {
+                    fldGrpmeasles1MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpmeasles1MCheck.setVisibility(View.GONE);
+                    measles1DateMYear.setText(null);
+                    measles1DateMMon.setText(null);
+                    measles1datenr.setChecked(false);
+                }
             }
 
             if (measles1M01.isChecked() && measles1C01.isChecked()) {
@@ -996,6 +1384,10 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton measles1Povg;
     @BindView(R.id.measles1Povh)
     RadioButton measles1Povh;
+    @BindView(R.id.sc15M)
+    NestedScrollView sc15M;
+    @BindView(R.id.sc14)
+    NestedScrollView sc14;
     @BindView(R.id.fldGrpMeasles2M)
     LinearLayout fldGrpMeasles2M;
     @BindView(R.id.measles2M)
@@ -1004,6 +1396,16 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton measles2M01;
     @BindView(R.id.measles2M02)
     RadioButton measles2M02;
+    @BindView(R.id.fldGrpmeasles2MCheck)
+    LinearLayout fldGrpmeasles2MCheck;
+    @BindView(R.id.measles2datenr)
+    CheckBox measles2datenr;
+    @BindView(R.id.fldGrpmeasles2MDate)
+    LinearLayout fldGrpmeasles2MDate;
+    @BindView(R.id.measles2DateM_year)
+    EditText measles2DateMYear;
+    @BindView(R.id.measles2DateM_mon)
+    EditText measles2DateMMon;
     @BindView(R.id.fldGrpmeasles2C)
     LinearLayout fldGrpmeasles2C;
     @BindView(R.id.measles2C)
@@ -1012,6 +1414,12 @@ public class SectionIActivity extends AppCompatActivity
     RadioButton measles2C01;
     @BindView(R.id.measles2C02)
     RadioButton measles2C02;
+    @BindView(R.id.fldGrpMeasles2CCheck)
+    LinearLayout fldGrpMeasles2CCheck;
+    @BindView(R.id.measles2datenp)
+    CheckBox measles2datenp;
+    @BindView(R.id.fldGrpMeasles2CDate)
+    LinearLayout fldGrpMeasles2CDate;
     @BindView(R.id.text14)
     TextView text14;
     @BindView(R.id.measles2Date)
@@ -1020,20 +1428,32 @@ public class SectionIActivity extends AppCompatActivity
     LinearLayout fldGrpov14;
     @BindView(R.id.measles2Pov)
     RadioGroup measles2Pov;
-    @BindView(R.id.sc15M)
-    NestedScrollView sc15M;
     public RadioGroup.OnCheckedChangeListener measles2 = new OnCheckedChangeListener()
     {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (measles2C01.isChecked()) {
-                text14.setVisibility(View.VISIBLE);
-                measles2Date.setVisibility(View.VISIBLE);
-            } else {
-                text14.setVisibility(View.GONE);
-                measles2Date.setVisibility(View.GONE);
-                measles2Date.setText(null);
+
+            if (radioGroup == measles2C) {
+                if (measles2C01.isChecked()) {
+                    fldGrpMeasles2CCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpMeasles2CCheck.setVisibility(View.GONE);
+                    measles2Date.setText(null);
+                    measles2datenp.setChecked(false);
+                }
+            }
+
+            if (radioGroup == measles2M) {
+
+                if (measles2M01.isChecked()) {
+                    fldGrpmeasles2MCheck.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpmeasles2MCheck.setVisibility(View.GONE);
+                    measles2DateMYear.setText(null);
+                    measles2DateMMon.setText(null);
+                    measles2datenr.setChecked(false);
+                }
             }
 
             if (measles2M01.isChecked() && measles2C01.isChecked()) {
@@ -1135,7 +1555,6 @@ public class SectionIActivity extends AppCompatActivity
     List<RadioGroup> grpMeasles1;
     @BindViews({R.id.measles2C, R.id.measles2M})
     List<RadioGroup> grpMeasles2;
-
     String maxDate2Years;
 
     @Override
@@ -1159,16 +1578,13 @@ public class SectionIActivity extends AppCompatActivity
                 if (MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                     MainApp.childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
                     MainApp.lstChild.add(MainApp.familyMembersList.get(i).getName());
-                    //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(i).getDob());
-
-                    //childsMap.get(tiname.getSelectedItem()).getDob();
 
                 }
             }
 
 
         }
-        //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(position).getDob());
+
         tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
         tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -1397,6 +1813,393 @@ public class SectionIActivity extends AppCompatActivity
         for (RadioGroup rd : grpMeasles2) {
             rd.setOnCheckedChangeListener(measles2);
         }
+
+        bcgdatenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpbcgMDate.setVisibility(View.GONE);
+                    bcgDateMMon.setText(null);
+                    bcgDateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpbcgMDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        bcgdatenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpBcgCDate.setVisibility(View.GONE);
+                    bcgDate.setText(null);
+                } else {
+                    fldGrpBcgCDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv0datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpopv0MDate.setVisibility(View.GONE);
+                    opv0DateMMon.setText(null);
+                    opv0DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpopv0MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv0datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpOpv0CDate.setVisibility(View.GONE);
+                    opv0Date.setText(null);
+                } else {
+                    fldGrpOpv0CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv1datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpopv1MDate.setVisibility(View.GONE);
+                    opv1DateMMon.setText(null);
+                    opv1DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpopv1MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv1datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpOpv1CDate.setVisibility(View.GONE);
+                    opv1Date.setText(null);
+                } else {
+                    fldGrpOpv1CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta1datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppenta1MDate.setVisibility(View.GONE);
+                    penta1DateMMon.setText(null);
+                    penta1DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppenta1MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta1datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPenta1CDate.setVisibility(View.GONE);
+                    penta1Date.setText(null);
+                } else {
+                    fldGrpPenta1CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        pcv1datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppcv1MDate.setVisibility(View.GONE);
+                    pcv1DateMMon.setText(null);
+                    pcv1DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppcv1MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        pcv1datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPcv1CDate.setVisibility(View.GONE);
+                    pcv1Date.setText(null);
+                } else {
+                    fldGrpPcv1CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv2datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpopv2MDate.setVisibility(View.GONE);
+                    opv2DateMMon.setText(null);
+                    opv2DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpopv2MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        opv2datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpOpv2CDate.setVisibility(View.GONE);
+                    opv2Date.setText(null);
+                } else {
+                    fldGrpOpv2CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta2datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppenta2MDate.setVisibility(View.GONE);
+                    penta2DateMMon.setText(null);
+                    penta2DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppenta2MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta2datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPenta2CDate.setVisibility(View.GONE);
+                    penta2Date.setText(null);
+                } else {
+                    fldGrpPenta2CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        pcv2datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppcv2MDate.setVisibility(View.GONE);
+                    pcv2DateMMon.setText(null);
+                    pcv2DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppcv2MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        pcv2datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPcv2CDate.setVisibility(View.GONE);
+                    pcv2Date.setText(null);
+                } else {
+                    fldGrpPcv2CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        opv3datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpopv3MDate.setVisibility(View.GONE);
+                    opv3DateMMon.setText(null);
+                    opv3DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpopv3MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        opv3datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpOpv3CDate.setVisibility(View.GONE);
+                    opv3Date.setText(null);
+                } else {
+                    fldGrpOpv3CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta3datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppenta3MDate.setVisibility(View.GONE);
+                    penta3DateMMon.setText(null);
+                    penta3DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppenta3MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        penta3datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPenta3CDate.setVisibility(View.GONE);
+                    penta3Date.setText(null);
+                } else {
+                    fldGrpPenta3CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        pcv3datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrppcv3MDate.setVisibility(View.GONE);
+                    pcv3DateMMon.setText(null);
+                    pcv3DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrppcv3MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        pcv3datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpPcv3CDate.setVisibility(View.GONE);
+                    pcv3Date.setText(null);
+                } else {
+                    fldGrpPcv3CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        ipvdatenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpipvMDate.setVisibility(View.GONE);
+                    ipvDateMMon.setText(null);
+                    ipvDateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpipvMDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        ipvdatenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpIpvCDate.setVisibility(View.GONE);
+                    ipvDate.setText(null);
+                } else {
+                    fldGrpIpvCDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        measles1datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpmeasles1MDate.setVisibility(View.GONE);
+                    measles1DateMMon.setText(null);
+                    measles1DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpmeasles1MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        measles1datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpMeasles1CDate.setVisibility(View.GONE);
+                    measles1Date.setText(null);
+                } else {
+                    fldGrpMeasles1CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        measles2datenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpmeasles2MDate.setVisibility(View.GONE);
+                    measles2DateMMon.setText(null);
+                    measles2DateMYear.setVisibility(View.GONE);
+                } else {
+                    fldGrpmeasles2MDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        measles2datenp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpMeasles2CDate.setVisibility(View.GONE);
+                    measles2Date.setText(null);
+                } else {
+                    fldGrpMeasles2CDate.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+
+
     }
 
     @OnClick(R.id.btn_End)
@@ -1499,43 +2302,67 @@ public class SectionIActivity extends AppCompatActivity
         sI.put("ti03", ti03a.isChecked() ? "1" : ti03b.isChecked() ? "2" : ti03c.isChecked() ? "3" : "0");
 
         sI.put("bcgM", bcgM01.isChecked() ? "1" : bcgM02.isChecked() ? "2" : "0");
+        sI.put("bcgdatenr", bcgdatenr.isChecked() ? "1" : "0");
+        sI.put("bcgdateM_mon", bcgDateMMon.getText().toString());
+        sI.put("bcgdateM_year", bcgDateMYear.getText().toString());
         sI.put("bcgC", bcgC01.isChecked() ? "1" : bcgC02.isChecked() ? "2" : "0");
+        sI.put("bcgdatenp", bcgdatenp.isChecked() ? "1" : "0");
         sI.put("bcgDate", bcgDate.getText().toString());
         sI.put("bcgPov", bcgPova.isChecked() ? "1" : bcgPovb.isChecked() ? "2" : bcgPovc.isChecked() ? "3"
                 : bcgPovd.isChecked() ? "4" : bcgPove.isChecked() ? "5" : bcgPovf.isChecked() ? "6" : bcgPovg.isChecked() ? "7"
                 : bcgPovh.isChecked() ? "8" : "0");
         // BCG At Birth
         sI.put("opv0M", opv0M01.isChecked() ? "1" : opv0M02.isChecked() ? "2" : "0");
+        sI.put("opv0datenr", opv0datenr.isChecked() ? "1" : "0");
+        sI.put("opv0dateM_mon", opv0DateMMon.getText().toString());
+        sI.put("opv0dateM_year", opv0DateMYear.getText().toString());
         sI.put("opv0C", opv0C01.isChecked() ? "1" : opv0C02.isChecked() ? "2" : "0");
+        sI.put("opv0datenp", opv0datenp.isChecked() ? "1" : "0");
         sI.put("opv0Date", opv0Date.getText().toString());
         sI.put("opv0Pov", opv0Pova.isChecked() ? "1" : opv0Povb.isChecked() ? "2" : opv0Povc.isChecked() ? "3"
                 : opv0Povd.isChecked() ? "4" : opv0Pove.isChecked() ? "5" : opv0Povf.isChecked() ? "6" : opv0Povg.isChecked() ? "7"
                 : opv0Povh.isChecked() ? "8" : "0");
         //Polio At Birth
         sI.put("penta1M", penta1M01.isChecked() ? "1" : penta1M02.isChecked() ? "2" : "0");
+        sI.put("penta1datenr", penta1datenr.isChecked() ? "1" : "0");
+        sI.put("penta1dateM_mon", penta1DateMMon.getText().toString());
+        sI.put("penta1dateM_year", penta1DateMYear.getText().toString());
         sI.put("penta1C", penta1C01.isChecked() ? "1" : penta1C02.isChecked() ? "2" : "0");
+        sI.put("penta1datenp", penta1datenp.isChecked() ? "1" : "0");
         sI.put("penta1Date", penta1Date.getText().toString());
         sI.put("penta1Pov", penta1Pova.isChecked() ? "1" : penta1Povb.isChecked() ? "2" : penta1Povc.isChecked() ? "3"
                 : penta1Povd.isChecked() ? "4" : penta1Pove.isChecked() ? "5" : penta1Povf.isChecked() ? "6" : penta1Povg.isChecked() ? "7"
                 : penta1Povh.isChecked() ? "8" : "0");
         // Penta 1 at 6 weeks
         sI.put("pcv1M", pcv1M01.isChecked() ? "1" : pcv1M02.isChecked() ? "2" : "0");
+        sI.put("pcv1datenr", pcv1datenr.isChecked() ? "1" : "0");
+        sI.put("pcv1dateM_mon", pcv1DateMMon.getText().toString());
+        sI.put("pcv1dateM_year", pcv1DateMYear.getText().toString());
+
         sI.put("pcv1C", pcv1C01.isChecked() ? "1" : pcv1C02.isChecked() ? "2" : "0");
+        sI.put("pcv1datenp", pcv1datenp.isChecked() ? "1" : "0");
         sI.put("pcv1Date", pcv1Date.getText().toString());
         sI.put("pcv1Pov", pcv1Pova.isChecked() ? "1" : pcv1Povb.isChecked() ? "2" : pcv1Povc.isChecked() ? "3"
                 : pcv1Povd.isChecked() ? "4" : pcv1Pove.isChecked() ? "5" : pcv1Povf.isChecked() ? "6" : pcv1Povg.isChecked() ? "7"
                 : pcv1Povh.isChecked() ? "8" : "0");
         //PCV 1 at 6 weeks
         sI.put("opv1M", opv1M01.isChecked() ? "1" : opv1M02.isChecked() ? "2" : "0");
+        sI.put("opv1datenr", opv1datenr.isChecked() ? "1" : "0");
+        sI.put("opv1dateM_mon", opv1DateMMon.getText().toString());
+        sI.put("opv1dateM_year", opv1DateMYear.getText().toString());
         sI.put("opv1C", opv1C01.isChecked() ? "1" : opv1C02.isChecked() ? "2" : "0");
-
+        sI.put("opv1datenp", opv1datenp.isChecked() ? "1" : "0");
         sI.put("opv1Date", opv1Date.getText().toString());
         sI.put("opv1Pov", opv1Pova.isChecked() ? "1" : opv1Povb.isChecked() ? "2" : opv1Povc.isChecked() ? "3"
                 : opv1Povd.isChecked() ? "4" : opv1Pove.isChecked() ? "5" : opv1Povf.isChecked() ? "6" : opv1Povg.isChecked() ? "7"
                 : opv1Povh.isChecked() ? "8" : "0");
         // OPV 1 at 6 weeks
         sI.put("penta2M", penta2M01.isChecked() ? "1" : penta2M02.isChecked() ? "2" : "0");
+        sI.put("penta2datenr", penta2datenr.isChecked() ? "1" : "0");
+        sI.put("penta2dateM_mon", penta2DateMMon.getText().toString());
+        sI.put("penta2dateM_year", penta2DateMYear.getText().toString());
         sI.put("penta2C", penta2C01.isChecked() ? "1" : penta2C02.isChecked() ? "2" : "0");
+        sI.put("penta2datenp", penta2datenp.isChecked() ? "1" : "0");
 
         sI.put("penta2Date", penta2Date.getText().toString());
         sI.put("penta2Pov", penta2Pova.isChecked() ? "1" : penta2Povb.isChecked() ? "2" : penta2Povc.isChecked() ? "3"
@@ -1543,14 +2370,22 @@ public class SectionIActivity extends AppCompatActivity
                 : penta2Povh.isChecked() ? "8" : "0");
         // Penta 2 at 10 weeks
         sI.put("pcv2M", pcv2M01.isChecked() ? "1" : pcv2M02.isChecked() ? "2" : "0");
+        sI.put("pcv2datenr", pcv2datenr.isChecked() ? "1" : "0");
+        sI.put("pcv2dateM_mon", pcv2DateMMon.getText().toString());
+        sI.put("pcv2dateM_year", pcv2DateMYear.getText().toString());
         sI.put("pcv2C", pcv2C01.isChecked() ? "1" : pcv2C02.isChecked() ? "2" : "0");
+        sI.put("pcv2datenp", pcv2datenp.isChecked() ? "1" : "0");
         sI.put("pcv2Date", pcv2Date.getText().toString());
         sI.put("pcv2Pov", pcv2Pova.isChecked() ? "1" : pcv2Povb.isChecked() ? "2" : pcv2Povc.isChecked() ? "3"
                 : pcv2Povd.isChecked() ? "4" : pcv2Pove.isChecked() ? "5" : pcv2Povf.isChecked() ? "6" : pcv2Povg.isChecked() ? "7"
                 : pcv2Povh.isChecked() ? "8" : "0");
 
         sI.put("opv2M", opv2M01.isChecked() ? "1" : opv2M02.isChecked() ? "2" : "0");
+        sI.put("opv2datenr", opv2datenr.isChecked() ? "1" : "0");
+        sI.put("opv2dateM_mon", opv2DateMMon.getText().toString());
+        sI.put("opv2dateM_year", opv2DateMYear.getText().toString());
         sI.put("opv2C", opv2C01.isChecked() ? "1" : opv2C02.isChecked() ? "2" : "0");
+        sI.put("opv2datenp", opv2datenp.isChecked() ? "1" : "0");
 
         sI.put("opv2Date", opv2Date.getText().toString());
         sI.put("opv2Pov", opv2Pova.isChecked() ? "1" : opv2Povb.isChecked() ? "2" : opv2Povc.isChecked() ? "3"
@@ -1559,7 +2394,11 @@ public class SectionIActivity extends AppCompatActivity
 
         // PCV 2 at 6 weeks
         sI.put("penta3M", penta3M01.isChecked() ? "1" : penta3M02.isChecked() ? "2" : "0");
+        sI.put("penta3datenr", penta3datenr.isChecked() ? "1" : "0");
+        sI.put("penta3dateM_mon", penta3DateMMon.getText().toString());
+        sI.put("penta3dateM_year", penta3DateMYear.getText().toString());
         sI.put("penta3C", penta3C01.isChecked() ? "1" : penta3C02.isChecked() ? "2" : "0");
+        sI.put("penta3datenp", penta3datenp.isChecked() ? "1" : "0");
 
         sI.put("penta3Date", penta3Date.getText().toString());
         sI.put("penta3Pov", penta3Pova.isChecked() ? "1" : penta3Povb.isChecked() ? "2" : penta3Povc.isChecked() ? "3"
@@ -1567,7 +2406,12 @@ public class SectionIActivity extends AppCompatActivity
                 : penta3Povh.isChecked() ? "8" : "0");
         // OPV 2 at 6 weeks
         sI.put("pcv3M", pcv3M01.isChecked() ? "1" : pcv3M02.isChecked() ? "2" : "0");
+        sI.put("pcv3datenr", pcv3datenr.isChecked() ? "1" : "0");
+        sI.put("pcv3dateM_mon", pcv3DateMMon.getText().toString());
+        sI.put("pcv3dateM_year", pcv3DateMYear.getText().toString());
+
         sI.put("pcv3C", pcv3C01.isChecked() ? "1" : pcv3C02.isChecked() ? "2" : "0");
+        sI.put("pcv3datenp", pcv3datenp.isChecked() ? "1" : "0");
 
         sI.put("pcv3Date", pcv3Date.getText().toString());
         sI.put("pcv3Pov", pcv3Pova.isChecked() ? "1" : pcv3Povb.isChecked() ? "2" : pcv3Povc.isChecked() ? "3"
@@ -1576,7 +2420,11 @@ public class SectionIActivity extends AppCompatActivity
 
         // Penta 3 at 14 weeks
         sI.put("opv3M", opv3M01.isChecked() ? "1" : opv3M02.isChecked() ? "2" : "0");
+        sI.put("opv3datenr", opv3datenr.isChecked() ? "1" : "0");
+        sI.put("opv3dateM_mon", opv3DateMMon.getText().toString());
+        sI.put("opv3dateM_year", opv3DateMYear.getText().toString());
         sI.put("opv3C", opv3C01.isChecked() ? "1" : opv3C02.isChecked() ? "2" : "0");
+        sI.put("opv3datenp", opv3datenp.isChecked() ? "1" : "0");
 
         sI.put("opv3Date", opv3Date.getText().toString());
         sI.put("opv3Pov", opv3Pova.isChecked() ? "1" : opv3Povb.isChecked() ? "2" : opv3Povc.isChecked() ? "3"
@@ -1585,7 +2433,11 @@ public class SectionIActivity extends AppCompatActivity
 
         // PCV 3 at 14 weeks
         sI.put("ipvM", ipvM01.isChecked() ? "1" : ipvM02.isChecked() ? "2" : "0");
+        sI.put("ipvdatenr", ipvdatenr.isChecked() ? "1" : "0");
+        sI.put("ipvdateM_mon", ipvDateMMon.getText().toString());
+        sI.put("ipvdateM_year", ipvDateMYear.getText().toString());
         sI.put("ipvC", ipvC01.isChecked() ? "1" : ipvC02.isChecked() ? "2" : "0");
+        sI.put("ipvdatenp", ipvdatenp.isChecked() ? "1" : "0");
 
         sI.put("ipvDate", ipvDate.getText().toString());
         sI.put("ipvPov", ipvPova.isChecked() ? "1" : ipvPovb.isChecked() ? "2" : ipvPovc.isChecked() ? "3"
@@ -1593,7 +2445,11 @@ public class SectionIActivity extends AppCompatActivity
                 : ipvPovh.isChecked() ? "8" : "0");
         // OPV 3 at 14 weeks
         sI.put("measles1M", measles1M01.isChecked() ? "1" : measles1M02.isChecked() ? "2" : "0");
+        sI.put("measles1datenr", measles1datenr.isChecked() ? "1" : "0");
+        sI.put("measles1dateM_mon", measles1DateMMon.getText().toString());
+        sI.put("measles1dateM_year", measles1DateMYear.getText().toString());
         sI.put("measles1C", measles1C01.isChecked() ? "1" : measles1C02.isChecked() ? "2" : "0");
+        sI.put("measles1datenp", measles1datenp.isChecked() ? "1" : "0");
 
         sI.put("measles1Date", measles1Date.getText().toString());
         sI.put("measles1Pov", measles1Pova.isChecked() ? "1" : measles1Povb.isChecked() ? "2" : measles1Povc.isChecked() ? "3"
@@ -1601,7 +2457,11 @@ public class SectionIActivity extends AppCompatActivity
                 : measles1Povh.isChecked() ? "8" : "0");
         // IPV at 14 weeks
         sI.put("measles2M", measles2M01.isChecked() ? "1" : measles2M02.isChecked() ? "2" : "0");
+        sI.put("measles2datenr", measles2datenr.isChecked() ? "1" : "0");
+        sI.put("measles2dateM_mon", measles2DateMMon.getText().toString());
+        sI.put("measles2dateM_year", measles2DateMYear.getText().toString());
         sI.put("measles2C", measles2C01.isChecked() ? "1" : measles2C02.isChecked() ? "2" : "0");
+        sI.put("measles2datenp", measles2datenp.isChecked() ? "1" : "0");
 
         sI.put("measles2Date", measles2Date.getText().toString());
         sI.put("measles2Pov", measles2Pova.isChecked() ? "1" : measles2Povb.isChecked() ? "2" : measles2Povc.isChecked() ? "3"
@@ -1668,7 +2528,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
 
 
-                if (bcgC01.isChecked()) {
+                if (bcgC01.isChecked() && !bcgdatenp.isChecked()) {
                     if (bcgDate.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bcgDate.setError("This data is Required!");
@@ -1688,6 +2548,19 @@ public class SectionIActivity extends AppCompatActivity
                 return false;
             } else {
                 bcgM02.setError(null);
+            }
+
+            if (bcgM01.isChecked() && !bcgdatenr.isChecked()) {
+                if (bcgDateMYear.getText().toString().isEmpty() && bcgDateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    bcgDateMYear.setError("This data is Required!");
+                    bcgDateMMon.setError("This data is Required!");
+                    Log.i(TAG, "bcgMDate: This data is Required!");
+                    return false;
+                } else {
+                    bcgDateMYear.setError(null);
+                    bcgDateMMon.setError(null);
+                }
             }
 
             if (bcgC01.isChecked() || bcgM01.isChecked()) {
@@ -1714,7 +2587,7 @@ public class SectionIActivity extends AppCompatActivity
                     opv0C02.setError(null);
                 }
 
-                if (opv0C01.isChecked()) {
+                if (opv0C01.isChecked() && !opv0datenp.isChecked()) {
                     if (opv0Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv0Date.setError("This data is Required!");
@@ -1735,6 +2608,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 opv0M02.setError(null);
             }
+
+            if (opv0M01.isChecked() && !opv0datenr.isChecked()) {
+                if (opv0DateMYear.getText().toString().isEmpty() && opv0DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv0DateMYear.setError("This data is Required!");
+                    opv0DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv0MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv0DateMYear.setError(null);
+                    opv0DateMMon.setError(null);
+                }
+            }
+
 
             if (opv0C01.isChecked() || opv0M01.isChecked()) {
                 if (opv0Pov.getCheckedRadioButtonId() == -1) {
@@ -1758,7 +2645,7 @@ public class SectionIActivity extends AppCompatActivity
                     opv1C02.setError(null);
                 }
 
-                if (opv1C01.isChecked()) {
+                if (opv1C01.isChecked() && !opv1datenp.isChecked()) {
                     if (opv1Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv1Date.setError("This data is Required!");
@@ -1779,6 +2666,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 opv1M02.setError(null);
             }
+
+            if (opv1M01.isChecked() && !opv1datenr.isChecked()) {
+                if (opv1DateMYear.getText().toString().isEmpty() && opv1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv1DateMYear.setError("This data is Required!");
+                    opv1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv1MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv1DateMYear.setError(null);
+                    opv1DateMMon.setError(null);
+                }
+            }
+
 
             if (opv1C01.isChecked() || opv1M01.isChecked()) {
                 if (opv1Pov.getCheckedRadioButtonId() == -1) {
@@ -1803,7 +2704,7 @@ public class SectionIActivity extends AppCompatActivity
                     penta1C02.setError(null);
                 }
 
-                if (penta1C01.isChecked()) {
+                if (penta1C01.isChecked() && !penta1datenp.isChecked()) {
                     if (penta1Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta1Date.setError("This data is Required!");
@@ -1824,6 +2725,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 penta1M02.setError(null);
             }
+
+            if (penta1M01.isChecked() && !penta1datenr.isChecked()) {
+                if (penta1DateMYear.getText().toString().isEmpty() && penta1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    penta1DateMYear.setError("This data is Required!");
+                    penta1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "penta1MDate: This data is Required!");
+                    return false;
+                } else {
+                    penta1DateMYear.setError(null);
+                    penta1DateMMon.setError(null);
+                }
+            }
+
 
             if (penta1C01.isChecked() || penta1M01.isChecked()) {
                 if (penta1Pov.getCheckedRadioButtonId() == -1) {
@@ -1849,7 +2764,7 @@ public class SectionIActivity extends AppCompatActivity
                     pcv1C02.setError(null);
                 }
 
-                if (pcv1C01.isChecked()) {
+                if (pcv1C01.isChecked() && !pcv1datenp.isChecked()) {
                     if (pcv1Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv1Date.setError("This data is Required!");
@@ -1870,6 +2785,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 pcv1M02.setError(null);
             }
+
+            if (pcv1M01.isChecked() && !pcv1datenr.isChecked()) {
+                if (pcv1DateMYear.getText().toString().isEmpty() && pcv1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    pcv1DateMYear.setError("This data is Required!");
+                    pcv1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "pcv1MDate: This data is Required!");
+                    return false;
+                } else {
+                    pcv1DateMYear.setError(null);
+                    pcv1DateMMon.setError(null);
+                }
+            }
+
 
 
             if (pcv1C01.isChecked() || pcv1M01.isChecked()) {
@@ -1895,7 +2824,7 @@ public class SectionIActivity extends AppCompatActivity
                     opv2C02.setError(null);
                 }
 
-                if (opv2C01.isChecked()) {
+                if (opv2C01.isChecked() && !opv2datenp.isChecked()) {
                     if (opv2Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv2Date.setError("This data is Required!");
@@ -1916,6 +2845,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 opv2M02.setError(null);
             }
+
+            if (opv2M01.isChecked() && !opv2datenr.isChecked()) {
+                if (opv2DateMYear.getText().toString().isEmpty() && opv2DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv2DateMYear.setError("This data is Required!");
+                    opv2DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv2MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv2DateMYear.setError(null);
+                    opv2DateMMon.setError(null);
+                }
+            }
+
 
             if (opv2C01.isChecked() || opv2M01.isChecked()) {
                 if (opv2Pov.getCheckedRadioButtonId() == -1) {
@@ -1940,7 +2883,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
 
 
-                if (penta2C01.isChecked()) {
+                if (penta2C01.isChecked() && !penta2datenp.isChecked()) {
                     if (penta2Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta2Date.setError("This data is Required!");
@@ -1961,6 +2904,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 penta2M02.setError(null);
             }
+
+            if (penta2M01.isChecked() && !penta2datenr.isChecked()) {
+                if (penta2DateMYear.getText().toString().isEmpty() && penta2DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    penta2DateMYear.setError("This data is Required!");
+                    penta2DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "penta2MDate: This data is Required!");
+                    return false;
+                } else {
+                    penta2DateMYear.setError(null);
+                    penta2DateMMon.setError(null);
+                }
+            }
+
 
 
             if (penta2C01.isChecked() || penta2M01.isChecked()) {
@@ -1985,7 +2942,7 @@ public class SectionIActivity extends AppCompatActivity
                     pcv2C02.setError(null);
                 }
 
-                if (pcv2C01.isChecked()) {
+                if (pcv2C01.isChecked() && !pcv2datenp.isChecked()) {
                     if (pcv2Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv2Date.setError("This data is Required!");
@@ -2006,6 +2963,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 pcv2M02.setError(null);
             }
+
+            if (pcv2M01.isChecked() && !pcv2datenr.isChecked()) {
+                if (pcv2DateMYear.getText().toString().isEmpty() && pcv2DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    pcv2DateMYear.setError("This data is Required!");
+                    pcv2DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "pcv2MDate: This data is Required!");
+                    return false;
+                } else {
+                    pcv2DateMYear.setError(null);
+                    pcv2DateMMon.setError(null);
+                }
+            }
+
 
             if (pcv2C01.isChecked() || pcv2M01.isChecked()) {
                 if (pcv2Pov.getCheckedRadioButtonId() == -1) {
@@ -2029,7 +3000,7 @@ public class SectionIActivity extends AppCompatActivity
                     opv3C02.setError(null);
                 }
 
-                if (opv3C01.isChecked()) {
+                if (opv3C01.isChecked() && !opv3datenp.isChecked()) {
                     if (opv3Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv3Date.setError("This data is Required!");
@@ -2049,6 +3020,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 opv3M02.setError(null);
             }
+
+            if (opv3M01.isChecked() && !opv3datenr.isChecked()) {
+                if (opv3DateMYear.getText().toString().isEmpty() && opv3DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv3DateMYear.setError("This data is Required!");
+                    opv3DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv3MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv3DateMYear.setError(null);
+                    opv3DateMMon.setError(null);
+                }
+            }
+
 
             if (opv3C01.isChecked() || opv3M01.isChecked()) {
                 if (opv3Pov.getCheckedRadioButtonId() == -1) {
@@ -2072,7 +3057,7 @@ public class SectionIActivity extends AppCompatActivity
                     penta3C02.setError(null);
                 }
 
-                if (penta3C01.isChecked()) {
+                if (penta3C01.isChecked() && !penta3datenp.isChecked()) {
                     if (penta3Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta3Date.setError("This data is Required!");
@@ -2093,6 +3078,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 penta3M02.setError(null);
             }
+
+            if (penta3M01.isChecked() && !penta3datenr.isChecked()) {
+                if (penta3DateMYear.getText().toString().isEmpty() && penta3DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    penta3DateMYear.setError("This data is Required!");
+                    penta3DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "penta3MDate: This data is Required!");
+                    return false;
+                } else {
+                    penta3DateMYear.setError(null);
+                    penta3DateMMon.setError(null);
+                }
+            }
+
 
             if (penta3C01.isChecked() || penta3M01.isChecked()) {
                 if (penta3Pov.getCheckedRadioButtonId() == -1) {
@@ -2116,7 +3115,7 @@ public class SectionIActivity extends AppCompatActivity
                     pcv3C02.setError(null);
                 }
 
-                if (opv3C01.isChecked()) {
+                if (pcv3C01.isChecked() && !pcv3datenp.isChecked()) {
                     if (pcv3Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv3Date.setError("This data is Required!");
@@ -2138,6 +3137,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 pcv3M02.setError(null);
             }
+
+            if (pcv3M01.isChecked() && !pcv3datenr.isChecked()) {
+                if (pcv3DateMYear.getText().toString().isEmpty() && pcv3DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    pcv3DateMYear.setError("This data is Required!");
+                    pcv3DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "pcv3MDate: This data is Required!");
+                    return false;
+                } else {
+                    pcv3DateMYear.setError(null);
+                    pcv3DateMMon.setError(null);
+                }
+            }
+
 
             if (pcv3C01.isChecked() || pcv3M01.isChecked()) {
                 if (pcv3Pov.getCheckedRadioButtonId() == -1) {
@@ -2163,7 +3176,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
 
 
-                if (ipvC01.isChecked()) {
+                if (ipvC01.isChecked() && !ipvdatenp.isChecked()) {
                     if (ipvDate.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         ipvDate.setError("This data is Required!");
@@ -2184,6 +3197,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 ipvM02.setError(null);
             }
+
+            if (ipvM01.isChecked() && !ipvdatenr.isChecked()) {
+                if (ipvDateMYear.getText().toString().isEmpty() && ipvDateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    ipvDateMYear.setError("This data is Required!");
+                    ipvDateMMon.setError("This data is Required!");
+                    Log.i(TAG, "ipvMDate: This data is Required!");
+                    return false;
+                } else {
+                    ipvDateMYear.setError(null);
+                    ipvDateMMon.setError(null);
+                }
+            }
+
 
             if (ipvC01.isChecked() || ipvM01.isChecked()) {
                 if (ipvPov.getCheckedRadioButtonId() == -1) {
@@ -2207,7 +3234,7 @@ public class SectionIActivity extends AppCompatActivity
                     measles1C02.setError(null);
                 }
 
-                if (measles1C01.isChecked()) {
+                if (measles1C01.isChecked() && !measles1datenp.isChecked()) {
                     if (measles1Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         measles1Date.setError("This data is Required!");
@@ -2228,6 +3255,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 measles1M02.setError(null);
             }
+
+            if (measles1M01.isChecked() && !measles1datenr.isChecked()) {
+                if (measles1DateMYear.getText().toString().isEmpty() && measles1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    measles1DateMYear.setError("This data is Required!");
+                    measles1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "measles1MDate: This data is Required!");
+                    return false;
+                } else {
+                    measles1DateMYear.setError(null);
+                    measles1DateMMon.setError(null);
+                }
+            }
+
 
             if (measles1C01.isChecked() || measles1M01.isChecked()) {
                 if (measles1Pov.getCheckedRadioButtonId() == -1) {
@@ -2253,7 +3294,7 @@ public class SectionIActivity extends AppCompatActivity
                     measles2C02.setError(null);
                 }
 
-                if (measles2C01.isChecked()) {
+                if (measles2C01.isChecked() && !measles2datenp.isChecked()) {
 
                     if (measles2Date.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
@@ -2275,6 +3316,20 @@ public class SectionIActivity extends AppCompatActivity
             } else {
                 measles2M02.setError(null);
             }
+
+            if (measles2M01.isChecked() && !measles2datenr.isChecked()) {
+                if (measles2DateMYear.getText().toString().isEmpty() && measles1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    measles2DateMYear.setError("This data is Required!");
+                    measles2DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "measles2MDate: This data is Required!");
+                    return false;
+                } else {
+                    measles2DateMYear.setError(null);
+                    measles2DateMMon.setError(null);
+                }
+            }
+
 
             if (measles2C01.isChecked() || measles2M01.isChecked()) {
                 if (measles2Pov.getCheckedRadioButtonId() == -1) {

@@ -195,7 +195,7 @@
                     android:text="@string/ti03b" />
 
                 <RadioButton
-                    android:id="@+id/tic03c"
+                    android:id="@+id/ti03c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ti03c" />
@@ -313,6 +313,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpBcgMCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/bcgdatenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpbcgMDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/bcgDateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/bcgDateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
@@ -364,29 +420,54 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpBcgCCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/bcgdatenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpBcgCDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:id="@+id/text1"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/bcgDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text1"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/bcgDate"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov1"
@@ -557,6 +638,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv0MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv0datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpopv0MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/opv0DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/opv0DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -608,27 +745,52 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv0CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv0datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpOpv0CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:id="@+id/text2"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/opv0Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text2"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/opv0Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov2"
@@ -830,6 +992,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv1MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv1datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpopv1MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/opv1DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/opv1DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -881,28 +1099,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv1CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv1datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpOpv1CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:id="@+id/text3"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/opv1Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text3"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/opv1Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov3"
@@ -1065,6 +1308,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPenta1MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta1datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppenta1MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/penta1DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/penta1DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -1116,29 +1415,55 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrppenta1CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta1datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPenta1CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text4"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/penta1Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text4"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/penta1Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
 
                                     <LinearLayout
@@ -1302,6 +1627,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv1MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv1datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppcv1MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/pcv1DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/pcv1DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -1353,27 +1734,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv1CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv1datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPcv1CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text5"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/pcv1Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text5"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/pcv1Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov5"
@@ -1578,6 +1985,63 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv2MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv2datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpopv2MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/opv2DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/opv2DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
 
                                         <View
@@ -1629,27 +2093,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv2CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv2datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpOpv2CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text6"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/opv2Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text6"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/opv2Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov6"
@@ -1811,6 +2301,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrppenta2MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta2datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppenta2MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/penta2DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/penta2DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -1862,27 +2408,51 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPenta2CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta2datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPenta2CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:id="@+id/text7"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/penta2Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
 
                                     </LinearLayout>
-
-                                    <TextView
-                                        android:id="@+id/text7"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/penta2Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov7"
@@ -2044,6 +2614,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv2MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv2datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppcv2MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/pcv2DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/pcv2DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -2095,27 +2721,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv2CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv2datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPcv2CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text8"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/pcv2Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text8"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/pcv2Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov8"
@@ -2314,6 +2966,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv3MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv3datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpopv3MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/opv3DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/opv3DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
@@ -2366,28 +3074,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpOpv3CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/opv3datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpOpv3CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text9"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/opv3Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
 
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text9"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/opv3Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov9"
@@ -2550,6 +3283,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPenta3MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta3datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppenta3MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/penta3DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/penta3DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -2601,28 +3390,54 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrppenta3CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/penta3datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPenta3CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text10"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/penta3Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text10"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/penta3Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov10"
@@ -2786,6 +3601,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv3MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv3datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrppcv3MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/pcv3DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/pcv3DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -2837,28 +3708,54 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpPcv3CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/pcv3datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpPcv3CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text11"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/pcv3Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text11"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/pcv3Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov11"
@@ -3021,6 +3918,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpIpvMCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/ipvdatenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpipvMDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/ipvDateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/ipvDateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -3072,27 +4025,52 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpIpvCCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/ipvdatenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpIpvCDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text12"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/ipvDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text12"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
-
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/ipvDate"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov12"
@@ -3290,6 +4268,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpmeasles1MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/measles1datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpmeasles1MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/measles1DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/measles1DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -3341,28 +4375,54 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpMeasles1CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/measles1datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpMeasles1CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text13"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/measles1Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
 
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text13"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/measles1Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov13"
@@ -3559,6 +4619,62 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpmeasles2MCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/measles2datenr"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenr"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpmeasles2MDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal">
+
+                                                        <EditText
+                                                            android:id="@+id/measles2DateM_year"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/year"
+                                                            android:inputType="number"
+                                                            android:maxLength="4"/>
+
+                                                        <EditText
+                                                            android:id="@+id/measles2DateM_mon"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_weight="1"
+                                                            android:hint="@string/month"
+                                                            android:inputType="number"
+                                                            android:maxLength="2"/>
+
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                         <View
@@ -3610,27 +4726,53 @@
 
                                             </RadioGroup>
 
+                                            <LinearLayout
+                                                android:id="@+id/fldGrpMeasles2CCheck"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <CheckBox
+                                                    android:id="@+id/measles2datenp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="1dp"
+                                                    android:text="@string/datenp"/>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrpMeasles2CDate"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+
+                                                    <TextView
+                                                        android:id="@+id/text14"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="5dp"
+                                                        android:text="@string/date"
+                                                        android:textAlignment="center"/>
+
+                                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                        android:id="@+id/measles2Date"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:focusable="false"
+                                                        android:hint="@string/date"
+                                                        android:textColor="@android:color/black"
+                                                        app:dateFormat="dd-MM-yyyy"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
                                         </LinearLayout>
 
                                     </LinearLayout>
 
-                                    <TextView
-                                        android:id="@+id/text14"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="@string/date"
-                                        android:textAlignment="center" />
 
-                                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                        android:id="@+id/measles2Date"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="1dp"
-                                        android:focusable="false"
-                                        android:hint="@string/date"
-                                        android:textColor="@android:color/black"
-                                        app:dateFormat="dd-MM-yyyy" />
 
                                     <LinearLayout
                                         android:id="@+id/fldGrpov14"
