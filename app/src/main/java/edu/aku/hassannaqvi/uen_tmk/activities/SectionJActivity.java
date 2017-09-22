@@ -246,6 +246,7 @@ public class SectionJActivity extends Activity {
     ArrayList<String> lstChild;
 
     int position;
+    Long months;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -1064,6 +1065,25 @@ public class SectionJActivity extends Activity {
             } else {
                 tj12m.setError(null);
             }
+
+            if (childsMap.get(tj01.getSelectedItem().toString()).getDob().length() == 10) {
+                months = MainApp.ageInMonthsByDOB(childsMap.get(tj01.getSelectedItem().toString()).getDob());
+            } else {
+                String[] dob = childsMap.get(tj01.getSelectedItem().toString()).getDob().split("-");
+
+                months = MainApp.ageInMonths(dob[0], dob[1]);
+            }
+
+            if (Integer.valueOf(tj12m.getText().toString()) > months) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                tj12m.setError("Invalid Months!");    // Set Error on last radio button
+
+                Log.i(TAG, "tj12m: Invalid Months");
+                return false;
+            } else {
+                tj12m.setError(null);
+            }
+
         }
 
 //        13
@@ -1101,6 +1121,15 @@ public class SectionJActivity extends Activity {
                 tj13m.setError("This data is Required! ");    // Set Error on last radio button
 
                 Log.i(TAG, "tj13m: This data is Required!");
+                return false;
+            } else {
+                tj13m.setError(null);
+            }
+            if (Integer.valueOf(tj13m.getText().toString()) > months) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                tj13m.setError("Invalid Months!");    // Set Error on last radio button
+
+                Log.i(TAG, "tj13m: Invalid Months");
                 return false;
             } else {
                 tj13m.setError(null);
