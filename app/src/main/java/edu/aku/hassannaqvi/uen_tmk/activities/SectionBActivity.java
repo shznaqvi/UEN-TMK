@@ -130,8 +130,10 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb10g;
     @BindView(R.id.tb10h)
     RadioButton tb10h;
-    @BindView(R.id.tb10i)
-    RadioButton tb10i;
+    @BindView(R.id.tb10ia)
+    RadioButton tb10ia;
+    @BindView(R.id.tb10ib)
+    RadioButton tb10ib;
     @BindView(R.id.tb10j)
     RadioButton tb10j;
     @BindView(R.id.tb10k)
@@ -146,8 +148,8 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb11a;
     @BindView(R.id.tb11b)
     RadioButton tb11b;
-    @BindView(R.id.tb11c)
-    RadioButton tb11c;
+    /*    @BindView(R.id.tb11c)
+        RadioButton tb11c;*/
     @BindView(R.id.tb11d)
     RadioButton tb11d;
     @BindView(R.id.tb11e)
@@ -155,6 +157,17 @@ public class SectionBActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_ContNextSec)
     Button btn_ContNextSec;
+
+    @BindView(R.id.fldGrptb11)
+    LinearLayout fldGrptb11;
+
+    @BindView(R.id.tb12)
+    RadioGroup tb12;
+    @BindView(R.id.tb12a)
+    RadioButton tb12a;
+    @BindView(R.id.tb12b)
+    RadioButton tb12b;
+
 
     DatabaseHelper db;
     long ageInyears = 0;
@@ -231,10 +244,23 @@ public class SectionBActivity extends AppCompatActivity {
         tb04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.tb04a) {
-                    tb10a.setEnabled(false);
-                } else {
+                if (tb04b.isChecked()) {
+
                     tb10a.setEnabled(true);
+
+                    if (tb11b.isChecked()) {
+                        fldGrptb11.setVisibility(View.VISIBLE);
+                    } else {
+                        tb12.clearCheck();
+                        fldGrptb11.setVisibility(View.GONE);
+                    }
+
+                } else {
+
+                    tb12.clearCheck();
+                    fldGrptb11.setVisibility(View.GONE);
+
+                    tb10a.setEnabled(false);
                 }
             }
         });
@@ -283,7 +309,8 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10f.setEnabled(false);
                     tb10g.setEnabled(false);
                     tb10h.setEnabled(false);
-                    tb10i.setEnabled(false);
+                    tb10ia.setEnabled(false);
+                    tb10ib.setEnabled(false);
                     tb10j.setEnabled(false);
                     tb10k.setEnabled(false);
                     tb10l.setEnabled(false);
@@ -302,7 +329,8 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10f.setEnabled(true);
                     tb10g.setEnabled(true);
                     tb10h.setEnabled(true);
-                    tb10i.setEnabled(true);
+                    tb10ia.setEnabled(true);
+                    tb10ib.setEnabled(true);
                     tb10j.setEnabled(true);
                     tb10k.setEnabled(true);
                     tb10l.setEnabled(true);
@@ -344,13 +372,22 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10f.setEnabled(false);
                         tb10g.setEnabled(false);
                         tb10h.setEnabled(false);
-                        tb10i.setEnabled(false);
+                        tb10ia.setEnabled(false);
+                        tb10ib.setEnabled(false);
                         tb10j.setEnabled(false);
                         tb10k.setEnabled(false);
                         tb10l.setEnabled(false);
 
                         tb11b.setEnabled(false);
                         tb11b.setChecked(false);
+                    } else if (ageInyears < 12) {
+
+                        tb11a.setEnabled(false);
+                        tb11b.setEnabled(false);
+//                        tb11c.setEnabled(false);
+                        tb11d.setEnabled(false);
+                        tb11e.setEnabled(false);
+
                     } else {
                         tb09.setText(null);
                         tb09.setEnabled(true);
@@ -363,7 +400,8 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10f.setEnabled(true);
                         tb10g.setEnabled(true);
                         tb10h.setEnabled(true);
-                        tb10i.setEnabled(true);
+                        tb10ia.setEnabled(true);
+                        tb10ib.setEnabled(true);
                         tb10j.setEnabled(true);
                         tb10k.setEnabled(true);
                         tb10l.setEnabled(true);
@@ -391,6 +429,38 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     tb0388x.setText(null);
                     tb0388x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        tb10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tb10a.isChecked()) {
+                    tb11a.setEnabled(false);
+                } else {
+                    tb11a.setEnabled(true);
+                }
+            }
+        });
+
+
+        tb11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tb11b.isChecked()) {
+
+                    if (tb04b.isChecked()) {
+                        fldGrptb11.setVisibility(View.VISIBLE);
+                    } else {
+                        tb12.clearCheck();
+                        fldGrptb11.setVisibility(View.GONE);
+                    }
+
+                } else {
+                    tb12.clearCheck();
+                    fldGrptb11.setVisibility(View.GONE);
                 }
             }
         });
@@ -494,11 +564,13 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb09", tb09.getText().toString().equals("NA") ? "999" : tb09.getText().toString());
         sB.put("tb10", tb10a.isChecked() ? "1" : tb10b.isChecked() ? "2" : tb10c.isChecked() ? "3"
                 : tb10d.isChecked() ? "4" : tb10e.isChecked() ? "5" : tb10f.isChecked() ? "6"
-                : tb10g.isChecked() ? "7" : tb10h.isChecked() ? "8" : tb10i.isChecked() ? "9" : tb10j.isChecked() ? "10"
+                : tb10g.isChecked() ? "7" : tb10h.isChecked() ? "8" : tb10ia.isChecked() ? "9a" : tb10ib.isChecked() ? "9b" : tb10j.isChecked() ? "10"
                 : tb10k.isChecked() ? "11" : tb10l.isChecked() ? "12" : tb10999.isChecked() ? "999"
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
-                : tb11c.isChecked() ? "3" : tb11d.isChecked() ? "4" : tb11e.isChecked() ? "5" : "0");
+                : tb11d.isChecked() ? "3" : tb11e.isChecked() ? "4" : "0");
+
+        sB.put("tb12", tb12a.isChecked() ? "1" : tb12b.isChecked() ? "2" : "0");
 
 
         MainApp.ageRdo = tbdob.indexOfChild(findViewById(tbdob.getCheckedRadioButtonId())) + 1;
@@ -524,8 +596,10 @@ public class SectionBActivity extends AppCompatActivity {
                     ageInyears < 5 ? "1" : ageInyears < 2 ? "3" :
                             (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
-                    , String.valueOf(MainApp.counter), tb07.getText().toString()));
-
+                    , String.valueOf(MainApp.counter),
+                    tb07.getText().toString().isEmpty() ?
+                            tb08m.getText().toString() + "-" + tb08y.getText().toString() :
+                            tb07.getText().toString()));
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -726,6 +800,18 @@ public class SectionBActivity extends AppCompatActivity {
                 tb09.setError(null);
             }
 
+        }
+
+        if (tb04b.isChecked() && tb11b.isChecked()) {
+            if (tb12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
+                tb12a.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "tb12a: This data is Required!");
+                return false;
+            } else {
+                tb12a.setError(null);
+            }
         }
 
 

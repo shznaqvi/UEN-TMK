@@ -31,6 +31,8 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
+import static edu.aku.hassannaqvi.uen_tmk.activities.SectionBActivity.getCalendarDate;
+
 /**
  * Created by hassan.naqvi on 11/30/2016.
  */
@@ -157,6 +159,21 @@ public class MainApp extends Application {
         monthsBetween += end.get(Calendar.MONTH) - start.get(Calendar.MONTH);
         monthsBetween += (end.get(Calendar.YEAR) - start.get(Calendar.YEAR)) * 12;
         return monthsBetween;
+    }
+
+    public static long ageInMonthsByDOB(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = getCalendarDate(dateStr);
+        Date dob = cal.getTime();
+        Date today = new Date();
+        Long diff = today.getTime() - dob.getTime();
+        long ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30;
+        return ageInMonths;
+    }
+
+    public static long ageInMonths(String year, String month) {
+        long ageInMonths = Integer.valueOf(year) * 12 + Integer.valueOf(month);
+        return ageInMonths;
     }
 
     public static void errorCheck(final Context context, String error) {

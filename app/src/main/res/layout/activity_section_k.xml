@@ -24,7 +24,7 @@
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secKLabel"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:gravity="center"
             android:text="Piped Water"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark" />
 
         <RadioGroup
             android:id="@+id/tk01"
@@ -97,7 +97,7 @@
                 android:gravity="center"
                 android:text="Underground Water"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
                 android:id="@+id/tk01f"
@@ -120,7 +120,7 @@
                 android:gravity="center"
                 android:text="Dug Well"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
                 android:id="@+id/tk01h"
@@ -208,7 +208,7 @@
             android:gravity="center"
             android:text="Piped Water"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark" />
 
         <RadioGroup
             android:id="@+id/tk02"
@@ -258,7 +258,7 @@
                 android:gravity="center"
                 android:text="Underground Water"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
                 android:id="@+id/tk02f"
@@ -281,7 +281,7 @@
                 android:gravity="center"
                 android:text="Dug Well"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
                 android:id="@+id/tk02h"
@@ -759,7 +759,7 @@
             android:gravity="center"
             android:text="Flush / Pour Flush"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark" />
 
 
         <RadioGroup
@@ -810,7 +810,7 @@
                 android:gravity="center"
                 android:text="Pit Latrine"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark" />
 
 
             <RadioButton
@@ -884,7 +884,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_weight="1"
-                android:text="@string/yes"/>
+                android:text="@string/yes" />
 
             <RadioButton
                 android:id="@+id/tk12b"
@@ -893,7 +893,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_weight="1"
-                android:text="@string/no"/>
+                android:text="@string/no" />
 
 
             <RadioButton
@@ -902,7 +902,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:layout_weight="1"
-                android:text="@string/dkn"/>
+                android:text="@string/dkn" />
 
         </RadioGroup>
 

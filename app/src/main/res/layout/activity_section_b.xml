@@ -19,7 +19,7 @@
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secBLabel"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"
@@ -123,7 +123,6 @@
             android:id="@+id/tb03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <RadioButton
                 android:id="@+id/tb03a"
@@ -510,11 +509,18 @@
                 android:text="@string/tb10h" />
 
             <RadioButton
-                android:id="@+id/tb10i"
+                android:id="@+id/tb10ia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/tb10i" />
+                android:text="@string/tb10ia" />
+
+            <RadioButton
+                android:id="@+id/tb10ib"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tb10ia" />
 
             <RadioButton
                 android:id="@+id/tb10j"
@@ -558,7 +564,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <RadioButton
                 android:id="@+id/tb11a"
                 android:layout_width="match_parent"
@@ -573,12 +578,12 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/tb11b" />
 
-            <RadioButton
-                android:id="@+id/tb11c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tb11c" />
+            <!--            <RadioButton
+                            android:id="@+id/tb11c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/tb11c" />-->
 
             <RadioButton
                 android:id="@+id/tb11d"
@@ -595,6 +600,45 @@
                 android:text="@string/tb11e" />
 
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fldGrptb11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tiRespondentMother"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioGroup
+                android:id="@+id/tb12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/tb12a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/tb12b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
