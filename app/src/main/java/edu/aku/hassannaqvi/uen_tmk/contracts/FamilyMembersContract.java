@@ -64,10 +64,10 @@ public class FamilyMembersContract {
     public FamilyMembersContract() {
     }
 
-    public FamilyMembersContract(String name, String ageLess5, String ageLess2, String serialNo, String dob) {
+    public FamilyMembersContract(String name, String age, String serialNo, String dob) {
         this.name = name;
-        this.ageLess5 = ageLess5;
-        this.ageLess2 = ageLess2;
+        this.ageLess5 = age;
+//        this.ageLess2 = ageLess2;
         this.serialNo = serialNo;
         this.dob = dob;
     }

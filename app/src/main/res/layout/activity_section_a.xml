@@ -16,13 +16,14 @@
         android:orientation="vertical">
 
         <TextView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_horizontal"
-             android:layout_marginTop="2dp"
-             android:gravity="center"
-             android:text="@string/secALabel"
-             android:textSize="30sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/secALabel"
+            android:textSize="40sp"/>
 
          <View
              android:layout_width="match_parent"
@@ -153,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
-            android:hint="@string/tha05"
+            android:hint="@string/ta05h"
             android:inputType="text" />
 
         <TextView
@@ -169,9 +170,9 @@
             android:id="@+id/ta05u"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            android:digits="1234567890"
             android:hint="@string/ta05u"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <!--06-->
 

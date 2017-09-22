@@ -21,9 +21,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secKLabel"
-            android:textSize="30sp" />
+            android:textSize="40sp"/>
 
         <View
             android:layout_width="match_parent"
@@ -46,7 +47,7 @@
             android:gravity="center"
             android:text="Piped Water"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tk01"
@@ -96,7 +97,7 @@
                 android:gravity="center"
                 android:text="Underground Water"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tk01f"
@@ -119,7 +120,7 @@
                 android:gravity="center"
                 android:text="Dug Well"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tk01h"
@@ -207,7 +208,7 @@
             android:gravity="center"
             android:text="Piped Water"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimaryDark"/>
 
         <RadioGroup
             android:id="@+id/tk02"
@@ -257,7 +258,7 @@
                 android:gravity="center"
                 android:text="Underground Water"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tk02f"
@@ -280,7 +281,7 @@
                 android:gravity="center"
                 android:text="Dug Well"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/tk02h"
@@ -758,7 +759,7 @@
             android:gravity="center"
             android:text="Flush / Pour Flush"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimaryDark"/>
 
 
         <RadioGroup
@@ -809,7 +810,7 @@
                 android:gravity="center"
                 android:text="Pit Latrine"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimaryDark"/>
 
 
             <RadioButton
@@ -873,21 +874,26 @@
         <RadioGroup
             android:id="@+id/tk12"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/tk12a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/yes" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
 
             <RadioButton
                 android:id="@+id/tk12b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/no" />
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/no"/>
 
 
             <RadioButton
@@ -895,7 +901,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                android:layout_weight="1"
+                android:text="@string/dkn"/>
 
         </RadioGroup>
 
@@ -1005,7 +1012,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/green"
                 android:onClick="startInterview"
-                android:text="@string/start_interview"
+                android:text="@string/nextSection"
                 android:textColor="#1ed61e" />
             <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
         </LinearLayout>

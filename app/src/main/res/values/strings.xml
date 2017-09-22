@@ -50,11 +50,12 @@
     <string name="month"> مهينو </string>
     <string name="year"> سال </string>
     <string name="hour"> ڪلاڪ </string>
-    <string name="min"> منٽ</string>
+    <string name="min"> منٽ </string>
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
     <string name="name">ٻار جو نالو</string>
 
-    <!-- Strings related to Sections Below -->
+    <!-- Strings related to Sec
+    ons Below -->
 
     <string name="ta01"> Cluster Number </string>
     <string name="ta02"> Cluster type </string>
@@ -94,7 +95,7 @@
     <string name="ta05"> House/ khandan number </string>
     <string name="ta05h"> House No </string>
     <string name="ta05kh"> Khandan number </string>
-    <string name="ta05u"> If neither of above then Gas or electricity bill No </string>
+    <string name="ta05u"> Gas or electricity bill No </string>
     <string name="ta06"> Village </string>
     <string name="ta07"> Block/mohalla </string>
     <string name="ta08"> Street </string>
@@ -626,6 +627,7 @@
     <string name="thb36j"> ٻار بيھوش ھوندو آھي </string>
     <string name="thb36k"> ٻار جي چمڙي ڦڪي ٿيندي آھي </string>
 
+    <string name="tiRespondentMother">ڇا جواب ڏيندڙ هن ٻار جي ماء آهي</string>
     <string name="ti01"> ڇا (نالو) ڪڏھن به ٽڪا لڳرايا آھن جيڪي بيماري کان بچاءُ لاءِ لڳرايا ويندا آھن؟ بشمول مھم يا ٽڪن جي ڏيھاڙي يا ٻار جي صحت جو ڏيھاڙي </string>
     <string name="ti02"> ڪهڙي سبب جي ڪري اوهان پنهنجي ٻار کي ٽڪا نه لڳرايا؟ </string>
     <string name="ti02a"> ڪوبه مشورو نه مليو </string>

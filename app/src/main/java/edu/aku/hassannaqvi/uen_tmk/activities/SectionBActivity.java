@@ -408,7 +408,7 @@ public class SectionBActivity extends AppCompatActivity {
     void onBtnContNextSecClick() {
         //TODO implement
 
-        startActivity(new Intent(this, SectionIActivity.class));
+        startActivity(new Intent(this, SectionCActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
@@ -521,7 +521,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
-                    ageInyears < 5 ? "1" : tb02.getText().toString(), ageInyears < 2 ? "1" :
+                    ageInyears < 5 ? "1" : ageInyears < 2 ? "3" :
                             (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
                     , String.valueOf(MainApp.counter), tb07.getText().toString()));

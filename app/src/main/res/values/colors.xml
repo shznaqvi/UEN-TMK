@@ -3,9 +3,9 @@
     <color name="colorPrimaryDark">#1B5E20</color>
     <!--<color name="colorPrimary">#880E4F</color>-->
     <color name="colorPrimary">#56ae51</color>
-    <color name="colorPrimaryAlpha">#556e56</color>
-    <color name="colorAccent">#388E3C</color>
-    <color name="pink_100">#fce4ec</color>
+    <color name="colorPrimaryAlpha">#6e8b6f</color>
+    <color name="colorAccent">#4fab54</color>
+    <color name="pink_100">#ccefd3</color>
     <color name="colorHeading">#CDDC39</color>
 
 

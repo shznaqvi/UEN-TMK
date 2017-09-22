@@ -626,8 +626,12 @@ public class SectionCActivity extends Activity {
 
                 if (MainApp.TotalMWRACount > 0) {
                     startActivity(new Intent(this, SectionDActivity.class));
-                } else {
+                } else if (MainApp.TotalDeceasedMotherCount > 0) {
                     startActivity(new Intent(this, SectionEActivity.class));
+                } else if (MainApp.TotalDeceasedChildCount > 0) {
+                    startActivity(new Intent(this, SectionFActivity.class));
+                } else {
+                    startActivity(new Intent(this, SectionGActivity.class));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -753,7 +757,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc19", td07.getText().toString());
 
         if (td06a.isChecked()) {
-            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString());
+            MainApp.TotalDeceasedMotherCount = Integer.valueOf(td07.getText().toString().isEmpty() ? "0" : td07.getText().toString());
         }
 
         sC.put("tc20", td08a.isChecked() ? "1" : td08b.isChecked() ? "2"
@@ -761,7 +765,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc21", td09.getText().toString());
 
         if (td08a.isChecked()) {
-            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString());
+            MainApp.TotalDeceasedChildCount = Integer.valueOf(td09.getText().toString().isEmpty() ? "0" : td09.getText().toString());
         }
 
         MainApp.fc.setsC(String.valueOf(sC));
@@ -809,6 +813,15 @@ public class SectionCActivity extends Activity {
             tc04.setError("This data is Required! ");    // Set Error on last radio button
 
             Log.i(TAG, "tc04: This data is Required!");
+            return false;
+        } else {
+            tc04.setError(null);
+        }
+        if (Integer.valueOf(tc04.getText().toString()) < 1) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.tc04), Toast.LENGTH_SHORT).show();
+            tc04.setError("Greater then 0!");    // Set Error on last radio button
+
+            Log.i(TAG, "tc04: Greater then 0!");
             return false;
         } else {
             tc04.setError(null);
@@ -1007,6 +1020,16 @@ public class SectionCActivity extends Activity {
         } else {
             tc08mb.setError(null);
         }
+//        08n
+        if (tc08n.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc08n), Toast.LENGTH_SHORT).show();
+            tc08nb.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tc08n: This data is Required!");
+            return false;
+        } else {
+            tc08nb.setError(null);
+        }
 //        08o
         if (tc08o.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc08o), Toast.LENGTH_SHORT).show();
@@ -1174,23 +1197,45 @@ public class SectionCActivity extends Activity {
             } else {
                 tc12888.setError(null);
             }
-            if (tc12a.isChecked() && tc12ac.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
-                tc12ac.setError("This data is Required! ");    // Set Error on last radio button
+            if (tc12a.isChecked()) {
+                if (tc12ac.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
+                    tc12ac.setError("This data is Required! ");    // Set Error on last radio button
 
-                Log.i(TAG, "tc12ac: This data is Required!");
-                return false;
-            } else {
-                tc12ac.setError(null);
+                    Log.i(TAG, "tc12ac: This data is Required!");
+                    return false;
+                } else {
+                    tc12ac.setError(null);
+                }
+                if (Integer.valueOf(tc12ac.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12a), Toast.LENGTH_SHORT).show();
+                    tc12ac.setError("Greater then 0! ");    // Set Error on last radio button
+
+                    Log.i(TAG, "tc12ac: Greater then 0!");
+                    return false;
+                } else {
+                    tc12ac.setError(null);
+                }
             }
-            if (tc12b.isChecked() && tc12kn.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
-                tc12kn.setError("This data is Required! ");    // Set Error on last radio button
+            if (tc12b.isChecked()) {
+                if (tc12kn.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
+                    tc12kn.setError("This data is Required! ");    // Set Error on last radio button
 
-                Log.i(TAG, "tc12kn: This data is Required!");
-                return false;
-            } else {
-                tc12kn.setError(null);
+                    Log.i(TAG, "tc12kn: This data is Required!");
+                    return false;
+                } else {
+                    tc12kn.setError(null);
+                }
+                if (Integer.valueOf(tc12kn.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc12b), Toast.LENGTH_SHORT).show();
+                    tc12kn.setError("Greater then 0! ");    // Set Error on last radio button
+
+                    Log.i(TAG, "tc12kn: Greater then 0!");
+                    return false;
+                } else {
+                    tc12kn.setError(null);
+                }
             }
 
         }
@@ -1265,6 +1310,17 @@ public class SectionCActivity extends Activity {
             } else {
                 tc14f.setError(null);
             }
+
+            int totalAnimals = Integer.valueOf(tc14a.getText().toString()) + Integer.valueOf(tc14b.getText().toString()) +
+                    Integer.valueOf(tc14c.getText().toString()) + Integer.valueOf(tc14d.getText().toString()) +
+                    Integer.valueOf(tc14e.getText().toString()) + Integer.valueOf(tc14f.getText().toString());
+
+            if (totalAnimals == 0) {
+                tc14a.setError("Not be zero as mentioned in Q13.");    // Set Error on last radio button
+            } else {
+                tc14a.setError(null);
+            }
+
         }
 
 //        15
@@ -1307,6 +1363,16 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             tc17888.setError(null);
+        }
+        if (!tc17888.isChecked() && (Integer.valueOf(tc17.getText().toString()) < 1 ||
+                Integer.valueOf(tc17.getText().toString()) >= 1000)) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.tc17), Toast.LENGTH_SHORT).show();
+            tc17.setError("Range from 0 to 1000!");    // Set Error on last radio button
+
+            Log.i(TAG, "tc17: Range from 0 to 1000!");
+            return false;
+        } else {
+            tc17.setError(null);
         }
 
         if (td06.getCheckedRadioButtonId() == -1) {

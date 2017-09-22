@@ -43,10 +43,17 @@
 
 
         <Spinner
-            android:id="@+id/tiName"
+            android:id="@+id/tiname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"></Spinner>
+
+        <CheckBox
+            android:id="@+id/tiresp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tiRespondentMother"/>
 
 
         <TextView
@@ -3820,8 +3827,8 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/green"
                 android:onClick="startInterview"
-                android:text="@string/start_interview"
-                android:textColor="#1ed61e" />
+                android:text="@string/nextSection"
+                android:textColor="#1ed61e"/>
             <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
         </LinearLayout>
 

@@ -73,6 +73,7 @@ public class SectionDActivity extends Activity {
     ArrayList<String> lstMwra;
 
     int position;
+    int sumOfChildren = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +92,7 @@ public class SectionDActivity extends Activity {
         lstMwra.add("....");
 
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("2") && MainApp.familyMembersList.get(i).getAgeLess2().equals("2")) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("2")) {
                 mwraMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstMwra.add(MainApp.familyMembersList.get(i).getName());
             }
@@ -329,6 +330,7 @@ public class SectionDActivity extends Activity {
                 td03lb.setError(null);
             }
 
+
             if (td04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.td04), Toast.LENGTH_SHORT).show();
                 td04b.setError("This data is Required!");    // Set Error on last radio button
@@ -338,8 +340,23 @@ public class SectionDActivity extends Activity {
             } else {
                 td04b.setError(null);
             }
-
+            sumOfChildren = (Integer.valueOf(td03lb.getText().toString()) + Integer.valueOf(td03sb.getText().toString())
+                    + Integer.valueOf(td03mc.getText().toString()));
             if (td04a.isChecked()) {
+
+                sumOfChildren--;
+
+                if ((sumOfChildren)
+                        != Integer.parseInt(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
+                    Toast.makeText(this, "Invalid: " + getString(R.string.td02), Toast.LENGTH_LONG).show();
+                    td02.setError("Invalid : Check again");    // Set Error on last radio button
+
+                    Log.i(TAG, "td02: Check Again");
+                    return false;
+                } else {
+                    td02.setError(null);
+                }
+
                 if (td05.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
                     td05.setError("This data is Required!");    // Set Error on last radio button
@@ -358,6 +375,17 @@ public class SectionDActivity extends Activity {
                     return false;
                 } else {
                     td05.setError(null);
+                }
+            } else {
+                if (sumOfChildren
+                        != Integer.parseInt(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
+                    Toast.makeText(this, "Invalid: " + getString(R.string.td02), Toast.LENGTH_LONG).show();
+                    td02.setError("Invalid : Check again");    // Set Error on last radio button
+
+                    Log.i(TAG, "td02: Check Again");
+                    return false;
+                } else {
+                    td02.setError(null);
                 }
             }
         }
