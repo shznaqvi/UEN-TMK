@@ -140,7 +140,8 @@
     <string name="tb10f"> Unskilled manual </string>
     <string name="tb10g"> Agriculture </string>
     <string name="tb10h"> Business </string>
-    <string name="tb10i"> Student </string>
+  <string name="tb10ia"> Student-School </string>
+  <string name="tb10ib"> Student-Madrasah </string>
     <string name="tb10j"> Unemployed </string>
     <string name="tb10k"> Retired </string>
     <string name="tb10l"> Teacher </string>

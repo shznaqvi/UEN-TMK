@@ -510,11 +510,18 @@
                 android:text="@string/tb10h" />
 
             <RadioButton
-                android:id="@+id/tb10i"
+                android:id="@+id/tb10ia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/tb10i" />
+                android:text="@string/tb10ia" />
+
+            <RadioButton
+                android:id="@+id/tb10ib"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tb10ia" />
 
             <RadioButton
                 android:id="@+id/tb10j"

@@ -130,8 +130,10 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb10g;
     @BindView(R.id.tb10h)
     RadioButton tb10h;
-    @BindView(R.id.tb10i)
-    RadioButton tb10i;
+    @BindView(R.id.tb10ia)
+    RadioButton tb10ia;
+    @BindView(R.id.tb10ib)
+    RadioButton tb10ib;
     @BindView(R.id.tb10j)
     RadioButton tb10j;
     @BindView(R.id.tb10k)
@@ -283,7 +285,8 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10f.setEnabled(false);
                     tb10g.setEnabled(false);
                     tb10h.setEnabled(false);
-                    tb10i.setEnabled(false);
+                    tb10ia.setEnabled(false);
+                    tb10ib.setEnabled(false);
                     tb10j.setEnabled(false);
                     tb10k.setEnabled(false);
                     tb10l.setEnabled(false);
@@ -302,7 +305,8 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10f.setEnabled(true);
                     tb10g.setEnabled(true);
                     tb10h.setEnabled(true);
-                    tb10i.setEnabled(true);
+                    tb10ia.setEnabled(true);
+                    tb10ib.setEnabled(true);
                     tb10j.setEnabled(true);
                     tb10k.setEnabled(true);
                     tb10l.setEnabled(true);
@@ -344,7 +348,8 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10f.setEnabled(false);
                         tb10g.setEnabled(false);
                         tb10h.setEnabled(false);
-                        tb10i.setEnabled(false);
+                        tb10ia.setEnabled(false);
+                        tb10ib.setEnabled(false);
                         tb10j.setEnabled(false);
                         tb10k.setEnabled(false);
                         tb10l.setEnabled(false);
@@ -363,7 +368,8 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10f.setEnabled(true);
                         tb10g.setEnabled(true);
                         tb10h.setEnabled(true);
-                        tb10i.setEnabled(true);
+                        tb10ia.setEnabled(true);
+                        tb10ib.setEnabled(true);
                         tb10j.setEnabled(true);
                         tb10k.setEnabled(true);
                         tb10l.setEnabled(true);
@@ -494,7 +500,7 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb09", tb09.getText().toString().equals("NA") ? "999" : tb09.getText().toString());
         sB.put("tb10", tb10a.isChecked() ? "1" : tb10b.isChecked() ? "2" : tb10c.isChecked() ? "3"
                 : tb10d.isChecked() ? "4" : tb10e.isChecked() ? "5" : tb10f.isChecked() ? "6"
-                : tb10g.isChecked() ? "7" : tb10h.isChecked() ? "8" : tb10i.isChecked() ? "9" : tb10j.isChecked() ? "10"
+                : tb10g.isChecked() ? "7" : tb10h.isChecked() ? "8" : tb10ia.isChecked() ? "9a" : tb10ib.isChecked() ? "9b" : tb10j.isChecked() ? "10"
                 : tb10k.isChecked() ? "11" : tb10l.isChecked() ? "12" : tb10999.isChecked() ? "999"
                 : "0");
         sB.put("tb11", tb11a.isChecked() ? "1" : tb11b.isChecked() ? "2"
