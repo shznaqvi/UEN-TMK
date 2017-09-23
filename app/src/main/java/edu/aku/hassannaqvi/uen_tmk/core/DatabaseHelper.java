@@ -1339,29 +1339,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
-                FormsContract.FormsTable.COLUMN_IS_NEW,
-                FormsContract.FormsTable.COLUMN_DSSID,
+                FormsTable.COLUMN_IS_NEW,
+                FormsTable.COLUMN_DSSID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
-                FormsContract.FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SA,
                 FormsTable.COLUMN_SC,
-                FormsContract.FormsTable.COLUMN_SG,
-                FormsContract.FormsTable.COLUMN_SHA,
-                FormsContract.FormsTable.COLUMN_SHB,
+                FormsTable.COLUMN_SG,
+                FormsTable.COLUMN_SHA,
+                FormsTable.COLUMN_SHB,
                 //FormsContract.FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
-                FormsContract.FormsTable.COLUMN_SL,
-                FormsContract.FormsTable.COLUMN_SM,
-                FormsContract.FormsTable.COLUMN_GPSLAT,
-                FormsContract.FormsTable.COLUMN_GPSLNG,
-                FormsContract.FormsTable.COLUMN_GPSDATE,
-                FormsContract.FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_SL,
+                FormsTable.COLUMN_SM,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSDATE,
+                FormsTable.COLUMN_GPSACC,
                 FormsTable.COLUMN_DEVICETAGID,
                 FormsTable.COLUMN_DEVICEID
         };
-        String whereClause = FormsContract.FormsTable.COLUMN_SYNCED + " is null";
+        String whereClause = FormsTable.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1372,7 +1372,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Collection<FormsContract> allFC = new ArrayList<FormsContract>();
         try {
             c = db.query(
-                    FormsContract.FormsTable.TABLE_NAME,  // The table to query
+                    FormsTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause

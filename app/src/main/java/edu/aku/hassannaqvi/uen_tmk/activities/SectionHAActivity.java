@@ -1607,7 +1607,7 @@ public class SectionHAActivity extends Activity {
 
         if (!tha04.getText().toString().isEmpty() && !tha08.getText().toString().isEmpty()) {
             if (Integer.parseInt(tha04.getText().toString()) <= 0
-                    || Integer.parseInt(tha08.getText().toString()) > Integer.parseInt(tha04.getText().toString())) {
+                    && Integer.parseInt(tha08.getText().toString()) > Integer.parseInt(tha04.getText().toString())) {
                 Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0 and it must be greater than " +
                         " After how many days of illness did you seek care", Toast.LENGTH_SHORT).show();
                 tha04.setError("Must be greater than 0");
@@ -1645,13 +1645,15 @@ public class SectionHAActivity extends Activity {
         }
 
 
-        if (Integer.parseInt(tha26.getText().toString().isEmpty() ? "0" : tha26.getText().toString()) <= 0) {
-            Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
-            tha26.setError("Must be greater than 0");
-            Log.i(TAG, "tha26: This data is Required!");
-            return false;
-        } else {
-            tha26.setError(null);
+        if (!tha26888.isChecked()) {
+            if (Double.parseDouble(tha26.getText().toString().isEmpty() ? "0" : tha26.getText().toString()) <= 0) {
+                Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
+                tha26.setError("Must be greater than 0");
+                Log.i(TAG, "tha26: This data is Required!");
+                return false;
+            } else {
+                tha26.setError(null);
+            }
         }
 
 
