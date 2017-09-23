@@ -140,8 +140,8 @@
     <string name="tb10f"> Unskilled manual </string>
     <string name="tb10g"> Agriculture </string>
     <string name="tb10h"> Business </string>
-  <string name="tb10ia"> Student-School </string>
-  <string name="tb10ib"> Student-Madrasah </string>
+    <string name="tb10ia"> Student-School </string>
+    <string name="tb10ib"> Student-Madrasah </string>
     <string name="tb10j"> Unemployed </string>
     <string name="tb10k"> Retired </string>
     <string name="tb10l"> Teacher </string>
@@ -475,9 +475,9 @@
     <string name="tha28a"> منٽ </string>
     <string name="tha29"> (نالو) دستن جي بيماريءَ جي علاج لاءِ سواري تي توھانجا ڪيترا پئسا خرچ ٿيا؟ </string>
     <string name="tha29a"> روپيا </string>
-    <string name="tha30"> (نالو) دستن جي بيماريءَ جي علاج لاءِ دوائن (داخلي) تي توھان جا ڪيترا پئسا خرچ ٿيا؟ </string>
+    <string name="tha30"> (نالو) دستن جي بيماريءَ جي علاج لاءِ دوائن /داخلي/ ڊاڪٽر جي فيس تي توھان جا ڪيترا پئسا خرچ ٿيا؟ </string>
     <string name="tha30a"> روپيا </string>
-    <string name="tha31"> (نالو)جي علاج جو خرڇ ڪنهن ڪيو؟ </string>
+    <string name="tha31"> (نالو)جي دستن جي علاج جو خرچ ڪنهن ڀريو؟ </string>
     <string name="tha31a"> پاڻ </string>
     <string name="tha31b"> اسپتال </string>
     <string name="tha31c"> اڌاسپتال۽ اڌ پاڻ </string>
@@ -629,7 +629,7 @@
     <string name="thb36k"> ٻار جي چمڙي ڦڪي ٿيندي آھي </string>
 
     <string name="tiRespondentMother">ڇا جواب ڏيندڙ هن ٻار جي ماء آهي</string>
-  <string name="Respondent">ڇا هي عورت جواب ڏيندڙ آهي</string>
+    <string name="Respondent">ڇا هي عورت جواب ڏيندڙ آهي</string>
     <string name="ti01"> ڇا (نالو) ڪڏھن به ٽڪا لڳرايا آھن جيڪي بيماري کان بچاءُ لاءِ لڳرايا ويندا آھن؟ بشمول مھم يا ٽڪن جي ڏيھاڙي يا ٻار جي صحت جو ڏيھاڙي </string>
     <string name="ti02"> ڪهڙي سبب جي ڪري اوهان پنهنجي ٻار کي ٽڪا نه لڳرايا؟ </string>
     <string name="ti02a"> ڪوبه مشورو نه مليو </string>
@@ -641,8 +641,8 @@
     <string name="ti03a"> ھا، ڪارڊ ڏٺو </string>
     <string name="ti03b"> ھا، ڪارڊ نه ڏٺو </string>
     <string name="ti03c"> ڪارڊ موجود نه آھي </string>
-  <string name="datenr"> Mother dont remember date </string>
-  <string name="datenp"> Date is not present on Card </string>
+    <string name="datenr"> Mother dont remember date </string>
+    <string name="datenp"> Date is not present on Card </string>
     <string name="card"> Vaccine Card </string>
     <string name="recall">Reported by care taker</string>
     <string name="place"> Place of Vaccine </string>

@@ -1159,7 +1159,7 @@ public class SectionHAActivity extends Activity {
                 tha06a.setError(null);
             }
 
-            if (tha06b.isChecked()) {
+            if (tha06b.isChecked() || tha06888.isChecked()) {
 
                 //        07
                 if (!tha07a.isChecked()
@@ -1192,10 +1192,7 @@ public class SectionHAActivity extends Activity {
                     }
                 }
 
-            }
-
-
-            if (!tha06a.isChecked()) {
+            } else {
 
                 //        08
                 if (tha08.getText().toString().isEmpty()) {
@@ -1523,17 +1520,14 @@ public class SectionHAActivity extends Activity {
                     }
 
 
-                    if (!tha26888.isChecked()) {
-                        if (Double.parseDouble(tha26.getText().toString().isEmpty() ? "0" : tha26.getText().toString()) <= 0) {
-                            Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
-                            tha26.setError("Must be greater than 0");
-                            Log.i(TAG, "tha26: This data is Required!");
-                            return false;
-                        } else {
-                            tha26.setError(null);
-                        }
+                    if (Double.parseDouble(tha26.getText().toString().isEmpty() ? "0" : tha26.getText().toString()) <= 0) {
+                        Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
+                        tha26.setError("Must be greater than 0");
+                        Log.i(TAG, "tha26: This data is Required!");
+                        return false;
+                    } else {
+                        tha26.setError(null);
                     }
-
 
                 }
 
@@ -1615,18 +1609,20 @@ public class SectionHAActivity extends Activity {
                 } else {
                     tha31a.setError(null);
                 }
+
             }
-        }
 
 
-        //        32
-        if (tha32.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha32), Toast.LENGTH_SHORT).show();
-            tha32a.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "tha32: This data is Required!");
-            return false;
-        } else {
-            tha32a.setError(null);
+            //        32
+            if (tha32.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha32), Toast.LENGTH_SHORT).show();
+                tha32a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tha32: This data is Required!");
+                return false;
+            } else {
+                tha32a.setError(null);
+            }
+
         }
 
 
