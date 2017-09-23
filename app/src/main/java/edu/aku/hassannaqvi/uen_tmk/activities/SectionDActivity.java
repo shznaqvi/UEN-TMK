@@ -355,12 +355,9 @@ public class SectionDActivity extends Activity {
             }
             sumOfChildren = (Integer.valueOf(td03lb.getText().toString()) + Integer.valueOf(td03sb.getText().toString())
                     + Integer.valueOf(td03mc.getText().toString()));
+
             if (td04a.isChecked()) {
-
-                sumOfChildren--;
-
-                if ((sumOfChildren)
-                        != Integer.parseInt(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
+                if (sumOfChildren >= Integer.valueOf(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
                     Toast.makeText(this, "Invalid: " + getString(R.string.td02), Toast.LENGTH_LONG).show();
                     td02.setError("Invalid : Check again");    // Set Error on last radio button
 
