@@ -134,6 +134,15 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/td03a"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
             <EditText
                 android:id="@+id/td03lb"
                 android:layout_width="match_parent"
@@ -146,6 +155,16 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/td03b"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
             <EditText
                 android:id="@+id/td03sb"
                 android:layout_width="match_parent"
@@ -157,6 +176,16 @@
                 android:hint="@string/td03b"
                 android:inputType="number"
                 android:maxLength="2" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/td03c"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/td03mc"
