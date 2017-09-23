@@ -524,6 +524,8 @@ public class SectionHBActivity extends Activity {
                     thb25f.setChecked(false);
                     thb25g.setChecked(false);
 
+
+
                     thb26.clearCheck();
 
                     thb27.setText(null);
