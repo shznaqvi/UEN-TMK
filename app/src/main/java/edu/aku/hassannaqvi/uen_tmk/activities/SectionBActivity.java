@@ -560,9 +560,9 @@ public class SectionBActivity extends AppCompatActivity {
 
                 if (ageInyears < 2 || Integer.valueOf(tb08y.getText().toString().isEmpty() ? "0" : tb08y.getText().toString()) < 2) {
                     MainApp.totalImsCount++;
-                }
 
-                if (ageInyears < 5 || Integer.valueOf(tb08y.getText().toString().isEmpty() ? "0" : tb08y.getText().toString()) < 5) {
+                }
+                if (ageInyears < 5) {
                     MainApp.TotalChildCount++;
                     MainApp.TotalMembersCount++;
                 } else if (tb11b.isChecked() && tb04b.isChecked()
