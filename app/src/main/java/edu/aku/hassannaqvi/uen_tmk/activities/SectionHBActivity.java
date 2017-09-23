@@ -1083,6 +1083,16 @@ public class SectionHBActivity extends Activity {
                 thb02.setError(null);
             }
 
+
+            if (Integer.parseInt(thb02.getText().toString()) < 0) {
+                Toast.makeText(this, "How many children had fever during last two weeks in the household", Toast.LENGTH_SHORT).show();
+                thb02.setError("Must be greater than 0");
+                Log.i(TAG, "thb02: This data is Required!");
+                return false;
+            } else {
+                thb02.setError(null);
+            }
+
         }
 
 
@@ -1103,6 +1113,16 @@ public class SectionHBActivity extends Activity {
             if (thb04.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb04), Toast.LENGTH_SHORT).show();
                 thb04.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "thb04: This data is Required!");
+                return false;
+            } else {
+                thb04.setError(null);
+            }
+
+
+            if (Integer.parseInt(thb04.getText().toString()) < 0) {
+                Toast.makeText(this, "Number of childrens must be greater than 0", Toast.LENGTH_SHORT).show();
+                thb04.setError("Must be greater than 0");
                 Log.i(TAG, "thb04: This data is Required!");
                 return false;
             } else {
@@ -1135,6 +1155,16 @@ public class SectionHBActivity extends Activity {
             if (thb06.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb06), Toast.LENGTH_SHORT).show();
                 thb06.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "thb06: This data is Required!");
+                return false;
+            } else {
+                thb06.setError(null);
+            }
+
+
+            if (Integer.parseInt(thb06.getText().toString()) < 0) {
+                Toast.makeText(this, "Number of days must be greater than 0", Toast.LENGTH_SHORT).show();
+                thb06.setError("Must be greater than 0");
                 Log.i(TAG, "thb06: This data is Required!");
                 return false;
             } else {
@@ -1374,6 +1404,17 @@ public class SectionHBActivity extends Activity {
                         } else {
                             thb21hr.setError(null);
                         }
+
+
+                        if (Integer.parseInt(thb21hr.getText().toString()) < 0 && Integer.parseInt(thb21hr.getText().toString()) > 23) {
+                            Toast.makeText(this, "Hours must be 0 - 23", Toast.LENGTH_SHORT).show();
+                            thb21hr.setError("Hours must be 0 - 23");
+                            Log.i(TAG, "thb21hr: This data is Required!");
+                            return false;
+                        } else {
+                            thb21hr.setError(null);
+                        }
+
                     }
 
 
@@ -1632,46 +1673,6 @@ public class SectionHBActivity extends Activity {
 
 
             }
-        }
-
-
-        if (Integer.parseInt(thb02.getText().toString()) < 0) {
-            Toast.makeText(this, "How many children had fever during last two weeks in the household", Toast.LENGTH_SHORT).show();
-            thb02.setError("Must be greater than 0");
-            Log.i(TAG, "thb02: This data is Required!");
-            return false;
-        } else {
-            thb02.setError(null);
-        }
-
-
-        if (Integer.parseInt(thb04.getText().toString()) < 0) {
-            Toast.makeText(this, "Number of childrens must be greater than 0", Toast.LENGTH_SHORT).show();
-            thb04.setError("Must be greater than 0");
-            Log.i(TAG, "thb04: This data is Required!");
-            return false;
-        } else {
-            thb04.setError(null);
-        }
-
-
-        if (Integer.parseInt(thb06.getText().toString()) < 0) {
-            Toast.makeText(this, "Number of days must be greater than 0", Toast.LENGTH_SHORT).show();
-            thb06.setError("Must be greater than 0");
-            Log.i(TAG, "thb06: This data is Required!");
-            return false;
-        } else {
-            thb06.setError(null);
-        }
-
-
-        if (Integer.parseInt(thb21hr.getText().toString()) < 0 && Integer.parseInt(thb21hr.getText().toString()) > 23) {
-            Toast.makeText(this, "Hours must be 0 - 23", Toast.LENGTH_SHORT).show();
-            thb21hr.setError("Hours must be 0 - 23");
-            Log.i(TAG, "thb21hr: This data is Required!");
-            return false;
-        } else {
-            thb21hr.setError(null);
         }
 
 
