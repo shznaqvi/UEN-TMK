@@ -1591,8 +1591,6 @@ public class SectionIActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 MainApp.positionIm = i;
-                //MainApp.dob = MainApp.convertDateFormat(MainApp.familyMembersList.get(0).getDob());
-
             }
 
             @Override
@@ -1821,7 +1819,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpbcgMDate.setVisibility(View.GONE);
                     bcgDateMMon.setText(null);
-                    bcgDateMYear.setVisibility(View.GONE);
+                    bcgDateMYear.setText(null);
                 } else {
                     fldGrpbcgMDate.setVisibility(View.VISIBLE);
                 }
@@ -1848,7 +1846,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpopv0MDate.setVisibility(View.GONE);
                     opv0DateMMon.setText(null);
-                    opv0DateMYear.setVisibility(View.GONE);
+                    opv0DateMYear.setText(null);
                 } else {
                     fldGrpopv0MDate.setVisibility(View.VISIBLE);
                 }
@@ -1875,7 +1873,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpopv1MDate.setVisibility(View.GONE);
                     opv1DateMMon.setText(null);
-                    opv1DateMYear.setVisibility(View.GONE);
+                    opv1DateMYear.setText(null);
                 } else {
                     fldGrpopv1MDate.setVisibility(View.VISIBLE);
                 }
@@ -1902,7 +1900,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppenta1MDate.setVisibility(View.GONE);
                     penta1DateMMon.setText(null);
-                    penta1DateMYear.setVisibility(View.GONE);
+                    penta1DateMYear.setText(null);
                 } else {
                     fldGrppenta1MDate.setVisibility(View.VISIBLE);
                 }
@@ -1930,7 +1928,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppcv1MDate.setVisibility(View.GONE);
                     pcv1DateMMon.setText(null);
-                    pcv1DateMYear.setVisibility(View.GONE);
+                    pcv1DateMYear.setText(null);
                 } else {
                     fldGrppcv1MDate.setVisibility(View.VISIBLE);
                 }
@@ -1957,7 +1955,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpopv2MDate.setVisibility(View.GONE);
                     opv2DateMMon.setText(null);
-                    opv2DateMYear.setVisibility(View.GONE);
+                    opv2DateMYear.setText(null);
                 } else {
                     fldGrpopv2MDate.setVisibility(View.VISIBLE);
                 }
@@ -1985,7 +1983,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppenta2MDate.setVisibility(View.GONE);
                     penta2DateMMon.setText(null);
-                    penta2DateMYear.setVisibility(View.GONE);
+                    penta2DateMYear.setText(null);
                 } else {
                     fldGrppenta2MDate.setVisibility(View.VISIBLE);
                 }
@@ -2013,7 +2011,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppcv2MDate.setVisibility(View.GONE);
                     pcv2DateMMon.setText(null);
-                    pcv2DateMYear.setVisibility(View.GONE);
+                    pcv2DateMYear.setText(null);
                 } else {
                     fldGrppcv2MDate.setVisibility(View.VISIBLE);
                 }
@@ -2040,7 +2038,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpopv3MDate.setVisibility(View.GONE);
                     opv3DateMMon.setText(null);
-                    opv3DateMYear.setVisibility(View.GONE);
+                    opv3DateMYear.setText(null);
                 } else {
                     fldGrpopv3MDate.setVisibility(View.VISIBLE);
                 }
@@ -2068,7 +2066,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppenta3MDate.setVisibility(View.GONE);
                     penta3DateMMon.setText(null);
-                    penta3DateMYear.setVisibility(View.GONE);
+                    penta3DateMYear.setText(null);
                 } else {
                     fldGrppenta3MDate.setVisibility(View.VISIBLE);
                 }
@@ -2096,7 +2094,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrppcv3MDate.setVisibility(View.GONE);
                     pcv3DateMMon.setText(null);
-                    pcv3DateMYear.setVisibility(View.GONE);
+                    pcv3DateMYear.setText(null);
                 } else {
                     fldGrppcv3MDate.setVisibility(View.VISIBLE);
                 }
@@ -2123,7 +2121,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpipvMDate.setVisibility(View.GONE);
                     ipvDateMMon.setText(null);
-                    ipvDateMYear.setVisibility(View.GONE);
+                    ipvDateMYear.setText(null);
                 } else {
                     fldGrpipvMDate.setVisibility(View.VISIBLE);
                 }
@@ -2150,7 +2148,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpmeasles1MDate.setVisibility(View.GONE);
                     measles1DateMMon.setText(null);
-                    measles1DateMYear.setVisibility(View.GONE);
+                    measles1DateMYear.setText(null);
                 } else {
                     fldGrpmeasles1MDate.setVisibility(View.VISIBLE);
                 }
@@ -2177,7 +2175,7 @@ public class SectionIActivity extends AppCompatActivity
                 if (isChecked) {
                     fldGrpmeasles2MDate.setVisibility(View.GONE);
                     measles2DateMMon.setText(null);
-                    measles2DateMYear.setVisibility(View.GONE);
+                    measles2DateMYear.setText(null);
                 } else {
                     fldGrpmeasles2MDate.setVisibility(View.VISIBLE);
                 }
@@ -2516,30 +2514,6 @@ public class SectionIActivity extends AppCompatActivity
                 ti03c.setError(null);
             }
 
-            if (ti03a.isChecked()) {
-                //============ BCG / Card Present ==========
-                if (bcgC.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
-                    bcgC02.setError("This data is Required!");
-                    Log.i(TAG, "bcgC: This data is Required!");
-                    return false;
-                } else {
-                    bcgC02.setError(null);
-                }
-
-
-                if (bcgC01.isChecked() && !bcgdatenp.isChecked()) {
-                    if (bcgDate.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        bcgDate.setError("This data is Required!");
-                        Log.i(TAG, "bcgDate: This data is Required!");
-                        return false;
-                    } else {
-                        bcgDate.setError(null);
-                    }
-                }
-            }
-
             //============ BCG / Mother ==========
             if (bcgM.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
@@ -2563,6 +2537,29 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+                //============ BCG / Card Present ==========
+                if (bcgC.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
+                    bcgC02.setError("This data is Required!");
+                    Log.i(TAG, "bcgC: This data is Required!");
+                    return false;
+                } else {
+                    bcgC02.setError(null);
+                }
+
+
+                if (bcgC01.isChecked() && !bcgdatenp.isChecked()) {
+                    if (bcgDate.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        bcgDate.setError("This data is Required!");
+                        Log.i(TAG, "bcgDate: This data is Required!");
+                        return false;
+                    } else {
+                        bcgDate.setError(null);
+                    }
+                }
+            }
             if (bcgC01.isChecked() || bcgM01.isChecked()) {
 
                 if (bcgPov.getCheckedRadioButtonId() == -1) {
@@ -2572,6 +2569,30 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     bcgPova.setError(null);
+                }
+            }
+
+
+            //============ Polio 0 / Mother ==========
+            if (opv0M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
+                opv0M02.setError("This data is Required!");
+                Log.i(TAG, "opv0M: This data is Required!");
+                return false;
+            } else {
+                opv0M02.setError(null);
+            }
+
+            if (opv0M01.isChecked() && !opv0datenr.isChecked()) {
+                if (opv0DateMYear.getText().toString().isEmpty() && opv0DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv0DateMYear.setError("This data is Required!");
+                    opv0DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv0MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv0DateMYear.setError(null);
+                    opv0DateMMon.setError(null);
                 }
             }
 
@@ -2599,30 +2620,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            //============ Polio 0 / Mother ==========
-            if (opv0M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
-                opv0M02.setError("This data is Required!");
-                Log.i(TAG, "opv0M: This data is Required!");
-                return false;
-            } else {
-                opv0M02.setError(null);
-            }
-
-            if (opv0M01.isChecked() && !opv0datenr.isChecked()) {
-                if (opv0DateMYear.getText().toString().isEmpty() && opv0DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv0DateMYear.setError("This data is Required!");
-                    opv0DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "opv0MDate: This data is Required!");
-                    return false;
-                } else {
-                    opv0DateMYear.setError(null);
-                    opv0DateMMon.setError(null);
-                }
-            }
-
-
             if (opv0C01.isChecked() || opv0M01.isChecked()) {
                 if (opv0Pov.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
@@ -2631,6 +2628,30 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     opv0Pova.setError(null);
+                }
+            }
+
+
+            //============ OPV 1 / Mother ==========
+            if (opv1M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
+                opv1M02.setError("This data is Required!");
+                Log.i(TAG, "opv1M: This data is Required!");
+                return false;
+            } else {
+                opv1M02.setError(null);
+            }
+
+            if (opv1M01.isChecked() && !opv1datenr.isChecked()) {
+                if (opv1DateMYear.getText().toString().isEmpty() && opv1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv1DateMYear.setError("This data is Required!");
+                    opv1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv1MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv1DateMYear.setError(null);
+                    opv1DateMMon.setError(null);
                 }
             }
 
@@ -2657,28 +2678,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            //============ OPV 1 / Mother ==========
-            if (opv1M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
-                opv1M02.setError("This data is Required!");
-                Log.i(TAG, "opv1M: This data is Required!");
-                return false;
-            } else {
-                opv1M02.setError(null);
-            }
-
-            if (opv1M01.isChecked() && !opv1datenr.isChecked()) {
-                if (opv1DateMYear.getText().toString().isEmpty() && opv1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv1DateMYear.setError("This data is Required!");
-                    opv1DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "opv1MDate: This data is Required!");
-                    return false;
-                } else {
-                    opv1DateMYear.setError(null);
-                    opv1DateMMon.setError(null);
-                }
-            }
 
 
             if (opv1C01.isChecked() || opv1M01.isChecked()) {
@@ -2689,30 +2688,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     opv1Pova.setError(null);
-                }
-            }
-
-
-            if (ti03a.isChecked()) {
-                //============ Penta 1 / Card Present ==========
-                if (penta1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
-                    penta1C02.setError("This data is Required!");
-                    Log.i(TAG, "penta1C: This data is Required!");
-                    return false;
-                } else {
-                    penta1C02.setError(null);
-                }
-
-                if (penta1C01.isChecked() && !penta1datenp.isChecked()) {
-                    if (penta1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        penta1Date.setError("This data is Required!");
-                        Log.i(TAG, "penta1Date: This data is Required!");
-                        return false;
-                    } else {
-                        penta1Date.setError(null);
-                    }
                 }
             }
 
@@ -2740,6 +2715,29 @@ public class SectionIActivity extends AppCompatActivity
             }
 
 
+            if (ti03a.isChecked()) {
+                //============ Penta 1 / Card Present ==========
+                if (penta1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
+                    penta1C02.setError("This data is Required!");
+                    Log.i(TAG, "penta1C: This data is Required!");
+                    return false;
+                } else {
+                    penta1C02.setError(null);
+                }
+
+                if (penta1C01.isChecked() && !penta1datenp.isChecked()) {
+                    if (penta1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        penta1Date.setError("This data is Required!");
+                        Log.i(TAG, "penta1Date: This data is Required!");
+                        return false;
+                    } else {
+                        penta1Date.setError(null);
+                    }
+                }
+            }
+
             if (penta1C01.isChecked() || penta1M01.isChecked()) {
                 if (penta1Pov.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
@@ -2751,6 +2749,29 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+
+            //============ PCV 1 / Mother ==========
+            if (pcv1M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
+                pcv1M02.setError("This data is Required!");
+                Log.i(TAG, "pcv1M: This data is Required!");
+                return false;
+            } else {
+                pcv1M02.setError(null);
+            }
+
+            if (pcv1M01.isChecked() && !pcv1datenr.isChecked()) {
+                if (pcv1DateMYear.getText().toString().isEmpty() && pcv1DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    pcv1DateMYear.setError("This data is Required!");
+                    pcv1DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "pcv1MDate: This data is Required!");
+                    return false;
+                } else {
+                    pcv1DateMYear.setError(null);
+                    pcv1DateMMon.setError(null);
+                }
+            }
 
             if (ti03a.isChecked()) {
 
@@ -2776,31 +2797,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            //============ PCV 1 / Mother ==========
-            if (pcv1M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
-                pcv1M02.setError("This data is Required!");
-                Log.i(TAG, "pcv1M: This data is Required!");
-                return false;
-            } else {
-                pcv1M02.setError(null);
-            }
-
-            if (pcv1M01.isChecked() && !pcv1datenr.isChecked()) {
-                if (pcv1DateMYear.getText().toString().isEmpty() && pcv1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    pcv1DateMYear.setError("This data is Required!");
-                    pcv1DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "pcv1MDate: This data is Required!");
-                    return false;
-                } else {
-                    pcv1DateMYear.setError(null);
-                    pcv1DateMMon.setError(null);
-                }
-            }
-
-
-
             if (pcv1C01.isChecked() || pcv1M01.isChecked()) {
                 if (pcv1Pov.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
@@ -2809,30 +2805,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     pcv1Pova.setError(null);
-                }
-            }
-
-
-            if (ti03a.isChecked()) {
-                //============ OPV 2 / Card Present ==========
-                if (opv2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
-                    opv2C02.setError("This data is Required!");
-                    Log.i(TAG, "opv2C: This data is Required!");
-                    return false;
-                } else {
-                    opv2C02.setError(null);
-                }
-
-                if (opv2C01.isChecked() && !opv2datenp.isChecked()) {
-                    if (opv2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        opv2Date.setError("This data is Required!");
-                        Log.i(TAG, "opv2Date: This data is Required!");
-                        return false;
-                    } else {
-                        opv2Date.setError(null);
-                    }
                 }
             }
 
@@ -2859,6 +2831,29 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+                //============ OPV 2 / Card Present ==========
+                if (opv2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
+                    opv2C02.setError("This data is Required!");
+                    Log.i(TAG, "opv2C: This data is Required!");
+                    return false;
+                } else {
+                    opv2C02.setError(null);
+                }
+
+                if (opv2C01.isChecked() && !opv2datenp.isChecked()) {
+                    if (opv2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        opv2Date.setError("This data is Required!");
+                        Log.i(TAG, "opv2Date: This data is Required!");
+                        return false;
+                    } else {
+                        opv2Date.setError(null);
+                    }
+                }
+            }
+
 
             if (opv2C01.isChecked() || opv2M01.isChecked()) {
                 if (opv2Pov.getCheckedRadioButtonId() == -1) {
@@ -2868,6 +2863,29 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     opv2Pova.setError(null);
+                }
+            }
+
+            //============ Penta 2 / Mother ==========
+            if (penta2M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
+                penta2M02.setError("This data is Required!");
+                Log.i(TAG, "penta2M: This data is Required!");
+                return false;
+            } else {
+                penta2M02.setError(null);
+            }
+
+            if (penta2M01.isChecked() && !penta2datenr.isChecked()) {
+                if (penta2DateMYear.getText().toString().isEmpty() && penta2DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    penta2DateMYear.setError("This data is Required!");
+                    penta2DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "penta2MDate: This data is Required!");
+                    return false;
+                } else {
+                    penta2DateMYear.setError(null);
+                    penta2DateMMon.setError(null);
                 }
             }
 
@@ -2895,30 +2913,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            //============ Penta 2 / Mother ==========
-            if (penta2M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
-                penta2M02.setError("This data is Required!");
-                Log.i(TAG, "penta2M: This data is Required!");
-                return false;
-            } else {
-                penta2M02.setError(null);
-            }
-
-            if (penta2M01.isChecked() && !penta2datenr.isChecked()) {
-                if (penta2DateMYear.getText().toString().isEmpty() && penta2DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    penta2DateMYear.setError("This data is Required!");
-                    penta2DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "penta2MDate: This data is Required!");
-                    return false;
-                } else {
-                    penta2DateMYear.setError(null);
-                    penta2DateMMon.setError(null);
-                }
-            }
-
-
 
             if (penta2C01.isChecked() || penta2M01.isChecked()) {
                 if (penta2Pov.getCheckedRadioButtonId() == -1) {
@@ -2928,29 +2922,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     penta2Pova.setError(null);
-                }
-            }
-
-            if (ti03a.isChecked()) {
-                //============ PCV 2 / Card Present ==========
-                if (pcv2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
-                    pcv2C02.setError("This data is Required!");
-                    Log.i(TAG, "pcv2C: This data is Required!");
-                    return false;
-                } else {
-                    pcv2C02.setError(null);
-                }
-
-                if (pcv2C01.isChecked() && !pcv2datenp.isChecked()) {
-                    if (pcv2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        pcv2Date.setError("This data is Required!");
-                        Log.i(TAG, "pcv2Date: This data is Required!");
-                        return false;
-                    } else {
-                        pcv2Date.setError(null);
-                    }
                 }
             }
 
@@ -2977,6 +2948,28 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+                //============ PCV 2 / Card Present ==========
+                if (pcv2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
+                    pcv2C02.setError("This data is Required!");
+                    Log.i(TAG, "pcv2C: This data is Required!");
+                    return false;
+                } else {
+                    pcv2C02.setError(null);
+                }
+
+                if (pcv2C01.isChecked() && !pcv2datenp.isChecked()) {
+                    if (pcv2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        pcv2Date.setError("This data is Required!");
+                        Log.i(TAG, "pcv2Date: This data is Required!");
+                        return false;
+                    } else {
+                        pcv2Date.setError(null);
+                    }
+                }
+            }
 
             if (pcv2C01.isChecked() || pcv2M01.isChecked()) {
                 if (pcv2Pov.getCheckedRadioButtonId() == -1) {
@@ -2986,6 +2979,29 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     pcv2Pova.setError(null);
+                }
+            }
+
+            //============ OPV 3 / Mother ==========
+            if (opv3M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
+                opv3M02.setError("This data is Required!");
+                Log.i(TAG, "opv3M: This data is Required!");
+                return false;
+            } else {
+                opv3M02.setError(null);
+            }
+
+            if (opv3M01.isChecked() && !opv3datenr.isChecked()) {
+                if (opv3DateMYear.getText().toString().isEmpty() && opv3DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    opv3DateMYear.setError("This data is Required!");
+                    opv3DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "opv3MDate: This data is Required!");
+                    return false;
+                } else {
+                    opv3DateMYear.setError(null);
+                    opv3DateMMon.setError(null);
                 }
             }
 
@@ -3011,28 +3027,6 @@ public class SectionIActivity extends AppCompatActivity
                     }
                 }
             }
-            //============ OPV 3 / Mother ==========
-            if (opv3M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
-                opv3M02.setError("This data is Required!");
-                Log.i(TAG, "opv3M: This data is Required!");
-                return false;
-            } else {
-                opv3M02.setError(null);
-            }
-
-            if (opv3M01.isChecked() && !opv3datenr.isChecked()) {
-                if (opv3DateMYear.getText().toString().isEmpty() && opv3DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    opv3DateMYear.setError("This data is Required!");
-                    opv3DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "opv3MDate: This data is Required!");
-                    return false;
-                } else {
-                    opv3DateMYear.setError(null);
-                    opv3DateMMon.setError(null);
-                }
-            }
 
 
             if (opv3C01.isChecked() || opv3M01.isChecked()) {
@@ -3043,29 +3037,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     opv3Pova.setError(null);
-                }
-            }
-
-            if (ti03a.isChecked()) {
-                //============ Penta 3 / Card Present ==========
-                if (penta3C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
-                    penta3C02.setError("This data is Required!");
-                    Log.i(TAG, "penta3C: This data is Required!");
-                    return false;
-                } else {
-                    penta3C02.setError(null);
-                }
-
-                if (penta3C01.isChecked() && !penta3datenp.isChecked()) {
-                    if (penta3Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        penta3Date.setError("This data is Required!");
-                        Log.i(TAG, "penta3Date: This data is Required!");
-                        return false;
-                    } else {
-                        penta3Date.setError(null);
-                    }
                 }
             }
 
@@ -3092,6 +3063,28 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+                //============ Penta 3 / Card Present ==========
+                if (penta3C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
+                    penta3C02.setError("This data is Required!");
+                    Log.i(TAG, "penta3C: This data is Required!");
+                    return false;
+                } else {
+                    penta3C02.setError(null);
+                }
+
+                if (penta3C01.isChecked() && !penta3datenp.isChecked()) {
+                    if (penta3Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        penta3Date.setError("This data is Required!");
+                        Log.i(TAG, "penta3Date: This data is Required!");
+                        return false;
+                    } else {
+                        penta3Date.setError(null);
+                    }
+                }
+            }
 
             if (penta3C01.isChecked() || penta3M01.isChecked()) {
                 if (penta3Pov.getCheckedRadioButtonId() == -1) {
@@ -3101,6 +3094,29 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     penta3Pova.setError(null);
+                }
+            }
+
+            //============ PCV / Mother ==========
+            if (pcv3M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
+                pcv3M02.setError("This data is Required!");
+                Log.i(TAG, "pcv3M: This data is Required!");
+                return false;
+            } else {
+                pcv3M02.setError(null);
+            }
+
+            if (pcv3M01.isChecked() && !pcv3datenr.isChecked()) {
+                if (pcv3DateMYear.getText().toString().isEmpty() && pcv3DateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    pcv3DateMYear.setError("This data is Required!");
+                    pcv3DateMMon.setError("This data is Required!");
+                    Log.i(TAG, "pcv3MDate: This data is Required!");
+                    return false;
+                } else {
+                    pcv3DateMYear.setError(null);
+                    pcv3DateMMon.setError(null);
                 }
             }
 
@@ -3127,31 +3143,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-
-            //============ PCV / Mother ==========
-            if (pcv3M.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
-                pcv3M02.setError("This data is Required!");
-                Log.i(TAG, "pcv3M: This data is Required!");
-                return false;
-            } else {
-                pcv3M02.setError(null);
-            }
-
-            if (pcv3M01.isChecked() && !pcv3datenr.isChecked()) {
-                if (pcv3DateMYear.getText().toString().isEmpty() && pcv3DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    pcv3DateMYear.setError("This data is Required!");
-                    pcv3DateMMon.setError("This data is Required!");
-                    Log.i(TAG, "pcv3MDate: This data is Required!");
-                    return false;
-                } else {
-                    pcv3DateMYear.setError(null);
-                    pcv3DateMMon.setError(null);
-                }
-            }
-
-
             if (pcv3C01.isChecked() || pcv3M01.isChecked()) {
                 if (pcv3Pov.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
@@ -3160,6 +3151,30 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     pcv3Pova.setError(null);
+                }
+            }
+
+
+            //============ IPV / Mother ==========
+            if (ipvM.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
+                ipvM02.setError("This data is Required!");
+                Log.i(TAG, "ipvM: This data is Required!");
+                return false;
+            } else {
+                ipvM02.setError(null);
+            }
+
+            if (ipvM01.isChecked() && !ipvdatenr.isChecked()) {
+                if (ipvDateMYear.getText().toString().isEmpty() && ipvDateMMon.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    ipvDateMYear.setError("This data is Required!");
+                    ipvDateMMon.setError("This data is Required!");
+                    Log.i(TAG, "ipvMDate: This data is Required!");
+                    return false;
+                } else {
+                    ipvDateMYear.setError(null);
+                    ipvDateMMon.setError(null);
                 }
             }
 
@@ -3188,29 +3203,6 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            //============ IPV / Mother ==========
-            if (ipvM.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
-                ipvM02.setError("This data is Required!");
-                Log.i(TAG, "ipvM: This data is Required!");
-                return false;
-            } else {
-                ipvM02.setError(null);
-            }
-
-            if (ipvM01.isChecked() && !ipvdatenr.isChecked()) {
-                if (ipvDateMYear.getText().toString().isEmpty() && ipvDateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                    ipvDateMYear.setError("This data is Required!");
-                    ipvDateMMon.setError("This data is Required!");
-                    Log.i(TAG, "ipvMDate: This data is Required!");
-                    return false;
-                } else {
-                    ipvDateMYear.setError(null);
-                    ipvDateMMon.setError(null);
-                }
-            }
-
 
             if (ipvC01.isChecked() || ipvM01.isChecked()) {
                 if (ipvPov.getCheckedRadioButtonId() == -1) {
@@ -3220,29 +3212,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     ipvPova.setError(null);
-                }
-            }
-
-            if (ti03a.isChecked()) {
-                //============ measles1 / Card Present ==========
-                if (measles1C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
-                    measles1C02.setError("This data is Required!");
-                    Log.i(TAG, "measles1C: This data is Required!");
-                    return false;
-                } else {
-                    measles1C02.setError(null);
-                }
-
-                if (measles1C01.isChecked() && !measles1datenp.isChecked()) {
-                    if (measles1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        measles1Date.setError("This data is Required!");
-                        Log.i(TAG, "measles1Date: This data is Required!");
-                        return false;
-                    } else {
-                        measles1Date.setError(null);
-                    }
                 }
             }
 
@@ -3269,6 +3238,28 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+                //============ measles1 / Card Present ==========
+                if (measles1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
+                    measles1C02.setError("This data is Required!");
+                    Log.i(TAG, "measles1C: This data is Required!");
+                    return false;
+                } else {
+                    measles1C02.setError(null);
+                }
+
+                if (measles1C01.isChecked() && !measles1datenp.isChecked()) {
+                    if (measles1Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        measles1Date.setError("This data is Required!");
+                        Log.i(TAG, "measles1Date: This data is Required!");
+                        return false;
+                    } else {
+                        measles1Date.setError(null);
+                    }
+                }
+            }
 
             if (measles1C01.isChecked() || measles1M01.isChecked()) {
                 if (measles1Pov.getCheckedRadioButtonId() == -1) {
@@ -3278,32 +3269,6 @@ public class SectionIActivity extends AppCompatActivity
                     return false;
                 } else {
                     measles1Pova.setError(null);
-                }
-            }
-
-
-            if (ti03a.isChecked()) {
-
-                //============ measles2 / Card Present ==========
-                if (measles2C.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
-                    measles2C02.setError("This data is Required!");
-                    Log.i(TAG, "measles2C: This data is Required!");
-                    return false;
-                } else {
-                    measles2C02.setError(null);
-                }
-
-                if (measles2C01.isChecked() && !measles2datenp.isChecked()) {
-
-                    if (measles2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
-                        measles2Date.setError("This data is Required!");
-                        Log.i(TAG, "measles2Date: This data is Required!");
-                        return false;
-                    } else {
-                        measles2Date.setError(null);
-                    }
                 }
             }
 
@@ -3330,6 +3295,30 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+            if (ti03a.isChecked()) {
+
+                //============ measles2 / Card Present ==========
+                if (measles2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
+                    measles2C02.setError("This data is Required!");
+                    Log.i(TAG, "measles2C: This data is Required!");
+                    return false;
+                } else {
+                    measles2C02.setError(null);
+                }
+
+                if (measles2C01.isChecked() && !measles2datenp.isChecked()) {
+
+                    if (measles2Date.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        measles2Date.setError("This data is Required!");
+                        Log.i(TAG, "measles2Date: This data is Required!");
+                        return false;
+                    } else {
+                        measles2Date.setError(null);
+                    }
+                }
+            }
 
             if (measles2C01.isChecked() || measles2M01.isChecked()) {
                 if (measles2Pov.getCheckedRadioButtonId() == -1) {
