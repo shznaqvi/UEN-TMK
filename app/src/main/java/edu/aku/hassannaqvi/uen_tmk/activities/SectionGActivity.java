@@ -134,8 +134,11 @@ public class SectionGActivity extends Activity {
                 if (MainApp.TotalChildCount > 0) {
                     Intent secNext = new Intent(this, SectionHAActivity.class);
                     startActivity(secNext);
-                } else {
+                } else if (MainApp.totalImsCount > 0) {
                     Intent secNext = new Intent(this, SectionIActivity.class);
+                    startActivity(secNext);
+                } else {
+                    Intent secNext = new Intent(this, SectionKActivity.class);
                     startActivity(secNext);
                 }
             } else {
