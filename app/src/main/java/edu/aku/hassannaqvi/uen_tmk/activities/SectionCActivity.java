@@ -1364,7 +1364,7 @@ public class SectionCActivity extends Activity {
         } else {
             tc17888.setError(null);
         }
-        if (!tc17888.isChecked() && (Integer.valueOf(tc17.getText().toString()) < 1 ||
+        /*if (!tc17888.isChecked() && (Integer.valueOf(tc17.getText().toString()) < 1 ||
                 Integer.valueOf(tc17.getText().toString()) >= 1000)) {
             Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.tc17), Toast.LENGTH_SHORT).show();
             tc17.setError("Range from 0 to 1000!");    // Set Error on last radio button
@@ -1373,7 +1373,7 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             tc17.setError(null);
-        }
+        }*/
 
         if (td06.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.td06), Toast.LENGTH_SHORT).show();

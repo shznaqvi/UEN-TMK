@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_tmk.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -261,6 +263,7 @@ public class SectionBActivity extends AppCompatActivity {
                     fldGrptb11.setVisibility(View.GONE);
 
                     tb10a.setEnabled(false);
+                    tb10a.setChecked(false);
                 }
             }
         });
@@ -317,11 +320,24 @@ public class SectionBActivity extends AppCompatActivity {
 
                     tb11b.setEnabled(false);
                     tb11b.setChecked(false);
+                } else if (ageInyears < 12) {
+
+                    tb11a.setEnabled(true);
+                    tb11b.setEnabled(false);
+//                        tb11c.setEnabled(false);
+                    tb11d.setEnabled(false);
+                    tb11e.setEnabled(false);
+
                 } else {
                     tb09.setText(null);
                     tb09.setEnabled(true);
 
-                    tb10a.setEnabled(true);
+                    if (tb04b.isChecked()) {
+                        tb10a.setEnabled(true);
+                    } else {
+                        tb10a.setEnabled(false);
+                        tb10a.setChecked(false);
+                    }
                     tb10b.setEnabled(true);
                     tb10c.setEnabled(true);
                     tb10d.setEnabled(true);
@@ -335,7 +351,15 @@ public class SectionBActivity extends AppCompatActivity {
                     tb10k.setEnabled(true);
                     tb10l.setEnabled(true);
 
+                    if (!tb10a.isChecked() || !tb03b.isChecked()) {
+                        tb11a.setEnabled(true);
+                    } else {
+                        tb11a.setEnabled(false);
+                        tb11a.setChecked(false);
+                    }
                     tb11b.setEnabled(true);
+                    tb11d.setEnabled(true);
+                    tb11e.setEnabled(true);
                 }
                 //}
             }
@@ -382,7 +406,7 @@ public class SectionBActivity extends AppCompatActivity {
                         tb11b.setChecked(false);
                     } else if (ageInyears < 12) {
 
-                        tb11a.setEnabled(false);
+                        tb11a.setEnabled(true);
                         tb11b.setEnabled(false);
 //                        tb11c.setEnabled(false);
                         tb11d.setEnabled(false);
@@ -392,7 +416,12 @@ public class SectionBActivity extends AppCompatActivity {
                         tb09.setText(null);
                         tb09.setEnabled(true);
 
-                        tb10a.setEnabled(true);
+                        if (tb04b.isChecked()) {
+                            tb10a.setEnabled(true);
+                        } else {
+                            tb10a.setEnabled(false);
+                            tb10a.setChecked(false);
+                        }
                         tb10b.setEnabled(true);
                         tb10c.setEnabled(true);
                         tb10d.setEnabled(true);
@@ -406,7 +435,15 @@ public class SectionBActivity extends AppCompatActivity {
                         tb10k.setEnabled(true);
                         tb10l.setEnabled(true);
 
+                        if (!tb10a.isChecked() || !tb03b.isChecked()) {
+                            tb11a.setEnabled(true);
+                        } else {
+                            tb11a.setEnabled(false);
+                            tb11a.setChecked(false);
+                        }
                         tb11b.setEnabled(true);
+                        tb11d.setEnabled(true);
+                        tb11e.setEnabled(true);
                     }
                     //}
 
@@ -452,7 +489,13 @@ public class SectionBActivity extends AppCompatActivity {
                 if (tb11b.isChecked()) {
 
                     if (tb04b.isChecked()) {
-                        fldGrptb11.setVisibility(View.VISIBLE);
+                        //        IS RSVP
+                        if (MainApp.isRsvp) {
+                            fldGrptb11.setVisibility(View.GONE);
+                            tb12.clearCheck();
+                        } else {
+                            fldGrptb11.setVisibility(View.VISIBLE);
+                        }
                     } else {
                         tb12.clearCheck();
                         fldGrptb11.setVisibility(View.GONE);
@@ -465,7 +508,6 @@ public class SectionBActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @OnClick(R.id.btn_End)
@@ -477,8 +519,28 @@ public class SectionBActivity extends AppCompatActivity {
     @OnClick(R.id.btn_ContNextSec)
     void onBtnContNextSecClick() {
         //TODO implement
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                SectionBActivity.this);
+        alertDialogBuilder
+                .setMessage("Are you sure to move next section??")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
 
-        startActivity(new Intent(this, SectionCActivity.class));
     }
 
     @OnClick(R.id.btn_addMore)
@@ -572,6 +634,9 @@ public class SectionBActivity extends AppCompatActivity {
 
         sB.put("tb12", tb12a.isChecked() ? "1" : tb12b.isChecked() ? "2" : "0");
 
+        if (tb12a.isChecked()) {
+            MainApp.isRsvp = true;
+        }
 
         MainApp.ageRdo = tbdob.indexOfChild(findViewById(tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
@@ -802,7 +867,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         }
 
-        if (tb04b.isChecked() && tb11b.isChecked()) {
+        if (tb04b.isChecked() && tb11b.isChecked() && !MainApp.isRsvp) {
             if (tb12.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
                 tb12a.setError("This data is Required!");    // Set Error on last radio button
