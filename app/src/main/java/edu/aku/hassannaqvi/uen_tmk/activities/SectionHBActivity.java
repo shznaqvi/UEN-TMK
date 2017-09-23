@@ -1406,8 +1406,6 @@ public class SectionHBActivity extends Activity {
                         }
 
 
-
-
                         if (Integer.parseInt(thb21hr.getText().toString()) < 0 && Integer.parseInt(thb21hr.getText().toString()) > 23) {
                             Toast.makeText(this, "Hours must be 0 - 23", Toast.LENGTH_SHORT).show();
                             thb21hr.setError("Hours must be 0 - 23");
