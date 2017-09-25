@@ -282,6 +282,11 @@ public class MainActivity extends Activity {
         startActivity(iL);
     }
 
+    public void openM(View v) {
+        Intent iM = new Intent(this, SectionMActivity.class);
+        startActivity(iM);
+    }
+
 
     public void openHA(View v) {
         Intent iB = new Intent(this, SectionHAActivity.class);
