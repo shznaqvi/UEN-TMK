@@ -285,6 +285,12 @@ public class SectionCActivity extends Activity {
     RadioButton tc08ra;
     @BindView(R.id.tc08rb)
     RadioButton tc08rb;
+    @BindView(R.id.tc08s)
+    RadioGroup tc08s;
+    @BindView(R.id.tc08sa)
+    RadioButton tc08sa;
+    @BindView(R.id.tc08sb)
+    RadioButton tc08sb;
     @BindView(R.id.tc09a)
     RadioGroup tc09a;
     @BindView(R.id.tc09aa)
@@ -713,6 +719,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc08p", tc08pa.isChecked() ? "1" : tc08pb.isChecked() ? "2" : "0");
         sC.put("tc08q", tc08qa.isChecked() ? "1" : tc08qb.isChecked() ? "2" : "0");
         sC.put("tc08r", tc08ra.isChecked() ? "1" : tc08rb.isChecked() ? "2" : "0");
+        sC.put("tc08s", tc08sa.isChecked() ? "1" : tc08sb.isChecked() ? "2" : "0");
 
         sC.put("tc09a", tc09aa.isChecked() ? "1" : tc09ab.isChecked() ? "2" : "0");
         sC.put("tc09b", tc09ba.isChecked() ? "1" : tc09bb.isChecked() ? "2" : "0");
@@ -1069,6 +1076,16 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             tc08rb.setError(null);
+        }
+
+        if (tc08s.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tc08s), Toast.LENGTH_SHORT).show();
+            tc08sb.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tc08s: This data is Required!");
+            return false;
+        } else {
+            tc08sb.setError(null);
         }
 
 

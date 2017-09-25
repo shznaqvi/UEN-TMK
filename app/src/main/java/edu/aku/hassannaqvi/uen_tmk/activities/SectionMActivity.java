@@ -93,6 +93,25 @@ public class SectionMActivity extends Activity {
     RadioButton tm12a;
     @BindView(R.id.tm12b)
     RadioButton tm12b;
+    @BindView(R.id.tm13)
+    RadioGroup tm13;
+    @BindView(R.id.tm13a)
+    RadioButton tm13a;
+    @BindView(R.id.tm13b)
+    RadioButton tm13b;
+    @BindView(R.id.tm14)
+    RadioGroup tm14;
+    @BindView(R.id.tm14a)
+    RadioButton tm14a;
+    @BindView(R.id.tm14b)
+    RadioButton tm14b;
+    @BindView(R.id.tm15)
+    RadioGroup tm15;
+    @BindView(R.id.tm15a)
+    RadioButton tm15a;
+    @BindView(R.id.tm15b)
+    RadioButton tm15b;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,6 +168,9 @@ public class SectionMActivity extends Activity {
         sM.put("tm10", tm10a.isChecked() ? "1" : tm10b.isChecked() ? "2" : "0");
         sM.put("tm11", tm11a.isChecked() ? "1" : tm11b.isChecked() ? "2" : "0");
         sM.put("tm12", tm12a.isChecked() ? "1" : tm12b.isChecked() ? "2" : "0");
+        sM.put("tm13", tm13a.isChecked() ? "1" : tm13b.isChecked() ? "2" : "0");
+        sM.put("tm14", tm14a.isChecked() ? "1" : tm14b.isChecked() ? "2" : "0");
+        sM.put("tm15", tm15a.isChecked() ? "1" : tm15b.isChecked() ? "2" : "0");
 
         MainApp.fc.setsM(String.valueOf(sM));
     }
@@ -301,6 +323,36 @@ public class SectionMActivity extends Activity {
             return false;
         } else {
             tm12b.setError(null);
+        }
+
+        if (tm13.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm13), Toast.LENGTH_SHORT).show();
+            tm13b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tm13: This data is Required!");
+            return false;
+        } else {
+            tm13b.setError(null);
+        }
+
+        if (tm14.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm14), Toast.LENGTH_SHORT).show();
+            tm14b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tm14: This data is Required!");
+            return false;
+        } else {
+            tm14b.setError(null);
+        }
+
+        if (tm15.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm15), Toast.LENGTH_SHORT).show();
+            tm15b.setError("This data is Required!");    // Set Error on last radio button
+
+            Log.i(TAG, "tm15: This data is Required!");
+            return false;
+        } else {
+            tm15b.setError(null);
         }
 
         return true;

@@ -29,10 +29,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorHeading"
+            android:gravity="center"
             android:text="@string/tma"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/colorPrimaryDark"/>
 
         <!--01-->
         <TextView
@@ -136,6 +137,17 @@
                 android:text="@string/no"/>
         </RadioGroup>
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:gravity="center"
+            android:text="@string/tmb"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorPrimaryDark"/>
+
         <!--04-->
         <TextView
             android:layout_width="match_parent"
@@ -238,6 +250,16 @@
                 android:text="@string/no"/>
         </RadioGroup>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:gravity="center"
+            android:text="@string/tmc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorPrimaryDark"/>
+
         <!--07-->
         <TextView
             android:layout_width="match_parent"
@@ -271,6 +293,7 @@
                 android:layout_weight="1"
                 android:text="@string/no"/>
         </RadioGroup>
+
 
         <!--08-->
         <TextView
@@ -441,6 +464,120 @@
                 android:layout_weight="1"
                 android:text="@string/no"/>
         </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:gravity="center"
+            android:text="@string/tmd"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <!--13-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/tm13"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <RadioGroup
+            android:id="@+id/tm13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tm13a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/tm13b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+
+        <!--14-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/tm14"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <RadioGroup
+            android:id="@+id/tm14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tm14a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/tm14b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <!--15-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/tm15"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <RadioGroup
+            android:id="@+id/tm15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tm15a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/tm15b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 

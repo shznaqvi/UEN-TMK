@@ -14,10 +14,10 @@
   </string>
 
     <string name="end_interview"> اختتام </string>
-    <string name="start_interview"> انٹرویو شروع کریں </string>
-    <string name="nextSection"> اگلا سیکشن </string>
+  <string name="start_interview"> انٽرويو شروع ڪريو </string>
+  <string name="nextSection"> اڳيون سيڪشن </string>
     <string name="addMember"> افراد کا اندراج </string>
-    <string name="dcstatus"> انٹریو کا نتیجہ</string>
+  <string name="dcstatus"> انٽرويو جو نتيجو</string>
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
     <!-- String related to section headings -->
@@ -185,7 +185,7 @@
     <string name="tc02f"> ڪاٺين جون تختيون </string>
     <string name="tc02g"> ڪاغذن جي/ گتن جي </string>
     <string name="tc02h"> لوهه جا پتر </string>
-    <string name="tc02i"> پڪيون سرون </string>
+  <string name="tc02i"> پڪيون سرون/ آر سي سي </string>
     <string name="tc02j"> لوهه جي </string>
     <string name="tc02k"> ڪاٺ/ٽي آئرن/مٽي </string>
     <string name="tc02l"> سيمينٽ فائبر </string>
@@ -243,21 +243,20 @@
     <string name="tc08c"> ٽيليويزن </string>
     <string name="tc08d"> تار واري فون </string>
     <string name="tc08e"> ريفريجريٽر </string>
-
-
     <string name="tc08f"> ائير ڪنڊيشنر </string>
     <string name="tc08g"> ايئر ڪولر </string>
     <string name="tc08h"> ڪرسي </string>
     <string name="tc08i"> الماڙي </string>
     <string name="tc08j"> ڪپڙن ڌوئڻواري مشين </string>
     <string name="tc08k"> پاڻي واري پمپ </string>
-    <string name="tc08l"> بيڊ </string>
+  <string name="tc08l"> بيڊ / کٽ </string>
     <string name="tc08m"> گھڙيال </string>
     <string name="tc08n"> صوفا </string>
     <string name="tc08o"> ڪئميرا </string>
     <string name="tc08p"> سلائي واري مشين </string>
     <string name="tc08q"> ڪمپيوٽر/ ليپ ٽاپ </string>
     <string name="tc08r"> انٽرنيٽ ڪنيڪشن </string>
+  <string name="tc08s"> موبائل انٽرنيٽ </string>
     <string name="tc09"> گھر جي ڪنهن به ميمبر وٽ هيٺيون شيون موجود آهن: </string>
     <string name="tc09a"> واچ </string>
     <string name="tc09b"> موبائل فون </string>
@@ -877,23 +876,25 @@
     <string name="tl12c"> پاوڊر ٽوٿ </string>
 
 
-
-    <string name="tma"> Drinking Water </string>
-    <string name="tmb"> Food </string>
-    <string name="tmc"> Domestic Hygiene </string>
-    <string name="tm01"> Interior water storage container is covered </string>
-    <string name="tm02"> Exterior water storage container is cleaned </string>
-    <string name="tm03"> Water present in water storage container </string>
-    <string name="tm04"> Clean dishes are covered </string>
-    <string name="tm05"> Clean dishes are covered </string>
-    <string name="tm06"> Clean dishes are kept high </string>
-    <string name="tm07"> All food is covered </string>
-    <string name="tm08"> No trash outside house </string>
-    <string name="tm09"> No trash inside house </string>
-    <string name="tm10"> Is there unrestrained animal in patio or house </string>
-    <string name="tm11"> Is there accumulation of dirty clothes </string>
-    <string name="tm12"> Are there significant number of flies in house </string>
-    <string name="tm13"> Is there standing water in patio or around house </string>
+  <string name="tma"> پيئڻ جو پاڻي </string>
+  <string name="tmb"> کاڌو پيتو </string>
+  <string name="tmc"> گهريلو صفائي </string>
+  <string name="tmd"> ماحولياتي گدلاڻ </string>
+  <string name="tm01"> اندروني پاڻي جمع ڪرڻ جو برتن يا جڳاء صاف آهي </string>
+  <string name="tm02"> ٻاهر پاڻي جمع ڪرڻ جو برتن يا جڳاء صاف آهي. </string>
+  <string name="tm03"> پاڻي جمع ڪرڻ جو برتن يا جڳاء ۾ پاڻي موجود آهي </string>
+  <string name="tm04">گھر ۾ استعمال ٿيندڙ برتن ڍڪيل آھن</string>
+  <string name="tm05"> برتن ڪنهن مٿين جڳھ تي رکيل آهن </string>
+  <string name="tm06">کاڌو ڍڪيل آهن </string>
+  <string name="tm07"> ڪچري رکڻ واري ٽوڪري گھر جي ٻاهر رکيل نه آهي </string>
+  <string name="tm08"> ڪچري رکڻ واري ٽوڪري گھر جي اندر رکيل نه آهي </string>
+  <string name="tm09">چوپايو مال گهر جي اندر بيٺل آھي </string>
+  <string name="tm10"> گھر ۾ خراب ڪپڙا جمع آھن </string>
+  <string name="tm11"> گھر ۾ مکين جو لا تعداد انگ </string>
+  <string name="tm12"> گھر جي چوڌاري پاڻي بيٺل پاڻي ڪو نه آھي </string>
+  <string name="tm13"> ڪچري ضايع ڪرڻ جي جڳھ </string>
+  <string name="tm14"> گھٽيون صاف آھن </string>
+  <string name="tm15"> گھٽين ۾ پاڻي بيٺل آھي </string>
 
     <string name="istatus"> انٽرويو جو نتيجو </string>
     <string name="istatus1"> مڪمل ٿيو </string>

@@ -1279,6 +1279,37 @@
 
         </RadioGroup>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorHeading"
+                android:text="@string/tc08s"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <RadioGroup
+                android:id="@+id/tc08s"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/tc08sa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/yes"/>
+
+                <RadioButton
+                    android:id="@+id/tc08sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/no"/>
+
+            </RadioGroup>
+
         </LinearLayout>
 
         <LinearLayout
