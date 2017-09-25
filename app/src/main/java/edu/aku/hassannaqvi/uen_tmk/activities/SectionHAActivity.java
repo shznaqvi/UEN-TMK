@@ -420,7 +420,7 @@ public class SectionHAActivity extends Activity {
 
 
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1")) {
+            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1") || MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
 
