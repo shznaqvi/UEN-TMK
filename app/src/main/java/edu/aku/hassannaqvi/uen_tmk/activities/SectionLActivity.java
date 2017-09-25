@@ -155,6 +155,8 @@ public class SectionLActivity extends Activity {
     RadioButton tl1288;
     @BindView(R.id.tl1288x)
     EditText tl1288x;
+    @BindView(R.id.fldGrptl11)
+    LinearLayout fldGrptl11;
 
 
     @Override
@@ -278,6 +280,22 @@ public class SectionLActivity extends Activity {
                     tl1288x.setVisibility(View.VISIBLE);
                 } else {
                     tl1288x.setVisibility(View.GONE);
+                    tl1288x.setText(null);
+                }
+            }
+        });
+
+        tl10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (tl10a.isChecked()) {
+                    fldGrptl11.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrptl11.setVisibility(View.GONE);
+                    tl11.clearCheck();
+                    tl1188x.setText(null);
+                    tl12.clearCheck();
                     tl1288x.setText(null);
                 }
             }
@@ -526,43 +544,46 @@ public class SectionLActivity extends Activity {
         }
 
 //        11
-        if (tl11.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl11), Toast.LENGTH_SHORT).show();
-            tl1188.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tl11: This data is Required!");
-            return false;
-        } else {
-            tl1188.setError(null);
-        }
-        if (tl1188.isChecked() && tl1188x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            tl1188x.setError("This data is Required! ");    // Set Error on last radio button
+        if (tl10a.isChecked()) {
+            if (tl11.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl11), Toast.LENGTH_SHORT).show();
+                tl1188.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tl1188x: This data is Required!");
-            return false;
-        } else {
-            tl1188x.setError(null);
-        }
+                Log.i(TAG, "tl11: This data is Required!");
+                return false;
+            } else {
+                tl1188.setError(null);
+            }
+            if (tl1188.isChecked() && tl1188x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                tl1188x.setError("This data is Required! ");    // Set Error on last radio button
+
+                Log.i(TAG, "tl1188x: This data is Required!");
+                return false;
+            } else {
+                tl1188x.setError(null);
+            }
 
 //        12
-        if (tl12.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl12), Toast.LENGTH_SHORT).show();
-            tl1288.setError("This data is Required!");    // Set Error on last radio button
+            if (tl12.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl12), Toast.LENGTH_SHORT).show();
+                tl1288.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "tl12: This data is Required!");
-            return false;
-        } else {
-            tl1288.setError(null);
-        }
-        if (tl1288.isChecked() && tl1288x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-            tl1288x.setError("This data is Required! ");    // Set Error on last radio button
+                Log.i(TAG, "tl12: This data is Required!");
+                return false;
+            } else {
+                tl1288.setError(null);
+            }
+            if (tl1288.isChecked() && tl1288x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                tl1288x.setError("This data is Required! ");    // Set Error on last radio button
 
-            Log.i(TAG, "tl1288x: This data is Required!");
-            return false;
-        } else {
-            tl1288x.setError(null);
+                Log.i(TAG, "tl1288x: This data is Required!");
+                return false;
+            } else {
+                tl1288x.setError(null);
+            }
         }
 
         return true;
