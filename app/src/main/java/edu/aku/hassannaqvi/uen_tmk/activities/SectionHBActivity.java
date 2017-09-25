@@ -525,7 +525,6 @@ public class SectionHBActivity extends Activity {
                     thb25g.setChecked(false);
 
 
-
                     thb26.clearCheck();
 
                     thb27.setText(null);
@@ -736,6 +735,7 @@ public class SectionHBActivity extends Activity {
                     thb25g.setChecked(false);
 
                     fldGrpth15.setVisibility(View.GONE);
+                    fldGrpth26.setVisibility(View.VISIBLE);
 
                 } else {
                     fldGrpth15.setVisibility(View.VISIBLE);
@@ -799,6 +799,7 @@ public class SectionHBActivity extends Activity {
 
 
                     fldGrpth22.setVisibility(View.VISIBLE);
+                    fldGrpth25.setVisibility(View.VISIBLE);
                     fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21hr.setVisibility(View.VISIBLE);
@@ -823,6 +824,7 @@ public class SectionHBActivity extends Activity {
                     thb26.clearCheck();*/
 
                     fldGrpth22.setVisibility(View.VISIBLE);
+                    fldGrpth25.setVisibility(View.VISIBLE);
                     fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21d.setVisibility(View.VISIBLE);
@@ -853,6 +855,7 @@ public class SectionHBActivity extends Activity {
                     thb21d.setVisibility(View.GONE);
 
                     fldGrpth22.setVisibility(View.GONE);
+                    fldGrpth25.setVisibility(View.GONE);
                     fldGrpth26.setVisibility(View.GONE);
                 }
             }
@@ -876,9 +879,11 @@ public class SectionHBActivity extends Activity {
                     thb25g.setChecked(false);
 
                     fldGrpth23.setVisibility(View.GONE);
+                    fldGrpth25.setVisibility(View.GONE);
 
                 } else {
                     fldGrpth23.setVisibility(View.VISIBLE);
+                    fldGrpth25.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1001,7 +1006,7 @@ public class SectionHBActivity extends Activity {
                 e.printStackTrace();
             }
 
-            if (UpdateDB()) {
+            /*if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -1014,7 +1019,7 @@ public class SectionHBActivity extends Activity {
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+            }*/
         }
     }
 
@@ -1194,7 +1199,7 @@ public class SectionHBActivity extends Activity {
                 thb07a.setError(null);
             }
 
-            if (!thb07a.isChecked()) {
+            if (thb07b.isChecked() || thb07888.isChecked()) {
 
                 //        08
                 if (!thb08a.isChecked()
@@ -1228,7 +1233,7 @@ public class SectionHBActivity extends Activity {
                 }
 
 
-            } else if (thb07a.isChecked()) {
+            } else {
 
 
                 //        09
@@ -1500,19 +1505,8 @@ public class SectionHBActivity extends Activity {
                                     thb25a.setError(null);
                                 }
 
-
-                                //        26
-                                if (thb26.getCheckedRadioButtonId() == -1) {
-                                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
-                                    thb26a.setError("This data is Required!");    // Set Error on last radio button
-                                    Log.i(TAG, "thb26: This data is Required!");
-                                    return false;
-                                } else {
-                                    thb26a.setError(null);
-                                }
-
-
                             }
+
 
                         }
 
@@ -1520,6 +1514,19 @@ public class SectionHBActivity extends Activity {
                     }
 
 
+                }
+
+
+                if (!thb21c.isChecked()) {
+                    //        26
+                    if (thb26.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
+                        thb26a.setError("This data is Required!");    // Set Error on last radio button
+                        Log.i(TAG, "thb26: This data is Required!");
+                        return false;
+                    } else {
+                        thb26a.setError(null);
+                    }
                 }
 
 
