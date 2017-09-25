@@ -865,16 +865,16 @@
     <string name="tl09c"> هفتي ۾ ٻه ڀيرا </string>
     <string name="tl09d"> هفتي ۾ ٽي ڀيرا </string>
 
-    <string name="tl10"> Do  you Brush your teeth? </string>
-    <string name="tl11"> How often you brush your teeth? </string>
+  <string name="tl10"> ڇا توهان ڏندڻ ڪندا آهيو. </string>
+  <string name="tl11"> توھان ڪڏهن ڪڏهن ڏندڻ ڪندا آهيو؟ </string>
     <string name="tl11a"> روزانو </string>
     <string name="tl11b"> هفتي ۾ هڪ ڀيرو </string>
     <string name="tl11c"> هفتي ۾ ٻه ڀيرا </string>
     <string name="tl11d"> هفتي ۾ ٽي ڀيرا </string>
-    <string name="tl12"> What type of brush do you usually use? </string>
-    <string name="tl12a"> Tooth Paste </string>
-    <string name="tl12b"> Miswak </string>
-    <string name="tl12c"> Tooth Powder </string>
+  <string name="tl12">توھان ڪهڙي قسم جو ڏندڻ ڪندا آهيو؟  </string>
+  <string name="tl12a"> ٽوٿ پيسٽ </string>
+  <string name="tl12b"> مسواڪ </string>
+  <string name="tl12c"> ٽوٿ پائوڊر </string>
 
 
     <string name="tma"> Drinking Water </string>
