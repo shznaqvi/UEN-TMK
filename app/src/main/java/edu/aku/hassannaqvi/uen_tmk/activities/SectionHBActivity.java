@@ -1006,7 +1006,7 @@ public class SectionHBActivity extends Activity {
                 e.printStackTrace();
             }
 
-            /*if (UpdateDB()) {
+            if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -1019,7 +1019,7 @@ public class SectionHBActivity extends Activity {
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }*/
+            }
         }
     }
 
@@ -1509,8 +1509,6 @@ public class SectionHBActivity extends Activity {
 
 
                         }
-
-
 
 
                     }
