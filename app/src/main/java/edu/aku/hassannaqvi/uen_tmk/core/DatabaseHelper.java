@@ -64,8 +64,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsContract.FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
             + FormsContract.FormsTable.COLUMN_UID + " TEXT," +
-            FormsTable.COLUMN_IS_NEW + " TEXT," +
-            FormsContract.FormsTable.COLUMN_DSSID + " TEXT," +
+            //FormsTable.COLUMN_IS_NEW + " TEXT," +
+            //FormsContract.FormsTable.COLUMN_DSSID + " TEXT," +
             FormsContract.FormsTable.COLUMN_FORMDATE + " TEXT," +
             FormsTable.COLUMN_USER + " TEXT," +
             FormsContract.FormsTable.COLUMN_SA + " TEXT," +
@@ -606,8 +606,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, fc.getProjectName());
         values.put(FormsContract.FormsTable.COLUMN_UID, fc.getUID());
-        values.put(FormsContract.FormsTable.COLUMN_IS_NEW, fc.getISNEW());
-        values.put(FormsContract.FormsTable.COLUMN_DSSID, fc.getDSSID());
+        //values.put(FormsContract.FormsTable.COLUMN_IS_NEW, fc.getISNEW());
+        //values.put(FormsContract.FormsTable.COLUMN_DSSID, fc.getDSSID());
         values.put(FormsContract.FormsTable.COLUMN_FORMDATE, fc.getFormDate());
         values.put(FormsContract.FormsTable.COLUMN_USER, fc.getUser());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, fc.getIstatus());
@@ -1029,8 +1029,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsContract.FormsTable._ID,
                 FormsContract.FormsTable.COLUMN_UID,
-                FormsContract.FormsTable.COLUMN_IS_NEW,
-                FormsContract.FormsTable.COLUMN_DSSID,
+                //FormsContract.FormsTable.COLUMN_IS_NEW,
+                //FormsContract.FormsTable.COLUMN_DSSID,
                 FormsContract.FormsTable.COLUMN_FORMDATE,
                 FormsContract.FormsTable.COLUMN_USER,
                 FormsContract.FormsTable.COLUMN_ISTATUS,
@@ -1339,8 +1339,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
-                FormsTable.COLUMN_IS_NEW,
-                FormsTable.COLUMN_DSSID,
+                //FormsTable.COLUMN_IS_NEW,
+                //FormsTable.COLUMN_DSSID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
                 FormsTable.COLUMN_ISTATUS,
@@ -1401,8 +1401,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormsTable._ID,
                 FormsTable.COLUMN_UID,
-                FormsContract.FormsTable.COLUMN_IS_NEW,
-                FormsContract.FormsTable.COLUMN_DSSID,
+                //FormsContract.FormsTable.COLUMN_IS_NEW,
+                //FormsContract.FormsTable.COLUMN_DSSID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
                 FormsContract.FormsTable.COLUMN_ISTATUS,
@@ -1462,7 +1462,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 FormsTable._ID,
-                FormsTable.COLUMN_DSSID,
+                //FormsTable.COLUMN_DSSID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SYNCED,
@@ -1490,7 +1490,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
                 fc.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
-                fc.setDSSID(c.getString(c.getColumnIndex(FormsTable.COLUMN_DSSID)));
+                //fc.setDSSID(c.getString(c.getColumnIndex(FormsTable.COLUMN_DSSID)));
                 fc.setFormDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_FORMDATE)));
                 fc.setIstatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
                 fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));

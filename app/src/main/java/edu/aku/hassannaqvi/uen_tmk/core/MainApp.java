@@ -94,6 +94,8 @@ public class MainApp extends Application {
     public static int totalImsCount = 0;
     public static int positionIm = 0;
     public static boolean flag = true;
+    public static int versionCode;
+    public static String versionName;
 
     public static Map<String, FamilyMembersContract> childsMap = new HashMap<>();
     public static ArrayList<String> lstChild = new ArrayList<>();
