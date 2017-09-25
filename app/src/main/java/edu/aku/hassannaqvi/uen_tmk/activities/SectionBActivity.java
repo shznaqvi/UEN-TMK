@@ -558,7 +558,7 @@ public class SectionBActivity extends AppCompatActivity {
 
                 finish();
 
-                if (ageInyears < 2 || Integer.valueOf(tb08y.getText().toString().isEmpty() ? "0" : tb08y.getText().toString()) < 2) {
+                if (ageInyears < 2) {
                     MainApp.totalImsCount++;
 
                 }
@@ -658,7 +658,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
-                    ageInyears < 5 ? "1" : ageInyears < 2 ? "3" :
+                    ageInyears < 2 ? "3" : ageInyears < 5 ? "1" :
                             (tb11b.isChecked() && tb04b.isChecked()
                                     && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
                     , String.valueOf(MainApp.counter),

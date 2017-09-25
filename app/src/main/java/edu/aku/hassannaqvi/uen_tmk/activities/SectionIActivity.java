@@ -26,9 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -1557,6 +1555,7 @@ public class SectionIActivity extends AppCompatActivity
     List<RadioGroup> grpMeasles2;
     String maxDate2Years;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -1568,8 +1567,7 @@ public class SectionIActivity extends AppCompatActivity
         //        get data from sec B
 
         if (MainApp.flag) {
-            MainApp.childsMap = new HashMap<>();
-            MainApp.lstChild = new ArrayList<>();
+
 
             MainApp.childsMap.put("....", null);
             MainApp.lstChild.add("....");
@@ -1584,8 +1582,8 @@ public class SectionIActivity extends AppCompatActivity
 
 
         }
-
         tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+
         tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
@@ -2221,16 +2219,14 @@ public class SectionIActivity extends AppCompatActivity
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
-
-                if (MainApp.imsCount < MainApp.totalImsCount) {
-                    MainApp.imsCount++;
+                //finish();
+                MainApp.imsCount++;
+                if (MainApp.imsCount <= MainApp.totalImsCount) {
+                    //finish();
 
 
                     MainApp.lstChild.remove(MainApp.positionIm);
                     MainApp.childsMap.remove(MainApp.positionIm);
-
-
                     MainApp.flag = false;
                     Intent secNext = new Intent(this, SectionIActivity.class);
                     //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
