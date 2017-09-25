@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -94,8 +95,8 @@ public class MainApp extends Application {
     public static int positionIm = 0;
     public static boolean flag = true;
 
-    public static Map<String, FamilyMembersContract> childsMap;
-    public static ArrayList<String> lstChild;
+    public static Map<String, FamilyMembersContract> childsMap = new HashMap<>();
+    public static ArrayList<String> lstChild = new ArrayList<>();
 
     public static int dcChildCount = 1;
     public static int dcMotherCount = 1;
