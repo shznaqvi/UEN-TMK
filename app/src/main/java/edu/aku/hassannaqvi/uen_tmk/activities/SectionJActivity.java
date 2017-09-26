@@ -1074,7 +1074,7 @@ public class SectionJActivity extends Activity {
                 months = MainApp.ageInMonths(dob[0], dob[1]);
             }
 
-            if (Integer.valueOf(tj12m.getText().toString()) > months) {
+            if (Long.valueOf(tj12m.getText().toString()) > months) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                 tj12m.setError("Invalid Months!");    // Set Error on last radio button
 
