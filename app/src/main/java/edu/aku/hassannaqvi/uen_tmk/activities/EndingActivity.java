@@ -160,10 +160,10 @@ public class EndingActivity extends Activity {
 
         int updcount = db.updateEnding();
         /*if (MainApp.memFlag != 0) {
-            db.updateCensus();
+            db.updateFamilyMember();
         }
         if (MainApp.currentDeceasedCheck != 0) {
-            db.updateDeceased();
+            db.updateDeceasedMother();
         }
         if (MainApp.currentMotherCheck != 0) {
             db.updateMother();

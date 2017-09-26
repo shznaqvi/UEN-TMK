@@ -98,15 +98,6 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/syncSg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="syncSg"
-                android:text="Upload SG Data" />
-
-            <Button
                 android:id="@+id/openMembers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -260,6 +251,16 @@
             <!--android:layout_marginTop="16dp"-->
             <!--android:onClick="openEnd"-->
             <!--android:text="Section End" />-->
+
+            <Button
+                android:id="@+id/updateApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:background="#D60000"
+                android:onClick="updateApp"
+                android:text="Update App" />
 
             <Button
                 android:id="@+id/openDB"

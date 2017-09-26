@@ -8,9 +8,11 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -28,18 +30,14 @@ import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncCensusRest extends AsyncTask<String, String, String> {
+public class SyncFamilyMembers extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncCensus";
+    private static final String TAG = "SyncFamilyMembers";
     private Context mContext;
     private ProgressDialog pd;
 
-    private String mRestUrl;
-    private RestTaskCallback mCallback;
-
-    public SyncCensusRest(String restUrl, RestTaskCallback callback) {
-        this.mRestUrl = restUrl;
-        this.mCallback = callback;
+    public SyncFamilyMembers(Context context) {
+        mContext = context;
     }
 
     public static void longInfo(String str) {
@@ -54,13 +52,14 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Census");
+        pd.setTitle("Please wait... Processing FamilyMember");
         pd.show();
 
     }
 
+
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(Void... params) {
 
         String line = "No Response";
         try {
@@ -74,9 +73,35 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        mCallback.onTaskComplete(result);
         super.onPostExecute(result);
+        int sSynced = 0;
+        String sSyncedError = "";
+        JSONArray json = null;
+        try {
+            json = new JSONArray(result);
+            DatabaseHelper db = new DatabaseHelper(mContext);
+            for (int i = 0; i < json.length(); i++) {
+                JSONObject jsonObject = new JSONObject(json.getString(i));
+                if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
+                    db.updateFamilyMember(jsonObject.getString("id"));
+                    sSynced++;
+                } else {
+                    sSyncedError += "\nError: " + jsonObject.getString("message").toString();
+                }
+            }
+            Toast.makeText(mContext, sSynced + " FamilyMember's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
+            pd.setMessage(sSynced + " FamilyMember's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading FamilyMember's data");
+            pd.show();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
+
+            pd.setMessage(result);
+            pd.setTitle("FamilyMember Sync Failed");
+            pd.show();
+        }
     }
 
     private String downloadUrl(String myurl) throws IOException {
@@ -85,9 +110,9 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FamilyMembersContract> Census = db.getUnsyncedFamilyMembers();
-        Log.d(TAG, String.valueOf(Census.size()));
-        if (Census.size() > 0) {
+        Collection<FamilyMembersContract> FamilyMember = db.getUnsyncedFamilyMembers();
+        Log.d(TAG, String.valueOf(FamilyMember.size()));
+        if (FamilyMember.size() > 0) {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -112,7 +137,7 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (FamilyMembersContract fc : Census) {
+                        for (FamilyMembersContract fc : FamilyMember) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());
@@ -166,13 +191,4 @@ public class SyncCensusRest extends AsyncTask<String, String, String> {
         reader.read(buffer);
         return new String(buffer);
     }*/
-
-    public abstract static class RestTaskCallback {
-        /**
-         * Called when the HTTP request completes.
-         *
-         * @param result The result of the HTTP request.
-         */
-        public abstract void onTaskComplete(String result);
-    }
 }
