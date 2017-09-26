@@ -23,20 +23,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract.DeceasedChild;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncCensus extends AsyncTask<Void, Void, String> {
+public class SyncDeceasedChild extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncCensus";
+    private static final String TAG = "SyncDeceasedChild";
     private Context mContext;
     private ProgressDialog pd;
 
-    public SyncCensus(Context context) {
+    public SyncDeceasedChild(Context context) {
         mContext = context;
     }
 
@@ -52,7 +53,7 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Census");
+        pd.setTitle("Please wait... Processing Deceased");
         pd.show();
 
     }
@@ -63,7 +64,7 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL;
+            String url = MainApp._HOST_URL + DeceasedChild._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
@@ -83,23 +84,23 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateCensus(jsonObject.getString("id"));
+                    db.updateDeceasedChild(jsonObject.getString("id"));
                     sSynced++;
                 } else {
                     sSyncedError += "\nError: " + jsonObject.getString("message").toString();
                 }
             }
-            Toast.makeText(mContext, sSynced + " Census synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Deceased Child synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Census synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Census data");
+            pd.setMessage(sSynced + " Deceased Child synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Deceased Child data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Failed Sync Child Deceased" + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Census's Sync Failed");
+            pd.setTitle("Deceased's Child Sync Failed");
             pd.show();
         }
     }
@@ -110,9 +111,9 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FamilyMembersContract> Census = db.getUnsyncedFamilyMembers();
-        Log.d(TAG, String.valueOf(Census.size()));
-        if (Census.size() > 0) {
+        Collection<DeceasedChildContract> Deceased = db.getUnsyncedDeceasedChild();
+        Log.d(TAG, String.valueOf(Deceased.size()));
+        if (Deceased.size() > 0) {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -137,7 +138,7 @@ public class SyncCensus extends AsyncTask<Void, Void, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (FamilyMembersContract fc : Census) {
+                        for (DeceasedChildContract fc : Deceased) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());

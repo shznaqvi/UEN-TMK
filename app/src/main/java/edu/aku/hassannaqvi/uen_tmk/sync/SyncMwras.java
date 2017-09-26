@@ -24,20 +24,19 @@ import java.net.URL;
 import java.util.Collection;
 
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
-import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract.MWRATable;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncMother extends AsyncTask<Void, Void, String> {
+public class SyncMwras extends AsyncTask<String, String, String> {
 
-    private static final String TAG = "SyncMother";
+    private static final String TAG = "SyncMWRA";
     private Context mContext;
     private ProgressDialog pd;
 
-    public SyncMother(Context context) {
+    public SyncMwras(Context context) {
         mContext = context;
     }
 
@@ -50,26 +49,24 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-        pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Mother");
-        pd.show();
-
-    }
-
-
-    @Override
-    protected String doInBackground(Void... params) {
-
+    protected String doInBackground(String... strings) {
         String line = "No Response";
         try {
-            String url = MainApp._HOST_URL + MWRATable._URL;
+            String url = MainApp._HOST_URL + MWRAContract.MWRATable._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        pd = new ProgressDialog(mContext);
+        pd.setTitle("Please wait... Processing MWRA");
+        pd.show();
+
     }
 
     @Override
@@ -84,23 +81,23 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateMother(jsonObject.getString("id"));
+                    db.updateMWRAs(jsonObject.getString("id"));
                     sSynced++;
                 } else {
                     sSyncedError += "\nError: " + jsonObject.getString("message").toString();
                 }
             }
-            Toast.makeText(mContext, sSynced + " Mother synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " MWRA's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Mother synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Mother data");
+            pd.setMessage(sSynced + " MWRA's synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading MWRA's data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Failed Sync MWRA's" + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Mother's Sync Failed");
+            pd.setTitle("MWRA's Sync Failed");
             pd.show();
         }
     }
@@ -111,9 +108,9 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<MWRAContract> Mother = db.getUnsyncedMother();
-        Log.d(TAG, String.valueOf(Mother.size()));
-        if (Mother.size() > 0) {
+        Collection<MWRAContract> MWRA = db.getUnsyncedMWRA();
+        Log.d(TAG, String.valueOf(MWRA.size()));
+        if (MWRA.size() > 0) {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -138,11 +135,11 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
                     try {
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
-                        for (MWRAContract fc : Mother) {
+                        for (MWRAContract fc : MWRA) {
 
                             //if (fc.getIstatus().equals("1")) {
                             jsonSync.put(fc.toJSONObject());
-                            // }
+                            //}
 
                         }
                         wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
@@ -152,7 +149,8 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                   /*===================================================================*/
+
+/*===================================================================*/
 
                     BufferedReader br = new BufferedReader(new InputStreamReader(
                             conn.getInputStream(), "utf-8"));
@@ -180,7 +178,15 @@ public class SyncMother extends AsyncTask<Void, Void, String> {
             return "No new records to sync";
         }
         return line;
-                /*===================================================================*/
+            /*===================================================================*/
 
     }
+
+   /* public String readIt(InputStream stream) throws IOException {
+        Reader reader = null;
+        reader = new InputStreamReader(stream, "UTF-8");
+        char[] buffer = new char[len];
+        reader.read(buffer);
+        return new String(buffer);
+    }*/
 }

@@ -31,13 +31,13 @@ import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 /**
  * Created by hassan.naqvi on 7/26/2016.
  */
-public class SyncDeceased extends AsyncTask<Void, Void, String> {
+public class SyncDeceasedMother extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncDeceased";
+    private static final String TAG = "SyncDeceasedMother";
     private Context mContext;
     private ProgressDialog pd;
 
-    public SyncDeceased(Context context) {
+    public SyncDeceasedMother(Context context) {
         mContext = context;
     }
 
@@ -84,7 +84,7 @@ public class SyncDeceased extends AsyncTask<Void, Void, String> {
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                    db.updateDeceased(jsonObject.getString("id"));
+                    db.updateDeceasedMother(jsonObject.getString("id"));
                     sSynced++;
                 } else {
                     sSyncedError += "\nError: " + jsonObject.getString("message").toString();
