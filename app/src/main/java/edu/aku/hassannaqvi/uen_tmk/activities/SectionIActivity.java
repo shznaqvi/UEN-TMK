@@ -356,7 +356,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (opv1M01.isChecked() && opv1C01.isChecked()) {
+            if (opv1M01.isChecked() || opv1C01.isChecked()) {
                 fldGrpov2.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc3.setLayoutParams(params);
@@ -454,7 +454,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (penta1M01.isChecked() && penta1C01.isChecked()) {
+            if (penta1M01.isChecked() || penta1C01.isChecked()) {
                 fldGrpov4.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc4.setLayoutParams(params);
@@ -553,8 +553,7 @@ public class SectionIActivity extends AppCompatActivity
             }
 
 
-
-            if (pcv1M01.isChecked() && pcv1C01.isChecked()) {
+            if (pcv1M01.isChecked() || pcv1C01.isChecked()) {
                 fldGrpov5.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc5.setLayoutParams(params);
@@ -654,7 +653,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (opv2M01.isChecked() && opv2C01.isChecked()) {
+            if (opv2M01.isChecked() || opv2C01.isChecked()) {
                 fldGrpov6.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc6.setLayoutParams(params);
@@ -752,7 +751,7 @@ public class SectionIActivity extends AppCompatActivity
                     penta2datenr.setChecked(false);
                 }
             }
-            if (penta2M01.isChecked() && penta2C01.isChecked()) {
+            if (penta2M01.isChecked() || penta2C01.isChecked()) {
                 fldGrpov7.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc7.setLayoutParams(params);
@@ -851,7 +850,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (pcv2M01.isChecked() && pcv2C01.isChecked()) {
+            if (pcv2M01.isChecked() || pcv2C01.isChecked()) {
                 fldGrpov8.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc8.setLayoutParams(params);
@@ -950,7 +949,7 @@ public class SectionIActivity extends AppCompatActivity
                     opv3datenr.setChecked(false);
                 }
             }
-            if (opv3M01.isChecked() && opv3C01.isChecked()) {
+            if (opv3M01.isChecked() || opv3C01.isChecked()) {
                 fldGrpov9.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc9.setLayoutParams(params);
@@ -1049,7 +1048,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (penta3M01.isChecked() && penta3C01.isChecked()) {
+            if (penta3M01.isChecked() || penta3C01.isChecked()) {
                 fldGrpov10.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc10.setLayoutParams(params);
@@ -1149,7 +1148,7 @@ public class SectionIActivity extends AppCompatActivity
             }
 
 
-            if (pcv3M01.isChecked() && pcv3C01.isChecked()) {
+            if (pcv3M01.isChecked() || pcv3C01.isChecked()) {
                 fldGrpov11.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc11.setLayoutParams(params);
@@ -1249,7 +1248,7 @@ public class SectionIActivity extends AppCompatActivity
             }
 
 
-            if (ipvM01.isChecked() && ipvC01.isChecked()) {
+            if (ipvM01.isChecked() || ipvC01.isChecked()) {
                 fldGrpov12.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc10.setLayoutParams(params);
@@ -1350,7 +1349,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (measles1M01.isChecked() && measles1C01.isChecked()) {
+            if (measles1M01.isChecked() || measles1C01.isChecked()) {
                 fldGrpov13.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc13.setLayoutParams(params);
@@ -1454,7 +1453,7 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
-            if (measles2M01.isChecked() && measles2C01.isChecked()) {
+            if (measles2M01.isChecked() || measles2C01.isChecked()) {
                 fldGrpov14.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc14.setLayoutParams(params);
@@ -2515,6 +2514,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
                 bcgM02.setError("This data is Required!");
                 Log.i(TAG, "bcgM: This data is Required!");
+                bcgM02.setFocusable(true);
+                bcgM02.setFocusableInTouchMode(true);
+                bcgM02.requestFocus();
                 return false;
             } else {
                 bcgM02.setError(null);
@@ -2522,10 +2524,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (bcgM01.isChecked() && !bcgdatenr.isChecked()) {
                 if (bcgDateMYear.getText().toString().isEmpty() && bcgDateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     bcgDateMYear.setError("This data is Required!");
                     bcgDateMMon.setError("This data is Required!");
                     Log.i(TAG, "bcgMDate: This data is Required!");
+                    bcgDateMYear.requestFocus();
                     return false;
                 } else {
                     bcgDateMYear.setError(null);
@@ -2539,6 +2542,10 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg), Toast.LENGTH_SHORT).show();
                     bcgC02.setError("This data is Required!");
                     Log.i(TAG, "bcgC: This data is Required!");
+                    bcgC02.setFocusable(true);
+                    bcgC02.setFocusableInTouchMode(true);
+                    bcgC02.requestFocus();
+
                     return false;
                 } else {
                     bcgC02.setError(null);
@@ -2547,9 +2554,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (bcgC01.isChecked() && !bcgdatenp.isChecked()) {
                     if (bcgDate.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bcgDate.setError("This data is Required!");
                         Log.i(TAG, "bcgDate: This data is Required!");
+                        bcgDate.requestFocus();
                         return false;
                     } else {
                         bcgDate.setError(null);
@@ -2559,9 +2567,12 @@ public class SectionIActivity extends AppCompatActivity
             if (bcgC01.isChecked() || bcgM01.isChecked()) {
 
                 if (bcgPov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     bcgPova.setError("This data is Required!");
                     Log.i(TAG, "bcgPov: This data is Required!");
+                    bcgPova.setFocusable(true);
+                    bcgPova.setFocusableInTouchMode(true);
+                    bcgPova.requestFocus();
                     return false;
                 } else {
                     bcgPova.setError(null);
@@ -2574,6 +2585,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
                 opv0M02.setError("This data is Required!");
                 Log.i(TAG, "opv0M: This data is Required!");
+                opv0M02.setFocusable(true);
+                opv0M02.setFocusableInTouchMode(true);
+                opv0M02.requestFocus();
                 return false;
             } else {
                 opv0M02.setError(null);
@@ -2581,10 +2595,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv0M01.isChecked() && !opv0datenr.isChecked()) {
                 if (opv0DateMYear.getText().toString().isEmpty() && opv0DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     opv0DateMYear.setError("This data is Required!");
                     opv0DateMMon.setError("This data is Required!");
                     Log.i(TAG, "opv0MDate: This data is Required!");
+                    opv0DateMYear.requestFocus();
                     return false;
                 } else {
                     opv0DateMYear.setError(null);
@@ -2599,6 +2614,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0), Toast.LENGTH_SHORT).show();
                     opv0C02.setError("This data is Required!");
                     Log.i(TAG, "opv0C: This data is Required!");
+                    opv0C02.setFocusable(true);
+                    opv0C02.setFocusableInTouchMode(true);
+                    opv0C02.requestFocus();
                     return false;
                 } else {
                     opv0C02.setError(null);
@@ -2606,9 +2624,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (opv0C01.isChecked() && !opv0datenp.isChecked()) {
                     if (opv0Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv0Date.setError("This data is Required!");
                         Log.i(TAG, "opv0Date: This data is Required!");
+                        opv0Date.requestFocus();
                         return false;
                     } else {
                         opv0Date.setError(null);
@@ -2618,9 +2637,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv0C01.isChecked() || opv0M01.isChecked()) {
                 if (opv0Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     opv0Pova.setError("This data is Required!");
                     Log.i(TAG, "opv0Pov: This data is Required!");
+                    opv0Pova.setFocusable(true);
+                    opv0Pova.setFocusableInTouchMode(true);
+                    opv0Pova.requestFocus();
                     return false;
                 } else {
                     opv0Pova.setError(null);
@@ -2633,6 +2655,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
                 opv1M02.setError("This data is Required!");
                 Log.i(TAG, "opv1M: This data is Required!");
+                opv1M02.setFocusable(true);
+                opv1M02.setFocusableInTouchMode(true);
+                opv1M02.requestFocus();
                 return false;
             } else {
                 opv1M02.setError(null);
@@ -2640,10 +2665,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv1M01.isChecked() && !opv1datenr.isChecked()) {
                 if (opv1DateMYear.getText().toString().isEmpty() && opv1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     opv1DateMYear.setError("This data is Required!");
                     opv1DateMMon.setError("This data is Required!");
                     Log.i(TAG, "opv1MDate: This data is Required!");
+                    opv1DateMYear.requestFocus();
                     return false;
                 } else {
                     opv1DateMYear.setError(null);
@@ -2657,6 +2683,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1), Toast.LENGTH_SHORT).show();
                     opv1C02.setError("This data is Required!");
                     Log.i(TAG, "opv1C: This data is Required!");
+                    opv1C02.setFocusable(true);
+                    opv1C02.setFocusableInTouchMode(true);
+                    opv1C02.requestFocus();
                     return false;
                 } else {
                     opv1C02.setError(null);
@@ -2664,9 +2693,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (opv1C01.isChecked() && !opv1datenp.isChecked()) {
                     if (opv1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv1Date.setError("This data is Required!");
                         Log.i(TAG, "opv1Date: This data is Required!");
+                        opv1Date.requestFocus();
                         return false;
                     } else {
                         opv1Date.setError(null);
@@ -2678,9 +2708,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv1C01.isChecked() || opv1M01.isChecked()) {
                 if (opv1Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     opv1Pova.setError("This data is Required!");
                     Log.i(TAG, "opv1Pov: This data is Required!");
+                    opv1Pova.setFocusable(true);
+                    opv1Pova.setFocusableInTouchMode(true);
+                    opv1Pova.requestFocus();
                     return false;
                 } else {
                     opv1Pova.setError(null);
@@ -2692,6 +2725,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
                 penta1M02.setError("This data is Required!");
                 Log.i(TAG, "penta1M: This data is Required!");
+                penta1M02.setFocusable(true);
+                penta1M02.setFocusableInTouchMode(true);
+                penta1M02.requestFocus();
                 return false;
             } else {
                 penta1M02.setError(null);
@@ -2699,10 +2735,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta1M01.isChecked() && !penta1datenr.isChecked()) {
                 if (penta1DateMYear.getText().toString().isEmpty() && penta1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     penta1DateMYear.setError("This data is Required!");
                     penta1DateMMon.setError("This data is Required!");
                     Log.i(TAG, "penta1MDate: This data is Required!");
+                    penta1DateMYear.requestFocus();
                     return false;
                 } else {
                     penta1DateMYear.setError(null);
@@ -2717,6 +2754,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
                     penta1C02.setError("This data is Required!");
                     Log.i(TAG, "penta1C: This data is Required!");
+                    penta1C02.setFocusable(true);
+                    penta1C02.setFocusableInTouchMode(true);
+                    penta1C02.requestFocus();
                     return false;
                 } else {
                     penta1C02.setError(null);
@@ -2724,9 +2764,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (penta1C01.isChecked() && !penta1datenp.isChecked()) {
                     if (penta1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta1Date.setError("This data is Required!");
                         Log.i(TAG, "penta1Date: This data is Required!");
+                        penta1Date.requestFocus();
                         return false;
                     } else {
                         penta1Date.setError(null);
@@ -2736,9 +2777,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta1C01.isChecked() || penta1M01.isChecked()) {
                 if (penta1Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     penta1Pova.setError("This data is Required!");
                     Log.i(TAG, "penta1Pov: This data is Required!");
+                    penta1Pova.setFocusable(true);
+                    penta1Pova.setFocusableInTouchMode(true);
+                    penta1Pova.requestFocus();
                     return false;
                 } else {
                     penta1Pova.setError(null);
@@ -2751,6 +2795,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
                 pcv1M02.setError("This data is Required!");
                 Log.i(TAG, "pcv1M: This data is Required!");
+                pcv1M02.setFocusable(true);
+                pcv1M02.setFocusableInTouchMode(true);
+                pcv1M02.requestFocus();
                 return false;
             } else {
                 pcv1M02.setError(null);
@@ -2758,10 +2805,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv1M01.isChecked() && !pcv1datenr.isChecked()) {
                 if (pcv1DateMYear.getText().toString().isEmpty() && pcv1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     pcv1DateMYear.setError("This data is Required!");
                     pcv1DateMMon.setError("This data is Required!");
                     Log.i(TAG, "pcv1MDate: This data is Required!");
+                    pcv1DateMYear.requestFocus();
                     return false;
                 } else {
                     pcv1DateMYear.setError(null);
@@ -2776,6 +2824,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1), Toast.LENGTH_SHORT).show();
                     pcv1C02.setError("This data is Required!");
                     Log.i(TAG, "pcv1C: This data is Required!");
+                    pcv1C02.setFocusable(true);
+                    pcv1C02.setFocusableInTouchMode(true);
+                    pcv1C02.requestFocus();
                     return false;
                 } else {
                     pcv1C02.setError(null);
@@ -2783,9 +2834,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (pcv1C01.isChecked() && !pcv1datenp.isChecked()) {
                     if (pcv1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv1Date.setError("This data is Required!");
                         Log.i(TAG, "pcv1Date: This data is Required!");
+                        pcv1Date.requestFocus();
                         return false;
                     } else {
                         pcv1Date.setError(null);
@@ -2795,9 +2847,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv1C01.isChecked() || pcv1M01.isChecked()) {
                 if (pcv1Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     pcv1Pova.setError("This data is Required!");
                     Log.i(TAG, "pcv1Pov: This data is Required!");
+                    pcv1Pova.setFocusable(true);
+                    pcv1Pova.setFocusableInTouchMode(true);
+                    pcv1Pova.requestFocus();
                     return false;
                 } else {
                     pcv1Pova.setError(null);
@@ -2809,6 +2864,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
                 opv2M02.setError("This data is Required!");
                 Log.i(TAG, "opv2M: This data is Required!");
+                opv2M02.setFocusable(true);
+                opv2M02.setFocusableInTouchMode(true);
+                opv2M02.requestFocus();
                 return false;
             } else {
                 opv2M02.setError(null);
@@ -2816,10 +2874,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv2M01.isChecked() && !opv2datenr.isChecked()) {
                 if (opv2DateMYear.getText().toString().isEmpty() && opv2DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     opv2DateMYear.setError("This data is Required!");
                     opv2DateMMon.setError("This data is Required!");
                     Log.i(TAG, "opv2MDate: This data is Required!");
+                    opv2DateMYear.requestFocus();
                     return false;
                 } else {
                     opv2DateMYear.setError(null);
@@ -2833,6 +2892,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2), Toast.LENGTH_SHORT).show();
                     opv2C02.setError("This data is Required!");
                     Log.i(TAG, "opv2C: This data is Required!");
+                    opv2C02.setFocusable(true);
+                    opv2C02.setFocusableInTouchMode(true);
+                    opv2C02.requestFocus();
                     return false;
                 } else {
                     opv2C02.setError(null);
@@ -2840,9 +2902,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (opv2C01.isChecked() && !opv2datenp.isChecked()) {
                     if (opv2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv2Date.setError("This data is Required!");
                         Log.i(TAG, "opv2Date: This data is Required!");
+                        opv2Date.requestFocus();
                         return false;
                     } else {
                         opv2Date.setError(null);
@@ -2853,9 +2916,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv2C01.isChecked() || opv2M01.isChecked()) {
                 if (opv2Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     opv2Pova.setError("This data is Required!");
                     Log.i(TAG, "opv2Pov: This data is Required!");
+                    opv2Pova.setFocusable(true);
+                    opv2Pova.setFocusableInTouchMode(true);
+                    opv2Pova.requestFocus();
                     return false;
                 } else {
                     opv2Pova.setError(null);
@@ -2867,6 +2933,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
                 penta2M02.setError("This data is Required!");
                 Log.i(TAG, "penta2M: This data is Required!");
+                penta2M02.setFocusable(true);
+                penta2M02.setFocusableInTouchMode(true);
+                penta2M02.requestFocus();
                 return false;
             } else {
                 penta2M02.setError(null);
@@ -2874,10 +2943,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta2M01.isChecked() && !penta2datenr.isChecked()) {
                 if (penta2DateMYear.getText().toString().isEmpty() && penta2DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     penta2DateMYear.setError("This data is Required!");
                     penta2DateMMon.setError("This data is Required!");
                     Log.i(TAG, "penta2MDate: This data is Required!");
+                    penta2DateMYear.requestFocus();
                     return false;
                 } else {
                     penta2DateMYear.setError(null);
@@ -2891,6 +2961,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2), Toast.LENGTH_SHORT).show();
                     penta2C02.setError("This data is Required!");
                     Log.i(TAG, "penta2C: This data is Required!");
+                    penta2C02.setFocusable(true);
+                    penta2C02.setFocusableInTouchMode(true);
+                    penta2C02.requestFocus();
                     return false;
                 } else {
                     penta2C02.setError(null);
@@ -2899,9 +2972,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (penta2C01.isChecked() && !penta2datenp.isChecked()) {
                     if (penta2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta2Date.setError("This data is Required!");
                         Log.i(TAG, "penta2Date: This data is Required!");
+                        penta2Date.requestFocus();
                         return false;
                     } else {
                         penta2Date.setError(null);
@@ -2912,9 +2986,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta2C01.isChecked() || penta2M01.isChecked()) {
                 if (penta2Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     penta2Pova.setError("This data is Required!");
                     Log.i(TAG, "penta2Pov: This data is Required!");
+                    penta2Pova.setFocusable(true);
+                    penta2Pova.setFocusableInTouchMode(true);
+                    penta2Pova.requestFocus();
                     return false;
                 } else {
                     penta2Pova.setError(null);
@@ -2926,6 +3003,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
                 pcv2M02.setError("This data is Required!");
                 Log.i(TAG, "pcv2M: This data is Required!");
+                pcv2M02.setFocusable(true);
+                pcv2M02.setFocusableInTouchMode(true);
+                pcv2M02.requestFocus();
                 return false;
             } else {
                 pcv2M02.setError(null);
@@ -2933,10 +3013,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv2M01.isChecked() && !pcv2datenr.isChecked()) {
                 if (pcv2DateMYear.getText().toString().isEmpty() && pcv2DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     pcv2DateMYear.setError("This data is Required!");
                     pcv2DateMMon.setError("This data is Required!");
                     Log.i(TAG, "pcv2MDate: This data is Required!");
+                    pcv2DateMYear.requestFocus();
                     return false;
                 } else {
                     pcv2DateMYear.setError(null);
@@ -2950,6 +3031,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2), Toast.LENGTH_SHORT).show();
                     pcv2C02.setError("This data is Required!");
                     Log.i(TAG, "pcv2C: This data is Required!");
+                    pcv2C02.setFocusable(true);
+                    pcv2C02.setFocusableInTouchMode(true);
+                    pcv2C02.requestFocus();
                     return false;
                 } else {
                     pcv2C02.setError(null);
@@ -2957,9 +3041,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (pcv2C01.isChecked() && !pcv2datenp.isChecked()) {
                     if (pcv2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv2Date.setError("This data is Required!");
                         Log.i(TAG, "pcv2Date: This data is Required!");
+                        pcv2Date.requestFocus();
                         return false;
                     } else {
                         pcv2Date.setError(null);
@@ -2969,9 +3054,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv2C01.isChecked() || pcv2M01.isChecked()) {
                 if (pcv2Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     pcv2Pova.setError("This data is Required!");
                     Log.i(TAG, "pcv2Pov: This data is Required!");
+                    pcv2Pova.setFocusable(true);
+                    pcv2Pova.setFocusableInTouchMode(true);
+                    pcv2Pova.requestFocus();
                     return false;
                 } else {
                     pcv2Pova.setError(null);
@@ -2983,6 +3071,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
                 opv3M02.setError("This data is Required!");
                 Log.i(TAG, "opv3M: This data is Required!");
+                opv3M02.setFocusable(true);
+                opv3M02.setFocusableInTouchMode(true);
+                opv3M02.requestFocus();
                 return false;
             } else {
                 opv3M02.setError(null);
@@ -2990,10 +3081,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv3M01.isChecked() && !opv3datenr.isChecked()) {
                 if (opv3DateMYear.getText().toString().isEmpty() && opv3DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     opv3DateMYear.setError("This data is Required!");
                     opv3DateMMon.setError("This data is Required!");
                     Log.i(TAG, "opv3MDate: This data is Required!");
+                    opv3DateMYear.requestFocus();
                     return false;
                 } else {
                     opv3DateMYear.setError(null);
@@ -3007,6 +3099,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3), Toast.LENGTH_SHORT).show();
                     opv3C02.setError("This data is Required!");
                     Log.i(TAG, "opv3C: This data is Required!");
+                    opv3C02.setFocusable(true);
+                    opv3C02.setFocusableInTouchMode(true);
+                    opv3C02.requestFocus();
                     return false;
                 } else {
                     opv3C02.setError(null);
@@ -3014,9 +3109,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (opv3C01.isChecked() && !opv3datenp.isChecked()) {
                     if (opv3Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         opv3Date.setError("This data is Required!");
                         Log.i(TAG, "opv3Date: This data is Required!");
+                        opv3Date.requestFocus();
                         return false;
                     } else {
                         opv3Date.setError(null);
@@ -3027,9 +3123,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (opv3C01.isChecked() || opv3M01.isChecked()) {
                 if (opv3Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     opv3Pova.setError("This data is Required!");
                     Log.i(TAG, "opv3Pov: This data is Required!");
+                    opv3Pova.setFocusable(true);
+                    opv3Pova.setFocusableInTouchMode(true);
+                    opv3Pova.requestFocus();
                     return false;
                 } else {
                     opv3Pova.setError(null);
@@ -3041,6 +3140,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
                 penta3M02.setError("This data is Required!");
                 Log.i(TAG, "penta3M: This data is Required!");
+                penta3M02.setFocusable(true);
+                penta3M02.setFocusableInTouchMode(true);
+                penta3M02.requestFocus();
                 return false;
             } else {
                 penta3M02.setError(null);
@@ -3048,10 +3150,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta3M01.isChecked() && !penta3datenr.isChecked()) {
                 if (penta3DateMYear.getText().toString().isEmpty() && penta3DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     penta3DateMYear.setError("This data is Required!");
                     penta3DateMMon.setError("This data is Required!");
                     Log.i(TAG, "penta3MDate: This data is Required!");
+                    penta2DateMYear.requestFocus();
                     return false;
                 } else {
                     penta3DateMYear.setError(null);
@@ -3065,6 +3168,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3), Toast.LENGTH_SHORT).show();
                     penta3C02.setError("This data is Required!");
                     Log.i(TAG, "penta3C: This data is Required!");
+                    penta3C02.setFocusable(true);
+                    penta3C02.setFocusableInTouchMode(true);
+                    penta3C02.requestFocus();
                     return false;
                 } else {
                     penta3C02.setError(null);
@@ -3072,9 +3178,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (penta3C01.isChecked() && !penta3datenp.isChecked()) {
                     if (penta3Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         penta3Date.setError("This data is Required!");
                         Log.i(TAG, "penta3Date: This data is Required!");
+                        penta3Date.requestFocus();
                         return false;
                     } else {
                         penta3Date.setError(null);
@@ -3084,9 +3191,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (penta3C01.isChecked() || penta3M01.isChecked()) {
                 if (penta3Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     penta3Pova.setError("This data is Required!");
                     Log.i(TAG, "penta3Pov: This data is Required!");
+                    penta3Pova.setFocusable(true);
+                    penta3Pova.setFocusableInTouchMode(true);
+                    penta3Pova.requestFocus();
                     return false;
                 } else {
                     penta3Pova.setError(null);
@@ -3098,6 +3208,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
                 pcv3M02.setError("This data is Required!");
                 Log.i(TAG, "pcv3M: This data is Required!");
+                pcv3M02.setFocusable(true);
+                pcv3M02.setFocusableInTouchMode(true);
+                pcv3M02.requestFocus();
                 return false;
             } else {
                 pcv3M02.setError(null);
@@ -3105,10 +3218,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv3M01.isChecked() && !pcv3datenr.isChecked()) {
                 if (pcv3DateMYear.getText().toString().isEmpty() && pcv3DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     pcv3DateMYear.setError("This data is Required!");
                     pcv3DateMMon.setError("This data is Required!");
                     Log.i(TAG, "pcv3MDate: This data is Required!");
+                    pcv3DateMYear.requestFocus();
                     return false;
                 } else {
                     pcv3DateMYear.setError(null);
@@ -3122,6 +3236,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3), Toast.LENGTH_SHORT).show();
                     pcv3C02.setError("This data is Required!");
                     Log.i(TAG, "pcv3C: This data is Required!");
+                    pcv3C02.setFocusable(true);
+                    pcv3C02.setFocusableInTouchMode(true);
+                    pcv3C02.requestFocus();
                     return false;
                 } else {
                     pcv3C02.setError(null);
@@ -3129,9 +3246,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (pcv3C01.isChecked() && !pcv3datenp.isChecked()) {
                     if (pcv3Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         pcv3Date.setError("This data is Required!");
                         Log.i(TAG, "pcv3Date: This data is Required!");
+                        pcv3Date.requestFocus();
                         return false;
                     } else {
                         pcv3Date.setError(null);
@@ -3141,9 +3259,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (pcv3C01.isChecked() || pcv3M01.isChecked()) {
                 if (pcv3Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     pcv3Pova.setError("This data is Required!");
                     Log.i(TAG, "pcv3Pov: This data is Required!");
+                    pcv3Pova.setFocusable(true);
+                    pcv3Pova.setFocusableInTouchMode(true);
+                    pcv3Pova.requestFocus();
                     return false;
                 } else {
                     pcv3Pova.setError(null);
@@ -3156,6 +3277,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
                 ipvM02.setError("This data is Required!");
                 Log.i(TAG, "ipvM: This data is Required!");
+                ipvM02.setFocusable(true);
+                ipvM02.setFocusableInTouchMode(true);
+                ipvM02.requestFocus();
                 return false;
             } else {
                 ipvM02.setError(null);
@@ -3163,10 +3287,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (ipvM01.isChecked() && !ipvdatenr.isChecked()) {
                 if (ipvDateMYear.getText().toString().isEmpty() && ipvDateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     ipvDateMYear.setError("This data is Required!");
                     ipvDateMMon.setError("This data is Required!");
                     Log.i(TAG, "ipvMDate: This data is Required!");
+                    ipvDateMYear.requestFocus();
                     return false;
                 } else {
                     ipvDateMYear.setError(null);
@@ -3181,6 +3306,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv), Toast.LENGTH_SHORT).show();
                     ipvC02.setError("This data is Required!");
                     Log.i(TAG, "ipvC: This data is Required!");
+                    ipvC02.setFocusable(true);
+                    ipvC02.setFocusableInTouchMode(true);
+                    ipvC02.requestFocus();
                     return false;
                 } else {
                     ipvC02.setError(null);
@@ -3189,9 +3317,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (ipvC01.isChecked() && !ipvdatenp.isChecked()) {
                     if (ipvDate.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         ipvDate.setError("This data is Required!");
                         Log.i(TAG, "ipvDate: This data is Required!");
+                        ipvDate.requestFocus();
                         return false;
                     } else {
                         ipvDate.setError(null);
@@ -3202,9 +3331,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (ipvC01.isChecked() || ipvM01.isChecked()) {
                 if (ipvPov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     ipvPova.setError("This data is Required!");
                     Log.i(TAG, "ipvPov: This data is Required!");
+                    ipvPova.setFocusable(true);
+                    ipvPova.setFocusableInTouchMode(true);
+                    ipvPova.requestFocus();
                     return false;
                 } else {
                     ipvPova.setError(null);
@@ -3216,6 +3348,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
                 measles1M02.setError("This data is Required!");
                 Log.i(TAG, "measles1M: This data is Required!");
+                measles1M02.setFocusable(true);
+                measles1M02.setFocusableInTouchMode(true);
+                measles1M02.requestFocus();
                 return false;
             } else {
                 measles1M02.setError(null);
@@ -3223,10 +3358,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (measles1M01.isChecked() && !measles1datenr.isChecked()) {
                 if (measles1DateMYear.getText().toString().isEmpty() && measles1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     measles1DateMYear.setError("This data is Required!");
                     measles1DateMMon.setError("This data is Required!");
                     Log.i(TAG, "measles1MDate: This data is Required!");
+                    measles1DateMYear.requestFocus();
                     return false;
                 } else {
                     measles1DateMYear.setError(null);
@@ -3240,6 +3376,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1), Toast.LENGTH_SHORT).show();
                     measles1C02.setError("This data is Required!");
                     Log.i(TAG, "measles1C: This data is Required!");
+                    measles1C02.setFocusable(true);
+                    measles1C02.setFocusableInTouchMode(true);
+                    measles1C02.requestFocus();
                     return false;
                 } else {
                     measles1C02.setError(null);
@@ -3247,9 +3386,10 @@ public class SectionIActivity extends AppCompatActivity
 
                 if (measles1C01.isChecked() && !measles1datenp.isChecked()) {
                     if (measles1Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         measles1Date.setError("This data is Required!");
                         Log.i(TAG, "measles1Date: This data is Required!");
+                        measles1Date.requestFocus();
                         return false;
                     } else {
                         measles1Date.setError(null);
@@ -3259,9 +3399,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (measles1C01.isChecked() || measles1M01.isChecked()) {
                 if (measles1Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     measles1Pova.setError("This data is Required!");
                     Log.i(TAG, "measles1Pov: This data is Required!");
+                    measles1Pov.setFocusable(true);
+                    measles1Pov.setFocusableInTouchMode(true);
+                    measles1Pov.requestFocus();
                     return false;
                 } else {
                     measles1Pova.setError(null);
@@ -3273,6 +3416,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
                 measles2M02.setError("This data is Required!");
                 Log.i(TAG, "measles2M: This data is Required!");
+                measles2M02.setFocusable(true);
+                measles2M02.setFocusableInTouchMode(true);
+                measles2M02.requestFocus();
                 return false;
             } else {
                 measles2M02.setError(null);
@@ -3280,10 +3426,11 @@ public class SectionIActivity extends AppCompatActivity
 
             if (measles2M01.isChecked() && !measles2datenr.isChecked()) {
                 if (measles2DateMYear.getText().toString().isEmpty() && measles1DateMMon.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                     measles2DateMYear.setError("This data is Required!");
                     measles2DateMMon.setError("This data is Required!");
                     Log.i(TAG, "measles2MDate: This data is Required!");
+                    measles2DateMYear.requestFocus();
                     return false;
                 } else {
                     measles2DateMYear.setError(null);
@@ -3298,6 +3445,9 @@ public class SectionIActivity extends AppCompatActivity
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2), Toast.LENGTH_SHORT).show();
                     measles2C02.setError("This data is Required!");
                     Log.i(TAG, "measles2C: This data is Required!");
+                    measles2C02.setFocusable(true);
+                    measles2C02.setFocusableInTouchMode(true);
+                    measles2C02.requestFocus();
                     return false;
                 } else {
                     measles2C02.setError(null);
@@ -3306,9 +3456,10 @@ public class SectionIActivity extends AppCompatActivity
                 if (measles2C01.isChecked() && !measles2datenp.isChecked()) {
 
                     if (measles2Date.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         measles2Date.setError("This data is Required!");
                         Log.i(TAG, "measles2Date: This data is Required!");
+                        measles2Date.requestFocus();
                         return false;
                     } else {
                         measles2Date.setError(null);
@@ -3318,9 +3469,12 @@ public class SectionIActivity extends AppCompatActivity
 
             if (measles2C01.isChecked() || measles2M01.isChecked()) {
                 if (measles2Pov.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
                     measles2Pova.setError("This data is Required!");
                     Log.i(TAG, "measles2Pov: This data is Required!");
+                    measles2Pova.setFocusable(true);
+                    measles2Pova.setFocusableInTouchMode(true);
+                    measles2Pova.requestFocus();
                     return false;
                 } else {
                     measles2Pova.setError(null);
@@ -3331,6 +3485,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti04), Toast.LENGTH_SHORT).show();
                 ti04888.setError("This data is Required!");
                 Log.i(TAG, "ti04: This data is Required!");
+                ti04888.setFocusable(true);
+                ti04888.setFocusableInTouchMode(true);
+                ti04888.requestFocus();
                 return false;
             } else {
                 ti04888.setError(null);
@@ -3343,6 +3500,7 @@ public class SectionIActivity extends AppCompatActivity
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti05), Toast.LENGTH_SHORT).show();
                         ti05.setError("This data is Required!");
                         Log.i(TAG, "ti05: This data is Required!");
+
                         return false;
                     } else {
                         ti05.setError(null);
