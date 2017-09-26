@@ -864,13 +864,13 @@
     <string name="tl09c"> هفتي ۾ ٻه ڀيرا </string>
     <string name="tl09d"> هفتي ۾ ٽي ڀيرا </string>
 
-    <string name="tl10"> توھان ڪڏهن ڪڏهن ڏندڻ ڪندا آهيو </string>
-    <string name="tl11"> توھان ڪهڙي قسم جو ڏندڻ ڪندا آهيو </string>
+  <string name="tl10"> توھان ڏندڻ ڪندا آهيو؟ </string>
+  <string name="tl11"> توھان ڪڏهن ڪڏهن ڏندڻ ڪندا آهيو؟  </string>
     <string name="tl11a"> روزانو </string>
     <string name="tl11b"> هفتي ۾ هڪ ڀيرو </string>
     <string name="tl11c"> هفتي ۾ ٻه ڀيرا </string>
     <string name="tl11d"> هفتي ۾ ٽي ڀيرا </string>
-    <string name="tl12"> پيئڻ جو پاڻي </string>
+  <string name="tl12"> توھان ڪهڙي قسم جو ڏندڻ ڪندا آهيو؟ </string>
     <string name="tl12a"> يسٽ  ٽوٿ  </string>
     <string name="tl12b"> مسواڪ </string>
     <string name="tl12c"> پاوڊر ٽوٿ </string>
