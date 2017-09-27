@@ -855,6 +855,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MWRATable.COLUMN_USER,
                 MWRATable.COLUMN_SD,
                 MWRATable.COLUMN_DEVICEID,
+                MWRATable.COLUMN_DEVICETAGID,
 
         };
         String whereClause = MWRATable.COLUMN_SYNCED + " is null";
