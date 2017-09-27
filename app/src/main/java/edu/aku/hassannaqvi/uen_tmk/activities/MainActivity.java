@@ -44,7 +44,6 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk.get.GetMembers;
 import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedChild;
 import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedMother;
 import edu.aku.hassannaqvi.uen_tmk.sync.SyncFamilyMembers;
@@ -417,13 +416,6 @@ public class MainActivity extends Activity {
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-
-            // Sync Users
-           /* BackgroundDrawable bg = new BackgroundDrawable();
-            syncDevice.setBackground(bg);
-            bg.start();*/
-            new GetMembers(this).execute();
-            //bg.stop();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
