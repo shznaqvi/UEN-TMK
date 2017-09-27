@@ -169,6 +169,12 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb12a;
     @BindView(R.id.tb12b)
     RadioButton tb12b;
+    @BindView(R.id.fldGrpOcc)
+    LinearLayout fldGrpOcc;
+    @BindView(R.id.fldGrpMarital)
+    LinearLayout fldGrpMarital;
+    @BindView(R.id.txtRsn)
+    TextView txtRsn;
 
 
     DatabaseHelper db;
@@ -300,35 +306,28 @@ public class SectionBActivity extends AppCompatActivity {
                 //if (checkChildLessThenFive(1)) {
 
                 ageInyears = ageInYears(tb07.getText().toString());
+                txtRsn.setVisibility(View.VISIBLE);
+                if (ageInyears > 0 && ageInyears < 2) {
+                    txtRsn.setText(ageInyears + " year");
+                } else {
+                    txtRsn.setText(ageInyears + " years");
+                }
                 if (ageInyears < 5) {
                     tb09.setText("NA");
                     tb09.setEnabled(false);
+                    fldGrpOcc.setVisibility(View.GONE);
+                    fldGrpMarital.setVisibility(View.GONE);
                     tb10.clearCheck();
-                    tb10a.setEnabled(false);
-                    tb10b.setEnabled(false);
-                    tb10c.setEnabled(false);
-                    tb10d.setEnabled(false);
-                    tb10e.setEnabled(false);
-                    tb10f.setEnabled(false);
-                    tb10g.setEnabled(false);
-                    tb10h.setEnabled(false);
-                    tb10ia.setEnabled(false);
-                    tb10ib.setEnabled(false);
-                    tb10j.setEnabled(false);
-                    tb10k.setEnabled(false);
-                    tb10l.setEnabled(false);
+                    tb11.clearCheck();
+                } else if (ageInyears > 5 && ageInyears < 14) {
 
-                    tb11b.setEnabled(false);
-                    tb11b.setChecked(false);
-                } else if (ageInyears < 12) {
+                    fldGrpOcc.setVisibility(View.VISIBLE);
+                    fldGrpMarital.setVisibility(View.GONE);
+                    tb11.clearCheck();
 
-                    tb11a.setEnabled(true);
-                    tb11b.setEnabled(false);
-//                        tb11c.setEnabled(false);
-                    tb11d.setEnabled(false);
-                    tb11e.setEnabled(false);
-
-                } else {
+                } else if (ageInyears > 14) {
+                    fldGrpMarital.setVisibility(View.VISIBLE);
+                    fldGrpOcc.setVisibility(View.VISIBLE);
                     tb09.setText(null);
                     tb09.setEnabled(true);
 
@@ -383,36 +382,31 @@ public class SectionBActivity extends AppCompatActivity {
                 if (!tb08y.getText().toString().isEmpty()) {
 
                     ageInyears = Long.valueOf(tb08y.getText().toString());
+                    txtRsn.setVisibility(View.VISIBLE);
                     //if (checkChildLessThenFive(2)) {
-
+                    if (ageInyears > 0 && ageInyears < 2) {
+                        txtRsn.setText(ageInyears + " year");
+                    } else {
+                        txtRsn.setText(ageInyears + " years");
+                    }
                     if (ageInyears < 5) {
+
                         tb09.setText("NA");
                         tb09.setEnabled(false);
-                        tb10a.setEnabled(false);
-                        tb10b.setEnabled(false);
-                        tb10c.setEnabled(false);
-                        tb10d.setEnabled(false);
-                        tb10e.setEnabled(false);
-                        tb10f.setEnabled(false);
-                        tb10g.setEnabled(false);
-                        tb10h.setEnabled(false);
-                        tb10ia.setEnabled(false);
-                        tb10ib.setEnabled(false);
-                        tb10j.setEnabled(false);
-                        tb10k.setEnabled(false);
-                        tb10l.setEnabled(false);
+                        fldGrpOcc.setVisibility(View.GONE);
+                        fldGrpMarital.setVisibility(View.GONE);
+                        tb10.clearCheck();
+                        tb11.clearCheck();
 
-                        tb11b.setEnabled(false);
-                        tb11b.setChecked(false);
-                    } else if (ageInyears < 12) {
-
-                        tb11a.setEnabled(true);
-                        tb11b.setEnabled(false);
-//                        tb11c.setEnabled(false);
-                        tb11d.setEnabled(false);
-                        tb11e.setEnabled(false);
-
-                    } else {
+                    } else if (ageInyears > 5 && ageInyears < 14) {
+                        fldGrpOcc.setVisibility(View.VISIBLE);
+                        fldGrpMarital.setVisibility(View.GONE);
+                        tb09.setText(null);
+                        tb09.setEnabled(true);
+                        tb11.clearCheck();
+                    } else if (ageInyears > 14) {
+                        fldGrpOcc.setVisibility(View.VISIBLE);
+                        fldGrpMarital.setVisibility(View.VISIBLE);
                         tb09.setText(null);
                         tb09.setEnabled(true);
 
@@ -679,7 +673,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb02.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb02), Toast.LENGTH_SHORT).show();
             tb02.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb02.requestFocus();
             Log.i(TAG, "tb02: This data is Required!");
             return false;
         } else {
@@ -690,7 +684,9 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb03), Toast.LENGTH_SHORT).show();
             tb0388.setError("This data is Required!");    // Set Error on last radio button
-
+            tb03a.setFocusable(true);
+            tb03a.setFocusableInTouchMode(true);
+            tb03a.requestFocus();
             Log.i(TAG, "tb03: This data is Required!");
             return false;
         } else {
@@ -700,7 +696,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb0388.isChecked() && tb0388x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tb0388x.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb0388x.requestFocus();
             Log.i(TAG, "tb0388x: This data is Required!");
             return false;
         } else {
@@ -711,7 +707,9 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb04.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb04), Toast.LENGTH_SHORT).show();
             tb04b.setError("This data is Required!");    // Set Error on last radio button
-
+            tb04a.setFocusableInTouchMode(true);
+            tb04a.setFocusable(true);
+            tb04a.requestFocus();
             Log.i(TAG, "tb04: This data is Required!");
             return false;
         } else {
@@ -722,7 +720,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb05.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb05), Toast.LENGTH_SHORT).show();
             tb05.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb05.requestFocus();
             Log.i(TAG, "tb05: This data is Required!");
             return false;
         } else {
@@ -733,7 +731,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb06.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb06), Toast.LENGTH_SHORT).show();
             tb06.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb06.requestFocus();
             Log.i(TAG, "tb06: This data is Required!");
             return false;
         } else {
@@ -744,7 +742,9 @@ public class SectionBActivity extends AppCompatActivity {
         if (tbdob.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tbAge), Toast.LENGTH_SHORT).show();
             tbdob01.setError("This data is Required!");    // Set Error on last radio button
-
+            tbdob01.setFocusable(true);
+            tbdob01.setFocusableInTouchMode(true);
+            tbdob01.requestFocus();
             Log.i(TAG, "tbdob: This data is Required!");
             return false;
         } else {
@@ -754,7 +754,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (tbdob01.isChecked() && tb07.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb07), Toast.LENGTH_SHORT).show();
             tb07.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb07.requestFocus();
             Log.i(TAG, "tb07: This data is Required!");
             return false;
         } else {
@@ -765,7 +765,7 @@ public class SectionBActivity extends AppCompatActivity {
             if (tb08y.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
                 tb08y.setError("This data is Required! ");    // Set Error on last radio button
-
+                tb08y.requestFocus();
                 Log.i(TAG, "tb08y: This data is Required!");
                 return false;
             } else {
@@ -775,7 +775,7 @@ public class SectionBActivity extends AppCompatActivity {
             if (tb08m.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                 tb08m.setError("This data is Required! ");    // Set Error on last radio button
-
+                tb08m.requestFocus();
                 Log.i(TAG, "tb08m: This data is Required!");
                 return false;
             } else {
@@ -785,18 +785,18 @@ public class SectionBActivity extends AppCompatActivity {
             if (Integer.parseInt(tb08y.getText().toString()) < 0) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
                 tb08y.setError("Greater then 0! ");    // Set Error on last radio button
-
+                tb08y.requestFocus();
                 Log.i(TAG, "tb08y: Greater then 0!");
                 return false;
             } else {
                 tb08y.setError(null);
             }
 
-            if (Integer.parseInt(tb08m.getText().toString()) < 0 || Integer.parseInt(tb08m.getText().toString()) >= 11) {
+            if (Integer.parseInt(tb08m.getText().toString()) < 0 || Integer.parseInt(tb08m.getText().toString()) > 11) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
-                tb08m.setError("Range from 1 - 11! ");    // Set Error on last radio button
-
-                Log.i(TAG, "tb08m: Range from 1 - 11!");
+                tb08m.setError("Range from 0 - 11! ");    // Set Error on last radio button
+                tb08m.requestFocus();
+                Log.i(TAG, "tb08m: Range from 0 - 11!");
                 return false;
             } else {
                 tb08m.setError(null);
@@ -807,35 +807,12 @@ public class SectionBActivity extends AppCompatActivity {
         if (tb09.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb09), Toast.LENGTH_SHORT).show();
             tb09.setError("This data is Required! ");    // Set Error on last radio button
-
+            tb09.requestFocus();
             Log.i(TAG, "tb09: This data is Required!");
             return false;
         } else {
             tb09.setError(null);
         }
-
-//        10
-        if (tb10.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb10), Toast.LENGTH_SHORT).show();
-            tb10999.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "tb10: This data is Required!");
-            return false;
-        } else {
-            tb10999.setError(null);
-        }
-
-//        11
-        if (tb11.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb11), Toast.LENGTH_SHORT).show();
-            tb11e.setError("This data is Required!");    // Set Error on last radio button
-
-            Log.i(TAG, "tb11: This data is Required!");
-            return false;
-        } else {
-            tb11e.setError(null);
-        }
-
 
         if (!tb09.getText().toString().equals("NA") && !tb08y.getText().toString().isEmpty()) {
 
@@ -844,6 +821,7 @@ public class SectionBActivity extends AppCompatActivity {
                     !tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777")) {
                 Toast.makeText(this, "Age and years of education cannot be same or Years of education cannot be greater than age ", Toast.LENGTH_SHORT).show();
                 tb09.setError("This data is Required!");    // Set Error on last radio button
+                tb09.requestFocus();
                 Log.i(TAG, "tb09: This data is Required!");
                 return false;
             } else {
@@ -859,6 +837,7 @@ public class SectionBActivity extends AppCompatActivity {
                     || Integer.parseInt(tb09.getText().toString()) > 20 && (!tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777"))) {
                 Toast.makeText(this, "Years of education cannot be less than 0 and cannot be greater than 20 ", Toast.LENGTH_SHORT).show();
                 tb09.setError("This data is Required!");    // Set Error on last radio button
+                tb09.requestFocus();
                 Log.i(TAG, "tb09: This data is Required!");
                 return false;
             } else {
@@ -867,12 +846,47 @@ public class SectionBActivity extends AppCompatActivity {
 
         }
 
+        if (ageInyears > 5) {
+//        10
+            if (tb10.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb10), Toast.LENGTH_SHORT).show();
+                tb10999.setError("This data is Required!");    // Set Error on last radio button
+                tb10a.setFocusable(true);
+                tb10a.setFocusableInTouchMode(true);
+                tb10a.requestFocus();
+                Log.i(TAG, "tb10: This data is Required!");
+                return false;
+            } else {
+                tb10999.setError(null);
+            }
+        }
+
+        if (ageInyears > 14) {
+//        11
+            if (tb11.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb11), Toast.LENGTH_SHORT).show();
+                tb11e.setError("This data is Required!");    // Set Error on last radio button
+                tb11a.setFocusableInTouchMode(true);
+                tb11a.setFocusable(true);
+                tb11a.requestFocus();
+                Log.i(TAG, "tb11: This data is Required!");
+                return false;
+            } else {
+                tb11e.setError(null);
+            }
+        }
+
+
+
+
         if (tb04b.isChecked() && tb11b.isChecked() && !MainApp.isRsvp) {
             if (tb12.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
                 tb12a.setError("This data is Required!");    // Set Error on last radio button
-
-                Log.i(TAG, "tb12a: This data is Required!");
+                tb12a.setFocusable(true);
+                tb12a.setFocusableInTouchMode(true);
+                tb12a.requestFocus();
+                Log.i(TAG, "tb12a: Th  is data is Required!");
                 return false;
             } else {
                 tb12a.setError(null);

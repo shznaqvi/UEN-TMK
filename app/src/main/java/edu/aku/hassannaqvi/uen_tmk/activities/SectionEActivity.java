@@ -221,7 +221,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (te01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te01), Toast.LENGTH_SHORT).show();
             te01.setError("This data is Required!");    // Set Error on last radio button
-
+            te01.requestFocus();
             Log.i(TAG, "te01: This data is Required!");
             return false;
         } else {
@@ -251,7 +251,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (te02d.getText().toString().isEmpty() || te02m.getText().toString().isEmpty() || te02y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te02), Toast.LENGTH_SHORT).show();
             te02d.setError("This data is Required!");    // Set Error on last radio button
-
+            te02d.requestFocus();
             Log.i(TAG, "te02: This data is Required!");
             return false;
         } else {
@@ -262,7 +262,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (Integer.parseInt(te02d.getText().toString()) < 0 || Integer.parseInt(te02d.getText().toString()) > 29) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             te02d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
-
+            te02d.requestFocus();
             Log.i(TAG, "te02d: Range is 0 to 29 Days");
             return false;
         } else {
@@ -272,7 +272,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (Integer.parseInt(te02m.getText().toString()) < 0 || Integer.parseInt(te02m.getText().toString()) > 11) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             te02m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
-
+            te02m.requestFocus();
             Log.i(TAG, "te02d: Range is 0 to 11 Months");
             return false;
         } else {
@@ -282,7 +282,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (Integer.parseInt(te02y.getText().toString()) < 15 || Integer.parseInt(te02y.getText().toString()) > 49) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             te02y.setError("Range is 15 to 49  Years");    // Set Error on last radio button
-
+            te02y.requestFocus();
             Log.i(TAG, "te02d: Range is 15 to 49 Years");
             return false;
         } else {
@@ -292,7 +292,9 @@ public class SectionEActivity extends AppCompatActivity {
         if (te03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te03), Toast.LENGTH_SHORT).show();
             te03a.setError("This data is Required!");    // Set Error on last radio button
-
+            te03a.setFocusable(true);
+            te03a.setFocusableInTouchMode(true);
+            te03a.requestFocus();
             Log.i(TAG, "te03: This data is Required!");
             return false;
         } else {
@@ -302,7 +304,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (te04.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te04), Toast.LENGTH_SHORT).show();
             te04.setError("This data is Required!");    // Set Error on last radio button
-
+            te04.requestFocus();
             Log.i(TAG, "te04: This data is Required!");
             return false;
         } else {
@@ -352,7 +354,9 @@ public class SectionEActivity extends AppCompatActivity {
         if (te05.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te05), Toast.LENGTH_SHORT).show();
             te05a.setError("This data is Required!");    // Set Error on last radio button
-
+            te05a.setFocusable(true);
+            te05a.setFocusableInTouchMode(true);
+            te05a.requestFocus();
             Log.i(TAG, "te05: This data is Required!");
             return false;
         } else {
@@ -362,6 +366,7 @@ public class SectionEActivity extends AppCompatActivity {
         if (te0588.isChecked() && te0588x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.te05) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             te0588x.setError("This data is Required!");    // Set Error on last radio button
+            te0588x.requestFocus();
             Log.i(TAG, "te0588x: This data is Required!");
             return false;
         } else {

@@ -192,7 +192,9 @@ public class SectionGActivity extends Activity {
         if (tg01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg01), Toast.LENGTH_SHORT).show();
             tg01888.setError("This data is Required!");    // Set Error on last radio button
-
+            tg01a.setFocusable(true);
+            tg01a.setFocusableInTouchMode(true);
+            tg01a.requestFocus();
             Log.i(TAG, "tg01: This data is Required!");
             return false;
         } else {
@@ -203,7 +205,9 @@ public class SectionGActivity extends Activity {
             if (tg02.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg02), Toast.LENGTH_SHORT).show();
                 tg0288.setError("This data is Required!");    // Set Error on last radio button
-
+                tg02a.setFocusable(true);
+                tg02a.setFocusableInTouchMode(true);
+                tg02a.requestFocus();
                 Log.i(TAG, "tg02: This data is Required!");
                 return false;
             } else {
@@ -214,6 +218,7 @@ public class SectionGActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg02) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 tg0288x.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tg0288x: This data is Required!");
+                tg0288x.requestFocus();
                 return false;
             } else {
                 tg0288x.setError(null);
@@ -224,7 +229,9 @@ public class SectionGActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tg03), Toast.LENGTH_LONG).show();
                 tg03f.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tg03: This data is Required!");
-
+                tg03f.setFocusable(true);
+                tg03f.setFocusableInTouchMode(true);
+                tg03f.requestFocus();
                 return false;
             } else {
                 tg03f.setError(null);

@@ -403,7 +403,9 @@ public class SectionLActivity extends Activity {
         if (tl01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl01), Toast.LENGTH_SHORT).show();
             tl0188.setError("This data is Required!");    // Set Error on last radio button
-
+            tl01a.setFocusable(true);
+            tl01a.setFocusableInTouchMode(true);
+            tl01a.requestFocus();
             Log.i(TAG, "tl01: This data is Required!");
             return false;
         } else {
@@ -412,7 +414,7 @@ public class SectionLActivity extends Activity {
         if (tl0188.isChecked() && tl0188x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tl0188x.setError("This data is Required! ");    // Set Error on last radio button
-
+            tl0188x.requestFocus();
             Log.i(TAG, "tl0188x: This data is Required!");
             return false;
         } else {
@@ -424,7 +426,9 @@ public class SectionLActivity extends Activity {
             if (tl02.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl02), Toast.LENGTH_SHORT).show();
                 tl02b.setError("This data is Required! ");    // Set Error on last radio button
-
+                tl02b.setFocusable(true);
+                tl02b.setFocusableInTouchMode(true);
+                tl02b.requestFocus();
                 Log.i(TAG, "tl02: This data is Required!");
                 return false;
             } else {
@@ -435,7 +439,9 @@ public class SectionLActivity extends Activity {
             if (tl03.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl03), Toast.LENGTH_SHORT).show();
                 tl03b.setError("This data is Required! ");    // Set Error on last radio button
-
+                tl03b.setFocusable(true);
+                tl03b.setFocusableInTouchMode(true);
+                tl03b.requestFocus();
                 Log.i(TAG, "tl03: This data is Required!");
                 return false;
             } else {
@@ -449,7 +455,9 @@ public class SectionLActivity extends Activity {
                         || tl04d.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl04), Toast.LENGTH_SHORT).show();
                     tl04d.setError("This data is Required!");    // Set Error on last check box
-
+                    tl04d.setFocusable(true);
+                    tl04d.setFocusableInTouchMode(true);
+                    tl04d.requestFocus();
                     Log.i(TAG, "tl04: This data is Required!");
                     return false;
                 } else {
@@ -463,7 +471,9 @@ public class SectionLActivity extends Activity {
             if (tl05.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl05), Toast.LENGTH_SHORT).show();
                 tl05b.setError("This data is Required! ");    // Set Error on last radio button
-
+                tl05b.setFocusable(true);
+                tl05b.setFocusableInTouchMode(true);
+                tl05b.requestFocus();
                 Log.i(TAG, "tl05: This data is Required!");
                 return false;
             } else {
@@ -475,7 +485,9 @@ public class SectionLActivity extends Activity {
                 if (tl06.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl06), Toast.LENGTH_SHORT).show();
                     tl06b.setError("This data is Required! ");    // Set Error on last radio button
-
+                    tl06b.setFocusable(true);
+                    tl06b.setFocusableInTouchMode(true);
+                    tl06b.requestFocus();
                     Log.i(TAG, "tl06: This data is Required!");
                     return false;
                 } else {
@@ -488,7 +500,7 @@ public class SectionLActivity extends Activity {
                             || tl07d.isChecked())) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl07), Toast.LENGTH_SHORT).show();
                         tl07d.setError("This data is Required!");    // Set Error on last check box
-
+                        tl07d.requestFocus();
                         Log.i(TAG, "tl07: This data is Required!");
                         return false;
                     } else {
@@ -505,7 +517,7 @@ public class SectionLActivity extends Activity {
                 tl08h.isChecked() || tl08i.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl08), Toast.LENGTH_SHORT).show();
             tl08i.setError("This data is Required!");    // Set Error on last check box
-
+            tl08i.requestFocus();
             Log.i(TAG, "tl08: This data is Required!");
             return false;
         } else {
@@ -516,7 +528,9 @@ public class SectionLActivity extends Activity {
         if (tl09.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl09), Toast.LENGTH_SHORT).show();
             tl0988.setError("This data is Required!");    // Set Error on last radio button
-
+            tl09a.setFocusable(true);
+            tl09a.setFocusableInTouchMode(true);
+            tl09a.requestFocus();
             Log.i(TAG, "tl09: This data is Required!");
             return false;
         } else {
@@ -525,7 +539,7 @@ public class SectionLActivity extends Activity {
         if (tl0988.isChecked() && tl0988x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tl0988x.setError("This data is Required! ");    // Set Error on last radio button
-
+            tl0988x.requestFocus();
             Log.i(TAG, "tl0988x: This data is Required!");
             return false;
         } else {
@@ -536,7 +550,9 @@ public class SectionLActivity extends Activity {
         if (tl10.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl10), Toast.LENGTH_SHORT).show();
             tl10b.setError("This data is Required!");    // Set Error on last radio button
-
+            tl10b.setFocusable(true);
+            tl10b.setFocusableInTouchMode(true);
+            tl10b.requestFocus();
             Log.i(TAG, "tl10: This data is Required!");
             return false;
         } else {
@@ -549,7 +565,9 @@ public class SectionLActivity extends Activity {
             if (tl11.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl11), Toast.LENGTH_SHORT).show();
                 tl1188.setError("This data is Required!");    // Set Error on last radio button
-
+                tl11a.setFocusable(true);
+                tl11a.setFocusableInTouchMode(true);
+                tl11a.requestFocus();
                 Log.i(TAG, "tl11: This data is Required!");
                 return false;
             } else {
@@ -558,7 +576,7 @@ public class SectionLActivity extends Activity {
             if (tl1188.isChecked() && tl1188x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tl1188x.setError("This data is Required! ");    // Set Error on last radio button
-
+                tl1188x.requestFocus();
                 Log.i(TAG, "tl1188x: This data is Required!");
                 return false;
             } else {
@@ -569,7 +587,9 @@ public class SectionLActivity extends Activity {
             if (tl12.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tl12), Toast.LENGTH_SHORT).show();
                 tl1288.setError("This data is Required!");    // Set Error on last radio button
-
+                tl12a.setFocusable(true);
+                tl12a.setFocusableInTouchMode(true);
+                tl12a.requestFocus();
                 Log.i(TAG, "tl12: This data is Required!");
                 return false;
             } else {
@@ -578,7 +598,7 @@ public class SectionLActivity extends Activity {
             if (tl1288.isChecked() && tl1288x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tl1288x.setError("This data is Required! ");    // Set Error on last radio button
-
+                tl1288x.requestFocus();
                 Log.i(TAG, "tl1288x: This data is Required!");
                 return false;
             } else {

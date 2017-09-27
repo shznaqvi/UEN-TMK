@@ -429,19 +429,44 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-        <EditText
-            android:id="@+id/tb09"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:digits="0123456789 "
-            android:hint="@string/tb09"
-            android:inputType="number"
-            android:maxLength="3" />
+            android:orientation="horizontal">
 
-        <TextView
+            <EditText
+                android:id="@+id/tb09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:digits="0123456789 "
+                android:hint="@string/tb09"
+                android:inputType="number"
+                android:maxLength="3"/>
+
+            <TextView
+                android:id="@+id/txtRsn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#d6d6d6"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpOcc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/tb10"
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -520,7 +545,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/tb10ia" />
+                android:text="@string/tb10ib"/>
 
             <RadioButton
                 android:id="@+id/tb10j"
@@ -552,7 +577,15 @@
 
         </RadioGroup>
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpMarital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -600,6 +633,9 @@
                 android:text="@string/tb11e" />
 
         </RadioGroup>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/fldGrptb11"

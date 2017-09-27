@@ -2480,7 +2480,7 @@ public class SectionIActivity extends AppCompatActivity
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
             ((TextView) tiname.getSelectedView()).setText("This Data is Required");
             ((TextView) tiname.getSelectedView()).setTextColor(Color.RED);
-
+            tiname.requestFocus();
             Log.i(TAG, "tiname: This Data is Required!");
             return false;
         } else {
@@ -2491,7 +2491,9 @@ public class SectionIActivity extends AppCompatActivity
         if (ti01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti01), Toast.LENGTH_SHORT).show();
             ti01888.setError("This data is Required!");    // Set Error on last radio button
-
+            ti01888.setFocusable(true);
+            ti01888.setFocusableInTouchMode(true);
+            ti01888.requestFocus();
             Log.i(TAG, "ti01: This data is Required!");
             return false;
         } else {
@@ -2502,7 +2504,9 @@ public class SectionIActivity extends AppCompatActivity
             if (ti03.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti03), Toast.LENGTH_SHORT).show();
                 ti03c.setError("This data is Required!");    // Set Error on last radio button
-
+                ti03c.setFocusable(true);
+                ti03c.setFocusableInTouchMode(true);
+                ti03c.requestFocus();
                 Log.i(TAG, "ti03: This data is Required!");
                 return false;
             } else {
@@ -3485,9 +3489,9 @@ public class SectionIActivity extends AppCompatActivity
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti04), Toast.LENGTH_SHORT).show();
                 ti04888.setError("This data is Required!");
                 Log.i(TAG, "ti04: This data is Required!");
-                ti04888.setFocusable(true);
-                ti04888.setFocusableInTouchMode(true);
-                ti04888.requestFocus();
+                ti04a.setFocusable(true);
+                ti04a.setFocusableInTouchMode(true);
+                ti04a.requestFocus();
                 return false;
             } else {
                 ti04888.setError(null);
@@ -3499,6 +3503,7 @@ public class SectionIActivity extends AppCompatActivity
                     if (ti05.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti05), Toast.LENGTH_SHORT).show();
                         ti05.setError("This data is Required!");
+                        ti05.requestFocus();
                         Log.i(TAG, "ti05: This data is Required!");
 
                         return false;
@@ -3509,6 +3514,7 @@ public class SectionIActivity extends AppCompatActivity
                     if (Integer.parseInt(ti05.getText().toString()) < 1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.ti05), Toast.LENGTH_SHORT).show();
                         ti05.setError("Zero not allowed");
+                        ti05.requestFocus();
                         Log.i(TAG, "ti05: Zero not allowed");
                         return false;
                     } else {
@@ -3524,7 +3530,7 @@ public class SectionIActivity extends AppCompatActivity
                     || ti0288.isChecked())) {
                 Toast.makeText(this, "ERROR(empty)" + getString(R.string.ti02), Toast.LENGTH_SHORT).show();
                 ti02a.setError("This data is Required!");
-
+                ti02a.requestFocus();
                 Log.i(TAG, "ti02: This data is Required!");
                 return false;
             } else {
@@ -3534,7 +3540,7 @@ public class SectionIActivity extends AppCompatActivity
             if (ti0288.isChecked() && ti0288x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty)" + getString(R.string.ti02) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 ti0288x.setError("This data is Required!");
-
+                ti0288x.requestFocus();
                 Log.i(TAG, "ti0288x: This data is Required!");
                 return false;
             } else {

@@ -224,7 +224,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf01), Toast.LENGTH_SHORT).show();
             tf01.setError("This data is Required!");    // Set Error on last radio button
-
+            tf01.requestFocus();
             Log.i(TAG, "tf01: This data is Required!");
             return false;
         } else {
@@ -234,7 +234,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf02.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf02), Toast.LENGTH_SHORT).show();
             tf02.setError("This data is Required!");    // Set Error on last radio button
-
+            tf02.requestFocus();
             Log.i(TAG, "tf02: This data is Required!");
             return false;
         } else {
@@ -244,7 +244,9 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf03), Toast.LENGTH_SHORT).show();
             tf03a.setError("This data is Required!");    // Set Error on last radio button
-
+            tf03a.setFocusable(true);
+            tf03a.setFocusableInTouchMode(true);
+            tf03a.requestFocus();
             Log.i(TAG, "tf03: This data is Required!");
             return false;
         } else {
@@ -254,7 +256,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf04d.getText().toString().isEmpty() || tf04m.getText().toString().isEmpty() || tf04y.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf04), Toast.LENGTH_SHORT).show();
             tf04d.setError("This data is Required!");    // Set Error on last radio button
-
+            tf04d.requestFocus();
             Log.i(TAG, "tf04: This data is Required!");
             return false;
         } else {
@@ -265,7 +267,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (Integer.parseInt(tf04d.getText().toString()) < 0 || Integer.parseInt(tf04d.getText().toString()) > 29) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
             tf04d.setError("Range is 0 to 29 Days");    // Set Error on last radio button
-
+            tf04d.requestFocus();
             Log.i(TAG, "tf04d: Range is 0 to 29 Days");
             return false;
         } else {
@@ -275,7 +277,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (Integer.parseInt(tf04m.getText().toString()) < 0 || Integer.parseInt(tf04m.getText().toString()) > 11) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
             tf04m.setError("Range is 0 to 11 Months");    // Set Error on last radio button
-
+            tf04m.requestFocus();
             Log.i(TAG, "tf04d: Range is 0 to 11 Months");
             return false;
         } else {
@@ -285,7 +287,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (Integer.parseInt(tf04y.getText().toString()) < 0 || Integer.parseInt(tf04y.getText().toString()) > 5) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             tf04y.setError("Range is 0 to 5 Years");    // Set Error on last radio button
-
+            tf04y.requestFocus();
             Log.i(TAG, "tf04d: Range is 0 to 5 Years");
             return false;
         } else {
@@ -295,7 +297,9 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf05.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf05), Toast.LENGTH_SHORT).show();
             tf05a.setError("This data is Required!");    // Set Error on last radio button
-
+            tf05a.setFocusable(true);
+            tf05a.setFocusableInTouchMode(true);
+            tf05a.requestFocus();
             Log.i(TAG, "tf05: This data is Required!");
             return false;
         } else {
@@ -305,7 +309,7 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf06.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf06), Toast.LENGTH_SHORT).show();
             tf06.setError("This data is Required!");    // Set Error on last radio button
-
+            tf06.requestFocus();
             Log.i(TAG, "tf06: This data is Required!");
             return false;
         } else {
@@ -315,7 +319,9 @@ public class SectionFActivity extends AppCompatActivity {
         if (tf07.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf07), Toast.LENGTH_SHORT).show();
             tf07a.setError("This data is Required!");    // Set Error on last radio button
-
+            tf07a.setFocusable(true);
+            tf07a.setFocusableInTouchMode(true);
+            tf07a.requestFocus();
             Log.i(TAG, "tf07: This data is Required!");
             return false;
         } else {
@@ -326,6 +332,7 @@ public class SectionFActivity extends AppCompatActivity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf07) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
             tf0788x.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "tf0788x: This data is Required!");
+            tf0788x.requestFocus();
             return false;
         } else {
             tf0788x.setError(null);

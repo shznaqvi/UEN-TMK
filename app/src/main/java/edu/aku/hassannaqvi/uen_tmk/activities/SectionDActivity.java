@@ -293,7 +293,7 @@ public class SectionDActivity extends Activity {
             Toast.makeText(this, "ERROR(Empty) MWRA name", Toast.LENGTH_SHORT).show();
             ((TextView) mwraNames.getSelectedView()).setText("This Data is Required");
             ((TextView) mwraNames.getSelectedView()).setTextColor(Color.RED);
-
+            mwraNames.requestFocus();
             Log.i(TAG, "mwraNames: This Data is Required!");
             return false;
         } else {
@@ -304,7 +304,9 @@ public class SectionDActivity extends Activity {
         if (td01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.td01), Toast.LENGTH_SHORT).show();
             td01b.setError("This data is Required!");    // Set Error on last radio button
-
+            td01b.setFocusable(true);
+            td01b.setFocusableInTouchMode(true);
+            td01b.requestFocus();
             Log.i(TAG, "td01: This data is Required!");
             return false;
         } else {
@@ -315,7 +317,7 @@ public class SectionDActivity extends Activity {
             if (td02.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.td02), Toast.LENGTH_SHORT).show();
                 td02.setError("This data is Required!");    // Set Error on last radio button
-
+                td02.requestFocus();
                 Log.i(TAG, "td02: This data is Required!");
                 return false;
             } else {
@@ -325,7 +327,7 @@ public class SectionDActivity extends Activity {
             if (Integer.parseInt(td02.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td02), Toast.LENGTH_SHORT).show();
                 td02.setError("Zero not allowed");    // Set Error on last radio button
-
+                td02.requestFocus();
                 Log.i(TAG, "td02: Zero not allowed");
                 return false;
             } else {
@@ -336,7 +338,7 @@ public class SectionDActivity extends Activity {
             if (td03lb.getText().toString().isEmpty() || td03sb.getText().toString().isEmpty() || td03mc.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.td03), Toast.LENGTH_SHORT).show();
                 td03lb.setError("This data is Required!");    // Set Error on last radio button
-
+                td03lb.requestFocus();
                 Log.i(TAG, "td03: This data is Required!");
                 return false;
             } else {
@@ -347,7 +349,9 @@ public class SectionDActivity extends Activity {
             if (td04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.td04), Toast.LENGTH_SHORT).show();
                 td04b.setError("This data is Required!");    // Set Error on last radio button
-
+                td04b.setFocusable(true);
+                td04b.setFocusableInTouchMode(true);
+                td04b.requestFocus();
                 Log.i(TAG, "td04: This data is Required!");
                 return false;
             } else {
@@ -360,7 +364,7 @@ public class SectionDActivity extends Activity {
                 if (sumOfChildren >= Integer.valueOf(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
                     Toast.makeText(this, "Invalid: " + getString(R.string.td02), Toast.LENGTH_LONG).show();
                     td02.setError("Invalid : Check again");    // Set Error on last radio button
-
+                    td02.requestFocus();
                     Log.i(TAG, "td02: Check Again");
                     return false;
                 } else {
@@ -370,7 +374,7 @@ public class SectionDActivity extends Activity {
                 if (td05.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
                     td05.setError("This data is Required!");    // Set Error on last radio button
-
+                    td05.requestFocus();
                     Log.i(TAG, "td05: This data is Required!");
                     return false;
                 } else {
@@ -380,7 +384,7 @@ public class SectionDActivity extends Activity {
                 if (Integer.parseInt(td05.getText().toString()) < 4 || Integer.parseInt(td05.getText().toString()) > 42) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.td05), Toast.LENGTH_SHORT).show();
                     td05.setError("Range is 4 to 42 weeks");    // Set Error on last radio button
-
+                    td05.requestFocus();
                     Log.i(TAG, "td05: Range is 4 to 42 weeks");
                     return false;
                 } else {
@@ -391,7 +395,7 @@ public class SectionDActivity extends Activity {
                         != Integer.parseInt(td02.getText().toString().isEmpty() ? "0" : td02.getText().toString())) {
                     Toast.makeText(this, "Invalid: " + getString(R.string.td02), Toast.LENGTH_LONG).show();
                     td02.setError("Invalid : Check again");    // Set Error on last radio button
-
+                    td02.requestFocus();
                     Log.i(TAG, "td02: Check Again");
                     return false;
                 } else {

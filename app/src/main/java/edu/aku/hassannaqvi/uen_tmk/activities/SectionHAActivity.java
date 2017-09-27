@@ -1038,6 +1038,9 @@ public class SectionHAActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
             tha00a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "tha00: This data is Required!");
+            tha00a.setFocusable(true);
+            tha00a.setFocusableInTouchMode(true);
+            tha00a.requestFocus();
             return false;
         } else {
             tha00a.setError(null);
@@ -1049,6 +1052,9 @@ public class SectionHAActivity extends Activity {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha01), Toast.LENGTH_SHORT).show();
             tha01a.setError("This data is Required!");    // Set Error on last radio button
             Log.i(TAG, "tha01: This data is Required!");
+            tha01a.setFocusable(true);
+            tha01a.setFocusableInTouchMode(true);
+            tha01a.requestFocus();
             return false;
         } else {
             tha01a.setError(null);
@@ -1063,6 +1069,7 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha02), Toast.LENGTH_SHORT).show();
                 tha02.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha02: This data is Required!");
+                tha02.requestFocus();
                 return false;
             } else {
                 tha02.setError(null);
@@ -1072,6 +1079,7 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.tha02), Toast.LENGTH_SHORT).show();
                 tha02.setError("This data range in " + MainApp.TotalChildCount);    // Set Error on last radio button
                 Log.i(TAG, "tha02: This data range in " + MainApp.TotalChildCount);
+                tha02.requestFocus();
                 return false;
             } else {
                 tha02.setError(null);
@@ -1079,10 +1087,11 @@ public class SectionHAActivity extends Activity {
 
 
             if (!tha02.getText().toString().isEmpty()) {
-                if (Integer.parseInt(tha02.getText().toString()) <= 0 || Integer.parseInt(tha02.getText().toString()) > count_child_5y) {
+                if (Integer.parseInt(tha02.getText().toString()) < 0 || Integer.parseInt(tha02.getText().toString()) > count_child_5y) {
                     Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0", Toast.LENGTH_SHORT).show();
                     tha02.setError("Must be greater than 0");
                     Log.i(TAG, "tha02: This data is Required!");
+                    tha02.requestFocus();
                     return false;
                 } else {
                     tha02.setError(null);
@@ -1105,7 +1114,7 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.tha03), Toast.LENGTH_SHORT).show();
                 ((TextView) tha03.getSelectedView()).setText("This Data is Required");
                 ((TextView) tha03.getSelectedView()).setTextColor(Color.RED);
-
+                tha03.requestFocus();
                 Log.i(TAG, "tha03: This Data is Required!");
                 return false;
             } else {
@@ -1118,6 +1127,7 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha04), Toast.LENGTH_SHORT).show();
                 tha04.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha04: This data is Required!");
+                tha04.requestFocus();
                 return false;
             } else {
                 tha04.setError(null);
@@ -1130,6 +1140,7 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0 and it must be greater than " +
                             " After how many days of illness did you seek care", Toast.LENGTH_SHORT).show();
                     tha04.setError("Must be greater than 0");
+                    tha04.requestFocus();
                     Log.i(TAG, "tha04: This data is Required!");
                     return false;
                 } else {
@@ -1143,6 +1154,9 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha05), Toast.LENGTH_SHORT).show();
                 tha05a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha05: This data is Required!");
+                tha05a.setFocusable(true);
+                tha05a.setFocusableInTouchMode(true);
+                tha05a.requestFocus();
                 return false;
             } else {
                 tha05a.setError(null);
@@ -1154,6 +1168,9 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha06), Toast.LENGTH_SHORT).show();
                 tha06a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha06: This data is Required!");
+                tha06a.setFocusable(true);
+                tha06a.setFocusableInTouchMode(true);
+                tha06a.requestFocus();
                 return false;
             } else {
                 tha06a.setError(null);
@@ -1174,6 +1191,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha07), Toast.LENGTH_LONG).show();
                     tha07a.setError("This data is Required!");
                     Log.i(TAG, "tha07a: This data is Required!");
+                    tha07a.setFocusable(true);
+                    tha07a.setFocusableInTouchMode(true);
+                    tha07a.requestFocus();
                     return false;
                 } else {
                     tha07a.setError(null);
@@ -1186,6 +1206,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                         tha0788.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha0788: This data is Required!");
+                        tha0788x.requestFocus();
                         return false;
                     } else {
                         tha0788.setError(null);
@@ -1199,6 +1220,7 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha08), Toast.LENGTH_SHORT).show();
                     tha08.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha08: This data is Required!");
+                    tha08.requestFocus();
                     return false;
                 } else {
                     tha08.setError(null);
@@ -1210,6 +1232,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha09), Toast.LENGTH_LONG).show();
                     tha09a.setError("This data is Required!");
                     Log.i(TAG, "tha09: This data is Required!");
+                    tha09a.setFocusable(true);
+                    tha09a.setFocusableInTouchMode(true);
+                    tha09a.requestFocus();
                     return false;
                 } else {
                     tha09a.setError(null);
@@ -1221,6 +1246,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha10), Toast.LENGTH_SHORT).show();
                     tha10a.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha10: This data is Required!");
+                    tha10a.setFocusable(true);
+                    tha10a.setFocusableInTouchMode(true);
+                    tha10a.requestFocus();
                     return false;
                 } else {
                     tha10a.setError(null);
@@ -1241,6 +1269,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha11), Toast.LENGTH_LONG).show();
                     tha11a.setError("This data is Required!");
                     Log.i(TAG, "tha11a: This data is Required!");
+                    tha11a.setFocusable(true);
+                    tha11a.setFocusableInTouchMode(true);
+                    tha11a.requestFocus();
                     return false;
                 } else {
                     tha11a.setError(null);
@@ -1252,6 +1283,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha12), Toast.LENGTH_SHORT).show();
                     tha12a.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha12: This data is Required!");
+                    tha12a.setFocusable(true);
+                    tha12a.setFocusableInTouchMode(true);
+                    tha12a.requestFocus();
                     return false;
                 } else {
                     tha12a.setError(null);
@@ -1263,6 +1297,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha13), Toast.LENGTH_SHORT).show();
                     tha13a.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha13: This data is Required!");
+                    tha13a.setFocusable(true);
+                    tha13a.setFocusableInTouchMode(true);
+                    tha13a.requestFocus();
                     return false;
                 } else {
                     tha13a.setError(null);
@@ -1275,6 +1312,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha14), Toast.LENGTH_SHORT).show();
                         tha14a.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha14: This data is Required!");
+                        tha14a.setFocusable(true);
+                        tha14a.setFocusableInTouchMode(true);
+                        tha14a.requestFocus();
                         return false;
                     } else {
                         tha14a.setError(null);
@@ -1286,6 +1326,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha15), Toast.LENGTH_SHORT).show();
                         tha15a.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha15: This data is Required!");
+                        tha15a.setFocusable(true);
+                        tha15a.setFocusableInTouchMode(true);
+                        tha15a.requestFocus();
                         return false;
                     } else {
                         tha15a.setError(null);
@@ -1299,6 +1342,9 @@ public class SectionHAActivity extends Activity {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha16), Toast.LENGTH_SHORT).show();
                             tha16a.setError("This data is Required!");    // Set Error on last radio button
                             Log.i(TAG, "tha16: This data is Required!");
+                            tha16a.setFocusable(true);
+                            tha16a.setFocusableInTouchMode(true);
+                            tha16a.requestFocus();
                             return false;
                         } else {
                             tha16a.setError(null);
@@ -1311,6 +1357,7 @@ public class SectionHAActivity extends Activity {
                                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                                 tha1688x.setError("This data is Required!");    // Set Error on last radio button
                                 Log.i(TAG, "tha1688x: This data is Required!");
+                                tha1688x.requestFocus();
                                 return false;
                             } else {
                                 tha1688x.setError(null);
@@ -1323,6 +1370,9 @@ public class SectionHAActivity extends Activity {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha17), Toast.LENGTH_SHORT).show();
                             tha17a.setError("This data is Required!");    // Set Error on last radio button
                             Log.i(TAG, "tha17: This data is Required!");
+                            tha17a.setFocusable(true);
+                            tha17a.setFocusableInTouchMode(true);
+                            tha17a.requestFocus();
                             return false;
                         } else {
                             tha17a.setError(null);
@@ -1336,6 +1386,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha18), Toast.LENGTH_SHORT).show();
                         tha18a.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha18: This data is Required!");
+                        tha18a.setFocusable(true);
+                        tha18a.setFocusableInTouchMode(true);
+                        tha18a.requestFocus();
                         return false;
                     } else {
                         tha18a.setError(null);
@@ -1355,6 +1408,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha19), Toast.LENGTH_LONG).show();
                         tha19a.setError("This data is Required!");
                         Log.i(TAG, "tha19a: This data is Required!");
+                        tha19a.setFocusable(true);
+                        tha19a.setFocusableInTouchMode(true);
+                        tha19a.requestFocus();
                         return false;
                     } else {
                         tha19a.setError(null);
@@ -1366,6 +1422,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha20), Toast.LENGTH_SHORT).show();
                         tha20a.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha20: This data is Required!");
+                        tha20a.setFocusable(true);
+                        tha20a.setFocusableInTouchMode(true);
+                        tha20a.requestFocus();
                         return false;
                     } else {
                         tha20a.setError(null);
@@ -1378,6 +1437,7 @@ public class SectionHAActivity extends Activity {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha20), Toast.LENGTH_SHORT).show();
                             tha20hr.setError("This data is Required!");    // Set Error on last radio button
                             Log.i(TAG, "tha20hr: This data is Required!");
+                            tha20hr.requestFocus();
                             return false;
                         } else {
                             tha20hr.setError(null);
@@ -1392,6 +1452,7 @@ public class SectionHAActivity extends Activity {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha20), Toast.LENGTH_SHORT).show();
                             tha20d.setError("This data is Required!");    // Set Error on last radio button
                             Log.i(TAG, "tha20d: This data is Required!");
+                            tha20d.requestFocus();
                             return false;
                         } else {
                             tha20d.setError(null);
@@ -1408,6 +1469,7 @@ public class SectionHAActivity extends Activity {
                                         " less than the difference of illness of did you seek care ", Toast.LENGTH_SHORT).show();
                                 tha20d.setError("Must be greater than 0 and must be less than difference of illness of did you seek care");
                                 Log.i(TAG, "tha20d: This data is Required!");
+                                tha20d.requestFocus();
                                 return false;
                             } else {
                                 tha20d.setError(null);
@@ -1425,6 +1487,9 @@ public class SectionHAActivity extends Activity {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha21), Toast.LENGTH_SHORT).show();
                             tha21a.setError("This data is Required!");    // Set Error on last radio button
                             Log.i(TAG, "tha21: This data is Required!");
+                            tha21a.setFocusable(true);
+                            tha21a.setFocusableInTouchMode(true);
+                            tha21a.requestFocus();
                             return false;
                         } else {
                             tha21a.setError(null);
@@ -1437,6 +1502,7 @@ public class SectionHAActivity extends Activity {
                                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha22), Toast.LENGTH_SHORT).show();
                                 tha22.setError("This data is Required!");    // Set Error on last radio button
                                 Log.i(TAG, "tha22: This data is Required!");
+                                tha22.requestFocus();
                                 return false;
                             } else {
                                 tha22.setError(null);
@@ -1447,6 +1513,7 @@ public class SectionHAActivity extends Activity {
                                 Toast.makeText(this, "After how many days of discharge were you recommended for a follow up visit", Toast.LENGTH_SHORT).show();
                                 tha22.setError("Must be greater than 0");
                                 Log.i(TAG, "tha22: This data is Required!");
+                                tha22.requestFocus();
                                 return false;
                             } else {
                                 tha22.setError(null);
@@ -1458,6 +1525,9 @@ public class SectionHAActivity extends Activity {
                                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha23), Toast.LENGTH_SHORT).show();
                                 tha23a.setError("This data is Required!");    // Set Error on last radio button
                                 Log.i(TAG, "tha23: This data is Required!");
+                                tha23a.setFocusable(true);
+                                tha23a.setFocusableInTouchMode(true);
+                                tha23a.requestFocus();
                                 return false;
                             } else {
                                 tha23a.setError(null);
@@ -1477,6 +1547,9 @@ public class SectionHAActivity extends Activity {
                                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha24), Toast.LENGTH_LONG).show();
                                     tha24a.setError("This data is Required!");
                                     Log.i(TAG, "tha24a: This data is Required!");
+                                    tha24a.setFocusable(true);
+                                    tha24a.setFocusableInTouchMode(true);
+                                    tha24a.requestFocus();
                                     return false;
                                 } else {
                                     tha24a.setError(null);
@@ -1499,6 +1572,9 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
                         tha25a.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha25: This data is Required!");
+                        tha25a.setFocusable(true);
+                        tha25a.setFocusableInTouchMode(true);
+                        tha25a.requestFocus();
                         return false;
                     } else {
                         tha25a.setError(null);
@@ -1514,6 +1590,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha26), Toast.LENGTH_SHORT).show();
                         tha26.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha26: This data is Required!");
+                        tha26.requestFocus();
                         return false;
                     } else {
                         tha26.setError(null);
@@ -1524,6 +1601,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "How far is the health facility, where you sought treatment of {NAME} for diarrheal episode", Toast.LENGTH_SHORT).show();
                         tha26.setError("Must be greater than 0");
                         Log.i(TAG, "tha26: This data is Required!");
+                        tha26.requestFocus();
                         return false;
                     } else {
                         tha26.setError(null);
@@ -1537,6 +1615,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha27), Toast.LENGTH_SHORT).show();
                     tha27a.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha27: This data is Required!");
+                    tha27a.setFocusable(true);
+                    tha27a.setFocusableInTouchMode(true);
+                    tha27a.requestFocus();
                     return false;
                 } else {
                     tha27a.setError(null);
@@ -1549,6 +1630,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                         tha2788x.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha2788x: This data is Required!");
+                        tha2788x.requestFocus();
                         return false;
                     } else {
                         tha2788x.setError(null);
@@ -1563,6 +1645,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha28), Toast.LENGTH_SHORT).show();
                         tha28.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha28: This data is Required!");
+                        tha28.requestFocus();
                         return false;
                     } else {
                         tha28.setError(null);
@@ -1577,6 +1660,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha29), Toast.LENGTH_SHORT).show();
                         tha29.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha29: This data is Required!");
+                        tha29.requestFocus();
                         return false;
                     } else {
                         tha29.setError(null);
@@ -1592,6 +1676,7 @@ public class SectionHAActivity extends Activity {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha30), Toast.LENGTH_SHORT).show();
                         tha30.setError("This data is Required!");    // Set Error on last radio button
                         Log.i(TAG, "tha30: This data is Required!");
+                        tha30.requestFocus();
                         return false;
                     } else {
                         tha30.setError(null);
@@ -1605,6 +1690,9 @@ public class SectionHAActivity extends Activity {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha31), Toast.LENGTH_SHORT).show();
                     tha31a.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "tha31: This data is Required!");
+                    tha31a.setFocusable(true);
+                    tha31a.setFocusableInTouchMode(true);
+                    tha31a.requestFocus();
                     return false;
                 } else {
                     tha31a.setError(null);
@@ -1618,6 +1706,9 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha32), Toast.LENGTH_SHORT).show();
                 tha32a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha32: This data is Required!");
+                tha32a.setFocusable(true);
+                tha32a.setFocusableInTouchMode(true);
+                tha32a.requestFocus();
                 return false;
             } else {
                 tha32a.setError(null);
@@ -1633,6 +1724,9 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha33), Toast.LENGTH_SHORT).show();
                 tha33a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha33: This data is Required!");
+                tha33a.setFocusable(true);
+                tha33a.setFocusableInTouchMode(true);
+                tha33a.requestFocus();
                 return false;
             } else {
                 tha33a.setError(null);
@@ -1647,6 +1741,9 @@ public class SectionHAActivity extends Activity {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha34), Toast.LENGTH_SHORT).show();
                 tha34a.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha34: This data is Required!");
+                tha34a.setFocusable(true);
+                tha34a.setFocusableInTouchMode(true);
+                tha34a.requestFocus();
                 return false;
             } else {
                 tha34a.setError(null);

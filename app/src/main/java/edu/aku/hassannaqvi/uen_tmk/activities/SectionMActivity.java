@@ -197,7 +197,9 @@ public class SectionMActivity extends Activity {
         if (tm01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm01), Toast.LENGTH_SHORT).show();
             tm01b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm01b.setFocusable(true);
+            tm01b.setFocusableInTouchMode(true);
+            tm01b.requestFocus();
             Log.i(TAG, "tm01: This data is Required!");
             return false;
         } else {
@@ -208,7 +210,9 @@ public class SectionMActivity extends Activity {
         if (tm02.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm02), Toast.LENGTH_SHORT).show();
             tm02b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm02b.setFocusable(true);
+            tm02b.setFocusableInTouchMode(true);
+            tm02b.requestFocus();
             Log.i(TAG, "tm02: This data is Required!");
             return false;
         } else {
@@ -219,7 +223,9 @@ public class SectionMActivity extends Activity {
         if (tm03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm03), Toast.LENGTH_SHORT).show();
             tm03b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm03b.setFocusable(true);
+            tm03b.setFocusableInTouchMode(true);
+            tm03b.requestFocus();
             Log.i(TAG, "tm03: This data is Required!");
             return false;
         } else {
@@ -230,7 +236,9 @@ public class SectionMActivity extends Activity {
         if (tm04.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm04), Toast.LENGTH_SHORT).show();
             tm04b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm04b.setFocusable(true);
+            tm04b.setFocusableInTouchMode(true);
+            tm04b.requestFocus();
             Log.i(TAG, "tm04: This data is Required!");
             return false;
         } else {
@@ -241,7 +249,9 @@ public class SectionMActivity extends Activity {
         if (tm05.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm05), Toast.LENGTH_SHORT).show();
             tm05b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm05b.setFocusable(true);
+            tm05b.setFocusableInTouchMode(true);
+            tm05b.requestFocus();
             Log.i(TAG, "tm05: This data is Required!");
             return false;
         } else {
@@ -252,7 +262,9 @@ public class SectionMActivity extends Activity {
         if (tm06.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm06), Toast.LENGTH_SHORT).show();
             tm06b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm06b.setFocusable(true);
+            tm06b.setFocusableInTouchMode(true);
+            tm06b.requestFocus();
             Log.i(TAG, "tm06: This data is Required!");
             return false;
         } else {
@@ -263,7 +275,9 @@ public class SectionMActivity extends Activity {
         if (tm07.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm07), Toast.LENGTH_SHORT).show();
             tm07b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm07b.setFocusable(true);
+            tm07b.setFocusableInTouchMode(true);
+            tm07b.requestFocus();
             Log.i(TAG, "tm07: This data is Required!");
             return false;
         } else {
@@ -274,7 +288,9 @@ public class SectionMActivity extends Activity {
         if (tm08.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm08), Toast.LENGTH_SHORT).show();
             tm08b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm08b.setFocusable(true);
+            tm08b.setFocusableInTouchMode(true);
+            tm08b.requestFocus();
             Log.i(TAG, "tm08: This data is Required!");
             return false;
         } else {
@@ -285,7 +301,9 @@ public class SectionMActivity extends Activity {
         if (tm09.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm09), Toast.LENGTH_SHORT).show();
             tm09b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm09b.setFocusable(true);
+            tm09b.setFocusableInTouchMode(true);
+            tm09b.requestFocus();
             Log.i(TAG, "tm09: This data is Required!");
             return false;
         } else {
@@ -296,7 +314,9 @@ public class SectionMActivity extends Activity {
         if (tm10.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm10), Toast.LENGTH_SHORT).show();
             tm10b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm10b.setFocusable(true);
+            tm10b.setFocusableInTouchMode(true);
+            tm10b.requestFocus();
             Log.i(TAG, "tm10: This data is Required!");
             return false;
         } else {
@@ -307,7 +327,9 @@ public class SectionMActivity extends Activity {
         if (tm11.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm11), Toast.LENGTH_SHORT).show();
             tm11b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm11b.setFocusable(true);
+            tm11b.setFocusableInTouchMode(true);
+            tm11b.requestFocus();
             Log.i(TAG, "tm11: This data is Required!");
             return false;
         } else {
@@ -318,7 +340,9 @@ public class SectionMActivity extends Activity {
         if (tm12.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm12), Toast.LENGTH_SHORT).show();
             tm12b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm12b.setFocusable(true);
+            tm12b.setFocusableInTouchMode(true);
+            tm12b.requestFocus();
             Log.i(TAG, "tm12: This data is Required!");
             return false;
         } else {
@@ -328,7 +352,9 @@ public class SectionMActivity extends Activity {
         if (tm13.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm13), Toast.LENGTH_SHORT).show();
             tm13b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm13b.setFocusable(true);
+            tm13b.setFocusableInTouchMode(true);
+            tm13b.requestFocus();
             Log.i(TAG, "tm13: This data is Required!");
             return false;
         } else {
@@ -338,7 +364,9 @@ public class SectionMActivity extends Activity {
         if (tm14.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm14), Toast.LENGTH_SHORT).show();
             tm14b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm14b.setFocusable(true);
+            tm14b.setFocusableInTouchMode(true);
+            tm14b.requestFocus();
             Log.i(TAG, "tm14: This data is Required!");
             return false;
         } else {
@@ -348,7 +376,9 @@ public class SectionMActivity extends Activity {
         if (tm15.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm15), Toast.LENGTH_SHORT).show();
             tm15b.setError("This data is Required!");    // Set Error on last radio button
-
+            tm15b.setFocusable(true);
+            tm15b.setFocusableInTouchMode(true);
+            tm15b.requestFocus();
             Log.i(TAG, "tm15: This data is Required!");
             return false;
         } else {

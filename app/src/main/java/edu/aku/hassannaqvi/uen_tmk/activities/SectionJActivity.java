@@ -773,7 +773,7 @@ public class SectionJActivity extends Activity {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.tj01), Toast.LENGTH_SHORT).show();
             ((TextView) tj01.getSelectedView()).setText("This Data is Required");
             ((TextView) tj01.getSelectedView()).setTextColor(Color.RED);
-
+            tj01.requestFocus();
             Log.i(TAG, "tj01: This Data is Required!");
             return false;
         } else {
@@ -784,6 +784,9 @@ public class SectionJActivity extends Activity {
         if (tj02.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj02), Toast.LENGTH_SHORT).show();
             tj0288.setError("This data is Required!");    // Set Error on last radio button
+            tj02a.setFocusable(true);
+            tj02a.setFocusableInTouchMode(true);
+            tj02a.requestFocus();
 
             Log.i(TAG, "tj02: This data is Required!");
             return false;
@@ -793,7 +796,7 @@ public class SectionJActivity extends Activity {
         if (tj0288.isChecked() && tj0288x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             tj0288x.setError("This data is Required! ");    // Set Error on last radio button
-
+            tj0288x.requestFocus();
             Log.i(TAG, "tj0288x: This data is Required!");
             return false;
         } else {
@@ -805,6 +808,9 @@ public class SectionJActivity extends Activity {
         if (tj03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj03), Toast.LENGTH_SHORT).show();
             tj03888.setError("This data is Required!");    // Set Error on last radio button
+            tj03a.setFocusable(true);
+            tj03a.setFocusableInTouchMode(true);
+            tj03a.requestFocus();
 
             Log.i(TAG, "tj03: This data is Required!");
             return false;
@@ -815,7 +821,7 @@ public class SectionJActivity extends Activity {
             if (tj03m.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                 tj03m.setError("This data is Required! ");    // Set Error on last radio button
-
+                tj03m.requestFocus();
                 Log.i(TAG, "tj03m: This data is Required!");
                 return false;
             } else {
@@ -824,7 +830,7 @@ public class SectionJActivity extends Activity {
             if (Integer.parseInt(tj03m.getText().toString()) < 1 || Integer.parseInt(tj03m.getText().toString()) > 59) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.min), Toast.LENGTH_SHORT).show();
                 tj03m.setError("Range from 1 - 59!");    // Set Error on last radio button
-
+                tj03m.requestFocus();
                 Log.i(TAG, "tj03m: Range from 1 - 59!");
                 return false;
             } else {
@@ -834,7 +840,7 @@ public class SectionJActivity extends Activity {
             if (tj03h.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
                 tj03h.setError("This data is Required! ");    // Set Error on last radio button
-
+                tj03h.requestFocus();
                 Log.i(TAG, "tj03h: This data is Required!");
                 return false;
             } else {
@@ -844,7 +850,7 @@ public class SectionJActivity extends Activity {
             if (Integer.valueOf(tj03h.getText().toString()) < 1 || Integer.valueOf(tj03h.getText().toString()) > 23) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.hour), Toast.LENGTH_SHORT).show();
                 tj03h.setError("Range from 1 - 23!");    // Set Error on last radio button
-
+                tj03h.requestFocus();
                 Log.i(TAG, "tj03h: Range from 1 - 23!");
                 return false;
             } else {
@@ -854,7 +860,7 @@ public class SectionJActivity extends Activity {
             if (tj03d.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
                 tj03d.setError("This data is Required! ");    // Set Error on last radio button
-
+                tj03d.requestFocus();
                 Log.i(TAG, "tj03d: This data is Required!");
                 return false;
             } else {
@@ -863,7 +869,7 @@ public class SectionJActivity extends Activity {
             if (Integer.valueOf(tj03d.getText().toString()) < 1 || Integer.valueOf(tj03d.getText().toString()) > 29) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.day), Toast.LENGTH_SHORT).show();
                 tj03d.setError("Range from 1 - 29!");    // Set Error on last radio button
-
+                tj03d.requestFocus();
                 Log.i(TAG, "tj03d: Range from 1 - 29");
                 return false;
             } else {
@@ -875,6 +881,9 @@ public class SectionJActivity extends Activity {
         if (tj04.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj04), Toast.LENGTH_SHORT).show();
             tj04b.setError("This data is Required! ");    // Set Error on last radio button
+            tj04b.setFocusable(true);
+            tj04b.setFocusableInTouchMode(true);
+            tj04b.requestFocus();
 
             Log.i(TAG, "tj04: This data is Required!");
             return false;
@@ -894,7 +903,7 @@ public class SectionJActivity extends Activity {
                     !tj05h.isChecked()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj05), Toast.LENGTH_SHORT).show();
                 tj05h.setError("This data is Required!");    // Set Error on last check box
-
+                tj05h.requestFocus();
                 Log.i(TAG, "tj05: This data is Required!");
                 return false;
             } else {
@@ -906,7 +915,9 @@ public class SectionJActivity extends Activity {
         if (tj06.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj06), Toast.LENGTH_SHORT).show();
             tj06b.setError("This data is Required! ");    // Set Error on last radio button
-
+            tj06b.setFocusable(true);
+            tj06b.setFocusableInTouchMode(true);
+            tj06b.requestFocus();
             Log.i(TAG, "tj06: This data is Required!");
             return false;
         } else {
@@ -920,7 +931,7 @@ public class SectionJActivity extends Activity {
                     tj07h.isChecked() || tj0788.isChecked())) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tj07), Toast.LENGTH_SHORT).show();
                 tj07h.setError("This data is Required!");    // Set Error on last check box
-
+                tj07h.requestFocus();
                 Log.i(TAG, "tj07: This data is Required!");
                 return false;
             } else {
@@ -929,7 +940,7 @@ public class SectionJActivity extends Activity {
             if (tj0788.isChecked() && tj0788x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 tj0788x.setError("This data is Required! ");    // Set Error on last radio button
-
+                tj0788x.requestFocus();
                 Log.i(TAG, "tj07: This data is Required!");
                 return false;
             } else {
