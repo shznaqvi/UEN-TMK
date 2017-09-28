@@ -522,8 +522,39 @@ public class SectionBActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
-                                finish();
-                                startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
+
+                                Toast.makeText(SectionBActivity.this, "Processing This Section", Toast.LENGTH_SHORT).show();
+                                if (formValidation()) {
+                                    try {
+                                        SaveDraft();
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (UpdateDB()) {
+                                        Toast.makeText(SectionBActivity.this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                                        finish();
+
+                                        if (ageInyears < 2) {
+                                            MainApp.totalImsCount++;
+
+                                        }
+                                        if (ageInyears < 5) {
+                                            MainApp.TotalChildCount++;
+                                            MainApp.TotalMembersCount++;
+                                        } else if (tb11b.isChecked() && tb04b.isChecked()
+                                                && (ageInyears > 15 || ageInyears < 49)) {
+                                            MainApp.TotalMWRACount++;
+                                            MainApp.TotalMembersCount++;
+                                        } else {
+                                            MainApp.TotalMembersCount++;
+                                        }
+                                    }
+                                    startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
+                                } else {
+                                    Toast.makeText(SectionBActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                                }
+
                             }
                         });
         alertDialogBuilder.setNegativeButton("No",
@@ -875,8 +906,6 @@ public class SectionBActivity extends AppCompatActivity {
                 tb11e.setError(null);
             }
         }
-
-
 
 
         if (tb04b.isChecked() && tb11b.isChecked() && !MainApp.isRsvp) {
