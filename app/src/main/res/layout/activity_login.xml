@@ -318,18 +318,29 @@
             </LinearLayout>
 
             <Spinner
-                android:id="@+id/spUC"
-                android:layout_width="fill_parent"
+                android:id="@+id/spUCs"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layoutDirection="ltr"
+                android:popupBackground="#3d3d3d" />
+
+            <Spinner
+                android:id="@+id/spTaluka"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:gravity="center"
-                android:popupBackground="#3d3d3d"
-                android:visibility="gone" />
+                android:layoutDirection="ltr"
+                android:popupBackground="#3d3d3d" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp">
+                android:layout_marginTop="50dp">
 
                 <Button
                     android:id="@+id/syncData"

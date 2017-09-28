@@ -29,8 +29,14 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract.MWRATable;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.TalukasContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.TalukasContract.singleTalukas;
+import edu.aku.hassannaqvi.uen_tmk.contracts.UCsContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.UCsContract.singleUCs;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.UsersContract.singleUser;
+import edu.aku.hassannaqvi.uen_tmk.contracts.VillagesContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.VillagesContract.singleVillages;
 import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
 import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract.singleIm;
@@ -49,6 +55,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleUser.FULL_NAME + " TEXT,"
             + singleUser.REGION_DSS + " TEXT );";
 
+    public static final String SQL_CREATE_VILLAGES = "CREATE TABLE " + singleVillages.TABLE_NAME + "("
+            + singleVillages.COLUMN_ID + " TEXT,"
+            + singleVillages.COLUMN_VILLAGE_NAME + " TEXT,"
+            + singleVillages.COLUMN_UC + " TEXT,"
+            + singleVillages.COLUMN_TALUKA + " TEXT,"
+            + singleVillages.COLUMN_CLUSTER_CODE + " TEXT );";
+
+    public static final String SQL_CREATE_TALUKAS = "CREATE TABLE " + singleTalukas.TABLE_NAME + "("
+            + singleTalukas.COLUMN_ID + " TEXT,"
+            + singleTalukas.COLUMN_TALUKA + " TEXT );";
+
+    public static final String SQL_CREATE_UCS = "CREATE TABLE " + singleUCs.TABLE_NAME + "("
+            + singleUCs.COLUMN_ID + " TEXT,"
+            + singleUCs.COLUMN_UCS + " TEXT );";
 
     public static final String DATABASE_NAME = "uentmk.db";
     public static final String DB_NAME = "uentmk_copy.db";
@@ -144,6 +164,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             MWRATable.COLUMN_USER + " TEXT," +
             MWRATable.COLUMN_SD + " TEXT," +
             MWRATable.COLUMN_DEVICEID + " TEXT," +
+            MWRATable.COLUMN_DEVICETAGID + " TEXT," +
             MWRATable.COLUMN_SYNCED + " TEXT," +
             MWRATable.COLUMN_SYNCED_DATE + " TEXT" +
 
@@ -163,9 +184,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleIm.COLUMN_ISTATUS + " TEXT," +
             singleIm.COLUMN_SYNCED + " TEXT," +
             singleIm.COLUMN_SYNCED_DATE + " TEXT" +
-
             " );";
-
 
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -190,6 +209,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_SELECT_MWRA =
             "SELECT * from census where member_type =? and dss_id_hh =? and uuid =? and current_status IN ('1', '2')";
 
+    private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillages.TABLE_NAME;
+    private static final String SQL_DELETE_TALUKAS = "DROP TABLE IF EXISTS " + singleTalukas.TABLE_NAME;
+    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + singleUCs.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -216,6 +238,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MWRA);
         db.execSQL(SQL_CREATE_SEC_I_IM);
 
+        db.execSQL(SQL_CREATE_VILLAGES);
+        db.execSQL(SQL_CREATE_TALUKAS);
+        db.execSQL(SQL_CREATE_UCS);
+
     }
 
     @Override
@@ -229,6 +255,215 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_DECEASED_CHILD);
         db.execSQL(SQL_DELETE_MWRA);
         db.execSQL(SQL_DELETE_SEC_I_IM);
+
+        db.execSQL(SQL_DELETE_VILLAGES);
+        db.execSQL(SQL_DELETE_TALUKAS);
+        db.execSQL(SQL_DELETE_UCS);
+    }
+
+    public Collection<VillagesContract> getVillage(String taluka, String uc, String cluster) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleVillages.COLUMN_ID,
+                singleVillages.COLUMN_VILLAGE_NAME,
+                singleVillages.COLUMN_UC,
+                singleVillages.COLUMN_TALUKA,
+                singleVillages.COLUMN_CLUSTER_CODE,
+        };
+
+        String whereClause = singleVillages.COLUMN_TALUKA + " =? AND " +
+                singleVillages.COLUMN_UC + " =? AND " + singleVillages.COLUMN_CLUSTER_CODE + " =?";
+        String[] whereArgs = {taluka, uc, cluster};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleVillages.COLUMN_ID + " ASC";
+
+        Collection<VillagesContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleVillages.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                VillagesContract dc = new VillagesContract();
+                allDC.add(dc.HydrateVillages(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<TalukasContract> getAllTalukas() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleTalukas.COLUMN_ID,
+                singleTalukas.COLUMN_TALUKA
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleTalukas.COLUMN_ID + " ASC";
+
+        Collection<TalukasContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleTalukas.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                TalukasContract dc = new TalukasContract();
+                allDC.add(dc.HydrateTalukas(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public Collection<UCsContract> getAllUCs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleUCs.COLUMN_ID,
+                singleUCs.COLUMN_UCS
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleUCs.COLUMN_ID + " ASC";
+
+        Collection<UCsContract> allDC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleUCs.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                UCsContract dc = new UCsContract();
+                allDC.add(dc.HydrateUCs(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+    public void syncVillages(JSONArray Villageslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleVillages.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Villageslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                VillagesContract Vc = new VillagesContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleVillages.COLUMN_ID, Vc.getID());
+                values.put(singleVillages.COLUMN_VILLAGE_NAME, Vc.getVillagename());
+                values.put(singleVillages.COLUMN_UC, Vc.getUc());
+                values.put(singleVillages.COLUMN_TALUKA, Vc.getTaluka());
+                values.put(singleVillages.COLUMN_CLUSTER_CODE, Vc.getClustercode());
+
+                db.insert(singleVillages.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncTalukas(JSONArray Talukaslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleTalukas.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Talukaslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                TalukasContract Vc = new TalukasContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleTalukas.COLUMN_ID, Vc.getID());
+                values.put(singleTalukas.COLUMN_TALUKA, Vc.getTaluka());
+
+                db.insert(singleTalukas.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncUCs(JSONArray UCslist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleUCs.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = UCslist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                UCsContract Vc = new UCsContract();
+                Vc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleUCs.COLUMN_ID, Vc.getID());
+                values.put(singleUCs.COLUMN_UCS, Vc.getUcs());
+
+                db.insert(singleUCs.TABLE_NAME, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
     }
 
     public void syncUser(JSONArray userlist) {
@@ -258,7 +493,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
-
 
 
     public boolean Login(String username, String password) throws SQLException {
@@ -503,8 +737,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values);
         return newRowId;
     }
-
-
 
 
     public Long addDeceasedMother(DeceasedMotherContract dc) {
@@ -855,8 +1087,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MWRATable.COLUMN_USER,
                 MWRATable.COLUMN_SD,
                 MWRATable.COLUMN_DEVICEID,
-                MWRATable.COLUMN_DEVICETAGID,
-
+                MWRATable.COLUMN_DEVICETAGID
         };
         String whereClause = MWRATable.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;

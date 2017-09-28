@@ -85,7 +85,7 @@
          </RadioGroup>
 
         <!--3-->
-        <TextView
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -120,23 +120,23 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/ta03c" />
 
-        </RadioGroup>
+        </RadioGroup>-->
 
         <!--4-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/ta04"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+        <!--        <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ta04"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-        <Spinner
-            android:id="@+id/ta04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></Spinner>
+                <Spinner
+                    android:id="@+id/ta04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>-->
 
         <!--06-->
 
@@ -190,9 +190,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+            android:enabled="false"
             android:hint="@string/ta06"
             android:inputType="text"
-            android:maxLength="20" />
+            android:maxLength="20"
+            android:text="N/A" />
 
         <!--07-->
 
