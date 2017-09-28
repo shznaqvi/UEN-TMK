@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.v4.os.ResultReceiver;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +39,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.uen_tmk.DownloadFileService;
 import edu.aku.hassannaqvi.uen_tmk.FormsList;
 import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
@@ -69,6 +71,7 @@ public class MainActivity extends Activity {
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
     String m_Text = "";
+    ProgressDialog mProgressDialog;
     private ProgressDialog pd;
     private Boolean exit = false;
     private String rSumText = "";
@@ -312,6 +315,40 @@ public class MainActivity extends Activity {
         startActivity(iB);
     }
 
+    public void opendownload(View v) {
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                MainActivity.this);
+        alertDialogBuilder
+                .setMessage("Are you sure to download new app??")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // this is how you fire the downloader
+                                mProgressDialog = new ProgressDialog(MainActivity.this);
+                                mProgressDialog.setMessage("Downloading TMK APK..");
+                                mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                                mProgressDialog.setIndeterminate(false);
+                                mProgressDialog.setProgress(0);
+                                mProgressDialog.show();
+                                Intent intent = new Intent(MainActivity.this, DownloadFileService.class);
+                                intent.putExtra("url", "url of the file to download");
+                                intent.putExtra("receiver", new DownloadReceiver(new Handler()));
+                                startService(intent);
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
+
 
     public void testGPS(View v) {
 
@@ -326,37 +363,58 @@ public class MainActivity extends Activity {
 
     public void updateApp(View v) throws IOException {
         v.setBackgroundColor(Color.GREEN);
-        try {
-            URL url = new URL(MainApp._UPDATE_URL);
-            HttpURLConnection c = (HttpURLConnection) url.openConnection();
-            c.setRequestMethod("GET");
-            c.setDoOutput(true);
-            c.connect();
 
-            String PATH = Environment.getExternalStorageDirectory() + "/download/";
-            File file = new File(PATH);
-            file.mkdirs();
-            File outputFile = new File(file, "app.apk");
-            FileOutputStream fos = new FileOutputStream(outputFile);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                MainActivity.this);
+        alertDialogBuilder
+                .setMessage("Are you sure to download new app??")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // this is how you fire the downloader
+                                try {
+                                    URL url = new URL(MainApp._UPDATE_URL);
+                                    HttpURLConnection c = (HttpURLConnection) url.openConnection();
+                                    c.setRequestMethod("GET");
+                                    c.setDoOutput(true);
+                                    c.connect();
 
-            InputStream is = c.getInputStream();
+                                    String PATH = Environment.getExternalStorageDirectory() + "/download/";
+                                    File file = new File(PATH);
+                                    file.mkdirs();
+                                    File outputFile = new File(file, "app.apk");
+                                    FileOutputStream fos = new FileOutputStream(outputFile);
 
-            byte[] buffer = new byte[1024];
-            int len1 = 0;
-            while ((len1 = is.read(buffer)) != -1) {
-                fos.write(buffer, 0, len1);
-            }
-            fos.close();
-            is.close();//till here, it works fine - .apk is download to my sdcard in download file
+                                    InputStream is = c.getInputStream();
 
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+                                    byte[] buffer = new byte[1024];
+                                    int len1 = 0;
+                                    while ((len1 = is.read(buffer)) != -1) {
+                                        fos.write(buffer, 0, len1);
+                                    }
+                                    fos.close();
+                                    is.close();//till here, it works fine - .apk is download to my sdcard in download file
 
-        } catch (IOException e) {
-            Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
-        }
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+
+                                } catch (IOException e) {
+                                    Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
     public void openDB(View v) {
@@ -417,6 +475,13 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
+            // Sync Users
+           /* BackgroundDrawable bg = new BackgroundDrawable();
+            syncDevice.setBackground(bg);
+            bg.start();*/
+//            new GetMembers(this).execute();
+            //bg.stop();
+
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
@@ -449,8 +514,31 @@ public class MainActivity extends Activity {
         }
     }
 
-    /*
-     * Additional methods like onPreGet() or onFailure() can be added with default implementations.
-     * This is why this has been made and abstract class rather than Interface.
-     */
+    private class DownloadReceiver extends ResultReceiver {
+        public DownloadReceiver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+            super.onReceiveResult(resultCode, resultData);
+            if (resultCode == DownloadFileService.UPDATE_PROGRESS) {
+                int progress = resultData.getInt("progress");
+                mProgressDialog.setMax(100);
+                if (progress == 100) {
+                    mProgressDialog.dismiss();
+
+                    File file = new File(Environment.getExternalStorageDirectory() + "/" + "tmk_bl_sep_25.apk");
+                    if (file.exists()) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                } else {
+                    mProgressDialog.setProgress(progress);
+                }
+            }
+        }
+    }
 }

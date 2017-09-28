@@ -31,7 +31,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -49,7 +48,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,9 +58,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.TalukasContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.UCsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk.get.GetUsers;
+import edu.aku.hassannaqvi.uen_tmk.get.GetTalukas;
+import edu.aku.hassannaqvi.uen_tmk.get.GetUCs;
+import edu.aku.hassannaqvi.uen_tmk.get.GetVillages;
+
+import static java.lang.Thread.sleep;
 
 
 /**
@@ -74,10 +81,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
-    // District Spinner
-    public ArrayList<String> lables;
-    public ArrayList<String> values;
-    public Map<String, String> valuesnlabels;
+    // Spinners
+    ArrayAdapter<String> dataAdapter;
+
+    ArrayList<String> lablesTalukas;
+    Collection<TalukasContract> TalukasList;
+    Map<String, String> talukasMap;
+
+    ArrayList<String> lablesUCs;
+    Collection<UCsContract> UcsList;
+    Map<String, String> ucsMap;
+
     // UI references.
     @BindView(R.id.login_progress)
     ProgressBar mProgressView;
@@ -91,8 +105,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-    @BindView(R.id.spUC)
-    Spinner spUC;
+
+    @BindView(R.id.spUCs)
+    Spinner spUCs;
+    @BindView(R.id.spTaluka)
+    Spinner spTalukas;
 
     @BindView(R.id.syncData)
     Button syncData;
@@ -101,6 +118,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     SharedPreferences.Editor editor;
 
     String DirectoryName;
+
+    DatabaseHelper db;
 
     private UserLoginTask mAuthTask = null;
 
@@ -148,61 +167,85 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+
+                if (spUCs.getSelectedItemPosition() != 0 && spTalukas.getSelectedItemPosition() != 0) {
+                    attemptLogin();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please Sync Data or select from combobox!!", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-        // District Spinner
-        // Populate from District Table
-       /* ArrayList<UCContract> ucList = new ArrayList<UCContract>();
-        ucList = db.getAllUC();*/
+        db = new DatabaseHelper(this);
 
-        // Spinner Drop down elements
-        lables = new ArrayList<String>();
-        lables.add("Rehri Goth");
-        lables.add("Ibrahim Haidery");
-        lables.add("Behns Colony");
-        lables.add("Ali Akber Shah Goth");
+        populateSpinner(this);
 
-        values = new ArrayList<String>();
-        values.add("01");
-        values.add("02");
-        values.add("03");
-        values.add("04");
-
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, lables);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spUC.setAdapter(dataAdapter);
-        spUC.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-
-        //spUC.setOnItemSelectedListener(this);
-        spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainApp.areaCode = values.get(position);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-                Toast.makeText(LoginActivity.this, values.get(position), Toast.LENGTH_SHORT).show();
+                if (spUCs.getSelectedItemPosition() != 0) {
+                    MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
+                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
 
+        spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (spTalukas.getSelectedItemPosition() != 0) {
+                    MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 //        DB backup
 
         dbBackup();
+    }
+
+    public void populateSpinner(Context context) {
+        // Populate UCs list
+        UcsList = db.getAllUCs();
+
+        lablesUCs = new ArrayList<>();
+        ucsMap = new HashMap<>();
+
+        lablesUCs.add("Select UC");
+
+        for (UCsContract ucs : UcsList) {
+            lablesUCs.add(ucs.getUcs());
+            ucsMap.put(ucs.getUcs(), ucs.getID());
+        }
+
+        spUCs.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+
+        // Populate Talukas list
+        TalukasList = db.getAllTalukas();
+
+        lablesTalukas = new ArrayList<>();
+        talukasMap = new HashMap<>();
+
+        lablesTalukas.add("Select Taluka");
+
+        for (TalukasContract taluka : TalukasList) {
+            lablesTalukas.add(taluka.getTaluka());
+
+            talukasMap.put(taluka.getTaluka(), taluka.getID());
+        }
+
+        spTalukas.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
     }
 
     public void dbBackup() {
@@ -277,7 +320,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             new syncData(this).execute();
-
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
@@ -472,7 +514,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                sleep(2000);
             } catch (InterruptedException e) {
                 return false;
             }
@@ -555,7 +597,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 
-
     public class syncData extends AsyncTask<String, String, String> {
 
         private Context mContext;
@@ -570,8 +611,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 @Override
                 public void run() {
-                    Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                    new GetUsers(mContext).execute();
+                    /*Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
+                    new GetUsers(mContext).execute();*/
+                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
+                    new GetVillages(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
+                    new GetUCs(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
+                    new GetTalukas(mContext).execute();
                 }
             });
 
@@ -586,6 +633,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void run() {
 
+                    populateSpinner(mContext);
+
                     editor.putBoolean("flag", true);
                     editor.commit();
 
@@ -595,7 +644,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }, 1200);
         }
     }
-
 
 }
 

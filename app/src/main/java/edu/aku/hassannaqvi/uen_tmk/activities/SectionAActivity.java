@@ -4,33 +4,34 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.IdRes;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
+import edu.aku.hassannaqvi.uen_tmk.contracts.VillagesContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -47,16 +48,16 @@ public class SectionAActivity extends Activity {
     RadioButton ta02b;
     @BindView(R.id.ta02c)
     RadioButton ta02c;
-    @BindView(R.id.ta03)
-    RadioGroup ta03;
-    @BindView(R.id.ta03a)
-    RadioButton ta03a;
-    @BindView(R.id.ta03b)
-    RadioButton ta03b;
-    @BindView(R.id.ta03c)
-    RadioButton ta03c;
-    @BindView(R.id.ta04)
-    Spinner ta04;
+    /*    @BindView(R.id.ta03)
+        RadioGroup ta03;
+        @BindView(R.id.ta03a)
+        RadioButton ta03a;
+        @BindView(R.id.ta03b)
+        RadioButton ta03b;
+        @BindView(R.id.ta03c)
+        RadioButton ta03c;
+        @BindView(R.id.ta04)
+        Spinner ta04;*/
     @BindView(R.id.ta05h)
     EditText ta05h;
     @BindView(R.id.ta05u)
@@ -103,6 +104,9 @@ public class SectionAActivity extends Activity {
 
     int ucsPos = 0;
 
+    Collection<VillagesContract> village;
+    Map<String, String> villageMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +118,7 @@ public class SectionAActivity extends Activity {
         MainApp.familyMembersList = new ArrayList<>();
 
 //            Set adapter to ucs spinner
-        ta04.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ucs));
+        /*ta04.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ucs));
 
         ta04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -126,7 +130,7 @@ public class SectionAActivity extends Activity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
 
 
         ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -139,6 +143,41 @@ public class SectionAActivity extends Activity {
                     btn_Continue.setVisibility(View.GONE);
                     btn_End.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+//        Get Village name
+
+        ta01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!ta01.getText().toString().isEmpty()) {
+                    village = db.getVillage(String.valueOf(MainApp.talukaCode), String.valueOf(MainApp.ucCode), ta01.getText().toString());
+
+                    villageMap = new HashMap<>();
+
+                    if (village.size() != 0) {
+                        for (VillagesContract vil : village) {
+                            ta06.setError(null);
+                            ta06.setText(vil.getVillagename());
+                            villageMap.put(vil.getVillagename(), vil.getID());
+                        }
+                    } else {
+                        ta06.setText("N/A");
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -207,11 +246,12 @@ public class SectionAActivity extends Activity {
 
         sa.put("ta01", ta01.getText().toString());
         sa.put("ta02", ta02a.isChecked() ? "1" : ta02b.isChecked() ? "2" : ta02c.isChecked() ? "3" : "0");
-        sa.put("ta03", ta03a.isChecked() ? "1" : ta03b.isChecked() ? "2" : ta03c.isChecked() ? "3" : "0");
-        sa.put("ta04", ucsPos);
+        sa.put("ta03", MainApp.talukaCode);
+        sa.put("ta04", MainApp.ucCode);
         sa.put("ta05h", ta05h.getText().toString());
         sa.put("ta05u", ta05u.getText().toString());
         sa.put("ta06", ta06.getText().toString());
+        sa.put("ta06ID", villageMap.get(ta06.getText().toString()));
         sa.put("ta07", ta07.getText().toString());
         sa.put("ta08", ta08.getText().toString());
         sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
@@ -303,7 +343,7 @@ public class SectionAActivity extends Activity {
         }
 
 //        03
-        if (ta03.getCheckedRadioButtonId() == -1) {
+/*        if (ta03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta03), Toast.LENGTH_SHORT).show();
             ta03c.setError("This data is Required!");    // Set Error on last radio button
             ta03c.setFocusableInTouchMode(true);
@@ -313,10 +353,10 @@ public class SectionAActivity extends Activity {
             return false;
         } else {
             ta03c.setError(null);
-        }
+        }*/
 
 //        04
-        if (ta04.getSelectedItem() == "....") {
+/*        if (ta04.getSelectedItem() == "....") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.ta04), Toast.LENGTH_SHORT).show();
             ((TextView) ta04.getSelectedView()).setText("This Data is Required");
             ((TextView) ta04.getSelectedView()).setTextColor(Color.RED);
@@ -325,7 +365,7 @@ public class SectionAActivity extends Activity {
             return false;
         } else {
             ((TextView) ta04.getSelectedView()).setError(null);
-        }
+        }*/
 
 //        05
         if (ta05h.getText().toString().isEmpty()) {
@@ -348,11 +388,11 @@ public class SectionAActivity extends Activity {
         }
 
 //        06
-        if (ta06.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta06), Toast.LENGTH_SHORT).show();
-            ta06.setError("This data is Required! ");    // Set Error on last radio button
+        if (ta06.getText().toString().equals("N/A")) {
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.ta06), Toast.LENGTH_SHORT).show();
+            ta06.setError("Change cluster no! ");    // Set Error on last radio button
             ta06.requestFocus();
-            Log.i(TAG, "ta06: This data is Required!");
+            Log.i(TAG, "ta06: Change cluster no!");
             return false;
         } else {
             ta06.setError(null);

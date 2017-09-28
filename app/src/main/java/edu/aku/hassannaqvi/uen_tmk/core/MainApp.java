@@ -135,9 +135,10 @@ public class MainApp extends Application {
     public static Boolean isRsvp = false;
     public static Boolean isHead = false;
     public static String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    public static int ucCode = 0;
+    public static int talukaCode = 0;
     protected static LocationManager locationManager;
     Location location;
-
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 
