@@ -180,27 +180,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         populateSpinner(this);
 
+
         spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (spUCs.getSelectedItemPosition() != 0) {
+                if (!spUCs.getSelectedItem().equals("Select UC..")) {
                     MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (spTalukas.getSelectedItemPosition() != 0) {
-                    MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
                 }
             }
 
@@ -216,28 +202,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     public void populateSpinner(Context context) {
-        // Populate UCs list
-        UcsList = db.getAllUCs();
-
-        lablesUCs = new ArrayList<>();
-        ucsMap = new HashMap<>();
-
-        lablesUCs.add("Select UC");
-
-        for (UCsContract ucs : UcsList) {
-            lablesUCs.add(ucs.getUcs());
-            ucsMap.put(ucs.getUcs(), ucs.getID());
-        }
-
-        spUCs.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
-
         // Populate Talukas list
         TalukasList = db.getAllTalukas();
 
         lablesTalukas = new ArrayList<>();
         talukasMap = new HashMap<>();
 
-        lablesTalukas.add("Select Taluka");
+        lablesTalukas.add("Select Taluka..");
 
         for (TalukasContract taluka : TalukasList) {
             lablesTalukas.add(taluka.getTaluka());
@@ -246,6 +217,38 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
 
         spTalukas.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
+
+        spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // Populate UCs list
+
+                if (spTalukas.getSelectedItemPosition() != 0) {
+                    MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
+                }
+
+                lablesUCs = new ArrayList<>();
+                ucsMap = new HashMap<>();
+                lablesUCs.add("Select UC..");
+
+                if (!spTalukas.getSelectedItem().equals("Select Taluka..")) {
+                    UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
+                    for (UCsContract ucs : UcsList) {
+                        lablesUCs.add(ucs.getUcs());
+                        ucsMap.put(ucs.getUcs(), ucs.getID());
+                    }
+                }
+
+                spUCs.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     public void dbBackup() {
@@ -634,6 +637,37 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
 
                     populateSpinner(mContext);
+
+                    /*spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            if (spTalukas.getSelectedItemPosition() != 0) {
+                                MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
+                            }
+                            // Populate UCs list
+                            UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
+
+                            lablesUCs = new ArrayList<>();
+                            ucsMap = new HashMap<>();
+
+                            lablesUCs.add("Select UC");
+
+                            for (UCsContract ucs : UcsList) {
+                                lablesUCs.add(ucs.getUcs());
+                                ucsMap.put(ucs.getUcs(), ucs.getID());
+                            }
+
+                            spUCs.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+                        }
+
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });*/
+
 
                     editor.putBoolean("flag", true);
                     editor.commit();

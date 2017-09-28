@@ -68,6 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_UCS = "CREATE TABLE " + singleUCs.TABLE_NAME + "("
             + singleUCs.COLUMN_ID + " TEXT,"
+            + singleUCs.COLUMN_TALUKA_CODE + " TEXT,"
             + singleUCs.COLUMN_UCS + " TEXT );";
 
     public static final String DATABASE_NAME = "uentmk.db";
@@ -349,16 +350,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDC;
     }
 
-    public Collection<UCsContract> getAllUCs() {
+    public Collection<UCsContract> getAllUCs(String talukaCode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 singleUCs.COLUMN_ID,
-                singleUCs.COLUMN_UCS
+                singleUCs.COLUMN_UCS,
+                singleUCs.COLUMN_TALUKA_CODE
         };
 
-        String whereClause = null;
-        String[] whereArgs = null;
+        String whereClause = singleUCs.COLUMN_TALUKA_CODE + "=?";
+        String[] whereArgs = new String[]{talukaCode};
         String groupBy = null;
         String having = null;
 
@@ -457,6 +459,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 values.put(singleUCs.COLUMN_ID, Vc.getID());
                 values.put(singleUCs.COLUMN_UCS, Vc.getUcs());
+                values.put(singleUCs.COLUMN_TALUKA_CODE, Vc.getTaluka_code());
 
                 db.insert(singleUCs.TABLE_NAME, null, values);
             }
@@ -693,6 +696,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MWRATable.COLUMN_USER, mc.getUser());
         values.put(MWRATable.COLUMN_SD, mc.getsD());
         values.put(MWRATable.COLUMN_DEVICEID, mc.getDeviceId());
+        values.put(MWRATable.COLUMN_DEVICETAGID, mc.getDevicetagID());
 
         // SYNCED INFORMATION IS NEVER INSERTED WITH NEW RECORD.
      /*   values.put(MWRATable.COLUMN_SYNCED, mc.getSynced());
@@ -751,6 +755,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DeceasedMother.COLUMN_UUID, dc.get_UUID());
         values.put(DeceasedMother.COLUMN_FORMDATE, dc.getFormDate());
         values.put(DeceasedMother.COLUMN_DEVICEID, dc.getDeviceId());
+        values.put(DeceasedMother.COLUMN_DEVICETAGID, dc.getDevicetagID());
         values.put(DeceasedMother.COLUMN_USER, dc.getUser());
         values.put(DeceasedMother.COLUMN_SE, dc.getsE());
 
