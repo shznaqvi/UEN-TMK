@@ -151,14 +151,14 @@ public class DeceasedMotherContract {
 
         JSONObject json = new JSONObject();
 
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+        json.put(DeceasedMother.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(DeceasedMother.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
+        json.put(DeceasedMother.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        json.put(DeceasedMother.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
+        json.put(DeceasedMother.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+        json.put(DeceasedMother.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(DeceasedMother.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
-        json.put(DeceasedMotherContract.DeceasedMother.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
+        json.put(DeceasedMother.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
 
         return json;
     }
@@ -180,7 +180,7 @@ public class DeceasedMotherContract {
         public static final String COLUMN_SYNCED_DATE = "sync_date";
         public static final String COLUMN_DEVICETAGID = "tagid";
 
-        public static String _URL = "deceased.php";
+        public static String _URL = "deceased_m.php";
     }
 
 }

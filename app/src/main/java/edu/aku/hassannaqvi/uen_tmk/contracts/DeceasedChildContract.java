@@ -151,14 +151,14 @@ public class DeceasedChildContract {
 
         JSONObject json = new JSONObject();
 
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
-        json.put(DeceasedChild.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
-        json.put(DeceasedChildContract.DeceasedChild.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
+        json.put(DeceasedChild.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(DeceasedChild.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
+        json.put(DeceasedChild.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        json.put(DeceasedChild.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
+        json.put(DeceasedChild.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+        json.put(DeceasedChild.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
+        json.put(DeceasedChild.COLUMN_SF, this.sF.equals("") ? JSONObject.NULL : new JSONObject(this.sF));
+        json.put(DeceasedChild.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
 
         return json;
     }
@@ -180,7 +180,7 @@ public class DeceasedChildContract {
         public static final String COLUMN_SYNCED_DATE = "sync_date";
         public static final String COLUMN_DEVICETAGID = "tagid";
 
-        public static String _URL = "deceased.php";
+        public static String _URL = "deceased_c.php";
     }
 
 }
