@@ -180,7 +180,7 @@ public class DeceasedChildContract {
         public static final String COLUMN_SYNCED_DATE = "sync_date";
         public static final String COLUMN_DEVICETAGID = "tagid";
 
-        public static String _URL = "deceased_c.php";
+        public static String _URL = "deceasedchild.php";
     }
 
 }
