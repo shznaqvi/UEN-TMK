@@ -189,6 +189,10 @@ public class SectionEActivity extends AppCompatActivity {
 
         JSONObject sE = new JSONObject();
 
+        sE.put("ta01", MainApp.cluster);
+        sE.put("ta05h", MainApp.hhno);
+        sE.put("ta05u", MainApp.billno);
+
         sE.put("te01", te01.getText().toString());
 
         sE.put("te02d", te02d.getText().toString());

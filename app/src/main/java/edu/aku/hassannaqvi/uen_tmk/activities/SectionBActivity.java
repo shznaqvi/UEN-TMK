@@ -622,6 +622,10 @@ public class SectionBActivity extends AppCompatActivity {
 
         JSONObject sB = new JSONObject();
 
+        sB.put("ta01", MainApp.cluster);
+        sB.put("ta05h", MainApp.hhno);
+        sB.put("ta05u", MainApp.billno);
+
         sB.put("tb01", MainApp.counter);
         sB.put("tb02", tb02.getText().toString());
         sB.put("tb03", tb03a.isChecked() ? "1" : tb03b.isChecked() ? "2" : tb03c.isChecked() ? "3"

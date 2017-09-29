@@ -137,6 +137,9 @@ public class MainApp extends Application {
     public static String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     public static int ucCode = 0;
     public static int talukaCode = 0;
+    public static String cluster = "";
+    public static String hhno = "";
+    public static String billno = "";
     protected static LocationManager locationManager;
     Location location;
 

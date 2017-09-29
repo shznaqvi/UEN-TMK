@@ -2283,6 +2283,10 @@ public class SectionIActivity extends AppCompatActivity
 
         JSONObject sI = new JSONObject();
 
+        sI.put("ta01", MainApp.cluster);
+        sI.put("ta05h", MainApp.hhno);
+        sI.put("ta05u", MainApp.billno);
+
         sI.put("tiname", tiname.getSelectedItem().toString());
         sI.put("tiresp", tiresp.isChecked() ? "1" : "2");
         sI.put("ti01", ti01a.isChecked() ? "1" : ti01b.isChecked() ? "2" : ti01888.isChecked() ? "888" : "0");

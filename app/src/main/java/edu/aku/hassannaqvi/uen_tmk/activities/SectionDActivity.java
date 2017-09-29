@@ -268,6 +268,10 @@ public class SectionDActivity extends Activity {
 
         JSONObject sD = new JSONObject();
 
+        sD.put("ta01", MainApp.cluster);
+        sD.put("ta05h", MainApp.hhno);
+        sD.put("ta05u", MainApp.billno);
+
         sD.put("tdmwraSerial", mwraMap.get(mwraNames.getSelectedItem().toString()));
         sD.put("td01", mwraNames.getSelectedItem().toString());
         sD.put("td02", td01a.isChecked() ? "1" : td01b.isChecked() ? "2" : "0");

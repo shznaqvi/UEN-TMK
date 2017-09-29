@@ -244,6 +244,10 @@ public class SectionAActivity extends Activity {
 
         JSONObject sa = new JSONObject();
 
+        MainApp.cluster = ta01.getText().toString();
+        MainApp.hhno = ta05h.getText().toString();
+        MainApp.billno = ta05u.getText().toString();
+
         sa.put("ta01", ta01.getText().toString());
         sa.put("ta02", ta02a.isChecked() ? "1" : ta02b.isChecked() ? "2" : ta02c.isChecked() ? "3" : "0");
         sa.put("ta03", MainApp.talukaCode);

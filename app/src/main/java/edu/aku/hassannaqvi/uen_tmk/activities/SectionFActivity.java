@@ -197,6 +197,10 @@ public class SectionFActivity extends AppCompatActivity {
 
         JSONObject sF = new JSONObject();
 
+        sF.put("ta01", MainApp.cluster);
+        sF.put("ta05h", MainApp.hhno);
+        sF.put("ta05u", MainApp.billno);
+
         sF.put("tf01", tf01.getText().toString());
         sF.put("tf02", tf02.getText().toString());
         sF.put("tf03", tf03a.isChecked() ? "1" : tf03b.isChecked() ? "2" : "0");
