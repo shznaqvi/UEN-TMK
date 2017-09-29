@@ -2218,7 +2218,7 @@ public class SectionIActivity extends AppCompatActivity
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                //finish();
+                finish();
                 MainApp.imsCount++;
                 if (MainApp.imsCount <= MainApp.totalImsCount) {
                     //finish();
@@ -2231,8 +2231,6 @@ public class SectionIActivity extends AppCompatActivity
                     //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
                     startActivity(secNext);
 
-
-                    scroll.setScrollY(0);
 
                 } else {
                     Intent secNext = new Intent(this, SectionJActivity.class);
