@@ -169,6 +169,7 @@ public class SectionMActivity extends Activity {
         sM.put("tm11", tm11a.isChecked() ? "1" : tm11b.isChecked() ? "2" : "0");
         sM.put("tm12", tm12a.isChecked() ? "1" : tm12b.isChecked() ? "2" : "0");
 
+
         /*sM.put("tm13", tm13a.isChecked() ? "1" : tm13b.isChecked() ? "2" : "0");
         sM.put("tm14", tm14a.isChecked() ? "1" : tm14b.isChecked() ? "2" : "0");
         sM.put("tm15", tm15a.isChecked() ? "1" : tm15b.isChecked() ? "2" : "0");*/
