@@ -93,7 +93,7 @@ public class SectionMActivity extends Activity {
     RadioButton tm12a;
     @BindView(R.id.tm12b)
     RadioButton tm12b;
-    @BindView(R.id.tm13)
+    /*@BindView(R.id.tm13)
     RadioGroup tm13;
     @BindView(R.id.tm13a)
     RadioButton tm13a;
@@ -110,7 +110,7 @@ public class SectionMActivity extends Activity {
     @BindView(R.id.tm15a)
     RadioButton tm15a;
     @BindView(R.id.tm15b)
-    RadioButton tm15b;
+    RadioButton tm15b;*/
 
 
     @Override
@@ -168,9 +168,11 @@ public class SectionMActivity extends Activity {
         sM.put("tm10", tm10a.isChecked() ? "1" : tm10b.isChecked() ? "2" : "0");
         sM.put("tm11", tm11a.isChecked() ? "1" : tm11b.isChecked() ? "2" : "0");
         sM.put("tm12", tm12a.isChecked() ? "1" : tm12b.isChecked() ? "2" : "0");
-        sM.put("tm13", tm13a.isChecked() ? "1" : tm13b.isChecked() ? "2" : "0");
+
+
+        /*sM.put("tm13", tm13a.isChecked() ? "1" : tm13b.isChecked() ? "2" : "0");
         sM.put("tm14", tm14a.isChecked() ? "1" : tm14b.isChecked() ? "2" : "0");
-        sM.put("tm15", tm15a.isChecked() ? "1" : tm15b.isChecked() ? "2" : "0");
+        sM.put("tm15", tm15a.isChecked() ? "1" : tm15b.isChecked() ? "2" : "0");*/
 
         MainApp.fc.setsM(String.valueOf(sM));
     }
@@ -349,7 +351,7 @@ public class SectionMActivity extends Activity {
             tm12b.setError(null);
         }
 
-        if (tm13.getCheckedRadioButtonId() == -1) {
+        /*if (tm13.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tm13), Toast.LENGTH_SHORT).show();
             tm13b.setError("This data is Required!");    // Set Error on last radio button
             tm13b.setFocusable(true);
@@ -383,7 +385,7 @@ public class SectionMActivity extends Activity {
             return false;
         } else {
             tm15b.setError(null);
-        }
+        }*/
 
         return true;
     }

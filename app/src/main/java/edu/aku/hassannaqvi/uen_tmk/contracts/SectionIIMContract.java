@@ -230,6 +230,7 @@ public class SectionIIMContract
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_DEVICETAGID = "tagid";
+
         public static String _URL = "ims.php";
 
     }
