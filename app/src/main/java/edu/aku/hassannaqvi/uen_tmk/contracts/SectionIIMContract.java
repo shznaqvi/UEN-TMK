@@ -191,7 +191,13 @@ public class SectionIIMContract
         json.put(singleIm.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(singleIm.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
         json.put(singleIm.COLUMN_UID, this.UID == null ? JSONObject.NULL : this.UID);
+
+        if (!this.sI.equals(""))
+
+        {
+
         json.put(singleIm.COLUMN_SI, this.sI.equals("") ? JSONObject.NULL : new JSONObject(this.sI));
+        }
         json.put(singleIm.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(singleIm.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         //json.put(singleIm.COLUMN_CHILDID, this.childID == null ? JSONObject.NULL : this.childID);

@@ -572,7 +572,10 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_MEMBER_TYPE, this.member_type == null ? JSONObject.NULL : this.member_type);
         json.put(familyMembers.COLUMN_RSVP, this.rsvp == null ? JSONObject.NULL : this.rsvp);
         json.put(familyMembers.COLUMN_UPDATE_FLAG, this.update_flag == null ? JSONObject.NULL : this.update_flag);*/
-        json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
+        if (!this.sB.equals("")) {
+
+            json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
+        }
 //        json.put(familyMembers.COLUMN_SERIAL_NO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
 //        json.put(familyMembers.COLUMN_REMARKS, this.remarks == null ? JSONObject.NULL : this.remarks);
         json.put(familyMembers.COLUMN_PROJECT_NAME, this.projectName == null ? JSONObject.NULL : this.projectName);
