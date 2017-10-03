@@ -1082,7 +1082,7 @@ public class SectionJActivity extends Activity {
             } else {
                 String[] dob = childsMap.get(tj01.getSelectedItem().toString()).getDob().split("-");
 
-                months = MainApp.ageInMonths(dob[0], dob[1]);
+                months = MainApp.ageInMonths(dob[1], dob[0]);
             }
 
             if (Long.valueOf(tj12m.getText().toString()) > months) {

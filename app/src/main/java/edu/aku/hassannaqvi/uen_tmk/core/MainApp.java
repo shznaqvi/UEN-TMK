@@ -180,7 +180,7 @@ public class MainApp extends Application {
     }
 
     public static long ageInMonths(String year, String month) {
-        long ageInMonths = Integer.valueOf(year) * 12 + Integer.valueOf(month);
+        long ageInMonths = (Integer.valueOf(year) * 12) + Integer.valueOf(month);
         return ageInMonths;
     }
 

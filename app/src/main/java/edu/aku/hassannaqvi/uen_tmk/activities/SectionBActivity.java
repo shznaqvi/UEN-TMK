@@ -613,11 +613,11 @@ public class SectionBActivity extends AppCompatActivity {
 
         MainApp.fmc = new FamilyMembersContract();
 
-        MainApp.fmc.set_UUID(MainApp.fc.getUID());
+
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
         MainApp.fmc.setUser(MainApp.fc.getUser());
-
+        MainApp.fmc.set_UUID(MainApp.fc.getUID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
@@ -682,7 +682,7 @@ public class SectionBActivity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
-                    (MainApp.fmc.getDeviceId() + MainApp.fmc.get_ID()));
+                    (MainApp.fc.getDeviceID() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 
 
