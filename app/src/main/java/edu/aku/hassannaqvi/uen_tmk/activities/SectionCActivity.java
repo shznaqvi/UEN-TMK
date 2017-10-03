@@ -690,7 +690,7 @@ public class SectionCActivity extends Activity {
         sC.put("tc05", tc05a.isChecked() ? "1" : tc05b.isChecked() ? "2"
                 : tc0588.isChecked() ? "88" : "0");
         sC.put("tc0588x", tc0588x.getText().toString());
-        sC.put("td06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
+        sC.put("tc06", tc06a.isChecked() ? "1" : tc06b.isChecked() ? "2"
                 : tc06c.isChecked() ? "3" : tc06d.isChecked() ? "4"
                 : tc0688.isChecked() ? "88" : "0");
         sC.put("tc0688x", tc0688x.getText().toString());
