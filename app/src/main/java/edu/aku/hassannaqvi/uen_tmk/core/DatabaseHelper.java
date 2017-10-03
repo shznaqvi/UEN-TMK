@@ -114,6 +114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
             familyMembers.COLUMN_DEVICETAGID + " TEXT," +
             familyMembers.COLUMN_UID + " TEXT," +
+            familyMembers.COLUMN_UUID + " TEXT," +
             familyMembers.COLUMN_FORMDATE + " TEXT," +
             familyMembers.COLUMN_DEVICEID + " TEXT," +
             familyMembers.COLUMN_USER + " TEXT," +
@@ -666,6 +667,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getProjectName());
         values.put(familyMembers.COLUMN_UID, fmc.get_UID());
+        values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
         values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
         values.put(familyMembers.COLUMN_USER, fmc.getUser());
         values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
@@ -1189,6 +1191,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 familyMembers.COLUMN_ID,
                 familyMembers.COLUMN_ISTATUS,
                 familyMembers.COLUMN_UID,
+                familyMembers.COLUMN_UUID,
                 familyMembers.COLUMN_FORMDATE,
                 familyMembers.COLUMN_DEVICEID,
                 familyMembers.COLUMN_USER,

@@ -2218,10 +2218,10 @@ public class SectionIActivity extends AppCompatActivity
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                finish();
+                //finish();
                 MainApp.imsCount++;
-                if (MainApp.imsCount <= MainApp.totalImsCount) {
-                    //finish();
+                if (MainApp.imsCount < MainApp.totalImsCount) {
+                    finish();
 
 
                     MainApp.lstChild.remove(MainApp.positionIm);

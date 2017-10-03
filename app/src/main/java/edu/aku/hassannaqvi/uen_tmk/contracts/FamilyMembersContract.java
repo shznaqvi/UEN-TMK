@@ -441,8 +441,8 @@ public class FamilyMembersContract {
         this._ID = jsonObject.getString(familyMembers.COLUMN_ID);
 //        this.REF_ID = jsonObject.getString(familyMembers.COLUMN_REF_ID);
         this._UID = jsonObject.getString(familyMembers.COLUMN_UID);
-        /*this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
-        this._DATE = jsonObject.getString(familyMembers.COLUMN_DATE);*/
+        this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
+        //this._DATE = jsonObject.getString(familyMembers.COLUMN_DATE);
         this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
         this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
         this.user = jsonObject.getString(familyMembers.COLUMN_USER);
@@ -490,8 +490,8 @@ public class FamilyMembersContract {
         this._ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ID));
 //        this.REF_ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REF_ID));
         this._UID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UID));
-/*        this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
-        this._DATE = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DATE));*/
+        this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
+        //this._DATE = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DATE));
         this.formDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_FORMDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICEID));
         this.user = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_USER));
@@ -540,8 +540,8 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
 //        json.put(familyMembers.COLUMN_REF_ID, this.REF_ID == null ? JSONObject.NULL : this.REF_ID);
         json.put(familyMembers.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
-/*        json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
-        json.put(familyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);*/
+        json.put(familyMembers.COLUMN_UUID, this._UUID == null ? JSONObject.NULL : this._UUID);
+        //json.put(familyMembers.COLUMN_DATE, this._DATE == null ? JSONObject.NULL : this._DATE);
         json.put(familyMembers.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(familyMembers.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
         json.put(familyMembers.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
@@ -594,8 +594,8 @@ public class FamilyMembersContract {
         public static final String COLUMN_PROJECT_NAME = "project_name";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "uid";
-        /*public static final String COLUMN_UUID = "uuid";
-        public static final String COLUMN_DATE = "_date";*/
+        public static final String COLUMN_UUID = "uuid";
+        //public static final String COLUMN_DATE = "_date";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_USER = "user";
