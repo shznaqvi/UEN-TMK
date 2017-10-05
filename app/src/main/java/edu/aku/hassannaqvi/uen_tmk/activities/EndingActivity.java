@@ -108,6 +108,8 @@ public class EndingActivity extends Activity {
                 MainApp.TotalChildCount = 0;
                 MainApp.imsCount = 1;
                 MainApp.totalImsCount = 0;
+                MainApp.lstChild.clear();
+                MainApp.childsMap.clear();
 
                 MainApp.counter = 0;
 
