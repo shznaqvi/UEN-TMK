@@ -48,13 +48,35 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"></Spinner>
 
-        <CheckBox
-            android:id="@+id/tiresp"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/tiRespondentMother"/>
+            android:background="@color/colorPrimary"
+            android:text="@string/tiRespondentMother"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
+        <RadioGroup
+            android:id="@+id/ti00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/ti00a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/ti00b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/no"/>
+
+        </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
