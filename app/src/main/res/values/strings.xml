@@ -92,7 +92,7 @@
         <string name="ta07a"> Urban </string>
         <string name="ta07b"> Rural </string>
         <string name="ta07c"> Mixed </string>-->
-    <string name="ta05"> House/ khandan number </string>
+  <string name="ta05"> House No </string>
     <string name="ta05h"> House No </string>
     <string name="ta05kh"> Khandan number </string>
     <string name="ta05u"> Gas or electricity bill No </string>
