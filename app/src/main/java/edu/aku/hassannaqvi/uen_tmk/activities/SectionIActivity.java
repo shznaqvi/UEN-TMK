@@ -49,8 +49,12 @@ public class SectionIActivity extends AppCompatActivity
     NestedScrollView scroll;
     @BindView(R.id.tiname)
     Spinner tiname;
-    @BindView(R.id.tiresp)
-    CheckBox tiresp;
+    @BindView(R.id.ti00)
+    RadioGroup ti00;
+    @BindView(R.id.ti00a)
+    RadioButton ti00a;
+    @BindView(R.id.ti00b)
+    RadioButton ti00b;
     @BindView(R.id.ti01)
     RadioGroup ti01;
     @BindView(R.id.ti01a)
@@ -2286,7 +2290,7 @@ public class SectionIActivity extends AppCompatActivity
         sI.put("ta05u", MainApp.billno);
 
         sI.put("tiname", tiname.getSelectedItem().toString());
-        sI.put("tiresp", tiresp.isChecked() ? "1" : "2");
+        sI.put("ti00", ti00a.isChecked() ? "1" : ti00b.isChecked() ? "2" : "0");
         sI.put("ti01", ti01a.isChecked() ? "1" : ti01b.isChecked() ? "2" : ti01888.isChecked() ? "888" : "0");
         sI.put("ti02a", ti02a.isChecked() ? "1" : "0");
         sI.put("ti02b", ti02b.isChecked() ? "2" : "0");
@@ -2489,6 +2493,18 @@ public class SectionIActivity extends AppCompatActivity
             ((TextView) tiname.getSelectedView()).setError(null);
         }
 
+
+        if (ti00.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.tiRespondentMother), Toast.LENGTH_SHORT).show();
+            ti00a.setError("This data is Required!");    // Set Error on last radio button
+            ti00a.setFocusable(true);
+            ti00a.setFocusableInTouchMode(true);
+            ti00a.requestFocus();
+            Log.i(TAG, "ti00: This data is Required!");
+            return false;
+        } else {
+            ti00a.setError(null);
+        }
 
         if (ti01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ti01), Toast.LENGTH_SHORT).show();
