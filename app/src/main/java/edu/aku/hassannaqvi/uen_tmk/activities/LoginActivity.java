@@ -202,6 +202,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
     public void populateSpinner(Context context) {
+
+        final Context mContext = context;
+
         // Populate Talukas list
         TalukasList = db.getAllTalukas();
 
@@ -216,7 +219,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             talukasMap.put(taluka.getTaluka(), taluka.getID());
         }
 
-        spTalukas.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
+        spTalukas.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
 
         spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -231,7 +234,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 ucsMap = new HashMap<>();
                 lablesUCs.add("Select UC..");
 
-                if (!spTalukas.getSelectedItem().equals("Select Taluka..")) {
+                if (spTalukas.getSelectedItemPosition() != 0) {
                     UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
                     for (UCsContract ucs : UcsList) {
                         lablesUCs.add(ucs.getUcs());
@@ -239,7 +242,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     }
                 }
 
-                spUCs.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+                spUCs.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
 
             }
 
@@ -616,12 +619,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
                     /*Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
                     new GetUsers(mContext).execute();*/
-                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
-                    new GetVillages(mContext).execute();
-                    Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
-                    new GetUCs(mContext).execute();
                     Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
                     new GetTalukas(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
+                    new GetUCs(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
+                    new GetVillages(mContext).execute();
+
                 }
             });
 
@@ -637,37 +641,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
 
                     populateSpinner(mContext);
-
-                    /*spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            if (spTalukas.getSelectedItemPosition() != 0) {
-                                MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
-                            }
-                            // Populate UCs list
-                            UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
-
-                            lablesUCs = new ArrayList<>();
-                            ucsMap = new HashMap<>();
-
-                            lablesUCs.add("Select UC");
-
-                            for (UCsContract ucs : UcsList) {
-                                lablesUCs.add(ucs.getUcs());
-                                ucsMap.put(ucs.getUcs(), ucs.getID());
-                            }
-
-                            spUCs.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, lablesUCs));
-                        }
-
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });*/
-
 
                     editor.putBoolean("flag", true);
                     editor.commit();
