@@ -159,13 +159,14 @@ public class SectionIActivity extends AppCompatActivity
                 }
             }
 
+
             if (bcgM01.isChecked() || bcgC01.isChecked()) {
                 fldGrpov1.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc1.setLayoutParams(params);
                 LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
                 scbirth.setLayoutParams(param2);
-            } else if (bcgC02.isChecked() && !bcgM01.isChecked()) {
+            } else if (bcgC02.isChecked() || bcgM02.isChecked()) {
                 fldGrpov1.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc1.setLayoutParams(params);
@@ -263,7 +264,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov2.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc2.setLayoutParams(params);
-            } else if (opv0C02.isChecked() && !opv0M01.isChecked()) {
+            } else if (opv0C02.isChecked() || opv0M02.isChecked()) {
                 fldGrpov2.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc2.setLayoutParams(params);
@@ -364,7 +365,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov2.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc3.setLayoutParams(params);
-            } else if (opv1C02.isChecked() && !opv1M01.isChecked()) {
+            } else if (opv1C02.isChecked() || opv1M02.isChecked()) {
                 fldGrpov3.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc3.setLayoutParams(params);
@@ -462,7 +463,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov4.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc4.setLayoutParams(params);
-            } else if (penta1C02.isChecked() && !penta1M01.isChecked()) {
+            } else if (penta1C02.isChecked() || penta1M02.isChecked()) {
                 fldGrpov4.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc4.setLayoutParams(params);
@@ -562,7 +563,7 @@ public class SectionIActivity extends AppCompatActivity
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc5.setLayoutParams(params);
 
-            } else if (pcv1C02.isChecked() && !pcv1M01.isChecked()) {
+            } else if (pcv1C02.isChecked() || pcv1M02.isChecked()) {
                 fldGrpov5.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc5.setLayoutParams(params);
@@ -661,7 +662,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov6.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc6.setLayoutParams(params);
-            } else if (opv2C02.isChecked() && !opv2M01.isChecked()) {
+            } else if (opv2C02.isChecked() || opv2M02.isChecked()) {
                 fldGrpov6.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc6.setLayoutParams(params);
@@ -759,7 +760,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov7.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc7.setLayoutParams(params);
-            } else if (penta2C02.isChecked() && !penta2M01.isChecked()) {
+            } else if (penta2C02.isChecked() || penta2M02.isChecked()) {
                 fldGrpov7.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc7.setLayoutParams(params);
@@ -858,7 +859,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov8.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc8.setLayoutParams(params);
-            } else if (pcv2C02.isChecked() && !pcv2M01.isChecked()) {
+            } else if (pcv2C02.isChecked() || pcv2M02.isChecked()) {
                 fldGrpov8.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc8.setLayoutParams(params);
@@ -957,7 +958,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov9.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc9.setLayoutParams(params);
-            } else if (opv3C02.isChecked() && !opv3M01.isChecked()) {
+            } else if (opv3C02.isChecked() || opv3M02.isChecked()) {
                 fldGrpov9.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc9.setLayoutParams(params);
@@ -1056,7 +1057,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov10.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc10.setLayoutParams(params);
-            } else if (penta3C02.isChecked() && !penta3M01.isChecked()) {
+            } else if (penta3C02.isChecked() || penta3M02.isChecked()) {
                 fldGrpov10.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc10.setLayoutParams(params);
@@ -1156,7 +1157,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov11.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc11.setLayoutParams(params);
-            } else if (pcv3C02.isChecked() && !pcv3M01.isChecked()) {
+            } else if (pcv3C02.isChecked() || pcv3M02.isChecked()) {
                 fldGrpov11.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc11.setLayoutParams(params);
@@ -1256,7 +1257,7 @@ public class SectionIActivity extends AppCompatActivity
                 fldGrpov12.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc10.setLayoutParams(params);
-            } else if (ipvC02.isChecked() && !ipvM01.isChecked()) {
+            } else if (ipvC02.isChecked() || ipvM02.isChecked()) {
                 fldGrpov12.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc12.setLayoutParams(params);
@@ -1359,7 +1360,7 @@ public class SectionIActivity extends AppCompatActivity
                 sc13.setLayoutParams(params);
                 LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
                 sc9M.setLayoutParams(params2);
-            } else if (measles1C02.isChecked() && !measles1M01.isChecked()) {
+            } else if (measles1C02.isChecked() || measles1M02.isChecked()) {
                 fldGrpov13.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc13.setLayoutParams(params);
@@ -1463,7 +1464,7 @@ public class SectionIActivity extends AppCompatActivity
                 sc14.setLayoutParams(params);
                 LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1000);
                 sc15M.setLayoutParams(params2);
-            } else if (measles2C02.isChecked() && !measles2M01.isChecked()) {
+            } else if (measles2C02.isChecked() || measles2M02.isChecked()) {
                 fldGrpov14.setVisibility(View.GONE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 sc14.setLayoutParams(params);
