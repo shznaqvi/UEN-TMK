@@ -180,22 +180,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         populateSpinner(this);
 
-
-        spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (!spUCs.getSelectedItem().equals("Select UC..")) {
-                    MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
 //        DB backup
 
         dbBackup();
@@ -244,6 +228,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 spUCs.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
 
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (!spUCs.getSelectedItem().equals("Select UC..")) {
+                    MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
+                }
             }
 
             @Override
