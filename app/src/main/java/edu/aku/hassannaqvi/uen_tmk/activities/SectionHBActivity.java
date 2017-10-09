@@ -1808,7 +1808,7 @@ public class SectionHBActivity extends Activity {
 
         JSONObject sHB = new JSONObject();
 
-        sHB.put("tha00", thb00a.isChecked() ? "1" : thb00b.isChecked() ? "2" : "0");
+        sHB.put("thb00", thb00a.isChecked() ? "1" : thb00b.isChecked() ? "2" : "0");
         sHB.put("thb01", thb01a.isChecked() ? "1" : thb01b.isChecked() ? "2" : thb01888.isChecked() ? "888" : "0");
         sHB.put("thb02", thb02.getText().toString());
 

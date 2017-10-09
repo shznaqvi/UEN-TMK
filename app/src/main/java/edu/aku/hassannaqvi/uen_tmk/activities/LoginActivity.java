@@ -64,6 +64,7 @@ import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk.get.GetTalukas;
 import edu.aku.hassannaqvi.uen_tmk.get.GetUCs;
+import edu.aku.hassannaqvi.uen_tmk.get.GetUsers;
 import edu.aku.hassannaqvi.uen_tmk.get.GetVillages;
 
 import static java.lang.Thread.sleep;
@@ -616,8 +617,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 @Override
                 public void run() {
-                    /*Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                    new GetUsers(mContext).execute();*/
+
                     Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
                     new GetTalukas(mContext).execute();
                     Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
@@ -625,6 +625,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
                     new GetVillages(mContext).execute();
 
+                    Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
+                    new GetUsers(mContext).execute();
                 }
             });
 

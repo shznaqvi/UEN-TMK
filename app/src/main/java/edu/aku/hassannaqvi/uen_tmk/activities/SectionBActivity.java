@@ -510,6 +510,24 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.endActivity(this, this);
     }
 
+
+    private boolean UpdateCount() {
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateCount();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+    }
+
     @OnClick(R.id.btn_ContNextSec)
     void onBtnContNextSecClick() {
         //TODO implement
@@ -531,6 +549,7 @@ public class SectionBActivity extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                     if (UpdateDB()) {
+
                                         Toast.makeText(SectionBActivity.this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                                         finish();
@@ -549,8 +568,16 @@ public class SectionBActivity extends AppCompatActivity {
                                         } else {
                                             MainApp.TotalMembersCount++;
                                         }
+
+                                        try {
+                                            SaveDraftCount();
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                        if (UpdateCount()) {
+                                            startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
+                                        }
                                     }
-                                    startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
                                 } else {
                                     Toast.makeText(SectionBActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
                                 }
@@ -565,7 +592,6 @@ public class SectionBActivity extends AppCompatActivity {
                 });
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
-
     }
 
     @OnClick(R.id.btn_addMore)
@@ -599,12 +625,22 @@ public class SectionBActivity extends AppCompatActivity {
                 }
 
             }
-
             startActivity(new Intent(this, SectionBActivity.class));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void SaveDraftCount() throws JSONException {
+        Toast.makeText(this, "Saving Draft Count for This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject count = new JSONObject();
+        count.put("tb13", MainApp.TotalMembersCount);
+        count.put("tb14", MainApp.TotalMWRACount);
+        count.put("tb15", MainApp.TotalChildCount);
+        MainApp.fc.setsB(String.valueOf(count));
+    }
+
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
