@@ -507,9 +507,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (mCursor != null) {
             if (mCursor.getCount() > 0) {
 
-                if (mCursor.moveToFirst()) {
-                    MainApp.regionDss = mCursor.getString(mCursor.getColumnIndex("region_dss"));
-                }
+//                if (mCursor.moveToFirst()) {
+//                    MainApp.regionDss = mCursor.getString(mCursor.getColumnIndex("region_dss"));
+//                }
                 return true;
             }
         }
