@@ -548,35 +548,12 @@ public class SectionBActivity extends AppCompatActivity {
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
-                                    if (UpdateDB()) {
+                                    if (UpdateDB() && UpdateCount()) {
 
                                         Toast.makeText(SectionBActivity.this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                                         finish();
-
-                                        if (ageInyears < 2) {
-                                            MainApp.totalImsCount++;
-
-                                        }
-                                        if (ageInyears < 5) {
-                                            MainApp.TotalChildCount++;
-                                            MainApp.TotalMembersCount++;
-                                        } else if (tb11b.isChecked() && tb04b.isChecked()
-                                                && (ageInyears > 15 || ageInyears < 49)) {
-                                            MainApp.TotalMWRACount++;
-                                            MainApp.TotalMembersCount++;
-                                        } else {
-                                            MainApp.TotalMembersCount++;
-                                        }
-
-                                        try {
-                                            SaveDraftCount();
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
-                                        }
-                                        if (UpdateCount()) {
-                                            startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
-                                        }
+                                        startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
                                     }
                                 } else {
                                     Toast.makeText(SectionBActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -609,21 +586,6 @@ public class SectionBActivity extends AppCompatActivity {
 
                 finish();
 
-                if (ageInyears < 2) {
-                    MainApp.totalImsCount++;
-
-                }
-                if (ageInyears < 5) {
-                    MainApp.TotalChildCount++;
-                    MainApp.TotalMembersCount++;
-                } else if (tb11b.isChecked() && tb04b.isChecked()
-                        && (ageInyears > 15 || ageInyears < 49)) {
-                    MainApp.TotalMWRACount++;
-                    MainApp.TotalMembersCount++;
-                } else {
-                    MainApp.TotalMembersCount++;
-                }
-
             }
             startActivity(new Intent(this, SectionBActivity.class));
         } else {
@@ -631,19 +593,33 @@ public class SectionBActivity extends AppCompatActivity {
         }
     }
 
-    private void SaveDraftCount() throws JSONException {
-        Toast.makeText(this, "Saving Draft Count for This Section", Toast.LENGTH_SHORT).show();
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        // children
+        if (ageInyears < 5) {
+            // u2
+            if (ageInyears < 2) {
+                MainApp.totalImsCount++;
+            }
+            // u5
+            MainApp.TotalChildCount++;
+        }
+        // MWRA
+        if (tb11b.isChecked() && tb04b.isChecked()
+                && ageInyears > 15 && ageInyears < 49) {
+            MainApp.TotalMWRACount++;
+        }
+        // TOTAL MEMBERS
+        MainApp.TotalMembersCount++;
 
         JSONObject count = new JSONObject();
         count.put("tb13", MainApp.TotalMembersCount);
         count.put("tb14", MainApp.TotalMWRACount);
         count.put("tb15", MainApp.TotalChildCount);
+        count.put("tb16", MainApp.totalImsCount);
+
         MainApp.fc.setsB(String.valueOf(count));
-    }
-
-
-    private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -891,9 +867,9 @@ public class SectionBActivity extends AppCompatActivity {
                     <= Integer.parseInt(tb09.getText().toString()) &&
                     !tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777")) {
                 Toast.makeText(this, "Age and years of education cannot be same or Years of education cannot be greater than age ", Toast.LENGTH_SHORT).show();
-                tb09.setError("This data is Required!");    // Set Error on last radio button
+                tb09.setError("Age and years of education cannot be same or Years of education cannot be greater than age!");    // Set Error on last radio button
                 tb09.requestFocus();
-                Log.i(TAG, "tb09: This data is Required!");
+                Log.i(TAG, "tb09: Age and years of education cannot be same or Years of education cannot be greater than age!");
                 return false;
             } else {
                 tb09.setError(null);
@@ -907,9 +883,9 @@ public class SectionBActivity extends AppCompatActivity {
             if (Integer.parseInt(tb09.getText().toString()) < 0 && (!tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777"))
                     || Integer.parseInt(tb09.getText().toString()) > 20 && (!tb09.getText().toString().equals("888") && !tb09.getText().toString().equals("999") && !tb09.getText().toString().equals("777"))) {
                 Toast.makeText(this, "Years of education cannot be less than 0 and cannot be greater than 20 ", Toast.LENGTH_SHORT).show();
-                tb09.setError("This data is Required!");    // Set Error on last radio button
+                tb09.setError("Years of education cannot be less than 0 and cannot be greater than 20!");    // Set Error on last radio button
                 tb09.requestFocus();
-                Log.i(TAG, "tb09: This data is Required!");
+                Log.i(TAG, "tb09: Years of education cannot be less than 0 and cannot be greater than 20!");
                 return false;
             } else {
                 tb09.setError(null);

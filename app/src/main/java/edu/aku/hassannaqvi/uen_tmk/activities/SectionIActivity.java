@@ -362,7 +362,7 @@ public class SectionIActivity extends AppCompatActivity
             }
 
             if (opv1M01.isChecked() || opv1C01.isChecked()) {
-                fldGrpov2.setVisibility(View.VISIBLE);
+                fldGrpov3.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
                 sc3.setLayoutParams(params);
             } else if (opv1C02.isChecked() || opv1M02.isChecked()) {

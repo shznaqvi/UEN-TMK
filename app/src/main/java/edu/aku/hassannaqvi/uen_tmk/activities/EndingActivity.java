@@ -126,6 +126,7 @@ public class EndingActivity extends Activity {
                 MainApp.isRsvp = false;
                 MainApp.isHead = false;
 
+                MainApp.flag = true;
 
                 finish();
 
