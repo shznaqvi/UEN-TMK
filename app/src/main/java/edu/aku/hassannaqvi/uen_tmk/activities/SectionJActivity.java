@@ -1035,11 +1035,11 @@ public class SectionJActivity extends Activity {
                     tj11m.setError(null);
                 }
 
-                if (Integer.valueOf(tj11m.getText().toString()) < 1 || Integer.valueOf(tj11m.getText().toString()) > 5) {
+                if (Integer.valueOf(tj11m.getText().toString()) < 1 || Integer.valueOf(tj11m.getText().toString()) > 6) {
                     Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
-                    tj11m.setError("Range from 1 - 5!");    // Set Error on last radio button
+                    tj11m.setError("Range from 1 - 6!");    // Set Error on last radio button
 
-                    Log.i(TAG, "tj11m: Range from 1 - 5");
+                    Log.i(TAG, "tj11m: Range from 1 - 6");
                     return false;
                 } else {
                     tj11m.setError(null);
