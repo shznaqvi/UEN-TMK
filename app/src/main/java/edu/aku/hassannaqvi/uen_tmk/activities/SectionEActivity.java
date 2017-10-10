@@ -16,6 +16,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -86,7 +89,14 @@ public class SectionEActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_e);
         ButterKnife.bind(this);
 
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        String maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_5Years) + MainApp.MILLISECONDS_IN_DAY));
+
+
         te04.setManager(getSupportFragmentManager());
+
+        te04.setMaxDate(dateToday);
+        te04.setMinDate(maxDate5Years);
 
         MainApp.CounterDeceasedMother++;
 
