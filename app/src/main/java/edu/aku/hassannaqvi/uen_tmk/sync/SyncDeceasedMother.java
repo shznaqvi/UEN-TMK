@@ -53,7 +53,7 @@ public class SyncDeceasedMother extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Deceased");
+        pd.setTitle("Please wait... Processing Deceased Mothers");
         pd.show();
 
     }
@@ -90,10 +90,10 @@ public class SyncDeceasedMother extends AsyncTask<Void, Void, String> {
                     sSyncedError += "\nError: " + jsonObject.getString("message").toString();
                 }
             }
-            Toast.makeText(mContext, sSynced + " Deceased synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Deceased Mothers synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Deceased synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Deceased data");
+            pd.setMessage(sSynced + " Deceased Mothers synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Deceased Mothers data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();
