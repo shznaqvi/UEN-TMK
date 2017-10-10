@@ -2291,6 +2291,8 @@ public class SectionIActivity extends AppCompatActivity
         sI.put("ta05h", MainApp.hhno);
         sI.put("ta05u", MainApp.billno);
 
+        sI.put("tiImsSerial", MainApp.childsMap.get(tiname.getSelectedItem().toString()).getSerialNo());
+
         sI.put("tiname", tiname.getSelectedItem().toString());
         sI.put("ti00", ti00a.isChecked() ? "1" : ti00b.isChecked() ? "2" : "0");
         sI.put("ti01", ti01a.isChecked() ? "1" : ti01b.isChecked() ? "2" : ti01888.isChecked() ? "888" : "0");
