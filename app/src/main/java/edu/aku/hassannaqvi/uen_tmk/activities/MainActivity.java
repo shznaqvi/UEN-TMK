@@ -19,10 +19,13 @@ import android.support.v4.os.ResultReceiver;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +36,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -42,6 +47,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.uen_tmk.DownloadFileService;
 import edu.aku.hassannaqvi.uen_tmk.FormsList;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.AreasContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
@@ -67,11 +73,18 @@ public class MainActivity extends Activity {
 
     @BindView(R.id.syncDevice)
     Button syncDevice;
+
+    @BindView(R.id.spAreas)
+    Spinner spAreas;
+
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
     String m_Text = "";
     ProgressDialog mProgressDialog;
+    ArrayList<String> lablesAreas;
+    Collection<AreasContract> AreasList;
+    Map<String, String> AreasMap;
     private ProgressDialog pd;
     private Boolean exit = false;
     private String rSumText = "";
@@ -199,47 +212,82 @@ public class MainActivity extends Activity {
         recordSummary.setText(rSumText);
 
 
+//        Fill spinner
+
+        lablesAreas = new ArrayList<>();
+        AreasMap = new HashMap<>();
+        lablesAreas.add("Select Area..");
+
+        AreasList = db.getAllAreas(String.valueOf(MainApp.ucCode));
+        for (AreasContract Areas : AreasList) {
+            lablesAreas.add(Areas.getArea());
+            AreasMap.put(Areas.getArea(), Areas.getAreacode());
+        }
+
+        spAreas.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesAreas));
+
+        spAreas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (spAreas.getSelectedItemPosition() != 0) {
+                    MainApp.areaCode = Integer.valueOf(AreasMap.get(spAreas.getSelectedItem().toString()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     public void openForm(View v) {
-        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-            startActivity(oF);
-        } else {
 
-            builder = new AlertDialog.Builder(MainActivity.this);
-            ImageView img = new ImageView(getApplicationContext());
-            img.setImageResource(R.drawable.tagimg);
-            img.setPadding(0, 15, 0, 15);
-            builder.setCustomTitle(img);
+        if (spAreas.getSelectedItemPosition() != 0) {
 
-            final EditText input = new EditText(MainActivity.this);
-            input.setInputType(InputType.TYPE_CLASS_TEXT);
-            builder.setView(input);
+            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                startActivity(oF);
+            } else {
 
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    m_Text = input.getText().toString();
-                    if (!m_Text.equals("")) {
-                        editor.putString("tagName", m_Text);
-                        editor.commit();
+                builder = new AlertDialog.Builder(MainActivity.this);
+                ImageView img = new ImageView(getApplicationContext());
+                img.setImageResource(R.drawable.tagimg);
+                img.setPadding(0, 15, 0, 15);
+                builder.setCustomTitle(img);
 
-                        if (!MainApp.userName.equals("0000")) {
-                            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-                            startActivity(oF);
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        if (!m_Text.equals("")) {
+                            editor.putString("tagName", m_Text);
+                            editor.commit();
+
+                            if (!MainApp.userName.equals("0000")) {
+                                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                                startActivity(oF);
+                            }
                         }
                     }
-                }
-            });
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
 
-            builder.show();
+                builder.show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -475,12 +523,8 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            // Sync Users
-           /* BackgroundDrawable bg = new BackgroundDrawable();
-            syncDevice.setBackground(bg);
-            bg.start();*/
-//            new GetMembers(this).execute();
-            //bg.stop();
+            // Sync Random
+            /*new GetBLRandom(this).execute();*/
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

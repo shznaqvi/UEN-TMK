@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.uen_tmk.activities.EndingActivity;
+import edu.aku.hassannaqvi.uen_tmk.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedChildContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.DeceasedMotherContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
@@ -78,7 +79,6 @@ public class MainApp extends Application {
     public static String child_name = "TEST";
     public static FormsContract fc;
     public static String userName = "0000";
-    public static String areaCode;
     //    Total No of members got from Section A
 
     public static int TotalMembersCount = 0;
@@ -137,9 +137,12 @@ public class MainApp extends Application {
     public static String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     public static int ucCode = 0;
     public static int talukaCode = 0;
+    public static int areaCode = 0;
     public static String cluster = "";
     public static String hhno = "";
     public static String billno = "";
+    public static BLRandomContract selectedHead;
+    public static int BLRandomSize;
     protected static LocationManager locationManager;
     Location location;
 

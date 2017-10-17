@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.uen_tmk.contracts.UCsContract.singleUCs;
+import edu.aku.hassannaqvi.uen_tmk.contracts.AreasContract.singleAreas;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 
@@ -23,14 +23,14 @@ import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
  * Created by ali.azaz on 6/10/2017.
  */
 
-public class GetUCs extends AsyncTask<String, String, String> {
+public class GetAreas extends AsyncTask<String, String, String> {
 
-    private final String TAG = "GetUCs()";
+    private final String TAG = "GetAreas()";
     HttpURLConnection urlConnection;
     private Context mContext;
     private ProgressDialog pd;
 
-    public GetUCs(Context context) {
+    public GetAreas(Context context) {
         mContext = context;
     }
 
@@ -38,7 +38,7 @@ public class GetUCs extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Syncing UCs");
+        pd.setTitle("Syncing Areas");
         pd.setMessage("Getting connected to server...");
         pd.show();
 
@@ -51,7 +51,7 @@ public class GetUCs extends AsyncTask<String, String, String> {
 
         URL url = null;
         try {
-            url = new URL(MainApp._HOST_URL + singleUCs._URI);
+            url = new URL(MainApp._HOST_URL + singleAreas._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
@@ -63,7 +63,7 @@ public class GetUCs extends AsyncTask<String, String, String> {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    Log.i(TAG, "UCs In: " + line);
+                    Log.i(TAG, "Areas In: " + line);
                     result.append(line);
                 }
             }
@@ -90,7 +90,7 @@ public class GetUCs extends AsyncTask<String, String, String> {
                 DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
                     JSONArray jsonArray = new JSONArray(json);
-                    db.syncUCs(jsonArray);
+                    db.syncAreas(jsonArray);
                     pd.setMessage("Received: " + jsonArray.length());
                     pd.show();
                 } catch (JSONException e) {

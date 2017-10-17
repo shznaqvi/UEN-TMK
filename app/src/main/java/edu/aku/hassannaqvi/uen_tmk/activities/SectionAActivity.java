@@ -12,10 +12,17 @@ import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,6 +37,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.uen_tmk.R;
+import edu.aku.hassannaqvi.uen_tmk.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.VillagesContract;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
@@ -81,6 +89,15 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.btn_End)
     Button btn_End;
 
+    @BindView(R.id.hh_name)
+    TextView hhName;
+    @BindView(R.id.checkHHHeadpresent)
+    CheckBox checkHHHeadpresent;
+    @BindView(R.id.fldGrpt03)
+    LinearLayout fldGrpt03;
+
+    Collection<BLRandomContract> selected;
+
     DatabaseHelper db;
     String[] ucs = new String[]{"....",
             "Allah Yar Turk",
@@ -107,6 +124,19 @@ public class SectionAActivity extends Activity {
     Collection<VillagesContract> village;
     Map<String, String> villageMap;
 
+    ArrayList<String> lablesSubVillages;
+    Collection<VillagesContract> SubVillagesList;
+    Map<String, String> SubVillagesMap;
+
+    @BindView(R.id.spSubVillages)
+    Spinner spSubVillages;
+
+    @BindView(R.id.newHHheadname)
+    EditText newHHheadname;
+
+    @BindView(R.id.fldGrpt03a)
+    LinearLayout fldGrpt03a;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,20 +147,48 @@ public class SectionAActivity extends Activity {
 
         MainApp.familyMembersList = new ArrayList<>();
 
-//            Set adapter to ucs spinner
-        /*ta04.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ucs));
+        lablesSubVillages = new ArrayList<>();
+        SubVillagesMap = new HashMap<>();
+        lablesSubVillages.add("Select Sub Village..");
 
-        ta04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        SubVillagesList = db.getVillage(String.valueOf(MainApp.areaCode));
+
+        if (SubVillagesList.size() != 0) {
+            for (VillagesContract vil : SubVillagesList) {
+                lablesSubVillages.add(vil.getVillagename());
+                SubVillagesMap.put(vil.getVillagename(), vil.getVillagecode());
+            }
+        }
+
+        spSubVillages.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesSubVillages));
+
+        spSubVillages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ucsPos = i;
+
+                if (spSubVillages.getSelectedItemPosition() != 0) {
+                    MainApp.cluster = SubVillagesMap.get(spSubVillages.getSelectedItem().toString());
+
+                    ta01.setText(MainApp.cluster);
+
+                    ta06.setText(spSubVillages.getSelectedItem().toString());
+                } else {
+
+                    ta01.setText(null);
+
+                    ta06.setText("N/A");
+
+                    fldGrpt03.setVisibility(View.GONE);
+
+                    hhName.setText(null);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });*/
+        });
 
 
         ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -146,9 +204,7 @@ public class SectionAActivity extends Activity {
             }
         });
 
-//        Get Village name
-
-        ta01.addTextChangedListener(new TextWatcher() {
+        ta05h.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -157,22 +213,9 @@ public class SectionAActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if (!ta01.getText().toString().isEmpty()) {
-                    village = db.getVillage(String.valueOf(MainApp.talukaCode), String.valueOf(MainApp.ucCode), ta01.getText().toString());
+                fldGrpt03.setVisibility(View.GONE);
 
-                    villageMap = new HashMap<>();
-
-                    if (village.size() != 0) {
-                        for (VillagesContract vil : village) {
-                            ta06.setError(null);
-                            ta06.setText(vil.getVillagename());
-                            villageMap.put(vil.getVillagename(), vil.getID());
-                        }
-                    } else {
-                        ta06.setText("N/A");
-                    }
-                }
-
+                hhName.setText(null);
             }
 
             @Override
@@ -180,6 +223,50 @@ public class SectionAActivity extends Activity {
 
             }
         });
+
+//        Checkbox validate
+
+        checkHHHeadpresent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    fldGrpt03a.setVisibility(View.GONE);
+                    newHHheadname.setText(null);
+                } else {
+                    fldGrpt03a.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+    }
+
+    @OnClick(R.id.checkHH)
+    void onCheckHHClick() {
+        //TODO implement
+
+        if (!ta01.getText().toString().trim().isEmpty() && !ta05h.getText().toString().trim().isEmpty()) {
+
+            selected = db.getAllBLRandom(ta01.getText().toString(), ta05h.getText().toString().toUpperCase());
+
+            if (selected.size() != 0) {
+
+                for (BLRandomContract rnd : selected) {
+                    MainApp.selectedHead = new BLRandomContract(rnd);
+                }
+
+                hhName.setText(MainApp.selectedHead.getHhhead().toUpperCase());
+
+                fldGrpt03.setVisibility(View.VISIBLE);
+            } else {
+                hhName.setText(null);
+
+                fldGrpt03.setVisibility(View.GONE);
+            }
+
+        } else {
+            Toast.makeText(this, "Not found.", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -248,14 +335,23 @@ public class SectionAActivity extends Activity {
         MainApp.hhno = ta05h.getText().toString();
         MainApp.billno = ta05u.getText().toString();
 
+        sa.put("rndid", MainApp.selectedHead.get_ID());
+        sa.put("luid", MainApp.selectedHead.getLUID());
+        sa.put("randDT", MainApp.selectedHead.getRandomDT());
+        sa.put("hh03", MainApp.selectedHead.getStructure());
+        sa.put("hh07", MainApp.selectedHead.getExtension());
+        sa.put("hhhead", MainApp.selectedHead.getHhhead());
+        sa.put("checkHHHeadpresent", checkHHHeadpresent.isChecked() ? "1" : "2");
+        sa.put("newHHHeadpresent", newHHheadname.getText().toString());
+
         sa.put("ta01", ta01.getText().toString());
         sa.put("ta02", ta02a.isChecked() ? "1" : ta02b.isChecked() ? "2" : ta02c.isChecked() ? "3" : "0");
         sa.put("ta03", MainApp.talukaCode);
         sa.put("ta04", MainApp.ucCode);
+        sa.put("ta04A", MainApp.areaCode);
         sa.put("ta05h", ta05h.getText().toString());
         sa.put("ta05u", ta05u.getText().toString());
         sa.put("ta06", ta06.getText().toString());
-        sa.put("ta06ID", villageMap.get(ta06.getText().toString()));
         sa.put("ta07", ta07.getText().toString());
         sa.put("ta08", ta08.getText().toString());
         sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
@@ -332,20 +428,6 @@ public class SectionAActivity extends Activity {
             ta01.setError(null);
         }
 
-//        02
-        if (ta02.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta02), Toast.LENGTH_SHORT).show();
-            ta02c.setError("This data is Required!");    // Set Error on last radio button
-
-            ta02c.setFocusable(true);
-            ta02c.setFocusableInTouchMode(true);
-            ta02c.requestFocus();
-            Log.i(TAG, "ta02: This data is Required!");
-            return false;
-        } else {
-            ta02c.setError(null);
-        }
-
 //        03
 /*        if (ta03.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta03), Toast.LENGTH_SHORT).show();
@@ -381,6 +463,36 @@ public class SectionAActivity extends Activity {
         } else {
             ta05h.setError(null);
         }
+
+//        New HHHead
+
+        if (!checkHHHeadpresent.isChecked()) {
+            if (newHHheadname.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): New head name", Toast.LENGTH_SHORT).show();
+                newHHheadname.setError("This data is Required! ");    // Set Error on last radio button
+                newHHheadname.requestFocus();
+                Log.i(TAG, "newHHheadname: This data is Required!");
+                return false;
+            } else {
+                newHHheadname.setError(null);
+            }
+        }
+
+//        02
+        if (ta02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta02), Toast.LENGTH_SHORT).show();
+            ta02c.setError("This data is Required!");    // Set Error on last radio button
+
+            ta02c.setFocusable(true);
+            ta02c.setFocusableInTouchMode(true);
+            ta02c.requestFocus();
+            Log.i(TAG, "ta02: This data is Required!");
+            return false;
+        } else {
+            ta02c.setError(null);
+        }
+
+
         if (ta05u.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05u), Toast.LENGTH_SHORT).show();
             ta05u.setError("This data is Required! ");    // Set Error on last radio button
