@@ -697,11 +697,10 @@ public class SectionBActivity extends AppCompatActivity {
                     (MainApp.fc.getDeviceID() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 
-
             MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),
                     ageInyears < 2 ? "3" : ageInyears < 5 ? "1" :
                             (tb11b.isChecked() && tb04b.isChecked()
-                                    && (ageInyears > 15 || ageInyears < 49) ? "2" : "0")
+                                    && (ageInyears > 15 && ageInyears < 49) ? "2" : "0")
                     , String.valueOf(MainApp.counter),
                     tb07.getText().toString().isEmpty() ?
                             tb08m.getText().toString() + "-" + tb08y.getText().toString() :
