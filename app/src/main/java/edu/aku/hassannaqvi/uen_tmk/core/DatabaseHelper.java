@@ -51,8 +51,8 @@ import static edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract.singleIm;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String SQL_CREATE_PSU = "CREATE TABLE " + singleChild.TABLE_NAME + "("
-            + singleChild.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+    public static final String SQL_CREATE_BL_RANDOM = "CREATE TABLE " + singleChild.TABLE_NAME + "("
+            + singleChild.COLUMN_ID + " TEXT,"
             + singleChild.COLUMN_SUB_VILLAGE_CODE + " TEXT,"
             + singleChild.COLUMN_LUID + " TEXT,"
             + singleChild.COLUMN_HH + " TEXT,"
@@ -175,7 +175,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleIm.COLUMN_SYNCED + " TEXT," +
             singleIm.COLUMN_SYNCED_DATE + " TEXT" +
             " );";
-    private static final String SQL_DELETE_PSUS =
+    private static final String SQL_DELETE_BL_RANDOM =
             "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -248,7 +248,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_UCS);
         db.execSQL(SQL_CREATE_AREAS);
 
-        db.execSQL(SQL_CREATE_PSU);
+        db.execSQL(SQL_CREATE_BL_RANDOM);
     }
 
     @Override
@@ -268,7 +268,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_AREAS);
 
-        db.execSQL(SQL_DELETE_PSUS);
+        db.execSQL(SQL_DELETE_BL_RANDOM);
     }
 
     public void syncVillages(JSONArray Villageslist) {
@@ -389,7 +389,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleVillages.COLUMN_VILLAGE_CODE + " ASC";
+                singleVillages.COLUMN_VILLAGE_NAME + " ASC";
 
         Collection<VillagesContract> allDC = new ArrayList<>();
         try {
@@ -431,7 +431,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleTalukas.COLUMN_TALUKA_CODE + " ASC";
+                singleTalukas.COLUMN_TALUKA + " ASC";
 
         Collection<TalukasContract> allDC = new ArrayList<>();
         try {
@@ -474,7 +474,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleUCs.COLUMN_UCCODE + " ASC";
+                singleUCs.COLUMN_UCS + " ASC";
 
         Collection<UCsContract> allDC = new ArrayList<>();
         try {
@@ -517,7 +517,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleAreas.COLUMN_AREACODE + " ASC";
+                singleAreas.COLUMN_AREA + " ASC";
 
         Collection<AreasContract> allAC = new ArrayList<>();
         try {
@@ -607,6 +607,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 ContentValues values = new ContentValues();
 
+                values.put(singleChild.COLUMN_ID, Vc.get_ID());
                 values.put(singleChild.COLUMN_LUID, Vc.getLUID());
                 values.put(singleChild.COLUMN_STRUCTURE_NO, Vc.getStructure());
                 values.put(singleChild.COLUMN_FAMILY_EXT_CODE, Vc.getExtension());

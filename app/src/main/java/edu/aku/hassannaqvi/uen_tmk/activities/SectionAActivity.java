@@ -262,6 +262,8 @@ public class SectionAActivity extends Activity {
                 hhName.setText(null);
 
                 fldGrpt03.setVisibility(View.GONE);
+
+                Toast.makeText(this, "No Head found in this HH.", Toast.LENGTH_SHORT).show();
             }
 
         } else {
@@ -341,8 +343,8 @@ public class SectionAActivity extends Activity {
         sa.put("hh03", MainApp.selectedHead.getStructure());
         sa.put("hh07", MainApp.selectedHead.getExtension());
         sa.put("hhhead", MainApp.selectedHead.getHhhead());
-        sa.put("checkHHHeadpresent", checkHHHeadpresent.isChecked() ? "1" : "2");
-        sa.put("newHHHeadpresent", newHHheadname.getText().toString());
+        sa.put("hhheadpresent", checkHHHeadpresent.isChecked() ? "1" : "2");
+        sa.put("hhheadpresentnew", newHHheadname.getText().toString());
 
         sa.put("ta01", ta01.getText().toString());
         sa.put("ta02", ta02a.isChecked() ? "1" : ta02b.isChecked() ? "2" : ta02c.isChecked() ? "3" : "0");

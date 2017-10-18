@@ -35,6 +35,7 @@ public class BLRandomContract {
     }
 
     public BLRandomContract Sync(JSONObject jsonObject) throws JSONException {
+        this._ID = jsonObject.getString(singleChild.COLUMN_ID);
         this.LUID = jsonObject.getString(singleChild.COLUMN_LUID);
         this.subVillageCode = jsonObject.getString(singleChild.COLUMN_SUB_VILLAGE_CODE);
         this.structure = jsonObject.getString(singleChild.COLUMN_STRUCTURE_NO);
