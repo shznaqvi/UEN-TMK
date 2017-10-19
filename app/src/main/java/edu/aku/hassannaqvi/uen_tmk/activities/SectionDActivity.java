@@ -282,6 +282,7 @@ public class SectionDActivity extends Activity {
         sD.put("td05", td04a.isChecked() ? "1" : td04b.isChecked() ? "2" : "0");
         sD.put("td06", td05.getText().toString());
 
+        sD.put("appver", MainApp.versionName + "." + MainApp.versionCode);
         MainApp.mw.setsD(String.valueOf(sD));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

@@ -1983,8 +1983,8 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb36j", thb36j.isChecked() ? "10" : "0");
         sHB.put("thb36k", thb36k.isChecked() ? "11" : "0");
         sHB.put("thb3688", thb3688.isChecked() ? "88" : "0");
-
         sHB.put("thb3688x", thb3688x.getText().toString());
+        sHB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsHB(String.valueOf(sHB));
     }

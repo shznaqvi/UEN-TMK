@@ -1927,6 +1927,8 @@ public class SectionHAActivity extends Activity {
                 : tha34k.isChecked() ? "11"
                 : "0");
 
+        sHA.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+
         MainApp.fc.setsHA(String.valueOf(sHA));
 
     }

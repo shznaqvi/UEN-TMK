@@ -220,6 +220,7 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("te05", te05a.isChecked() ? "1" : te05b.isChecked() ? "2" : te05c.isChecked() ? "3"
                 : te05d.isChecked() ? "4" : te05e.isChecked() ? "5" : te05f.isChecked() ? "6" : te0588.isChecked() ? "88" : "0");
         sE.put("te0588x", te0588x.getText().toString());
+        sE.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
 
         MainApp.dcM.setsE(String.valueOf(sE));

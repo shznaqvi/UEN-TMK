@@ -2474,6 +2474,7 @@ public class SectionIActivity extends AppCompatActivity
         sI.put("ti04", ti04a.isChecked() ? "1" : ti04b.isChecked() ? "2" : ti04888.isChecked() ? "888" : "0");
         sI.put("ti05", ti05.getText().toString());
         sI.put("ti05888", ti05888.isChecked() ? "888" : "0");
+        sI.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
 
         MainApp.ims.setsI(String.valueOf(sI));

@@ -214,6 +214,7 @@ public class SectionFActivity extends AppCompatActivity {
                 : tf07d.isChecked() ? "4" : tf07e.isChecked() ? "5" : tf07f.isChecked() ? "6" : tf07g.isChecked() ? "7"
                 : tf07h.isChecked() ? "8" : tf0788.isChecked() ? "88" : "0");
         sF.put("tf0788x", tf0788x.getText().toString());
+        sF.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.dcC.setsF(String.valueOf(sF));
 
