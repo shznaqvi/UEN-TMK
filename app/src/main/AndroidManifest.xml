@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.aku.hassannaqvi.uen_tmk">
+    package="edu.aku.hassannaqvi.uen_tmk_monitor">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
@@ -17,14 +17,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".core.MainApp"
+        android:name="edu.aku.hassannaqvi.uen_tmk_monitor.core.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/logonew"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashscreenActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,82 +33,82 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionAActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionAActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionBActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionBActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionCActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionCActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionDActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionDActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionEActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionEActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionFActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionFActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionGActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionGActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionHAActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionHAActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionHBActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionHBActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionIActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionIActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionJActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionJActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionKActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionKActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.SectionLActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionLActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".core.AndroidDatabaseManager"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".activities.EndingActivity"
+            android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".FormsList" />
-        <activity android:name=".activities.SectionMActivity"></activity>
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk_monitor.FormsList" />
+        <activity android:name="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionMActivity"></activity>
 
-        <service android:name=".DownloadFileService" />
+        <service android:name="edu.aku.hassannaqvi.uen_tmk_monitor.DownloadFileService" />
 
     </application>
 

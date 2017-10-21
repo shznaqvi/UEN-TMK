@@ -6,7 +6,7 @@
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:scrollbars="horizontal"
-    tools:context="edu.aku.hassannaqvi.uen_tmk.activities.SectionGActivity">
+    tools:context="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionGActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
 
         </RadioGroup>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/fldGrptg02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                 android:text="@string/tg03f" />
 
 
-        </LinearLayout>
+        </LinearLayout>-->
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

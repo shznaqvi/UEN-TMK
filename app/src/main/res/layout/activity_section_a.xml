@@ -6,13 +6,12 @@
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:scrollbars="horizontal"
-    tools:context="edu.aku.hassannaqvi.uen_tmk.activities.SectionAActivity">
+    tools:context="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionAActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
-        android:layoutDirection="rtl"
         android:orientation="vertical">
 
         <TextView
@@ -103,6 +102,12 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/checkHH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check HEAD Name" />
+
             <TextView
                 android:id="@+id/hh_name"
                 android:layout_width="0dp"
@@ -111,11 +116,6 @@
                 android:enabled="false"
                 android:paddingLeft="10dp" />
 
-            <Button
-                android:id="@+id/checkHH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check HEAD Name" />
         </LinearLayout>
 
         <LinearLayout
@@ -246,23 +246,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"></Spinner>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ta05u"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ta05u"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="1234567890"
-                android:hint="@string/ta05u"
-                android:inputType="number" />
-
             <!--06-->
 
             <TextView
@@ -287,43 +270,7 @@
 
             <!--07-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ta07"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ta07"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
-                android:hint="@string/ta07"
-                android:inputType="text"
-                android:maxLength="20" />
-
             <!--08-->
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ta08"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ta08"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
-                android:hint="@string/ta08"
-                android:inputType="text"
-                android:maxLength="20" />
 
             <!--9-->
 
@@ -365,6 +312,197 @@
             </RadioGroup>
 
             <LinearLayout
+                android:id="@+id/fldGrpMem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/colorPrimary"
+                        android:text="TOTAL:"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalMem"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/colorPrimary"
+                        android:text="Males"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalMales"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="20"
+                        android:background="@color/colorPrimary"
+                        android:text="Females"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalFemales"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/colorPrimary"
+                        android:text="Neonates (0-28 days)"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalNeonates"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/colorPrimary"
+                        android:text="Children (1-49 Months)"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalChildren"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="20"
+                        android:background="@color/colorPrimary"
+                        android:text="Children (5-14 Years)"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalChildren1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="20"
+                        android:background="@color/colorPrimary"
+                        android:text="Un-Married Women (15-49 years):"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/TotalNonMwra"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/colorPrimary"
+                        android:text="Married Women (15-49 years):"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/Totalmwra"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="15"
+                        android:background="@color/pink_100"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -390,6 +528,7 @@
                     android:textColor="#1ed61e" />
 
             </LinearLayout>
+
 
         </LinearLayout>
 

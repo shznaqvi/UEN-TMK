@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:scrollbars="horizontal"
-    tools:context="edu.aku.hassannaqvi.uen_tmk.activities.SectionFActivity">
+    tools:context="edu.aku.hassannaqvi.uen_tmk_monitor.activities.SectionFActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -217,25 +216,27 @@
 
         </RadioGroup>
 
+        <!--
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tf06"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/tf06"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-            android:id="@+id/tf06"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:focusable="true"
-            android:hint="@string/tf06"
-            android:textColor="@android:color/black"
-            app:dateFormat="dd-MM-yyyy" />
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/tf06"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/tf06"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+        -->
 
         <TextView
             android:layout_width="match_parent"
