@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -63,6 +64,9 @@ public class SectionDActivity extends Activity {
     @BindView(R.id.mwraNames)
     EditText mwraNames;
 
+    @BindView(R.id.mwraCountView)
+    TextView mwraCountView;
+
 
     Map<String, String> mwraMap;
     ArrayList<String> lstMwra;
@@ -76,7 +80,7 @@ public class SectionDActivity extends Activity {
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
 
-        mwraNames.setText("Woman: " + MainApp.mwraCount + " out of " + MainApp.TotalMWRACount);
+        mwraCountView.setText("Woman: " + MainApp.mwraCount + " out of " + MainApp.TotalMWRACount);
 
         //        get data from sec B
 

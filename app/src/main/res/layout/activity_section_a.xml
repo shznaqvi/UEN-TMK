@@ -315,7 +315,7 @@
                 android:id="@+id/fldGrpMem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:visibility="gone">
 
                 <LinearLayout
@@ -340,6 +340,8 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -359,8 +361,9 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
-
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -381,6 +384,8 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -408,6 +413,8 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -422,12 +429,14 @@
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/TotalChildrenU5"
+                        android:id="@+id/TotalChildrenU2_5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -436,6 +445,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -455,6 +465,8 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/pink_100"
+                        android:inputType="number"
+                        android:maxLength="2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorPrimaryDark" />
 

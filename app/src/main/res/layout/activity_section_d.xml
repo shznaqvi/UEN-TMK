@@ -24,24 +24,23 @@
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:text="@string/secDLabel"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimary" />
 
-        <!--        <TextView
-                    android:id="@+id/mwraNames"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/pink_100"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="30sp" />-->
+        <TextView
+            android:id="@+id/mwraCountView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@color/pink_100"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -216,7 +215,7 @@
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:text="@string/yes"/>
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/td04b"
@@ -224,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/no"/>
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -289,8 +288,7 @@
                 android:backgroundTint="@color/red"
                 android:onClick="endInterview"
                 android:text="@string/end_interview"
-                android:textColor="#ff1e1e"/>
-
+                android:textColor="#ff1e1e" />
 
 
         </LinearLayout>

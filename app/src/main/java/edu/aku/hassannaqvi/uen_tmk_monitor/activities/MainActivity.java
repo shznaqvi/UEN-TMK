@@ -54,7 +54,6 @@ import edu.aku.hassannaqvi.uen_tmk_monitor.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk_monitor.core.MainApp;
 import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncDeceasedChild;
 import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncDeceasedMother;
-import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncFamilyMembers;
 import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncForms;
 import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncIM;
 import edu.aku.hassannaqvi.uen_tmk_monitor.sync.SyncMwras;
@@ -488,8 +487,8 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
-            new SyncFamilyMembers(this).execute();
+/*            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            new SyncFamilyMembers(this).execute();*/
 
             Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
             new SyncMwras(this).execute();
