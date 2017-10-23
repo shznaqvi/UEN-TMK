@@ -142,14 +142,10 @@ public class SectionAActivity extends Activity {
     EditText totalMales;
     @BindView(R.id.TotalFemales)
     EditText totalFemales;
-    @BindView(R.id.TotalNeonates)
-    EditText totalNeonates;
-    @BindView(R.id.TotalChildren)
-    EditText totalChildren;
-    @BindView(R.id.TotalChildren1)
-    EditText totalChildren1;
-    @BindView(R.id.TotalNonMwra)
-    EditText totalNonMwra;
+    @BindView(R.id.TotalChildrenU2)
+    EditText totalChildrenU2;
+    @BindView(R.id.TotalChildrenU5)
+    EditText totalChildrenU5;
     @BindView(R.id.Totalmwra)
     EditText totalmwra;
 
@@ -268,10 +264,8 @@ public class SectionAActivity extends Activity {
                     totalMem.setText(null);
                     totalMales.setText(null);
                     totalFemales.setText(null);
-                    totalNeonates.setText(null);
-                    totalChildren.setText(null);
-                    totalChildren1.setText(null);
-                    totalNonMwra.setText(null);
+                    totalChildrenU2.setText(null);
+                    totalChildrenU5.setText(null);
                     totalmwra.setText(null);
                 }
             }
@@ -395,15 +389,17 @@ public class SectionAActivity extends Activity {
 
         MainApp.TotalMembersCount = Integer.valueOf(totalMem.getText().toString());
         MainApp.TotalMWRACount = Integer.valueOf(totalmwra.getText().toString());
-        MainApp.TotalChildCount = Integer.valueOf(totalNeonates.getText().toString()) +
-                Integer.valueOf(totalChildren.getText().toString()) +
-                Integer.valueOf(totalChildren1.getText().toString());
-        MainApp.totalImsCount = Integer.valueOf(totalNeonates.getText().toString());
+        MainApp.TotalChildCount = Integer.valueOf(
+                Integer.valueOf(totalChildrenU2.getText().toString()) +
+                        Integer.valueOf(totalChildrenU5.getText().toString()));
+        MainApp.totalImsCount = Integer.valueOf(totalChildrenU2.getText().toString());
 
         sa.put("tb13", MainApp.TotalMembersCount);
         sa.put("tb14", MainApp.TotalMWRACount);
         sa.put("tb15", MainApp.TotalChildCount);
         sa.put("tb16", MainApp.totalImsCount);
+        sa.put("tb17", totalMales.getText().toString());
+        sa.put("tb18", totalFemales.getText().toString());
 
 
         MainApp.fc.setsA(String.valueOf(sa));
@@ -597,45 +593,25 @@ public class SectionAActivity extends Activity {
             } else {
                 totalFemales.setError(null);
             }
-//            Total Neonates
-            if (totalNeonates.getText().toString().trim().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): Enter Total Neonates", Toast.LENGTH_SHORT).show();
-                totalNeonates.setError("This data is Required! ");    // Set Error on last radio button
-                totalNeonates.requestFocus();
-                Log.i(TAG, "totalNeonates: This data is Required!");
-                return false;
-            } else {
-                totalNeonates.setError(null);
-            }
 //            Total Children
-            if (totalChildren.getText().toString().trim().isEmpty()) {
+            if (totalChildrenU2.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): Enter Total Children", Toast.LENGTH_SHORT).show();
-                totalChildren.setError("This data is Required! ");    // Set Error on last radio button
-                totalChildren.requestFocus();
-                Log.i(TAG, "totalChildren: This data is Required!");
+                totalChildrenU2.setError("This data is Required! ");    // Set Error on last radio button
+                totalChildrenU2.requestFocus();
+                Log.i(TAG, "totalChildrenU2: This data is Required!");
                 return false;
             } else {
-                totalChildren.setError(null);
+                totalChildrenU2.setError(null);
             }
 //            Total Children
-            if (totalChildren1.getText().toString().trim().isEmpty()) {
+            if (totalChildrenU5.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): Enter Total Children ", Toast.LENGTH_SHORT).show();
-                totalChildren1.setError("This data is Required! ");    // Set Error on last radio button
-                totalChildren1.requestFocus();
-                Log.i(TAG, "totalChildren1: This data is Required!");
+                totalChildrenU5.setError("This data is Required! ");    // Set Error on last radio button
+                totalChildrenU5.requestFocus();
+                Log.i(TAG, "totalChildrenU5: This data is Required!");
                 return false;
             } else {
-                totalChildren1.setError(null);
-            }
-//            Total UnMarried
-            if (totalNonMwra.getText().toString().trim().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): Enter Total Un-Married", Toast.LENGTH_SHORT).show();
-                totalNonMwra.setError("This data is Required! ");    // Set Error on last radio button
-                totalNonMwra.requestFocus();
-                Log.i(TAG, "totalNonMwra: This data is Required!");
-                return false;
-            } else {
-                totalNonMwra.setError(null);
+                totalChildrenU5.setError(null);
             }
 
 //            Total Married
@@ -649,7 +625,19 @@ public class SectionAActivity extends Activity {
                 totalmwra.setError(null);
             }
 
-            if (Integer.valueOf(totalMem.getText().toString()) < (Integer.valueOf(totalMales.getText().toString()) + Integer.valueOf(totalFemales.getText().toString()))) {
+            if (Integer.valueOf(totalMem.getText().toString()) < (Integer.valueOf(totalMales.getText().toString()) +
+                    Integer.valueOf(totalFemales.getText().toString()))) {
+                Toast.makeText(this, "ERROR(Invalid): Total not matched", Toast.LENGTH_SHORT).show();
+                totalMem.setError("The total is incorrect! ");    // Set Error on last radio button
+                totalMem.requestFocus();
+                Log.i(TAG, "totalMem: The total is incorrect!");
+                return false;
+            } else {
+                totalMem.setError(null);
+            }
+
+            if (Integer.valueOf(totalMem.getText().toString()) < (Integer.valueOf(totalChildrenU2.getText().toString()) +
+                    Integer.valueOf(totalChildrenU5.getText().toString()))) {
                 Toast.makeText(this, "ERROR(Invalid): Total not matched", Toast.LENGTH_SHORT).show();
                 totalMem.setError("The total is incorrect! ");    // Set Error on last radio button
                 totalMem.requestFocus();
@@ -660,7 +648,7 @@ public class SectionAActivity extends Activity {
             }
 
             if (Integer.valueOf(totalFemales
-                    .getText().toString()) < (Integer.valueOf(totalNonMwra.getText().toString()) + Integer.valueOf(totalmwra.getText().toString()))) {
+                    .getText().toString()) < (Integer.valueOf(totalmwra.getText().toString()))) {
                 Toast.makeText(this, "ERROR(Invalid): Total not matched", Toast.LENGTH_SHORT).show();
                 totalFemales.setError("The total is incorrect! ");    // Set Error on last radio button
                 totalFemales.requestFocus();
@@ -669,7 +657,6 @@ public class SectionAActivity extends Activity {
             } else {
                 totalFemales.setError(null);
             }
-
         }
 
 

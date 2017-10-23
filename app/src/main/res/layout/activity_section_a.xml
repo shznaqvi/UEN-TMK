@@ -397,32 +397,12 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="15"
                         android:background="@color/colorPrimary"
-                        android:text="Neonates (0-28 days)"
+                        android:text="Children (0-23 Months)"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/TotalNeonates"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="15"
-                        android:background="@color/pink_100"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="15"
-                        android:background="@color/colorPrimary"
-                        android:text="Children (1-49 Months)"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <EditText
-                        android:id="@+id/TotalChildren"
+                        android:id="@+id/TotalChildrenU2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
@@ -437,12 +417,12 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="20"
                         android:background="@color/colorPrimary"
-                        android:text="Children (5-14 Years)"
+                        android:text="Children (24-59 Months)"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/TotalChildren1"
+                        android:id="@+id/TotalChildrenU5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
@@ -457,26 +437,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="20"
-                        android:background="@color/colorPrimary"
-                        android:text="Un-Married Women (15-49 years):"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <EditText
-                        android:id="@+id/TotalNonMwra"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="15"
-                        android:background="@color/pink_100"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark" />
 
                     <TextView
                         android:layout_width="0dp"
