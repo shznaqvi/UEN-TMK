@@ -87,8 +87,8 @@ public class SectionHBActivity extends Activity {
     CheckBox thb0888;
     @BindView(R.id.thb0888x)
     EditText thb0888x;
-    @BindView(R.id.thb09)
-    EditText thb09;
+    /*    @BindView(R.id.thb09)
+        EditText thb09;*/
     @BindView(R.id.thb10)
     RadioGroup thb10;
     @BindView(R.id.thb10a)
@@ -264,7 +264,7 @@ public class SectionHBActivity extends Activity {
 /*    @BindView(R.id.thb27)
     EditText thb27;
     @BindView(R.id.thb27888)
-    CheckBox thb27888;
+    CheckBox thb27888;*/
 
     @BindView(R.id.thb28)
     RadioGroup thb28;
@@ -290,7 +290,7 @@ public class SectionHBActivity extends Activity {
     RadioButton thb2888;
     @BindView(R.id.thb2888x)
     EditText thb2888x;
-    @BindView(R.id.thb29)
+    /*@BindView(R.id.thb29)
     EditText thb29;
 
     @BindView(R.id.thb29888)
@@ -471,7 +471,7 @@ public class SectionHBActivity extends Activity {
 
                     thb0888x.setText(null);
 
-                    thb09.setText(null);
+//                    thb09.setText(null);
                     thb10.clearCheck();
                     thb11.clearCheck();
 
@@ -521,10 +521,12 @@ public class SectionHBActivity extends Activity {
 
                     thb26.clearCheck();
 
-/*                    thb27.setText(null);
-
                     thb28.clearCheck();
                     thb2888x.setText(null);
+
+/*                    thb27.setText(null);
+
+
 
                     thb29.setText(null);
                     thb30.setText(null);*/
@@ -581,7 +583,7 @@ public class SectionHBActivity extends Activity {
 
                 } else {
 
-                    thb09.setText(null);
+//                    thb09.setText(null);
                     thb10.clearCheck();
                     thb11.clearCheck();
 
@@ -634,11 +636,13 @@ public class SectionHBActivity extends Activity {
 
                     thb26.clearCheck();
 
+                    thb28.clearCheck();
+                    thb2888x.setText(null);
+
                     /*thb27.setText(null);
                     thb27888.setChecked(false);
 
-                    thb28.clearCheck();
-                    thb2888x.setText(null);
+
 
                     thb29.setText(null);
                     thb29888.setChecked(false);
@@ -918,7 +922,7 @@ public class SectionHBActivity extends Activity {
                 }
             }
         });
-
+*/
 
         thb28.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -933,7 +937,7 @@ public class SectionHBActivity extends Activity {
             }
         });
 
-
+/*
         thb29888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -1255,7 +1259,7 @@ public class SectionHBActivity extends Activity {
 
 
                 //        09
-                if (thb09.getText().toString().isEmpty()) {
+                /*if (thb09.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb09), Toast.LENGTH_SHORT).show();
                     thb09.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "thb09: This data is Required!");
@@ -1263,7 +1267,7 @@ public class SectionHBActivity extends Activity {
                     return false;
                 } else {
                     thb09.setError(null);
-                }
+                }*/
 
 
                 //        10
@@ -1620,7 +1624,7 @@ public class SectionHBActivity extends Activity {
                     }
 
                 }
-
+*/
 
                 //        28
                 if (thb28.getCheckedRadioButtonId() == -1) {
@@ -1649,7 +1653,7 @@ public class SectionHBActivity extends Activity {
                     }
                 }
 
-
+/*
                 if (!thb29888.isChecked()) {
 
                     //        29
@@ -1834,7 +1838,7 @@ public class SectionHBActivity extends Activity {
 
         sHB.put("thb0888x", thb0888x.getText().toString());
 
-        sHB.put("thb09", thb09.getText().toString());
+//        sHB.put("thb09", thb09.getText().toString());
 
         sHB.put("thb10", thb10a.isChecked() ? "1" : thb10b.isChecked() ? "2"
                 : thb10c.isChecked() ? "3"
@@ -1920,7 +1924,7 @@ public class SectionHBActivity extends Activity {
         } else {
             sHB.put("thb27", thb27.getText().toString());
         }
-
+*/
 
         sHB.put("thb28", thb28a.isChecked() ? "1"
                 : thb28b.isChecked() ? "2"
@@ -1934,7 +1938,7 @@ public class SectionHBActivity extends Activity {
                 : thb2888.isChecked() ? "88"
                 : "0");
 
-
+/*
         sHB.put("thb2888x", thb2888x.getText().toString());
 
 

@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -93,6 +94,10 @@ public class SectionIActivity extends AppCompatActivity
     EditText ti05;
     @BindView(R.id.ti05888)
     CheckBox ti05888;
+
+    @BindView(R.id.tinameCount)
+    TextView tinameCount;
+
     List<RadioGroup> grpMeasles2;
     String maxDate2Years;
 
@@ -104,6 +109,7 @@ public class SectionIActivity extends AppCompatActivity
         ButterKnife.bind(this);
         maxDate2Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_2Years) + MainApp.MILLISECONDS_IN_DAY));
 
+        tinameCount.setText("Child: " + MainApp.imsCount + " out of " + MainApp.totalImsCount);
 
         //        get data from sec B
 
