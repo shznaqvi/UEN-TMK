@@ -314,7 +314,7 @@ public class SectionHAActivity extends Activity {
     RadioButton tha31b;
     @BindView(R.id.tha31c)
     RadioButton tha31c;
-    /*@BindView(R.id.tha32)
+    @BindView(R.id.tha32)
     RadioGroup tha32;
     @BindView(R.id.tha32a)
     RadioButton tha32a;
@@ -325,7 +325,7 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.tha33a)
     RadioButton tha33a;
     @BindView(R.id.tha33b)
-    RadioButton tha33b;*/
+    RadioButton tha33b;
     @BindView(R.id.tha34)
     RadioGroup tha34;
     @BindView(R.id.tha34a)
@@ -361,14 +361,14 @@ public class SectionHAActivity extends Activity {
     LinearLayout fldGrptha14;
 
     /*@BindView(R.id.fldGrptha21)
-    LinearLayout fldGrptha21;
+    LinearLayout fldGrptha21;*/
 
     @BindView(R.id.fldGrptha32)
     LinearLayout fldGrptha32;
 
     @BindView(R.id.fldGrptha34)
     LinearLayout fldGrptha34;
-
+/*
     @BindView((R.id.fldGrptha15))
     LinearLayout fldGrptha15;
 
@@ -528,12 +528,12 @@ public class SectionHAActivity extends Activity {
                     tha30.setText(null);
 
                     tha31.clearCheck();
-                    //tha32.clearCheck();
+                    tha32.clearCheck();
 
 
                     fldGrptha02.setVisibility(View.GONE);
-                    /*fldGrptha32.setVisibility(View.GONE);
-                    fldGrptha34.setVisibility(View.GONE);*/
+                    fldGrptha32.setVisibility(View.GONE);
+                    fldGrptha34.setVisibility(View.GONE);
                 }
             }
         });
@@ -917,7 +917,7 @@ public class SectionHAActivity extends Activity {
         });
 
 
-       /* tha32.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        tha32.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
 
         {
             @Override
@@ -948,7 +948,7 @@ public class SectionHAActivity extends Activity {
                     fldGrptha34.setVisibility(View.VISIBLE);
                 }
             }
-        });*/
+        });
 
 
     }
@@ -1676,7 +1676,6 @@ public class SectionHAActivity extends Activity {
 
             }
 
-/*
             //        32
             if (tha32.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha32), Toast.LENGTH_SHORT).show();
@@ -1688,12 +1687,12 @@ public class SectionHAActivity extends Activity {
                 return false;
             } else {
                 tha32a.setError(null);
-            }*/
+            }
 
         }
 
 
-       /* if (tha32a.isChecked()) {
+        if (tha32a.isChecked()) {
 
             //        33
             if (tha33.getCheckedRadioButtonId() == -1) {
@@ -1708,9 +1707,9 @@ public class SectionHAActivity extends Activity {
                 tha33a.setError(null);
             }
 
-        }*/
+        }
 
-//        if (tha33a.isChecked()) {
+        if (tha33a.isChecked()) {
 
             //        34
             if (tha34.getCheckedRadioButtonId() == -1) {
@@ -1725,7 +1724,7 @@ public class SectionHAActivity extends Activity {
                 tha34a.setError(null);
             }
 
-//        }
+        }
 
         return true;
     }
@@ -1887,9 +1886,8 @@ public class SectionHAActivity extends Activity {
 
 
         sHA.put("tha31", tha31a.isChecked() ? "1" : tha31b.isChecked() ? "2" : tha31c.isChecked() ? "3" : "0");
-       /* sHA.put("tha32", tha32a.isChecked() ? "1" : tha32b.isChecked() ? "2" : "0");
+        sHA.put("tha32", tha32a.isChecked() ? "1" : tha32b.isChecked() ? "2" : "0");
         sHA.put("tha33", tha33a.isChecked() ? "1" : tha33b.isChecked() ? "2" : "0");
-*/
 
         sHA.put("tha34", tha34a.isChecked() ? "1" : tha34b.isChecked() ? "2"
                 : tha34c.isChecked() ? "3"
