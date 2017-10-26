@@ -271,7 +271,8 @@
                 android:background="@color/red"
                 android:onClick="opendownload"
                 android:text="DOWNLOAD APP"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:visibility="gone" />
 
 
             <!--<Button-->
@@ -291,7 +292,8 @@
                 android:layout_marginTop="16dp"
                 android:background="#D60000"
                 android:onClick="updateApp"
-                android:text="Update App" />
+                android:text="Update App"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/openDB"
