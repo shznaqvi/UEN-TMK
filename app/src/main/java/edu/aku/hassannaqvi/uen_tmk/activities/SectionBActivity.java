@@ -674,6 +674,7 @@ public class SectionBActivity extends AppCompatActivity {
                 : tb11d.isChecked() ? "3" : tb11e.isChecked() ? "4" : "0");
 
         sB.put("tb12", tb12a.isChecked() ? "1" : tb12b.isChecked() ? "2" : "0");
+        sB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
         if (tb12a.isChecked()) {
             MainApp.isRsvp = true;
