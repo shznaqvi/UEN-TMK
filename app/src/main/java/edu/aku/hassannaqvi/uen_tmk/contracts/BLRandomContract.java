@@ -148,7 +148,7 @@ public class BLRandomContract {
         public static final String COLUMN_STRUCTURE_NO = "hh03";
         public static final String COLUMN_FAMILY_EXT_CODE = "hh07";
         public static final String COLUMN_HH = "hh";
-        public static final String COLUMN_HH_HEAD = "hh_head";
+        public static final String COLUMN_HH_HEAD = "hh08";
         public static String _URIGET = "bl_random.php";
     }
 
