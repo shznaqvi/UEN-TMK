@@ -158,6 +158,9 @@ public class SectionLActivity extends Activity {
 /*    @BindView(R.id.fldGrptl11)
     LinearLayout fldGrptl11;*/
 
+    @BindView(R.id.fldGrptl08)
+    LinearLayout fldGrptl08;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,6 +203,8 @@ public class SectionLActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (tl03a.isChecked()) {
                     fldGrptl04.setVisibility(View.VISIBLE);
+
+
                     /*fldGrptl05.setVisibility(View.GONE);
                     tl05.clearCheck();
                     tl06.clearCheck();
