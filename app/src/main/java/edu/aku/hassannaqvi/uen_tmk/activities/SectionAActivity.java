@@ -28,8 +28,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,6 +48,8 @@ import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
 public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getName();
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+
     @BindView(R.id.ta01)
     EditText ta01;
     @BindView(R.id.ta02)
@@ -326,7 +330,7 @@ public class SectionAActivity extends Activity {
         MainApp.fc = new FormsContract();
 
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
-        MainApp.fc.setFormDate(MainApp.dtToday);
+        MainApp.fc.setFormDate(dtToday);
         MainApp.fc.setUser(MainApp.userName);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));

@@ -31,7 +31,6 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.MWRAContract;
 import edu.aku.hassannaqvi.uen_tmk.contracts.SectionIIMContract;
-import edu.aku.hassannaqvi.uen_tmk.otherClasses.MotherLst;
 
 import static edu.aku.hassannaqvi.uen_tmk.activities.SectionBActivity.getCalendarDate;
 
@@ -74,9 +73,6 @@ public class MainApp extends Application {
     public static String deviceId;
 
     public static Boolean admin = false;
-    public static String interviewerCode;
-    public static int loginFieldArea = -1;
-    public static String child_name = "TEST";
     public static FormsContract fc;
     public static String userName = "0000";
     //    Total No of members got from Section A
@@ -101,19 +97,9 @@ public class MainApp extends Application {
     public static Map<String, FamilyMembersContract> childsMap = new HashMap<>();
     public static ArrayList<String> lstChild = new ArrayList<>();
 
-    public static int dcChildCount = 1;
-    public static int dcMotherCount = 1;
-    public static int dcMotherTotal = 0;
-    public static int dcChildTotal = 0;
-    public static String dob = "";
     public static int ageRdo = 0;
 
-    //    Total No of Alive members got from Section B
-/*    public static int currentStatusCount = 0;
-    public static int currentDeceasedCheck = 0;
-    public static int currentMotherCheck = 0;*/
 
-    public static List<deadMemberClass> deadMembers = new ArrayList<deadMemberClass>();
     //    Ali
     public static String regionDss = "";
     public static List<FamilyMembersContract> familyMembersList;
@@ -124,17 +110,11 @@ public class MainApp extends Application {
     public static SectionIIMContract ims;
 
     public static int memFlag = 0;
-    public static List<Integer> memClicked;
-    public static ArrayList<MotherLst> lstMother;
-    public static int position = 0;
-    public static double selectedCHILD = 24;
+
     public static int selectedPos = -1;
-    public static int selectedCh = -1;
-    public static List<String> insertMem;
     public static int randID = 1;
     public static Boolean isRsvp = false;
     public static Boolean isHead = false;
-    public static String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     public static int ucCode = 0;
     public static int talukaCode = 0;
     public static int areaCode = 0;
@@ -144,7 +124,7 @@ public class MainApp extends Application {
     public static BLRandomContract selectedHead;
     public static int BLRandomSize;
     protected static LocationManager locationManager;
-    Location location;
+
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 

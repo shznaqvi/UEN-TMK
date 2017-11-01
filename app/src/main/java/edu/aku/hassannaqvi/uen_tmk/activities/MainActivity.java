@@ -107,8 +107,6 @@ public class MainActivity extends Activity {
             adminsec.setVisibility(View.GONE);
         }
 
-        // Reset working variables
-        MainApp.child_name = "Test";
 
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
