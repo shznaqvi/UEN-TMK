@@ -24,7 +24,7 @@
     <string name="secALabel">A: HH Identification, Introduction And Consent</string>
     <string name="secBLabel">B: HOUSEHOLD MEMBERS’ INFORMATION </string>
     <string name="secCLabel">C: گھر جي سماجي ۽ اقتصادي معلومات </string>
-    <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15-49 years in the household)</string>
+  <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15–49 years in the household)</string>
     <string name="secELabel">E: Deceased Mother Information</string>
     <string name="secFLabel">F: Deceased Child Information</string>
     <string name="secGLabel">G: Access to LHWs </string>
