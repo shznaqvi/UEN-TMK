@@ -1763,7 +1763,7 @@ public class SectionHAActivity extends Activity {
         sHA.put("tha00", tha00a.isChecked() ? "1" : tha00b.isChecked() ? "2" : "0");
         sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
         sHA.put("tha02", tha02.getText().toString());
-        if (!tha01a.isChecked()) {
+        if (tha01a.isChecked()) {
             sHA.put("tha03", tha03.getSelectedItem().toString());
             sHA.put("tha03Serial", childsMap.get(tha03.getSelectedItem().toString()));
         }

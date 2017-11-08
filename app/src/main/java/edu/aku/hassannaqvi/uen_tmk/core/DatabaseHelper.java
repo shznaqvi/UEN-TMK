@@ -1551,7 +1551,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable._ID,
+                FormsTable.COLUMN_ID,
                 FormsTable.COLUMN_UID,
                 //FormsTable.COLUMN_IS_NEW,
                 //FormsTable.COLUMN_DSSID,

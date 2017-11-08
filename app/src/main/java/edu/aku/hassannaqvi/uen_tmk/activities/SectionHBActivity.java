@@ -1814,7 +1814,7 @@ public class SectionHBActivity extends Activity {
 
         sHB.put("thb03", thb03a.isChecked() ? "1" : thb03b.isChecked() ? "2" : thb03888.isChecked() ? "888" : "0");
         sHB.put("thb04", thb04.getText().toString());
-        if (!thb03a.isChecked()) {
+        if (thb03a.isChecked()) {
             sHB.put("thb05", thb05.getSelectedItem().toString());
             sHB.put("thb05Serial", childsMap.get(thb05.getSelectedItem().toString()));
         }
