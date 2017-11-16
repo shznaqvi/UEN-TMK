@@ -386,8 +386,8 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.fldGrptha23)
     LinearLayout fldGrptha23;
 
-    @BindView(R.id.fldGrptha25)
-    LinearLayout fldGrptha25;
+/*    @BindView(R.id.fldGrptha25)
+    LinearLayout fldGrptha25;*/
 
     @BindView(R.id.fldGrptha08)
     LinearLayout fldGrptha08;
@@ -757,7 +757,7 @@ public class SectionHAActivity extends Activity {
                     tha25.clearCheck();*/
 
                     fldGrptha21.setVisibility(View.VISIBLE);
-                    fldGrptha25.setVisibility(View.VISIBLE);
+//                    fldGrptha25.setVisibility(View.VISIBLE);
 
                     tha20hr.setVisibility(View.VISIBLE);
                     tha20hr.requestFocus();
@@ -785,7 +785,7 @@ public class SectionHAActivity extends Activity {
 
 
                     fldGrptha21.setVisibility(View.VISIBLE);
-                    fldGrptha25.setVisibility(View.VISIBLE);
+//                    fldGrptha25.setVisibility(View.VISIBLE);
 
                     tha20d.setVisibility(View.VISIBLE);
                     tha20d.requestFocus();
@@ -806,7 +806,7 @@ public class SectionHAActivity extends Activity {
                     tha24f.setChecked(false);
                     tha24g.setChecked(false);
 
-                    tha25.clearCheck();
+//                    tha25.clearCheck();
 
 
                     tha20hr.setVisibility(View.GONE);
@@ -816,7 +816,7 @@ public class SectionHAActivity extends Activity {
                     tha20d.setText(null);
 
                     fldGrptha21.setVisibility(View.GONE);
-                    fldGrptha25.setVisibility(View.GONE);
+//                    fldGrptha25.setVisibility(View.GONE);
                 }
             }
         });
@@ -1564,25 +1564,6 @@ public class SectionHAActivity extends Activity {
 
                 }
 
-
-                if (!tha20c.isChecked()) {
-
-                    //        25
-                    if (tha25.getCheckedRadioButtonId() == -1) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
-                        tha25a.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "tha25: This data is Required!");
-                        tha25a.setFocusable(true);
-                        tha25a.setFocusableInTouchMode(true);
-                        tha25a.requestFocus();
-                        return false;
-                    } else {
-                        tha25a.setError(null);
-                    }
-
-                }
-
-
                 if (!tha26888.isChecked()) {
 
                     //        26
@@ -1700,6 +1681,22 @@ public class SectionHAActivity extends Activity {
 
             }
 
+//            if (!tha20c.isChecked()) {
+
+            //        25
+            if (tha25.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
+                tha25a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tha25: This data is Required!");
+                tha25a.setFocusable(true);
+                tha25a.setFocusableInTouchMode(true);
+                tha25a.requestFocus();
+                return false;
+            } else {
+                tha25a.setError(null);
+            }
+
+//            }
 
             //        32
             if (tha32.getCheckedRadioButtonId() == -1) {

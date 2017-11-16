@@ -1195,7 +1195,7 @@
                 </LinearLayout>
 
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/fldGrpth26"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1203,44 +1203,9 @@
                     android:visibility="gone"
                     tools:visibility="visible">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/thb26"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
 
-                    <RadioGroup
-                        android:id="@+id/thb26"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                        <RadioButton
-                            android:id="@+id/thb26a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/thb26a" />
-
-                        <RadioButton
-                            android:id="@+id/thb26b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/thb26b" />
-
-                        <RadioButton
-                            android:id="@+id/thb26c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/thb26c" />
-
-                    </RadioGroup>
-
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -1697,6 +1662,43 @@
                     android:hint="@string/other"
                     android:inputType="textCapWords"
                     android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/thb26"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <RadioGroup
+                    android:id="@+id/thb26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/thb26a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26a" />
+
+                    <RadioButton
+                        android:id="@+id/thb26b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26b" />
+
+                    <RadioButton
+                        android:id="@+id/thb26c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/thb26c" />
+
+                </RadioGroup>
 
             </LinearLayout>
 

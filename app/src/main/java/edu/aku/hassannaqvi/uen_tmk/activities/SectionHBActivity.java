@@ -394,8 +394,8 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.fldGrpth25)
     LinearLayout fldGrpth25;
 
-    @BindView(R.id.fldGrpth26)
-    LinearLayout fldGrpth26;
+/*    @BindView(R.id.fldGrpth26)
+    LinearLayout fldGrpth26;*/
 
     @BindView(R.id.fldGrpth17)
     LinearLayout fldGrpth17;
@@ -735,7 +735,7 @@ public class SectionHBActivity extends Activity {
                     thb25g.setChecked(false);
 
                     fldGrpth15.setVisibility(View.GONE);
-                    fldGrpth26.setVisibility(View.VISIBLE);
+//                    fldGrpth26.setVisibility(View.VISIBLE);
 
                 } else {
                     fldGrpth15.setVisibility(View.VISIBLE);
@@ -800,7 +800,7 @@ public class SectionHBActivity extends Activity {
 
                     fldGrpth22.setVisibility(View.VISIBLE);
                     fldGrpth25.setVisibility(View.VISIBLE);
-                    fldGrpth26.setVisibility(View.VISIBLE);
+//                    fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21hr.setVisibility(View.VISIBLE);
                     thb21hr.requestFocus();
@@ -825,7 +825,7 @@ public class SectionHBActivity extends Activity {
 
                     fldGrpth22.setVisibility(View.VISIBLE);
                     fldGrpth25.setVisibility(View.VISIBLE);
-                    fldGrpth26.setVisibility(View.VISIBLE);
+//                    fldGrpth26.setVisibility(View.VISIBLE);
 
                     thb21d.setVisibility(View.VISIBLE);
                     thb21d.requestFocus();
@@ -845,7 +845,7 @@ public class SectionHBActivity extends Activity {
                     thb25f.setChecked(false);
                     thb25g.setChecked(false);
 
-                    thb26.clearCheck();
+//                    thb26.clearCheck();
 
 
                     thb21hr.setText(null);
@@ -856,7 +856,7 @@ public class SectionHBActivity extends Activity {
 
                     fldGrpth22.setVisibility(View.GONE);
                     fldGrpth25.setVisibility(View.GONE);
-                    fldGrpth26.setVisibility(View.GONE);
+//                    fldGrpth26.setVisibility(View.GONE);
                 }
             }
         });
@@ -1589,23 +1589,6 @@ public class SectionHBActivity extends Activity {
 
                 }
 
-
-                if (!thb21c.isChecked()) {
-                    //        26
-                    if (thb26.getCheckedRadioButtonId() == -1) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
-                        thb26a.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb26: This data is Required!");
-                        thb26a.setFocusable(true);
-                        thb26a.setFocusableInTouchMode(true);
-                        thb26a.requestFocus();
-                        return false;
-                    } else {
-                        thb26a.setError(null);
-                    }
-                }
-
-
                 if (!thb27888.isChecked()) {
 
                     //        27
@@ -1792,7 +1775,20 @@ public class SectionHBActivity extends Activity {
                     }
                 }
 
-
+//                if (!thb21c.isChecked()) {
+                //        26
+                if (thb26.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
+                    thb26a.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "thb26: This data is Required!");
+                    thb26a.setFocusable(true);
+                    thb26a.setFocusableInTouchMode(true);
+                    thb26a.requestFocus();
+                    return false;
+                } else {
+                    thb26a.setError(null);
+                }
+//                }
             }
         }
 
