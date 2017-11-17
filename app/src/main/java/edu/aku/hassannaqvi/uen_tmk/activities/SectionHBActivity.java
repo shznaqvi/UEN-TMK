@@ -414,6 +414,56 @@ public class SectionHBActivity extends Activity {
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
 
+    public void clearFldgrpthb15() {
+        thb15.clearCheck();
+        thb16.clearCheck();
+        thb17.clearCheck();
+        thb18.clearCheck();
+        thb19.clearCheck();
+
+        thb20a.setChecked(false);
+        thb20b.setChecked(false);
+        thb20c.setChecked(false);
+        thb20d.setChecked(false);
+        thb20e.setChecked(false);
+        thb20f.setChecked(false);
+        thb20g.setChecked(false);
+
+        thb21.clearCheck();
+
+        thb21hr.setText(null);
+        thb21d.setText(null);
+
+
+        thb22.clearCheck();
+
+        thb23.setText(null);
+
+        thb24.clearCheck();
+
+        thb25a.setChecked(false);
+        thb25b.setChecked(false);
+        thb25c.setChecked(false);
+        thb25d.setChecked(false);
+        thb25e.setChecked(false);
+        thb25f.setChecked(false);
+        thb25g.setChecked(false);
+
+        thb27.setText(null);
+        thb27888.setChecked(false);
+
+        thb28.clearCheck();
+        thb2888x.setText(null);
+
+        thb29.setText(null);
+        thb29888.setChecked(false);
+
+        thb30.setText(null);
+        thb30888.setChecked(false);
+
+        thb31.clearCheck();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -695,44 +745,27 @@ public class SectionHBActivity extends Activity {
         });
 
 
+        thb10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if (i == R.id.thb10a && thb14b.isChecked()) {
+
+                    clearFldgrpthb15();
+
+                    fldGrpth15.setVisibility(View.GONE);
+
+                } else {
+                    fldGrpth15.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         thb14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (thb14b.isChecked()) {
+                if (i == R.id.thb14b && thb10a.isChecked()) {
 
-                    thb15.clearCheck();
-                    thb16.clearCheck();
-                    thb17.clearCheck();
-                    thb18.clearCheck();
-                    thb19.clearCheck();
-
-                    thb20a.setChecked(false);
-                    thb20b.setChecked(false);
-                    thb20c.setChecked(false);
-                    thb20d.setChecked(false);
-                    thb20e.setChecked(false);
-                    thb20f.setChecked(false);
-                    thb20g.setChecked(false);
-
-                    thb21.clearCheck();
-
-                    thb21hr.setText(null);
-                    thb21d.setText(null);
-
-
-                    thb22.clearCheck();
-
-                    thb23.setText(null);
-
-                    thb24.clearCheck();
-
-                    thb25a.setChecked(false);
-                    thb25b.setChecked(false);
-                    thb25c.setChecked(false);
-                    thb25d.setChecked(false);
-                    thb25e.setChecked(false);
-                    thb25f.setChecked(false);
-                    thb25g.setChecked(false);
+                    clearFldgrpthb15();
 
                     fldGrpth15.setVisibility(View.GONE);
 //                    fldGrpth26.setVisibility(View.VISIBLE);
@@ -1586,98 +1619,96 @@ public class SectionHBActivity extends Activity {
 
                     }
 
+                    if (!thb27888.isChecked()) {
 
-                }
+                        //        27
+                        if (thb27.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
+                            thb27.setError("This data is Required!");    // Set Error on last radio button
+                            thb27.requestFocus();
+                            Log.i(TAG, "thb27: This data is Required!");
+                            return false;
+                        } else {
+                            thb27.setError(null);
+                        }
 
-                if (!thb27888.isChecked()) {
+                    }
 
-                    //        27
-                    if (thb27.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
-                        thb27.setError("This data is Required!");    // Set Error on last radio button
-                        thb27.requestFocus();
-                        Log.i(TAG, "thb27: This data is Required!");
+
+                    //        28
+                    if (thb28.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb28), Toast.LENGTH_SHORT).show();
+                        thb28a.setError("This data is Required!");    // Set Error on last radio button
+                        Log.i(TAG, "thb28: This data is Required!");
+                        thb28a.setFocusable(true);
+                        thb28a.setFocusableInTouchMode(true);
+                        thb28a.requestFocus();
                         return false;
                     } else {
-                        thb27.setError(null);
+                        thb28a.setError(null);
+                    }
+
+
+                    if (thb2888.isChecked()) {
+                        //        2888x
+                        if (thb2888x.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                            thb2888x.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb2888x: This data is Required!");
+                            thb2888x.requestFocus();
+                            return false;
+                        } else {
+                            thb2888x.setError(null);
+                        }
+                    }
+
+
+                    if (!thb29888.isChecked()) {
+
+                        //        29
+                        if (thb29.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
+                            thb29.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb29: This data is Required!");
+                            thb29.requestFocus();
+                            return false;
+                        } else {
+                            thb29.setError(null);
+                        }
+
+                    }
+
+
+                    if (!thb30888.isChecked()) {
+
+                        //        30
+                        if (thb30.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
+                            thb30.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb30: This data is Required!");
+                            thb30.requestFocus();
+                            return false;
+                        } else {
+                            thb30.setError(null);
+                        }
+
+                    }
+
+
+                    //        31
+                    if (thb31.getCheckedRadioButtonId() == -1) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb31), Toast.LENGTH_SHORT).show();
+                        thb31a.setError("This data is Required!");    // Set Error on last radio button
+                        Log.i(TAG, "thb31: This data is Required!");
+                        thb31a.setFocusable(true);
+                        thb31a.setFocusableInTouchMode(true);
+                        thb31a.requestFocus();
+                        return false;
+                    } else {
+                        thb31a.setError(null);
                     }
 
                 }
-
-
-                //        28
-                if (thb28.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb28), Toast.LENGTH_SHORT).show();
-                    thb28a.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "thb28: This data is Required!");
-                    thb28a.setFocusable(true);
-                    thb28a.setFocusableInTouchMode(true);
-                    thb28a.requestFocus();
-                    return false;
-                } else {
-                    thb28a.setError(null);
-                }
-
-
-                if (thb2888.isChecked()) {
-                    //        2888x
-                    if (thb2888x.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                        thb2888x.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb2888x: This data is Required!");
-                        thb2888x.requestFocus();
-                        return false;
-                    } else {
-                        thb2888x.setError(null);
-                    }
-                }
-
-
-                if (!thb29888.isChecked()) {
-
-                    //        29
-                    if (thb29.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
-                        thb29.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb29: This data is Required!");
-                        thb29.requestFocus();
-                        return false;
-                    } else {
-                        thb29.setError(null);
-                    }
-
-                }
-
-
-                if (!thb30888.isChecked()) {
-
-                    //        30
-                    if (thb30.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
-                        thb30.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb30: This data is Required!");
-                        thb30.requestFocus();
-                        return false;
-                    } else {
-                        thb30.setError(null);
-                    }
-
-                }
-
-
-                //        31
-                if (thb31.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb31), Toast.LENGTH_SHORT).show();
-                    thb31a.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "thb31: This data is Required!");
-                    thb31a.setFocusable(true);
-                    thb31a.setFocusableInTouchMode(true);
-                    thb31a.requestFocus();
-                    return false;
-                } else {
-                    thb31a.setError(null);
-                }
-
 
                 //        32
                 if (thb32.getCheckedRadioButtonId() == -1) {
