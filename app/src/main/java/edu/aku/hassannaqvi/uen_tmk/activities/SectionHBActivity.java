@@ -462,6 +462,7 @@ public class SectionHBActivity extends Activity {
         thb30888.setChecked(false);
 
         thb31.clearCheck();
+        thb32.clearCheck();
     }
 
     @Override
