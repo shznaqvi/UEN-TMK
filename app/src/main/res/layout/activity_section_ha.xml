@@ -1182,18 +1182,6 @@
 
                     </LinearLayout>
 
-                    <!--<LinearLayout
-                        android:id="@+id/fldGrptha25"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        tools:visibility="visible">
-
-
-                    </LinearLayout>-->
-
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1433,42 +1421,52 @@
 
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrptha25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/tha25"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible">
 
-        <RadioGroup
-            android:id="@+id/tha25"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/tha25a"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tha25a" />
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/tha25"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
 
-            <RadioButton
-                android:id="@+id/tha25b"
+            <RadioGroup
+                android:id="@+id/tha25"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tha25b" />
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/tha25c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tha25c" />
+                <RadioButton
+                    android:id="@+id/tha25a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha25a" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/tha25b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha25b" />
+
+                <RadioButton
+                    android:id="@+id/tha25c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tha25c" />
+
+            </RadioGroup>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

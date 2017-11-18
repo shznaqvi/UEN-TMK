@@ -386,8 +386,8 @@ public class SectionHAActivity extends Activity {
     @BindView(R.id.fldGrptha23)
     LinearLayout fldGrptha23;
 
-/*    @BindView(R.id.fldGrptha25)
-    LinearLayout fldGrptha25;*/
+    @BindView(R.id.fldGrptha25)
+    LinearLayout fldGrptha25;
 
     @BindView(R.id.fldGrptha08)
     LinearLayout fldGrptha08;
@@ -485,6 +485,7 @@ public class SectionHAActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (tha01a.isChecked()) {
                     fldGrptha02.setVisibility(View.VISIBLE);
+                    fldGrptha25.setVisibility(View.VISIBLE);
                 } else {
 
                     tha02.setText(null);
@@ -589,6 +590,7 @@ public class SectionHAActivity extends Activity {
 
 
                     fldGrptha02.setVisibility(View.GONE);
+                    fldGrptha25.setVisibility(View.GONE);
                     fldGrptha32.setVisibility(View.GONE);
                     fldGrptha34.setVisibility(View.GONE);
                 }
