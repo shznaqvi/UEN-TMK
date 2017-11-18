@@ -1711,24 +1711,22 @@ public class SectionHAActivity extends Activity {
 
                 }
 
-            }
-
 //            if (!tha20c.isChecked()) {
 
-            //        25
-            if (tha25.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
-                tha25a.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "tha25: This data is Required!");
-                tha25a.setFocusable(true);
-                tha25a.setFocusableInTouchMode(true);
-                tha25a.requestFocus();
-                return false;
-            } else {
-                tha25a.setError(null);
-            }
+                //        25
+                if (tha25.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha25), Toast.LENGTH_SHORT).show();
+                    tha25a.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "tha25: This data is Required!");
+                    tha25a.setFocusable(true);
+                    tha25a.setFocusableInTouchMode(true);
+                    tha25a.requestFocus();
+                    return false;
+                } else {
+                    tha25a.setError(null);
+                }
 
-//            }
+            }
 
             //        32
             if (tha32.getCheckedRadioButtonId() == -1) {
