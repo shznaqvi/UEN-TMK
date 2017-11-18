@@ -624,7 +624,6 @@ public class SectionHAActivity extends Activity {
                     fldGrptha07.setVisibility(View.VISIBLE);
 
                     fldGrptha08.setVisibility(View.GONE);
-                    fldGrptha25.setVisibility(View.GONE);
 
                     tha08.setText(null);
                     tha09.clearCheck();
