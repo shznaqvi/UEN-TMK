@@ -1727,7 +1727,7 @@ public class SectionHAActivity extends Activity {
                 }
 
             }
-
+        }
             //        32
             if (tha32.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha32), Toast.LENGTH_SHORT).show();
@@ -1741,7 +1741,7 @@ public class SectionHAActivity extends Activity {
                 tha32a.setError(null);
             }
 
-        }
+//        }
 
 
         if (tha32a.isChecked()) {
