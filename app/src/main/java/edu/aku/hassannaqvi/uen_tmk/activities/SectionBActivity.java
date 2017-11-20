@@ -848,6 +848,16 @@ public class SectionBActivity extends AppCompatActivity {
             } else {
                 tb08m.setError(null);
             }
+
+            if (Integer.parseInt(tb08y.getText().toString()) == 0 && Integer.parseInt(tb08m.getText().toString()) == 0) {
+                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
+                tb08y.setError("Greater then 0! ");    // Set Error on last radio button
+                tb08y.requestFocus();
+                Log.i(TAG, "tb08y: Greater then 0!");
+                return false;
+            } else {
+                tb08y.setError(null);
+            }
         }
 
 //        09

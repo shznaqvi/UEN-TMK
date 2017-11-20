@@ -1147,6 +1147,15 @@ public class SectionJActivity extends Activity {
             } else {
                 tj13m.setError(null);
             }
+
+            if (childsMap.get(tj01.getSelectedItem().toString()).getDob().length() == 10) {
+                months = MainApp.ageInMonthsByDOB(childsMap.get(tj01.getSelectedItem().toString()).getDob());
+            } else {
+                String[] dob = childsMap.get(tj01.getSelectedItem().toString()).getDob().split("-");
+
+                months = MainApp.ageInMonths(dob[1], dob[0]);
+            }
+
             if (Long.valueOf(tj13m.getText().toString()) > months) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                 tj13m.setError("Invalid Months!");    // Set Error on last radio button
