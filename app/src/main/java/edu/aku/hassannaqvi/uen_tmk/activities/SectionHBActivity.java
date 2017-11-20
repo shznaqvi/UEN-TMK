@@ -394,8 +394,8 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.fldGrpth25)
     LinearLayout fldGrpth25;
 
-/*    @BindView(R.id.fldGrpth26)
-    LinearLayout fldGrpth26;*/
+    @BindView(R.id.fldGrpth15a)
+    LinearLayout fldGrpth15a;
 
     @BindView(R.id.fldGrpth17)
     LinearLayout fldGrpth17;
@@ -415,6 +415,25 @@ public class SectionHBActivity extends Activity {
     ArrayList<String> lstChild;
 
     public void clearFldgrpthb15() {
+        clearFldgrpthb15a();
+
+        thb27.setText(null);
+        thb27888.setChecked(false);
+
+        thb28.clearCheck();
+        thb2888x.setText(null);
+
+        thb29.setText(null);
+        thb29888.setChecked(false);
+
+        thb30.setText(null);
+        thb30888.setChecked(false);
+
+        thb31.clearCheck();
+        thb32.clearCheck();
+    }
+
+    public void clearFldgrpthb15a() {
         thb15.clearCheck();
         thb16.clearCheck();
         thb17.clearCheck();
@@ -448,21 +467,6 @@ public class SectionHBActivity extends Activity {
         thb25e.setChecked(false);
         thb25f.setChecked(false);
         thb25g.setChecked(false);
-
-        thb27.setText(null);
-        thb27888.setChecked(false);
-
-        thb28.clearCheck();
-        thb2888x.setText(null);
-
-        thb29.setText(null);
-        thb29888.setChecked(false);
-
-        thb30.setText(null);
-        thb30888.setChecked(false);
-
-        thb31.clearCheck();
-        thb32.clearCheck();
     }
 
     @Override
@@ -755,6 +759,11 @@ public class SectionHBActivity extends Activity {
 
                     fldGrpth15.setVisibility(View.GONE);
 
+                } else if (thb14b.isChecked()) {
+                    clearFldgrpthb15a();
+
+                    fldGrpth15.setVisibility(View.VISIBLE);
+                    fldGrpth15a.setVisibility(View.GONE);
                 } else {
                     fldGrpth15.setVisibility(View.VISIBLE);
                 }
@@ -771,8 +780,13 @@ public class SectionHBActivity extends Activity {
                     fldGrpth15.setVisibility(View.GONE);
 //                    fldGrpth26.setVisibility(View.VISIBLE);
 
+                } else if (i == R.id.thb14b) {
+                    clearFldgrpthb15a();
+                    fldGrpth15.setVisibility(View.VISIBLE);
+                    fldGrpth15a.setVisibility(View.GONE);
                 } else {
                     fldGrpth15.setVisibility(View.VISIBLE);
+                    fldGrpth15a.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1620,108 +1634,111 @@ public class SectionHBActivity extends Activity {
 
                     }
 
-                    if (!thb27888.isChecked()) {
+                    if (!thb10a.isChecked()) {
 
-                        //        27
-                        if (thb27.getText().toString().isEmpty()) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
-                            thb27.setError("This data is Required!");    // Set Error on last radio button
-                            thb27.requestFocus();
-                            Log.i(TAG, "thb27: This data is Required!");
-                            return false;
-                        } else {
-                            thb27.setError(null);
+                        if (!thb27888.isChecked()) {
+
+                            //        27
+                            if (thb27.getText().toString().isEmpty()) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb27), Toast.LENGTH_SHORT).show();
+                                thb27.setError("This data is Required!");    // Set Error on last radio button
+                                thb27.requestFocus();
+                                Log.i(TAG, "thb27: This data is Required!");
+                                return false;
+                            } else {
+                                thb27.setError(null);
+                            }
+
                         }
 
-                    }
 
-
-                    //        28
-                    if (thb28.getCheckedRadioButtonId() == -1) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb28), Toast.LENGTH_SHORT).show();
-                        thb28a.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb28: This data is Required!");
-                        thb28a.setFocusable(true);
-                        thb28a.setFocusableInTouchMode(true);
-                        thb28a.requestFocus();
-                        return false;
-                    } else {
-                        thb28a.setError(null);
-                    }
-
-
-                    if (thb2888.isChecked()) {
-                        //        2888x
-                        if (thb2888x.getText().toString().isEmpty()) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                            thb2888x.setError("This data is Required!");    // Set Error on last radio button
-                            Log.i(TAG, "thb2888x: This data is Required!");
-                            thb2888x.requestFocus();
+                        //        28
+                        if (thb28.getCheckedRadioButtonId() == -1) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb28), Toast.LENGTH_SHORT).show();
+                            thb28a.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb28: This data is Required!");
+                            thb28a.setFocusable(true);
+                            thb28a.setFocusableInTouchMode(true);
+                            thb28a.requestFocus();
                             return false;
                         } else {
-                            thb2888x.setError(null);
+                            thb28a.setError(null);
                         }
-                    }
 
 
-                    if (!thb29888.isChecked()) {
+                        if (thb2888.isChecked()) {
+                            //        2888x
+                            if (thb2888x.getText().toString().isEmpty()) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                                thb2888x.setError("This data is Required!");    // Set Error on last radio button
+                                Log.i(TAG, "thb2888x: This data is Required!");
+                                thb2888x.requestFocus();
+                                return false;
+                            } else {
+                                thb2888x.setError(null);
+                            }
+                        }
 
-                        //        29
-                        if (thb29.getText().toString().isEmpty()) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
-                            thb29.setError("This data is Required!");    // Set Error on last radio button
-                            Log.i(TAG, "thb29: This data is Required!");
-                            thb29.requestFocus();
+
+                        if (!thb29888.isChecked()) {
+
+                            //        29
+                            if (thb29.getText().toString().isEmpty()) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb29), Toast.LENGTH_SHORT).show();
+                                thb29.setError("This data is Required!");    // Set Error on last radio button
+                                Log.i(TAG, "thb29: This data is Required!");
+                                thb29.requestFocus();
+                                return false;
+                            } else {
+                                thb29.setError(null);
+                            }
+
+                        }
+
+
+                        if (!thb30888.isChecked()) {
+
+                            //        30
+                            if (thb30.getText().toString().isEmpty()) {
+                                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
+                                thb30.setError("This data is Required!");    // Set Error on last radio button
+                                Log.i(TAG, "thb30: This data is Required!");
+                                thb30.requestFocus();
+                                return false;
+                            } else {
+                                thb30.setError(null);
+                            }
+
+                        }
+
+
+                        //        31
+                        if (thb31.getCheckedRadioButtonId() == -1) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb31), Toast.LENGTH_SHORT).show();
+                            thb31a.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb31: This data is Required!");
+                            thb31a.setFocusable(true);
+                            thb31a.setFocusableInTouchMode(true);
+                            thb31a.requestFocus();
                             return false;
                         } else {
-                            thb29.setError(null);
+                            thb31a.setError(null);
                         }
 
-                    }
 
-
-                    if (!thb30888.isChecked()) {
-
-                        //        30
-                        if (thb30.getText().toString().isEmpty()) {
-                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb30), Toast.LENGTH_SHORT).show();
-                            thb30.setError("This data is Required!");    // Set Error on last radio button
-                            Log.i(TAG, "thb30: This data is Required!");
-                            thb30.requestFocus();
+                        //        32
+                        if (thb32.getCheckedRadioButtonId() == -1) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb32), Toast.LENGTH_SHORT).show();
+                            thb32a.setError("This data is Required!");    // Set Error on last radio button
+                            Log.i(TAG, "thb32: This data is Required!");
+                            thb32a.setFocusable(true);
+                            thb32a.setFocusableInTouchMode(true);
+                            thb32a.requestFocus();
                             return false;
                         } else {
-                            thb30.setError(null);
+                            thb32a.setError(null);
                         }
-
                     }
-
-
-                    //        31
-                    if (thb31.getCheckedRadioButtonId() == -1) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb31), Toast.LENGTH_SHORT).show();
-                        thb31a.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb31: This data is Required!");
-                        thb31a.setFocusable(true);
-                        thb31a.setFocusableInTouchMode(true);
-                        thb31a.requestFocus();
-                        return false;
-                    } else {
-                        thb31a.setError(null);
-                    }
-
-                }
-
-                //        32
-                if (thb32.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb32), Toast.LENGTH_SHORT).show();
-                    thb32a.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "thb32: This data is Required!");
-                    thb32a.setFocusable(true);
-                    thb32a.setFocusableInTouchMode(true);
-                    thb32a.requestFocus();
-                    return false;
-                } else {
-                    thb32a.setError(null);
                 }
 
 
@@ -1806,22 +1823,23 @@ public class SectionHBActivity extends Activity {
                         thb3688x.setError(null);
                     }
                 }
-
-//                if (!thb21c.isChecked()) {
-                //        26
-                if (thb26.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
-                    thb26a.setError("This data is Required!");    // Set Error on last radio button
-                    Log.i(TAG, "thb26: This data is Required!");
-                    thb26a.setFocusable(true);
-                    thb26a.setFocusableInTouchMode(true);
-                    thb26a.requestFocus();
-                    return false;
-                } else {
-                    thb26a.setError(null);
-                }
-//                }
             }
+
+            //                if (!thb21c.isChecked()) {
+            //        26
+            if (thb26.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb26), Toast.LENGTH_SHORT).show();
+                thb26a.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "thb26: This data is Required!");
+                thb26a.setFocusable(true);
+                thb26a.setFocusableInTouchMode(true);
+                thb26a.requestFocus();
+                return false;
+            } else {
+                thb26a.setError(null);
+            }
+//                }
+
         }
 
 
