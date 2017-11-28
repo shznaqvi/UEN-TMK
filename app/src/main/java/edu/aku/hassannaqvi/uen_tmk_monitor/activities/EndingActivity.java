@@ -104,6 +104,7 @@ public class EndingActivity extends Activity {
 
                 MainApp.TotalMembersCount = 0;
                 MainApp.TotalMWRACount = 0;
+                MainApp.TotalNonMWRACount = 0;
                 MainApp.mwraCount = 1;
                 MainApp.TotalChildCount = 0;
                 MainApp.imsCount = 1;
