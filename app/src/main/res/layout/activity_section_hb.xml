@@ -199,11 +199,12 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <Spinner
+            <EditText
                 android:id="@+id/thb05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"></Spinner>
+                android:layout_marginTop="10dp"
+                android:hint="@string/thb05"></EditText>
 
             <!--
 

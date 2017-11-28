@@ -2,20 +2,16 @@ package edu.aku.hassannaqvi.uen_tmk_monitor.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -47,7 +43,7 @@ public class SectionHAActivity extends Activity {
     /*    @BindView(R.id.tha02)
         EditText tha02;*/
     @BindView(R.id.tha03)
-    Spinner tha03;
+    EditText tha03;
     @BindView(R.id.tha04)
     EditText tha04;
     @BindView(R.id.tha05)
@@ -474,6 +470,7 @@ public class SectionHAActivity extends Activity {
         lstChild.add("....");
 
 
+/*
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1") || MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
@@ -485,6 +482,7 @@ public class SectionHAActivity extends Activity {
 
         tha03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
 
+*/
 
         tha01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1155,16 +1153,16 @@ public class SectionHAActivity extends Activity {
 
             //        03
 
-/*            if (tha03.getText().toString().isEmpty()) {
+            if (tha03.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha03), Toast.LENGTH_SHORT).show();
                 tha03.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "tha03: This data is Required!");
                 return false;
             } else {
                 tha03.setError(null);
-            }*/
+            }
 
-            if (tha03.getSelectedItem() == "....") {
+            /*if (tha03.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.tha03), Toast.LENGTH_SHORT).show();
                 ((TextView) tha03.getSelectedView()).setText("This Data is Required");
                 ((TextView) tha03.getSelectedView()).setTextColor(Color.RED);
@@ -1173,7 +1171,7 @@ public class SectionHAActivity extends Activity {
                 return false;
             } else {
                 ((TextView) tha03.getSelectedView()).setError(null);
-            }
+            }*/
 
 
             //        04
@@ -1813,8 +1811,7 @@ public class SectionHAActivity extends Activity {
         sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
 //        sHA.put("tha02", tha02.getText().toString());
         if (tha01a.isChecked()) {
-            sHA.put("tha03", tha03.getSelectedItem().toString());
-            sHA.put("tha03Serial", childsMap.get(tha03.getSelectedItem().toString()));
+            sHA.put("tha03", tha03.getText().toString());
         }
         sHA.put("tha04", tha04.getText().toString());
 

@@ -2,20 +2,16 @@ package edu.aku.hassannaqvi.uen_tmk_monitor.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -61,7 +57,7 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.thb04)
     EditText thb04;
     @BindView(R.id.thb05)
-    Spinner thb05;
+    EditText thb05;
     /*  @BindView(R.id.thb06)
       EditText thb06;*/
     @BindView(R.id.thb07)
@@ -483,14 +479,14 @@ public class SectionHBActivity extends Activity {
         childsMap.put("....", "");
         lstChild.add("....");
 
-        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+/*        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1") || MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
             }
         }
 
-        thb05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+        thb05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));*/
 
 
         thb01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1202,9 +1198,19 @@ public class SectionHBActivity extends Activity {
 
             }
 
+            if (thb05.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
+                thb05.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "thb05: This data is Required!");
+                thb05.requestFocus();
+                return false;
+            } else {
+                thb05.setError(null);
+            }
+
 
             //        05
-            if (thb05.getSelectedItem() == "....") {
+            /*if (thb05.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
                 ((TextView) thb05.getSelectedView()).setText("This Data is Required");
                 ((TextView) thb05.getSelectedView()).setTextColor(Color.RED);
@@ -1213,7 +1219,7 @@ public class SectionHBActivity extends Activity {
                 return false;
             } else {
                 ((TextView) thb05.getSelectedView()).setError(null);
-            }
+            }*/
 
 /*
             //        06
@@ -1854,8 +1860,8 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb03", thb03a.isChecked() ? "1" : thb03b.isChecked() ? "2" : thb03888.isChecked() ? "888" : "0");
         sHB.put("thb04", thb04.getText().toString());
         if (thb03a.isChecked()) {
-            sHB.put("thb05", thb05.getSelectedItem().toString());
-            sHB.put("thb05Serial", childsMap.get(thb05.getSelectedItem().toString()));
+            sHB.put("thb05", thb05.getText().toString());
+            //sHB.put("thb05Serial", childsMap.get(thb05.getSelectedItem().toString()));
         }
 //        sHB.put("thb06", thb06.getText().toString());
         sHB.put("thb07", thb07a.isChecked() ? "1" : thb07b.isChecked() ? "2" : thb07888.isChecked() ? "888" : "0");
