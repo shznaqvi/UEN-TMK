@@ -149,7 +149,7 @@ public class BLRandomContract {
         public static final String COLUMN_FAMILY_EXT_CODE = "hh07";
         public static final String COLUMN_HH = "hh";
         public static final String COLUMN_HH_HEAD = "hh08";
-        public static String _URIGET = "bl_random.php";
+        public static String _URIGET = "mon_bl_random.php";
     }
 
 }
