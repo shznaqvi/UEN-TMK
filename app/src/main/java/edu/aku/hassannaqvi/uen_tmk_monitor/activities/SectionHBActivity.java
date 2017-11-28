@@ -346,7 +346,7 @@ public class SectionHBActivity extends Activity {
     RadioButton thb35b;
     @BindView(R.id.thb35c)
     RadioButton thb35c;
-    @BindView(R.id.thb36a)
+    /*@BindView(R.id.thb36a)
     CheckBox thb36a;
     @BindView(R.id.thb36b)
     CheckBox thb36b;
@@ -371,7 +371,7 @@ public class SectionHBActivity extends Activity {
     @BindView(R.id.thb3688)
     CheckBox thb3688;
     @BindView(R.id.thb3688x)
-    EditText thb3688x;
+    EditText thb3688x;*/
 
     @BindView(R.id.fldGrpthb02)
     LinearLayout fldGrpthb02;
@@ -600,7 +600,7 @@ public class SectionHBActivity extends Activity {
 
                     thb35.clearCheck();
 
-                    thb36a.setChecked(false);
+                  /*  thb36a.setChecked(false);
                     thb36b.setChecked(false);
                     thb36c.setChecked(false);
                     thb36d.setChecked(false);
@@ -613,7 +613,7 @@ public class SectionHBActivity extends Activity {
                     thb36k.setChecked(false);
                     thb3688.setChecked(false);
 
-                    thb3688x.setText(null);
+                    thb3688x.setText(null);*/
 
 
                     fldGrpthb04.setVisibility(View.GONE);
@@ -715,7 +715,7 @@ public class SectionHBActivity extends Activity {
                     thb34888.setChecked(false);
 
                     thb35.clearCheck();
-
+/*
                     thb36a.setChecked(false);
                     thb36b.setChecked(false);
                     thb36c.setChecked(false);
@@ -729,7 +729,7 @@ public class SectionHBActivity extends Activity {
                     thb36k.setChecked(false);
                     thb3688.setChecked(false);
 
-                    thb3688x.setText(null);
+                    thb3688x.setText(null);*/
 
                     fldGrpth08.setVisibility(View.VISIBLE);
                     fldGrpth08a.setVisibility(View.GONE);
@@ -1027,7 +1027,7 @@ public class SectionHBActivity extends Activity {
         });
 
 
-        thb3688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    /*    thb3688.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (thb3688.isChecked()) {
@@ -1038,7 +1038,7 @@ public class SectionHBActivity extends Activity {
                     thb3688x.setVisibility(View.GONE);
                 }
             }
-        });
+        });*/
 
     }
 
@@ -1778,7 +1778,7 @@ public class SectionHBActivity extends Activity {
                     thb35a.setError(null);
                 }
 
-
+/*
                 //        36
                 if (!thb36a.isChecked()
                         && !thb36b.isChecked()
@@ -1815,7 +1815,7 @@ public class SectionHBActivity extends Activity {
                     } else {
                         thb3688x.setError(null);
                     }
-                }
+                }*/
             }
 
             //                if (!thb21c.isChecked()) {
@@ -2010,7 +2010,7 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb35", thb35a.isChecked() ? "1" : thb35b.isChecked() ? "2" : thb35c.isChecked() ? "3" : "0");
 
 
-        sHB.put("thb36a", thb36a.isChecked() ? "1" : "0");
+/*        sHB.put("thb36a", thb36a.isChecked() ? "1" : "0");
         sHB.put("thb36b", thb36b.isChecked() ? "2" : "0");
         sHB.put("thb36c", thb36c.isChecked() ? "3" : "0");
         sHB.put("thb36d", thb36d.isChecked() ? "4" : "0");
@@ -2022,7 +2022,7 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb36j", thb36j.isChecked() ? "10" : "0");
         sHB.put("thb36k", thb36k.isChecked() ? "11" : "0");
         sHB.put("thb3688", thb3688.isChecked() ? "88" : "0");
-        sHB.put("thb3688x", thb3688x.getText().toString());
+        sHB.put("thb3688x", thb3688x.getText().toString());*/
         sHB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsHB(String.valueOf(sHB));
