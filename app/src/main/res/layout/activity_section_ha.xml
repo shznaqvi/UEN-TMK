@@ -113,7 +113,6 @@
                 android:text="@string/tha02"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
-            <!--
                         <EditText
                             android:id="@+id/tha02"
                             android:layout_width="match_parent"
@@ -130,14 +129,16 @@
                             android:background="@color/colorPrimary"
                             android:text="@string/tha03"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />-->
+                            android:textColor="@android:color/white"/>
 
             <EditText
                 android:id="@+id/tha03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/tha03"></EditText>
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/tha03"
+                android:inputType="textCapWords"></EditText>
 
             <TextView
                 android:layout_width="match_parent"

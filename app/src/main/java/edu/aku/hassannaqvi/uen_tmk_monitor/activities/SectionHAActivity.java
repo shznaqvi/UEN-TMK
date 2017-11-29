@@ -40,8 +40,8 @@ public class SectionHAActivity extends Activity {
     RadioButton tha01b;
     @BindView(R.id.tha01888)
     RadioButton tha01888;
-    /*    @BindView(R.id.tha02)
-        EditText tha02;*/
+    @BindView(R.id.tha02)
+    EditText tha02;
     @BindView(R.id.tha03)
     EditText tha03;
     @BindView(R.id.tha04)
@@ -492,8 +492,8 @@ public class SectionHAActivity extends Activity {
                     fldGrptha25.setVisibility(View.VISIBLE);
                 } else {
 
-//                    tha02.setText(null);
-//                    tha03.getChildAt(0).toString();
+                    tha02.setText(null);
+                    tha03.setText(null);
                     tha04.setText(null);
 
                     tha05.clearCheck();
@@ -1115,7 +1115,7 @@ public class SectionHAActivity extends Activity {
 
         if (tha01a.isChecked()) {
 
-/*
+
             //        02
             if (tha02.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha02), Toast.LENGTH_SHORT).show();
@@ -1148,7 +1148,7 @@ public class SectionHAActivity extends Activity {
                 } else {
                     tha02.setError(null);
                 }
-            }*/
+            }
 
 
             //        03
@@ -1809,7 +1809,7 @@ public class SectionHAActivity extends Activity {
 
         sHA.put("tha00", tha00a.isChecked() ? "1" : tha00b.isChecked() ? "2" : "0");
         sHA.put("tha01", tha01a.isChecked() ? "1" : tha01b.isChecked() ? "2" : tha01888.isChecked() ? "888" : "0");
-//        sHA.put("tha02", tha02.getText().toString());
+        sHA.put("tha02", tha02.getText().toString());
         if (tha01a.isChecked()) {
             sHA.put("tha03", tha03.getText().toString());
         }
