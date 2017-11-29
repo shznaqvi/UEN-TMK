@@ -1138,7 +1138,7 @@ public class SectionHAActivity extends Activity {
             }
 
 
-            if (!tha02.getText().toString().isEmpty()) {
+            /*if (!tha02.getText().toString().isEmpty()) {
                 if (Integer.parseInt(tha02.getText().toString()) < 0 || Integer.parseInt(tha02.getText().toString()) > count_child_5y) {
                     Toast.makeText(this, "Number of childrens had diarrea in last two weeks must be greater than 0", Toast.LENGTH_SHORT).show();
                     tha02.setError("Must be greater than 0");
@@ -1148,6 +1148,15 @@ public class SectionHAActivity extends Activity {
                 } else {
                     tha02.setError(null);
                 }
+            }*/
+
+            if (tha02.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha02), Toast.LENGTH_SHORT).show();
+                tha02.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "tha02: This data is Required!");
+                return false;
+            } else {
+                tha02.setError(null);
             }
 
 
