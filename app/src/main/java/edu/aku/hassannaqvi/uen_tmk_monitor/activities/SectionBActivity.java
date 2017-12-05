@@ -607,7 +607,7 @@ public class SectionBActivity extends AppCompatActivity {
         }
         // MWRA
         if (tb11b.isChecked() && tb04b.isChecked()
-                && ageInyears > 15 && ageInyears < 49) {
+                && ageInyears >= 15 && ageInyears < 50) {
             MainApp.TotalMWRACount++;
         }
         // TOTAL MEMBERS
