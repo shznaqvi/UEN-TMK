@@ -2239,6 +2239,8 @@ public class SectionIActivity extends AppCompatActivity
 
 
                 } else {
+                    MainApp.imsCount = 0;
+
                     Intent secNext = new Intent(this, SectionJActivity.class);
                     startActivity(secNext);
                 }

@@ -187,6 +187,8 @@ public class SectionDActivity extends Activity {
                 MainApp.mwraCount++;
 
                 if (MainApp.mwraCount > MainApp.TotalMWRACount) {
+                    MainApp.mwraCount = 0;
+
                     finish();
 
                     if (MainApp.TotalDeceasedMotherCount > 0) {

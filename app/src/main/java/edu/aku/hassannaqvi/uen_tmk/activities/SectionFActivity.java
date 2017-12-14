@@ -145,7 +145,11 @@ public class SectionFActivity extends AppCompatActivity {
 
                 finish();
 
-                if (MainApp.CounterDeceasedChild >= MainApp.TotalDeceasedChildCount) {
+                if (MainApp.CounterDeceasedChild == MainApp.TotalDeceasedChildCount) {
+
+                    // Reset Counter
+                    MainApp.CounterDeceasedChild = 0;
+
                     Intent secNext = new Intent(this, SectionGActivity.class);
                     startActivity(secNext);
                 } else {
