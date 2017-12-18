@@ -645,6 +645,7 @@ public class SectionAActivity extends Activity {
             }
 
             if (Integer.valueOf(totalMem.getText().toString()) < (Integer.valueOf(totalMales.getText().toString()) +
+                    Integer.valueOf(totalFemales.getText().toString())) || Integer.valueOf(totalMem.getText().toString()) != (Integer.valueOf(totalMales.getText().toString()) +
                     Integer.valueOf(totalFemales.getText().toString()))) {
                 Toast.makeText(this, "ERROR(Invalid): Total not matched", Toast.LENGTH_SHORT).show();
                 totalMem.setError("The total is incorrect! ");    // Set Error on last radio button
