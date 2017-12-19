@@ -141,6 +141,8 @@ public class SectionEActivity extends AppCompatActivity {
 
                 if (MainApp.CounterDeceasedMother >= MainApp.TotalDeceasedMotherCount) {
 
+                    MainApp.CounterDeceasedMother = 0;
+
                     if (MainApp.TotalDeceasedChildCount > 0) {
                         Intent secNext = new Intent(this, SectionFActivity.class);
                         startActivity(secNext);

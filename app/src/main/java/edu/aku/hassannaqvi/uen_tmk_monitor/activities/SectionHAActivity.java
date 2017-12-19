@@ -367,8 +367,8 @@ public class SectionHAActivity extends Activity {
     /*@BindView(R.id.fldGrptha21)
     LinearLayout fldGrptha21;*/
 
-    @BindView(R.id.fldGrptha32)
-    LinearLayout fldGrptha32;
+/*    @BindView(R.id.fldGrptha32)
+    LinearLayout fldGrptha32;*/
 
     @BindView(R.id.fldGrptha34)
     LinearLayout fldGrptha34;
@@ -596,7 +596,7 @@ public class SectionHAActivity extends Activity {
                     fldGrptha02.setVisibility(View.GONE);
                     fldGrptha14a.setVisibility(View.GONE);
                     fldGrptha25.setVisibility(View.GONE);
-                    fldGrptha32.setVisibility(View.GONE);
+//                    fldGrptha32.setVisibility(View.GONE);
                     fldGrptha34.setVisibility(View.GONE);
                 }
             }
@@ -1003,11 +1003,11 @@ public class SectionHAActivity extends Activity {
 //                    tha33.clearCheck();
                     tha34.clearCheck();
 
-                    fldGrptha32.setVisibility(View.GONE);
+                    fldGrptha34.setVisibility(View.GONE);
 
                 } else {
-                    fldGrptha32.setVisibility(View.VISIBLE);
-                    fldGrptha34.setVisibility(View.GONE);
+//                    fldGrptha32.setVisibility(View.VISIBLE);
+                    fldGrptha34.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1788,9 +1788,9 @@ public class SectionHAActivity extends Activity {
                 tha33a.setError(null);
             }
 
-        }
+        }*/
 
-        if (tha33a.isChecked()) {
+        if (tha32a.isChecked()) {
 
             //        34
             if (tha34.getCheckedRadioButtonId() == -1) {
@@ -1805,7 +1805,7 @@ public class SectionHAActivity extends Activity {
                 tha34a.setError(null);
             }
 
-        }*/
+        }
 
         return true;
     }
