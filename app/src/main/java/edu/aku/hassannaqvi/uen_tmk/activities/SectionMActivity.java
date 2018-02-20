@@ -134,11 +134,11 @@ public class SectionMActivity extends Activity {
         //TODO implement
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
+            /*try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
@@ -181,7 +181,7 @@ public class SectionMActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSM();
+        /*int updcount = db.updateSM();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -189,7 +189,9 @@ public class SectionMActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 
     public boolean formValidation() {

@@ -358,11 +358,11 @@ public class SectionKActivity extends Activity {
     void onBtnContinueClick() {
 
         if (ValidateForm()) {
-            try {
+            /*try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
@@ -380,7 +380,7 @@ public class SectionKActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSK();
+        /*int updcount = db.updateSK();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -388,7 +388,9 @@ public class SectionKActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
 
     }
 

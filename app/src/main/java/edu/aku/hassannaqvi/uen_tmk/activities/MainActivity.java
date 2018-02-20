@@ -243,10 +243,10 @@ public class MainActivity extends Activity {
 
     public void openForm(View v) {
 
-        if (spAreas.getSelectedItemPosition() != 0) {
+//        if (spAreas.getSelectedItemPosition() != 0) {
 
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                Intent oF = new Intent(MainActivity.this, SectionCActivity.class);
                 startActivity(oF);
             } else {
 
@@ -269,7 +269,7 @@ public class MainActivity extends Activity {
                             editor.commit();
 
                             if (!MainApp.userName.equals("0000")) {
-                                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                                Intent oF = new Intent(MainActivity.this, SectionCActivity.class);
                                 startActivity(oF);
                             }
                         }
@@ -284,9 +284,9 @@ public class MainActivity extends Activity {
 
                 builder.show();
             }
-        } else {
-            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
-        }
+//        } else {
+//            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
+//        }
     }
 
 

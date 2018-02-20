@@ -212,7 +212,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         lablesTalukas = new ArrayList<>();
         talukasMap = new HashMap<>();
 
-        lablesTalukas.add("Select Taluka..");
+        lablesTalukas.add("Select District..");
 
         for (TalukasContract taluka : TalukasList) {
             lablesTalukas.add(taluka.getTaluka());
@@ -233,7 +233,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 lablesUCs = new ArrayList<>();
                 ucsMap = new HashMap<>();
-                lablesUCs.add("Select UC..");
+                lablesUCs.add("Select Union Council..");
 
                 if (spTalukas.getSelectedItemPosition() != 0) {
                     UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
@@ -573,10 +573,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
-                if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) || db.Login(mEmail, mPassword)
+                if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) ||
+                        (mEmail.equals("guest@aku") && mPassword.equals("aku1234")) || db.Login(mEmail, mPassword)
                         || (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
                     MainApp.userName = mEmail;
-                    MainApp.admin = mEmail.contains("@");
+                    MainApp.admin = false;
 
                     Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(iLogin);

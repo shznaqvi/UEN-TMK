@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uen_tmk.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
@@ -447,6 +448,8 @@ public class SectionCActivity extends Activity {
     @BindView(R.id.td09)
     EditText td09;
 
+    private Boolean exit = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -620,17 +623,17 @@ public class SectionCActivity extends Activity {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
+            /*try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                if (MainApp.TotalMWRACount > 0) {
+                /*if (MainApp.TotalMWRACount > 0) {
                     startActivity(new Intent(this, SectionDActivity.class));
                 } else if (MainApp.TotalDeceasedMotherCount > 0) {
                     startActivity(new Intent(this, SectionEActivity.class));
@@ -638,7 +641,10 @@ public class SectionCActivity extends Activity {
                     startActivity(new Intent(this, SectionFActivity.class));
                 } else {
                     startActivity(new Intent(this, SectionGActivity.class));
-                }
+                }*/
+
+                startActivity(new Intent(this, SectionHAActivity.class));
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -650,7 +656,7 @@ public class SectionCActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSC();
+        /*int updcount = db.updateSC();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -658,8 +664,8 @@ public class SectionCActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
-
+        }*/
+        return true;
 
     }
 
@@ -1544,6 +1550,22 @@ public class SectionCActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+        if (exit) {
+            finish(); // finish activity
+
+            startActivity(new Intent(this, MainActivity.class));
+
+        } else {
+            Toast.makeText(this, "Press Back again to Exit.",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
+        }
     }
 }

@@ -92,14 +92,14 @@ public class EndingActivity extends Activity {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
+            /*try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
             if (UpdateDB()) {
 
-                MainApp.familyMembersList.clear();
+                /*MainApp.familyMembersList.clear();
                 MainApp.memFlag = 0;
 
                 MainApp.TotalMembersCount = 0;
@@ -117,12 +117,6 @@ public class EndingActivity extends Activity {
 
                 MainApp.counter = 0;
 
-//    Total No of Alive members got from Section B
-
-/*                MainApp.currentStatusCount = 0;
-                MainApp.currentDeceasedCheck = 0;
-                MainApp.currentMotherCheck = 0;*/
-
                 MainApp.selectedPos = -1;
 
                 MainApp.randID = 1;
@@ -130,12 +124,11 @@ public class EndingActivity extends Activity {
                 MainApp.isRsvp = false;
                 MainApp.isHead = false;
 
-                MainApp.flag = true;
+                MainApp.flag = true;*/
 
                 finish();
 
                 Intent endSec = new Intent(this, MainActivity.class);
-                endSec.putExtra("complete", false);
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -165,27 +158,16 @@ public class EndingActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateEnding();
-        /*if (MainApp.memFlag != 0) {
-            db.updateFamilyMember();
-        }
-        if (MainApp.currentDeceasedCheck != 0) {
-            db.updateDeceasedMother();
-        }
-        if (MainApp.currentMotherCheck != 0) {
-            db.updateMother();
-        }
-        if (MainApp.totalChild != 0) {
-            db.updateIM();
-        }
-*/
+        /*int updcount = db.updateEnding();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
 
     }
 

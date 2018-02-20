@@ -481,12 +481,17 @@ public class SectionHBActivity extends Activity {
         childsMap.put("....", "");
         lstChild.add("....");
 
-        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+        lstChild.add("Child 1 ");
+        lstChild.add("Child 2 ");
+        lstChild.add("Child 3 ");
+        lstChild.add("Child 4 ");
+
+        /*for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1") || MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
             }
-        }
+        }*/
 
         thb05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
 
@@ -1048,23 +1053,23 @@ public class SectionHBActivity extends Activity {
     void SaveData() {
 
         if (formValidation()) {
-            try {
+            /*try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
 
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                if (MainApp.totalImsCount > 0) {
+                /*if (MainApp.totalImsCount > 0) {
                     Intent secNext = new Intent(this, SectionIActivity.class);
                     startActivity(secNext);
-                } else {
-                    startActivity(new Intent(this, SectionKActivity.class));
-                }
+                } else {*/
+                startActivity(new Intent(this, SectionKActivity.class));
+//                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -1087,7 +1092,7 @@ public class SectionHBActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHB();
+        /*int updcount = db.updateSHB();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -1095,7 +1100,9 @@ public class SectionHBActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
 
     }
 
@@ -1147,7 +1154,7 @@ public class SectionHBActivity extends Activity {
 
             if (!thb02.getText().toString().isEmpty()) {
 
-                if (Integer.parseInt(thb02.getText().toString()) < 0 || Integer.valueOf(thb02.getText().toString()) > MainApp.TotalChildCount) {
+                if (Integer.parseInt(thb02.getText().toString()) < 0 || Integer.valueOf(thb02.getText().toString()) > 5) {
                     Toast.makeText(this, "How many children had fever during last two weeks in the household", Toast.LENGTH_SHORT).show();
                     thb02.setError("Data Range is " + MainApp.TotalChildCount);
                     Log.i(TAG, "thb02: This data is Required!");
