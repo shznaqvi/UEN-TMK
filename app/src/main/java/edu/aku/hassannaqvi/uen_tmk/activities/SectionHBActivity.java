@@ -1156,7 +1156,7 @@ public class SectionHBActivity extends Activity {
 
                 if (Integer.parseInt(thb02.getText().toString()) < 0 || Integer.valueOf(thb02.getText().toString()) > 5) {
                     Toast.makeText(this, "How many children had fever during last two weeks in the household", Toast.LENGTH_SHORT).show();
-                    thb02.setError("Data Range is " + MainApp.TotalChildCount);
+                    thb02.setError("Data Range is 1-4 ");
                     Log.i(TAG, "thb02: This data is Required!");
                     thb02.requestFocus();
                     return false;
@@ -1198,7 +1198,7 @@ public class SectionHBActivity extends Activity {
 
             if (!thb04.getText().toString().isEmpty()) {
 
-                if (Integer.parseInt(thb04.getText().toString()) < 0 || Integer.valueOf(thb04.getText().toString()) > MainApp.TotalChildCount) {
+                /*if (Integer.parseInt(thb04.getText().toString()) < 0 || Integer.valueOf(thb04.getText().toString()) > MainApp.TotalChildCount) {
                     Toast.makeText(this, "Number of childrens must be greater than 0", Toast.LENGTH_SHORT).show();
                     thb04.setError("Data Range is " + MainApp.TotalChildCount);
                     Log.i(TAG, "thb04: This data is Required!");
@@ -1206,7 +1206,7 @@ public class SectionHBActivity extends Activity {
                     return false;
                 } else {
                     thb04.setError(null);
-                }
+                }*/
 
             }
 

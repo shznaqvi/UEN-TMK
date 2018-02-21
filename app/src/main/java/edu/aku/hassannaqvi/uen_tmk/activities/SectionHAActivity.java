@@ -1134,7 +1134,7 @@ public class SectionHAActivity extends Activity {
                 tha02.setError(null);
             }
 
-            if (MainApp.TotalChildCount < Integer.parseInt(tha02.getText().toString())) {
+            /*if (MainApp.TotalChildCount < Integer.parseInt(tha02.getText().toString())) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.tha02), Toast.LENGTH_SHORT).show();
                 tha02.setError("This data range in " + MainApp.TotalChildCount);    // Set Error on last radio button
                 Log.i(TAG, "tha02: This data range in " + MainApp.TotalChildCount);
@@ -1142,7 +1142,7 @@ public class SectionHAActivity extends Activity {
                 return false;
             } else {
                 tha02.setError(null);
-            }
+            }*/
 
 
             if (!tha02.getText().toString().isEmpty()) {
