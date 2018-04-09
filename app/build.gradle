@@ -18,8 +18,6 @@ android {
             applicationId "edu.aku.hassannaqvi.uen_tmk"
             minSdkVersion 22
             targetSdkVersion 22
-
-
             versionCode code
             versionName "2.1"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
