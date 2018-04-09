@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:background="@color/dullWhile"
+            android:background="@color/dullWhite"
             android:text="Main Menu"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold" />
