@@ -1588,8 +1588,7 @@ public class SectionIActivity extends AppCompatActivity
         }
         tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
 
-        tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
+        tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 MainApp.positionIm = i;
