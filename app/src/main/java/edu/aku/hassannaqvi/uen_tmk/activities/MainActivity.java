@@ -52,12 +52,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedChild;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedMother;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncFamilyMembers;
 import edu.aku.hassannaqvi.uen_tmk.sync.SyncForms;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncIM;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncMwras;
 
 public class MainActivity extends Activity {
 
@@ -531,10 +526,11 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
+
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
@@ -548,7 +544,7 @@ public class MainActivity extends Activity {
 
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
             new SyncIM(this).execute();
-
+*/
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
