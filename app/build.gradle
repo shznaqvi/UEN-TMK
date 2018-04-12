@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 27
     def versionPropsFile = file('version.properties')
 
     if (versionPropsFile.canRead()) {
@@ -16,10 +15,9 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.uen_tmk"
+            applicationId "edu.aku.hassannaqvi.uen_tmksm"
             minSdkVersion 22
             targetSdkVersion 22
-
 
             versionCode code
             versionName "1.1b"
