@@ -63,13 +63,11 @@ public class SyncDeceasedChild extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         String line = "No Response";
-        try {
-            String url = MainApp._HOST_URL + DeceasedChild._URL;
+
+        String url = MainApp._HOST_URL + DeceasedChild._URL;
             Log.d(TAG, "doInBackground: URL " + url);
             return downloadUrl(url);
-        } catch (IOException e) {
-            return "Unable to upload data. Server may be down.";
-        }
+
     }
 
     @Override
