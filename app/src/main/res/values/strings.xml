@@ -84,7 +84,7 @@
 <string name="ta09"> Have you got the permission to start interview? </string>
 <string name="tbAge"> Date of birth / Age </string>
 <string name="tbAge02"> Age </string>
-<string name="tbdob01"> Bate of Birth </string>
+<string name="tbdob01"> Date of Birth </string>
 <string name="tb01"> Member Serial number </string>
 <string name="tb02"> Name </string>
 <string name="tb03"> Relationship to Head of HH </string>
@@ -135,13 +135,13 @@
 <string name="tc0103"> Finished floor </string>
 <string name="tc01"> Main material of the floor </string>
 <string name="tc01a"> Earth/sand/mud </string>
-<string name="tc01b"> Earth/sand/mud </string>
+<string name="tc01b"> Dung </string>
 <string name="tc01c"> Wood planks </string>
 <string name="tc01d"> Palm/bamboo </string>
 <string name="tc01e"> Parquet Or Polished Wood </string>
 <string name="tc01f"> Vinyl or asphalt strips </string>
 <string name="tc01g"> Ceramic tiles </string>
-<string name="tc01h"> Ceramic tiles </string>
+<string name="tc01h"> Ceramic </string>
 <string name="tc01i"> Carpet </string>
 <string name="tc01j"> Bricks </string>
 <string name="tc01k"> Lime </string>
@@ -265,16 +265,18 @@
 <string name="tc16h"> Pashto </string>
 <string name="tc17"> What is total monthly household income of this house? </string>
 <string name="tc17a"> Rupees </string>
-<string name="td06"> 0 </string>
-<string name="td01"> Name of MWRA </string>
-<string name="td02"> Has {Names of MWRA in the family} ever been pregnant since her marriage? </string>
+<string name="td06"> Has there been a death of women during pregnancy, delivery and within post-partum period during the last five years at your home. If yes then ask details for below table. </string>
+
+<string name="td00"> Name of MWRA </string>
+<string name="td01"> Has {Names of MWRA in the family} ever been pregnant since her marriage?  </string>
+<string name="td02">How many times {Name} has been pregnant since her marriage?</string>
 <string name="td02a"> number of pregnancies </string>
-<string name="td03"> How many times {Name} has been pregnant since her marriage? </string>
+<string name="td03"> What were the total outcome of her total pregnancies </string>
 <string name="td03a"> Born alive (Live birth) </string>
 <string name="td03b"> Born dead (Still birth) </string>
 <string name="td03c"> Miscarriage </string>
 <string name="td04"> Is she currently pregnant? </string>
-<string name="td05"> How many weaks is she pregnant? (Gestational age) </string>
+<string name="td05"> How many weeks is she pregnant? (Gestational age) </string>
 <string name="te01"> Complete name of deceased mother </string>
 <string name="te02"> Age at death </string>
 <string name="te03"> Place of death </string>
@@ -857,19 +859,20 @@
 <string name="istatus2"> Incomplete </string>
 
 
-  <string name="td00">mstr</string>
-  <string name="ta09c">mstr01</string>
-  <string name="Respondent">mstr02</string>
-  <string name="addMember">mstr03</string>
-  <string name="td08">mstr04</string>
-  <string name="td07">mstr05</string>
-  <string name="td09">mstr06</string>
-  <string name="tiRespondentMother">mstr07</string>
-  <string name="istatus3">mstr08</string>
-  <string name="istatus4">mstr09</string>
-  <string name="istatus5">mstr10</string>
-  <string name="istatus6">mstr11</string>
-  <string name="istatus7">mstr12</string>
+  <!--<string name="td00">mstr</string>-->
+  <!--<string name="ta09c">mstr01</string>-->
+  <string name="Respondent">Is this Respondent</string>
+  <string name="addMember">Add Member</string>
+  <string name="td08">During last 5 years, has there been a death of a child up-to 5 years of age in your house?</string>
+  <string name="td07">If yes, then how many women died  </string>
+  <string name="td09">If yes, then how many children died  </string>
+
+  <string name="tiRespondentMother">Is the respondent is your mother?</string>
+  <string name="istatus3">Refused </string>
+  <string name="istatus4">Dwelling permanent locked </string>
+  <string name="istatus5">Dwelling temporary locked </string>
+  <string name="istatus6">Pending</string>
+  <string name="istatus7">Dwelling vacant </string>
 
 
 </resources>

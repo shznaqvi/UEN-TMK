@@ -778,7 +778,8 @@ public class SectionCActivity extends Activity {
         MainApp.fc.setsC(String.valueOf(sC));
     }
 
-    public boolean formValidation() {
+    public boolean
+    formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 //        01

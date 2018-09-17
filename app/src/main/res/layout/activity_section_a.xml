@@ -339,13 +339,15 @@
             <RadioGroup
                 android:id="@+id/ta09"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/ta09a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
                     android:text="@string/yes" />
 
                 <RadioButton
@@ -353,6 +355,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+
                     android:text="@string/no" />
 
                 <RadioButton
@@ -360,7 +364,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/ta09c" />
+                    android:layout_weight="1"
+                    android:text="@string/dkn" />
 
             </RadioGroup>
 
