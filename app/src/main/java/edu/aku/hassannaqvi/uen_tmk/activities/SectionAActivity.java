@@ -50,6 +50,8 @@ public class SectionAActivity extends Activity {
     private static final String TAG = SectionAActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
+    Boolean flag;
+
     @BindView(R.id.ta01)
     EditText ta01;
     @BindView(R.id.ta02)
@@ -148,6 +150,8 @@ public class SectionAActivity extends Activity {
         ButterKnife.bind(this);
 
         db = new DatabaseHelper(this);
+        flag = getIntent().getExtras().getBoolean("flag");
+
 
         MainApp.familyMembersList = new ArrayList<>();
 
@@ -314,7 +318,11 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionBActivity.class));
+                if (flag) {
+                    startActivity(new Intent(this, SectionBActivity.class));
+                } else {
+                    startActivity(new Intent(this, SectionMActivity.class));
+                }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

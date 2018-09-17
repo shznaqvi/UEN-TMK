@@ -52,12 +52,7 @@ import edu.aku.hassannaqvi.uen_tmk.contracts.FormsContract;
 import edu.aku.hassannaqvi.uen_tmk.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_tmk.core.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_tmk.core.MainApp;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedChild;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncDeceasedMother;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncFamilyMembers;
 import edu.aku.hassannaqvi.uen_tmk.sync.SyncForms;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncIM;
-import edu.aku.hassannaqvi.uen_tmk.sync.SyncMwras;
 
 public class MainActivity extends Activity {
 
@@ -246,7 +241,7 @@ public class MainActivity extends Activity {
         if (spAreas.getSelectedItemPosition() != 0) {
 
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
                 startActivity(oF);
             } else {
 
@@ -269,7 +264,55 @@ public class MainActivity extends Activity {
                             editor.commit();
 
                             if (!MainApp.userName.equals("0000")) {
-                                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                                Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
+                                startActivity(oF);
+                            }
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void openForm1(View v) {
+
+        if (spAreas.getSelectedItemPosition() != 0) {
+
+            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+                Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
+                startActivity(oF);
+            } else {
+
+                builder = new AlertDialog.Builder(MainActivity.this);
+                ImageView img = new ImageView(getApplicationContext());
+                img.setImageResource(R.drawable.tagimg);
+                img.setPadding(0, 15, 0, 15);
+                builder.setCustomTitle(img);
+
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        if (!m_Text.equals("")) {
+                            editor.putString("tagName", m_Text);
+                            editor.commit();
+
+                            if (!MainApp.userName.equals("0000")) {
+                                Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
                                 startActivity(oF);
                             }
                         }
@@ -407,7 +450,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void updateApp(View v) throws IOException {
+    public void updateApp(View v) {
         v.setBackgroundColor(Color.GREEN);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -483,10 +526,11 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
+
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
@@ -500,7 +544,7 @@ public class MainActivity extends Activity {
 
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
             new SyncIM(this).execute();
-
+*/
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
