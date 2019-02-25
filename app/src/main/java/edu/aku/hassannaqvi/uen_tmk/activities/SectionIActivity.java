@@ -2213,41 +2213,41 @@ public class SectionIActivity extends AppCompatActivity
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
 
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+            if (ValidateForm()) {
+                try {
+                    SaveDraft();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (UpdateDB()) {
+                    Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                //finish();
+                    //finish();
 
-                if (MainApp.imsCount < MainApp.totalImsCount) {
-                    finish();
+                    if (MainApp.imsCount < MainApp.totalImsCount) {
+                        finish();
 
-                    MainApp.imsCount++;
+                        MainApp.imsCount++;
 
-                    MainApp.lstChild.remove(MainApp.positionIm);
-                    MainApp.childsMap.remove(MainApp.positionIm);
-                    MainApp.flag = false;
-                    Intent secNext = new Intent(this, SectionIActivity.class);
-                    //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
-                    startActivity(secNext);
+                        MainApp.lstChild.remove(MainApp.positionIm);
+                        MainApp.childsMap.remove(MainApp.positionIm);
+                        MainApp.flag = false;
+                        Intent secNext = new Intent(this, SectionIActivity.class);
+                        //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+                        startActivity(secNext);
 
+
+                    } else {
+                        MainApp.imsCount = 0;
+
+                        Intent secNext = new Intent(this, SectionJActivity.class);
+                        startActivity(secNext);
+                    }
 
                 } else {
-                    MainApp.imsCount = 0;
-
-                    Intent secNext = new Intent(this, SectionJActivity.class);
-                    startActivity(secNext);
+                    Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
                 }
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
 
     }
 

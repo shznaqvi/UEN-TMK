@@ -302,7 +302,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 if (success) {
 
                     try {
-                        File dbFile = new File(this.getDatabasePath(DatabaseHelper.DATABASE_NAME).getPath());
+                            File dbFile = new File(this.getDatabasePath(DatabaseHelper.DATABASE_NAME).getPath());
                         FileInputStream fis = new FileInputStream(dbFile);
 
                         String outFileName = DirectoryName + File.separator +
