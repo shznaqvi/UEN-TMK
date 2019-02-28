@@ -64,13 +64,9 @@ public class SyncIM extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         String line = "No Response";
-        try {
-            String url = MainApp._HOST_URL + singleIm._URL;
-            Log.d(TAG, "doInBackground: URL " + url);
-            return downloadUrl(url);
-        } catch (IOException e) {
-            return "Unable to upload data. Server may be down.";
-        }
+        String url = MainApp._HOST_URL + singleIm._URL;
+        Log.d(TAG, "doInBackground: URL " + url);
+        return downloadUrl(url);
     }
 
     @Override
@@ -148,7 +144,7 @@ public class SyncIM extends AsyncTask<Void, Void, String> {
 
                         }
                         wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
-                        longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
+//                        longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
                         wr.flush();
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
