@@ -16,9 +16,9 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.uen_tmk_monitor"
+            applicationId "edu.aku.hassannaqvi.tmk_midline_monitor"
             minSdkVersion 22
-            targetSdkVersion 22
+            targetSdkVersion 27
 
 
             versionCode code
