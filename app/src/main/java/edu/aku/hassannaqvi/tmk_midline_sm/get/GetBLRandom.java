@@ -130,7 +130,7 @@ public class GetBLRandom extends AsyncTask<Void, Void, String> {
             }
             Log.d(TAG, "downloadUrl: " + json.toString());
             wr.writeBytes(json.toString());
-            longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
+//            longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
             wr.flush();
             wr.close();
 

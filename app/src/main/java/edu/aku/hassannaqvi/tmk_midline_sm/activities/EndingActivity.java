@@ -40,10 +40,10 @@ public class EndingActivity extends Activity {
     RadioButton istatus6;
     @BindView(R.id.istatus7)
     RadioButton istatus7;
-    @BindView(R.id.istatus8)
-    RadioButton istatus8;
-    @BindView(R.id.istatus888x)
-    EditText istatus888x;
+    @BindView(R.id.istatus96)
+    RadioButton istatus96;
+    @BindView(R.id.istatus96x)
+    EditText istatus96x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,9 @@ public class EndingActivity extends Activity {
             istatus5.setEnabled(false);
             istatus6.setEnabled(false);
             istatus7.setEnabled(false);
-            istatus8.setEnabled(false);
-            istatus888x.setEnabled(false);
-            istatus888x.setText(null);
+            istatus96.setEnabled(false);
+            istatus96x.setEnabled(false);
+            istatus96x.setText(null);
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
@@ -73,12 +73,12 @@ public class EndingActivity extends Activity {
         istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (istatus8.isChecked()) {
-                    istatus888x.setVisibility(View.VISIBLE);
-                    istatus888x.requestFocus();
+                if (istatus96.isChecked()) {
+                    istatus96x.setVisibility(View.VISIBLE);
+                    istatus96x.requestFocus();
                 } else {
-                    istatus888x.setText(null);
-                    istatus888x.setVisibility(View.GONE);
+                    istatus96x.setText(null);
+                    istatus96x.setVisibility(View.GONE);
                 }
             }
         });
@@ -88,7 +88,6 @@ public class EndingActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
 
             SaveDraft();
@@ -140,7 +139,6 @@ public class EndingActivity extends Activity {
     }
 
     private void SaveDraft() {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         MainApp.fc.setIstatus(istatus1.isChecked() ? "1"
                 : istatus2.isChecked() ? "2"
@@ -149,13 +147,11 @@ public class EndingActivity extends Activity {
                 : istatus5.isChecked() ? "4"
                 : istatus6.isChecked() ? "6"
                 : istatus7.isChecked() ? "7"
-                : istatus8.isChecked() ? "8"
+                : istatus96.isChecked() ? "96"
                 : "0");
 
-        MainApp.fc.setIstatus88x(istatus888x.getText().toString());
+        MainApp.fc.setIstatus96x(istatus96x.getText().toString());
 
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -176,7 +172,6 @@ public class EndingActivity extends Activity {
         }
 */
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -186,7 +181,6 @@ public class EndingActivity extends Activity {
     }
 
     private boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (istatus.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Not Selected): " + getString(R.string.dcstatus), Toast.LENGTH_LONG).show();
@@ -197,15 +191,15 @@ public class EndingActivity extends Activity {
             istatus1.setError(null);
         }
 
-        if (istatus8.isChecked()) {
+        if (istatus96.isChecked()) {
 
-            if (istatus888x.getText().toString().isEmpty()) {
+            if (istatus96x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                istatus888x.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "istatus888x: This data is Required!");
+                istatus96x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "istatus96x: This data is Required!");
                 return false;
             } else {
-                istatus888x.setError(null);
+                istatus96x.setError(null);
             }
 
         }

@@ -285,7 +285,7 @@ public class SectionAActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         //TODO implement
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -293,7 +293,7 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -308,7 +308,7 @@ public class SectionAActivity extends Activity {
     void onBtnContinueClick() {
         //TODO implement
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -316,7 +316,7 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -331,9 +331,8 @@ public class SectionAActivity extends Activity {
         }
     }
 
-
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -371,14 +370,14 @@ public class SectionAActivity extends Activity {
         sa.put("ta07", ta07.getText().toString());
         sa.put("ta08", ta08.getText().toString());
         sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
-        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
+        sa.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
 
         MainApp.fc.setsA(String.valueOf(sa));
 
         setGPS();
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -387,7 +386,7 @@ public class SectionAActivity extends Activity {
         MainApp.fc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
@@ -431,7 +430,7 @@ public class SectionAActivity extends Activity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 //        01
         if (ta01.getText().toString().isEmpty()) {
