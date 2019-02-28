@@ -93,8 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-"
-            android:hint="@string/ta05h"
-            android:inputType="text" />
+            android:hint="XXX-X"
+            android:inputType="textCapCharacters" />
 
         <!--<com.santalu.widget.MaskEditText
             android:id="@+id/ta05h"
@@ -115,8 +115,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView

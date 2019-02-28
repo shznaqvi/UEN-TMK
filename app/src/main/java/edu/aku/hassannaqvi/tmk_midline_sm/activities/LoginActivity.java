@@ -347,15 +347,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-//            if (TalukasList.size() == 0) {
-            new syncData(this, true).execute();
-//            } else {
-            if (spTalukas.getSelectedItemPosition() != 0
-                    &&
-                    spUCs.getSelectedItemPosition() != 0) {
+            if (spTalukas.getSelectedItemPosition() != 0 && spUCs.getSelectedItemPosition() != 0)
                 new syncData(this, false).execute();
-            }
-//            }
+            else
+                new syncData(this, true).execute();
+
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }

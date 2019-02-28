@@ -271,6 +271,8 @@ public class SectionAActivity extends Activity {
 
                 fldGrpt03.setVisibility(View.GONE);
 
+                ta05h.setText(null);
+
                 Toast.makeText(this, "No Head found in this HH.", Toast.LENGTH_SHORT).show();
             }
 

@@ -94,14 +94,13 @@ public class MainActivity extends Activity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
+        lblheader.setText("Welcome! " + MainApp.userName);
 
         if (MainApp.admin) {
             adminsec.setVisibility(View.VISIBLE);
         } else {
             adminsec.setVisibility(View.GONE);
         }
-
 
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
