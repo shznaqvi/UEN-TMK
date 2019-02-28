@@ -182,7 +182,7 @@
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="edu.aku.hassannaqvi.uen_tmksm.activities.LoginActivity">
+    tools:context="edu.aku.hassannaqvi.tmk_midline_sm.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar

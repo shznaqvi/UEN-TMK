@@ -6,7 +6,7 @@
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:scrollbars="horizontal"
-    tools:context="edu.aku.hassannaqvi.uen_tmksm.activities.SectionHAActivity">
+    tools:context="edu.aku.hassannaqvi.tmk_midline_sm.activities.SectionHAActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

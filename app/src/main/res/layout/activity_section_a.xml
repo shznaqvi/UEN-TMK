@@ -6,7 +6,7 @@
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:scrollbars="horizontal"
-    tools:context="edu.aku.hassannaqvi.uen_tmksm.activities.SectionAActivity">
+    tools:context="edu.aku.hassannaqvi.tmk_midline_sm.activities.SectionAActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -95,6 +95,22 @@
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-"
             android:hint="@string/ta05h"
             android:inputType="text" />
+
+        <!--<com.santalu.widget.MaskEditText
+            android:id="@+id/ta05h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:hint="###-#"
+            android:inputType="textCapCharacters"
+            android:layoutDirection="ltr"
+            android:maxLength="5"
+            android:paddingBottom="16dp"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp"
+            android:paddingTop="16dp"
+            app:met_mask="###-#" />-->
 
         <LinearLayout
             android:layout_width="match_parent"

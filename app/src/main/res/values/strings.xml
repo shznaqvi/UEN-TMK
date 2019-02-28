@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Umeed-e-Nau: Tando Muhammad Khan, WASH (Spot Check)</string>
+    <string name="app_name">TMK Midline: WASH (Spot Check)</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

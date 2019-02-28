@@ -15,9 +15,9 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.uen_tmksm"
+            applicationId "edu.aku.hassannaqvi.tmk_midline_sm"
             minSdkVersion 22
-            targetSdkVersion 22
+            targetSdkVersion 27
 
             versionCode code
             versionName "1.1b"
@@ -43,7 +43,10 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
     testImplementation 'junit:junit:4.12'
     implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+//    implementation 'com.github.santalu:mask-edittext:1.0.9'
 }
