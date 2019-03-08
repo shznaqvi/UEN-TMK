@@ -92,8 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-"
-            android:hint="XXX-X"
-            android:inputType="textCapCharacters" />
+            android:hint="XXXX-X"
+            android:inputType="textCapCharacters"
+            android:maxLength="6" />
 
         <LinearLayout
             android:layout_width="match_parent"
