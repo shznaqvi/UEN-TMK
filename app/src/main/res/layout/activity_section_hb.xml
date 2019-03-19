@@ -116,10 +116,10 @@
 
             <EditText
                 android:id="@+id/thb02"
+                android:maxLength="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:digits="0123456789"
                 android:hint="@string/thb02"
                 android:inputType="number" />
 
@@ -185,10 +185,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:digits="0123456789 "
                 android:hint="@string/thb04"
-                android:inputType="number" />
-
+                android:inputType="number"
+                android:maxLength="2" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -203,24 +202,7 @@
                 android:id="@+id/thb05"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="@string/thb05" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/tha02a"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/thb05a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/tha02a"
+                android:hint="@string/tha03a"
                 android:inputType="textPersonName"
                 android:maxLength="50" />
 
@@ -642,8 +624,8 @@
                         android:id="@+id/thb14a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
                         android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:text="@string/yes" />
 

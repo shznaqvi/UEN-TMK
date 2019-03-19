@@ -58,8 +58,6 @@ public class SectionHBActivity extends Activity {
     EditText thb04;
     @BindView(R.id.thb05)
     EditText thb05;
-    @BindView(R.id.thb05a)
-    EditText thb05a;
     /*  @BindView(R.id.thb06)
       EditText thb06;*/
     @BindView(R.id.thb07)
@@ -514,7 +512,6 @@ public class SectionHBActivity extends Activity {
                 } else {
 
                     thb04.setText(null);
-                    thb05a.setText(null);
                     /*thb05.getChildAt(0).toString();*/
 //                    thb06.setText(null);
 
@@ -1211,17 +1208,6 @@ public class SectionHBActivity extends Activity {
                 thb05.setError(null);
             }
 
-            if (thb05a.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tha02a), Toast.LENGTH_SHORT).show();
-                thb05a.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "thb05a: This data is Required!");
-                thb05a.requestFocus();
-                return false;
-            } else {
-                thb05a.setError(null);
-            }
-
-
             //        05
             /*if (thb05.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
@@ -1874,7 +1860,6 @@ public class SectionHBActivity extends Activity {
         sHB.put("thb04", thb04.getText().toString());
 //        if (thb03a.isChecked()) {
         sHB.put("thb05", thb05.getText().toString());
-        sHB.put("thb05a", thb05a.getText().toString());
         //sHB.put("thb05Serial", childsMap.get(thb05.getSelectedItem().toString()));
 //        }
 //        sHB.put("thb06", thb06.getText().toString());
