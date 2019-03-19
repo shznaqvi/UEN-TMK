@@ -204,7 +204,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/thb05"></EditText>
+                android:hint="@string/thb05" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/tha02a"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/thb05a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:hint="@string/tha02a"
+                android:inputType="textPersonName"
+                android:maxLength="50" />
 
             <!--
 

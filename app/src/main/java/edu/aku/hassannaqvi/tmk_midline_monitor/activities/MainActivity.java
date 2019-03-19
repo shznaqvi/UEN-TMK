@@ -52,11 +52,8 @@ import edu.aku.hassannaqvi.tmk_midline_monitor.contracts.FormsContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.tmk_midline_monitor.core.DatabaseHelper;
 import edu.aku.hassannaqvi.tmk_midline_monitor.core.MainApp;
-import edu.aku.hassannaqvi.tmk_midline_monitor.sync.SyncDeceasedChild;
-import edu.aku.hassannaqvi.tmk_midline_monitor.sync.SyncDeceasedMother;
 import edu.aku.hassannaqvi.tmk_midline_monitor.sync.SyncForms;
 import edu.aku.hassannaqvi.tmk_midline_monitor.sync.SyncIM;
-import edu.aku.hassannaqvi.tmk_midline_monitor.sync.SyncMwras;
 
 public class MainActivity extends Activity {
 
@@ -487,17 +484,17 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
 
-/*            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();*/
 
-            Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
-            new SyncMwras(this).execute();
+            /*Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
+            new SyncMwras(this).execute();*/
 
-            Toast.makeText(getApplicationContext(), "Syncing Deceased Mother", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Deceased Mother", Toast.LENGTH_SHORT).show();
             new SyncDeceasedMother(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Deceased Child", Toast.LENGTH_SHORT).show();
-            new SyncDeceasedChild(this).execute();
+            new SyncDeceasedChild(this).execute();*/
 
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
             new SyncIM(this).execute();
