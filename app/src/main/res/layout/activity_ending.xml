@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.tmk_midline_sm.activities.EndingActivity">
+    tools:context="edu.aku.hassannaqvi.tmk_midline_sm19.activities.EndingActivity">
 
     <ScrollView
         android:id="@+id/scrollView01"
