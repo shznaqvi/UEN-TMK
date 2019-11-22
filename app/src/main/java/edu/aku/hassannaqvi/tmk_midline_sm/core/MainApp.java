@@ -55,7 +55,7 @@ public class MainApp extends Application {
     /*Final*/
     public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
     public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
-    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/secm/app/";
+    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/secm/";
 
 
     /*
