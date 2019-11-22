@@ -40,10 +40,23 @@ import static edu.aku.hassannaqvi.tmk_midline_sm.activities.SectionBActivity.get
 
 public class MainApp extends Application {
 
-    public static final String _IP = "43.245.131.159"; // Test PHP server
+/*    public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";*/
+
+    /*Testing*/
+/*    public static final String _IP = "f38158"; // Test PHP server
+    public static final Integer _PORT = 80; // Port - with colon (:)
+    public static final String _HOST_URL = "http://" + MainApp._IP + "/tmk/api/";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + "/tmk/app/app-debug.apk";
+    public static final String _UPDATE_URL_NEW = "http://" + MainApp._IP + "/tmk/app/";*/
+
+    /*Final*/
+    public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
+    public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
+    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/secm/app/";
+
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
