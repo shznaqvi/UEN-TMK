@@ -626,11 +626,11 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc = new FamilyMembersContract();
 
 
-        MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setUser(MainApp.fc.getUser());
+        MainApp.fmc.setformDate(MainApp.fc.getFormDate());
+        MainApp.fmc.setdeviceId(MainApp.fc.getDeviceID());
+        MainApp.fmc.setuser(MainApp.fc.getUser());
         MainApp.fmc.set_UUID(MainApp.fc.getUID());
-        MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setdeviceId(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
 
@@ -687,7 +687,8 @@ public class SectionBActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        Long updcount = db.addFamilyMembers(MainApp.fmc);
+//        Long updcount = db.addFamilyMembers(MainApp.fmc);
+        Long updcount = 0l;
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {

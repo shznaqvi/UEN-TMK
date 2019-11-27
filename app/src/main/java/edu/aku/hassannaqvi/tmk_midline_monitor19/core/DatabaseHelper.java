@@ -118,6 +118,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_SYNCED + " TEXT," +
             familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
+
+    private static final String SQL_CREATE_GET_MEMBERS = "CREATE TABLE "
+            + familyMembers.TABLE_NAME_GET + "("
+            + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FamilyMembersContract.familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
+            familyMembers.COLUMN_UID + " TEXT," +
+            familyMembers.COLUMN_UUID + " TEXT," +
+            familyMembers.COLUMN_FORMDATE + " TEXT," +
+            familyMembers.COLUMN_DEVICEID + " TEXT," +
+            familyMembers.COLUMN_USER + " TEXT," +
+            familyMembers.COLUMN_DEVICETAGID + " TEXT," +
+            familyMembers.COLUMN_NAME + " TEXT," +
+            familyMembers.COLUMN_DOB + " TEXT," +
+            familyMembers.COLUMN_AGE + " TEXT," +
+            familyMembers.COLUMN_SB + " TEXT," +
+            familyMembers.COLUMN_SYNCED + " TEXT," +
+            familyMembers.COLUMN_SYNCED_DATE + " TEXT," +
+            familyMembers.COLUMN_ISTATUS + " TEXT," +
+            familyMembers.COLUMN_SERIALNO + " TEXT," +
+            familyMembers.COLUMN_MOTHERID + " TEXT," +
+            familyMembers.COLUMN_MMNAME + " TEXT," +
+            familyMembers.COLUMN_TYPE + " TEXT," +
+            familyMembers.COLUMN_APP_VER + " TEXT," +
+            familyMembers.COLUMN_CLUSTERNO + " TEXT," +
+            familyMembers.COLUMN_HHNO + " TEXT"
+            + " );";
+
     private static final String SQL_CREATE_DECEASED_MOTHER = "CREATE TABLE "
             + DeceasedMotherContract.DeceasedMother.TABLE_NAME + "("
             + DeceasedMother.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -236,20 +264,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
-/*        db.execSQL(SQL_CREATE_HOUSEHOLD);
-        db.execSQL(SQL_CREATE_MEMBERS);*/
         db.execSQL(SQL_CREATE_FAMILY_MEMBERS);
         db.execSQL(SQL_CREATE_DECEASED_MOTHER);
         db.execSQL(SQL_CREATE_DECEASED_CHILD);
         db.execSQL(SQL_CREATE_MWRA);
         db.execSQL(SQL_CREATE_SEC_I_IM);
-
         db.execSQL(SQL_CREATE_VILLAGES);
         db.execSQL(SQL_CREATE_TALUKAS);
         db.execSQL(SQL_CREATE_UCS);
         db.execSQL(SQL_CREATE_AREAS);
-
         db.execSQL(SQL_CREATE_BL_RANDOM);
+
+
+        db.execSQL(SQL_CREATE_GET_MEMBERS);
     }
 
     @Override

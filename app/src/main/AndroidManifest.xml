@@ -113,6 +113,7 @@
         <activity
             android:name=".activities.anthro.SectionAnthroBActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <service android:name=".DownloadFileService" />

@@ -768,10 +768,10 @@ public class SectionIActivity extends AppCompatActivity
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                //finish();
+                finish();
 
                 if (MainApp.imsCount < MainApp.totalImsCount) {
-                    finish();
+//                    finish();
 
                     MainApp.imsCount++;
 
