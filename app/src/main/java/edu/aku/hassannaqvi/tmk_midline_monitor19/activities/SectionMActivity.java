@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.R;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.MainApp;
 
@@ -140,11 +141,8 @@ public class SectionMActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-
-
                 finish();
-
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionAnthroBActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

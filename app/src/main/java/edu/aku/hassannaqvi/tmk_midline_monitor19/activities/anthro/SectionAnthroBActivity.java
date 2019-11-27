@@ -237,7 +237,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                 : bi.tsb13b.isChecked() ? "2"
                 : bi.tsb13c.isChecked() ? "3" : "0");
 
-        MainApp.fc.setsL(String.valueOf(sb));
+        MainApp.fc.setsN(String.valueOf(sb));
 
     }
 
@@ -266,7 +266,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSL();
+        int updcount = db.updateSN();
 
         if (updcount == 1) {
             return true;

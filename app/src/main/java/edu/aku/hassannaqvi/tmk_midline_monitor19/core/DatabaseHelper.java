@@ -91,6 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SK + " TEXT," +
             FormsTable.COLUMN_SL + " TEXT," +
             FormsTable.COLUMN_SM + " TEXT," +
+            FormsTable.COLUMN_SN + " TEXT," +
             FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsTable.COLUMN_ISTATUS96x + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
@@ -255,19 +256,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
-/*        db.execSQL(SQL_DELETE_HOUSEHOLD);
-        db.execSQL(SQL_DELETE_MEMBERS);*/
         db.execSQL(SQL_DELETE_CENSUS);
         db.execSQL(SQL_DELETE_DECEASED_MOTHER);
         db.execSQL(SQL_DELETE_DECEASED_CHILD);
         db.execSQL(SQL_DELETE_MWRA);
         db.execSQL(SQL_DELETE_SEC_I_IM);
-
         db.execSQL(SQL_DELETE_VILLAGES);
         db.execSQL(SQL_DELETE_TALUKAS);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_AREAS);
-
         db.execSQL(SQL_DELETE_BL_RANDOM);
     }
 
@@ -740,6 +737,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SK, fc.getsK());
         values.put(FormsTable.COLUMN_SL, fc.getsL());
         values.put(FormsTable.COLUMN_SM, fc.getsM());
+        values.put(FormsTable.COLUMN_SN, fc.getsN());
         values.put(FormsTable.COLUMN_GPSLAT, fc.getGpsLat());
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDATE, fc.getGpsDT());
@@ -1114,6 +1112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SK,
                 FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_SM,
+                FormsTable.COLUMN_SN,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -1378,6 +1377,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SK,
                 FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_SM,
+                FormsTable.COLUMN_SN,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -1441,6 +1441,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SK,
                 FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_SM,
+                FormsTable.COLUMN_SN,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDATE,
@@ -1827,6 +1828,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_SM, MainApp.fc.getsM());
+
+// Which row to update, based on the ID
+        String selection = FormsTable.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSN() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_SN, MainApp.fc.getsN());
 
 // Which row to update, based on the ID
         String selection = FormsTable.COLUMN_ID + " = ?";

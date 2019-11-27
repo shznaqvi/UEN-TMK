@@ -39,6 +39,7 @@ public class FormsContract {
     private String sK = "";
     private String sL = "";
     private String sM = "";
+    private String sN = "";
 
 
     private String gpsLat = "";
@@ -81,6 +82,7 @@ public class FormsContract {
         this.sK = jsonObject.getString(FormsTable.COLUMN_SK);
         this.sL = jsonObject.getString(FormsTable.COLUMN_SL);
         this.sM = jsonObject.getString(FormsTable.COLUMN_SM);
+        this.sN = jsonObject.getString(FormsTable.COLUMN_SN);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(FormsTable.COLUMN_GPSDATE);
@@ -114,6 +116,7 @@ public class FormsContract {
         this.sK = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SK));
         this.sL = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SL));
         this.sM = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SM));
+        this.sN = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SN));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSDATE));
@@ -203,6 +206,10 @@ public class FormsContract {
         if (!this.sM.equals("")) {
 
             json.put(FormsTable.COLUMN_SM, this.sM.equals("") ? JSONObject.NULL : new JSONObject(this.sM));
+        }
+        if (!this.sN.equals("")) {
+
+            json.put(FormsTable.COLUMN_SN, this.sN.equals("") ? JSONObject.NULL : new JSONObject(this.sN));
         }
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
@@ -447,6 +454,14 @@ public class FormsContract {
         this.synced_date = synced_date;
     }
 
+    public String getsN() {
+        return sN;
+    }
+
+    public void setsN(String sN) {
+        this.sN = sN;
+    }
+
     public static abstract class FormsTable implements BaseColumns {
 
         public static final String TABLE_NAME = "forms";
@@ -470,6 +485,7 @@ public class FormsContract {
         public static final String COLUMN_SK = "sk";
         public static final String COLUMN_SL = "sl";
         public static final String COLUMN_SM = "sm";
+        public static final String COLUMN_SN = "sn";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSDATE = "gpsdt";
