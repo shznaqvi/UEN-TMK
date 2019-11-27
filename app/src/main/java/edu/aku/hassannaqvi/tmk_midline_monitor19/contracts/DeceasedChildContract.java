@@ -178,7 +178,7 @@ public class DeceasedChildContract {
         public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_SF = "sf";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "sync_date";

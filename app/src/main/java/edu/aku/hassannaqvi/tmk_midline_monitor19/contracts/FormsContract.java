@@ -472,7 +472,7 @@ public class FormsContract {
         //public static final String COLUMN_IS_NEW = "isnew";
         // public static final String COLUMN_DSSID = "dssid";
         public static final String COLUMN_FORMDATE = "formdate";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
         public static final String COLUMN_SA = "sa";

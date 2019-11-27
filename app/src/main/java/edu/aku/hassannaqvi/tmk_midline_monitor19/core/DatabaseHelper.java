@@ -250,7 +250,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
 
 
-    public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
+    public String spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date().getTime());
 
 
     public DatabaseHelper(Context context) {
