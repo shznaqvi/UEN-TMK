@@ -1038,7 +1038,6 @@ public class SectionHAActivity extends Activity {
             }
 
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -1069,7 +1068,6 @@ public class SectionHAActivity extends Activity {
         int updcount = db.updateSHA();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -1080,8 +1078,6 @@ public class SectionHAActivity extends Activity {
 
 
     private boolean formValidation() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         //        00
         if (tha00.getCheckedRadioButtonId() == -1) {
@@ -1785,8 +1781,6 @@ public class SectionHAActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sHA = new JSONObject();
 

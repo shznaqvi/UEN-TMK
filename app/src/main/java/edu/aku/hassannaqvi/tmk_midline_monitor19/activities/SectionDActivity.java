@@ -180,7 +180,6 @@ public class SectionDActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 MainApp.mwraCount++;
 
@@ -238,7 +237,6 @@ public class SectionDActivity extends Activity {
         MainApp.mw.set_ID(String.valueOf(updcount));
 
         if (updcount != -1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.mw.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.mw.get_ID()));
@@ -252,7 +250,6 @@ public class SectionDActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -282,13 +279,9 @@ public class SectionDActivity extends Activity {
 
         MainApp.mw.setsD(String.valueOf(sD));
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
     }
 
     public boolean ValidateForm() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         //        01
         /*if (mwraNames.getSelectedItem() == "....") {

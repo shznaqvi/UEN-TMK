@@ -363,7 +363,6 @@ public class SectionKActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -382,7 +381,6 @@ public class SectionKActivity extends Activity {
         int updcount = db.updateSK();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -392,7 +390,6 @@ public class SectionKActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sK = new JSONObject();
 
@@ -433,13 +430,9 @@ public class SectionKActivity extends Activity {
 
         MainApp.fc.setsK(String.valueOf(sK));
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
     }
 
     public boolean ValidateForm() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (tk01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tk01), Toast.LENGTH_SHORT).show();

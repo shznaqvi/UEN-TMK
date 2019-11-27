@@ -1050,7 +1050,6 @@ public class SectionHBActivity extends Activity {
             }
 
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -1085,7 +1084,6 @@ public class SectionHBActivity extends Activity {
         int updcount = db.updateSHB();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -1096,8 +1094,6 @@ public class SectionHBActivity extends Activity {
 
 
     private boolean formValidation() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         //        00
         if (thb00.getCheckedRadioButtonId() == -1) {

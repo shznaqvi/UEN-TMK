@@ -617,8 +617,6 @@ public class SectionCActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -626,7 +624,6 @@ public class SectionCActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -653,7 +650,6 @@ public class SectionCActivity extends Activity {
         int updcount = db.updateSC();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -664,7 +660,6 @@ public class SectionCActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sC = new JSONObject();
 
@@ -779,7 +774,6 @@ public class SectionCActivity extends Activity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 //        01
         if (tc01.getCheckedRadioButtonId() == -1) {

@@ -518,7 +518,6 @@ public class SectionBActivity extends AppCompatActivity {
         int updcount = db.updateCount();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -541,7 +540,6 @@ public class SectionBActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
 
-                                Toast.makeText(SectionBActivity.this, "Processing This Section", Toast.LENGTH_SHORT).show();
                                 if (formValidation()) {
                                     try {
                                         SaveDraft();
@@ -549,8 +547,6 @@ public class SectionBActivity extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                     if (UpdateDB() && UpdateCount()) {
-
-                                        Toast.makeText(SectionBActivity.this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                                         finish();
                                         startActivity(new Intent(getApplicationContext(), SectionCActivity.class));
@@ -574,7 +570,6 @@ public class SectionBActivity extends AppCompatActivity {
     @OnClick(R.id.btn_addMore)
     void onBtnAddMoreClick() {
         //TODO implement
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -582,19 +577,15 @@ public class SectionBActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-
                 finish();
-
+                startActivity(new Intent(this, SectionBActivity.class));
             }
-            startActivity(new Intent(this, SectionBActivity.class));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         // children
         if (ageInyears < 5) {
@@ -681,8 +672,6 @@ public class SectionBActivity extends AppCompatActivity {
 
         MainApp.ageRdo = tbdob.indexOfChild(findViewById(tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -692,7 +681,6 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.fmc.get_ID()));
@@ -714,7 +702,6 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 //        01
         if (tb02.getText().toString().isEmpty()) {

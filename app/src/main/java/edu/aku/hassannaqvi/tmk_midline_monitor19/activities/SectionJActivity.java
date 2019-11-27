@@ -529,8 +529,6 @@ public class SectionJActivity extends Activity {
     @OnClick(R.id.btn_Continue)
     void onBtnContinueClick() {
         //TODO implement
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -538,7 +536,6 @@ public class SectionJActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 /*if (MainApp.mm < MainApp.TotalChildCount) {
 
@@ -639,7 +636,6 @@ public class SectionJActivity extends Activity {
         MainApp.ims.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.ims.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.ims.get_ID()));
@@ -656,7 +652,6 @@ public class SectionJActivity extends Activity {
         int updcount = db.updateSJ();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -666,7 +661,6 @@ public class SectionJActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
 /*        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -760,7 +754,6 @@ public class SectionJActivity extends Activity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
 //        01
        /* if (tj01.getSelectedItem() == "....") {

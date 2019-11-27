@@ -137,7 +137,6 @@ public class SectionFActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -167,7 +166,6 @@ public class SectionFActivity extends AppCompatActivity {
         MainApp.dcC.set_ID(String.valueOf(updcount));
 
         if (updcount != -1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.dcC.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.dcC.get_ID()));
@@ -182,7 +180,6 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -216,13 +213,9 @@ public class SectionFActivity extends AppCompatActivity {
 
         MainApp.dcC.setsF(String.valueOf(sF));
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
-
     }
 
     public boolean ValidateForm() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (tf01.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.tf01), Toast.LENGTH_SHORT).show();

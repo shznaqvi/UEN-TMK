@@ -87,8 +87,6 @@ public class EndingActivity extends Activity {
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             SaveDraft();
             if (UpdateDB()) {
@@ -135,7 +133,6 @@ public class EndingActivity extends Activity {
     }
 
     private void SaveDraft() {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         MainApp.fc.setIstatus(istatus1.isChecked() ? "1"
                 : istatus2.isChecked() ? "2"
@@ -148,9 +145,6 @@ public class EndingActivity extends Activity {
                 : "0");
 
         MainApp.fc.setIstatus96x(istatus96x.getText().toString());
-
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -171,7 +165,6 @@ public class EndingActivity extends Activity {
         }
 */
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -181,7 +174,6 @@ public class EndingActivity extends Activity {
     }
 
     private boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (istatus.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Not Selected): " + getString(R.string.dcstatus), Toast.LENGTH_LONG).show();
