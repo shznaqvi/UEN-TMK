@@ -52,14 +52,14 @@ import static edu.aku.hassannaqvi.tmk_midline_monitor19.activities.SectionBActiv
 public class MainApp extends Application {
 
     /*Testing*/
-    public static final String _IP = "f38158"; // Test PHP server
-    public static final String _HOST_URL = "http://" + MainApp._IP + "/tmk/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + "/tmk/app/mon/";
+//    public static final String _IP = "f38158"; // Test PHP server
+//    public static final String _HOST_URL = "http://" + MainApp._IP + "/tmk/api/";
+//    public static final String _UPDATE_URL = "http://" + MainApp._IP + "/tmk/app/mon/";
 
     /*Final*/
-//    public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
-//    public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
-//    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/mon/";
+    public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
+    public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
+    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/mon/";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
