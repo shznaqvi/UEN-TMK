@@ -1,16 +1,28 @@
 package edu.aku.hassannaqvi.tmk_midline_monitor19.activities;
 
-import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -23,11 +35,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -36,13 +52,14 @@ import edu.aku.hassannaqvi.tmk_midline_monitor19.FormsList;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.R;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.AreasContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.FormsContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.MainApp;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.sync.SyncForms;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.sync.SyncIM;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
 
@@ -55,6 +72,7 @@ public class MainActivity extends Activity {
     TextView recordSummary;
     @BindView(R.id.spAreas)
     Spinner spAreas;
+    static File file;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
@@ -64,6 +82,15 @@ public class MainActivity extends Activity {
     Map<String, String> AreasMap;
     private Boolean exit = false;
     private String rSumText = "";
+    @BindView(R.id.lblAppVersion)
+    TextView lblAppVersion;
+    /*Version Control*/
+    VersionAppContract versionAppContract;
+    String preVer = "", newVer = "";
+    SharedPreferences sharedPrefDownload;
+    SharedPreferences.Editor editorDownload;
+    DownloadManager downloadManager;
+    Long refID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,16 +102,13 @@ public class MainActivity extends Activity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
+        lblheader.setText("Welcome! " + MainApp.userName);
 
         if (MainApp.admin) {
             adminsec.setVisibility(View.VISIBLE);
         } else {
             adminsec.setVisibility(View.GONE);
         }
-
-        // Reset working variables
-        MainApp.child_name = "Test";
 
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
@@ -121,7 +145,6 @@ public class MainActivity extends Activity {
             builder.show();
         }
         /*TagID End*/
-
 
         DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
@@ -189,7 +212,6 @@ public class MainActivity extends Activity {
 
 
 //        Fill spinner
-
         lablesAreas = new ArrayList<>();
         AreasMap = new HashMap<>();
         lablesAreas.add("Select Area..");
@@ -217,9 +239,15 @@ public class MainActivity extends Activity {
             }
         });
 
+        /*Version Control*/
+        sharedPrefDownload = getSharedPreferences("appDownload", MODE_PRIVATE);
+        editorDownload = sharedPrefDownload.edit();
+
     }
 
     public void openForm(View v) {
+
+        if (!permissionGrantedStuff()) return;
 
         if (spAreas.getSelectedItemPosition() != 0) {
 
@@ -321,9 +349,7 @@ public class MainActivity extends Activity {
     public void onBackPressed() {
         if (exit) {
             finish(); // finish activity
-
-            startActivity(new Intent(this, LoginActivity.class));
-
+            startActivity(new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         } else {
             Toast.makeText(this, "Press Back again to Exit.",
                     Toast.LENGTH_SHORT).show();
@@ -337,4 +363,169 @@ public class MainActivity extends Activity {
 
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updatingApp();
+    }
+
+    //    Version Control
+    private void updatingApp() {
+        versionAppContract = new Gson().fromJson(getSharedPreferences("main", Context.MODE_PRIVATE).getString("appVersion", ""), VersionAppContract.class);
+        if (versionAppContract != null) {
+
+            if (versionAppContract.getVersioncode() != null) {
+                preVer = MainApp.versionName + "." + MainApp.versionCode;
+                newVer = versionAppContract.getVersionname() + "." + versionAppContract.getVersioncode();
+
+                if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                    String fileName = DatabaseHelper.DATABASE_NAME.replace(".db", "-New-Apps");
+                    file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName, versionAppContract.getPathname());
+                    lblAppVersion.setVisibility(View.VISIBLE);
+
+
+                    if (file.exists()) {
+                        lblAppVersion.setText("UEN-TMK Monitor New Version " + newVer + "  Downloaded.");
+                        showDialog(newVer, preVer);
+                    } else {
+                        NetworkInfo networkInfo = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                        if (networkInfo != null && networkInfo.isConnected()) {
+
+                            lblAppVersion.setText("UEN-TMK Monitor App New Version " + newVer + " Downloading..");
+                            downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                            Uri uri = Uri.parse(MainApp._UPDATE_URL + versionAppContract.getPathname());
+                            DownloadManager.Request request = new DownloadManager.Request(uri);
+                            request.setDestinationInExternalPublicDir(fileName, versionAppContract.getPathname())
+                                    .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                    .setTitle("Downloading UEN-TMK Monitor App new App ver." + newVer);
+                            refID = downloadManager.enqueue(request);
+
+                            editorDownload.putLong("refID", refID);
+                            editorDownload.putBoolean("flag", false);
+                            editorDownload.commit();
+
+                        } else {
+                            lblAppVersion.setText("UEN-TMK Monitor App New Version " + newVer + "  Available..\n(Can't download.. Internet connectivity issue!!)");
+                        }
+                    }
+
+                } else {
+                    lblAppVersion.setVisibility(View.GONE);
+                    lblAppVersion.setText(null);
+                }
+            }
+        }
+
+
+        BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(intent.getAction())) {
+
+                    DownloadManager.Query query = new DownloadManager.Query();
+                    query.setFilterById(sharedPrefDownload.getLong("refID", 0));
+
+                    downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                    Cursor cursor = downloadManager.query(query);
+                    if (cursor.moveToFirst()) {
+                        int colIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                        if (DownloadManager.STATUS_SUCCESSFUL == cursor.getInt(colIndex)) {
+
+                            editorDownload.putBoolean("flag", true);
+                            editorDownload.commit();
+
+                            Toast.makeText(context, "New App downloaded!!", Toast.LENGTH_SHORT).show();
+                            lblAppVersion.setText("UEN-TMK Monitor App New Version " + newVer + "  Downloaded.");
+
+                            ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                            List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+                            if (taskInfo.get(0).topActivity.getClassName().equals(MainActivity.class.getName())) {
+                                showDialog(newVer, preVer);
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        registerReceiver(broadcastReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+    }
+
+    private void showDialog(String newVer, String preVer) {
+        FragmentManager ft = getSupportFragmentManager();
+        FragmentTransaction transaction = ft.beginTransaction();
+        Fragment prev = ft.findFragmentByTag("dialog");
+        if (prev != null) {
+            transaction.remove(prev);
+        }
+        transaction.addToBackStack(null);
+        DialogFragment newFragment = MyDialogFragment.newInstance(newVer, preVer);
+        newFragment.show(ft, "dialog");
+
+    }
+
+    private boolean permissionGrantedStuff() {
+        try {
+            if (versionAppContract.getVersioncode() != null) {
+                if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                    if (sharedPrefDownload.getBoolean("flag", true) && file.exists()) {
+                        showDialog(newVer, preVer);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                } else {
+                    return true;
+                }
+            } else {
+                Toast.makeText(this, "First Sync data!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "First Sync data!!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    public static class MyDialogFragment extends DialogFragment {
+
+        String newVer, preVer;
+
+        static MyDialogFragment newInstance(String newVer, String preVer) {
+            MyDialogFragment f = new MyDialogFragment();
+
+            Bundle args = new Bundle();
+            args.putString("newVer", newVer);
+            args.putString("preVer", preVer);
+            f.setArguments(args);
+
+            return f;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            newVer = getArguments().getString("newVer");
+            preVer = getArguments().getString("preVer");
+
+            return new AlertDialog.Builder(getActivity())
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .setTitle("UEN-TMK Monitor App is available!")
+                    .setMessage("UEN-TMK Monitor App " + newVer + " is now available. Your are currently using older version " + preVer + ".\nInstall new version to use this app.")
+                    .setPositiveButton("INSTALL!!",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }
+                    )
+                    .create();
+        }
+
+    }
+
+
 }

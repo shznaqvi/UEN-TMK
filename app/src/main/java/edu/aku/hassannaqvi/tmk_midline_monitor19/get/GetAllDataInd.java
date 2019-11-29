@@ -17,8 +17,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.AreasContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.FamilyMembersContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.TalukasContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.UCsContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.UsersContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.VersionAppContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.VillagesContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.MainApp;
 
@@ -67,30 +73,53 @@ public class GetAllDataInd extends AsyncTask<String, String, String> {
                 case "Members":
                     url = new URL(MainApp._HOST_URL + FamilyMembersContract.familyMembers._URI);
                     break;
+                case "Areas":
+                    url = new URL(MainApp._HOST_URL + AreasContract.singleAreas._URI);
+                    break;
+                case "Talukas":
+                    url = new URL(MainApp._HOST_URL + TalukasContract.singleTalukas._URI);
+                    break;
+                case "UCs":
+                    url = new URL(MainApp._HOST_URL + UCsContract.singleUCs._URI);
+                    break;
+                case "Users":
+                    url = new URL(MainApp._HOST_URL + UsersContract.singleUser._URI);
+                    break;
+                case "Villages":
+                    url = new URL(MainApp._HOST_URL + VillagesContract.singleVillages._URI);
+                    break;
+                case "Version":
+                    url = new URL(MainApp._UPDATE_URL + VersionAppContract.VersionAppTable._URI);
+                    break;
             }
 
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setDoOutput(true);
-            urlConnection.setDoInput(true);
-            urlConnection.setRequestProperty("Content-Type", "application/json");
-            urlConnection.setRequestProperty("charset", "utf-8");
-            urlConnection.setUseCaches(false);
 
-            DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
-            JSONObject json = new JSONObject();
-            try {
-                json.put("cluster", MainApp.ucCode);
-            } catch (JSONException e1) {
-                e1.printStackTrace();
+            switch (syncClass) {
+                case "BLRandom":
+                case "Members":
+                    urlConnection.setRequestMethod("POST");
+                    urlConnection.setDoOutput(true);
+                    urlConnection.setDoInput(true);
+                    urlConnection.setRequestProperty("Content-Type", "application/json");
+                    urlConnection.setRequestProperty("charset", "utf-8");
+                    urlConnection.setUseCaches(false);
+
+                    DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+                    JSONObject json = new JSONObject();
+                    try {
+                        json.put("cluster", MainApp.ucCode);
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
+                    Log.d(TAG, "downloadUrl: " + json.toString());
+                    wr.writeBytes(json.toString());
+                    wr.flush();
+                    wr.close();
+                    break;
             }
-            Log.d(TAG, "downloadUrl: " + json.toString());
-            wr.writeBytes(json.toString());
-            wr.flush();
-            wr.close();
-
 
             Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -133,6 +162,24 @@ public class GetAllDataInd extends AsyncTask<String, String, String> {
                             break;
                         case "Members":
                             db.syncMembers(jsonArray);
+                            break;
+                        case "Areas":
+                            db.syncAreas(jsonArray);
+                            break;
+                        case "Talukas":
+                            db.syncTalukas(jsonArray);
+                            break;
+                        case "UCs":
+                            db.syncUCs(jsonArray);
+                            break;
+                        case "Users":
+                            db.syncUser(jsonArray);
+                            break;
+                        case "Villages":
+                            db.syncVillages(jsonArray);
+                            break;
+                        case "Version":
+                            MainApp.savingAppVersion(mContext, jsonArray);
                             break;
                     }
 

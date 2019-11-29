@@ -322,6 +322,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
     public void syncTalukas(JSONArray Talukaslist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(singleTalukas.TABLE_NAME, null, null);

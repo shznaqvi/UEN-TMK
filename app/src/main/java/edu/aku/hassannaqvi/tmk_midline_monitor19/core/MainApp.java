@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tmk_midline_monitor19.core;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
@@ -7,12 +8,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.text.format.DateFormat;
+
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +40,7 @@ import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.FamilyMembersContract
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.FormsContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.MWRAContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.SectionIIMContract;
+import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.otherClasses.MotherLst;
 
 import static edu.aku.hassannaqvi.tmk_midline_monitor19.activities.SectionBActivity.getCalendarDate;
@@ -44,12 +54,12 @@ public class MainApp extends Application {
     /*Testing*/
     public static final String _IP = "f38158"; // Test PHP server
     public static final String _HOST_URL = "http://" + MainApp._IP + "/tmk/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + "/tmk/app/validation/";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + "/tmk/app/mon/";
 
     /*Final*/
 //    public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
 //    public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
-//    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/validation/";
+//    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/mon/";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -234,6 +244,22 @@ public class MainApp extends Application {
         alert.show();
     }
 
+    public static void savingAppVersion(Context context, JSONArray array) {
+
+        JSONObject object = null;
+        try {
+            object = array.getJSONObject(0);
+            VersionAppContract contract = new VersionAppContract();
+            contract.Sync(object);
+            String json = new Gson().toJson(contract);
+            context.getSharedPreferences("main", MODE_PRIVATE).edit().putString("appVersion", json).apply();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     public static void finishActivity(final Context context, final Activity activity) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
@@ -307,6 +333,16 @@ public class MainApp extends Application {
         // Requires Permission for GPS -- android.permission.ACCESS_FINE_LOCATION
         // Requires Additional permission for 5.0 -- android.hardware.location.gps
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         locationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 MINIMUM_TIME_BETWEEN_UPDATES,
@@ -323,6 +359,16 @@ public class MainApp extends Application {
 
     protected void showCurrentLocation() {
 
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
         if (location != null) {

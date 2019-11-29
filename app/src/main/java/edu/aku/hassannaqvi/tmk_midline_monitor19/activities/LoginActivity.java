@@ -67,11 +67,6 @@ import edu.aku.hassannaqvi.tmk_midline_monitor19.contracts.UCsContract;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.core.MainApp;
 import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetAllDataInd;
-import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetAreas;
-import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetTalukas;
-import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetUCs;
-import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetUsers;
-import edu.aku.hassannaqvi.tmk_midline_monitor19.get.GetVillages;
 
 import static java.lang.Thread.sleep;
 
@@ -636,19 +631,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
 
                     if (flag) {
-                        Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
-                        new GetTalukas(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
-                        new GetUCs(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync Areas", Toast.LENGTH_LONG).show();
-                        new GetAreas(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
-                        new GetVillages(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                        new GetUsers(mContext).execute();
+                        for (String item : new String[]{"Talukas", "UCs", "Areas", "Villages", "Users", "Version"})
+                            new GetAllDataInd(mContext, item).execute();
                     } else {
-                        new GetAllDataInd(mContext, "BLRandom").execute();
-                        new GetAllDataInd(mContext, "Members").execute();
+                        for (String item : new String[]{"BLRandom", "Members"})
+                            new GetAllDataInd(mContext, item).execute();
                     }
                 }
             });
