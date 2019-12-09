@@ -206,20 +206,6 @@ public class SectionAActivity extends Activity {
             }
         });
 
-
-        ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.ta09a) {
-                    btn_Continue.setVisibility(View.VISIBLE);
-                    btn_End.setVisibility(View.GONE);
-                } else {
-                    btn_Continue.setVisibility(View.GONE);
-                    btn_End.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         ta05h.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -262,6 +248,8 @@ public class SectionAActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (i == R.id.ta09a) {
                     fldGrpMem.setVisibility(View.VISIBLE);
+                    btn_Continue.setVisibility(View.VISIBLE);
+                    btn_End.setVisibility(View.GONE);
                 } else {
                     fldGrpMem.setVisibility(View.GONE);
 
@@ -272,6 +260,10 @@ public class SectionAActivity extends Activity {
                     totalChildrenU2_5.setText(null);
                     totalmwra.setText(null);
                     TotalnonMwra.setText(null);
+
+
+                    btn_Continue.setVisibility(View.GONE);
+                    btn_End.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -390,13 +382,15 @@ public class SectionAActivity extends Activity {
         sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
         sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.TotalMembersCount = Integer.valueOf(totalMem.getText().toString());
-        MainApp.TotalMWRACount = Integer.valueOf(totalmwra.getText().toString());
-        MainApp.TotalNonMWRACount = Integer.valueOf(TotalnonMwra.getText().toString());
-        MainApp.TotalChildCount = Integer.valueOf(
-                Integer.valueOf(totalChildrenU2.getText().toString()) +
-                        Integer.valueOf(totalChildrenU2_5.getText().toString()));
-        MainApp.totalImsCount = Integer.valueOf(totalChildrenU2.getText().toString());
+        if (ta09a.isChecked()) {
+            MainApp.TotalMembersCount = Integer.valueOf(totalMem.getText().toString());
+            MainApp.TotalMWRACount = Integer.valueOf(totalmwra.getText().toString());
+            MainApp.TotalNonMWRACount = Integer.valueOf(TotalnonMwra.getText().toString());
+            MainApp.TotalChildCount = Integer.valueOf(
+                    Integer.valueOf(totalChildrenU2.getText().toString()) +
+                            Integer.valueOf(totalChildrenU2_5.getText().toString()));
+            MainApp.totalImsCount = Integer.valueOf(totalChildrenU2.getText().toString());
+        }
 
         sa.put("tb13", MainApp.TotalMembersCount);  //total
         sa.put("tb14", MainApp.TotalMWRACount); //total mwra
